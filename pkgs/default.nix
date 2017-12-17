@@ -1,3 +1,5 @@
+{ isMac }:
+
 with import <nixpkgs> {};
 
 let
@@ -8,6 +10,8 @@ let
     pname = "my-mode";
     src = ./default.el;
   };
+
+  emacs = if isMac then emacsMacport else emacs;
 
   emacs' = pkgs.emacsWithPackages (epkgs: with epkgs; [
     #elm-oracle
@@ -40,8 +44,8 @@ let
   '';
 
   aliases = {
-    emacs = "${emacs'}/bin/emacs --no-splash";
-    emacs-vanilla = "${emacs}/bin/emacs";
+#    emacs = "${emacs'}/bin/emacs --no-splash";
+#    emacs-vanilla = "${emacs}/bin/emacs";
     bash = "${bash}/bin/bash --init-file ${bashInitFile}";
   };
   
@@ -49,6 +53,7 @@ let
 
 in [
   aliaspkgs
+  emacs'
 ] ++ (with elmPackages; [
   elm
 ]) ++ (with nodePackages; [
