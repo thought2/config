@@ -6,12 +6,12 @@ let
 
   pkgs =  import <nixpkgs> {};
 
-  more = pkgs.emacsPackagesNg.trivialBuild {
+  emacs = if isMac then emacsMacport else emacs;
+    
+  more = (pkgs.emacsPackagesNgGen emacs).trivialBuild {
     pname = "my-mode";
     src = ./default.el;
   };
-
-  emacs = if isMac then emacsMacport else emacs;
 
   emacs' = pkgs.emacsWithPackages (epkgs: with epkgs; [
     #elm-oracle
