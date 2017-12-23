@@ -12,7 +12,7 @@ rec {
     better-defaults
     cider
     clojure-mode
-    company
+    helm-dash
     company
     elm-mode
     flycheck

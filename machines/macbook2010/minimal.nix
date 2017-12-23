@@ -4,8 +4,6 @@
   imports = [
     ./hardware-configuration.nix
   ];
-
-  #environment.systemPackages = import ../../pkgs/minimal.nix;
   
   boot.loader.grub = {
     enable  = true;
@@ -26,6 +24,8 @@
 
   boot.kernelModules = ["sbshc" "sbs"];
 
+  nixpkgs.config.allowUnfree = true;
+  
   networking = {
     hostName = "rt";
     #wireless.enable = true;
@@ -77,5 +77,19 @@
       "audio"
     ];
   };
+  
+  users.extraUsers.m = {
+    isNormalUser = true;
+    uid = 1000;
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "scanner"
+      "audio"
+    ];
+  };
 
+  users.extraUsers.m2 = {
+    isNormalUser = true;
+  };
 }

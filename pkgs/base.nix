@@ -4,23 +4,29 @@ with import ../util;
 
 let
   node2nixPkgs = import ./node2nix {};
+  xmonad' = import ./xmonad {};
 in
 
-builtins.attrValues {
+
+lib.flatten (builtins.attrValues {
 
   aliases = mkAliases {
     elm-format = "${elmPackages.elm}/bin/elm-format-0.18";
   };
-  
+
+  desktop = [
+    xmonad'
+  ];
+
   web = [
-    telegram-cli
-    chromium
-    firefox
-    nodejs
-    tor
-    thunderbird
-    torbrowser
-    youtube-dl
+    #telegram-cli
+    #chromium
+    #firefox
+    #nodejs
+    #tor
+    #thunderbird
+    #torbrowser
+    #youtube-dl
   ];
   
   dev = [
@@ -40,6 +46,7 @@ builtins.attrValues {
     ghc
     elmPackages.elm
     node2nixPkgs.elm-oracle
+    haskellPackages.idris
   ];
   
   gfx = [
@@ -104,4 +111,5 @@ builtins.attrValues {
   vm = [
     virtualbox
   ];
-}
+
+})
