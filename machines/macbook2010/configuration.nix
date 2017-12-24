@@ -12,7 +12,7 @@ let
   # TODO: better namings / consistency here
   pkgs = import <nixpkgs> {};
   myPkgs = import ./pkgs;
-  xm = import ../../pkgs/xmonad {};
+  xm = import ../../pkgs/xmonad { inherit pkgs; };
   
 in with helpers; 
 

@@ -7,7 +7,7 @@ rec {
 
   mkAliases = def: builtins.attrValues (lib.mapAttrs mkAlias def);
 
-  writeBash = { name, src, help }:
+  writeBash = { name ? "script", src, help ? "no help available"}:
     writeScriptBin name ''
       #!${bash}/bin/bash -e
       if [ "$1" == "-h" ]

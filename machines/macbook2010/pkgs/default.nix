@@ -12,7 +12,7 @@ let
 
   basePkgs = import ../../../pkgs/base.nix;
  
-  pkgs = {
+  pkgs = rec {
   
     rebuildPkgs = writeBash {
       name = "rebuild-pkgs";
@@ -32,6 +32,19 @@ let
         nixos-rebuild $@ &&
         ${xm}/bin/xmonad --restart
       '';
+    };
+
+    sounds = stdenv.mkDerivation {
+      name = "sounds";
+      src = ../../../sounds;
+      buildCommand = ''cp -r $src $out'';
+    };
+  
+
+    withSound = writeBash {
+      name = "with-sound";
+      help = "Plays a sound after the provided executable succeeds.";  
+      src = ''$1 && ${sox}/bin/play ${sounds}/thrown.mp3'';
     };
 
   };
