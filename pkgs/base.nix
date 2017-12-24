@@ -4,7 +4,6 @@ with import ../util;
 
 let
   node2nixPkgs = import ./node2nix {};
-  xmonad' = import ./xmonad {};
 in
 
 
@@ -15,18 +14,18 @@ lib.flatten (builtins.attrValues {
   };
 
   desktop = [
-    xmonad'
+    
   ];
 
   web = [
-    #telegram-cli
-    #chromium
-    #firefox
-    #nodejs
-    #tor
-    #thunderbird
-    #torbrowser
-    #youtube-dl
+    telegram-cli
+    chromium
+    firefox
+    nodejs
+    tor
+    thunderbird
+    torbrowser
+    youtube-dl
   ];
   
   dev = [

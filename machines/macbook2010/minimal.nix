@@ -61,11 +61,6 @@
       Option "SoftButtonAreas" "50% 0 82% 0 0 0 0 0"
     '';
   };
-
-  services.xserver.windowManager.xmonad = {
-    enable                 = true;
-    enableContribAndExtras = true;
-  };
  
   users.extraUsers.mbock = {
     isNormalUser = true;

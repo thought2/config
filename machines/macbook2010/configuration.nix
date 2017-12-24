@@ -12,6 +12,8 @@ let
 #  pkgs = import ./pkgs {inherit lib; pkgs = import <nixpkgs> {};};
 
    pkgs = import <nixpkgs> {};
+   myPkgs = import ../../pkgs/base.nix;
+   xm = import ../../pkgs/xmonad {};
   
 in with helpers; 
 
@@ -22,8 +24,25 @@ rec {
 #    ./modules
   ];
 
-  environment.systemPackages = import ../../pkgs/base.nix;
+  environment.systemPackages = myPkgs;
 
+  /*
+  services.xserver.windowManager.xmonad = {
+    enable                 = true;
+    enableContribAndExtras = true;
+  };
+  */
+
+  services.xserver.windowManager = {
+    session = [{
+      name = "xmonad";
+      start = ''
+        ${xm}/bin/xmonad &
+        waitPID=$!
+      '';
+      }];
+  };
+  
   hardware = {
     bluetooth.enable = true;
     #sane.enable = true;
