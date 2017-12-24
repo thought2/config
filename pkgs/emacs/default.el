@@ -1,13 +1,39 @@
-;; globals 
+;;; default.el --- Emacs Configuration
 
-(defun lambda-interactive (f &rest args)
-  (lambda ()
-    (interactive)
-    (apply f args)))
+;; Copyright (C) 2017 by Michael Bock
 
-;; config sections
+;; Author: Michael Bock <me@thought2.de>
+
+;;{{{ GPL
+
+;; This file is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation; either version 2, or (at your option)
+;; any later version.
+
+;; This file is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to
+;; the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+;; Boston, MA 02111-1307, USA.
+
+;;}}}
+
+;;; Commentary:
+
+;; A person, work-in-progress Emacs configuration File.
+
+
+;;; Code:
+
 
 (defun cfg:recent-file ()
+  "Who can live without this feature?"
+
   (require 'recentf)
   (recentf-mode t)  
   (setq recentf-max-saved-items 50)
@@ -23,6 +49,8 @@
 
 
 (defun cfg:simpler ()
+  "Config to make Emacs look less noisy."
+  
   (setq inhibit-splash-screen t)
   (setq initial-scratch-message "") 
   (setq inhibit-startup-echo-area-message "m")
@@ -31,7 +59,10 @@
 
 
 (defun cfg:editing ()
+  "Config for general editing functionality."
+
   (defun duplicate-line ()
+    "Duplicates the current line."
     (interactive)
     (move-beginning-of-line 1)
     (kill-line)
@@ -39,9 +70,10 @@
     (open-line 1)
     (forward-line 1)
     (yank))
-
+  
   (global-set-key (kbd "C-c d") #'duplicate-line)
-  (global-set-key (kbd "C-c r") #'replace-string))
+  (global-set-key (kbd "C-c r") #'replace-string)
+  (global-set-key (kbd "C-c C-c") #'comment-or-uncomment-region))
 
 
 (defun cfg:paredit ()
@@ -140,12 +172,20 @@
   (global-set-key (kbd "C-c w") #'toggle-width))
 
 
-(defun cfg:typography () 
+(defun cfg:typography ()
+  "Config for typography."
+  
   (global-set-key (kbd "C-x C-+")
-                  (lambda-interactive 'text-scale-increase 0.2))
+                  (lambda ()
+                    "Bigger."
+                    (interactive)
+                    (text-scale-increase 0.2)))
 
   (global-set-key (kbd "C-x C--")
-                  (lambda-interactive 'text-scale-increase -0.2))
+                  (lambda ()
+                    "Smaller."
+                    (interactive)
+                    (text-scale-increase 0.2)))
 
   (set-frame-font "DejaVu Sans Mono")
   (set-face-attribute 'default nil :height 87))
