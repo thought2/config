@@ -7,4 +7,7 @@ import XMonad
 
 
 main = do
-    xmonad $ defaultConfig
+  xmonad $ defaultConfig
+    { focusedBorderColor = "#fc7474"
+    , borderWidth        = 1
+    }  

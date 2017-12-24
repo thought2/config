@@ -26,6 +26,7 @@ rec {
     tide
     web-mode
     direx
+    haskell-mode
   ]);
 
 }

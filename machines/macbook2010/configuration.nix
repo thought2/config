@@ -1,7 +1,7 @@
 { config,  lib, ... }:
  
 with lib;
-	
+ 	
 let
   helpers = rec {
     sepBySpace = concatStringsSep " ";
@@ -9,11 +9,10 @@ let
     sepByNewlinse = concatStringsSep "\n";
   };
 
-#  pkgs = import ./pkgs {inherit lib; pkgs = import <nixpkgs> {};};
-
-   pkgs = import <nixpkgs> {};
-   myPkgs = import ../../pkgs/base.nix;
-   xm = import ../../pkgs/xmonad {};
+  # TODO: better namings / consistency here
+  pkgs = import <nixpkgs> {};
+  myPkgs = import ./pkgs;
+  xm = import ../../pkgs/xmonad {};
   
 in with helpers; 
 

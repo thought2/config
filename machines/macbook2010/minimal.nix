@@ -35,7 +35,7 @@
   };
     
   system.autoUpgrade = {
-    channel = "https://nixos.org/channels/nixos-17.03";
+    channel = "https://nixos.org/channels/nixos-17.09";
     enable  = true;
   };
   

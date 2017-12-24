@@ -4,17 +4,18 @@ with import ../util;
 
 let
   node2nixPkgs = import ./node2nix {};
+  xmonad' = import ./xmonad {};
 in
 
 
 lib.flatten (builtins.attrValues {
 
   aliases = mkAliases {
-    elm-format = "${elmPackages.elm}/bin/elm-format-0.18";
+    #elm-format = "${elmPackages.elm}/bin/elm-format-0.18";
   };
 
   desktop = [
-    
+    xmonad'
   ];
 
   web = [
@@ -37,15 +38,15 @@ lib.flatten (builtins.attrValues {
     racket
     python
     zeal
-    stack
+    #stack
     openjdk
     leiningen
     git
     pkgs.boot
     ghc
-    elmPackages.elm
-    node2nixPkgs.elm-oracle
-    haskellPackages.idris
+    #elmPackages.elm
+    #node2nixPkgs.elm-oracle
+    #haskellPackages.idris
   ];
   
   gfx = [
@@ -60,7 +61,7 @@ lib.flatten (builtins.attrValues {
     nixops
     npm2nix
     nix-prefetch-git
-    cabal2nix
+    #cabal2nix
     nodePackages.node2nix
   ];
   

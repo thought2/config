@@ -35,7 +35,7 @@
   "Who can live without this feature?"
 
   (require 'recentf)
-  (recentf-mode t)  
+  (recentf-mode t)
   (setq recentf-max-saved-items 50)
 
   (defun find-file-ido ()
@@ -49,7 +49,7 @@
 
 
 (defun cfg:simpler ()
-  "Config to make Emacs look less noisy."
+  "Configuration to make Emacs look less noisy."
   
   (setq inhibit-splash-screen t)
   (setq initial-scratch-message "") 
@@ -59,7 +59,7 @@
 
 
 (defun cfg:editing ()
-  "Config for general editing functionality."
+  "Configuration for general editing functionality."
 
   (defun duplicate-line ()
     "Duplicates the current line."
@@ -77,6 +77,7 @@
 
 
 (defun cfg:paredit ()
+  "Paredit configuration."
   (defun duplicate-sexpr ()
     (interactive)
     (copy-region-as-kill (save-excursion
@@ -121,6 +122,7 @@
 
 
 (defun cfg:clojure ()
+  "Configuration for Clojure."
   (add-hook 'clojure-mode-hook #'aggressive-indent-mode)
   (add-hook 'clojure-mode-hook #'paredit-mode)
   (add-hook 'clojure-mode-hook #'eldoc-mode)
@@ -129,6 +131,7 @@
 
 
 (defun cfg:clojure-script ()
+  "Configuration for ClojureScript."
   (add-hook 'clojure-script-mode-hook #'aggressive-indent-mode)
   (add-hook 'clojure-script-mode-hook #'paredit-mode)
   (add-hook 'clojure-script-mode-hook #'eldoc-mode)
@@ -211,10 +214,10 @@
 
 
 (defun cfg:typescript ()
-
+  "TypeScript configuration."
+  
   (defun setup-tide-mode ()
-    (interactive)
-    
+    (interactive) 
     (tide-setup)
     (flycheck-mode +1)
     (setq flycheck-check-syntax-automatically '(save mode-enabled))
@@ -244,20 +247,37 @@
     ;;
     (setq sp-base-key-bindings 'smartparens)
 
-    ;; Always start smartparens mode in js-mode.
+    ;; Always start Smartparens mode in js-mode.
     (add-hook 'typescript-mode-hook #'smartparens-mode))
 
-  
+
+  ;; TODO: check inconsistency below: ' vs #'
   (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook 'typescript-mode-hook #'setup-tide-mode))
 
 
 (defun cfg:magit ()
+  "Magit configuration."
   (global-set-key (kbd "C-x g") 'magit-status)
   (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup))
 
 (defun cfg:direx ()
+  "Configuration of the tree-based file browser direx."
   (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory))
+
+(defun cfg:spelling ()
+  "General spelling configuration."
+
+  ;; enable spell checking for comments in all programming modes
+  (add-hook 'prog-mode-hook #'flyspell-prog-mode)
+
+  ;; FIXME: get impure path from nix configuration.
+  (setq ispell-personal-dictionary "/home/mbock/dev/config/aspell-words.pws"))
+
+(defun cfg:nix ()
+  "Nix configuration."
+
+  )
 
 (progn
   (cfg:simpler)
@@ -274,8 +294,10 @@
   (cfg:clojure-script)
   (cfg:cider)
   (cfg:shell)
+  (cfg:nix)
   (cfg:windows)
   (cfg:typography)
   (cfg:minibuffer)
-  (cfg:typescript))
+  (cfg:typescript)
+  (cfg:spelling))
 
