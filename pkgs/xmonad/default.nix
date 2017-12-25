@@ -17,14 +17,17 @@ let
     main = do
       xmonad $ defaultConfig
         { focusedBorderColor = "#fc7474"
-        , borderWidth        = 1
+        , borderWidth        = 2
         , modMask            = mod4Mask
         } `additionalKeys` myKeys
 
     myKeys =
       [ ((mod4Mask, xK_f),      spawn "${pkgs.firefox}/bin/firefox")
       , ((mod4Mask, xK_c),      spawn "${pkgs.chromium}/bin/chromium-browser")
+      , ((mod4Mask, xK_a),      spawn "${pkgs.chromium}/bin/chromium-browser --app='http://ddg.gg'")
       , ((mod4Mask, xK_e),      spawn "${pkgs.emacs}/bin/emacs")
+      , ((mod4Mask, xK_Return), spawn "${pkgs.xterm}/bin/xterm")
+
       ]
   '';
 in
