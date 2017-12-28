@@ -10,7 +10,8 @@ let
   };
 
   # TODO: better namings / consistency here
-  pkgs = import <nixpkgs> {};
+  o = import ../../pkgs/overlays;
+  pkgs = import (import <nixpkgs> {}).path { overlays = [ o ]; };
   myPkgs = import ./pkgs;
   xm = import ../../pkgs/xmonad { inherit pkgs; };
   
@@ -25,13 +26,17 @@ rec {
 
   environment.systemPackages = myPkgs;
 
+#  nixpkgs.overlays = [ o ];
+  
+#  networking.enableB43Firmware = true;
+
   /*
   services.xserver.windowManager.xmonad = {
     enable                 = true;
     enableContribAndExtras = true;
   };
   */
-
+  
   services.xserver.windowManager = {
     session = [{
       name = "xmonad";
@@ -94,8 +99,6 @@ rec {
 
   services.dbus.socketActivated = true;
 
-  services.emacs.enable = true;
-
   services.illum.enable = true;
   
   #services.midiController = {
@@ -104,6 +107,9 @@ rec {
   #};
 
   services.mpd.enable = true;
+
+  services.emacs.enable = true;
+  services.emacs.package = pkgs.emacs;
   
   services.mysql = {
     enable  = true;  
@@ -111,5 +117,5 @@ rec {
   };
   
   sound.mediaKeys.enable = true;  
- 
+
 }

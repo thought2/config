@@ -30,6 +30,10 @@
 
 ;;; Code:
 
+(defun mee ()
+  "Doo."
+  (interactive)
+  (message "am here"))
 
 (defun cfg:recent-file ()
   "Who can live without this feature?"
@@ -50,7 +54,7 @@
 
 (defun cfg:simpler ()
   "Configuration to make Emacs look less noisy."
-  
+
   (setq inhibit-splash-screen t)
   (setq initial-scratch-message "") 
   (setq inhibit-startup-echo-area-message "m")
@@ -70,7 +74,7 @@
     (open-line 1)
     (forward-line 1)
     (yank))
-  
+
   (global-set-key (kbd "C-c d") #'duplicate-line)
   (global-set-key (kbd "C-c r") #'replace-string)
   (global-set-key (kbd "C-c C-c") #'comment-or-uncomment-region))
@@ -148,7 +152,7 @@
 
 
 (defun cfg:windows ()
-  
+
   (defun set-window-abs-height (height)
     (enlarge-window (- height (window-total-height))))
 
@@ -161,7 +165,7 @@
       (set-window-abs-width (if (= (window-total-width) width)
                                 (- (frame-total-cols) width 1)
                               width))))
-  
+
   (defun toggle-height ()
     (interactive)
     (let ((height (round (/ (frame-total-lines) 4))))
@@ -170,14 +174,14 @@
                                height))))
 
   (windmove-default-keybindings)
-  
+
   (global-set-key (kbd "C-c h") #'toggle-height)
   (global-set-key (kbd "C-c w") #'toggle-width))
 
 
 (defun cfg:typography ()
   "Config for typography."
-  
+
   (global-set-key (kbd "C-x C-+")
                   (lambda ()
                     "Bigger."
@@ -188,10 +192,10 @@
                   (lambda ()
                     "Smaller."
                     (interactive)
-                    (text-scale-increase 0.2)))
+                    (text-scale-increase -0.2)))
 
   (set-frame-font "DejaVu Sans Mono")
-  (set-face-attribute 'default nil :height 87))
+  (set-face-attribute 'default nil :height 79))
 
 
 (defun cfg:language ()
@@ -215,7 +219,7 @@
 
 (defun cfg:typescript ()
   "TypeScript configuration."
-  
+
   (defun setup-tide-mode ()
     (interactive) 
     (tide-setup)
@@ -275,9 +279,43 @@
   (setq ispell-personal-dictionary "/home/mbock/dev/config/aspell-words.pws"))
 
 (defun cfg:nix ()
-  "Nix configuration."
+  "Nix configuration.")
 
-  )
+(defun cfg:mmm ()
+  "Configuration for MMM-Mode"
+
+  (require 'mmm-mode)
+  (require 'haskell-mode)
+  (require 'clojure-mode)
+
+  ;; (mmm-add-group 'nix-haskell
+  ;;                '((sh-command
+  ;;                   :submode haskell-mode
+  ;;                   :face mmm-output-submode-face                    
+  ;;                   :front "[^'a-zA-Z]/\\* haskell \\*/ ''[^']"
+  ;;                   :back "''[^$\\]"
+  ;;                   :include-front nil
+  ;;                   :include-back nil
+  ;;                   :front-offset 0
+  ;;                   :end-not-begin t
+  ;;                   )))
+
+  (mmm-add-group 'nix-clojure
+                 '((sh-command
+                    :submode haskell-mode
+                    :face mmm-output-submode-face                    
+                    :front "[^'a-zA-Z]/\\* haskell \\*/ ''[^']"
+                    :back "''[^$\\]"
+                    :include-front nil
+                    :include-back nil
+                    :front-offset 0
+                    :end-not-begin t
+                    )))
+
+  (setq mmm-global-mode 'maybe)
+  ;;(mmm-add-mode-ext-class 'nix-mode "\\.nix\\'" 'nix-haskell)
+  (mmm-add-mode-ext-class 'nix-mode "\\.nix\\'" 'nix-clojure)
+  (add-hook 'nix-mode-hook #'mmm-mode))
 
 (progn
   (cfg:simpler)
@@ -299,5 +337,8 @@
   (cfg:typography)
   (cfg:minibuffer)
   (cfg:typescript)
-  (cfg:spelling))
+  (cfg:spelling)
+  (cfg:mmm)
+  
+  )
 

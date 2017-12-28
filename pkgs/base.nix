@@ -15,14 +15,20 @@ lib.flatten (builtins.attrValues {
 
   aliases = mkAliases {
     #elm-format = "${elmPackages.elm}/bin/elm-format-0.18";
+    greyBg = "xsetroot -solid '#c5c8c9'";
+    blackBg = "xsetroot -solid '#000000'";
   };
+
+  custom = [
+    notify-play
+  ];
 
   desktop = [
     xmonad
   ];
 
   web = [
-    telegram-cli
+    tdesktop
     chromium
     firefox
     nodejs
@@ -34,6 +40,7 @@ lib.flatten (builtins.attrValues {
   
   dev = [
     emacs
+    emacs-client
     mysql
     cabal-install
     vim
@@ -73,6 +80,7 @@ lib.flatten (builtins.attrValues {
   ];
   
   cli = [
+    rxvt
     fish
     bash
     coreutils
