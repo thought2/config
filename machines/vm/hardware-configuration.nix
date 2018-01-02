@@ -6,7 +6,7 @@
 {
   imports = [ ];
 
-  boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ahci" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ahci" "sd_mod" ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
@@ -15,8 +15,13 @@
       fsType = "ext4";
     };
 
+  fileSystems."/mnt/dev" =
+    { device = "dev";
+      fsType = "vboxsf";
+    };
+
   swapDevices = [ ];
 
-  nix.maxJobs = lib.mkDefault 1;
+  nix.maxJobs = lib.mkDefault 2;
   virtualisation.virtualbox.guest.enable = true;
 }

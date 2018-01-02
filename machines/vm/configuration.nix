@@ -38,4 +38,6 @@ in
   environment = {
     inherit systemPackages;
   };
+
+  fileSystems."/mnt/dev".options = ["rw" "uid=1001" "gid=100"];
 }
