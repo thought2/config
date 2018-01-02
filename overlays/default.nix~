@@ -1,4 +1,4 @@
-with import ../../util;
+with import ../util;
 
 self: super: {
   emacs =

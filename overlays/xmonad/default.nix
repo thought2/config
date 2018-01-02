@@ -21,32 +21,33 @@ let
 
     --import XMonad.Layout.Gaps
     import XMonad.Layout.Spacing
-    
+
+    modm = mod4Mask
+
     main = do
       xmonad $ defaultConfig
         { focusedBorderColor = "#fc7474"
         , borderWidth        = 4
-        , modMask            = mod4Mask
+        , modMask            = modm
         , layoutHook         = layout
         } `additionalKeys` shortcuts
 
     shortcuts =
-      [ ((mod .|. ctrl,   xK_f),             spawn "${pkgs.firefox}/bin/firefox")                                
-      , ((mod .|. ctrl,   xK_c),             spawn "${pkgs.chromium}/bin/chromium-browser")                      
-      , ((mod .|. ctrl,   xK_a),             spawn "${pkgs.chromium}/bin/chromium-browser --app='http://ddg.gg'")
-      -- , ((mod .|. ctrl,   xK_e),             spawn "${pkgs.emacs}/bin/emacsclient --create-frame")
-      , ((mod .|. ctrl,   xK_e),             spawn "${pkgs.emacs}/bin/emacs")
-      , ((mod .|. ctrl,   xK_Return),        spawn "${pkgs.xterm}/bin/xterm")
-      , ((mod .|. ctrl,   xK_t),             spawn "${pkgs.tdesktop}/bin/telegram-desktop")
-      , ((mod .|. ctrl,   xK_f),             sendMessage $ JumpToLayout "Full")
-      , ((mod .|. ctrl,   xK_n),             spawn "${pkgs.xterm}/bin/xterm -e ${pkgs.networkmanager}/bin/nmtui")
+      [ ((modm .|. ctrl,   xK_f),             spawn "${pkgs.firefox}/bin/firefox")                                
+      , ((modm .|. ctrl,   xK_c),             spawn "${pkgs.chromium}/bin/chromium-browser")                      
+      , ((modm .|. ctrl,   xK_a),             spawn "${pkgs.chromium}/bin/chromium-browser --app='http://ddg.gg'")
+      -- , ((modm .|. ctrl,   xK_e),             spawn "${pkgs.emacs}/bin/emacsclient --create-frame")
+      , ((modm .|. ctrl,   xK_e),             spawn "${pkgs.emacs}/bin/emacs")
+      , ((modm .|. ctrl,   xK_Return),        spawn "${pkgs.xterm}/bin/xterm")
+      , ((modm .|. ctrl,   xK_t),             spawn "${pkgs.tdesktop}/bin/telegram-desktop")
+      , ((modm .|. ctrl,   xK_f),             sendMessage $ JumpToLayout "Full")
+      , ((modm .|. ctrl,   xK_n),             spawn "${pkgs.xterm}/bin/xterm -e ${pkgs.networkmanager}/bin/nmtui")
       
-      , ((mod .|. shift,                     xK_space), virtualScreens)
-      , ((mod .|. ctrl .|. shift, xK_space), rescreen)
+      , ((modm .|. shift,                     xK_space), virtualScreens)
+      , ((modm .|. ctrl .|. shift, xK_space), rescreen)
       ]
       where
         virtualScreens = layoutScreens 3 $ spacingWithEdge 10 $ TwoPane 0.55 0.45
-        mod            = mod4Mask
         ctrl           = controlMask
         shift          = shiftMask
         
