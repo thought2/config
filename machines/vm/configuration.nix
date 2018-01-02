@@ -39,5 +39,5 @@ in
     inherit systemPackages;
   };
 
-  fileSystems."/mnt/dev".options = ["rw" "uid=1001" "gid=100"];
+  fileSystems."/mnt/home".options = ["rw" "uid=1001" "gid=100"];
 }

@@ -15,8 +15,8 @@
       fsType = "ext4";
     };
 
-  fileSystems."/mnt/dev" =
-    { device = "dev";
+  fileSystems."/mnt/home" =
+    { device = "home";
       fsType = "vboxsf";
     };
 
