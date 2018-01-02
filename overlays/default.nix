@@ -1,43 +1,7 @@
 with import ../util;
 
 self: super: {
-  emacs =
-    let
-
-    defaultEl = ./emacs/default.el;
-
-    emacsConfig = super.runCommand "default.el" {} ''
-      mkdir -p $out/share/emacs/site-lisp
-      cp ${defaultEl} $out/share/emacs/site-lisp/default.el
-    '';
-  
-    in
-      super.emacsWithPackages (epkgs: with epkgs; [
-      emacsConfig
-      aggressive-indent
-      auto-complete
-      better-defaults
-      cider
-      clojure-mode
-      helm-dash
-      company
-      elm-mode
-      flycheck
-      flycheck-elm
-      #melpaPackages.nix-mode
-      mmm-mode
-      magit
-      paredit
-      smartparens
-      tide
-      web-mode
-      direx
-      haskell-mode
-      nixos-options
-      helm-nixos-options
-      company-nixos-options
-      nix-sandbox      
-    ]);
+  emacs = import ./emacs { pkgs = self; };
 
   emacs-client = let
     # FIXME: implement without roundtrip
