@@ -317,6 +317,11 @@
   (mmm-add-mode-ext-class 'nix-mode "\\.nix\\'" 'nix-clojure)
   (add-hook 'nix-mode-hook #'mmm-mode))
 
+(defun cfg:prettier ()
+  (setq prettier-js-args '("--tab-width" "2"
+                           "--trailing-comma" "all"
+                           "--single-quote" "true")))
+
 (progn
   (cfg:simpler)
   (cfg:language)
@@ -340,5 +345,6 @@
   (cfg:spelling)
   (cfg:mmm)
   
+  (cfg:prettier)
   )
 
