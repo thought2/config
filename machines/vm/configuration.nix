@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  overlay = import ../overlays;
+  overlay = import ../../overlays;
   pkgs = import (import <nixpkgs> {}).path { overlays = [ overlay ]; };
 
   systemPackages = import ../../pkgs/minimal.nix;
