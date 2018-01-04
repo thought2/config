@@ -322,6 +322,16 @@
                            "--trailing-comma" "all"
                            "--single-quote" "true")))
 
+(defun cfg:smartparens () 
+  (require 'smartparens)
+  (smartparens-global-strict-mode)
+
+  (global-set-key (kbd "C-<right>") 'sp-forward-slurp-sexp)
+  (global-set-key (kbd "C-<left>") 'sp-forward-barf-sexp)
+
+  (global-set-key (kbd "M-<left>") 'sp-backward-slurp-sexp)
+  (global-set-key (kbd "M-<right>") 'sp-backward-barf-sexp))
+
 (progn
   (cfg:simpler)
   (cfg:language)
@@ -346,5 +356,6 @@
   (cfg:mmm)
   
   (cfg:prettier)
+  (cfg:smartparens)
   )
 
