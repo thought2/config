@@ -2,7 +2,7 @@ with import ../util;
 
 let
   # TODO: check, if there is a better way to import overlays
-  o = import ./overlays;
+  o = import ../overlays;
   pkgs = import (import <nixpkgs> {}).path { overlays = [ o ]; };
 
   node2nixPkgs = import ./node2nix {};
