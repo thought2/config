@@ -25,6 +25,7 @@ in
 
   networking.hosts = {
     "127.0.0.1" = [ "hqrevenue.dev" ];
+    "192.168.1.200" = [ "hqrevenue.dev" ];
   };
 
   system.stateVersion = "17.09";
