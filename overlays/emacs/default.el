@@ -230,31 +230,45 @@
     (company-mode +1)
 
     ;; aligns annotation to the right hand side
-    (setq company-tooltip-align-annotations t)
+    (setq company-tooltip-align-annotations t))
 
-    ;; formats the buffer before saving
-    (add-hook 'before-save-hook 'tide-format-before-save)
+  ;; formats the buffer before saving
+  (add-hook 'before-save-hook 'tide-format-before-save)
+  
+  (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
-    (add-hook 'typescript-mode-hook #'setup-tide-mode)
-
-    ;; tsx
-
+  (defun tsx () 
     (require 'web-mode)
     (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
     (add-hook 'web-mode-hook
               (lambda ()
                 (when (string-equal "tsx" (file-name-extension buffer-file-name))
                   (setup-tide-mode))))
+    
     ;; enable typescript-tslint checker
-    (flycheck-add-mode 'typescript-tslint 'web-mode)
 
-    ;;
-    (setq sp-base-key-bindings 'smartparens)
-
-    ;; Always start Smartparens mode in js-mode.
-    (add-hook 'typescript-mode-hook #'smartparens-mode))
+    (flycheck-add-mode 'typescript-tslint 'web-mode))
 
 
+  (defun jsx ()
+    (require 'web-mode)
+    (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+    (add-hook 'web-mode-hook
+              (lambda ()
+                (when (string-equal "jsx" (file-name-extension buffer-file-name))
+                  (setup-tide-mode))))
+    ;; configure jsx-tide checker to run after your default jsx checker
+    (flycheck-add-mode 'javascript-eslint 'web-mode)
+    ;;(flycheck-add-next-checker 'javascript-eslint 'jsx-tide 'append)
+    )
+  
+  ;;
+
+  (tsx)
+  (jsx)
+  
+  (setq sp-base-key-bindings 'smartparens)  
+  (add-hook 'typescript-mode-hook #'smartparens-mode)
   ;; TODO: check inconsistency below: ' vs #'
   (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook 'typescript-mode-hook #'setup-tide-mode))
@@ -274,12 +288,16 @@
 
   ;; enable spell checking for comments in all programming modes
   (add-hook 'prog-mode-hook #'flyspell-prog-mode)
+  (add-hook 'text-mode-hook #'flyspell-mode)
 
   ;; FIXME: get impure path from nix configuration.
   (setq ispell-personal-dictionary "/home/mbock/dev/config/aspell-words.pws"))
 
 (defun cfg:nix ()
-  "Nix configuration.")
+  "Nix configuration."
+  ;;(require 'nix-mode)
+  ;;(add-to-list 'auto-mode-alist '("\\.nix" . nix-mode))
+  )
 
 (defun cfg:mmm ()
   "Configuration for MMM-Mode"
@@ -354,7 +372,6 @@
   (cfg:typescript)
   (cfg:spelling)
   (cfg:mmm)
-  
   (cfg:prettier)
   (cfg:smartparens)
   )
