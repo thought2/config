@@ -29,6 +29,7 @@ in
   };
 
   networking.firewall.allowedTCPPorts = [ 8000 ];
+  networking.firewall.enable = true;
 
   system.stateVersion = "17.09";
 
