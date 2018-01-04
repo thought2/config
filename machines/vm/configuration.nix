@@ -28,6 +28,8 @@ in
     "192.168.1.200" = [ "hqrevenue.dev" ];
   };
 
+  networking.firewall.allowedTCPPorts = [ 8000 ];
+
   system.stateVersion = "17.09";
 
   services.openssh.enable = true;
