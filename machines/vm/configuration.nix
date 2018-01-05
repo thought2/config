@@ -42,6 +42,8 @@ in
   '';
 
   environment.systemPackages = systemPkgs ++ localPkgs;
+
+  environment.shellAliases = {
   };
 
   fileSystems."/mnt/home".options = ["rw" "uid=1001" "gid=100"];
