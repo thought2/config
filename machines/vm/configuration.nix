@@ -4,7 +4,9 @@ let
   overlay = import ../../overlays;
   pkgs = import (import <nixpkgs> {}).path { overlays = [ overlay ]; };
 
-  systemPackages = import ../../pkgs/minimal.nix;
+  systemPkgs = import ../../pkgs/base.nix;
+  localPkgs = import ./pkgs { inherit pkgs; };
+
 in
 
 {
@@ -39,8 +41,7 @@ in
     binary-caches-parallel-connections = 40
   '';
 
-  environment = {
-    inherit systemPackages;
+  environment.systemPackages = systemPkgs ++ localPkgs;
   };
 
   fileSystems."/mnt/home".options = ["rw" "uid=1001" "gid=100"];
