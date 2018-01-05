@@ -6,7 +6,14 @@ in
 {
   time.timeZone = "Europe/Berlin";
 
-  
+  environment.shellAliases = {
+    "cd-tmp" = "cd $(${pkgs.coreutils}/bin/mktemp -d)";
+    "cd1" = "cd ..";
+    "cd2" = "cd ../..";
+    "cd3" = "cd ../../..";
+    "cd-" = "cd -";
+  };
+
   services.xserver = {
     enable              = true;
     layout              = "macintosh_vndr/de";
