@@ -4,9 +4,15 @@ let
   defaultEl = ./default.el;
 
   emacsConfig = pkgs.runCommand "default.el" {} ''
+  
+  mkEmacsConfig = configFile: pkgs.runCommand "default.el" {} ''
     mkdir -p $out/share/emacs/site-lisp
-    cp ${defaultEl} $out/share/emacs/site-lisp/default.el
+    cp ${configFile} $out/share/emacs/site-lisp/default.el
   '';
+
+  emacsConfig = mkEmacsConfig ./default.el;
+
+  emacsConfigMac = mkEmacsConfig ./mac-default.el;
 
   myEmacs = if isMac
     then pkgs.emacsMacport
@@ -41,3 +47,4 @@ in
     company-nixos-options
     nix-sandbox
 ])
+] ++ (if isMac then [emacsConfigMac] else []))
