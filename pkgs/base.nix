@@ -55,7 +55,8 @@ lib.flatten (builtins.attrValues {
     pkgs.boot
     ghc
     #elmPackages.elm
-    #node2nixPkgs.elm-oracle
+    node2nixPkgs.elm-oracle
+    node2nixPkgs.prettier
     #haskellPackages.idris
   ];
   
@@ -67,7 +68,6 @@ lib.flatten (builtins.attrValues {
   ];
   
   nix = [
-    nix-repl
     nixops
     npm2nix
     nix-prefetch-git
