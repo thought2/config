@@ -44,5 +44,6 @@ in
     nix-sandbox
     js2-mode
     prettier-js
+    indium
     emacsConfig
 ] ++ (if isMac then [emacsConfigMac] else []))
