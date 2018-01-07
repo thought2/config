@@ -1,4 +1,5 @@
 with import <nixpkgs> {};
+with lib;
 rec {
   mkAlias = name: command: writeScriptBin name ''
     #!${bash}/bin/bash
@@ -15,6 +16,8 @@ rec {
         else ${src}
       fi
     '';
+
+  mapIndexed = f: xs: zipListsWith f (range 0 (length xs)) xs;
 
   # FIXME: Upgrade to 17.9 and use the below function for writeBash
   
