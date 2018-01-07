@@ -30,11 +30,6 @@
 
 ;;; Code:
 
-(defun mee ()
-  "Doo."
-  (interactive)
-  (message "am here"))
-
 (defun cfg:recent-file ()
   "Who can live without this feature?"
 
