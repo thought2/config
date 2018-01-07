@@ -11,7 +11,7 @@
   
   users.extraUsers.root = {
     initialPassword = "root";
-    openssh.authorizedKeys.keys = [ (import ../keys.nix).two ];
+    openssh.authorizedKeys.keys = [ (import ../keys.nix).one ];
   };
 
 }
