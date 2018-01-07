@@ -265,7 +265,7 @@
   (setq sp-base-key-bindings 'smartparens)  
   (add-hook 'typescript-mode-hook #'smartparens-mode)
   ;; TODO: check inconsistency below: ' vs #'
-  (add-hook 'before-save-hook 'tide-format-before-save)
+  ;; (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook 'typescript-mode-hook #'setup-tide-mode))
 
 
