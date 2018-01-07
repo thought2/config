@@ -46,5 +46,7 @@ in
   environment.shellAliases = {
   };
 
+  nix.sshServe.enable = true;
+
   fileSystems."/mnt/home".options = ["rw" "uid=1001" "gid=100"];
 }
