@@ -27,7 +27,7 @@ in
 
   networking.hosts = {
     "127.0.0.1" = [ "hqrevenue.dev" ];
-    "192.168.1.200" = [ "hqrevenue.dev" ];
+    "192.168.56.101" = [ "hqrevenue.dev" ];
   };
 
   networking.firewall.allowedTCPPorts = [ 8000 ];
