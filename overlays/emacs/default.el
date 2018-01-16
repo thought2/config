@@ -100,7 +100,7 @@
 
 (defun cfg:elisp ()
   (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
-  (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
+  ;;(add-hook 'emacs-lisp-mode-hook #'paredit-mode)
   (add-hook 'emacs-lisp-mode-hook #'eldoc-mode)
   (add-hook 'emacs-lisp-mode-hook #'auto-complete-mode)
   (add-hook 'emacs-lisp-mode-hook #'company-mode))
@@ -114,7 +114,7 @@
   (add-hook 'cider-mode-hook #'company-mode)
 
   (add-hook 'cider-repl-mode-hook #'aggressive-indent-mode)
-  (add-hook 'cider-repl-mode-hook #'paredit-mode)
+  ;;(add-hook 'cider-repl-mode-hook #'paredit-mode)
   (add-hook 'cider-repl-mode-hook #'eldoc-mode)
   (add-hook 'cider-repl-mode-hook #'auto-complete-mode)
   (add-hook 'cider-repl-mode-hook #'company-mode))
@@ -123,7 +123,7 @@
 (defun cfg:clojure ()
   "Configuration for Clojure."
   (add-hook 'clojure-mode-hook #'aggressive-indent-mode)
-  (add-hook 'clojure-mode-hook #'paredit-mode)
+  ;;(add-hook 'clojure-mode-hook #'paredit-mode)
   (add-hook 'clojure-mode-hook #'eldoc-mode)
   (add-hook 'clojure-mode-hook #'auto-complete-mode)
   (add-hook 'clojure-mode-hook #'company-mode))
@@ -132,7 +132,7 @@
 (defun cfg:clojure-script ()
   "Configuration for ClojureScript."
   (add-hook 'clojure-script-mode-hook #'aggressive-indent-mode)
-  (add-hook 'clojure-script-mode-hook #'paredit-mode)
+  ;;(add-hook 'clojure-script-mode-hook #'paredit-mode)
   (add-hook 'clojure-script-mode-hook #'eldoc-mode)
   (add-hook 'clojure-script-mode-hook #'auto-complete-mode)
   (add-hook 'clojure-script-mode-hook #'company-mode))
@@ -198,7 +198,7 @@
 
 
 (defun cfg:minibuffer ()
-  (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
+  ;;  (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
   (add-hook 'eval-expression-minibuffer-setup-hook #'show-paren-mode))
 
 
@@ -228,7 +228,7 @@
     (setq company-tooltip-align-annotations t))
 
   ;; formats the buffer before saving
-  (add-hook 'before-save-hook 'tide-format-before-save)
+  ;;(add-hook 'before-save-hook 'tide-format-before-save)
   
   (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
@@ -237,7 +237,8 @@
     (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
     (add-hook 'web-mode-hook
               (lambda ()
-                (when (string-equal "tsx" (file-name-extension buffer-file-name))
+                (when (and buffer-file-name
+                           (string-equal "tsx" (file-name-extension buffer-file-name)))
                   (setup-tide-mode))))
     
     ;; enable typescript-tslint checker
@@ -250,7 +251,8 @@
     (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
     (add-hook 'web-mode-hook
               (lambda ()
-                (when (string-equal "jsx" (file-name-extension buffer-file-name))
+                (when (and buffer-file-name ;; might be nil
+                           (string-equal "jsx" (file-name-extension buffer-file-name)))
                   (setup-tide-mode))))
     ;; configure jsx-tide checker to run after your default jsx checker
     (flycheck-add-mode 'javascript-eslint 'web-mode)
@@ -337,13 +339,32 @@
 
 (defun cfg:smartparens () 
   (require 'smartparens)
+  (require 'smartparens-config)
   (smartparens-global-strict-mode)
+
+  (global-set-key (kbd "C-M-<right>") 'sp-forward-sexp)
+  (global-set-key (kbd "C-M-f") 'sp-forward-sexp)
+  (global-set-key (kbd "C-M-<left>") 'sp-backward-sexp)
+  (global-set-key (kbd "C-M-b") 'sp-backward-sexp)
+
+  
+  (global-set-key (kbd "C-M-w") (lambda () (interactive)
+                                  (sp-mark-sexp)
+                                  (sp-copy-sexp)))
+  
 
   (global-set-key (kbd "C-<right>") 'sp-forward-slurp-sexp)
   (global-set-key (kbd "C-<left>") 'sp-forward-barf-sexp)
 
   (global-set-key (kbd "M-<left>") 'sp-backward-slurp-sexp)
   (global-set-key (kbd "M-<right>") 'sp-backward-barf-sexp))
+
+(defun cfg:web-mode ()
+  (setq web-mode-code-indent-offset 2))
+
+(defun cfg:hydra ()
+  ""
+  )
 
 (progn
   (cfg:simpler)

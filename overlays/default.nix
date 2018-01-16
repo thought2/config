@@ -1,4 +1,6 @@
 with import ../util;
+with import <nixpkgs> {};
+with lib;
 
 self: super: {
   emacs = import ./emacs { pkgs = self; };
@@ -29,4 +31,11 @@ self: super: {
         ${super.sox}/bin/play -t mp3 ${soundFile}
       '';
     };
+
+  shorthands = mapAttrs writeShellScriptBin {
+    chrome-debug = "${super.chromium}/bin/chrome --remote-debugging-port=9222";
+    keyboard-de = "${self.xorg.setxkbmap}/bin/setxkbmap de -variant mac";
+    keyboard-us = "${self.xorg.setxkbmap}/bin/setxkbmap us -variant mac";
+  };
+
 }

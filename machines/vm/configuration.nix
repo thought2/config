@@ -41,7 +41,7 @@ in
     binary-caches-parallel-connections = 40
   '';
 
-  environment.systemPackages = systemPkgs ++ localPkgs;
+  environment.systemPackages = systemPkgs ++ localPkgs ++ (builtins.attrValues pkgs.shorthands);
 
   environment.shellAliases = {
   };
