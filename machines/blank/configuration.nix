@@ -16,8 +16,8 @@
   services.fail2ban.enable = true;
   
   users.extraUsers.root = {
-    initialPassword = "root";
-    openssh.authorizedKeys.keys = [ (import ../../keys.nix).two ];
+    initialPassword = "guest";
+    openssh.authorizedKeys.keys = [ (import ../../keys.nix).one ];
   };
 
 }
