@@ -41,6 +41,10 @@ self: super: {
                                    --audio-format mp3 \
                                    --output "%(title)s.%(ext)s"
     '';
+    test-buildvms = ''
+      CONFIG_DIR=${./..};
+      ${readFile ../test/machines.sh}
+    '';
   };
 
 }
