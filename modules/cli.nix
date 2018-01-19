@@ -30,10 +30,6 @@ in
 
   environment.systemPackages = with pkgs; [ emacs git pstree which coreutils ];
 
-  nix.extraOptions = ''
-    binary-caches-parallel-connections = 40
-  '';
-
   networking.extraHosts = ''
     46.38.233.235 netcup
   '';
