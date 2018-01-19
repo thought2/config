@@ -1,6 +1,7 @@
 let
   overlay = import ../overlays;
   pkgs = import (import <nixpkgs> {}).path { overlays = [ overlay ]; };
+  systemPkgs = import ../pkgs/base.nix;
 in
 
 {
@@ -25,11 +26,13 @@ in
       '';
       }];
   };
-  
+
   services.illum.enable = true;
 
   services.emacs.enable = true;
   services.emacs.package = pkgs.emacs;
 
-  sound.mediaKeys.enable = true;  
+  sound.mediaKeys.enable = true;
+
+  environment.systemPackges = systemPkgs ++ (builtins.attrValues pkgs.shorthands);
 }
