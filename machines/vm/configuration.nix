@@ -38,7 +38,7 @@ in
   services.openssh.enable = true;
 
   nix.extraOptions = ''
-    binary-caches-parallel-connections = 40
+#   binary-caches-parallel-connections = 40
   '';
 
   environment.systemPackages = systemPkgs ++ localPkgs ++ (builtins.attrValues pkgs.shorthands);

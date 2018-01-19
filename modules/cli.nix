@@ -13,7 +13,7 @@ in
     "cd-" = "cd -";
   };
 
-    users.extraUsers.root.initialPassword = "guest";
+  users.extraUsers.root.initialPassword = "guest";
 
   users.extraUsers.mbock = {
     initialPassword = "guest";
@@ -39,4 +39,7 @@ in
   '';
 
   nixpkgs.overlays = [ overlay ];
+
+  #system.autoUpgrade.channel = https://nixos.org/channels/nixos-17.09;
+  #system.autoUpgrade.enable = true;
 }

@@ -33,13 +33,14 @@ self: super: {
     };
 
   shorthands = mapAttrs writeShellScriptBin {
-    chrome-debug = "${super.chromium}/bin/chrome --remote-debugging-port=9222";
+    chrome-debug = "${super.chromium}/bin/chromium --remote-debugging-port=9222";
     keyboard-de = "${self.xorg.setxkbmap}/bin/setxkbmap de -variant mac";
     keyboard-us = "${self.xorg.setxkbmap}/bin/setxkbmap us -variant mac";
     youtube-dl-mp3 = ''
       ${youtube-dl}/bin/youtube-dl --extract-audio \
                                    --audio-format mp3 \
-                                   --output "%(title)s.%(ext)s"
+                                   --output "%(title)s.%(ext)s" \
+                                   $@
     '';
     test-buildvms = ''
       CONFIG_DIR=${./..};

@@ -110,7 +110,7 @@ lib.flatten (builtins.attrValues {
   ];
   
   office = [
-    libreoffice
+    #libreoffice
     aspellDicts.de
     aspellDicts.en
     aspell
