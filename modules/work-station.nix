@@ -34,5 +34,5 @@ in
 
   sound.mediaKeys.enable = true;
 
-  environment.systemPackges = systemPkgs ++ (builtins.attrValues pkgs.shorthands);
+  environment.systemPackages = systemPkgs ++ (builtins.attrValues pkgs.shorthands);
 }
