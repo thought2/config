@@ -362,6 +362,10 @@
 (defun cfg:web-mode ()
   (setq web-mode-code-indent-offset 2))
 
+(defun cfg:windmove ()
+  (when (fboundp 'windmove-default-keybindings)
+    (windmove-default-keybindings)))
+
 (defun cfg:hydra ()
   ""
   )
@@ -390,5 +394,6 @@
   (cfg:mmm)
   (cfg:prettier)
   (cfg:smartparens)
+  (cfg:windmove)
   )
 
