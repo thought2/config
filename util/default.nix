@@ -19,7 +19,7 @@ rec {
 
   mapIndexed = f: xs: zipListsWith f (range 0 (length xs)) xs;
 
-  getBin = pkg: binName: "${pkg}/bin/${binName}";
+  bin = pkg: binName: "${pkg}/bin/${binName}";
 
   sepBySpace = concatStringsSep " ";
 
