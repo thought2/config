@@ -2,23 +2,24 @@
 
 let
   
-  mkEmacsConfig = configFile: pkgs.runCommand "default.el" {} ''
+  mkEmacsConfig = emacs: configFile: pkgs.runCommand "default.el" {} ''
+
+    #validate
+    ${emacs}/bin/emacs --batch -l ${configFile}
+
+    #make
     mkdir -p $out/share/emacs/site-lisp
     cp ${configFile} $out/share/emacs/site-lisp/default.el
+
   '';
 
-  emacsConfig = mkEmacsConfig ./default.el;
-
-  emacsConfigMac = mkEmacsConfig ./mac-default.el;
-
-  myEmacs = if isMac
+  baseEmacs = if isMac
     then pkgs.emacsMacport
     else pkgs.emacs25;
 
-  emacsWithPackages = (pkgs.emacsPackagesNgGen myEmacs).emacsWithPackages;
+  buildEmacs = emacs: g: (pkgs.emacsPackagesNgGen emacs).emacsWithPackages g;
 
-in
-  emacsWithPackages (epkgs: with epkgs; [
+  emacsWithForeignPackages = buildEmacs baseEmacs (epkgs: with epkgs; [
     aggressive-indent
     auto-complete
     better-defaults
@@ -45,5 +46,12 @@ in
     js2-mode
     prettier-js
     indium
-    emacsConfig
-] ++ (if isMac then [emacsConfigMac] else []))
+  ]);
+
+in
+
+  buildEmacs emacsWithForeignPackages (x: [
+    (mkEmacsConfig emacsWithForeignPackages ./default.el)
+  ] ++ (if isMac then [
+    (mkEmacsConfig emacsWithForeignPackages ./mac-default.el)
+  ] else []))
