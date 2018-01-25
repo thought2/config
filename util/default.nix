@@ -19,6 +19,10 @@ rec {
 
   mapIndexed = f: xs: zipListsWith f (range 0 (length xs)) xs;
 
+  getBin = pkg: binName: "${pkg}/bin/${binName}";
+
+  sepBySpace = concatStringsSep " ";
+
   # FIXME: Upgrade to 17.9 and use the below function for writeBash
   
   #   writeTextFile {
