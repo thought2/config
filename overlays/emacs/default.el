@@ -395,5 +395,6 @@
   (cfg:prettier)
   (cfg:smartparens)
   (cfg:windmove)
+  (cfg:web-mode)
   )
 
