@@ -1,1 +1,1 @@
-["elm-format", "elm-oracle", "prettier"]
+["elm-format", "elm-oracle", "prettier", "cross-env"]

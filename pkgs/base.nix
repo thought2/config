@@ -57,6 +57,7 @@ lib.flatten (builtins.attrValues {
     #elmPackages.elm
     node2nixPkgs.elm-oracle
     node2nixPkgs.prettier
+    node2nixPkgs.cross-env
     #haskellPackages.idris
   ];
   
