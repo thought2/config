@@ -22,21 +22,10 @@ rec {
   bin = pkg: binName: "${pkg}/bin/${binName}";
 
   sepBySpace = concatStringsSep " ";
+  sepByColon = concatStringsSep ":";
 
-  # FIXME: Upgrade to 17.9 and use the below function for writeBash
-  
-  #   writeTextFile {
-  #     inherit name;
-  #     executable = true;
-  #     destination = "/bin/${name}";
-  #     text = ''
-  #       #!${stdenv.shell}
-  #       ${text}
-  #       '';
-  #     checkPhase = ''
-  #       ${stdenv.shell} -n $out/bin/${name}
-  #     '';
-  # }
-
-
+  withPath = dependencies: text: ''
+    PATH=${sepByColon (map (d: "${d}/bin") dependencies)}
+    ${text}
+  '';
 }
