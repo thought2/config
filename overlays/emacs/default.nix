@@ -4,10 +4,10 @@ let
   
   mkEmacsConfig = emacs: configFile: pkgs.runCommand "default.el" {} ''
 
-    #validate
+    # validate
     ${emacs}/bin/emacs --batch -l ${configFile}
 
-    #make
+    # make
     mkdir -p $out/share/emacs/site-lisp
     cp ${configFile} $out/share/emacs/site-lisp/default.el
 
@@ -19,7 +19,7 @@ let
 
   buildEmacs = emacs: g: (pkgs.emacsPackagesNgGen emacs).emacsWithPackages g;
 
-  emacsWithForeignPackages = buildEmacs baseEmacs (epkgs: with epkgs; [
+  foreignPkgs = (epkgs: with epkgs; [
     aggressive-indent
     auto-complete
     better-defaults
@@ -50,10 +50,12 @@ let
     elfeed
   ]);
 
+  emacsWithForeignPackages = buildEmacs baseEmacs foreignPkgs;
+
 in
 
-  buildEmacs emacsWithForeignPackages (x: [
-    (mkEmacsConfig emacsWithForeignPackages ./default.el)
-  ] ++ (if isMac then [
-    (mkEmacsConfig emacsWithForeignPackages ./mac-default.el)
-  ] else []))
+ buildEmacs baseEmacs (epkgs: (foreignPkgs epkgs) ++ [
+   (mkEmacsConfig emacsWithForeignPackages ./default.el)
+ ] ++ (if isMac then [
+   (mkEmacsConfig emacsWithForeignPackages ./mac-default.el)
+ ] else []))
