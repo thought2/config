@@ -47,6 +47,7 @@ let
     prettier-js
     indium
     yasnippet
+    elfeed
   ]);
 
 in
