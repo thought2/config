@@ -31,7 +31,6 @@ lib.flatten (builtins.attrValues {
     tdesktop
     chromium
     firefox
-    nodejs
     tor
     thunderbird
     torbrowser
