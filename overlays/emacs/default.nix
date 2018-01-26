@@ -46,6 +46,7 @@ let
     js2-mode
     prettier-js
     indium
+    yasnippet
   ]);
 
 in
