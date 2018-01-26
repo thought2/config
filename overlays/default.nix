@@ -58,6 +58,9 @@ self: super: {
     fdisk-disks = withPath [self.eject self.gnugrep]
       ''fdisk -l | grep "^Disk"'';
 
+    curl-dl = withPath [self.curl]
+      "curl -LkO $1";
+
   };
 
 }
