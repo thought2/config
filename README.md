@@ -9,5 +9,6 @@
 - include prettier (pypi2nix) / pre-commit
 - Mouse issue macbook2013
 - prettier on save
+- Summary in test script
 
 # DONE
