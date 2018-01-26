@@ -59,6 +59,10 @@ lib.flatten (builtins.attrValues {
     node2nixPkgs.prettier
     node2nixPkgs.cross-env
     #haskellPackages.idris
+    yarn
+    gitAndTools.gitflow
+    nodejs-8_x
+    elmPackages.elm
   ];
   
   gfx = [
