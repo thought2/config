@@ -52,8 +52,8 @@ self: super: {
       ${readFile ../test/machines.sh}
     '';
 
-    which-ls = withPath [self.which]
-      ''ls -laR $(which $1)'';
+    which-ls = withPath [self.which self.coreutils]
+      ''ls -laR $(which $0)'';
 
     fdisk-disks = withPath [self.eject self.gnugrep]
       ''fdisk -l | grep "^Disk"'';
