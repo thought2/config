@@ -25,7 +25,7 @@ rec {
   sepByColon = concatStringsSep ":";
 
   withPath = dependencies: text: ''
-    PATH=${sepByColon (map (d: "${d}/bin") dependencies)}
+    PATH=$PATH:${sepByColon (map (d: "${d}/bin") dependencies)}
     ${text}
   '';
 }

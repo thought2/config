@@ -53,7 +53,7 @@ self: super: {
     '';
 
     which-ls = withPath [self.which self.coreutils]
-      ''ls -laR $(which $0)'';
+      ''ls -laR $(which $1)'';
 
     fdisk-disks = withPath [self.eject self.gnugrep]
       ''fdisk -l | grep "^Disk"'';
