@@ -9,5 +9,7 @@
     efi.canTouchEfiVariables = true;
   };
 
+  networking.networkmanager.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 }
