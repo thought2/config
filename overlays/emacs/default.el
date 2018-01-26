@@ -370,6 +370,13 @@
   ""
   )
 
+(defun cfg:elfeed () 
+  (setq elfeed-feeds
+        '("http://nullprogram.com/feed/"
+          "http://planet.emacsen.org/atom.xml"
+          "http://www.taz.de/Krieg-in-Syrien-und-Irak/!t5007613;rss/"
+          "https://news.ycombinator.com/rss")))
+
 (progn
   (cfg:simpler)
   (cfg:language)
@@ -396,5 +403,6 @@
   (cfg:smartparens)
   (cfg:windmove)
   (cfg:web-mode)
+  (cfg:elfeed)
   )
 
