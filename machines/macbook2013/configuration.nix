@@ -1,7 +1,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/work-station.nix
+    ../../modules/laptop.nix
   ];
   
   boot.loader = {

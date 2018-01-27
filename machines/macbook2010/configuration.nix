@@ -6,13 +6,13 @@ let
   overlay = import ../../overlays;
   pkgs = import (import <nixpkgs> {}).path { overlays = [ overlay ]; };
 
-  systemPkgs = import ../../pkgs/base.nix;
   localPkgs = import ./pkgs { inherit pkgs; };
 
 in
 
 rec {
   imports = [
+    ../../modules/laptop.nix
     ./hardware-configuration.nix
   ];
 
@@ -47,42 +47,9 @@ rec {
 
   networking.enableB43Firmware = true;
 
-  environment.systemPackages = systemPkgs ++ (builtins.attrValues pkgs.shorthands);
-
   system.autoUpgrade = {
     channel = "https://nixos.org/channels/nixos-17.09";
     enable  = true;
-  };
-
-  services.xserver.synaptics = {
-    enable           = true;
-    dev              = "/dev/input/event*";
-    minSpeed         = "0.4";
-    maxSpeed         = "1.2";
-    accelFactor      = "0.035";
-    palmDetect       = true;
-    horizontalScroll = false;
-    twoFingerScroll  = true;
-    additionalOptions = ''
-      Option "TapButton3"      "2"
-      Option "ClickPad"        "true"
-      Option "SoftButtonAreas" "50% 0 82% 0 0 0 0 0"
-    '';
-  };
-
-  users.extraUsers.mbock = {
-    isNormalUser = true;
-    uid = 1001;
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-      "scanner"
-      "audio"
-    ];
-    # @FIXME: get from keys file
-    openssh.authorizedKeys.keys = [
-      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqLuEaHpnBRDzqsiYC9Cv7+N62hyYQ6udABmGNz/wiHrtd4X5/QYAx0IoohGZ74nXH5atufqKDe/bWAdIxVibDImPdSCKS6b70pi3Zp0ZMqhEuLLlL+6mVFnkCA1lgHEa+s6jlD2qpuarvWQUNM0AIOEXLVdQ9FqWDUkOWBe1oH//VplkCgkCDnUNv/wxOA84BumjQBn9yF6EUb5+nmbciU9rl1C7qHbm7JuhH/FgWhBmnQFPyaea2ML0jxKXCdteSi5RzCu9XXHQO72VebQ2JvgkkU5oft9z0/fQ+wvBn1HIA2uiy3yGLc0piM1icd1PpsrnhDfW+HK2fq4SZM2Kx"
-    ];
   };
 
   users.extraUsers.m = {
