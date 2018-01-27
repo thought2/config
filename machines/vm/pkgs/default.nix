@@ -11,7 +11,7 @@ let
 
       rm node_modules/pngquant-bin/vendor/pngquant
       ln -s ${bin pkgs.pngquant "pngquant"} node_modules/pngquant-bin/vendor/pngquant
-
+      
     '';
 
     hq-start = withPath [ pkgs.yarn ] "yarn start";
