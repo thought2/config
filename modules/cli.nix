@@ -13,6 +13,14 @@ in
     "cd-" = "cd -";
   };
 
+  environment.etc = {
+    gitconfig.source = pkgs.writeText "gitconfig" ''
+      [user]
+	name = Michael Bock
+      	email = me@thought2.de
+    '';
+  };
+
   users.extraUsers.root.initialPassword = "guest";
 
   users.extraUsers.mbock = {
