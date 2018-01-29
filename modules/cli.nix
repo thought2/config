@@ -34,6 +34,7 @@ in
       "audio"
     ];
     openssh.authorizedKeys.keys = with import ../keys.nix; [ one ];
+    home = "/home/mbock";
   };
 
   environment.systemPackages = with pkgs; [ emacs git pstree which coreutils ];
