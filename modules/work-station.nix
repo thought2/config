@@ -14,6 +14,13 @@ in
     layout              = "macintosh_vndr/de";
     exportConfiguration = true;
     xkbOptions          = "eurosign:e,shift:both_capslock,caps:none";
+
+    displayManager = {
+      sessionCommands = ''
+        ${pkgs.xorg.xrandr}/bin/xrandr --output eDP1 --mode 1440x900
+      '';
+      };
+
   };
 
   # TODO: this should work with an overlay as well
