@@ -5,6 +5,8 @@
   ]
 }:
 let
+  colors = import ../../data/colors.nix;
+
   config = /* haskell */ ''
     import XMonad hiding ( (|||) )
     import XMonad.Util.EZConfig(additionalKeys)
@@ -26,7 +28,7 @@ let
 
     main = do
       xmonad $ defaultConfig
-        { focusedBorderColor = "#fc7474"
+        { focusedBorderColor = "${colors.red}"
         , borderWidth        = 4
         , modMask            = modm
         , layoutHook         = layout
