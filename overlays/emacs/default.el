@@ -51,6 +51,8 @@
   "Configuration to make Emacs look less noisy."
 
   (setq inhibit-splash-screen t)
+  (setq inhibit-startup-screen t)
+  (setq inhibit-startup-message t)
   (setq initial-scratch-message "") 
   (setq inhibit-startup-echo-area-message "m")
   (blink-cursor-mode 0)
@@ -70,9 +72,15 @@
     (forward-line 1)
     (yank))
 
-  (global-set-key (kbd "C-c d") #'duplicate-line)
-  (global-set-key (kbd "C-c r") #'replace-string)
+  (global-set-key (kbd "C-c C-d") #'duplicate-line)
+  (global-set-key (kbd "C-c C-r") #'replace-string)
   (global-set-key (kbd "C-c C-c") #'comment-or-uncomment-region))
+
+
+(defun cfg:buffer ()
+  "Buffer configuration."
+
+  (global-set-key (kbd "C-c C-n") #'rename-buffer))
 
 
 (defun cfg:paredit ()
@@ -280,6 +288,7 @@
   "Configuration of the tree-based file browser direx."
   (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory))
 
+
 (defun cfg:spelling ()
   "General spelling configuration."
 
@@ -290,11 +299,13 @@
   ;; FIXME: get impure path from nix configuration.
   (setq ispell-personal-dictionary "/home/mbock/dev/config/aspell-words.pws"))
 
+
 (defun cfg:nix ()
   "Nix configuration."
   ;;(require 'nix-mode)
   ;;(add-to-list 'auto-mode-alist '("\\.nix" . nix-mode))
   )
+
 
 (defun cfg:mmm ()
   "Configuration for MMM-Mode"
@@ -332,10 +343,12 @@
   (mmm-add-mode-ext-class 'nix-mode "\\.nix\\'" 'nix-clojure)
   (add-hook 'nix-mode-hook #'mmm-mode))
 
+
 (defun cfg:prettier ()
   (setq prettier-js-args '("--tab-width" "2"
                            "--trailing-comma" "all"
                            "--single-quote" "true")))
+
 
 (defun cfg:smartparens () 
   (require 'smartparens)
@@ -359,16 +372,15 @@
   (global-set-key (kbd "M-<left>") 'sp-backward-slurp-sexp)
   (global-set-key (kbd "M-<right>") 'sp-backward-barf-sexp))
 
+
 (defun cfg:web-mode ()
   (setq web-mode-code-indent-offset 2))
+
 
 (defun cfg:windmove ()
   (when (fboundp 'windmove-default-keybindings)
     (windmove-default-keybindings)))
 
-(defun cfg:hydra ()
-  ""
-  )
 
 (defun cfg:elfeed () 
   (setq elfeed-feeds
@@ -404,5 +416,5 @@
   (cfg:windmove)
   (cfg:web-mode)
   (cfg:elfeed)
-  )
+  (cfg:buffer))
 
