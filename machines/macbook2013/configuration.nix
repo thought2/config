@@ -11,5 +11,7 @@
 
   networking.networkmanager.enable = true;
 
+  networking.enableB43Firmware = true;
+
   nixpkgs.config.allowUnfree = true;
 }
