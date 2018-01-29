@@ -35,4 +35,22 @@ in
   sound.mediaKeys.enable = true;
 
   environment.systemPackages = systemPkgs ++ (builtins.attrValues pkgs.shorthands);
+
+  programs.chromium = {
+    enable = true;
+    defaultSearchProviderSearchURL = "https://duckduckgo.com/?q={searchTerms}";
+    extensions = [
+      "fmkadmapgofadopljbjfkapdkoienihi" # React Developer Tools
+      "lmhkpmbekcpmknklioeibfkpmmfibljd" # Redux DevTools
+      "bfbameneiokkgbdmiekhjnmfkcnldhhm" # Web Developer
+      "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
+    ];
+    homepageLocation = "https://duckduckgo.com";
+    extraOpts = {
+      TranslateEnabled = false;
+      restoreOnStartup = 4;
+      NewTabPageLocation = "about:blank";
+      BookmarkBarEnabled = false;
+    };
+  };
 }
