@@ -58,8 +58,14 @@ self: super: {
     fdisk-disks = withPath [self.eject self.gnugrep]
       ''fdisk -l | grep "^Disk"'';
 
-    curl-dl = withPath [self.curl]
+          curl-dl = withPath [self.curl]
       "curl -LkO $1";
+
+    nixos-test = withPath [self.xmonad]
+      "nixos-rebuild test && xmonad --restart";
+
+    nixos-switch = withPath [self.xmonad]
+      "nixos-rebuild switch && xmonad --restart";
 
   };
 
