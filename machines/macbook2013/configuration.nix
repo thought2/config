@@ -6,6 +6,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/hq.nix
     ../../modules/laptop.nix
   ];
 

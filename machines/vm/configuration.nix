@@ -13,7 +13,7 @@ in
   imports =
     [
       ./hardware-configuration.nix
-      ../../modules/work-station.nix
+      ../../modules/hq.nix
     ];
 
   boot.loader.grub = {
