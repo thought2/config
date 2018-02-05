@@ -1,6 +1,7 @@
 {pkgs, ...}:
 {
   imports = [
+    ./hardware-configuration.nix
     ../../modules/init.nix
     ../../modules/webserver.nix
   ];
