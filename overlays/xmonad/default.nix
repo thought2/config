@@ -39,7 +39,7 @@ let
       , ((modm .|. ctrl,   xK_c),             spawn "${pkgs.chromium}/bin/chromium-browser")                      
       , ((modm .|. ctrl,   xK_a),             spawn "${pkgs.chromium}/bin/chromium-browser --app='http://ddg.gg'")
       -- , ((modm .|. ctrl,   xK_e),             spawn "${pkgs.emacs}/bin/emacsclient --create-frame")
-      , ((modm .|. ctrl,   xK_e),             spawn "${pkgs.emacs}/bin/emacs")
+      , ((modm .|. ctrl,   xK_e),             spawn "${pkgs.emacs}/bin/emacs --no-splash")
       , ((modm .|. ctrl,   xK_Return),        spawn "${pkgs.xterm}/bin/xterm")
       , ((modm .|. ctrl,   xK_t),             spawn "${pkgs.tdesktop}/bin/telegram-desktop")
       , ((modm .|. ctrl,   xK_f),             sendMessage $ JumpToLayout "Full")
