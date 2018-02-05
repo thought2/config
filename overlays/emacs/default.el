@@ -282,7 +282,17 @@
 (defun cfg:magit ()
   "Magit configuration."
   (global-set-key (kbd "C-x g") 'magit-status)
-  (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup))
+  (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+
+  (defun magit-delete-trailing-whitespace-from-file ()
+    "Remove whitespace from the current file."
+    (interactive)
+    (save-excursion
+      (magit-diff-visit-file-worktree (magit-file-at-point))
+      (delete-trailing-whitespace)
+      (save-buffer)
+      (kill-buffer))
+    (magit-refresh)))
 
 (defun cfg:direx ()
   "Configuration of the tree-based file browser direx."
