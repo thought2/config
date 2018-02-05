@@ -39,6 +39,8 @@ in
   services.emacs.enable = true;
   services.emacs.package = pkgs.emacs;
 
+  services.unclutter.enable = true;
+
   sound.mediaKeys.enable = true;
 
   environment.systemPackages = systemPkgs ++ (builtins.attrValues pkgs.shorthands);
