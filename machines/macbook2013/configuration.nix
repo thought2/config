@@ -16,8 +16,6 @@ in
 
   hardware.bluetooth.enable = true;
 
-  services.unclutter.enable = true;
-
   networking.networkmanager.enable = true;
 
   networking.enableB43Firmware = true;
