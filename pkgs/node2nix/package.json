@@ -1,1 +1,1 @@
-["elm-format", "elm-oracle", "prettier", "cross-env"]
+["elm-format", "elm-oracle", "prettier", "cross-env", "create-elm-app"]

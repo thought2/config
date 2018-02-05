@@ -47,16 +47,16 @@ lib.flatten (builtins.attrValues {
     racket
     python
     zeal
-    #stack
+    stack
     openjdk
     leiningen
     git
     pkgs.boot
     ghc
-    #elmPackages.elm
     node2nixPkgs.elm-oracle
     node2nixPkgs.prettier
     node2nixPkgs.cross-env
+    node2nixPkgs.create-elm-app
     #haskellPackages.idris
     yarn
     gitAndTools.gitflow
