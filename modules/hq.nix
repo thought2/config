@@ -50,6 +50,20 @@ let
         https://localhost:8000 \
     '';
 
+    hq-graph =
+      let
+        graph = pkgs.writeText "hq-graph" ''
+          digraph {
+            dev -> prerelease;
+            prerelease -> production;
+          }
+        '';
+        image = pkgs.runCommand "mkImage" {} ''
+          ${pkgs.graphviz}/bin/dot -Tpng ${graph} -o $out
+        '';
+      in
+        "${pkgs.feh}/bin/feh -B white -F ${image}";
+
   };
 in
 {
