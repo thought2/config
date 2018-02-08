@@ -14,7 +14,7 @@ let
   ];
 
   mkOut = i: x: {
-    urlPath = "/video/${toString i}";
+    urlPath = "/video${toString i}";
     dir = import (pkgs.fetchgit {
       url = "git://46.38.233.235:/video.git";
       sha256 = x.sha256;
