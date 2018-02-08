@@ -68,6 +68,27 @@ self: super: {
       "nixos-rebuild switch && xmonad --restart";
 
     nix-search = "nix-env -qa --description -P '.*'$1'.*' | cat";
+
+    test-webserver = withPath [self.curl] ''
+      set -e
+
+      PROTOCOL=${"\${PROTOCOL:-http}"}
+      PORT=${"\${PORT:-80}"}
+      HOST=${"\${HOST:-localhost}"}
+
+      function isOK {
+        URL_PATH=$1
+        URL=$PROTOCOL://$HOST:$PORT/$URL_PATH
+        echo "testing $URL"
+        STATUS=$(curl -kso /dev/null -Lw "%{http_code}" $URL)
+        echo $STATUS
+        [ $STATUS -eq 200 ]
+      }
+
+      isOK dust
+      isOK video
+      isOK video0
+    '';
   };
 
 }
