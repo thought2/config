@@ -15,6 +15,8 @@ in
     efi.canTouchEfiVariables = true;
   };
 
+  virtualisation.virtualbox.host.enable = true;
+
   hardware.bluetooth.enable = true;
 
   networking.networkmanager.enable = true;
