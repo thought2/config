@@ -1,6 +1,7 @@
 {
 
   imports = [
+    ./low-battery.nix
     ./work-station.nix
   ];
 
