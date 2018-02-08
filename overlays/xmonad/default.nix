@@ -44,7 +44,6 @@ let
       , ((modm .|. ctrl,   xK_t),             spawn "${pkgs.tdesktop}/bin/telegram-desktop")
       , ((modm .|. ctrl,   xK_f),             sendMessage $ JumpToLayout "Full")
       , ((modm .|. ctrl,   xK_n),             spawn "${pkgs.xterm}/bin/xterm -e ${pkgs.networkmanager}/bin/nmtui")
-      
       , ((modm .|. shift,                     xK_space), virtualScreens)
       , ((modm .|. ctrl .|. shift, xK_space), rescreen)
       ]
