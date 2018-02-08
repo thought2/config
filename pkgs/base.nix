@@ -54,14 +54,21 @@ lib.flatten (builtins.attrValues {
     pkgs.boot
     ghc
     node2nixPkgs.elm-oracle
-    node2nixPkgs.prettier
     node2nixPkgs.cross-env
     node2nixPkgs.create-elm-app
+    node2nixPkgs.pulp
+    node2nixPkgs.selenium-webdriver
+    node2nixPkgs.ts-node
+    nodePackages.prettier
+    nodePackages.bower
+    nodePackages.typescript
     #haskellPackages.idris
     yarn
+    chromedriver
     gitAndTools.gitflow
     nodejs-8_x
     elmPackages.elm
+    #purescript
   ];
   
   gfx = [
@@ -103,6 +110,7 @@ lib.flatten (builtins.attrValues {
   utils = [
     zip
     unzip
+    pass
   ];
   
   media = [

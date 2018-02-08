@@ -1,1 +1,9 @@
-["elm-format", "elm-oracle", "prettier", "cross-env", "create-elm-app"]
+[
+    "elm-format",
+    "elm-oracle",
+    "cross-env",
+    "create-elm-app",
+    "pulp",
+    "selenium-webdriver",
+    "ts-node"
+]
