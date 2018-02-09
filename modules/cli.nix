@@ -32,6 +32,7 @@ in
       "networkmanager"
       "scanner"
       "audio"
+      "vboxusers"
     ];
     openssh.authorizedKeys.keys = with import ../keys.nix; [ one ];
     home = "/home/mbock";
