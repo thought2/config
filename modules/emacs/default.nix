@@ -1,7 +1,9 @@
-{ pkgs ? import <nixpkgs> {}, isMac ? false }:
-
+{ config, lib, pkgs, ... }:
+with lib;
 let
-  
+
+  isMac = false;
+
   mkEmacsConfig = emacs: configFile: pkgs.runCommand "default.el" {} ''
 
     # validate
@@ -52,10 +54,25 @@ let
 
   emacsWithForeignPackages = buildEmacs baseEmacs foreignPkgs;
 
-in
+  baseInitFile = readFile ./default.el;
 
- buildEmacs baseEmacs (epkgs: (foreignPkgs epkgs) ++ [
-   (mkEmacsConfig emacsWithForeignPackages ./default.el)
- ] ++ (if isMac then [
-   (mkEmacsConfig emacsWithForeignPackages ./mac-default.el)
- ] else []))
+  initFile = (pkgs.writeText "default.el" (baseInitFile + config.programs.emacs.init));
+
+  emacs = buildEmacs baseEmacs (epkgs: (foreignPkgs epkgs) ++ [
+    (mkEmacsConfig emacsWithForeignPackages initFile)
+  ] ++ (if isMac then [
+    (mkEmacsConfig emacsWithForeignPackages ./mac-default.el)
+  ] else []));
+
+  overlay = self: super: {
+    inherit emacs;
+  };
+in
+{
+  options.programs.emacs.init = mkOption {
+    type = types.string;
+    default = "";
+  };
+
+  config.nixpkgs.overlays = [overlay];
+}

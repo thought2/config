@@ -1,9 +1,9 @@
 with import ../util;
 with import <nixpkgs> {};
 with lib;
+with config;
 
 self: super: {
-  emacs = import ./emacs { pkgs = self; };
 
   emacs-client = let
     # FIXME: implement without roundtrip

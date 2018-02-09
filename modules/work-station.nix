@@ -1,13 +1,17 @@
+{ pkgs, ... }:
+
 let
   overlay = import ../overlays;
-  pkgs = import (import <nixpkgs> {}).path { overlays = [ overlay ]; };
   systemPkgs = import ../pkgs/base.nix;
 in
 
 {
   imports = [
     ./cli.nix
+    ./emacs
   ];
+
+  nixpkgs.overlays = [ overlay ];
 
   services.xserver = {
     enable              = true;
