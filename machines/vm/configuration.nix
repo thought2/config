@@ -1,10 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  overlay = import ../../overlays;
-  pkgs = import (import <nixpkgs> {}).path { overlays = [ overlay ]; };
 
-  systemPkgs = import ../../pkgs/base.nix;
   localPkgs = import ./pkgs { inherit pkgs; };
 
 in
@@ -41,7 +38,7 @@ in
 #   binary-caches-parallel-connections = 40
   '';
 
-  environment.systemPackages = systemPkgs ++ localPkgs ++ (builtins.attrValues pkgs.shorthands);
+  environment.systemPackages = localPkgs;
 
   environment.shellAliases = {
   };

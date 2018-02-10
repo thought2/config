@@ -1,17 +1,17 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 let
-  overlay = import ../overlays;
-  systemPkgs = import ../pkgs/base.nix;
+  systemPkgs = import ../pkgs/base.nix { inherit pkgs; };
 in
 
+with lib;
 {
   imports = [
     ./cli.nix
     ./emacs
-  ];
-
-  nixpkgs.overlays = [ overlay ];
+  ] ++ (let
+    path = ../../private-config/default.nix;
+  in if pathExists path then [ path ] else []);
 
   services.xserver = {
     enable              = true;

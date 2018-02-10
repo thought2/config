@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
-  overlay = import ../overlays;
+  overlay = import ../overlays {inherit config; };
 in
 {
   time.timeZone = "Europe/Berlin";

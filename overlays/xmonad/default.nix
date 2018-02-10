@@ -7,7 +7,7 @@
 let
   colors = import ../../data/colors.nix;
 
-  config = /* haskell */ ''
+  xmonadConfig = /* haskell */ ''
     import XMonad hiding ( (|||) )
     import XMonad.Util.EZConfig(additionalKeys)
     import XMonad.Layout.NoBorders

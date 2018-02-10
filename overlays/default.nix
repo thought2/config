@@ -1,8 +1,8 @@
 with import ../util;
 with import <nixpkgs> {};
 with lib;
-with config;
 
+{ config, ... }:
 self: super: {
 
   emacs-client = let
@@ -14,7 +14,7 @@ self: super: {
     src = ''${self.emacs}/bin/emacsclient --create-frame'';
   };
 
-  xmonad = import ./xmonad { pkgs = self; };
+  xmonad = import ./xmonad { pkgs = self; inherit config; };
 
   notify-play =
     let
