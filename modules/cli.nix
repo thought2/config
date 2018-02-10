@@ -13,14 +13,6 @@ in
     "cd-" = "cd -";
   };
 
-  environment.etc = {
-    gitconfig.source = pkgs.writeText "gitconfig" ''
-      [user]
-	name = Michael Bock
-      	email = me@thought2.de
-    '';
-  };
-
   users.extraUsers.root.initialPassword = "guest";
 
   users.extraUsers.mbock = {
@@ -39,10 +31,6 @@ in
   };
 
   environment.systemPackages = with pkgs; [ emacs git pstree which coreutils ];
-
-  networking.extraHosts = ''
-    46.38.233.235 netcup
-  '';
 
   nixpkgs.overlays = [ overlay ];
 
