@@ -35,6 +35,7 @@ let
     melpaPackages.nix-mode
     mmm-mode
     magit
+    magit-gitflow
     paredit
     smartparens
     tide
