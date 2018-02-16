@@ -1,5 +1,6 @@
 { config, lib, pkgs, ... }:
 with lib;
+with import ../../util;
 let
 
   isMac = false;
@@ -21,6 +22,16 @@ let
 
   buildEmacs = emacs: g: (pkgs.emacsPackagesNgGen emacs).emacsWithPackages g;
 
+  pairedConf = with pkgs; with emacs25PackagesNg;
+    [ [ [ magit magit-gitflow ]
+        ''
+        (with-eval-after-load 'magit
+          (require 'magit-gitflow)
+          (add-hook 'magit-mode-hook 'turn-on-magit-gitflow))
+        ''
+      ]
+    ];
+
   foreignPkgs = (epkgs: with epkgs; [
     aggressive-indent
     auto-complete
@@ -35,7 +46,6 @@ let
     melpaPackages.nix-mode
     mmm-mode
     magit
-    magit-gitflow
     paredit
     smartparens
     tide
@@ -51,13 +61,20 @@ let
     indium
     yasnippet
     elfeed
-  ]);
+  ] ++ concatLists (map first pairedConf));
 
   emacsWithForeignPackages = buildEmacs baseEmacs foreignPkgs;
 
   baseInitFile = readFile ./default.el;
 
-  initFile = (pkgs.writeText "default.el" (baseInitFile + config.programs.emacs.init));
+  initFile =
+    let
+      text =
+        baseInitFile +
+        config.programs.emacs.init +
+        sepByNl (map second pairedConf);
+    in
+      pkgs.writeText "default.el" text;
 
   emacs = buildEmacs baseEmacs (epkgs: (foreignPkgs epkgs) ++ [
     (mkEmacsConfig emacsWithForeignPackages initFile)
