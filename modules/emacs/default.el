@@ -25,7 +25,7 @@
 
 ;;; Commentary:
 
-;; A person, work-in-progress Emacs configuration File.
+;; A work-in-progress Emacs configuration File.
 
 
 ;;; Code:
@@ -384,7 +384,8 @@
 
 
 (defun cfg:web-mode ()
-  (setq web-mode-code-indent-offset 2))
+  (setq web-mode-code-indent-offset 2)
+  (add-hook 'typescript-mode-hook #'prettier-js-mode))
 
 
 (defun cfg:windmove ()

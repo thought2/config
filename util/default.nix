@@ -23,6 +23,7 @@ rec {
 
   sepBySpace = concatStringsSep " ";
   sepByColon = concatStringsSep ":";
+  sepByNl = concatStringsSep "\n";
 
   withPath = dependencies: text: ''
     PATH=$PATH:${sepByColon (map (d: "${d}/bin") dependencies)}
@@ -52,4 +53,7 @@ rec {
     in
       zeros + numbers;
 
+  first = head;
+
+  second = xs: head (tail xs);
 }

@@ -43,7 +43,7 @@ lib.flatten (builtins.attrValues {
     cabal-install
     vim
     gcc
-    racket
+#   racket
     python
     zeal
     stack
@@ -54,7 +54,7 @@ lib.flatten (builtins.attrValues {
     ghc
     node2nixPkgs.elm-oracle
     node2nixPkgs.cross-env
-    node2nixPkgs.create-elm-app
+#   node2nixPkgs.create-elm-app
     node2nixPkgs.pulp
     node2nixPkgs.selenium-webdriver
     node2nixPkgs.ts-node
