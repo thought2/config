@@ -22,16 +22,6 @@ let
 
   buildEmacs = emacs: g: (pkgs.emacsPackagesNgGen emacs).emacsWithPackages g;
 
-  pairedConf = with pkgs; with emacs25PackagesNg;
-    [ [ [ magit magit-gitflow ]
-        ''
-        (with-eval-after-load 'magit
-          (require 'magit-gitflow)
-          (add-hook 'magit-mode-hook 'turn-on-magit-gitflow))
-        ''
-      ]
-    ];
-
   foreignPkgs = (epkgs: with epkgs; [
     aggressive-indent
     auto-complete
@@ -61,7 +51,7 @@ let
     indium
     yasnippet
     elfeed
-  ] ++ concatLists (map first pairedConf));
+  ] ++ config.programs.emacs.pkgs);
 
   emacsWithForeignPackages = buildEmacs baseEmacs foreignPkgs;
 
@@ -71,8 +61,7 @@ let
     let
       text =
         baseInitFile +
-        config.programs.emacs.init +
-        sepByNl (map second pairedConf);
+        config.programs.emacs.init;
     in
       pkgs.writeText "default.el" text;
 
@@ -92,5 +81,22 @@ in
     default = "";
   };
 
+  options.programs.emacs.pkgs = mkOption {
+    type = types.listOf types.package;
+    default = [];
+  };
+
   config.nixpkgs.overlays = [overlay];
+
+  imports = with pkgs.emacs25PackagesNg;
+    [ { programs.emacs =
+        { pkgs = [ magit magit-gitflow ];
+          init = ''
+          (with-eval-after-load 'magit
+            (require 'magit-gitflow)
+            (add-hook 'magit-mode-hook 'turn-on-magit-gitflow))
+          '';
+        };
+      }
+    ];
 }
