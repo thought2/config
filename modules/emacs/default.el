@@ -25,7 +25,7 @@
 
 ;;; Commentary:
 
-;; A person, work-in-progress Emacs configuration File.
+;; A work-in-progress Emacs configuration File.
 
 
 ;;; Code:

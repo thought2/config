@@ -22,45 +22,13 @@ let
 
   buildEmacs = emacs: g: (pkgs.emacsPackagesNgGen emacs).emacsWithPackages g;
 
-  foreignPkgs = (epkgs: with epkgs; [
-    aggressive-indent
-    auto-complete
-    better-defaults
-    cider
-    clojure-mode
-    helm-dash
-    company
-    elm-mode
-    flycheck
-    flycheck-elm
-    melpaPackages.nix-mode
-    mmm-mode
-    magit
-    paredit
-    smartparens
-    tide
-    web-mode
-    direx
-    haskell-mode
-    nixos-options
-    helm-nixos-options
-    company-nixos-options
-    nix-sandbox
-    js2-mode
-    prettier-js
-    indium
-    yasnippet
-    elfeed
-  ] ++ config.programs.emacs.pkgs);
+  foreignPkgs = (epkgs: config.programs.emacs.pkgs);
 
   emacsWithForeignPackages = buildEmacs baseEmacs foreignPkgs;
-
-  baseInitFile = readFile ./default.el;
 
   initFile =
     let
       text =
-        baseInitFile +
         config.programs.emacs.init;
     in
       pkgs.writeText "default.el" text;
@@ -96,6 +64,40 @@ in
             (require 'magit-gitflow)
             (add-hook 'magit-mode-hook 'turn-on-magit-gitflow))
           '';
+        };
+      }
+      { programs.emacs =
+        { pkgs =
+          [ aggressive-indent
+            auto-complete
+            better-defaults
+            cider
+            clojure-mode
+            helm-dash
+            company
+            elm-mode
+            flycheck
+            flycheck-elm
+            melpaPackages.nix-mode
+            mmm-mode
+            magit
+            paredit
+            smartparens
+            tide
+            web-mode
+            direx
+            haskell-mode
+            nixos-options
+            helm-nixos-options
+            company-nixos-options
+            nix-sandbox
+            js2-mode
+            prettier-js
+            indium
+            yasnippet
+            elfeed
+          ];
+          init = readFile ./default.el;
         };
       }
     ];
