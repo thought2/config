@@ -20,9 +20,14 @@
   (let* ((name (gethash "name" x))
          (kbd (gethash "kbd" x))
          (next-path (cons name path)))
-    (or (when-let ((pkg (gethash "pkg" x)))
+    (or (when-let ((pkg (gethash "pkg" x))
+                   (command (generate-hydra:make-name () next-path))
+                   (interact (or (gethash "interact" x) "")))
           `(,kbd
-            (shell-command ,(generate-hydra:make-name () next-path))
+            (call-interactively
+             (lambda (&rest args)
+               (interactive ,interact)
+               (shell-command (string-join (cons ,command args) " "))))
             ,name
             :exit
             t))

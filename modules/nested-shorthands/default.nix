@@ -11,7 +11,7 @@ let
 
   #@TODO: maybe better work with symlinks here
   wrap = name: pkg: pkgs.writeShellScriptBin name ''
-    ${pkg}/bin/${"*"}
+    ${pkg}/bin/${"*"} $@
   '';
 
   getPaths = path: xs:

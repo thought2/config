@@ -92,6 +92,21 @@ with lib;
           ];
       }
 
+      { name = "nix";
+        kbd = "n";
+        children =
+          [ rec
+            { name = "search";
+              kbd = "s";
+              interact = "sPkg: ";
+              pkg = writeShellScriptBin name ''
+                nix-env -qa --description -P '.'*$1'.*' | cat
+              '';
+            }
+          ];
+      }
+
+
       rec
       { name = "youtube-dl-mp3";
         kbd = "y";
@@ -103,7 +118,21 @@ with lib;
           $1
         '';
       }
+
+      rec
+      { name = "notify-play";
+        kbd = "x";
+        pkg =
+          let
+            soundFile = pkgs.fetchurl
+              { url = "https://notificationsounds.com/notification-sounds/plucky-550/download/mp3";
+                name = "plucky.mp3";
+                sha256 = "0qvg85zvlx5dcp4fbngpqa4ml3nd62lyyldhnwb00i1q1w4p82cp";
+              };
+          in
+            writeShellScriptBin name ''
+              ${pkgs.sox}/bin/play -t mp3 ${soundFile}
+            '';
+      }
     ];
-
-
 }

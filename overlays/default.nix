@@ -16,22 +16,6 @@ self: super: {
 
   xmonad = import ./xmonad { pkgs = self; inherit config; };
 
-  notify-play =
-    let
-      soundFile = super.fetchurl {
-        url = "https://notificationsounds.com/notification-sounds/plucky-550/download/mp3";
-        name = "plucky.mp3";
-        sha256 = "0qvg85zvlx5dcp4fbngpqa4ml3nd62lyyldhnwb00i1q1w4p82cp";
-      };
-    in
-    writeBash {
-      name = "notify-play";
-      help = "Plays a notification sound.";
-      src = ''
-        ${super.sox}/bin/play -t mp3 ${soundFile}
-      '';
-    };
-
   shorthands = mapAttrs writeShellScriptBin {
 
     chrome-debug = "${super.chromium}/bin/chromium --remote-debugging-port=9222";

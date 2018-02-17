@@ -19,7 +19,6 @@ lib.flatten (builtins.attrValues {
   };
 
   custom = [
-    notify-play
   ];
 
   desktop = [
