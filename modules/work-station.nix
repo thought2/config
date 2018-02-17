@@ -19,7 +19,7 @@ with lib;
     enable              = true;
     layout              = "macintosh_vndr/de";
     exportConfiguration = true;
-    xkbOptions          = "eurosign:e,shift:both_capslock,caps:none";
+    xkbOptions          = "eurosign:e,caps:none";
 
     displayManager = {
       sessionCommands = ''

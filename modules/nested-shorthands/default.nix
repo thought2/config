@@ -45,8 +45,12 @@ in
           (require 'hydra)
           ${readFile ./default.el}
           (generate-hydra:main '("hydra" "gen") "${data}")
-          (global-set-key (kbd "C-c C-f") #'hydra-gen/body)
+          (global-set-key '[8711] #'hydra-gen/body)
         '';
     pkgs = [ pkgs.emacs25PackagesNg.hydra ];
   };
+
+  config.services.xserver.displayManager.sessionCommands = ''
+    ${pkgs.xorg.xmodmap}/bin/xmodmap -e "clear lock" -e "! Caps Lock -> Nabla" -e "keycode 66 = nabla"
+  '';
 }
