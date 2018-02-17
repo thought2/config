@@ -36,10 +36,6 @@ self: super: {
 
     chrome-debug = "${super.chromium}/bin/chromium --remote-debugging-port=9222";
 
-    keyboard-de = "${self.xorg.setxkbmap}/bin/setxkbmap de -variant mac";
-
-    keyboard-us = "${self.xorg.setxkbmap}/bin/setxkbmap us -variant mac";
-
     youtube-dl-mp3 = ''
       ${self.youtube-dl}/bin/youtube-dl --extract-audio \
                                         --audio-format mp3 \
