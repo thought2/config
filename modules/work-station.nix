@@ -10,7 +10,7 @@ with lib;
   imports = [
     ./cli.nix
     ./emacs
-    ./nested-shorthands.nix
+    ./nested-shorthands
   ] ++ (let
     path = ../../private-config/default.nix;
   in if pathExists path then [ path ] else []);
@@ -94,6 +94,7 @@ with lib;
 
       rec
       { name = "youtube-dl-mp3";
+        kbd = "y";
         pkg = writeShellScriptBin name ''
           ${pkgs.youtube-dl}/bin/youtube-dl
           --extract-audio \
@@ -103,5 +104,6 @@ with lib;
         '';
       }
     ];
+
 
 }
