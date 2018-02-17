@@ -1,17 +1,19 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 let
-  overlay = import ../overlays;
-  systemPkgs = import ../pkgs/base.nix;
+  systemPkgs = import ../pkgs/base.nix { inherit pkgs; };
 in
 
+with pkgs;
+with lib;
 {
   imports = [
     ./cli.nix
     ./emacs
-  ];
-
-  nixpkgs.overlays = [ overlay ];
+    ./nested-shorthands
+  ] ++ (let
+    path = ../../private-config/default.nix;
+  in if pathExists path then [ path ] else []);
 
   services.xserver = {
     enable              = true;
@@ -66,4 +68,42 @@ in
       BookmarkBarEnabled = false;
     };
   };
+
+  nested-shorthands =
+    [
+      { name = "keyboard";
+        kbd = "k";
+        children =
+          [ rec
+            { name = "de";
+              kbd = "d";
+              pkg = writeShellScriptBin name ''
+                ${pkgs.xorg.setxkbmap}/bin/setxkbmap de -variant mac
+              '';
+            }
+
+            rec
+            { name = "us";
+              kbd = "u";
+              pkg = writeShellScriptBin name ''
+                ${pkgs.xorg.setxkbmap}/bin/setxkbmap us -variant mac
+              '';
+            }
+          ];
+      }
+
+      rec
+      { name = "youtube-dl-mp3";
+        kbd = "y";
+        pkg = writeShellScriptBin name ''
+          ${pkgs.youtube-dl}/bin/youtube-dl
+          --extract-audio \
+          --audio-format mp3 \
+          --output "%(title)s.%(ext)s" \
+          $1
+        '';
+      }
+    ];
+
+
 }

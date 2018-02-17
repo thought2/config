@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
-  overlay = import ../overlays;
+  overlay = import ../overlays {inherit config; };
 in
 {
   time.timeZone = "Europe/Berlin";
@@ -11,14 +11,6 @@ in
     "cd2" = "cd ../..";
     "cd3" = "cd ../../..";
     "cd-" = "cd -";
-  };
-
-  environment.etc = {
-    gitconfig.source = pkgs.writeText "gitconfig" ''
-      [user]
-	name = Michael Bock
-      	email = me@thought2.de
-    '';
   };
 
   users.extraUsers.root.initialPassword = "guest";
@@ -39,10 +31,6 @@ in
   };
 
   environment.systemPackages = with pkgs; [ emacs git pstree which coreutils ];
-
-  networking.extraHosts = ''
-    46.38.233.235 netcup
-  '';
 
   nixpkgs.overlays = [ overlay ];
 

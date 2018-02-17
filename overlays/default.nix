@@ -1,8 +1,8 @@
 with import ../util;
 with import <nixpkgs> {};
 with lib;
-with config;
 
+{ config, ... }:
 self: super: {
 
   emacs-client = let
@@ -14,7 +14,7 @@ self: super: {
     src = ''${self.emacs}/bin/emacsclient --create-frame'';
   };
 
-  xmonad = import ./xmonad { pkgs = self; };
+  xmonad = import ./xmonad { pkgs = self; inherit config; };
 
   notify-play =
     let
@@ -35,10 +35,6 @@ self: super: {
   shorthands = mapAttrs writeShellScriptBin {
 
     chrome-debug = "${super.chromium}/bin/chromium --remote-debugging-port=9222";
-
-    keyboard-de = "${self.xorg.setxkbmap}/bin/setxkbmap de -variant mac";
-
-    keyboard-us = "${self.xorg.setxkbmap}/bin/setxkbmap us -variant mac";
 
     youtube-dl-mp3 = ''
       ${self.youtube-dl}/bin/youtube-dl --extract-audio \

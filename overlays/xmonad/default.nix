@@ -1,4 +1,5 @@
 {
+  config,
   pkgs ? import <nixpkgs> {},
   extraPackages ? self: with self; [
     xmonad-contrib
@@ -7,7 +8,7 @@
 let
   colors = import ../../data/colors.nix;
 
-  config = /* haskell */ ''
+  xmonadConfig = /* haskell */ ''
     import XMonad hiding ( (|||) )
     import XMonad.Util.EZConfig(additionalKeys)
     import XMonad.Layout.NoBorders
@@ -41,7 +42,6 @@ let
       -- , ((modm .|. ctrl,   xK_e),             spawn "${pkgs.emacs}/bin/emacsclient --create-frame")
       , ((modm .|. ctrl,   xK_e),             spawn "${pkgs.emacs}/bin/emacs --no-splash")
       , ((modm .|. ctrl,   xK_Return),        spawn "${pkgs.xterm}/bin/xterm")
-      , ((modm .|. ctrl,   xK_t),             spawn "${pkgs.tdesktop}/bin/telegram-desktop")
       , ((modm .|. ctrl,   xK_f),             sendMessage $ JumpToLayout "Full")
       , ((modm .|. ctrl,   xK_n),             spawn "${pkgs.xterm}/bin/xterm -e ${pkgs.networkmanager}/bin/nmtui")
       , ((modm .|. shift,                     xK_space), virtualScreens)
@@ -62,7 +62,7 @@ let
 in
 pkgs.stdenv.mkDerivation {
   name = "xmonad-compiled";
-  src = pkgs.writeTextDir "xmonad.hs" config;
+  src = pkgs.writeTextDir "xmonad.hs" xmonadConfig;
 
   buildInputs = [
     (pkgs.haskellPackages.ghcWithPackages (self: [ self.xmonad ] ++ extraPackages self))
