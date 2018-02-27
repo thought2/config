@@ -385,7 +385,7 @@
 
 (defun cfg:web-mode ()
   (setq web-mode-code-indent-offset 2)
-  (add-hook 'typescript-mode-hook #'prettier-js-mode))
+  (add-hook 'web-mode-hook #'prettier-js-mode))
 
 
 (defun cfg:windmove ()
