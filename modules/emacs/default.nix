@@ -57,7 +57,25 @@ in
   config.nixpkgs.overlays = [overlay];
 
   imports = with pkgs.emacs25PackagesNg;
-    [ { programs.emacs =
+    [ ( let
+          uuid = "77f23723-5e67-4156-bf1b-22daeaa29581";
+          path = "/tmp/${uuid}";
+        in
+        { programs.emacs.init = ''
+            (setq init-file "${path}")
+
+            (defun reload-init ()
+              (interactive)
+              (with-temp-buffer
+                (insert-file-contents "${path}")
+                (buffer-string)))
+          '';
+          system.activationScripts.initEmacs = ''
+            cp ${initFile} "${path}"
+          '';
+        }
+      )
+      { programs.emacs =
         { pkgs = [ magit magit-gitflow ];
           init = ''
           (with-eval-after-load 'magit
