@@ -400,6 +400,9 @@
           "http://www.taz.de/Krieg-in-Syrien-und-Irak/!t5007613;rss/"
           "https://news.ycombinator.com/rss")))
 
+(defun cfg:haskell ()
+  (setq haskell-stylish-on-save t))
+
 (progn
   (cfg:simpler)
   (cfg:language)
@@ -427,5 +430,6 @@
   (cfg:windmove)
   (cfg:web-mode)
   (cfg:elfeed)
-  (cfg:buffer))
+  (cfg:buffer)
+  (cfg:haskell))
 
