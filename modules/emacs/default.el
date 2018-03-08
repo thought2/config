@@ -80,7 +80,8 @@
 (defun cfg:buffer ()
   "Buffer configuration."
 
-  (global-set-key (kbd "C-c C-n") #'rename-buffer))
+  (global-set-key (kbd "C-c n") #'rename-buffer)
+  (global-set-key (kbd "C-c u") #'rename-uniquely))
 
 
 (defun cfg:paredit ()
