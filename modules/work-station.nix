@@ -11,6 +11,7 @@ with lib;
     ./cli.nix
     ./emacs
     ./nested-shorthands
+    ./git.nix
   ] ++ (let
     path = ../../private-config/default.nix;
   in if pathExists path then [ path ] else []);
