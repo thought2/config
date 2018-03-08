@@ -61,6 +61,7 @@ lib.flatten (builtins.attrValues {
     nodePackages.bower
     nodePackages.typescript
     #haskellPackages.idris
+    haskellPackages.stylish-haskell
     yarn
     chromedriver
     gitAndTools.gitflow
