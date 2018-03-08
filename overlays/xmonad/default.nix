@@ -38,6 +38,7 @@ let
     shortcuts =
       [ ((modm .|. ctrl,   xK_f),             spawn "${pkgs.firefox}/bin/firefox")
       , ((modm .|. ctrl,   xK_b),             spawn "${pkgs.thunderbird}/bin/thunderbird")
+      , ((modm .|. ctrl,   xK_s),             spawn "${pkgs.coreutils}/bin/sleep 0.2; ${pkgs.scrot}/bin/scrot -s -e 'mv $f ~/screenshots/'")
       , ((modm .|. ctrl,   xK_c),             spawn "${pkgs.chromium}/bin/chromium-browser")                      
       , ((modm .|. ctrl,   xK_a),             spawn "${pkgs.chromium}/bin/chromium-browser --app='http://ddg.gg'")
       -- , ((modm .|. ctrl,   xK_e),             spawn "${pkgs.emacs}/bin/emacsclient --create-frame")
