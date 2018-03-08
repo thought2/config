@@ -36,7 +36,8 @@ let
         } `additionalKeys` shortcuts
 
     shortcuts =
-      [ ((modm .|. ctrl,   xK_f),             spawn "${pkgs.firefox}/bin/firefox")                                
+      [ ((modm .|. ctrl,   xK_f),             spawn "${pkgs.firefox}/bin/firefox")
+      , ((modm .|. ctrl,   xK_b),             spawn "${pkgs.thunderbird}/bin/thunderbird")
       , ((modm .|. ctrl,   xK_c),             spawn "${pkgs.chromium}/bin/chromium-browser")                      
       , ((modm .|. ctrl,   xK_a),             spawn "${pkgs.chromium}/bin/chromium-browser --app='http://ddg.gg'")
       -- , ((modm .|. ctrl,   xK_e),             spawn "${pkgs.emacs}/bin/emacsclient --create-frame")
