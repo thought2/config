@@ -402,7 +402,9 @@
           "https://news.ycombinator.com/rss")))
 
 (defun cfg:haskell ()
-  (setq haskell-stylish-on-save t))
+  (with-eval-after-load 'haskell-mode
+    (define-key haskell-mode-map (kbd "C-c C-x") 'haskell-process-reload)
+    (setq haskell-stylish-on-save t)))
 
 (progn
   (cfg:simpler)
