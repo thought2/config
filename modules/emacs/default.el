@@ -244,6 +244,7 @@
   (defun tsx () 
     (require 'web-mode)
     (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+    (add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
     (add-hook 'web-mode-hook
               (lambda ()
                 (when (and buffer-file-name
