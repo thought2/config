@@ -66,9 +66,7 @@ in
 
             (defun reload-init ()
               (interactive)
-              (with-temp-buffer
-                (insert-file-contents "${path}")
-                (buffer-string)))
+              (load-file init-file))
           '';
           system.activationScripts.initEmacs = ''
             cp ${initFile} "${path}"
