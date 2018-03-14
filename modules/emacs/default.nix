@@ -83,7 +83,7 @@ in
         };
       }
       { programs.emacs =
-        { pkgs =
+        { pkgs = flatten
           [ aggressive-indent
             auto-complete
             better-defaults
@@ -112,6 +112,8 @@ in
             indium
             yasnippet
             elfeed
+            [ ivy-pass helm-pass pass ]
+
           ];
           init = readFile ./default.el;
         };
