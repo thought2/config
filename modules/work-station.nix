@@ -55,8 +55,9 @@ with lib;
   programs.chromium = {
     enable = true;
     defaultSearchProviderSearchURL = "https://duckduckgo.com/?q={searchTerms}";
+
     extensions = [
-      "fmkadmapgofadopljbjfkapdkoienihi" # React Developer Tools
+    # "fmkadmapgofadopljbjfkapdkoienihi" # React Developer Tools
       "lmhkpmbekcpmknklioeibfkpmmfibljd" # Redux DevTools
       "bfbameneiokkgbdmiekhjnmfkcnldhhm" # Web Developer
       "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
