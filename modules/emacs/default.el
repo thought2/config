@@ -407,7 +407,11 @@
     (define-key haskell-mode-map (kbd "C-c C-x") 'haskell-process-reload)
     (setq haskell-stylish-on-save t)))
 
+(defun cfg:helm ()
+  (global-set-key (kbd "C-c f") 'helm-find))
+
 (progn
+  (cfg:helm)
   (cfg:simpler)
   (cfg:language)
   (cfg:startup)
