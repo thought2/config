@@ -21,9 +21,7 @@ in
 {
   config.services.cron = {
     enable = true;
-    systemCronJobs = [''
-      * * * * * root ${script}
-    ''];
+    systemCronJobs = [ ''* * * * * root ${script}''];
   };
 
   config.boot.initrd.kernelModules = [ "sbs" "sbshc" ];
