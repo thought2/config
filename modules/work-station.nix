@@ -143,6 +143,10 @@ with lib;
     keysym o = o O o O odiaeresis Odiaeresis
     keysym u = u U u U udiaeresis Udiaeresis
     keysym s = s S s S ssharp ssharp
+
+    clear lock
+    ! Caps Lock -> Nabla
+    keycode 66 = nabla
   '';
 
 }
