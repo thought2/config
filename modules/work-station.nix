@@ -74,27 +74,6 @@ with lib;
 
   nested-shorthands =
     [
-      { name = "keyboard";
-        kbd = "k";
-        children =
-          [ rec
-            { name = "de";
-              kbd = "d";
-              pkg = writeShellScriptBin name ''
-                ${pkgs.xorg.setxkbmap}/bin/setxkbmap de -variant mac
-              '';
-            }
-
-            rec
-            { name = "us";
-              kbd = "u";
-              pkg = writeShellScriptBin name ''
-                ${pkgs.xorg.setxkbmap}/bin/setxkbmap us -variant mac
-              '';
-            }
-          ];
-      }
-
       { name = "nix";
         kbd = "n";
         children =
@@ -108,7 +87,6 @@ with lib;
             }
           ];
       }
-
 
       rec
       { name = "youtube-dl-mp3";
