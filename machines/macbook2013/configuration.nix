@@ -1,7 +1,10 @@
+{ pkgs, config, ... }:
+
 with import <nixpkgs> {};
 
 let
   localPkgs = import ./pkgs { inherit pkgs; };
+  overlays = import ./overlays.nix {inherit config; };
 in
 {
   imports = [
@@ -43,8 +46,12 @@ in
     '';
   };
 
+
   # see https://sudoremember.blogspot.de/2013/05/high-cpu-usage-due-to-kworker.html
   services.cron.systemCronJobs =
     [ "@reboot echo disable > /sys/firmware/acpi/interrupts/gpe06"
     ];
+
+  nixpkgs.overlays = [ overlays ];
+
 }
