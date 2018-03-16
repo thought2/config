@@ -68,6 +68,7 @@ lib.flatten (builtins.attrValues {
     nodejs-8_x
     elmPackages.elm
     #purescript
+    sbt
   ];
   
   gfx = [
