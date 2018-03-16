@@ -112,6 +112,7 @@ in
             indium
             yasnippet
             elfeed
+            [ ensime sbt-mode ] # scala
             [ ivy-pass helm-pass pass ]
 
           ];
