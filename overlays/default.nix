@@ -16,6 +16,16 @@ self: super: {
 
   xmonad = import ./xmonad { pkgs = self; inherit config; };
 
+  keyboard-de = writeShellScriptBin "keyboard-de" ''
+    ${pkgs.xorg.setxkbmap}/bin/setxkbmap de -variant mac
+    ${pkgs.xorg.xmodmap}/bin/xmodmap /etc/Xmodmap
+  '';
+
+  keyboard-us = writeShellScriptBin "keyboard-us" ''
+    ${pkgs.xorg.setxkbmap}/bin/setxkbmap us -variant mac
+    ${pkgs.xorg.xmodmap}/bin/xmodmap /etc/Xmodmap
+  '';
+
   shorthands = mapAttrs writeShellScriptBin {
 
     chrome-debug = "${super.chromium}/bin/chromium --remote-debugging-port=9222";

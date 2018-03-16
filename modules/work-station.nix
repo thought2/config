@@ -25,6 +25,7 @@ with lib;
     displayManager = {
       sessionCommands = ''
         ${pkgs.xorg.xrandr}/bin/xrandr --output eDP1 --mode 1440x900
+        ${pkgs.xorg.xmodmap}/bin/xmodmap /etc/Xmodmap
       '';
       };
 
