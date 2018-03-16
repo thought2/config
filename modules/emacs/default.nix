@@ -40,7 +40,7 @@ let
   ] else []));
 
   overlay = self: super: {
-    inherit emacs;
+    emacs = pkgs.writeShellScriptBin "emacs" "${emacs}/bin/emacs --no-splash $@";
   };
 in
 {
