@@ -137,4 +137,12 @@ with lib;
             '';
       }
     ];
+
+  environment.etc.Xmodmap.text = ''
+    keysym a = a A a A adiaeresis Adiaeresis
+    keysym o = o O o O odiaeresis Odiaeresis
+    keysym u = u U u U udiaeresis Udiaeresis
+    keysym s = s S s S ssharp ssharp
+  '';
+
 }
