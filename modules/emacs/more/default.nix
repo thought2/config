@@ -3,9 +3,11 @@
 with lib;
 with pkgs.emacs25PackagesNg;
 
-{ programs.emacs =
-    { pkgs = flatten
-      [ aggressive-indent
+{
+  programs.emacs.stanzas.more =
+    { epkgs = flatten
+      [ hydra
+        aggressive-indent
         auto-complete
         better-defaults
         cider
@@ -17,7 +19,6 @@ with pkgs.emacs25PackagesNg;
         flycheck-elm
         melpaPackages.nix-mode
         mmm-mode
-        magit
         paredit
         smartparens
         tide

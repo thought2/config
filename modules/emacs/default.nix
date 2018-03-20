@@ -2,11 +2,11 @@
 
 {
   imports =
-    [ ./build-emacs.nix
-      ./hydra.nix
+    [ ../build-emacs.nix
       ./magit.nix
-      ./more
-      ./reload-init.nix
+      ./hydra.nix
+      ./more/default.nix
+      # ./reload-init.nix
     ];
 
 }

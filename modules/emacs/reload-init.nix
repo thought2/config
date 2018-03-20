@@ -8,9 +8,7 @@ let
   path = "/tmp/${uuid}";
 in
 
-{ imports = [ ./build-emacs.nix ];
-
-
+{
   programs.emacs.init = ''
     (setq init-file "${path}")
 
@@ -22,5 +20,5 @@ in
   system.activationScripts.initEmacs = ''
     cp ${initFile} "${path}"
   '';
-  
+
 }

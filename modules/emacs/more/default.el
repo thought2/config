@@ -440,4 +440,3 @@
   (cfg:elfeed)
   (cfg:buffer)
   (cfg:haskell))
-
