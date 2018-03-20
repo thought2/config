@@ -21,7 +21,7 @@ let
       runCommand name {} ''
 
         # validate
-
+        echo "validating ${name}"
         ${emacs'}/bin/emacs --batch -f package-initialize -l ${initFile}
 
         # make

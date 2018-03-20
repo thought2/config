@@ -14,9 +14,7 @@ with pkgs.emacs25PackagesNg;
         clojure-mode
         helm-dash
         company
-        elm-mode
         flycheck
-        flycheck-elm
         melpaPackages.nix-mode
         mmm-mode
         paredit
