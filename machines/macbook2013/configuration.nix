@@ -11,6 +11,8 @@ in
     ./hardware-configuration.nix
     ../../modules/hq.nix
     ../../modules/laptop.nix
+    ./sound-fix.nix
+    ./kworker-fix.nix
   ];
 
   boot.loader = {
