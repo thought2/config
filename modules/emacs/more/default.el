@@ -226,7 +226,8 @@
     (add-hook 'web-mode-hook
               (lambda ()
                 (when (and buffer-file-name
-                           (string-equal "tsx" (file-name-extension buffer-file-name)))
+                           (or (string-equal "tsx" (file-name-extension buffer-file-name))
+                               (string-equal "ts" (file-name-extension buffer-file-name))))
                   (setup-tide-mode))))
 
     ;; enable typescript-tslint checker
