@@ -63,7 +63,7 @@ lib.flatten (builtins.attrValues {
     #haskellPackages.idris
     haskellPackages.stylish-haskell
     yarn
-    chromedriver
+    # chromedriver
     gitAndTools.gitflow
     nodejs-8_x
     elmPackages.elm
