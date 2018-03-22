@@ -27,7 +27,7 @@ lib.flatten (builtins.attrValues {
 
   web = [
     tdesktop
-    chromium
+#    chromium
     firefox
     tor
     thunderbird
