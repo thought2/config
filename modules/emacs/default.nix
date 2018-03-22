@@ -2,14 +2,14 @@
 
 {
   imports =
-    [ ../build-emacs.nix
+    [ ../build-emacs
       ./magit.nix
-      ./hydra.nix
+      ./hydra
       ./more/default.nix
       ./global-keys.nix
       ./elfeed.nix
       ./elm.nix
-      # ./reload-init.nix
+      ./avy.nix
     ];
 
 }

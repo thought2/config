@@ -2,7 +2,7 @@
 
 with lib;
 with pkgs;
-with import ../util;
+with import ../../util;
 
 let
 
@@ -30,19 +30,22 @@ let
 
       '';
 
+  stanzasList =
+    mapAttrsToList (name: value: value // { inherit name; }) cfg.stanzas;
+
+  deps = concatMap ({ epkgs, ...}: epkgs) stanzasList;
+
+  epkgs = map mkEmacsPackage stanzasList;
+
+  fullInit =
+    cfg.init + (concatStringsSep "\n" (map ({init, ...}: init) stanzasList));
+
+  customPkg =
+    mkEmacsPackage { name = "custom"; epkgs = deps; init = fullInit; };
+
   emacs =
-    let
-      stanzasList =
-        mapAttrsToList (name: value: value // { inherit name; }) cfg.stanzas;
-      deps = concatMap ({ epkgs, ...}: epkgs) stanzasList;
-      epkgs = map mkEmacsPackage stanzasList;
-      fullInit =
-        cfg.init + (concatStringsSep "\n" (map ({init, ...}: init) stanzasList));
-      customPkg =
-        mkEmacsPackage { name = "custom"; epkgs = deps; init = fullInit; };
-    in
-      # epkgs only appended to circumvent laziness
-      buildEmacs baseEmacs (deps ++ [ customPkg ] ++ epkgs);
+    # epkgs only appended to circumvent laziness
+    buildEmacs baseEmacs (deps ++ [ customPkg ] ++ epkgs);
 
   emacsWrapped = pkgs.writeShellScriptBin
     "emacs"
@@ -55,16 +58,16 @@ let
 in
 
 {
+  imports = [ (import ./reload-init.nix { initText = fullInit; inherit pkgs; }) ];
+
 
   options.programs.emacs.stanzas = mkOption {
     default = {};
   };
 
-
   options.programs.emacs.init = mkOption {
     default = "";
   };
-
 
   config.nixpkgs.overlays = [ overlay ];
 
