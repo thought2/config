@@ -35,6 +35,7 @@ with pkgs.emacs25PackagesNg;
         [ ensime sbt-mode ] # scala
         [ ivy-pass helm-pass pass ]
         dictcc
+        avy
       ];
       init = readFile ./default.el;
     };
