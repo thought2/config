@@ -2,6 +2,7 @@
 
 let
   systemPkgs = import ../pkgs/base.nix { inherit pkgs; };
+  shorthands = import ../pkgs/shorthands.nix { inherit pkgs; };
 in
 
 with pkgs;
@@ -10,7 +11,6 @@ with lib;
   imports = [
     ./cli.nix
     ./emacs
-    ./nested-shorthands
     ./git.nix
   ] ++ (let
     path = ../../private-config/default.nix;
@@ -51,7 +51,16 @@ with lib;
 
   sound.mediaKeys.enable = true;
 
-  environment.systemPackages = systemPkgs ++ (builtins.attrValues pkgs.shorthands);
+  environment.systemPackages = systemPkgs ++ (with shorthands; [
+    keyboard-de
+    keyboard-us
+    youtube-dl-mp3
+    nix-search
+    screens-1
+    screens-2
+    screens-3
+    screens-mirror
+  ]);
 
   programs.chromium = {
     enable = true;
@@ -71,51 +80,6 @@ with lib;
       BookmarkBarEnabled = false;
     };
   };
-
-  nested-shorthands =
-    [
-      { name = "nix";
-        kbd = "n";
-        children =
-          [ rec
-            { name = "search";
-              kbd = "s";
-              interact = "sPkg: ";
-              pkg = writeShellScriptBin name ''
-                nix-env -qa --description -P '.'*$1'.*' | cat
-              '';
-            }
-          ];
-      }
-
-      rec
-      { name = "youtube-dl-mp3";
-        kbd = "y";
-        pkg = writeShellScriptBin name ''
-          ${pkgs.youtube-dl}/bin/youtube-dl
-          --extract-audio \
-          --audio-format mp3 \
-          --output "%(title)s.%(ext)s" \
-          $1
-        '';
-      }
-
-      rec
-      { name = "notify-play";
-        kbd = "x";
-        pkg =
-          let
-            soundFile = pkgs.fetchurl
-              { url = "https://notificationsounds.com/notification-sounds/plucky-550/download/mp3";
-                name = "plucky.mp3";
-                sha256 = "0qvg85zvlx5dcp4fbngpqa4ml3nd62lyyldhnwb00i1q1w4p82cp";
-              };
-          in
-            writeShellScriptBin name ''
-              ${pkgs.sox}/bin/play -t mp3 ${soundFile}
-            '';
-      }
-    ];
 
   environment.etc.Xmodmap.text = ''
     keysym a = a A a A adiaeresis Adiaeresis

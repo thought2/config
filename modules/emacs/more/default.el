@@ -53,7 +53,7 @@
   (setq inhibit-splash-screen t)
   (setq inhibit-startup-screen t)
   (setq inhibit-startup-message t)
-  (setq initial-scratch-message "") 
+  (setq initial-scratch-message "")
   (setq inhibit-startup-echo-area-message "m")
   (blink-cursor-mode 0)
   (fringe-mode 4))
@@ -73,8 +73,7 @@
     (yank))
 
   (global-set-key (kbd "C-c C-d") #'duplicate-line)
-  (global-set-key (kbd "C-c C-r") #'replace-string)
-  (global-set-key (kbd "C-c C-c") #'comment-or-uncomment-region))
+  (global-set-key (kbd "C-c C-r") #'replace-string))
 
 
 (defun cfg:buffer ()
@@ -151,7 +150,7 @@
   (shell))
 
 
-(defun cfg:shell () 
+(defun cfg:shell ()
   (global-set-key (kbd "C-c s") 'shell))
 
 
@@ -163,7 +162,7 @@
   (defun set-window-abs-width (width)
     (enlarge-window-horizontally (- width (window-total-width))))
 
-  (defun toggle-width () 
+  (defun toggle-width ()
     (interactive)
     (let ((width (round (/ (frame-total-cols) 4))))
       (set-window-abs-width (if (= (window-total-width) width)
@@ -186,18 +185,6 @@
 (defun cfg:typography ()
   "Config for typography."
 
-  (global-set-key (kbd "C-x C-+")
-                  (lambda ()
-                    "Bigger."
-                    (interactive)
-                    (text-scale-increase 0.2)))
-
-  (global-set-key (kbd "C-x C--")
-                  (lambda ()
-                    "Smaller."
-                    (interactive)
-                    (text-scale-increase -0.2)))
-
   (set-frame-font "DejaVu Sans Mono")
   (set-face-attribute 'default nil :height 79))
 
@@ -211,26 +198,16 @@
   (add-hook 'eval-expression-minibuffer-setup-hook #'show-paren-mode))
 
 
-(defun cfg:elm ()
-  (require 'flycheck)
-  (require 'elm-mode)
-  (add-hook 'after-init-hook #'global-flycheck-mode)
-  (add-hook 'flycheck-mode-hook 'flycheck-elm-setup)
-  (with-eval-after-load 'company
-    (add-to-list 'company-backends 'company-elm))
-  (add-hook 'elm-mode-hook #'company-mode))
-
-
 (defun cfg:typescript ()
   "TypeScript configuration."
 
   (defun setup-tide-mode ()
-    (interactive) 
+    (interactive)
     (tide-setup)
     (flycheck-mode +1)
     (setq flycheck-check-syntax-automatically '(save mode-enabled))
     (eldoc-mode +1)
-    (tide-hl-identifier-mode +1) 
+    (tide-hl-identifier-mode +1)
     (company-mode +1)
 
     ;; aligns annotation to the right hand side
@@ -238,19 +215,20 @@
 
   ;; formats the buffer before saving
   ;;(add-hook 'before-save-hook 'tide-format-before-save)
-  
+
   (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
-  (defun tsx () 
+  (defun tsx ()
     (require 'web-mode)
     (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
     (add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
     (add-hook 'web-mode-hook
               (lambda ()
                 (when (and buffer-file-name
-                           (string-equal "tsx" (file-name-extension buffer-file-name)))
+                           (or (string-equal "tsx" (file-name-extension buffer-file-name))
+                               (string-equal "ts" (file-name-extension buffer-file-name))))
                   (setup-tide-mode))))
-    
+
     ;; enable typescript-tslint checker
 
     (flycheck-add-mode 'typescript-tslint 'web-mode))
@@ -268,33 +246,18 @@
     (flycheck-add-mode 'javascript-eslint 'web-mode)
     ;;(flycheck-add-next-checker 'javascript-eslint 'jsx-tide 'append)
     )
-  
+
   ;;
 
   (tsx)
   (jsx)
-  
-  (setq sp-base-key-bindings 'smartparens)  
+
+  (setq sp-base-key-bindings 'smartparens)
   (add-hook 'typescript-mode-hook #'smartparens-mode)
   ;; TODO: check inconsistency below: ' vs #'
   ;; (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook 'typescript-mode-hook #'setup-tide-mode))
 
-
-(defun cfg:magit ()
-  "Magit configuration."
-  (global-set-key (kbd "C-x g") 'magit-status)
-  (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
-
-  (defun magit-delete-trailing-whitespace-from-file ()
-    "Remove whitespace from the current file."
-    (interactive)
-    (save-excursion
-      (magit-diff-visit-file-worktree (magit-file-at-point))
-      (delete-trailing-whitespace)
-      (save-buffer)
-      (kill-buffer))
-    (magit-refresh)))
 
 (defun cfg:direx ()
   "Configuration of the tree-based file browser direx."
@@ -329,7 +292,7 @@
   ;; (mmm-add-group 'nix-haskell
   ;;                '((sh-command
   ;;                   :submode haskell-mode
-  ;;                   :face mmm-output-submode-face                    
+  ;;                   :face mmm-output-submode-face
   ;;                   :front "[^'a-zA-Z]/\\* haskell \\*/ ''[^']"
   ;;                   :back "''[^$\\]"
   ;;                   :include-front nil
@@ -341,7 +304,7 @@
   (mmm-add-group 'nix-clojure
                  '((sh-command
                     :submode haskell-mode
-                    :face mmm-output-submode-face                    
+                    :face mmm-output-submode-face
                     :front "[^'a-zA-Z]/\\* haskell \\*/ ''[^']"
                     :back "''[^$\\]"
                     :include-front nil
@@ -362,7 +325,7 @@
                            "--single-quote" "true")))
 
 
-(defun cfg:smartparens () 
+(defun cfg:smartparens ()
   (require 'smartparens)
   (require 'smartparens-config)
   (smartparens-global-strict-mode)
@@ -372,11 +335,11 @@
   (global-set-key (kbd "C-M-<left>") 'sp-backward-sexp)
   (global-set-key (kbd "C-M-b") 'sp-backward-sexp)
 
-  
+
   (global-set-key (kbd "C-M-w") (lambda () (interactive)
                                   (sp-mark-sexp)
                                   (sp-copy-sexp)))
-  
+
 
   (global-set-key (kbd "C-<right>") 'sp-forward-slurp-sexp)
   (global-set-key (kbd "C-<left>") 'sp-forward-barf-sexp)
@@ -395,13 +358,6 @@
     (windmove-default-keybindings)))
 
 
-(defun cfg:elfeed () 
-  (setq elfeed-feeds
-        '("http://nullprogram.com/feed/"
-          "http://planet.emacsen.org/atom.xml"
-          "http://www.taz.de/Krieg-in-Syrien-und-Irak/!t5007613;rss/"
-          "https://news.ycombinator.com/rss")))
-
 (defun cfg:haskell ()
   (with-eval-after-load 'haskell-mode
     (define-key haskell-mode-map (kbd "C-c C-x") 'haskell-process-reload)
@@ -410,17 +366,17 @@
 (defun cfg:helm ()
   (global-set-key (kbd "C-c f") 'helm-find))
 
+(require 'flycheck)
+
 (progn
   (cfg:helm)
   (cfg:simpler)
   (cfg:language)
   (cfg:startup)
   (cfg:editing)
-  (cfg:magit)
   (cfg:direx)
-  (cfg:elm)
   (cfg:paredit)
-  (cfg:recent-file) 
+  (cfg:recent-file)
   (cfg:elisp)
   (cfg:clojure)
   (cfg:clojure-script)
@@ -437,7 +393,5 @@
   (cfg:smartparens)
   (cfg:windmove)
   (cfg:web-mode)
-  (cfg:elfeed)
   (cfg:buffer)
   (cfg:haskell))
-

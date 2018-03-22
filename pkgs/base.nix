@@ -27,7 +27,7 @@ lib.flatten (builtins.attrValues {
 
   web = [
     tdesktop
-    chromium
+#    chromium
     firefox
     tor
     thunderbird
@@ -63,7 +63,7 @@ lib.flatten (builtins.attrValues {
     #haskellPackages.idris
     haskellPackages.stylish-haskell
     yarn
-    chromedriver
+    # chromedriver
     gitAndTools.gitflow
     nodejs-8_x
     elmPackages.elm
