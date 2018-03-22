@@ -73,8 +73,7 @@
     (yank))
 
   (global-set-key (kbd "C-c C-d") #'duplicate-line)
-  (global-set-key (kbd "C-c C-r") #'replace-string)
-  (global-set-key (kbd "C-c C-c") #'comment-or-uncomment-region))
+  (global-set-key (kbd "C-c C-r") #'replace-string))
 
 
 (defun cfg:buffer ()
