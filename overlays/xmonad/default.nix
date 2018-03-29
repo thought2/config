@@ -25,6 +25,9 @@ let
     --import XMonad.Layout.Gaps
     import XMonad.Layout.Spacing
 
+    import qualified XMonad.Actions.DynamicWorkspaceOrder as DO
+    import XMonad.Actions.CycleWS
+
     modm = mod4Mask
 
     main = do
@@ -48,6 +51,11 @@ let
       , ((modm .|. ctrl,   xK_n),             spawn "${pkgs.xterm}/bin/xterm -e ${pkgs.networkmanager}/bin/nmtui")
       , ((modm .|. shift,                     xK_space), virtualScreens)
       , ((modm .|. ctrl .|. shift, xK_space), rescreen)
+
+      -- cycle workspaces
+      , ((modm, xK_Left),                     DO.moveTo Prev HiddenNonEmptyWS)
+      , ((modm, xK_Right),                    DO.moveTo Next HiddenNonEmptyWS)
+
       ]
       where
         virtualScreens = layoutScreens 3 $ spacingWithEdge 10 $ TwoPane 0.55 0.45
