@@ -10,7 +10,7 @@ let
 
   xmonadConfig = /* haskell */ ''
     import XMonad hiding ( (|||) )
-    import XMonad.Util.EZConfig(additionalKeys)
+    import XMonad.Util.EZConfig(additionalKeysP)
     import XMonad.Layout.NoBorders
     import XMonad.Layout.LayoutCombinators
     --import XMonad.Hooks.DynamicLog
@@ -36,32 +36,28 @@ let
         , borderWidth        = 4
         , modMask            = modm
         , layoutHook         = layout
-        } `additionalKeys` shortcuts
+        } `additionalKeysP` shortcuts
 
     shortcuts =
-      [ ((modm .|. ctrl,   xK_f),             spawn "${pkgs.firefox}/bin/firefox")
-      , ((modm .|. ctrl,   xK_b),             spawn "${pkgs.thunderbird}/bin/thunderbird")
-      , ((modm .|. ctrl,   xK_s),             spawn "${pkgs.coreutils}/bin/sleep 0.2; ${pkgs.scrot}/bin/scrot -s -e 'mv $f ~/screenshots/'")
-      , ((modm .|. ctrl,   xK_c),             spawn "${pkgs.chromium}/bin/chromium-browser")                      
-      , ((modm .|. ctrl,   xK_a),             spawn "${pkgs.chromium}/bin/chromium-browser --app='http://ddg.gg'")
-      -- , ((modm .|. ctrl,   xK_e),             spawn "${pkgs.emacs}/bin/emacsclient --create-frame")
-      , ((modm .|. ctrl,   xK_e),             spawn "${pkgs.emacs}/bin/emacs --no-splash")
-      , ((modm .|. ctrl,   xK_Return),        spawn "${pkgs.xterm}/bin/xterm")
-      , ((modm .|. ctrl,   xK_f),             sendMessage $ JumpToLayout "Full")
-      , ((modm .|. ctrl,   xK_n),             spawn "${pkgs.xterm}/bin/xterm -e ${pkgs.networkmanager}/bin/nmtui")
-      , ((modm .|. shift,                     xK_space), virtualScreens)
-      , ((modm .|. ctrl .|. shift, xK_space), rescreen)
+      [ ("M-C-f",          spawn "${pkgs.firefox}/bin/firefox")
+      , ("M-C-b",          spawn "${pkgs.thunderbird}/bin/thunderbird")
+      , ("M-C-s",          spawn "${pkgs.coreutils}/bin/sleep 0.2; ${pkgs.scrot}/bin/scrot -s -e 'mv $f ~/screenshots/'")
+      , ("M-C-c",          spawn "${pkgs.chromium}/bin/chromium-browser")
+      , ("M-C-a",          spawn "${pkgs.chromium}/bin/chromium-browser --app='http://ddg.gg'")
+      , ("M-C-e",          spawn "${pkgs.emacs}/bin/emacs --no-splash")
+      , ("M-C-<Return>",   spawn "${pkgs.xterm}/bin/xterm")
+      , ("M-C-f",          sendMessage $ JumpToLayout "Full")
+      , ("M-C-n",          spawn "${pkgs.xterm}/bin/xterm -e ${pkgs.networkmanager}/bin/nmtui")
+      , ("M-S-<Space>",    virtualScreens)
+      , ("M-C-S-<Space>",  rescreen)
 
       -- cycle workspaces
-      , ((modm, xK_Left),                     DO.moveTo Prev HiddenNonEmptyWS)
-      , ((modm, xK_Right),                    DO.moveTo Next HiddenNonEmptyWS)
+      , ("M-<Left>",       DO.moveTo Prev HiddenNonEmptyWS)
+      , ("M-<Right>",      DO.moveTo Next HiddenNonEmptyWS)
 
       ]
       where
-        virtualScreens = layoutScreens 3 $ spacingWithEdge 10 $ TwoPane 0.55 0.45
-        ctrl           = controlMask
-        shift          = shiftMask
-        
+        virtualScreens = layoutScreens 3 $ spacingWithEdge 10 $ TwoPane 0.55 0.45;
 
     layout = tall ||| tall2 ||| full ||| FixedColumn 1 20 80 10
       where
