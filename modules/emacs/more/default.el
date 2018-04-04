@@ -101,14 +101,15 @@
                            (point))
                          (point)))
 
-  (global-set-key (kbd "C-c x") #'duplicate-sexpr)
-  (global-set-key (kbd "C-c c") #'copy-sexpr)
-  (global-set-key (kbd "C-c p") #'paredit-mode))
+  ;;(global-set-key (kbd "C-c x") #'duplicate-sexpr)
+  ;;(global-set-key (kbd "C-c c") #'copy-sexpr)
+  ;;(global-set-key (kbd "C-c p") #'paredit-mode)
+  )
 
 
 (defun cfg:elisp ()
   (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
-  ;;(add-hook 'emacs-lisp-mode-hook #'paredit-mode)
+  (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
   (add-hook 'emacs-lisp-mode-hook #'eldoc-mode)
   (add-hook 'emacs-lisp-mode-hook #'auto-complete-mode)
   (add-hook 'emacs-lisp-mode-hook #'company-mode))
@@ -122,7 +123,7 @@
   (add-hook 'cider-mode-hook #'company-mode)
 
   (add-hook 'cider-repl-mode-hook #'aggressive-indent-mode)
-  ;;(add-hook 'cider-repl-mode-hook #'paredit-mode)
+  (add-hook 'cider-repl-mode-hook #'paredit-mode)
   (add-hook 'cider-repl-mode-hook #'eldoc-mode)
   (add-hook 'cider-repl-mode-hook #'auto-complete-mode)
   (add-hook 'cider-repl-mode-hook #'company-mode))
@@ -131,7 +132,7 @@
 (defun cfg:clojure ()
   "Configuration for Clojure."
   (add-hook 'clojure-mode-hook #'aggressive-indent-mode)
-  ;;(add-hook 'clojure-mode-hook #'paredit-mode)
+  (add-hook 'clojure-mode-hook #'paredit-mode)
   (add-hook 'clojure-mode-hook #'eldoc-mode)
   (add-hook 'clojure-mode-hook #'auto-complete-mode)
   (add-hook 'clojure-mode-hook #'company-mode))
@@ -140,7 +141,7 @@
 (defun cfg:clojure-script ()
   "Configuration for ClojureScript."
   (add-hook 'clojure-script-mode-hook #'aggressive-indent-mode)
-  ;;(add-hook 'clojure-script-mode-hook #'paredit-mode)
+  (add-hook 'clojure-script-mode-hook #'paredit-mode)
   (add-hook 'clojure-script-mode-hook #'eldoc-mode)
   (add-hook 'clojure-script-mode-hook #'auto-complete-mode)
   (add-hook 'clojure-script-mode-hook #'company-mode))
@@ -196,7 +197,7 @@
 
 
 (defun cfg:minibuffer ()
-  ;;  (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
+  (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
   (add-hook 'eval-expression-minibuffer-setup-hook #'show-paren-mode))
 
 
@@ -254,8 +255,8 @@
   (tsx)
   (jsx)
 
-  (setq sp-base-key-bindings 'smartparens)
-  (add-hook 'typescript-mode-hook #'smartparens-mode)
+  ;;(setq sp-base-key-bindings 'smartparens)
+  ;;(add-hook 'typescript-mode-hook #'smartparens-mode)
   ;; TODO: check inconsistency below: ' vs #'
   ;; (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook 'typescript-mode-hook #'setup-tide-mode))
@@ -392,7 +393,7 @@
   (cfg:spelling)
   (cfg:mmm)
   (cfg:prettier)
-  (cfg:smartparens)
+  ;;(cfg:smartparens)
   (cfg:windmove)
   (cfg:web-mode)
   (cfg:buffer)
