@@ -156,30 +156,32 @@
 
 (defun cfg:windows ()
 
-  (defun set-window-abs-height (height)
-    (enlarge-window (- height (window-total-height))))
+  (defun set-buffer-width-per10 (step-w_)
+    (interactive "PX of 10? ")
+    (let* ((step-w (or step-w_ 7))
+           (max-steps 10))
+      (window-resize nil
+                     (- (* step-w (round (/ (x-display-pixel-width) max-steps)))
+                        (window-width nil 'pixelwise))
+                     t
+                     nil
+                     'pixelwise)))
 
-  (defun set-window-abs-width (width)
-    (enlarge-window-horizontally (- width (window-total-width))))
-
-  (defun toggle-width ()
-    (interactive)
-    (let ((width (round (/ (frame-total-cols) 4))))
-      (set-window-abs-width (if (= (window-total-width) width)
-                                (- (frame-total-cols) width 1)
-                              width))))
-
-  (defun toggle-height ()
-    (interactive)
-    (let ((height (round (/ (frame-total-lines) 4))))
-      (set-window-abs-height (if (= (window-total-height) height)
-                                 (- (frame-total-lines) height 1)
-                               height))))
+  (defun set-buffer-height-per10 (step-h_)
+    (interactive "PX of 10? ")
+    (let* ((max-steps 10)
+           (step-h (or step-h_ 7)))
+      (window-resize nil
+                     (- (* step-h (round (/ (x-display-pixel-height) max-steps)))
+                        (window-body-height nil 'pixelwise))
+                     nil
+                     nil
+                     'pixelwise)))
 
   (windmove-default-keybindings)
 
-  (global-set-key (kbd "C-c h") #'toggle-height)
-  (global-set-key (kbd "C-c w") #'toggle-width))
+  (global-set-key (kbd "C-c h") #'set-buffer-height-per10)
+  (global-set-key (kbd "C-c w") #'set-buffer-width-per10))
 
 
 (defun cfg:typography ()
