@@ -15,10 +15,10 @@ import ./screens.nix {inherit pkgs;} //
   '';
 
   youtube-dl-mp3 = writeShellScriptBin "youtube-dl-mp3" ''
-      ${pkgs.youtube-dl}/bin/youtube-dl
+      ${pkgs.youtube-dl}/bin/youtube-dl \
       --extract-audio \
       --audio-format mp3 \
-      --output "%(title)s.%(ext)s" \
+      --output "%(playlist_index)s_%(title)s.%(ext)s" \
       $1
     '';
 
