@@ -30,6 +30,8 @@ in
     home = "/home/mbock";
   };
 
+  users.users.root.extraGroups = [ "audio" ];
+
   environment.systemPackages = with pkgs; [ emacs git pstree which coreutils ];
 
   nixpkgs.overlays = [ overlay ];
