@@ -23,11 +23,12 @@ lib.flatten (builtins.attrValues {
 
   desktop = [
     xmonad
+    xzoom
   ];
 
   web = [
     tdesktop
-#    chromium
+    chromium
     firefox
     tor
     thunderbird
@@ -111,6 +112,7 @@ lib.flatten (builtins.attrValues {
     zip
     unzip
     pass
+    psmisc # e.g. killall
   ];
   
   media = [
