@@ -10,6 +10,7 @@
       ./elfeed.nix
       ./elm.nix
       ./avy.nix
+      ./no-easy-keys
     ];
 
 }
