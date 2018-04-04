@@ -22,7 +22,7 @@ let
 
         # validate
         echo "validating ${name}"
-        ${emacs'}/bin/emacs --batch -f package-initialize -l ${initFile}
+        HOME=/tmp ${emacs'}/bin/emacs --batch -f package-initialize -l ${initFile}
 
         # make
         mkdir -p $out/share/emacs/site-lisp
