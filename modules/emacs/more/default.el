@@ -372,6 +372,28 @@
 (require 'flycheck)
 
 (progn
+  (require 'package)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/")))
+
+(progn
+  (require 'yasnippet)
+  (yas-global-mode)
+  (global-set-key (kbd "C-c y") 'yas-insert-snippet))
+
+
+(progn
+  (defun show-info ()
+    (interactive)
+    (message "DATE: %s | BAT: %s"
+             (shell-command-to-string "echo -n $(date)")
+             (shell-command-to-string "echo -n $(acpi)")))
+
+  (global-set-key (kbd "C-c i") 'show-info))
+
+(progn
+  (add-hook 'dired-mode-hook (lambda () (dired-hide-details-mode 1))))
+
+(progn
   (cfg:helm)
   (cfg:simpler)
   (cfg:language)

@@ -30,12 +30,14 @@ with pkgs.emacs25PackagesNg;
         js2-mode
         prettier-js
         indium
-        yasnippet
+        [ yasnippet yasnippet-snippets ]
         elfeed
         [ ensime sbt-mode ] # scala
         [ ivy-pass helm-pass pass ]
         dictcc
         avy
+        json-mode
+        restclient
       ];
       init = readFile ./default.el;
     };

@@ -31,4 +31,5 @@
   ("f" hydra-find/body "find" :exit t)
   ("k" hydra-keyboard/body "keyboard" :exit t)
   ("g" hydra-git/body "git" :exit t)
-  ("z" hydra-zoom/body "zoom" :exit t))
+  ("z" hydra-zoom/body "zoom" :exit t)
+  ("l" hydra-fontlock/body "fontlock" :exit t))

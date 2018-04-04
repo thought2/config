@@ -60,6 +60,8 @@ with lib;
     screens-2
     screens-3
     screens-mirror
+    chrome-debug
+    notify-play
   ]);
 
   programs.chromium = {
