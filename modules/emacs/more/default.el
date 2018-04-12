@@ -380,6 +380,13 @@
   (yas-global-mode)
   (global-set-key (kbd "C-c y") 'yas-insert-snippet))
 
+(progn
+  (defun dictcc-at-point-or-query ()
+    (interactive)
+    (if (word-at-point)
+        (dictcc-at-point)
+      (call-interactively 'dictcc)))
+  (global-set-key (kbd "C-c d") 'dictcc-at-point-or-query))
 
 (progn
   (defun show-info ()
@@ -392,6 +399,17 @@
 
 (progn
   (add-hook 'dired-mode-hook (lambda () (dired-hide-details-mode 1))))
+
+(progn
+  (require 'company)
+  (define-key company-active-map (kbd "C-s") 'company-select-next)
+  (define-key company-active-map (kbd "C-r") 'company-select-previous))
+
+(progn
+  (setq reb-re-syntax 'string))
+
+(progn
+  (setq ido-use-filename-at-point 'guess))
 
 (progn
   (cfg:helm)
