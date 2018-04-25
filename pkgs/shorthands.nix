@@ -22,6 +22,10 @@ import ./screens.nix {inherit pkgs;} //
       $1
     '';
 
+  backlight = writeShellScriptBin "backlight" ''
+    echo -n $1 > /sys/class/backlight/acpi_video0/brightness
+  '';
+
   nix-search = writeShellScriptBin "nix-search" ''
     nix-env -qa --description -P '.*'$1'.*' | cat
   '';
@@ -32,6 +36,14 @@ import ./screens.nix {inherit pkgs;} //
 
   chrome-debug = writeShellScriptBin "chrome-debug" ''
     ${pkgs.chromium}/bin/chromium --remote-debugging-port=9222
+  '';
+
+  chrome = writeShellScriptBin "chrome" ''
+    ${pkgs.chromium}/bin/chromium $@
+  '';
+
+  chrome-browser = writeShellScriptBin "chrome-browser" ''
+    ${pkgs.chromium}/bin/chromium $@
   '';
 
   which-ls = writeShellScriptBin "which-ls" ''
@@ -61,11 +73,6 @@ import ./screens.nix {inherit pkgs;} //
 
   fdisk-disks = writeShellScriptBin "fdisk-disks" ''
     ${pkgs.eject}/bin/fdisk -l | ${pkgs.gnugrep}/bin/grep "^Disk"
-  '';
-
-  test-buildvms = writeShellScriptBin "test-buildvms" ''
-    CONFIG_DIR=${./..};
-    ${readFile ../test/machines.sh}
   '';
 
   notify-play =

@@ -32,7 +32,7 @@ let
 
     main = do
       xmonad $ defaultConfig
-        { focusedBorderColor = "${colors.red}"
+        { focusedBorderColor = "${colors.yellow}"
         , borderWidth        = 4
         , modMask            = modm
         , layoutHook         = layout

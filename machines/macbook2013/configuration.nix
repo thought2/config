@@ -11,7 +11,7 @@ in
     ./hardware-configuration.nix
     ../../modules/hq.nix
     ../../modules/laptop.nix
-    ./sound-fix.nix
+#    ./sound-fix.nix
     ./kworker-fix.nix
   ];
 
@@ -19,6 +19,8 @@ in
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
+
+  boot.kernelModules = ["sbshc" "sbs"];
 
   virtualisation.virtualbox.host.enable = true;
 
@@ -31,22 +33,6 @@ in
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = localPkgs;
-
-  environment.etc = {
-    "asound.conf".source = pkgs.writeText "asound.conf" ''
-
-      pcm.!default {
-        type hw
-        card 1
-      }
-
-      ctl.!default {
-        type hw
-        card 1
-      }
-
-    '';
-  };
 
   nixpkgs.overlays = [ overlays ];
 

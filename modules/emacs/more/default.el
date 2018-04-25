@@ -30,25 +30,9 @@
 
 ;;; Code:
 
-(defun cfg:recent-file ()
-  "Who can live without this feature?"
 
-  (require 'recentf)
-  (recentf-mode t)
-  (setq recentf-max-saved-items 50)
-
-  (defun find-file-ido ()
-    "Find a recent file using Ido."
-    (interactive)
-    (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
-      (when file
-        (find-file file))))
-
-  (global-set-key (kbd "C-x C-r") #'find-file-ido))
-
-
-(defun cfg:simpler ()
-  "Configuration to make Emacs look less noisy."
+(progn
+  ;; make Emacs look less noisy.
 
   (setq inhibit-splash-screen t)
   (setq inhibit-startup-screen t)
@@ -58,64 +42,41 @@
   (blink-cursor-mode 0)
   (fringe-mode 4))
 
+(progn
+  ;; Packages
+  (require 'package)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+  (package-initialize))
 
-(defun cfg:editing ()
-  "Configuration for general editing functionality."
-
-  (defun duplicate-line ()
-    "Duplicates the current line."
-    (interactive)
-    (move-beginning-of-line 1)
-    (kill-line)
-    (yank)
-    (open-line 1)
-    (forward-line 1)
-    (yank))
-
-  (global-set-key (kbd "C-c C-d") #'duplicate-line)
+(progn
+  ;; general editing functionality.
   (global-set-key (kbd "C-c C-r") #'replace-string))
 
 
-(defun cfg:buffer ()
-  "Buffer configuration."
-
+(progn
+  ;;Buffer configuration.
   (global-set-key (kbd "C-c n") #'rename-buffer)
   (global-set-key (kbd "C-c u") #'rename-uniquely))
 
 
-(defun cfg:paredit ()
-  "Paredit configuration."
-  (defun duplicate-sexpr ()
-    (interactive)
-    (copy-region-as-kill (save-excursion
-                           (paredit-backward)
-                           (point))
-                         (point))
-    (paredit-newline)
-    (yank))
+;; (progn
+;;   ;; Elisp
+;;   (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
+;;   (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
+;;   (add-hook 'emacs-lisp-mode-hook #'eldoc-mode)
+;;   (add-hook 'emacs-lisp-mode-hook #'auto-complete-mode)
+;;   (add-hook 'emacs-lisp-mode-hook #'company-mode))
 
-  (defun copy-sexpr ()
-    (interactive)
-    (copy-region-as-kill (save-excursion
-                           (paredit-backward)
-                           (point))
-                         (point)))
 
-  ;;(global-set-key (kbd "C-c x") #'duplicate-sexpr)
-  ;;(global-set-key (kbd "C-c c") #'copy-sexpr)
-  ;;(global-set-key (kbd "C-c p") #'paredit-mode)
+(use-package emacs-lisp-mode
+  :hook (emacs-lisp-mode . (aggressive-indent-mode paredit-mode))
   )
 
 
-(defun cfg:elisp ()
-  (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
-  (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
-  (add-hook 'emacs-lisp-mode-hook #'eldoc-mode)
-  (add-hook 'emacs-lisp-mode-hook #'auto-complete-mode)
-  (add-hook 'emacs-lisp-mode-hook #'company-mode))
 
 
-(defun cfg:cider ()
+(progn
+  ;; Cider
   (add-hook 'cider-mode-hook #'aggressive-indent-mode)
   (add-hook 'cider-mode-hook #'paredit-mode)
   (add-hook 'cider-mode-hook #'eldoc-mode)
@@ -129,8 +90,8 @@
   (add-hook 'cider-repl-mode-hook #'company-mode))
 
 
-(defun cfg:clojure ()
-  "Configuration for Clojure."
+(progn
+  ;; Clojure
   (add-hook 'clojure-mode-hook #'aggressive-indent-mode)
   (add-hook 'clojure-mode-hook #'paredit-mode)
   (add-hook 'clojure-mode-hook #'eldoc-mode)
@@ -138,8 +99,8 @@
   (add-hook 'clojure-mode-hook #'company-mode))
 
 
-(defun cfg:clojure-script ()
-  "Configuration for ClojureScript."
+(progn
+  ;; clojureScript
   (add-hook 'clojure-script-mode-hook #'aggressive-indent-mode)
   (add-hook 'clojure-script-mode-hook #'paredit-mode)
   (add-hook 'clojure-script-mode-hook #'eldoc-mode)
@@ -147,15 +108,18 @@
   (add-hook 'clojure-script-mode-hook #'company-mode))
 
 
-(defun cfg:startup ()
+(progn
+  ;; Startup
   (shell))
 
 
-(defun cfg:shell ()
+(progn
+  ;; Shell
   (global-set-key (kbd "C-c s") 'shell))
 
 
-(defun cfg:windows ()
+(progn
+  ;; Windows
 
   (defun set-buffer-width-per10 (step-w_)
     (interactive "PX of 10? ")
@@ -185,24 +149,29 @@
   (global-set-key (kbd "C-c w") #'set-buffer-width-per10))
 
 
-(defun cfg:typography ()
-  "Config for typography."
+(progn
+  ;; Typography
 
   (set-frame-font "DejaVu Sans Mono")
   (set-face-attribute 'default nil :height 79))
 
 
-(defun cfg:language ()
+(progn
+  ;; Language
   (setq lexical-binding t))
 
 
-(defun cfg:minibuffer ()
+(progn
+  ;; Minibuffer
   (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
   (add-hook 'eval-expression-minibuffer-setup-hook #'show-paren-mode))
 
 
-(defun cfg:typescript ()
-  "TypeScript configuration."
+(progn
+  ;; Typescript
+
+  (require 'yasnippet)
+  (yas--define-parents 'web-mode '(js-mode))
 
   (defun setup-tide-mode ()
     (interactive)
@@ -234,6 +203,7 @@
 
     ;; enable typescript-tslint checker
 
+    (require 'flycheck)
     (flycheck-add-mode 'typescript-tslint 'web-mode))
 
 
@@ -262,13 +232,13 @@
   (add-hook 'typescript-mode-hook #'setup-tide-mode))
 
 
-(defun cfg:direx ()
-  "Configuration of the tree-based file browser direx."
+(progn
+  ;; Direx
   (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory))
 
 
-(defun cfg:spelling ()
-  "General spelling configuration."
+(progn
+  ;; Spelling
 
   ;; enable spell checking for comments in all programming modes
   (add-hook 'prog-mode-hook #'flyspell-prog-mode)
@@ -278,15 +248,17 @@
   (setq ispell-personal-dictionary "/home/mbock/dev/config/aspell-words.pws"))
 
 
-(defun cfg:nix ()
-  "Nix configuration."
+(progn
+  ;; Nix
+
   ;;(require 'nix-mode)
   ;;(add-to-list 'auto-mode-alist '("\\.nix" . nix-mode))
+  (add-hook 'nix-mode-hook #'company-mode)
   )
 
 
-(defun cfg:mmm ()
-  "Configuration for MMM-Mode"
+(progn
+  ;; MMM
 
   (require 'mmm-mode)
   (require 'haskell-mode)
@@ -322,16 +294,18 @@
   (add-hook 'nix-mode-hook #'mmm-mode))
 
 
-(defun cfg:prettier ()
+(progn
+  ;; Prettier
   (setq prettier-js-args '("--tab-width" "2"
                            "--trailing-comma" "all"
                            "--single-quote" "true")))
 
 
-(defun cfg:smartparens ()
+(progn
+  ;; smartparens
   (require 'smartparens)
   (require 'smartparens-config)
-  (smartparens-global-strict-mode)
+  ;;(smartparens-global-strict-mode)
 
   (global-set-key (kbd "C-M-<right>") 'sp-forward-sexp)
   (global-set-key (kbd "C-M-f") 'sp-forward-sexp)
@@ -351,36 +325,39 @@
   (global-set-key (kbd "M-<right>") 'sp-backward-barf-sexp))
 
 
-(defun cfg:web-mode ()
+(progn
+  ;; Web Mode
   (setq web-mode-code-indent-offset 2)
   (add-hook 'web-mode-hook #'prettier-js-mode))
 
 
-(defun cfg:windmove ()
+(progn
+  ;; WindMove
   (when (fboundp 'windmove-default-keybindings)
     (windmove-default-keybindings)))
 
 
-(defun cfg:haskell ()
+(progn
+  ;; Haskell
   (with-eval-after-load 'haskell-mode
     (define-key haskell-mode-map (kbd "C-c C-x") 'haskell-process-reload)
     (setq haskell-stylish-on-save t)))
 
-(defun cfg:helm ()
+(progn
+  ;; Helm
   (global-set-key (kbd "C-c f") 'helm-find))
 
 (require 'flycheck)
 
-(progn
-  (require 'package)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/")))
 
 (progn
+  ;; Yasnippet
   (require 'yasnippet)
   (yas-global-mode)
   (global-set-key (kbd "C-c y") 'yas-insert-snippet))
 
 (progn
+  ;; Dictcc
   (defun dictcc-at-point-or-query ()
     (interactive)
     (if (word-at-point)
@@ -389,6 +366,7 @@
   (global-set-key (kbd "C-c d") 'dictcc-at-point-or-query))
 
 (progn
+  ;; Show Info
   (defun show-info ()
     (interactive)
     (message "DATE: %s | BAT: %s"
@@ -398,43 +376,291 @@
   (global-set-key (kbd "C-c i") 'show-info))
 
 (progn
+  ;; Dired
   (add-hook 'dired-mode-hook (lambda () (dired-hide-details-mode 1))))
 
 (progn
+  ;; Company
   (require 'company)
-  (define-key company-active-map (kbd "C-s") 'company-select-next)
-  (define-key company-active-map (kbd "C-r") 'company-select-previous))
+  (define-key company-active-map (kbd "C-n") 'company-select-next)
+  (define-key company-active-map (kbd "C-p") 'company-select-previous))
 
 (progn
+  ;; Regex
   (setq reb-re-syntax 'string))
 
 (progn
   (setq ido-use-filename-at-point 'guess))
 
 (progn
-  (cfg:helm)
-  (cfg:simpler)
-  (cfg:language)
-  (cfg:startup)
-  (cfg:editing)
-  (cfg:direx)
-  (cfg:paredit)
-  (cfg:recent-file)
-  (cfg:elisp)
-  (cfg:clojure)
-  (cfg:clojure-script)
-  (cfg:cider)
-  (cfg:shell)
-  (cfg:nix)
-  (cfg:windows)
-  (cfg:typography)
-  (cfg:minibuffer)
-  (cfg:typescript)
-  (cfg:spelling)
-  (cfg:mmm)
-  (cfg:prettier)
-  ;;(cfg:smartparens)
-  (cfg:windmove)
-  (cfg:web-mode)
-  (cfg:buffer)
-  (cfg:haskell))
+  ;; Helm
+  (setq helm-buffers-fuzzy-matching t
+        helm-recentf-fuzzy-match    t)
+  (helm-mode)
+  (setq helm-autoresize-max-height 30)
+  (setq helm-autoresize-min-height 5)
+  (setq helm-split-window-in-side-p t)
+  (setq helm-split-window-default-side 'below)
+
+  ;;  (setq helm-buffer-help-message)
+
+  (global-set-key (kbd "M-x") 'helm-M-x)
+  (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+  (global-set-key (kbd "C-x b") 'helm-mini)
+  (global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+  (defadvice helm-display-mode-line (after undisplay-header activate)
+    (setq header-line-format nil))
+
+  (setq helm-mini-default-sources
+        '(helm-source-buffers-list
+          helm-source-bookmarks
+          helm-source-recentf
+          helm-source-buffer-not-found)))
+
+(progn
+  (defun load-theme--disable-old-theme(theme &rest args)
+    "Disable current theme before loading new one."
+    (mapcar #'disable-theme custom-enabled-themes))
+
+  (advice-add 'load-theme :before #'load-theme--disable-old-theme))
+
+(progn
+  (add-hook 'prog-mode-hook 'highlight-indentation-mode))
+
+(progn
+  (setq browse-url-browser-function 'browse-url-generic
+        browse-url-generic-program "chromium-browser"))
+
+(progn
+  (global-set-key (kbd "<C-S-up>")     'buf-move-up)
+  (global-set-key (kbd "<C-S-down>")   'buf-move-down)
+  (global-set-key (kbd "<C-S-left>")   'buf-move-left)
+  (global-set-key (kbd "<C-S-right>")  'buf-move-right))
+
+(progn
+  (require 'duplicate-thing)
+  (global-set-key (kbd "M-c") 'duplicate-thing))
+
+;; (progn
+;;   (dynamic-spaces-global-mode 1))
+
+(progn
+  (avy-setup-default)
+  (global-set-key (kbd "C-:") 'avy-goto-char)
+  (global-set-key (kbd "C-'") 'avy-goto-char-2)
+  (global-set-key (kbd "C-.") 'avy-goto-char-timer))
+
+(progn
+
+  (set-fringe-mode 8)
+
+  (define-fringe-bitmap 'right-curly-arrow
+    [#b00000000
+     #b00000000
+     #b00000000
+     #b00000000
+     #b01110000
+     #b00010000
+     #b00010000
+     #b00000000])
+
+
+  (define-fringe-bitmap 'left-curly-arrow
+    [#b00000000
+     #b00000000
+     #b00000000
+     #b00000000
+     #b00000000
+     #b00000000
+     #b00000000
+     #b00000000])
+
+  (deftheme my-light
+    "Created 2018-04-17.")
+
+  (setq visible-bell nil)
+
+  (custom-theme-set-faces
+   'my-light
+
+   '(whitespace-line ((t (:background "grey90"))))
+
+   '(fringe ((t (:background "grey100"))))
+
+   '(avy-lead-face
+     ((t (:background "goldenrod" :foreground "white"))))
+
+   '(avy-lead-face-0
+     ((t (:background "steel blue" :foreground "white"))))
+
+   '(helm-ff-dotted-directory
+     ((t (:background "dark gray" :foreground "black"))))
+
+   '(helm-selection
+     ((t (:background "seashell2" :distant-foreground "black"))))
+
+   '(helm-source-header
+     ((t (:background "azure2" :foreground "black" :box (:line-width 2 :color "azure2") :weight bold :height 1.0))))
+
+   '(isearch
+     ((t (:background "violet" :foreground "lightskyblue1"))))
+
+   '(helm-source-header
+     ((t (:background "azure2" :foreground "black" :box (:line-width 2 :color "azure2") :weight bold :height 1.0)))))
+
+  (provide-theme 'my-light)
+
+  (defun theme-dark ()
+    (interactive)
+    (load-theme 'zenburn)
+
+    (custom-theme-set-faces
+     'zenburn
+     '(highlight-indentation-face ((t (:background "grey27"))))
+     '(fringe ((t (:background "grey30"))))
+     '(vertical-border ((t (:foreground "grey25"))))
+     '(helm-selection ((t (:background "seashell3" :underline nil))))))
+
+  (defun theme-light ()
+    (interactive)
+    (load-theme 'my-light)))
+
+
+(require 'darkroom)
+
+
+(progn
+  (require 'disable-mouse)
+  (global-disable-mouse-mode))
+
+(progn
+  (require 'advice)
+
+  (defvar acc-auto-repeat-time 100000
+    "Interval in microseconds to detect keyboard auto-repeat.
+\nIf an interactive command is repeated within this time, and invoked with
+the same keyboard key, it is considered to be auto-repeated.")
+
+  (defvar acc--last-time (current-time))
+  (defvar acc--next-multiplier '(1))
+  (defvar acc--last-command-event nil)
+
+  (defun acc-time-diff (time1 time2)
+    "Difference between TIME1 and TIME2 in microseconds.
+Assume TIME1 is before or equal to TIME2.
+Return 1000000 if diff is larger than one second.
+See `current-time' for time format."
+    (let ((hi (- (car time2) (car time1)))
+          (s (- (nth 1 time2) (nth 1 time1)))
+          (us (- (nth 2 time2) (nth 2 time1))))
+      (cond ((/= hi 0)    1000000)
+            ((=  s 1)     (+ 1000000 us))
+            ((/= s 0)     1000000)
+            (t            us))
+      ))
+
+  ;; `accelerate' is a macro. It could have most of the logic in
+  ;; `acc-remove-advice', `acc-save-mult' and `acc-pump-arg', but
+  ;; placing them in separate functions that aren't macros will allow
+  ;; the expansion of `accelerate' to be smaller. It also enhances
+  ;; readability, just slightly.
+
+  (defun acc-remove-advice (funct class name)
+    ;; Remove a specific piece of advice.
+    ;; Basically the reverse of `defadvice'.
+    (if (ad-find-advice funct 'before 'accelerate)
+        (progn
+          (ad-remove-advice funct 'before 'accelerate)
+          (ad-activate-on funct)
+          nil)))
+
+  (defun acc-save-mult (multiplier symb)
+    ;; Normalize MULTIPLIER, store it in a property of SYMB, and return it.
+    ;; If MULTIPLIER is a number, normalize it by putting it in a list, otherwise
+    ;; return it as it is. `nil' is returned as it is too.
+    (if (numberp multiplier) (setq multiplier (list multiplier)))
+    (put symb 'accelerate multiplier)
+    multiplier)
+
+  (defun acc-pump-arg (arg0 symb)
+    ;; Given an argument value ARG0 assumed to be the first arg of an advised
+    ;; command, compute and return a replacement value for that arg.
+    ;; If it is concluded that this is not an auto-repeated invocation of
+    ;; the advised command, ARG0 is returned unchanged.
+    ;; SYMB is the command symbol, which is used to get the multiplier list
+    ;; stored in a property on that symbol.
+    ;; Variables `acc--last-command-event', `acc--last-time' and/or
+    ;; `acc--next-multiplier' are updated.
+    (if (and (eq last-command-event acc--last-command-event)
+             (not defining-kbd-macro)
+             (not executing-kbd-macro)
+             (eq arg0 1))
+        (progn
+          (let ((curr (current-time)))
+            (if (< (acc-time-diff acc--last-time curr) acc-auto-repeat-time)
+                (setq arg0 (car acc--next-multiplier)
+                      acc--next-multiplier (or (cdr acc--next-multiplier)
+                                               acc--next-multiplier))
+              ;; else  too long since last time
+              (setq acc--next-multiplier (get symb 'accelerate)))
+            (setq acc--last-time curr)))
+      ;; else  temporary disabled
+      (setq acc--last-command-event last-command-event))
+    arg0)
+
+;;;###autoload
+  (defmacro accelerate (command multiplier)
+    "Advise COMMAND so its numeric argument is increased when repeated quickly.
+\nCOMMAND should be a symbol name of an interactive command where the first arg
+is 1 by default. Normally that is a function declared with \(interactive \"p\").
+COMMAND should not be quoted since this is a macro.
+\nMULTIPLIER is a number \(or a list of numbers\) to become the first arg of the
+command when the command is repeated quickly, or `nil' to remove acceleration.
+If MULTIPLIER is a list of numbers, each consecutive repeated invocation of the
+command will use the next number in the list. If the end of the list is reached
+the last number is used again in further repeated invocations.
+\nAlso see variable `acc-auto-repeat-time'."
+    `(if (acc-save-mult ,multiplier ',command)
+         (defadvice ,command (before accelerate activate)
+           "Accelerated when auto-repeated. See `accelerate'"
+           (if (called-interactively-p 'any)
+               (ad-set-arg 0 (acc-pump-arg (ad-get-arg 0) ',command))))
+       ;; else
+       (acc-remove-advice ',command 'before 'accelerate)))
+
+  (provide 'accelerate)
+
+
+  (require 'accelerate)
+  (accelerate previous-line 3)
+  (accelerate next-line 3)
+  (accelerate backward-char 3)
+  (accelerate forward-char 3)
+  (accelerate right-char 3)
+  (accelerate left-char 3)
+  (accelerate dired-previous-line 2)
+  (accelerate dired-next-line 2))
+
+(progn
+  (autoload 'helm-company "helm-company")
+  (eval-after-load 'company
+    '(progn
+       (define-key company-mode-map (kbd "C-:") 'helm-company)
+       (define-key company-active-map (kbd "C-:") 'helm-company))))
+
+
+(progn
+  (require 'whitespace)
+  (setq whitespace-style '(face empty tabs lines-tail trailing))
+  (global-whitespace-mode t))
+
+
+(progn
+  (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+
+
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))

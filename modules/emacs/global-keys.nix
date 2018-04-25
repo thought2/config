@@ -23,6 +23,7 @@ with pkgs.emacs25PackagesNg;
     (defvar my-keys-minor-mode-map
        (let ((map (make-sparse-keymap)))
 ;;         (define-key map (kbd "C-z") 'ace-jump-line-mode)
+           (define-key map (kbd "C-.") 'avy-goto-char-timer)
          (define-key map (kbd "C-c c") #'comment-or-uncomment-region)
          map)
        "my-keys-minor-mode keymap.")

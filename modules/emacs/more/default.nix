@@ -38,6 +38,24 @@ with pkgs.emacs25PackagesNg;
         avy
         json-mode
         restclient
+        browse-kill-ring
+        helm
+        [ helm-swoop swiper-helm ]
+        highlight-indentation
+        scratch-palette
+        helm-mode-manager
+        # backward-forward
+        better-shell
+        buffer-move
+        duplicate-thing
+        # dynamic-spaces
+        zenburn-theme
+        disable-mouse
+        darkroom
+        immortal-scratch
+        persistent-scratch
+        melpaPackages.use-package
+        multiple-cursors
       ];
       init = readFile ./default.el;
     };

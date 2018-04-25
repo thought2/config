@@ -51,18 +51,7 @@ with lib;
 
   sound.mediaKeys.enable = true;
 
-  environment.systemPackages = systemPkgs ++ (with shorthands; [
-    keyboard-de
-    keyboard-us
-    youtube-dl-mp3
-    nix-search
-    screens-1
-    screens-2
-    screens-3
-    screens-mirror
-    chrome-debug
-    notify-play
-  ]);
+  environment.systemPackages = systemPkgs ++ builtins.attrValues(shorthands);
 
   programs.chromium = {
     enable = true;
@@ -73,6 +62,8 @@ with lib;
       "lmhkpmbekcpmknklioeibfkpmmfibljd" # Redux DevTools
       "bfbameneiokkgbdmiekhjnmfkcnldhhm" # Web Developer
       "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
+      "dmghijelimhndkbmpgbldicpogfkceaj" # Dark Mode
+      "chklaanhfefbnpoihckbnefhakgolnmc" # JSONView
     ];
     homepageLocation = "https://duckduckgo.com";
     extraOpts = {
@@ -92,6 +83,8 @@ with lib;
     clear lock
     ! Caps Lock -> Nabla
     keycode 66 = nabla
+
+    keycode 49 = asciicircum
   '';
 
 }
