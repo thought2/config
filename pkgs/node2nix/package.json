@@ -1,6 +1,7 @@
 [
     "elm-format",
     "elm-oracle",
+    "elm-live",
     "cross-env",
     "create-elm-app",
     "pulp",

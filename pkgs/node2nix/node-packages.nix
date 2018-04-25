@@ -148,6 +148,15 @@ let
         sha1 = "813584021962a9e9e6fd039f940d12f56ca7859e";
       };
     };
+    "ansi-regex-0.2.1" = {
+      name = "ansi-regex";
+      packageName = "ansi-regex";
+      version = "0.2.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/ansi-regex/-/ansi-regex-0.2.1.tgz";
+        sha1 = "0d8e946967a3d8143f93e24e298525fc1b2235f9";
+      };
+    };
     "ansi-regex-2.1.1" = {
       name = "ansi-regex";
       packageName = "ansi-regex";
@@ -164,6 +173,24 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/ansi-regex/-/ansi-regex-3.0.0.tgz";
         sha1 = "ed0317c322064f79466c02966bddb605ab37d998";
+      };
+    };
+    "ansi-styles-1.1.0" = {
+      name = "ansi-styles";
+      packageName = "ansi-styles";
+      version = "1.1.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/ansi-styles/-/ansi-styles-1.1.0.tgz";
+        sha1 = "eaecbf66cd706882760b2f4691582b8f55d7a7de";
+      };
+    };
+    "ansi-styles-2.0.1" = {
+      name = "ansi-styles";
+      packageName = "ansi-styles";
+      version = "2.0.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/ansi-styles/-/ansi-styles-2.0.1.tgz";
+        sha1 = "b033f57f93e2d28adeb8bc11138fa13da0fd20a3";
       };
     };
     "ansi-styles-2.2.1" = {
@@ -508,13 +535,13 @@ let
         sha1 = "1dbd1c835658e35ce3f9984099db00585c782014";
       };
     };
-    "autoprefixer-8.2.0" = {
+    "autoprefixer-8.3.0" = {
       name = "autoprefixer";
       packageName = "autoprefixer";
-      version = "8.2.0";
+      version = "8.3.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/autoprefixer/-/autoprefixer-8.2.0.tgz";
-        sha512 = "09csf7kja2d5b48f5bi9a78d3y1jprxw95pi1dc4c5qm3vflm578lcz6ia3jdsjvdssd82yjbqlbm8pzvs12rzhsi9d6j0wc2j505f4";
+        url = "https://registry.npmjs.org/autoprefixer/-/autoprefixer-8.3.0.tgz";
+        sha512 = "12ayls4d1nl9i5c7hjxizhvm41k71cqmj4mqvr8lqirhm86w8irrdaap3sbc8n1ax41imvrm5wy5cpp2ncdxz58pxxjzg60wzhqm38x";
       };
     };
     "aws-sign2-0.6.0" = {
@@ -535,13 +562,13 @@ let
         sha1 = "b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8";
       };
     };
-    "aws4-1.6.0" = {
+    "aws4-1.7.0" = {
       name = "aws4";
       packageName = "aws4";
-      version = "1.6.0";
+      version = "1.7.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/aws4/-/aws4-1.6.0.tgz";
-        sha1 = "83ef5ca860b2b32e4a0deedee8c771b9db57471e";
+        url = "https://registry.npmjs.org/aws4/-/aws4-1.7.0.tgz";
+        sha512 = "3rkdcpm3myysvq9nj6plgvpngzsbv7qk1wvb9f4m3gcsl23pf5x0hyph02svyl2v1lgjji8kl75ii7q04lhhhgjyw1irbinmxsl6qyz";
       };
     };
     "babel-cli-6.26.0" = {
@@ -1084,13 +1111,13 @@ let
         sha512 = "11dwi4v72034dqafp0qxsg8h6cpn92vv4vf909a9fybd69yfg6gqn4hhav6x59r1wbi8h1qlgfh9np0340mpljv1hc9v9p02giqygp5";
       };
     };
-    "base64-js-1.2.3" = {
+    "base64-js-1.3.0" = {
       name = "base64-js";
       packageName = "base64-js";
-      version = "1.2.3";
+      version = "1.3.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/base64-js/-/base64-js-1.2.3.tgz";
-        sha512 = "3kqp8hzql2ccdqf7vqizav1lrwp5gynn081718g9slxcs428sv02n037xb9hfgrqybbk4qacnk5mcv63z8fm3l4h6fi06xm8nqj3h1j";
+        url = "https://registry.npmjs.org/base64-js/-/base64-js-1.3.0.tgz";
+        sha512 = "2bvd1ja1kbighx0vm4ia3gqv15m70pldsx2igl37ayq11715w3g0vfmfq1yb8w80hlzblvszig3fr4sdhn8rr800lsaz8dg47zsziki";
       };
     };
     "batch-0.6.1" = {
@@ -1192,6 +1219,15 @@ let
         sha512 = "20bg51v29zygy89w84qb64pkjikxfjdsgjs0ry6pvv8fkwn5kd1izrqn022d838q3rcaq8dmy033g7q8b6960j4f8ipan74y9ydimr2";
       };
     };
+    "body-parser-1.14.2" = {
+      name = "body-parser";
+      packageName = "body-parser";
+      version = "1.14.2";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/body-parser/-/body-parser-1.14.2.tgz";
+        sha1 = "1015cb1fe2c443858259581db53332f8d0cf50f9";
+      };
+    };
     "body-parser-1.18.2" = {
       name = "body-parser";
       packageName = "body-parser";
@@ -1199,6 +1235,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/body-parser/-/body-parser-1.18.2.tgz";
         sha1 = "87678a19d84b47d859b83199bd59bce222b10454";
+      };
+    };
+    "bole-2.0.0" = {
+      name = "bole";
+      packageName = "bole";
+      version = "2.0.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/bole/-/bole-2.0.0.tgz";
+        sha1 = "d8aa1c690467bfb4fe11b874acb2e8387e382615";
       };
     };
     "bonjour-3.5.0" = {
@@ -1273,13 +1318,13 @@ let
         sha1 = "ba77962e12dff969d6b76711e914b737857bf6a7";
       };
     };
-    "braces-2.3.1" = {
+    "braces-2.3.2" = {
       name = "braces";
       packageName = "braces";
-      version = "2.3.1";
+      version = "2.3.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/braces/-/braces-2.3.1.tgz";
-        sha512 = "2fpcx8h100fhpaffr6mh5ysp6dv06nl5xkii807fw0c603i15sg3wsxmj63fdn4apxdnn8an2ks883mvrdsv7mfryhfxg1pf1h6bvj8";
+        url = "https://registry.npmjs.org/braces/-/braces-2.3.2.tgz";
+        sha512 = "3gxrfbb03jf6nh75n99snhv4a9jni48hfc0gkj5yl1cginpqx3d73dnp8snph1fdkc804iz6zg0aqibifjnscjfbpfziw2g7yg5pmv8";
       };
     };
     "brorand-1.1.0" = {
@@ -1291,13 +1336,13 @@ let
         sha1 = "12c25efe40a45e3c323eb8675a0a0ce57b22371f";
       };
     };
-    "browser-pack-6.0.4" = {
+    "browser-pack-6.1.0" = {
       name = "browser-pack";
       packageName = "browser-pack";
-      version = "6.0.4";
+      version = "6.1.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/browser-pack/-/browser-pack-6.0.4.tgz";
-        sha512 = "0ylgxzrsxs25v3c4mz5ggqawb8k3xb39ialqlflk1nadfk8wrig2g2ipkpnw6bf9zhdhmigkwqbbl8yssibcb6fgnbbqfgsnfgnz123";
+        url = "https://registry.npmjs.org/browser-pack/-/browser-pack-6.1.0.tgz";
+        sha512 = "1cav0iv5irfvilx6x14zbxil5m012hxan16cgyp9yjs6fqfg6fny2cdjimfwgil9ma8n4w8g8wv4yn843sz257p44vkbaz8qn1jxdks";
       };
     };
     "browser-resolve-1.11.2" = {
@@ -1318,13 +1363,22 @@ let
         sha1 = "b5a9c9020243f0c70e4675bec8223bc627e415ce";
       };
     };
-    "browserify-aes-1.1.1" = {
+    "browserify-16.2.0" = {
+      name = "browserify";
+      packageName = "browserify";
+      version = "16.2.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/browserify/-/browserify-16.2.0.tgz";
+        sha512 = "02kwwi6cvxwcyhv9n13j05y67xdkb4b09p5z7n2sl97sif012i5cibmbz6wqqy89ybqh7s3sbdxqf7g6y2hbl61g81vhrbz9815v2ya";
+      };
+    };
+    "browserify-aes-1.2.0" = {
       name = "browserify-aes";
       packageName = "browserify-aes";
-      version = "1.1.1";
+      version = "1.2.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/browserify-aes/-/browserify-aes-1.1.1.tgz";
-        sha512 = "0b874c5j68a6h1smd9avnc98zpjy2b4sykkhfpn97lzg7k5aq3ab0jdsmxjafifm0sa3srwscfpcl70gwnlg242p7cavnf115hd6sah";
+        url = "https://registry.npmjs.org/browserify-aes/-/browserify-aes-1.2.0.tgz";
+        sha512 = "22gkxh9wf4hjxkyvj427k9r76xkz9vs63s1drwcggbpv0r7qdclzdvw167s7iq8936zak241cc5ck3bqkp6hy99zlkrbcmfl5g8gc7v";
       };
     };
     "browserify-cache-api-3.0.1" = {
@@ -1336,22 +1390,22 @@ let
         sha1 = "96247e853f068fd6e0d45cc73f0bb2cd9778ef02";
       };
     };
-    "browserify-cipher-1.0.0" = {
+    "browserify-cipher-1.0.1" = {
       name = "browserify-cipher";
       packageName = "browserify-cipher";
-      version = "1.0.0";
+      version = "1.0.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/browserify-cipher/-/browserify-cipher-1.0.0.tgz";
-        sha1 = "9988244874bf5ed4e28da95666dcd66ac8fc363a";
+        url = "https://registry.npmjs.org/browserify-cipher/-/browserify-cipher-1.0.1.tgz";
+        sha512 = "3bz6v63l37ndb18236yjdkbxjcvy4x16a8j7vsqxqprvnkcnkq1hg1ffd1c9zk9a3j555ppnpisfyh0x4adlb8lmpwbfa8i837n9y5h";
       };
     };
-    "browserify-des-1.0.0" = {
+    "browserify-des-1.0.1" = {
       name = "browserify-des";
       packageName = "browserify-des";
-      version = "1.0.0";
+      version = "1.0.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/browserify-des/-/browserify-des-1.0.0.tgz";
-        sha1 = "daa277717470922ed2fe18594118a175439721dd";
+        url = "https://registry.npmjs.org/browserify-des/-/browserify-des-1.0.1.tgz";
+        sha512 = "35rl28vzg80fa81b0a7rdaj71zf0ymxxhlmdpisps4dlgvkazbxz47q9fnl1n9wnbq7ilk6vnbxa399zcwdjdz3i0lii1mpnyhh4bfg";
       };
     };
     "browserify-incremental-3.1.1" = {
@@ -1417,13 +1471,22 @@ let
         sha512 = "2c52470l3xpcqvzj8qpkwpb73gx4mq30wsk08n90waahj8g8qwd8cjmvf625f4836p39jiigrd0g4xh9k4p7mhcaykgw0pvfiqvjsy9";
       };
     };
-    "browserslist-3.2.3" = {
+    "browserslist-3.2.5" = {
       name = "browserslist";
       packageName = "browserslist";
-      version = "3.2.3";
+      version = "3.2.5";
       src = fetchurl {
-        url = "https://registry.npmjs.org/browserslist/-/browserslist-3.2.3.tgz";
-        sha512 = "05hmawl579w2mrqxhk8l4g9z6a71zjn4j9iwca0vw7773lzj7miw5cza7ymk42lar53949nd5knc3126i4lr0sv8jl55ksmn78ndnki";
+        url = "https://registry.npmjs.org/browserslist/-/browserslist-3.2.5.tgz";
+        sha512 = "0i13lhlxr5wxch8fas49906a09kfi9ddk5wsimk50v830ili6sph0mjjsrr8aj72j95mcbd1g7ic89irmbq84hw86ianir59k6vmy5j";
+      };
+    };
+    "budo-9.4.7" = {
+      name = "budo";
+      packageName = "budo";
+      version = "9.4.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/budo/-/budo-9.4.7.tgz";
+        sha1 = "a6cdcf2572c22ed1331ae91f34a07f265b3dd20b";
       };
     };
     "buffer-4.9.1" = {
@@ -1433,6 +1496,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/buffer/-/buffer-4.9.1.tgz";
         sha1 = "6d1bb601b07a4efced97094132093027c95bc298";
+      };
+    };
+    "buffer-5.1.0" = {
+      name = "buffer";
+      packageName = "buffer";
+      version = "5.1.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/buffer/-/buffer-5.1.0.tgz";
+        sha512 = "1ipkzdnq03rnxyl50wmzigdbd96lh0mgzffcab80yxl38x7k316kzs3h0w0bxdjj7vqh6dw3wgb7y3rsqab0ar4ky9rbh0r1f1i2hk2";
       };
     };
     "buffer-from-1.0.0" = {
@@ -1487,6 +1559,24 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz";
         sha1 = "85982878e21b98e1c66425e03d0174788f569ee8";
+      };
+    };
+    "bytes-2.2.0" = {
+      name = "bytes";
+      packageName = "bytes";
+      version = "2.2.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/bytes/-/bytes-2.2.0.tgz";
+        sha1 = "fd35464a403f6f9117c2de3609ecff9cae000588";
+      };
+    };
+    "bytes-2.4.0" = {
+      name = "bytes";
+      packageName = "bytes";
+      version = "2.4.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/bytes/-/bytes-2.4.0.tgz";
+        sha1 = "7d97196f9d5baf7f6935e25985549edd2a6c2339";
       };
     };
     "bytes-3.0.0" = {
@@ -1579,22 +1669,22 @@ let
         sha1 = "b534e7c734c4f81ec5fbe8aca2ad24354b962c6c";
       };
     };
-    "caniuse-db-1.0.30000821" = {
+    "caniuse-db-1.0.30000830" = {
       name = "caniuse-db";
       packageName = "caniuse-db";
-      version = "1.0.30000821";
+      version = "1.0.30000830";
       src = fetchurl {
-        url = "https://registry.npmjs.org/caniuse-db/-/caniuse-db-1.0.30000821.tgz";
-        sha1 = "3fcdc67c446a94a9cdd848248a4e3e54b2da7419";
+        url = "https://registry.npmjs.org/caniuse-db/-/caniuse-db-1.0.30000830.tgz";
+        sha1 = "6e45255b345649fd15ff59072da1e12bb3de2f13";
       };
     };
-    "caniuse-lite-1.0.30000821" = {
+    "caniuse-lite-1.0.30000830" = {
       name = "caniuse-lite";
       packageName = "caniuse-lite";
-      version = "1.0.30000821";
+      version = "1.0.30000830";
       src = fetchurl {
-        url = "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30000821.tgz";
-        sha512 = "1i0yhpdy5rqs0hgcsq7anpnr3vy6d1fsl1n18kjnjnc88j60sk14fgayprvi5znwkxg88nnjx8q8mi8idpykg7kxijgxbxh9p5il9mb";
+        url = "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30000830.tgz";
+        sha512 = "3mfnsa06in39rdn9jnp0lw8w3iny8h2x889bfk2afs070byjkz4h67gd8iynns23n12l6nmydiy00iwd9kqk67kgqcy5874x298djn8";
       };
     };
     "capture-stack-trace-1.0.0" = {
@@ -1642,6 +1732,15 @@ let
         sha1 = "5eab50b28afe58074d0d58291388828b5e5fbc98";
       };
     };
+    "chalk-0.5.1" = {
+      name = "chalk";
+      packageName = "chalk";
+      version = "0.5.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/chalk/-/chalk-0.5.1.tgz";
+        sha1 = "663b3a648b68b55d04690d49167aa837858f2174";
+      };
+    };
     "chalk-1.1.3" = {
       name = "chalk";
       packageName = "chalk";
@@ -1660,13 +1759,13 @@ let
         sha512 = "1fnn3znivja3xq1lacvsdwkl2s8ki9w95sylnf2pkmaia1mjz3llbdb5r2dxsflqfky3h8f1bh0piv0l5waw2bkdniqnyv0yx5wch9d";
       };
     };
-    "chalk-2.3.2" = {
+    "chalk-2.4.0" = {
       name = "chalk";
       packageName = "chalk";
-      version = "2.3.2";
+      version = "2.4.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/chalk/-/chalk-2.3.2.tgz";
-        sha512 = "06jlrzx0nb92910rcfhx55n28jgvhc0qda49scnfyifnmc31dyfqsl5qqiwhsxkrhrc6c07x69q037f1pwg06kkfd1qdzaxz7dj7kk4";
+        url = "https://registry.npmjs.org/chalk/-/chalk-2.4.0.tgz";
+        sha512 = "0bnfi1y6b0wl6wn93ykm3awxyjnsknai0hrnvvkxfvjrcsld722r3ljdac9zifvvg8vqd4pxlrhrc4r58yp0xxfxj2bpx18zv8z1gss";
       };
     };
     "chardet-0.4.2" = {
@@ -1676,6 +1775,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/chardet/-/chardet-0.4.2.tgz";
         sha1 = "b5473b33dc97c424e5d98dc87d55d4d8a29c8bf2";
+      };
+    };
+    "charenc-0.0.2" = {
+      name = "charenc";
+      packageName = "charenc";
+      version = "0.0.2";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/charenc/-/charenc-0.0.2.tgz";
+        sha1 = "c0a1d2f3a7092e03774bfa83f14c0fc5790a8667";
       };
     };
     "chokidar-1.6.0" = {
@@ -1813,13 +1921,13 @@ let
         sha1 = "120601537a916d29940f934da3b48d585a39213d";
       };
     };
-    "cliui-4.0.0" = {
+    "cliui-4.1.0" = {
       name = "cliui";
       packageName = "cliui";
-      version = "4.0.0";
+      version = "4.1.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/cliui/-/cliui-4.0.0.tgz";
-        sha512 = "0mh539939k4z2nhj5h1m8kdr3bfy2f1kmdkss02cdbyabmpdkc6m22llyykymriahf54gpx6qg9v3vrs51gqgrrfhpsgbdndgjdd3cx";
+        url = "https://registry.npmjs.org/cliui/-/cliui-4.1.0.tgz";
+        sha512 = "26knyxdavl3y7kq82vfa094ym3n05vy2h2j5srb9fhhy8l43l0kwlasah5i78jks77zqgc373hbf96xcxv6am042gpbw35x452vwlg0";
       };
     };
     "clone-1.0.4" = {
@@ -2056,6 +2164,15 @@ let
         sha1 = "b06873934bc5e344fef611a196a6faae0aee015a";
       };
     };
+    "connect-pushstate-1.1.0" = {
+      name = "connect-pushstate";
+      packageName = "connect-pushstate";
+      version = "1.1.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/connect-pushstate/-/connect-pushstate-1.1.0.tgz";
+        sha1 = "bcab224271c439604a0fb0f614c0a5f563e88e24";
+      };
+    };
     "console-browserify-1.1.0" = {
       name = "console-browserify";
       packageName = "console-browserify";
@@ -2146,13 +2263,13 @@ let
         sha1 = "fab83fbb0b2d8dc85fa636c4b9d34c75420c6d65";
       };
     };
-    "core-js-2.5.4" = {
+    "core-js-2.5.5" = {
       name = "core-js";
       packageName = "core-js";
-      version = "2.5.4";
+      version = "2.5.5";
       src = fetchurl {
-        url = "https://registry.npmjs.org/core-js/-/core-js-2.5.4.tgz";
-        sha1 = "f2c8bf181f2a80b92f360121429ce63a2f0aeae0";
+        url = "https://registry.npmjs.org/core-js/-/core-js-2.5.5.tgz";
+        sha1 = "b14dde936c640c0579a6b50cabcc132dd6127e3b";
       };
     };
     "core-util-is-1.0.2" = {
@@ -2173,13 +2290,13 @@ let
         sha512 = "3j2bwqqxpllfpdbnnjl2n380q8mcvz08p2xi5c7kzhqrscl8f3lmpa11jzsn76b5q2rz4604bffg2vxbbx4rrlmvgr82g8500pmf8qs";
       };
     };
-    "create-ecdh-4.0.0" = {
+    "create-ecdh-4.0.1" = {
       name = "create-ecdh";
       packageName = "create-ecdh";
-      version = "4.0.0";
+      version = "4.0.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/create-ecdh/-/create-ecdh-4.0.0.tgz";
-        sha1 = "888c723596cdf7612f6498233eebd7a35301737d";
+        url = "https://registry.npmjs.org/create-ecdh/-/create-ecdh-4.0.1.tgz";
+        sha512 = "2whpg1253714sq60ayvsap6n3qdwa9l0zhdlxv2gz8frppds69w1q079pmf55qlygnc7ad499511xsbswy0a39asqcp9a0p1w5c56w9";
       };
     };
     "create-error-class-3.0.2" = {
@@ -2191,22 +2308,22 @@ let
         sha1 = "06be7abef947a3f14a30fd610671d401bca8b7b6";
       };
     };
-    "create-hash-1.1.3" = {
+    "create-hash-1.2.0" = {
       name = "create-hash";
       packageName = "create-hash";
-      version = "1.1.3";
+      version = "1.2.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/create-hash/-/create-hash-1.1.3.tgz";
-        sha1 = "606042ac8b9262750f483caddab0f5819172d8fd";
+        url = "https://registry.npmjs.org/create-hash/-/create-hash-1.2.0.tgz";
+        sha512 = "055xaldi3hy1bjxhvznh3470j1kq2xk827mxal79bgqik3lblax6s4inxqby27ymgcghl2hn7wnx9fnacmyq3q93hk6y327cc41nkfg";
       };
     };
-    "create-hmac-1.1.6" = {
+    "create-hmac-1.1.7" = {
       name = "create-hmac";
       packageName = "create-hmac";
-      version = "1.1.6";
+      version = "1.1.7";
       src = fetchurl {
-        url = "https://registry.npmjs.org/create-hmac/-/create-hmac-1.1.6.tgz";
-        sha1 = "acb9e221a4e17bdb076e90657c42b93e3726cf06";
+        url = "https://registry.npmjs.org/create-hmac/-/create-hmac-1.1.7.tgz";
+        sha512 = "0p2jhk94k3as67lhrr1jyljkr0y65snxjzqnix0nifnfcanhilccrzkc47gwlg5wy0m8l1gv12lj78ivgmw5m1ww4f8iylr52bbv49h";
       };
     };
     "cross-spawn-4.0.0" = {
@@ -2234,6 +2351,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/cross-spawn/-/cross-spawn-6.0.5.tgz";
         sha512 = "1csj16gwq9riz0pm73dlxhbnsl1r3ldc5v0aincwj71ambi6xf3kc1kgsbwaakd8rj16k4mrli2syrjd57g6cr81zdzivdd2jn4ndbr";
+      };
+    };
+    "crypt-0.0.2" = {
+      name = "crypt";
+      packageName = "crypt";
+      version = "0.0.2";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/crypt/-/crypt-0.0.2.tgz";
+        sha1 = "88d7ff7ec0dfb86f713dc87bbb42d044d3e6c41b";
       };
     };
     "cryptiles-2.0.5" = {
@@ -2387,6 +2513,24 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/date-now/-/date-now-0.1.4.tgz";
         sha1 = "eaf439fd4d4848ad74e5cc7dbef200672b9e345b";
+      };
+    };
+    "debounce-1.1.0" = {
+      name = "debounce";
+      packageName = "debounce";
+      version = "1.1.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/debounce/-/debounce-1.1.0.tgz";
+        sha512 = "10r1pg8azrc8k3sfc6kslhcnpjl0acgv0fvpmd6q01vxbi496hnxnjx1i7fs66f598g4qzy2h079kzh18qpf9wxsz1ighb52myll1b5";
+      };
+    };
+    "debug-2.2.0" = {
+      name = "debug";
+      packageName = "debug";
+      version = "2.2.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/debug/-/debug-2.2.0.tgz";
+        sha1 = "f87057e995b1a1f6ae6a4960664137bc56f039da";
       };
     };
     "debug-2.6.9" = {
@@ -2578,13 +2722,13 @@ let
         sha1 = "a2033c09cc8e158d37748fbde7507832bd6ce127";
       };
     };
-    "detect-port-alt-1.1.5" = {
+    "detect-port-alt-1.1.6" = {
       name = "detect-port-alt";
       packageName = "detect-port-alt";
-      version = "1.1.5";
+      version = "1.1.6";
       src = fetchurl {
-        url = "https://registry.npmjs.org/detect-port-alt/-/detect-port-alt-1.1.5.tgz";
-        sha512 = "1lgy7q8i5ibxsp2rhv2bsynpsx8vmd9x1d10zv7wia17qw85pf7hgra6a7c3fc6943qlnq3yywalhf6skvjcb2z1m981qvkw033sl9y";
+        url = "https://registry.npmjs.org/detect-port-alt/-/detect-port-alt-1.1.6.tgz";
+        sha512 = "3jmpnxszsgf863rw2247kalaihrslvrsp49qvnhymgx1skhhsfs51nkf3galxkn5lk39zw9p53xqbpdy620q6j60i2z5acbvy935m76";
       };
     };
     "detective-4.7.1" = {
@@ -2596,6 +2740,15 @@ let
         sha512 = "259c687nsmq5ni5q79081s6lpd2srwn7xlwipxwbrqkq9bq0zsvwb0n1d99jc7c6kvpm95bhvvlncfb0l4hqy6vnlb5lrhwwmwyd8qz";
       };
     };
+    "detective-5.1.0" = {
+      name = "detective";
+      packageName = "detective";
+      version = "5.1.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/detective/-/detective-5.1.0.tgz";
+        sha512 = "1cm9sp1rl54d3y7v9nvw12kad47g5pcmbzf96s7kpm85j1cc79yc8qb8q0xjj71w32pgz2p4fym47sa851i5lswglmmiimgyflwqlac";
+      };
+    };
     "diff-3.5.0" = {
       name = "diff";
       packageName = "diff";
@@ -2605,13 +2758,13 @@ let
         sha512 = "32bkv3cfhax4x5zhiyfn63wjhqwkzsjiql3my8p3d9hvv020p8f9hdi7mpqixrkpgs0g9k15mn736s449yad9wq1plhxyhxb2sam3h3";
       };
     };
-    "diffie-hellman-5.0.2" = {
+    "diffie-hellman-5.0.3" = {
       name = "diffie-hellman";
       packageName = "diffie-hellman";
-      version = "5.0.2";
+      version = "5.0.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-5.0.2.tgz";
-        sha1 = "b5835739270cfe26acf632099fded2a07f209e5e";
+        url = "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-5.0.3.tgz";
+        sha512 = "37186rz3862gn294acnwnm59jwm62x1rz9ca0y5anvmj0a7abs4rhw974qp1j684qpd4rxb8c2kagv21hapxfddr2q72zvyv7ya19lj";
       };
     };
     "dns-equal-1.0.0" = {
@@ -2794,13 +2947,13 @@ let
         sha1 = "590c61156b0ae2f4f0255732a158b266bc56b21d";
       };
     };
-    "electron-to-chromium-1.3.41" = {
+    "electron-to-chromium-1.3.42" = {
       name = "electron-to-chromium";
       packageName = "electron-to-chromium";
-      version = "1.3.41";
+      version = "1.3.42";
       src = fetchurl {
-        url = "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.3.41.tgz";
-        sha1 = "7e33643e00cd85edfd17e04194f6d00e73737235";
+        url = "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.3.42.tgz";
+        sha1 = "95c33bf01d0cc405556aec899fe61fd4d76ea0f9";
       };
     };
     "elliptic-6.4.0" = {
@@ -3028,15 +3181,6 @@ let
         sha1 = "96e3b70d5779f6ad49cd032673d1c312767ba581";
       };
     };
-    "esprima-4.0.0" = {
-      name = "esprima";
-      packageName = "esprima";
-      version = "4.0.0";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/esprima/-/esprima-4.0.0.tgz";
-        sha512 = "27mkhd94y9vrr8pb97br0ym5h85rawwb0biswgwdfp31x0387y12k9p9598bi4fc83fif6crfzqiqmmjs4x7gcb22ml3z1fldqm7yx1";
-      };
-    };
     "esrecurse-4.2.1" = {
       name = "esrecurse";
       packageName = "esrecurse";
@@ -3082,13 +3226,13 @@ let
         sha1 = "df8c69eef1647923c7157b9ce83840610b02cc39";
       };
     };
-    "eventemitter3-1.2.0" = {
+    "eventemitter3-3.0.1" = {
       name = "eventemitter3";
       packageName = "eventemitter3";
-      version = "1.2.0";
+      version = "3.0.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.2.0.tgz";
-        sha1 = "1c86991d816ad1e504750e73874224ecf3bec508";
+        url = "https://registry.npmjs.org/eventemitter3/-/eventemitter3-3.0.1.tgz";
+        sha512 = "0c5685grn5npm90n22lw5hjz93ga3ffc3j6jk5rs4sz0w7ymwj942v3w94ikkgxpvxj7mfawsdrczwad0b7srbkynbwac7xvsxqzq20";
       };
     };
     "events-1.1.1" = {
@@ -3098,6 +3242,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/events/-/events-1.1.1.tgz";
         sha1 = "9ebdb7635ad099c70dcc4c2a1f5004288e8bd924";
+      };
+    };
+    "events-2.0.0" = {
+      name = "events";
+      packageName = "events";
+      version = "2.0.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/events/-/events-2.0.0.tgz";
+        sha512 = "1r878as79mx3xg56nvjxxbryqa8lqn8xmiqi1xqfx2vjygnfaf15h5l658a9ikfr1bhc6ygxny8jr8ddjxpzlh6y443rxv08di3kwxg";
       };
     };
     "eventsource-0.1.6" = {
@@ -3199,13 +3352,13 @@ let
         sha1 = "26a71aaf073b39fb2127172746131c2704028db8";
       };
     };
-    "external-editor-2.1.0" = {
+    "external-editor-2.2.0" = {
       name = "external-editor";
       packageName = "external-editor";
-      version = "2.1.0";
+      version = "2.2.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/external-editor/-/external-editor-2.1.0.tgz";
-        sha512 = "366albydy3glqs8h6y7rdpdhmyffn7vaig5snw8cb1zmn22mgvfywr08jfbmqjiqc9pyjyaaqv6xz5sfy2j1y18590l4f8mji7j53hk";
+        url = "https://registry.npmjs.org/external-editor/-/external-editor-2.2.0.tgz";
+        sha512 = "3sf897ajmkcp0j6rgd0jy6k95s9ck3j305yrr00kmckl8qdhswhbdd5g4m2fai03x8phs1vw2ahf9v7ym5ji4zfxydxyamiy61glabd";
       };
     };
     "extglob-0.3.2" = {
@@ -3433,6 +3586,15 @@ let
         sha1 = "dae46a9d78fbe25292258cc1e780a41d95c03782";
       };
     };
+    "follow-redirects-1.4.1" = {
+      name = "follow-redirects";
+      packageName = "follow-redirects";
+      version = "1.4.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.4.1.tgz";
+        sha512 = "2z7ai3f3g9j48z90kds4070nb8v2q02n7131c2zjplb0zfjxjrd1m2fm8ykg7psj8fiwc4iidn2g9rr2w09qijbssddr0p8acyiw5mv";
+      };
+    };
     "for-in-1.0.2" = {
       name = "for-in";
       packageName = "for-in";
@@ -3523,6 +3685,24 @@ let
         sha1 = "3d8cadd90d976569fa835ab1f8e4b23a105605a7";
       };
     };
+    "from2-2.3.0" = {
+      name = "from2";
+      packageName = "from2";
+      version = "2.3.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/from2/-/from2-2.3.0.tgz";
+        sha1 = "8bfb5502bde4a4d36cfdeea007fcca21d7e382af";
+      };
+    };
+    "from2-string-1.1.0" = {
+      name = "from2-string";
+      packageName = "from2-string";
+      version = "1.1.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/from2-string/-/from2-string-1.1.0.tgz";
+        sha1 = "18282b27d08a267cb3030cd2b8b4b0f212af752a";
+      };
+    };
     "fs-extra-0.30.0" = {
       name = "fs-extra";
       packageName = "fs-extra";
@@ -3568,13 +3748,13 @@ let
         sha512 = "25k3z64r4fhzjs1crh981lkkvkrhn2xv67k7y00zpnpsl571y5apg0r0kanddirms8kxf2xgf4yx9n2hzs9ml3v3p9qcnqhkh9khzja";
       };
     };
-    "fsevents-1.1.3" = {
+    "fsevents-1.2.2" = {
       name = "fsevents";
       packageName = "fsevents";
-      version = "1.1.3";
+      version = "1.2.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/fsevents/-/fsevents-1.1.3.tgz";
-        sha512 = "3jw51f4iayxvp9wfxczk1xgcvhsydhlgah64jmpl0mqiii2h8i5pp0lrqac5xn7296gxqrvy4lgm4k4hkifk8gipgqxd68x764gp2jq";
+        url = "https://registry.npmjs.org/fsevents/-/fsevents-1.2.2.tgz";
+        sha512 = "2siqm8q7irfjphlw43m7hrj4jw9dkh43sqs9msnn0bw5v9kkf4svqk27hyafqa7dglnp6rv9a4xlb75ybzw1q7flz2y3qj2x01jg34a";
       };
     };
     "fstream-0.1.31" = {
@@ -3604,6 +3784,15 @@ let
         sha512 = "38chm1mh077ksx6hy2sssfz4q29hf0ncb9k6ila7si54zqcpl5fxd1rh6wi82blqp7jcspf4aynr7jqhbsg2yc9y42xpqqp6c1jz2n8";
       };
     };
+    "garnish-5.2.0" = {
+      name = "garnish";
+      packageName = "garnish";
+      version = "5.2.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/garnish/-/garnish-5.2.0.tgz";
+        sha1 = "bed43659382e4b198e33c793897be7c701e65577";
+      };
+    };
     "generate-function-2.0.0" = {
       name = "generate-function";
       packageName = "generate-function";
@@ -3629,6 +3818,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/get-caller-file/-/get-caller-file-1.0.2.tgz";
         sha1 = "f702e63127e7e231c160a80c1554acb70d5047e5";
+      };
+    };
+    "get-ports-1.0.3" = {
+      name = "get-ports";
+      packageName = "get-ports";
+      version = "1.0.3";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/get-ports/-/get-ports-1.0.3.tgz";
+        sha1 = "f40bd580aca7ec0efb7b96cbfcbeb03ef894b5e8";
       };
     };
     "get-stdin-4.0.1" = {
@@ -3829,6 +4027,15 @@ let
         sha1 = "8461733f538b0837c9361e39a9ab9e9704dc2f28";
       };
     };
+    "has-ansi-0.1.0" = {
+      name = "has-ansi";
+      packageName = "has-ansi";
+      version = "0.1.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/has-ansi/-/has-ansi-0.1.0.tgz";
+        sha1 = "84f265aae8c0e6a88a12d7022894b7568894c62e";
+      };
+    };
     "has-ansi-2.0.0" = {
       name = "has-ansi";
       packageName = "has-ansi";
@@ -3901,13 +4108,13 @@ let
         sha1 = "95b0b63fec2146619a6fe57fe75628d5a39efe4f";
       };
     };
-    "hash-base-2.0.2" = {
-      name = "hash-base";
-      packageName = "hash-base";
-      version = "2.0.2";
+    "hasbin-1.2.3" = {
+      name = "hasbin";
+      packageName = "hasbin";
+      version = "1.2.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/hash-base/-/hash-base-2.0.2.tgz";
-        sha1 = "66ea1d856db4e8a5470cadf6fce23ae5244ef2e1";
+        url = "https://registry.npmjs.org/hasbin/-/hasbin-1.2.3.tgz";
+        sha1 = "78c5926893c80215c2b568ae1fd3fcab7a2696b0";
       };
     };
     "hash-base-3.0.4" = {
@@ -4036,13 +4243,13 @@ let
         sha1 = "0df29351f0721163515dfb9e5543e5f6eed5162f";
       };
     };
-    "html-minifier-3.5.12" = {
+    "html-minifier-3.5.15" = {
       name = "html-minifier";
       packageName = "html-minifier";
-      version = "3.5.12";
+      version = "3.5.15";
       src = fetchurl {
-        url = "https://registry.npmjs.org/html-minifier/-/html-minifier-3.5.12.tgz";
-        sha512 = "0d7a4fxplkf6m4b5b9m269xzn1xs8qgs5z9795l46yljdh4sywhxlfkz1gn68clsazvxcvl6qs8dmv1m3qlrx60n60iblfzlbrgpppq";
+        url = "https://registry.npmjs.org/html-minifier/-/html-minifier-3.5.15.tgz";
+        sha512 = "01ni8s31nr1rb70wqi980nyfwir4z2z5mjvs454rgylns4nfyqvci581b40s1b67hgd95anq46j4yf5r947y5wzvncr7dgsysnvi5ir";
       };
     };
     "html-webpack-plugin-2.30.1" = {
@@ -4081,6 +4288,15 @@ let
         sha1 = "fa7168944ab9a519d337cb0bec7284dc3e723d87";
       };
     };
+    "http-errors-1.3.1" = {
+      name = "http-errors";
+      packageName = "http-errors";
+      version = "1.3.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/http-errors/-/http-errors-1.3.1.tgz";
+        sha1 = "197e22cdebd4198585e8694ef6786197b91ed942";
+      };
+    };
     "http-errors-1.6.2" = {
       name = "http-errors";
       packageName = "http-errors";
@@ -4088,6 +4304,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/http-errors/-/http-errors-1.6.2.tgz";
         sha1 = "0a002cc85707192a7e7946ceedc11155f60ec736";
+      };
+    };
+    "http-errors-1.6.3" = {
+      name = "http-errors";
+      packageName = "http-errors";
+      version = "1.6.3";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/http-errors/-/http-errors-1.6.3.tgz";
+        sha1 = "8b55680bb4be283a0b5bf4ea2e38580be1d9320d";
       };
     };
     "http-parser-js-0.4.11" = {
@@ -4099,13 +4324,13 @@ let
         sha512 = "1y4az74zgv7jy1cav126lbrbvfqv30p7v3ijmj91ychbg0337k71cwy2n5dvmdfvwhgv3vxxzw2ymxlbj6wh1wf6aycb313c0xpj920";
       };
     };
-    "http-proxy-1.16.2" = {
+    "http-proxy-1.17.0" = {
       name = "http-proxy";
       packageName = "http-proxy";
-      version = "1.16.2";
+      version = "1.17.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/http-proxy/-/http-proxy-1.16.2.tgz";
-        sha1 = "06dff292952bf64dbe8471fa9df73066d4f37742";
+        url = "https://registry.npmjs.org/http-proxy/-/http-proxy-1.17.0.tgz";
+        sha512 = "3z80svhb9hi5fawc8za5qn75lybr53646gfsqm2hkqss4pr186pp7k6f5jnjgw7vrkgjy4yzvb34729q6kvrikn4xgq9gfdg7xsgajd";
       };
     };
     "http-proxy-middleware-0.17.4" = {
@@ -4162,6 +4387,15 @@ let
         sha1 = "d96c92732076f072711b6b10fd7d4f65ad8ee23d";
       };
     };
+    "iconv-lite-0.4.13" = {
+      name = "iconv-lite";
+      packageName = "iconv-lite";
+      version = "0.4.13";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.13.tgz";
+        sha1 = "1f88aba4ab0b1508e8312acc39345f36e992e2f2";
+      };
+    };
     "iconv-lite-0.4.19" = {
       name = "iconv-lite";
       packageName = "iconv-lite";
@@ -4169,6 +4403,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.19.tgz";
         sha512 = "0jj1pdq3j9ak8cixn2kjp7ip8hf3xgnb85j4jr32yf9rry620v9072c0kk577mllfk1zl9wzs5ypwzbp7vbhf7j31d5rrqgwb0nldm1";
+      };
+    };
+    "iconv-lite-0.4.21" = {
+      name = "iconv-lite";
+      packageName = "iconv-lite";
+      version = "0.4.21";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.21.tgz";
+        sha512 = "0myjcmxx7dn5liikg8d2zgwb433sk761dfxwwnszyam16rzv5dzva352jrvav7cnambn0ha8fzh6g6xhdhxsd20l5v1p65r6vvmazhj";
       };
     };
     "icss-replace-symbols-1.1.0" = {
@@ -4243,6 +4486,15 @@ let
         sha1 = "8e2d48348742121b4a8218b7a137e9a52049dc80";
       };
     };
+    "indent-string-3.2.0" = {
+      name = "indent-string";
+      packageName = "indent-string";
+      version = "3.2.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/indent-string/-/indent-string-3.2.0.tgz";
+        sha1 = "4a5fd6d27cc332f37e5419a504dbb837105c9289";
+      };
+    };
     "indexes-of-1.0.1" = {
       name = "indexes-of";
       packageName = "indexes-of";
@@ -4259,6 +4511,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/indexof/-/indexof-0.0.1.tgz";
         sha1 = "82dc336d232b9062179d05ab3293a66059fd435d";
+      };
+    };
+    "individual-3.0.0" = {
+      name = "individual";
+      packageName = "individual";
+      version = "3.0.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/individual/-/individual-3.0.0.tgz";
+        sha1 = "e7ca4f85f8957b018734f285750dc22ec2f9862d";
       };
     };
     "inflight-1.0.6" = {
@@ -4297,6 +4558,15 @@ let
         sha512 = "1rjbvf1rg5ywhnba08sgagn2qf23lab330qrqmh7d891zap3xpxcyfyj1cblpf0f0rypglcfacybzyrpd4996aa1mbc820awa33k5j5";
       };
     };
+    "inject-lr-script-2.1.0" = {
+      name = "inject-lr-script";
+      packageName = "inject-lr-script";
+      version = "2.1.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/inject-lr-script/-/inject-lr-script-2.1.0.tgz";
+        sha1 = "e61b5e84c118733906cbea01ec3d746698a39f65";
+      };
+    };
     "inline-source-map-0.6.2" = {
       name = "inline-source-map";
       packageName = "inline-source-map";
@@ -4315,13 +4585,13 @@ let
         sha512 = "1wsmzzva3rfjb4bfks7ba2nvha9ziwgq2kag6xxibc5cc6mz19xbgj4fm3a7ghvfbfx4am0x13ibc8j2s5m3sv12nph44rq56gnvv47";
       };
     };
-    "insert-module-globals-7.0.5" = {
+    "insert-module-globals-7.0.6" = {
       name = "insert-module-globals";
       packageName = "insert-module-globals";
-      version = "7.0.5";
+      version = "7.0.6";
       src = fetchurl {
-        url = "https://registry.npmjs.org/insert-module-globals/-/insert-module-globals-7.0.5.tgz";
-        sha512 = "3fk0jxs2s9i64hqs1y6ncl81nddpb2kr58myi8805mg9j3xgmn5svxmk8xwvm2358snahh9r0k1zmpv6512sq383zp4m6sc5an6s162";
+        url = "https://registry.npmjs.org/insert-module-globals/-/insert-module-globals-7.0.6.tgz";
+        sha512 = "3vjhls34i9vc0mm5cxlw6zbp1an494z9kbrrmj4hbv32fw0hx22nfpaj7j8i7lwkqa1sdqidxcfkga1630ya454h8h2ppbbl9s24ys7";
       };
     };
     "internal-ip-1.2.0" = {
@@ -4963,15 +5233,6 @@ let
         sha1 = "9866df395102130e38f7f996bceb65443209c25b";
       };
     };
-    "js-yaml-3.11.0" = {
-      name = "js-yaml";
-      packageName = "js-yaml";
-      version = "3.11.0";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/js-yaml/-/js-yaml-3.11.0.tgz";
-        sha512 = "0gka65n4d9gmcy0c8cy5h55r273dbxnw54gibp2nq5mmdmksjgb2nhcdfgfxs1wg3yayyrydn2v79fny7hdyq907dg87vmgjnsnr8mi";
-      };
-    };
     "js-yaml-3.7.0" = {
       name = "js-yaml";
       packageName = "js-yaml";
@@ -5249,6 +5510,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/lie/-/lie-3.1.1.tgz";
         sha1 = "9a436b2cc7746ca59de7a41fa469b3efb76bd87e";
+      };
+    };
+    "livereload-js-2.3.0" = {
+      name = "livereload-js";
+      packageName = "livereload-js";
+      version = "2.3.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/livereload-js/-/livereload-js-2.3.0.tgz";
+        sha512 = "0r82qh90jnyg6hlqn2yni36q942y4qn6rc0rydmbsy7x1lr00a0pddw2lg8xixcjh6wnrsfb5q76m51fac7vanrz0cawsw6azy78m4g";
       };
     };
     "load-json-file-1.1.0" = {
@@ -5674,6 +5944,15 @@ let
         sha1 = "c32abd0bd6525d9b051645bb4f26ac5dc98a0dbf";
       };
     };
+    "map-limit-0.0.1" = {
+      name = "map-limit";
+      packageName = "map-limit";
+      version = "0.0.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/map-limit/-/map-limit-0.0.1.tgz";
+        sha1 = "eb7961031c0f0e8d001bf2d56fab685d58822f38";
+      };
+    };
     "map-obj-1.0.1" = {
       name = "map-obj";
       packageName = "map-obj";
@@ -5708,6 +5987,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz";
         sha1 = "de819fdbcd84dccd8fae59c6aeb79615b9d266ac";
+      };
+    };
+    "md5-2.2.1" = {
+      name = "md5";
+      packageName = "md5";
+      version = "2.2.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/md5/-/md5-2.2.1.tgz";
+        sha1 = "53ab38d5fe3c8891ba465329ea23fac0540126f9";
       };
     };
     "md5.js-1.3.4" = {
@@ -5845,13 +6133,13 @@ let
         sha512 = "1clrrqw75rmpkw0x53axy8va2hq2gzynz9zb58m0xv1nh3lg81cv4dfdy7pk9vrlb9ydwmj6klpicwkv2bjx3m8aj4fi2ph3jxkizwd";
       };
     };
-    "minimalistic-assert-1.0.0" = {
+    "minimalistic-assert-1.0.1" = {
       name = "minimalistic-assert";
       packageName = "minimalistic-assert";
-      version = "1.0.0";
+      version = "1.0.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/minimalistic-assert/-/minimalistic-assert-1.0.0.tgz";
-        sha1 = "702be2dda6b37f4836bcb3f5db56641b64a1d3d3";
+        url = "https://registry.npmjs.org/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz";
+        sha512 = "3y39pa1xxg7j49vya7xca4p1mg89d0df56hj4yjhpyhmza3g5qvpgp11xs11wkd48zzy7ym970jfbn0ppimmczpijns249j7q05rljj";
       };
     };
     "minimalistic-crypto-utils-1.0.1" = {
@@ -5935,6 +6223,24 @@ let
         sha1 = "23215833f1da13fd606ccb8087b44852dcb821fd";
       };
     };
+    "module-deps-6.0.2" = {
+      name = "module-deps";
+      packageName = "module-deps";
+      version = "6.0.2";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/module-deps/-/module-deps-6.0.2.tgz";
+        sha512 = "2zf8ycbhqnh9hc6zd3h5s1ii6bjg41z721ffg760j8i045vjjzpzzg542c02ylkic68p0skw1ss97lwphblcw8rip3ik29x9pglhq19";
+      };
+    };
+    "ms-0.7.1" = {
+      name = "ms";
+      packageName = "ms";
+      version = "0.7.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/ms/-/ms-0.7.1.tgz";
+        sha1 = "9cd13c03adbff25b65effde7ce864ee952017098";
+      };
+    };
     "ms-2.0.0" = {
       name = "ms";
       packageName = "ms";
@@ -5998,22 +6304,13 @@ let
         sha512 = "1f2indb6hj1h79gxklk6ac2lhfjfydw5ak3v2nwilwir5hqvz9l9kxf63l8k1blsjq4v7r2pf0gqc1b55sqqym5bn9afhrj5xnpvi4z";
       };
     };
-    "natives-1.1.2" = {
+    "natives-1.1.3" = {
       name = "natives";
       packageName = "natives";
-      version = "1.1.2";
+      version = "1.1.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/natives/-/natives-1.1.2.tgz";
-        sha512 = "246d44jpalvlcvk1ig1b2qc05fsgq8gy926xcl86bdnx663k8bh7pi4ny1pa7xr0bxydm33rhkvwzz3fjrrr7pkrjx0pmj44x5l1d75";
-      };
-    };
-    "ncname-1.0.0" = {
-      name = "ncname";
-      packageName = "ncname";
-      version = "1.0.0";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/ncname/-/ncname-1.0.0.tgz";
-        sha1 = "5b57ad18b1ca092864ef62b0b1ed8194f383b71c";
+        url = "https://registry.npmjs.org/natives/-/natives-1.1.3.tgz";
+        sha512 = "3pbpfnk3183j5mwxprr19bzahf7lxarcka2bad0mhcywnjlj63i55phbxyk0pn4l4v7nj3wv4gjrzdk7xfxxfrjl5rvqf0qbrhr5485";
       };
     };
     "ncp-1.0.1" = {
@@ -6034,13 +6331,13 @@ let
         sha1 = "2b327184e8992101177b28563fb5e7102acd0ca9";
       };
     };
-    "neo-async-2.5.0" = {
+    "neo-async-2.5.1" = {
       name = "neo-async";
       packageName = "neo-async";
-      version = "2.5.0";
+      version = "2.5.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/neo-async/-/neo-async-2.5.0.tgz";
-        sha512 = "3mgwi8gsgy9lazh0qbpaz8f2l8gvvpn3jp0ghc6xnn0xq0ajdmzp7lfklby1n4s67fy1w5g5gzizyqzds8l3fqsj76cy0mq06rr56cw";
+        url = "https://registry.npmjs.org/neo-async/-/neo-async-2.5.1.tgz";
+        sha512 = "3256b78wjq1hf7ycvh6ll1wr0kxpqb01lgj1fdirkrx5lpzz12c4ygifw09c2bag30njm8sfjkwkg3gxpy32kl1w3n9x4cizdzgg8nw";
       };
     };
     "next-tick-1.0.0" = {
@@ -6286,6 +6583,15 @@ let
         sha1 = "928f5d0f470d49342651ea6794b0857c100693f7";
       };
     };
+    "once-1.3.3" = {
+      name = "once";
+      packageName = "once";
+      version = "1.3.3";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/once/-/once-1.3.3.tgz";
+        sha1 = "b2e261557ce4c314ec8304f3fa82663e4297ca20";
+      };
+    };
     "once-1.4.0" = {
       name = "once";
       packageName = "once";
@@ -6304,6 +6610,15 @@ let
         sha1 = "067428230fd67443b2794b22bba528b6867962d4";
       };
     };
+    "opn-3.0.3" = {
+      name = "opn";
+      packageName = "opn";
+      version = "3.0.3";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/opn/-/opn-3.0.3.tgz";
+        sha1 = "b6d99e7399f78d65c3baaffef1fb288e9b85243a";
+      };
+    };
     "opn-5.2.0" = {
       name = "opn";
       packageName = "opn";
@@ -6311,15 +6626,6 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/opn/-/opn-5.2.0.tgz";
         sha512 = "12iyalgghs3dj0pfb7rxa013x946169yfsjfd15fsfrx5kv80z2qh082x7v7d91hh7bf9vxcm4wqmyyj9ckk3gnvc7mw77j6fkwdpr5";
-      };
-    };
-    "opn-5.3.0" = {
-      name = "opn";
-      packageName = "opn";
-      version = "5.3.0";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/opn/-/opn-5.3.0.tgz";
-        sha512 = "3d5s5y22sx4wfswzs8fmhr7sarmjigs8qhmmyrkiplfda6kkfk3kv67fs8npdklf8zbc9hmx76zsxqfv4bn5qlpzbfq96nfyailg0kd";
       };
     };
     "optimist-0.6.1" = {
@@ -6394,6 +6700,15 @@ let
         sha1 = "bbe67406c79aa85c5cfec766fe5734555dfa1274";
       };
     };
+    "outpipe-1.1.1" = {
+      name = "outpipe";
+      packageName = "outpipe";
+      version = "1.1.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/outpipe/-/outpipe-1.1.1.tgz";
+        sha1 = "50cf8616365e87e031e29a5ec9339a3da4725fa2";
+      };
+    };
     "output-file-sync-1.1.2" = {
       name = "output-file-sync";
       packageName = "output-file-sync";
@@ -6466,6 +6781,24 @@ let
         sha1 = "8869a0401253661c4c4ca3da6c2121ed555f5eed";
       };
     };
+    "pad-left-2.1.0" = {
+      name = "pad-left";
+      packageName = "pad-left";
+      version = "2.1.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/pad-left/-/pad-left-2.1.0.tgz";
+        sha1 = "16e6a3b2d44a8e138cb0838cc7cb403a4fc9e994";
+      };
+    };
+    "pad-right-0.2.2" = {
+      name = "pad-right";
+      packageName = "pad-right";
+      version = "0.2.2";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/pad-right/-/pad-right-0.2.2.tgz";
+        sha1 = "6fbc924045d244f2a2a244503060d3bfc6009774";
+      };
+    };
     "pako-0.2.9" = {
       name = "pako";
       packageName = "pako";
@@ -6502,13 +6835,13 @@ let
         sha1 = "fedd4d2bf193a77745fe71e371d73c3307d9c751";
       };
     };
-    "parse-asn1-5.1.0" = {
+    "parse-asn1-5.1.1" = {
       name = "parse-asn1";
       packageName = "parse-asn1";
-      version = "5.1.0";
+      version = "5.1.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/parse-asn1/-/parse-asn1-5.1.0.tgz";
-        sha1 = "37c4f9b7ed3ab65c74817b5f2480937fbf97c712";
+        url = "https://registry.npmjs.org/parse-asn1/-/parse-asn1-5.1.1.tgz";
+        sha512 = "1vq07bq1c0b5v82mknyg2y4lrdy1qmqkzw432f406rx9v2hni3040z270kpsvi2vf4ikq6x0k9g8p16n7aafrwsrpwvx0wpa9z7pz18";
       };
     };
     "parse-glob-3.0.4" = {
@@ -6527,6 +6860,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/parse-json/-/parse-json-2.2.0.tgz";
         sha1 = "f480f40434ef80741f8469099f8dea18f55a4dc9";
+      };
+    };
+    "parse-ms-1.0.1" = {
+      name = "parse-ms";
+      packageName = "parse-ms";
+      version = "1.0.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/parse-ms/-/parse-ms-1.0.1.tgz";
+        sha1 = "56346d4749d78f23430ca0c713850aef91aa361d";
       };
     };
     "parse-passwd-1.0.0" = {
@@ -6673,13 +7015,22 @@ let
         sha1 = "f012ccb8415b7096fc2daa1054c3d72389594c73";
       };
     };
-    "pbkdf2-3.0.14" = {
+    "pbkdf2-3.0.16" = {
       name = "pbkdf2";
       packageName = "pbkdf2";
-      version = "3.0.14";
+      version = "3.0.16";
       src = fetchurl {
-        url = "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.14.tgz";
-        sha512 = "30bb7vx0m1k1m3d1i1khgvmgddx3ahqgprs421ssrh5plpx50k5bazsj67gdi7qiknircqy59yxbclq95s2rnmk8ysgkqdpsddijfw2";
+        url = "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.16.tgz";
+        sha512 = "1q07jjlhbbn9fd1aqyrqqxlv184k8ppbafavwvb19lvgbzvp8fnrx7qd9lkbfzb6g4592czp178wizmgvhrhandxngiljv1gczrg06b";
+      };
+    };
+    "pem-1.12.5" = {
+      name = "pem";
+      packageName = "pem";
+      version = "1.12.5";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/pem/-/pem-1.12.5.tgz";
+        sha512 = "24v7ras8kf5rvhn8kqls7gcy4nfjlfcd4n4rj6wafhp2rhdyvfdzxfjr5l0nq4wn92vvir9xr43lyvlq632gg6r84xac28rzqnj0vws";
       };
     };
     "performance-now-2.1.0" = {
@@ -6752,6 +7103,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/pkginfo/-/pkginfo-0.4.1.tgz";
         sha1 = "b5418ef0439de5425fc4995042dced14fb2a84ff";
+      };
+    };
+    "plur-1.0.0" = {
+      name = "plur";
+      packageName = "plur";
+      version = "1.0.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/plur/-/plur-1.0.0.tgz";
+        sha1 = "db85c6814f5e5e5a3b49efc28d604fec62975156";
       };
     };
     "portfinder-1.0.13" = {
@@ -7132,6 +7492,15 @@ let
         sha1 = "815ed1f6ebc65926f865b310c0713bcb3315ce4b";
       };
     };
+    "prettier-bytes-1.0.4" = {
+      name = "prettier-bytes";
+      packageName = "prettier-bytes";
+      version = "1.0.4";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/prettier-bytes/-/prettier-bytes-1.0.4.tgz";
+        sha1 = "994b02aa46f699c50b6257b5faaa7fe2557e62d6";
+      };
+    };
     "pretty-bytes-4.0.2" = {
       name = "pretty-bytes";
       packageName = "pretty-bytes";
@@ -7148,6 +7517,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/pretty-error/-/pretty-error-2.1.1.tgz";
         sha1 = "5f4f87c8f91e5ae3f3ba87ab4cf5e03b1a17f1a3";
+      };
+    };
+    "pretty-ms-2.1.0" = {
+      name = "pretty-ms";
+      packageName = "pretty-ms";
+      version = "2.1.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/pretty-ms/-/pretty-ms-2.1.0.tgz";
+        sha1 = "4257c256df3fb0b451d6affaab021884126981dc";
       };
     };
     "private-0.1.8" = {
@@ -7231,13 +7609,13 @@ let
         sha1 = "f052a28da70e618917ef0a8ac34c1ae5a68286b3";
       };
     };
-    "public-encrypt-4.0.0" = {
+    "public-encrypt-4.0.2" = {
       name = "public-encrypt";
       packageName = "public-encrypt";
-      version = "4.0.0";
+      version = "4.0.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/public-encrypt/-/public-encrypt-4.0.0.tgz";
-        sha1 = "39f699f3a46560dd5ebacbca693caf7c65c18cc6";
+        url = "https://registry.npmjs.org/public-encrypt/-/public-encrypt-4.0.2.tgz";
+        sha512 = "38qgcvnxnp4lva9c0x6xhq05hb811n8q5s8dxchm5mg04rv64693a1w2hrhy8lcgbvs36kv003ar1xsh312c866hzvwb0qwr897jhp2";
       };
     };
     "pullstream-0.4.1" = {
@@ -7283,6 +7661,33 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/q/-/q-1.5.1.tgz";
         sha1 = "7e32f75b41381291d04611f1bf14109ac00651d7";
+      };
+    };
+    "q-stream-0.2.0" = {
+      name = "q-stream";
+      packageName = "q-stream";
+      version = "0.2.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/q-stream/-/q-stream-0.2.0.tgz";
+        sha1 = "9252308147a3081e27606bde29d7115884f13861";
+      };
+    };
+    "qs-5.1.0" = {
+      name = "qs";
+      packageName = "qs";
+      version = "5.1.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/qs/-/qs-5.1.0.tgz";
+        sha1 = "4d932e5c7ea411cca76a312d39a606200fd50cd9";
+      };
+    };
+    "qs-5.2.0" = {
+      name = "qs";
+      packageName = "qs";
+      version = "5.2.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/qs/-/qs-5.2.0.tgz";
+        sha1 = "a9f31142af468cb72b25b30136ba2456834916be";
       };
     };
     "qs-6.2.3" = {
@@ -7348,13 +7753,13 @@ let
         sha1 = "0cf7f84f9463ff0ae51c4c4b142d95be37724d9c";
       };
     };
-    "querystringify-1.0.0" = {
+    "querystringify-2.0.0" = {
       name = "querystringify";
       packageName = "querystringify";
-      version = "1.0.0";
+      version = "2.0.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/querystringify/-/querystringify-1.0.0.tgz";
-        sha1 = "6286242112c5b712fa654e526652bf6a13ff05cb";
+        url = "https://registry.npmjs.org/querystringify/-/querystringify-2.0.0.tgz";
+        sha512 = "2vzi8pl23sfp5zgzza1a12hi6g9v2ba0wni22k5mj5gxsh82y5jmh7wsjwp7sbb55ssx6ilw41blripg9n8swlw6n60cvpqvzkfhcvr";
       };
     };
     "randomatic-1.1.7" = {
@@ -7393,6 +7798,15 @@ let
         sha1 = "f49be6b487894ddc40dcc94a322f611092e00d5e";
       };
     };
+    "raw-body-2.1.7" = {
+      name = "raw-body";
+      packageName = "raw-body";
+      version = "2.1.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/raw-body/-/raw-body-2.1.7.tgz";
+        sha1 = "adfeace2e4fb3098058014d08c072dcc59758774";
+      };
+    };
     "raw-body-2.3.2" = {
       name = "raw-body";
       packageName = "raw-body";
@@ -7411,13 +7825,13 @@ let
         sha1 = "eb18989c6d4f4f162c399f79ddd29f3835568092";
       };
     };
-    "react-dev-utils-5.0.0" = {
+    "react-dev-utils-5.0.1" = {
       name = "react-dev-utils";
       packageName = "react-dev-utils";
-      version = "5.0.0";
+      version = "5.0.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/react-dev-utils/-/react-dev-utils-5.0.0.tgz";
-        sha512 = "2izw8qqc8i8vw88qx0l0l1q4j2zwy07sa0n7jh4q12vnhdjxa4j153yalldzb8c2x9jkdcb2v7kk506wfiy6d49dj0f2s3nrg0ndr4g";
+        url = "https://registry.npmjs.org/react-dev-utils/-/react-dev-utils-5.0.1.tgz";
+        sha512 = "2rh0snc4a6cd9xh5rrfqpajlm83r5siyql01sbrhdaghgwl1m5846rk8b42z3rckd967d9xgmdkz30vlv8zq84pf9vpp6d9dsn7cbzv";
       };
     };
     "react-error-overlay-4.0.0" = {
@@ -7501,13 +7915,13 @@ let
         sha1 = "8f90341e68a53ccc928788dacfcd11b36eb9b78e";
       };
     };
-    "readable-stream-2.3.5" = {
+    "readable-stream-2.3.6" = {
       name = "readable-stream";
       packageName = "readable-stream";
-      version = "2.3.5";
+      version = "2.3.6";
       src = fetchurl {
-        url = "https://registry.npmjs.org/readable-stream/-/readable-stream-2.3.5.tgz";
-        sha512 = "09n3j4jsfl2lq3gj65qwn5b3lvzb624lrb8m14h81ls9cw59vvm8436gm5zwaqxf6y1zrfwbrsmizsq48jw1s3qj9zhpjp438735bdl";
+        url = "https://registry.npmjs.org/readable-stream/-/readable-stream-2.3.6.tgz";
+        sha512 = "0mj9b6190amln9rg89x5pq2n195s3v0gzicpdamv1kbabg69aw5m71l34jsjn7bqil7405l6l35x9ijnb3h4jz5vx2i00l8sl1ll2xm";
       };
     };
     "readdirp-2.1.0" = {
@@ -7807,13 +8221,13 @@ let
         sha1 = "203114d82ad2c5ed9e8e0411b3932875e889e97b";
       };
     };
-    "resolve-1.6.0" = {
+    "resolve-1.7.1" = {
       name = "resolve";
       packageName = "resolve";
-      version = "1.6.0";
+      version = "1.7.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/resolve/-/resolve-1.6.0.tgz";
-        sha512 = "1vidqan0cvx5paxxhp9ir7kfd1j7k2ll0z9d0arj8wrqrfw20mdj3ckwy8gwl7n2xagc3z3jm6zy1d3fhl3w2qffcj144xrvd0cj3lv";
+        url = "https://registry.npmjs.org/resolve/-/resolve-1.7.1.tgz";
+        sha512 = "1zhdyfbs9gfd5iswb8dbra3gljv9mglapgcirci1zsfs78rfn557rp6z81drxxsz0m4w4imm2n9qf7yrchkfjhxz9a0vwp9hwpg1fkk";
       };
     };
     "resolve-cwd-2.0.0" = {
@@ -7852,6 +8266,15 @@ let
         sha1 = "2c637fe77c893afd2a663fe21aa9080068e2052a";
       };
     };
+    "resp-modifier-6.0.2" = {
+      name = "resp-modifier";
+      packageName = "resp-modifier";
+      version = "6.0.2";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/resp-modifier/-/resp-modifier-6.0.2.tgz";
+        sha1 = "b124de5c4fbafcba541f48ffa73970f4aa456b4f";
+      };
+    };
     "restore-cursor-2.0.0" = {
       name = "restore-cursor";
       packageName = "restore-cursor";
@@ -7888,6 +8311,15 @@ let
         sha1 = "61339b722fe6a3515689210d24e14c96148613ef";
       };
     };
+    "right-now-1.0.0" = {
+      name = "right-now";
+      packageName = "right-now";
+      version = "1.0.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/right-now/-/right-now-1.0.0.tgz";
+        sha1 = "6e89609deebd7dcdaf8daecc9aea39cf585a0918";
+      };
+    };
     "rimraf-2.2.8" = {
       name = "rimraf";
       packageName = "rimraf";
@@ -7906,13 +8338,13 @@ let
         sha512 = "3kmrqh8xli7rzfm8wc6j9lp0c6vml172iv3z088an9xlwl1xvkvh3fn92za66ms4c9yww80qa5kan31k1z1ypqvkchmh1mznb09xdwn";
       };
     };
-    "ripemd160-2.0.1" = {
+    "ripemd160-2.0.2" = {
       name = "ripemd160";
       packageName = "ripemd160";
-      version = "2.0.1";
+      version = "2.0.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/ripemd160/-/ripemd160-2.0.1.tgz";
-        sha1 = "0f4584295c53a3628af7e6d79aca21ce57d1c6e7";
+        url = "https://registry.npmjs.org/ripemd160/-/ripemd160-2.0.2.tgz";
+        sha512 = "0hbd4cqbkycj691cj7gm40x3x5w46xk56xkg6n11wskc3k4xbdz1xxxyy6r27rcwipkzp19y1fmpfmb4lgf10l8asn6prdn11m24bla";
       };
     };
     "run-async-2.3.0" = {
@@ -7958,6 +8390,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/safe-regex/-/safe-regex-1.1.0.tgz";
         sha1 = "40a3669f3b077d1e943d44629e157dd48023bf2e";
+      };
+    };
+    "safer-buffer-2.1.2" = {
+      name = "safer-buffer";
+      packageName = "safer-buffer";
+      version = "2.1.2";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz";
+        sha512 = "2v99f22kh56y72d3s8wrgdvf5n10ry40dh3fwnsxr4d5rfvxdfxfmc3qyqkscnj4f8799jy9bpg6cm21x2d811dr9ib83wjrlmkg6k1";
       };
     };
     "sax-1.2.4" = {
@@ -8174,6 +8615,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.2.tgz";
         sha1 = "b5fdc08f1287ea1178628e415e25132b73646c6d";
+      };
+    };
+    "simple-html-index-1.5.0" = {
+      name = "simple-html-index";
+      packageName = "simple-html-index";
+      version = "1.5.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/simple-html-index/-/simple-html-index-1.5.0.tgz";
+        sha1 = "2c93eeaebac001d8a135fc0022bd4ade8f58996f";
       };
     };
     "slash-1.0.0" = {
@@ -8401,6 +8851,15 @@ let
         sha512 = "25ih1dx2qb3lawqjxj85znd4l3x8nnigrcdlpfw8064gh2mwxic9bgg5ylgxm9gjl3v8dmyc47rycp8xvqz78jqalg0g9yqj225acrp";
       };
     };
+    "split2-0.2.1" = {
+      name = "split2";
+      packageName = "split2";
+      version = "0.2.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/split2/-/split2-0.2.1.tgz";
+        sha1 = "02ddac9adc03ec0bb78c1282ec079ca6e85ae900";
+      };
+    };
     "sprintf-js-1.0.3" = {
       name = "sprintf-js";
       packageName = "sprintf-js";
@@ -8428,6 +8887,15 @@ let
         sha1 = "547c70b347e8d32b4e108ea1a2a159e5fdde19c0";
       };
     };
+    "stacked-1.1.1" = {
+      name = "stacked";
+      packageName = "stacked";
+      version = "1.1.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/stacked/-/stacked-1.1.1.tgz";
+        sha1 = "2c7fa38cc7e37a3411a77cd8e792de448f9f6975";
+      };
+    };
     "static-extend-0.1.2" = {
       name = "static-extend";
       packageName = "static-extend";
@@ -8446,13 +8914,13 @@ let
         sha512 = "1xxwqpj713rq1idbmp7mj7cj9dl52lazgpd5x8a9g88jawbkn9xpwbgljl7cvnd0jqkll2zpdj5xy63dlis9l2k8vmx1n1gvyv8456f";
       };
     };
-    "statuses-1.5.0" = {
-      name = "statuses";
-      packageName = "statuses";
-      version = "1.5.0";
+    "stdout-stream-1.4.0" = {
+      name = "stdout-stream";
+      packageName = "stdout-stream";
+      version = "1.4.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/statuses/-/statuses-1.5.0.tgz";
-        sha1 = "161c7dac177659fd9811f43771fa99381478628c";
+        url = "https://registry.npmjs.org/stdout-stream/-/stdout-stream-1.4.0.tgz";
+        sha1 = "a2c7c8587e54d9427ea9edb3ac3f2cd522df378b";
       };
     };
     "stealthy-require-1.1.1" = {
@@ -8554,22 +9022,13 @@ let
         sha1 = "62e203bc41766c6c28c9fc84301dab1c5310fa94";
       };
     };
-    "string_decoder-1.0.3" = {
+    "string_decoder-1.1.1" = {
       name = "string_decoder";
       packageName = "string_decoder";
-      version = "1.0.3";
+      version = "1.1.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/string_decoder/-/string_decoder-1.0.3.tgz";
-        sha512 = "22vw5mmwlyblqc2zyqwl39wyhyahhpiyknim8iz5fk6xi002x777gkswiq8fh297djs5ii4pgrys57wq33hr5zf3xfd0d7kjxkzl0g0";
-      };
-    };
-    "string_decoder-1.1.0" = {
-      name = "string_decoder";
-      packageName = "string_decoder";
-      version = "1.1.0";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/string_decoder/-/string_decoder-1.1.0.tgz";
-        sha512 = "218wrlq5146n58lih4j8ifzzqdcc4zcjw7m1qjpwffggqzr1cdpfbpfi12wb79fx47pq28mxqjhd0criwjfr7nnxc28gfm3br22jd7k";
+        url = "https://registry.npmjs.org/string_decoder/-/string_decoder-1.1.1.tgz";
+        sha512 = "315yd4vzwrwk3vwj1klf46y1cj2jbvf88066y2rnwhksb98phj46jkxixbwsp3h607w7czy7cby522s7sx8mvspdpdm3s72y2ga3x4z";
       };
     };
     "stringstream-0.0.5" = {
@@ -8579,6 +9038,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/stringstream/-/stringstream-0.0.5.tgz";
         sha1 = "4e484cd4de5a0bbbee18e46307710a8a81621878";
+      };
+    };
+    "strip-ansi-0.3.0" = {
+      name = "strip-ansi";
+      packageName = "strip-ansi";
+      version = "0.3.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/strip-ansi/-/strip-ansi-0.3.0.tgz";
+        sha1 = "25f48ea22ca79187f3174a4db8759347bb126220";
       };
     };
     "strip-ansi-3.0.1" = {
@@ -8662,6 +9130,24 @@ let
         sha1 = "f62cf17581e996b48fc965699f54c06ae268b8d2";
       };
     };
+    "supports-color-0.2.0" = {
+      name = "supports-color";
+      packageName = "supports-color";
+      version = "0.2.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/supports-color/-/supports-color-0.2.0.tgz";
+        sha1 = "d92de2694eb3f67323973d7ae3d8b55b4c22190a";
+      };
+    };
+    "supports-color-1.3.1" = {
+      name = "supports-color";
+      packageName = "supports-color";
+      version = "1.3.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/supports-color/-/supports-color-1.3.1.tgz";
+        sha1 = "15758df09d8ff3b4acc307539fabe27095e1042d";
+      };
+    };
     "supports-color-2.0.0" = {
       name = "supports-color";
       packageName = "supports-color";
@@ -8698,13 +9184,13 @@ let
         sha1 = "be7a0de484dec5c5cddf8b3d59125044912f635b";
       };
     };
-    "supports-color-5.3.0" = {
+    "supports-color-5.4.0" = {
       name = "supports-color";
       packageName = "supports-color";
-      version = "5.3.0";
+      version = "5.4.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/supports-color/-/supports-color-5.3.0.tgz";
-        sha512 = "0v9skvg8c5hgqfsm98p7d7hisk11syjdvl3nxid3ik572hbjwv4vyzws7q0n1yz8mvb1asbk00838fi09hyfskrng54icn8nbag98yi";
+        url = "https://registry.npmjs.org/supports-color/-/supports-color-5.4.0.tgz";
+        sha512 = "3ks7qkl6s064qcdc5qnpzcwzcrnlzccz9m3faw54fnmsm2k8fzb9saqr5nhx7w9lnd4nbp0zg047zz8mwsd4fxfnalpb7kra619fdnf";
       };
     };
     "svgo-0.7.2" = {
@@ -8779,6 +9265,15 @@ let
         sha1 = "e0c6bc4d26b903124410e4fed81103014dfc1f59";
       };
     };
+    "term-color-1.0.1" = {
+      name = "term-color";
+      packageName = "term-color";
+      version = "1.0.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/term-color/-/term-color-1.0.1.tgz";
+        sha1 = "38e192553a473e35e41604ff5199846bf8117a3a";
+      };
+    };
     "term-size-1.2.0" = {
       name = "term-size";
       packageName = "term-size";
@@ -8804,6 +9299,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/through/-/through-2.3.8.tgz";
         sha1 = "0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5";
+      };
+    };
+    "through2-0.6.5" = {
+      name = "through2";
+      packageName = "through2";
+      version = "0.6.5";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/through2/-/through2-0.6.5.tgz";
+        sha1 = "41ab9c67b29d57209071410e1d7a7a968cd3ad48";
       };
     };
     "through2-2.0.3" = {
@@ -8851,13 +9355,22 @@ let
         sha1 = "c9c58b575be8407375cb5e2462dacee74359f41d";
       };
     };
-    "timers-browserify-2.0.6" = {
+    "timers-browserify-2.0.10" = {
       name = "timers-browserify";
       packageName = "timers-browserify";
-      version = "2.0.6";
+      version = "2.0.10";
       src = fetchurl {
-        url = "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.6.tgz";
-        sha512 = "0zvmxvcvmv91k667dy2hzd9a2knvhizxvbx73gcnbi5na3ypc3mldfljw062d7n6y2mf7n2gwwc5wr4wrdih927fxahg8s0hinyf38x";
+        url = "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.10.tgz";
+        sha512 = "37aksk3ydmwy2n7ffsnbvyrwb5kmz5bhvi5fhyg593qs61x7vi9drblwnri5z4x9mzaz91xxqdgg15f0qmf8cd85wdfax2pbm4vbw32";
+      };
+    };
+    "tiny-lr-0.2.1" = {
+      name = "tiny-lr";
+      packageName = "tiny-lr";
+      version = "0.2.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/tiny-lr/-/tiny-lr-0.2.1.tgz";
+        sha1 = "b3fdba802e5d56a33c2f6f10794b32e477ac729d";
       };
     };
     "tmp-0.0.30" = {
@@ -9058,13 +9571,13 @@ let
         sha1 = "29c5733148057bb4e1f75df35b7a9cb72e6a59dd";
       };
     };
-    "uglify-js-3.3.16" = {
+    "uglify-js-3.3.22" = {
       name = "uglify-js";
       packageName = "uglify-js";
-      version = "3.3.16";
+      version = "3.3.22";
       src = fetchurl {
-        url = "https://registry.npmjs.org/uglify-js/-/uglify-js-3.3.16.tgz";
-        sha512 = "2zdbgaqy5a8mrv3gkljjw8iishfj4iwncazi3g0zcymqppc19474s24irqvmnhs1iy38g18086l72ilqkvlvnhnyipnhi49394pkj0l";
+        url = "https://registry.npmjs.org/uglify-js/-/uglify-js-3.3.22.tgz";
+        sha512 = "0ii3py6fs2bwqiqm2fd343cyqgy2854hvxzch3p0kp92xdjcxxqf1wnmmnak4dxs746zk7rc91d6f44bn5m8fdkxjz13z7snbm3vb5n";
       };
     };
     "uglify-to-browserify-1.0.2" = {
@@ -9193,13 +9706,13 @@ let
         sha512 = "0xw24ba88hfvwwgniyn17n26av45g1pxqf095231065l4n9dp5w3hyc7azjd8sqyix7pnfx1pmr44fzmwwazkz0ly83cp214g4qk13p";
       };
     };
-    "update-notifier-2.4.0" = {
+    "update-notifier-2.5.0" = {
       name = "update-notifier";
       packageName = "update-notifier";
-      version = "2.4.0";
+      version = "2.5.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/update-notifier/-/update-notifier-2.4.0.tgz";
-        sha1 = "f9b4c700fbfd4ec12c811587258777d563d8c866";
+        url = "https://registry.npmjs.org/update-notifier/-/update-notifier-2.5.0.tgz";
+        sha512 = "07vkna9y5i0ak6rwcbinrrgpabrcmav91ys805c42jskyc6kfla3wd12klsr858vzv5civi7arh5xz8bv7jdj81zgzyh6j70a31s0w3";
       };
     };
     "upper-case-1.1.3" = {
@@ -9265,13 +9778,13 @@ let
         sha1 = "0854860422afdcfefeb6c965c662d4800169927b";
       };
     };
-    "url-parse-1.2.0" = {
+    "url-parse-1.4.0" = {
       name = "url-parse";
       packageName = "url-parse";
-      version = "1.2.0";
+      version = "1.4.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/url-parse/-/url-parse-1.2.0.tgz";
-        sha512 = "09saicx163rl2p2xnm7hvnwwnj5p2lfxhgrkd1hnxnhpilrs5n9ia7wkqi734sdrswygmzkkz6rf69gh2ii7rngwkx0768zh1nmfg8d";
+        url = "https://registry.npmjs.org/url-parse/-/url-parse-1.4.0.tgz";
+        sha512 = "0p7r29pqqizaqs5y0gs6nz6bgjjc6ffw4fbgvq7wgff1wxv6rqgj3z5xfsvjjcwjisw5lagwr3b1fa50bmbcy03d8zprsch7328c6qi";
       };
     };
     "url-parse-lax-1.0.0" = {
@@ -9281,6 +9794,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/url-parse-lax/-/url-parse-lax-1.0.0.tgz";
         sha1 = "7af8f303645e9bd79a272e7a14ac68bc0609da73";
+      };
+    };
+    "url-trim-1.0.0" = {
+      name = "url-trim";
+      packageName = "url-trim";
+      version = "1.0.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/url-trim/-/url-trim-1.0.0.tgz";
+        sha1 = "40057e2f164b88e5daca7269da47e6d1dd837adc";
       };
     };
     "use-3.1.0" = {
@@ -9391,13 +9913,13 @@ let
         sha1 = "2299f02c6ded30d4a5961b0b9f74524a18f634fc";
       };
     };
-    "vendors-1.0.1" = {
+    "vendors-1.0.2" = {
       name = "vendors";
       packageName = "vendors";
-      version = "1.0.1";
+      version = "1.0.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/vendors/-/vendors-1.0.1.tgz";
-        sha1 = "37ad73c8ee417fb3d580e785312307d274847f22";
+        url = "https://registry.npmjs.org/vendors/-/vendors-1.0.2.tgz";
+        sha512 = "0nnn6m21m8pbcgc6isqzl3iri4g4fxs40lfragv8h52ij2snxsb1dhmmiq7zyail48r1dcrk3smp238xic44z83sjv77wpszp5npy63";
       };
     };
     "verror-1.10.0" = {
@@ -9416,6 +9938,33 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/vm-browserify/-/vm-browserify-0.0.4.tgz";
         sha1 = "5d7ea45bbef9e4a6ff65f95438e0a87c357d5a73";
+      };
+    };
+    "vm-browserify-1.0.1" = {
+      name = "vm-browserify";
+      packageName = "vm-browserify";
+      version = "1.0.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/vm-browserify/-/vm-browserify-1.0.1.tgz";
+        sha512 = "2cfjhw3c398d3nlbi0z1f6jlmjymyk13clnsnvwpa6cgcpbhh0zsghs7zi1fz6ydnbg6ignbbhvzrk44k0mcaps8iiv0q0c29rcpb0j";
+      };
+    };
+    "watchify-3.11.0" = {
+      name = "watchify";
+      packageName = "watchify";
+      version = "3.11.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/watchify/-/watchify-3.11.0.tgz";
+        sha512 = "287782bmfr7xcwq3mwj2k892p64l74v6mkn4jfq046743qd3i19qb10c4jh2d7r61q2hlcpj9226iah1hh9v754hjvaja6wrp8qcdgf";
+      };
+    };
+    "watchify-middleware-1.8.0" = {
+      name = "watchify-middleware";
+      packageName = "watchify-middleware";
+      version = "1.8.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/watchify-middleware/-/watchify-middleware-1.8.0.tgz";
+        sha512 = "0vkvrbwsdrr6xyqmr846wql83pncz0qxppl2zjvhfx5bzi184qz7hxl4n1kwx1ia03awr6kw8jz9f73dglksjpj89b9nkgkzpki9mi0";
       };
     };
     "watchpack-1.5.0" = {
@@ -9616,15 +10165,6 @@ let
         sha1 = "496b2cc109eca8dbacfe2dc72b603c17c5870ad4";
       };
     };
-    "xml-char-classes-1.0.0" = {
-      name = "xml-char-classes";
-      packageName = "xml-char-classes";
-      version = "1.0.0";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/xml-char-classes/-/xml-char-classes-1.0.0.tgz";
-        sha1 = "64657848a20ffc5df583a42ad8a277b4512bbc4d";
-      };
-    };
     "xml2js-0.4.19" = {
       name = "xml2js";
       packageName = "xml2js";
@@ -9754,242 +10294,104 @@ in
       sha1 = "daeffe95238cb8ce0d7fc6afb5047bcdd14ad7d7";
     };
     dependencies = [
+      sources."ajv-5.5.2"
+      sources."asn1-0.2.3"
+      sources."assert-plus-1.0.0"
+      sources."asynckit-0.4.0"
+      sources."aws-sign2-0.7.0"
+      sources."aws4-1.7.0"
+      sources."balanced-match-1.0.0"
+      sources."bcrypt-pbkdf-1.0.1"
+      sources."binary-0.3.0"
       (sources."binwrap-0.1.4" // {
         dependencies = [
-          (sources."request-2.85.0" // {
-            dependencies = [
-              sources."aws-sign2-0.7.0"
-              sources."aws4-1.6.0"
-              sources."caseless-0.12.0"
-              (sources."combined-stream-1.0.6" // {
-                dependencies = [
-                  sources."delayed-stream-1.0.0"
-                ];
-              })
-              sources."extend-3.0.1"
-              sources."forever-agent-0.6.1"
-              (sources."form-data-2.3.2" // {
-                dependencies = [
-                  sources."asynckit-0.4.0"
-                ];
-              })
-              (sources."har-validator-5.0.3" // {
-                dependencies = [
-                  (sources."ajv-5.5.2" // {
-                    dependencies = [
-                      sources."co-4.6.0"
-                      sources."fast-deep-equal-1.1.0"
-                      sources."fast-json-stable-stringify-2.0.0"
-                      sources."json-schema-traverse-0.3.1"
-                    ];
-                  })
-                  sources."har-schema-2.0.0"
-                ];
-              })
-              (sources."hawk-6.0.2" // {
-                dependencies = [
-                  sources."boom-4.3.1"
-                  (sources."cryptiles-3.1.2" // {
-                    dependencies = [
-                      sources."boom-5.2.0"
-                    ];
-                  })
-                  sources."hoek-4.2.1"
-                  sources."sntp-2.1.0"
-                ];
-              })
-              (sources."http-signature-1.2.0" // {
-                dependencies = [
-                  sources."assert-plus-1.0.0"
-                  (sources."jsprim-1.4.1" // {
-                    dependencies = [
-                      sources."extsprintf-1.3.0"
-                      sources."json-schema-0.2.3"
-                      (sources."verror-1.10.0" // {
-                        dependencies = [
-                          sources."core-util-is-1.0.2"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."sshpk-1.14.1" // {
-                    dependencies = [
-                      sources."asn1-0.2.3"
-                      sources."bcrypt-pbkdf-1.0.1"
-                      sources."dashdash-1.14.1"
-                      sources."ecc-jsbn-0.1.1"
-                      sources."getpass-0.1.7"
-                      sources."jsbn-0.1.1"
-                      sources."tweetnacl-0.14.5"
-                    ];
-                  })
-                ];
-              })
-              sources."is-typedarray-1.0.0"
-              sources."isstream-0.1.2"
-              sources."json-stringify-safe-5.0.1"
-              (sources."mime-types-2.1.18" // {
-                dependencies = [
-                  sources."mime-db-1.33.0"
-                ];
-              })
-              sources."oauth-sign-0.8.2"
-              sources."performance-now-2.1.0"
-              sources."qs-6.5.1"
-              sources."safe-buffer-5.1.1"
-              sources."stringstream-0.0.5"
-              (sources."tough-cookie-2.3.4" // {
-                dependencies = [
-                  sources."punycode-1.4.1"
-                ];
-              })
-              sources."tunnel-agent-0.6.0"
-              sources."uuid-3.2.1"
-            ];
-          })
-          (sources."request-promise-4.2.2" // {
-            dependencies = [
-              sources."bluebird-3.5.1"
-              (sources."request-promise-core-1.1.1" // {
-                dependencies = [
-                  sources."lodash-4.17.5"
-                ];
-              })
-              sources."stealthy-require-1.1.1"
-              (sources."tough-cookie-2.3.4" // {
-                dependencies = [
-                  sources."punycode-1.4.1"
-                ];
-              })
-            ];
-          })
-          (sources."tar-2.2.1" // {
-            dependencies = [
-              sources."block-stream-0.0.9"
-              (sources."fstream-1.0.11" // {
-                dependencies = [
-                  sources."graceful-fs-4.1.11"
-                  (sources."mkdirp-0.5.1" // {
-                    dependencies = [
-                      sources."minimist-0.0.8"
-                    ];
-                  })
-                  (sources."rimraf-2.6.2" // {
-                    dependencies = [
-                      (sources."glob-7.1.2" // {
-                        dependencies = [
-                          sources."fs.realpath-1.0.0"
-                          (sources."inflight-1.0.6" // {
-                            dependencies = [
-                              sources."wrappy-1.0.2"
-                            ];
-                          })
-                          (sources."minimatch-3.0.4" // {
-                            dependencies = [
-                              (sources."brace-expansion-1.1.11" // {
-                                dependencies = [
-                                  sources."balanced-match-1.0.0"
-                                  sources."concat-map-0.0.1"
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."once-1.4.0" // {
-                            dependencies = [
-                              sources."wrappy-1.0.2"
-                            ];
-                          })
-                          sources."path-is-absolute-1.0.1"
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              sources."inherits-2.0.3"
-            ];
-          })
-          (sources."unzip-0.1.11" // {
-            dependencies = [
-              (sources."binary-0.3.0" // {
-                dependencies = [
-                  sources."buffers-0.1.1"
-                  (sources."chainsaw-0.1.0" // {
-                    dependencies = [
-                      sources."traverse-0.3.9"
-                    ];
-                  })
-                ];
-              })
-              (sources."fstream-0.1.31" // {
-                dependencies = [
-                  (sources."graceful-fs-3.0.11" // {
-                    dependencies = [
-                      sources."natives-1.1.2"
-                    ];
-                  })
-                  sources."inherits-2.0.3"
-                  (sources."mkdirp-0.5.1" // {
-                    dependencies = [
-                      sources."minimist-0.0.8"
-                    ];
-                  })
-                  (sources."rimraf-2.6.2" // {
-                    dependencies = [
-                      (sources."glob-7.1.2" // {
-                        dependencies = [
-                          sources."fs.realpath-1.0.0"
-                          (sources."inflight-1.0.6" // {
-                            dependencies = [
-                              sources."wrappy-1.0.2"
-                            ];
-                          })
-                          (sources."minimatch-3.0.4" // {
-                            dependencies = [
-                              (sources."brace-expansion-1.1.11" // {
-                                dependencies = [
-                                  sources."balanced-match-1.0.0"
-                                  sources."concat-map-0.0.1"
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."once-1.4.0" // {
-                            dependencies = [
-                              sources."wrappy-1.0.2"
-                            ];
-                          })
-                          sources."path-is-absolute-1.0.1"
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              (sources."match-stream-0.0.2" // {
-                dependencies = [
-                  sources."buffers-0.1.1"
-                ];
-              })
-              (sources."pullstream-0.4.1" // {
-                dependencies = [
-                  sources."over-0.0.5"
-                  sources."slice-stream-1.0.0"
-                ];
-              })
-              (sources."readable-stream-1.0.34" // {
-                dependencies = [
-                  sources."core-util-is-1.0.2"
-                  sources."inherits-2.0.3"
-                  sources."isarray-0.0.1"
-                  sources."string_decoder-0.10.31"
-                ];
-              })
-              sources."setimmediate-1.0.5"
-            ];
-          })
+          sources."fstream-0.1.31"
+          sources."graceful-fs-3.0.11"
         ];
       })
+      sources."block-stream-0.0.9"
+      sources."bluebird-3.5.1"
+      sources."boom-4.3.1"
+      sources."brace-expansion-1.1.11"
+      sources."buffers-0.1.1"
+      sources."caseless-0.12.0"
+      sources."chainsaw-0.1.0"
+      sources."co-4.6.0"
+      sources."combined-stream-1.0.6"
+      sources."concat-map-0.0.1"
+      sources."core-util-is-1.0.2"
+      (sources."cryptiles-3.1.2" // {
+        dependencies = [
+          sources."boom-5.2.0"
+        ];
+      })
+      sources."dashdash-1.14.1"
+      sources."delayed-stream-1.0.0"
+      sources."ecc-jsbn-0.1.1"
+      sources."extend-3.0.1"
+      sources."extsprintf-1.3.0"
+      sources."fast-deep-equal-1.1.0"
+      sources."fast-json-stable-stringify-2.0.0"
+      sources."forever-agent-0.6.1"
+      sources."form-data-2.3.2"
+      sources."fs.realpath-1.0.0"
+      sources."fstream-1.0.11"
+      sources."getpass-0.1.7"
+      sources."glob-7.1.2"
+      sources."graceful-fs-4.1.11"
+      sources."har-schema-2.0.0"
+      sources."har-validator-5.0.3"
+      sources."hawk-6.0.2"
+      sources."hoek-4.2.1"
+      sources."http-signature-1.2.0"
+      sources."inflight-1.0.6"
+      sources."inherits-2.0.3"
+      sources."is-typedarray-1.0.0"
+      sources."isarray-0.0.1"
+      sources."isstream-0.1.2"
+      sources."jsbn-0.1.1"
+      sources."json-schema-0.2.3"
+      sources."json-schema-traverse-0.3.1"
+      sources."json-stringify-safe-5.0.1"
+      sources."jsprim-1.4.1"
+      sources."lodash-4.17.5"
+      sources."match-stream-0.0.2"
+      sources."mime-db-1.33.0"
+      sources."mime-types-2.1.18"
+      sources."minimatch-3.0.4"
+      sources."minimist-0.0.8"
+      sources."mkdirp-0.5.1"
+      sources."natives-1.1.3"
+      sources."oauth-sign-0.8.2"
+      sources."once-1.4.0"
+      sources."over-0.0.5"
+      sources."path-is-absolute-1.0.1"
+      sources."performance-now-2.1.0"
+      sources."pullstream-0.4.1"
+      sources."punycode-1.4.1"
+      sources."qs-6.5.1"
+      sources."readable-stream-1.0.34"
+      sources."request-2.85.0"
+      sources."request-promise-4.2.2"
+      sources."request-promise-core-1.1.1"
+      sources."rimraf-2.6.2"
+      sources."safe-buffer-5.1.1"
+      sources."setimmediate-1.0.5"
+      sources."slice-stream-1.0.0"
+      sources."sntp-2.1.0"
+      sources."sshpk-1.14.1"
+      sources."stealthy-require-1.1.1"
+      sources."string_decoder-0.10.31"
+      sources."stringstream-0.0.5"
+      sources."tar-2.2.1"
+      sources."tough-cookie-2.3.4"
+      sources."traverse-0.3.9"
+      sources."tunnel-agent-0.6.0"
+      sources."tweetnacl-0.14.5"
+      sources."unzip-0.1.11"
+      sources."uuid-3.2.1"
+      sources."verror-1.10.0"
+      sources."wrappy-1.0.2"
     ];
     buildInputs = globalBuildInputs;
     meta = {
@@ -9998,7 +10400,7 @@ in
       license = "BSD-3-Clause";
     };
     production = true;
-    bypassCache = false;
+    bypassCache = true;
   };
   elm-oracle = nodeEnv.buildNodePackage {
     name = "elm-oracle";
@@ -10015,7 +10417,462 @@ in
       license = "BSD-3-Clause";
     };
     production = true;
-    bypassCache = false;
+    bypassCache = true;
+  };
+  elm-live = nodeEnv.buildNodePackage {
+    name = "elm-live";
+    packageName = "elm-live";
+    version = "2.7.5";
+    src = fetchurl {
+      url = "https://registry.npmjs.org/elm-live/-/elm-live-2.7.5.tgz";
+      sha1 = "26d2d8503205b78c6d8468b1ba0b9a145da9ea55";
+    };
+    dependencies = [
+      sources."JSONStream-1.3.2"
+      sources."acorn-4.0.13"
+      sources."acorn-node-1.3.0"
+      sources."ansi-regex-0.2.1"
+      sources."ansi-styles-1.1.0"
+      sources."anymatch-1.3.2"
+      sources."arr-diff-2.0.0"
+      sources."arr-flatten-1.1.0"
+      sources."array-filter-0.0.1"
+      sources."array-find-index-1.0.2"
+      sources."array-map-0.0.0"
+      sources."array-reduce-0.0.0"
+      sources."array-unique-0.2.1"
+      sources."asn1.js-4.10.1"
+      sources."assert-1.4.1"
+      sources."astw-2.2.0"
+      sources."async-1.5.2"
+      sources."async-each-1.0.1"
+      sources."balanced-match-1.0.0"
+      sources."base64-js-1.3.0"
+      sources."binary-extensions-1.11.0"
+      sources."bn.js-4.11.8"
+      (sources."body-parser-1.14.2" // {
+        dependencies = [
+          sources."qs-5.2.0"
+        ];
+      })
+      sources."bole-2.0.0"
+      sources."brace-expansion-1.1.11"
+      (sources."braces-1.8.5" // {
+        dependencies = [
+          sources."kind-of-4.0.0"
+        ];
+      })
+      sources."brorand-1.1.0"
+      sources."browser-pack-6.1.0"
+      (sources."browser-resolve-1.11.2" // {
+        dependencies = [
+          sources."resolve-1.1.7"
+        ];
+      })
+      (sources."browserify-13.3.0" // {
+        dependencies = [
+          sources."isarray-1.0.0"
+        ];
+      })
+      sources."browserify-aes-1.2.0"
+      sources."browserify-cipher-1.0.1"
+      sources."browserify-des-1.0.1"
+      sources."browserify-rsa-4.0.1"
+      sources."browserify-sign-4.0.4"
+      sources."browserify-zlib-0.1.4"
+      (sources."budo-9.4.7" // {
+        dependencies = [
+          sources."acorn-5.5.3"
+          sources."ansi-regex-2.1.1"
+          sources."ansi-styles-2.0.1"
+          sources."browserify-zlib-0.2.0"
+          sources."buffer-5.1.0"
+          sources."chalk-0.5.1"
+          sources."debug-2.6.9"
+          sources."detective-5.1.0"
+          sources."domain-browser-1.2.0"
+          sources."http-errors-1.3.1"
+          sources."https-browserify-1.0.0"
+          sources."indent-string-2.1.0"
+          sources."isarray-2.0.4"
+          sources."module-deps-6.0.2"
+          sources."ms-0.7.1"
+          sources."os-browserify-0.3.0"
+          sources."pako-1.0.6"
+          sources."process-nextick-args-2.0.0"
+          sources."readable-stream-1.0.34"
+          sources."string_decoder-1.1.1"
+          sources."supports-color-1.3.1"
+          sources."through2-0.6.5"
+          sources."vm-browserify-1.0.1"
+        ];
+      })
+      sources."buffer-4.9.1"
+      sources."buffer-from-1.0.0"
+      sources."buffer-xor-1.0.3"
+      sources."builtin-modules-1.1.1"
+      sources."builtin-status-codes-3.0.0"
+      sources."bytes-2.2.0"
+      sources."cached-path-relative-1.0.1"
+      sources."camelcase-2.1.1"
+      sources."camelcase-keys-2.1.0"
+      (sources."chalk-1.1.3" // {
+        dependencies = [
+          sources."ansi-regex-2.1.1"
+          sources."ansi-styles-2.2.1"
+          sources."has-ansi-2.0.0"
+          sources."supports-color-2.0.0"
+        ];
+      })
+      sources."charenc-0.0.2"
+      sources."chokidar-1.6.0"
+      sources."cipher-base-1.0.4"
+      sources."combine-source-map-0.8.0"
+      sources."concat-map-0.0.1"
+      (sources."concat-stream-1.5.2" // {
+        dependencies = [
+          sources."readable-stream-2.0.6"
+        ];
+      })
+      sources."connect-pushstate-1.1.0"
+      sources."console-browserify-1.1.0"
+      sources."constants-browserify-1.0.0"
+      sources."content-type-1.0.4"
+      sources."convert-source-map-1.1.3"
+      sources."core-util-is-1.0.2"
+      sources."create-ecdh-4.0.1"
+      sources."create-hash-1.2.0"
+      sources."create-hmac-1.1.7"
+      sources."cross-spawn-5.1.0"
+      sources."crypt-0.0.2"
+      sources."crypto-browserify-3.12.0"
+      sources."currently-unhandled-0.4.1"
+      sources."date-now-0.1.4"
+      sources."debounce-1.1.0"
+      sources."debug-3.1.0"
+      sources."decamelize-1.2.0"
+      sources."defined-1.0.0"
+      sources."depd-1.1.2"
+      sources."deps-sort-2.0.0"
+      sources."des.js-1.0.0"
+      sources."destroy-1.0.4"
+      sources."detective-4.7.1"
+      sources."diffie-hellman-5.0.3"
+      sources."domain-browser-1.1.7"
+      sources."duplexer2-0.1.4"
+      sources."ee-first-1.1.1"
+      sources."elliptic-6.4.0"
+      sources."encodeurl-1.0.2"
+      sources."error-ex-1.3.1"
+      sources."escape-html-1.0.3"
+      sources."escape-string-regexp-1.0.5"
+      sources."etag-1.8.1"
+      sources."eventemitter3-3.0.1"
+      sources."events-1.1.1"
+      sources."evp_bytestokey-1.0.3"
+      sources."expand-brackets-0.1.5"
+      sources."expand-range-1.8.2"
+      sources."extglob-0.3.2"
+      sources."faye-websocket-0.10.0"
+      sources."filename-regex-2.0.1"
+      sources."fill-range-2.2.3"
+      sources."find-up-1.1.2"
+      sources."follow-redirects-1.4.1"
+      sources."for-in-1.0.2"
+      sources."for-own-0.1.5"
+      sources."fresh-0.5.2"
+      sources."from2-2.3.0"
+      sources."from2-string-1.1.0"
+      sources."fs.realpath-1.0.0"
+      sources."fsevents-1.2.2"
+      sources."function-bind-1.1.1"
+      (sources."garnish-5.2.0" // {
+        dependencies = [
+          sources."isarray-0.0.1"
+          sources."strip-ansi-0.3.0"
+        ];
+      })
+      (sources."get-ports-1.0.3" // {
+        dependencies = [
+          sources."once-1.3.3"
+        ];
+      })
+      sources."get-stdin-4.0.1"
+      sources."glob-7.1.2"
+      sources."glob-base-0.3.0"
+      sources."glob-parent-2.0.0"
+      sources."graceful-fs-4.1.11"
+      sources."has-1.0.1"
+      sources."has-ansi-0.1.0"
+      sources."hasbin-1.2.3"
+      sources."hash-base-3.0.4"
+      sources."hash.js-1.1.3"
+      sources."hmac-drbg-1.0.1"
+      sources."hosted-git-info-2.6.0"
+      sources."htmlescape-1.1.1"
+      sources."http-errors-1.6.3"
+      sources."http-parser-js-0.4.11"
+      sources."http-proxy-1.17.0"
+      sources."https-browserify-0.0.1"
+      sources."iconv-lite-0.4.13"
+      sources."ieee754-1.1.11"
+      sources."indent-string-3.2.0"
+      sources."indexof-0.0.1"
+      sources."individual-3.0.0"
+      sources."inflight-1.0.6"
+      sources."inherits-2.0.3"
+      sources."inject-lr-script-2.1.0"
+      sources."inline-source-map-0.6.2"
+      (sources."insert-module-globals-7.0.6" // {
+        dependencies = [
+          sources."concat-stream-1.6.2"
+        ];
+      })
+      sources."internal-ip-1.2.0"
+      sources."is-arrayish-0.2.1"
+      sources."is-binary-path-1.0.1"
+      sources."is-buffer-1.1.6"
+      sources."is-builtin-module-1.0.0"
+      sources."is-dotfile-1.0.3"
+      sources."is-equal-shallow-0.1.3"
+      sources."is-extendable-0.1.1"
+      sources."is-extglob-1.0.0"
+      sources."is-finite-1.0.2"
+      sources."is-glob-2.0.1"
+      sources."is-number-2.1.0"
+      sources."is-posix-bracket-0.1.1"
+      sources."is-primitive-2.0.0"
+      sources."is-utf8-0.2.1"
+      sources."isarray-1.0.0"
+      sources."isexe-2.0.0"
+      sources."isobject-2.1.0"
+      sources."json-stable-stringify-0.0.1"
+      sources."json-stringify-safe-5.0.1"
+      sources."jsonify-0.0.0"
+      sources."jsonparse-1.3.1"
+      sources."kind-of-3.2.2"
+      sources."labeled-stream-splicer-2.0.1"
+      sources."lexical-scope-1.2.0"
+      sources."livereload-js-2.3.0"
+      sources."load-json-file-1.1.0"
+      sources."lodash.memoize-3.0.4"
+      sources."loud-rejection-1.6.0"
+      sources."lru-cache-4.1.2"
+      sources."map-limit-0.0.1"
+      sources."map-obj-1.0.1"
+      sources."md5-2.2.1"
+      sources."md5.js-1.3.4"
+      sources."media-typer-0.3.0"
+      sources."meow-3.7.0"
+      (sources."micromatch-2.3.11" // {
+        dependencies = [
+          sources."isarray-1.0.0"
+        ];
+      })
+      sources."miller-rabin-4.0.1"
+      sources."mime-1.4.1"
+      sources."mime-db-1.33.0"
+      sources."mime-types-2.1.18"
+      sources."minimalistic-assert-1.0.1"
+      sources."minimalistic-crypto-utils-1.0.1"
+      sources."minimatch-3.0.4"
+      sources."minimist-1.2.0"
+      sources."mkdirp-0.5.1"
+      sources."module-deps-4.1.1"
+      sources."ms-2.0.0"
+      sources."nan-2.10.0"
+      sources."normalize-package-data-2.4.0"
+      sources."normalize-path-2.1.1"
+      sources."number-is-nan-1.0.1"
+      sources."object-assign-4.1.1"
+      sources."object.omit-2.0.1"
+      sources."on-finished-2.3.0"
+      sources."on-headers-1.0.1"
+      sources."once-1.4.0"
+      sources."opn-3.0.3"
+      sources."os-browserify-0.1.2"
+      sources."os-tmpdir-1.0.2"
+      sources."outpipe-1.1.1"
+      sources."pad-left-2.1.0"
+      sources."pad-right-0.2.2"
+      sources."pako-0.2.9"
+      sources."parents-1.0.1"
+      sources."parse-asn1-5.1.1"
+      sources."parse-glob-3.0.4"
+      sources."parse-json-2.2.0"
+      sources."parse-ms-1.0.1"
+      sources."parseurl-1.3.2"
+      sources."path-browserify-0.0.0"
+      sources."path-exists-2.1.0"
+      sources."path-is-absolute-1.0.1"
+      sources."path-parse-1.0.5"
+      sources."path-platform-0.11.15"
+      sources."path-type-1.1.0"
+      sources."pbkdf2-3.0.16"
+      sources."pem-1.12.5"
+      sources."pify-2.3.0"
+      sources."pinkie-2.0.4"
+      sources."pinkie-promise-2.0.1"
+      sources."plur-1.0.0"
+      sources."preserve-0.2.0"
+      sources."prettier-bytes-1.0.4"
+      sources."pretty-ms-2.1.0"
+      sources."process-0.11.10"
+      sources."process-nextick-args-1.0.7"
+      sources."pseudomap-1.0.2"
+      sources."public-encrypt-4.0.2"
+      sources."punycode-1.4.1"
+      sources."q-1.5.1"
+      (sources."q-stream-0.2.0" // {
+        dependencies = [
+          sources."isarray-0.0.1"
+          sources."readable-stream-1.0.34"
+        ];
+      })
+      sources."qs-5.1.0"
+      sources."querystring-0.2.0"
+      sources."querystring-es3-0.2.1"
+      (sources."randomatic-1.1.7" // {
+        dependencies = [
+          (sources."is-number-3.0.0" // {
+            dependencies = [
+              sources."kind-of-3.2.2"
+            ];
+          })
+        ];
+      })
+      sources."randombytes-2.0.6"
+      sources."randomfill-1.0.4"
+      sources."range-parser-1.2.0"
+      (sources."raw-body-2.1.7" // {
+        dependencies = [
+          sources."bytes-2.4.0"
+        ];
+      })
+      sources."read-only-stream-2.0.0"
+      sources."read-pkg-1.1.0"
+      sources."read-pkg-up-1.0.1"
+      (sources."readable-stream-2.3.6" // {
+        dependencies = [
+          sources."string_decoder-1.1.1"
+        ];
+      })
+      sources."readdirp-2.1.0"
+      sources."redent-1.0.0"
+      sources."regex-cache-0.4.4"
+      sources."remove-trailing-separator-1.1.0"
+      sources."repeat-element-1.1.2"
+      sources."repeat-string-1.6.1"
+      sources."repeating-2.0.1"
+      sources."requires-port-1.0.0"
+      sources."resolve-1.7.1"
+      sources."resp-modifier-6.0.2"
+      sources."right-now-1.0.0"
+      sources."ripemd160-2.0.2"
+      sources."safe-buffer-5.1.1"
+      sources."semver-5.5.0"
+      sources."send-0.16.2"
+      sources."serve-static-1.13.2"
+      sources."set-immediate-shim-1.0.1"
+      sources."setprototypeof-1.1.0"
+      sources."sha.js-2.4.11"
+      sources."shasum-1.0.2"
+      sources."shebang-command-1.2.0"
+      sources."shebang-regex-1.0.0"
+      sources."shell-quote-1.6.1"
+      sources."signal-exit-3.0.2"
+      (sources."simple-html-index-1.5.0" // {
+        dependencies = [
+          sources."isarray-1.0.0"
+          sources."readable-stream-2.3.6"
+        ];
+      })
+      sources."source-map-0.5.7"
+      sources."spdx-correct-3.0.0"
+      sources."spdx-exceptions-2.1.0"
+      sources."spdx-expression-parse-3.0.0"
+      sources."spdx-license-ids-3.0.0"
+      sources."split2-0.2.1"
+      sources."stacked-1.1.1"
+      sources."statuses-1.4.0"
+      (sources."stdout-stream-1.4.0" // {
+        dependencies = [
+          sources."isarray-1.0.0"
+          sources."readable-stream-2.3.6"
+        ];
+      })
+      sources."stream-browserify-2.0.1"
+      sources."stream-combiner2-1.1.1"
+      sources."stream-http-2.8.1"
+      sources."stream-splicer-2.0.0"
+      sources."string_decoder-0.10.31"
+      sources."strip-ansi-3.0.1"
+      sources."strip-bom-2.0.0"
+      sources."strip-indent-1.0.1"
+      sources."subarg-1.0.0"
+      sources."supports-color-0.2.0"
+      sources."syntax-error-1.4.0"
+      sources."term-color-1.0.1"
+      sources."through-2.3.8"
+      sources."through2-2.0.3"
+      sources."timers-browserify-1.4.2"
+      (sources."tiny-lr-0.2.1" // {
+        dependencies = [
+          sources."debug-2.2.0"
+        ];
+      })
+      sources."to-arraybuffer-1.0.1"
+      sources."trim-newlines-1.0.0"
+      sources."tty-browserify-0.0.1"
+      sources."type-is-1.6.16"
+      sources."typedarray-0.0.6"
+      sources."umd-3.0.3"
+      sources."unpipe-1.0.0"
+      (sources."url-0.11.0" // {
+        dependencies = [
+          sources."punycode-1.3.2"
+        ];
+      })
+      sources."url-trim-1.0.0"
+      (sources."util-0.10.3" // {
+        dependencies = [
+          sources."inherits-2.0.1"
+        ];
+      })
+      sources."util-deprecate-1.0.2"
+      sources."validate-npm-package-license-3.0.3"
+      sources."vm-browserify-0.0.4"
+      (sources."watchify-3.11.0" // {
+        dependencies = [
+          sources."concat-stream-1.6.2"
+          sources."events-2.0.0"
+          sources."minimist-1.2.0"
+        ];
+      })
+      (sources."watchify-middleware-1.8.0" // {
+        dependencies = [
+          sources."browserify-16.2.0"
+          sources."isarray-1.0.0"
+          sources."minimist-0.0.8"
+          sources."readable-stream-2.3.6"
+          sources."through2-2.0.3"
+        ];
+      })
+      sources."websocket-driver-0.7.0"
+      sources."websocket-extensions-0.1.3"
+      sources."which-1.3.0"
+      sources."wrappy-1.0.2"
+      sources."xtend-4.0.1"
+      sources."yallist-2.1.2"
+    ];
+    buildInputs = globalBuildInputs;
+    meta = {
+      description = "A flexible dev server for Elm. Live reload included!";
+      homepage = "https://github.com/tomekwi/elm-live#readme";
+      license = "MIT";
+    };
+    production = true;
+    bypassCache = true;
   };
   cross-env = nodeEnv.buildNodePackage {
     name = "cross-env";
@@ -10026,27 +10883,15 @@ in
       sha512 = "1p73hcqryvq5766qkci3l2fr505jzv0747kgdihdxrvs3d4f63khr4lnph5z6zdycn10f870i1hp4y4qxmkqfs9l1cgm1anlb1jc7rk";
     };
     dependencies = [
-      (sources."cross-spawn-5.1.0" // {
-        dependencies = [
-          (sources."lru-cache-4.1.2" // {
-            dependencies = [
-              sources."pseudomap-1.0.2"
-              sources."yallist-2.1.2"
-            ];
-          })
-          (sources."shebang-command-1.2.0" // {
-            dependencies = [
-              sources."shebang-regex-1.0.0"
-            ];
-          })
-          (sources."which-1.3.0" // {
-            dependencies = [
-              sources."isexe-2.0.0"
-            ];
-          })
-        ];
-      })
+      sources."cross-spawn-5.1.0"
       sources."is-windows-1.0.2"
+      sources."isexe-2.0.0"
+      sources."lru-cache-4.1.2"
+      sources."pseudomap-1.0.2"
+      sources."shebang-command-1.2.0"
+      sources."shebang-regex-1.0.0"
+      sources."which-1.3.0"
+      sources."yallist-2.1.2"
     ];
     buildInputs = globalBuildInputs;
     meta = {
@@ -10055,6412 +10900,1380 @@ in
       license = "MIT";
     };
     production = true;
-    bypassCache = false;
+    bypassCache = true;
   };
   create-elm-app = nodeEnv.buildNodePackage {
     name = "create-elm-app";
     packageName = "create-elm-app";
-    version = "1.10.3";
+    version = "1.10.4";
     src = fetchurl {
-      url = "https://registry.npmjs.org/create-elm-app/-/create-elm-app-1.10.3.tgz";
-      sha512 = "149xd2kb3cxgfcznn4y14w5c4iircibdk9n69nqrln76r14gix92k1ckfqrn2vm8ynhnrvbbf9r1jgj9www1sa29wlvapmp7vaswd7d";
+      url = "https://registry.npmjs.org/create-elm-app/-/create-elm-app-1.10.4.tgz";
+      sha512 = "28j8wqc2aw5grzgc8s00i81cy1m2s82hnckdr7qnh2yv589ga9na457a3b6jrrlflqd6kdmzwnwsxaq6lic835spkdkhjdc02sd2pha";
     };
     dependencies = [
+      sources."accepts-1.3.5"
+      sources."acorn-5.5.3"
+      (sources."acorn-dynamic-import-2.0.2" // {
+        dependencies = [
+          sources."acorn-4.0.13"
+        ];
+      })
+      sources."address-1.0.3"
+      sources."ajv-5.5.2"
+      sources."ajv-keywords-3.1.0"
+      sources."align-text-0.1.4"
+      sources."alphanum-sort-1.0.2"
+      sources."ansi-align-2.0.0"
+      sources."ansi-escapes-3.1.0"
+      sources."ansi-html-0.0.7"
+      sources."ansi-regex-2.1.1"
+      sources."ansi-styles-2.2.1"
+      sources."anymatch-1.3.2"
+      sources."argparse-1.0.10"
+      sources."arr-diff-2.0.0"
+      sources."arr-flatten-1.1.0"
+      sources."arr-union-3.1.0"
+      sources."array-filter-0.0.1"
+      sources."array-find-index-1.0.2"
+      sources."array-flatten-2.1.1"
+      sources."array-includes-3.0.3"
+      sources."array-map-0.0.0"
+      sources."array-reduce-0.0.0"
+      sources."array-union-1.0.2"
+      sources."array-uniq-1.0.3"
+      sources."array-unique-0.2.1"
+      sources."asap-2.0.6"
+      sources."asn1-0.2.3"
+      sources."asn1.js-4.10.1"
+      sources."assert-1.4.1"
+      sources."assert-plus-0.2.0"
       (sources."assets-webpack-plugin-3.5.1" // {
         dependencies = [
-          sources."camelcase-1.2.1"
-          sources."escape-string-regexp-1.0.5"
-          (sources."lodash.assign-3.2.0" // {
-            dependencies = [
-              (sources."lodash._baseassign-3.2.0" // {
-                dependencies = [
-                  sources."lodash._basecopy-3.0.1"
-                ];
-              })
-              (sources."lodash._createassigner-3.1.1" // {
-                dependencies = [
-                  sources."lodash._bindcallback-3.0.1"
-                  sources."lodash._isiterateecall-3.0.9"
-                  sources."lodash.restparam-3.6.1"
-                ];
-              })
-              (sources."lodash.keys-3.1.2" // {
-                dependencies = [
-                  sources."lodash._getnative-3.9.1"
-                  sources."lodash.isarguments-3.1.0"
-                  sources."lodash.isarray-3.0.4"
-                ];
-              })
-            ];
-          })
-          (sources."lodash.merge-3.3.2" // {
-            dependencies = [
-              sources."lodash._arraycopy-3.0.0"
-              sources."lodash._arrayeach-3.0.0"
-              (sources."lodash._createassigner-3.1.1" // {
-                dependencies = [
-                  sources."lodash._bindcallback-3.0.1"
-                  sources."lodash._isiterateecall-3.0.9"
-                  sources."lodash.restparam-3.6.1"
-                ];
-              })
-              sources."lodash._getnative-3.9.1"
-              sources."lodash.isarguments-3.1.0"
-              sources."lodash.isarray-3.0.4"
-              (sources."lodash.isplainobject-3.2.0" // {
-                dependencies = [
-                  sources."lodash._basefor-3.0.3"
-                ];
-              })
-              sources."lodash.istypedarray-3.0.6"
-              sources."lodash.keys-3.1.2"
-              sources."lodash.keysin-3.0.8"
-              (sources."lodash.toplainobject-3.0.0" // {
-                dependencies = [
-                  sources."lodash._basecopy-3.0.1"
-                ];
-              })
-            ];
-          })
-          (sources."mkdirp-0.5.1" // {
-            dependencies = [
-              sources."minimist-0.0.8"
-            ];
-          })
+          sources."minimist-0.0.8"
         ];
       })
-      (sources."autoprefixer-8.2.0" // {
-        dependencies = [
-          (sources."browserslist-3.2.3" // {
-            dependencies = [
-              sources."electron-to-chromium-1.3.41"
-            ];
-          })
-          sources."caniuse-lite-1.0.30000821"
-          sources."normalize-range-0.1.2"
-          sources."num2fraction-1.2.2"
-          (sources."postcss-6.0.21" // {
-            dependencies = [
-              sources."source-map-0.6.1"
-              (sources."supports-color-5.3.0" // {
-                dependencies = [
-                  sources."has-flag-3.0.0"
-                ];
-              })
-            ];
-          })
-          sources."postcss-value-parser-3.3.0"
-        ];
-      })
+      sources."assign-symbols-1.0.0"
+      sources."async-2.6.0"
+      sources."async-each-1.0.1"
+      sources."asynckit-0.4.0"
+      sources."atob-2.1.0"
+      sources."autoprefixer-8.3.0"
+      sources."aws-sign2-0.6.0"
+      sources."aws4-1.7.0"
       (sources."babel-cli-6.26.0" // {
         dependencies = [
-          (sources."babel-polyfill-6.26.0" // {
-            dependencies = [
-              sources."core-js-2.5.4"
-              sources."regenerator-runtime-0.10.5"
-            ];
-          })
-          (sources."babel-register-6.26.0" // {
-            dependencies = [
-              sources."core-js-2.5.4"
-              (sources."home-or-tmp-2.0.0" // {
-                dependencies = [
-                  sources."os-homedir-1.0.2"
-                  sources."os-tmpdir-1.0.2"
-                ];
-              })
-              (sources."mkdirp-0.5.1" // {
-                dependencies = [
-                  sources."minimist-0.0.8"
-                ];
-              })
-              sources."source-map-support-0.4.18"
-            ];
-          })
-          (sources."chokidar-1.7.0" // {
-            dependencies = [
-              (sources."anymatch-1.3.2" // {
-                dependencies = [
-                  (sources."micromatch-2.3.11" // {
-                    dependencies = [
-                      (sources."arr-diff-2.0.0" // {
-                        dependencies = [
-                          sources."arr-flatten-1.1.0"
-                        ];
-                      })
-                      sources."array-unique-0.2.1"
-                      (sources."braces-1.8.5" // {
-                        dependencies = [
-                          (sources."expand-range-1.8.2" // {
-                            dependencies = [
-                              (sources."fill-range-2.2.3" // {
-                                dependencies = [
-                                  sources."is-number-2.1.0"
-                                  (sources."isobject-2.1.0" // {
-                                    dependencies = [
-                                      sources."isarray-1.0.0"
-                                    ];
-                                  })
-                                  (sources."randomatic-1.1.7" // {
-                                    dependencies = [
-                                      (sources."is-number-3.0.0" // {
-                                        dependencies = [
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      (sources."kind-of-4.0.0" // {
-                                        dependencies = [
-                                          sources."is-buffer-1.1.6"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  sources."repeat-string-1.6.1"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."preserve-0.2.0"
-                          sources."repeat-element-1.1.2"
-                        ];
-                      })
-                      (sources."expand-brackets-0.1.5" // {
-                        dependencies = [
-                          sources."is-posix-bracket-0.1.1"
-                        ];
-                      })
-                      sources."extglob-0.3.2"
-                      sources."filename-regex-2.0.1"
-                      sources."is-extglob-1.0.0"
-                      (sources."kind-of-3.2.2" // {
-                        dependencies = [
-                          sources."is-buffer-1.1.6"
-                        ];
-                      })
-                      (sources."object.omit-2.0.1" // {
-                        dependencies = [
-                          (sources."for-own-0.1.5" // {
-                            dependencies = [
-                              sources."for-in-1.0.2"
-                            ];
-                          })
-                          sources."is-extendable-0.1.1"
-                        ];
-                      })
-                      (sources."parse-glob-3.0.4" // {
-                        dependencies = [
-                          sources."glob-base-0.3.0"
-                          sources."is-dotfile-1.0.3"
-                        ];
-                      })
-                      (sources."regex-cache-0.4.4" // {
-                        dependencies = [
-                          (sources."is-equal-shallow-0.1.3" // {
-                            dependencies = [
-                              sources."is-primitive-2.0.0"
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."normalize-path-2.1.1" // {
-                    dependencies = [
-                      sources."remove-trailing-separator-1.1.0"
-                    ];
-                  })
-                ];
-              })
-              sources."async-each-1.0.1"
-              (sources."fsevents-1.1.3" // {
-                dependencies = [
-                  sources."nan-2.10.0"
-                ];
-              })
-              sources."glob-parent-2.0.0"
-              sources."inherits-2.0.3"
-              (sources."is-binary-path-1.0.1" // {
-                dependencies = [
-                  sources."binary-extensions-1.11.0"
-                ];
-              })
-              (sources."is-glob-2.0.1" // {
-                dependencies = [
-                  sources."is-extglob-1.0.0"
-                ];
-              })
-              (sources."readdirp-2.1.0" // {
-                dependencies = [
-                  sources."graceful-fs-4.1.11"
-                  (sources."minimatch-3.0.4" // {
-                    dependencies = [
-                      (sources."brace-expansion-1.1.11" // {
-                        dependencies = [
-                          sources."balanced-match-1.0.0"
-                          sources."concat-map-0.0.1"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."readable-stream-2.3.5" // {
-                    dependencies = [
-                      sources."core-util-is-1.0.2"
-                      sources."isarray-1.0.0"
-                      sources."process-nextick-args-2.0.0"
-                      sources."safe-buffer-5.1.1"
-                      sources."string_decoder-1.0.3"
-                      sources."util-deprecate-1.0.2"
-                    ];
-                  })
-                  sources."set-immediate-shim-1.0.1"
-                ];
-              })
-            ];
-          })
-          sources."commander-2.15.1"
-          sources."convert-source-map-1.5.1"
-          sources."fs-readdir-recursive-1.1.0"
-          (sources."glob-7.1.2" // {
-            dependencies = [
-              sources."fs.realpath-1.0.0"
-              (sources."inflight-1.0.6" // {
-                dependencies = [
-                  sources."wrappy-1.0.2"
-                ];
-              })
-              sources."inherits-2.0.3"
-              (sources."minimatch-3.0.4" // {
-                dependencies = [
-                  (sources."brace-expansion-1.1.11" // {
-                    dependencies = [
-                      sources."balanced-match-1.0.0"
-                      sources."concat-map-0.0.1"
-                    ];
-                  })
-                ];
-              })
-              (sources."once-1.4.0" // {
-                dependencies = [
-                  sources."wrappy-1.0.2"
-                ];
-              })
-            ];
-          })
-          sources."lodash-4.17.5"
-          (sources."output-file-sync-1.1.2" // {
-            dependencies = [
-              sources."graceful-fs-4.1.11"
-              (sources."mkdirp-0.5.1" // {
-                dependencies = [
-                  sources."minimist-0.0.8"
-                ];
-              })
-              sources."object-assign-4.1.1"
-            ];
-          })
-          sources."path-is-absolute-1.0.1"
-          sources."slash-1.0.0"
           sources."source-map-0.5.7"
-          (sources."v8flags-2.1.1" // {
-            dependencies = [
-              sources."user-home-1.1.1"
-            ];
-          })
         ];
       })
+      sources."babel-code-frame-6.26.0"
       (sources."babel-core-6.26.0" // {
         dependencies = [
-          (sources."babel-code-frame-6.26.0" // {
-            dependencies = [
-              (sources."chalk-1.1.3" // {
-                dependencies = [
-                  sources."ansi-styles-2.2.1"
-                  sources."escape-string-regexp-1.0.5"
-                  (sources."has-ansi-2.0.0" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  (sources."strip-ansi-3.0.1" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  sources."supports-color-2.0.0"
-                ];
-              })
-              sources."esutils-2.0.2"
-              sources."js-tokens-3.0.2"
-            ];
-          })
-          (sources."babel-generator-6.26.1" // {
-            dependencies = [
-              (sources."detect-indent-4.0.0" // {
-                dependencies = [
-                  (sources."repeating-2.0.1" // {
-                    dependencies = [
-                      (sources."is-finite-1.0.2" // {
-                        dependencies = [
-                          sources."number-is-nan-1.0.1"
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              sources."jsesc-1.3.0"
-              sources."trim-right-1.0.1"
-            ];
-          })
-          sources."babel-helpers-6.24.1"
-          sources."babel-messages-6.23.0"
-          (sources."babel-register-6.26.0" // {
-            dependencies = [
-              sources."core-js-2.5.4"
-              (sources."home-or-tmp-2.0.0" // {
-                dependencies = [
-                  sources."os-homedir-1.0.2"
-                  sources."os-tmpdir-1.0.2"
-                ];
-              })
-              (sources."mkdirp-0.5.1" // {
-                dependencies = [
-                  sources."minimist-0.0.8"
-                ];
-              })
-              sources."source-map-support-0.4.18"
-            ];
-          })
-          sources."babel-template-6.26.0"
-          (sources."babel-traverse-6.26.0" // {
-            dependencies = [
-              sources."globals-9.18.0"
-              (sources."invariant-2.2.4" // {
-                dependencies = [
-                  (sources."loose-envify-1.3.1" // {
-                    dependencies = [
-                      sources."js-tokens-3.0.2"
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          (sources."babel-types-6.26.0" // {
-            dependencies = [
-              sources."esutils-2.0.2"
-              sources."to-fast-properties-1.0.3"
-            ];
-          })
-          sources."babylon-6.18.0"
-          sources."convert-source-map-1.5.1"
-          (sources."debug-2.6.9" // {
-            dependencies = [
-              sources."ms-2.0.0"
-            ];
-          })
-          sources."json5-0.5.1"
-          sources."lodash-4.17.5"
-          (sources."minimatch-3.0.4" // {
-            dependencies = [
-              (sources."brace-expansion-1.1.11" // {
-                dependencies = [
-                  sources."balanced-match-1.0.0"
-                  sources."concat-map-0.0.1"
-                ];
-              })
-            ];
-          })
-          sources."path-is-absolute-1.0.1"
-          sources."private-0.1.8"
-          sources."slash-1.0.0"
+          sources."chalk-1.1.3"
           sources."source-map-0.5.7"
+          sources."supports-color-2.0.0"
         ];
       })
-      (sources."babel-loader-7.1.4" // {
-        dependencies = [
-          (sources."find-cache-dir-1.0.0" // {
-            dependencies = [
-              sources."commondir-1.0.1"
-              (sources."make-dir-1.2.0" // {
-                dependencies = [
-                  sources."pify-3.0.0"
-                ];
-              })
-              (sources."pkg-dir-2.0.0" // {
-                dependencies = [
-                  (sources."find-up-2.1.0" // {
-                    dependencies = [
-                      (sources."locate-path-2.0.0" // {
-                        dependencies = [
-                          (sources."p-locate-2.0.0" // {
-                            dependencies = [
-                              (sources."p-limit-1.2.0" // {
-                                dependencies = [
-                                  sources."p-try-1.0.0"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."path-exists-3.0.0"
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          (sources."loader-utils-1.1.0" // {
-            dependencies = [
-              sources."big.js-3.2.0"
-              sources."emojis-list-2.1.0"
-              sources."json5-0.5.1"
-            ];
-          })
-          (sources."mkdirp-0.5.1" // {
-            dependencies = [
-              sources."minimist-0.0.8"
-            ];
-          })
-        ];
-      })
+      sources."babel-generator-6.26.1"
+      sources."babel-helper-builder-binary-assignment-operator-visitor-6.24.1"
+      sources."babel-helper-call-delegate-6.24.1"
+      sources."babel-helper-define-map-6.26.0"
+      sources."babel-helper-explode-assignable-expression-6.24.1"
+      sources."babel-helper-function-name-6.24.1"
+      sources."babel-helper-get-function-arity-6.24.1"
+      sources."babel-helper-hoist-variables-6.24.1"
+      sources."babel-helper-optimise-call-expression-6.24.1"
+      sources."babel-helper-regex-6.26.0"
+      sources."babel-helper-remap-async-to-generator-6.24.1"
+      sources."babel-helper-replace-supers-6.24.1"
+      sources."babel-helpers-6.24.1"
+      sources."babel-loader-7.1.4"
+      sources."babel-messages-6.23.0"
+      sources."babel-plugin-check-es2015-constants-6.22.0"
+      sources."babel-plugin-syntax-async-functions-6.13.0"
+      sources."babel-plugin-syntax-exponentiation-operator-6.13.0"
+      sources."babel-plugin-syntax-trailing-function-commas-6.22.0"
+      sources."babel-plugin-transform-async-to-generator-6.24.1"
+      sources."babel-plugin-transform-es2015-arrow-functions-6.22.0"
+      sources."babel-plugin-transform-es2015-block-scoped-functions-6.22.0"
+      sources."babel-plugin-transform-es2015-block-scoping-6.26.0"
+      sources."babel-plugin-transform-es2015-classes-6.24.1"
+      sources."babel-plugin-transform-es2015-computed-properties-6.24.1"
+      sources."babel-plugin-transform-es2015-destructuring-6.23.0"
+      sources."babel-plugin-transform-es2015-duplicate-keys-6.24.1"
+      sources."babel-plugin-transform-es2015-for-of-6.23.0"
+      sources."babel-plugin-transform-es2015-function-name-6.24.1"
+      sources."babel-plugin-transform-es2015-literals-6.22.0"
+      sources."babel-plugin-transform-es2015-modules-amd-6.24.1"
+      sources."babel-plugin-transform-es2015-modules-commonjs-6.26.0"
+      sources."babel-plugin-transform-es2015-modules-systemjs-6.24.1"
+      sources."babel-plugin-transform-es2015-modules-umd-6.24.1"
+      sources."babel-plugin-transform-es2015-object-super-6.24.1"
+      sources."babel-plugin-transform-es2015-parameters-6.24.1"
+      sources."babel-plugin-transform-es2015-shorthand-properties-6.24.1"
+      sources."babel-plugin-transform-es2015-spread-6.22.0"
+      sources."babel-plugin-transform-es2015-sticky-regex-6.24.1"
+      sources."babel-plugin-transform-es2015-template-literals-6.22.0"
+      sources."babel-plugin-transform-es2015-typeof-symbol-6.23.0"
+      sources."babel-plugin-transform-es2015-unicode-regex-6.24.1"
+      sources."babel-plugin-transform-exponentiation-operator-6.24.1"
+      sources."babel-plugin-transform-regenerator-6.26.0"
       sources."babel-plugin-transform-runtime-6.23.0"
+      sources."babel-plugin-transform-strict-mode-6.24.1"
+      sources."babel-polyfill-6.26.0"
       (sources."babel-preset-env-1.6.1" // {
         dependencies = [
-          sources."babel-plugin-check-es2015-constants-6.22.0"
-          sources."babel-plugin-syntax-trailing-function-commas-6.22.0"
-          (sources."babel-plugin-transform-async-to-generator-6.24.1" // {
-            dependencies = [
-              (sources."babel-helper-remap-async-to-generator-6.24.1" // {
-                dependencies = [
-                  (sources."babel-helper-function-name-6.24.1" // {
-                    dependencies = [
-                      sources."babel-helper-get-function-arity-6.24.1"
-                    ];
-                  })
-                  (sources."babel-template-6.26.0" // {
-                    dependencies = [
-                      sources."babylon-6.18.0"
-                      sources."lodash-4.17.5"
-                    ];
-                  })
-                  (sources."babel-traverse-6.26.0" // {
-                    dependencies = [
-                      (sources."babel-code-frame-6.26.0" // {
-                        dependencies = [
-                          (sources."chalk-1.1.3" // {
-                            dependencies = [
-                              sources."ansi-styles-2.2.1"
-                              sources."escape-string-regexp-1.0.5"
-                              (sources."has-ansi-2.0.0" // {
-                                dependencies = [
-                                  sources."ansi-regex-2.1.1"
-                                ];
-                              })
-                              (sources."strip-ansi-3.0.1" // {
-                                dependencies = [
-                                  sources."ansi-regex-2.1.1"
-                                ];
-                              })
-                              sources."supports-color-2.0.0"
-                            ];
-                          })
-                          sources."esutils-2.0.2"
-                          sources."js-tokens-3.0.2"
-                        ];
-                      })
-                      sources."babel-messages-6.23.0"
-                      sources."babylon-6.18.0"
-                      (sources."debug-2.6.9" // {
-                        dependencies = [
-                          sources."ms-2.0.0"
-                        ];
-                      })
-                      sources."globals-9.18.0"
-                      sources."lodash-4.17.5"
-                    ];
-                  })
-                  (sources."babel-types-6.26.0" // {
-                    dependencies = [
-                      sources."esutils-2.0.2"
-                      sources."lodash-4.17.5"
-                      sources."to-fast-properties-1.0.3"
-                    ];
-                  })
-                ];
-              })
-              sources."babel-plugin-syntax-async-functions-6.13.0"
-            ];
-          })
-          sources."babel-plugin-transform-es2015-arrow-functions-6.22.0"
-          sources."babel-plugin-transform-es2015-block-scoped-functions-6.22.0"
-          (sources."babel-plugin-transform-es2015-block-scoping-6.26.0" // {
-            dependencies = [
-              (sources."babel-template-6.26.0" // {
-                dependencies = [
-                  sources."babylon-6.18.0"
-                ];
-              })
-              (sources."babel-traverse-6.26.0" // {
-                dependencies = [
-                  (sources."babel-code-frame-6.26.0" // {
-                    dependencies = [
-                      (sources."chalk-1.1.3" // {
-                        dependencies = [
-                          sources."ansi-styles-2.2.1"
-                          sources."escape-string-regexp-1.0.5"
-                          (sources."has-ansi-2.0.0" // {
-                            dependencies = [
-                              sources."ansi-regex-2.1.1"
-                            ];
-                          })
-                          (sources."strip-ansi-3.0.1" // {
-                            dependencies = [
-                              sources."ansi-regex-2.1.1"
-                            ];
-                          })
-                          sources."supports-color-2.0.0"
-                        ];
-                      })
-                      sources."esutils-2.0.2"
-                      sources."js-tokens-3.0.2"
-                    ];
-                  })
-                  sources."babel-messages-6.23.0"
-                  sources."babylon-6.18.0"
-                  (sources."debug-2.6.9" // {
-                    dependencies = [
-                      sources."ms-2.0.0"
-                    ];
-                  })
-                  sources."globals-9.18.0"
-                ];
-              })
-              (sources."babel-types-6.26.0" // {
-                dependencies = [
-                  sources."esutils-2.0.2"
-                  sources."to-fast-properties-1.0.3"
-                ];
-              })
-              sources."lodash-4.17.5"
-            ];
-          })
-          (sources."babel-plugin-transform-es2015-classes-6.24.1" // {
-            dependencies = [
-              (sources."babel-helper-define-map-6.26.0" // {
-                dependencies = [
-                  sources."lodash-4.17.5"
-                ];
-              })
-              (sources."babel-helper-function-name-6.24.1" // {
-                dependencies = [
-                  sources."babel-helper-get-function-arity-6.24.1"
-                ];
-              })
-              sources."babel-helper-optimise-call-expression-6.24.1"
-              sources."babel-helper-replace-supers-6.24.1"
-              sources."babel-messages-6.23.0"
-              (sources."babel-template-6.26.0" // {
-                dependencies = [
-                  sources."babylon-6.18.0"
-                  sources."lodash-4.17.5"
-                ];
-              })
-              (sources."babel-traverse-6.26.0" // {
-                dependencies = [
-                  (sources."babel-code-frame-6.26.0" // {
-                    dependencies = [
-                      (sources."chalk-1.1.3" // {
-                        dependencies = [
-                          sources."ansi-styles-2.2.1"
-                          sources."escape-string-regexp-1.0.5"
-                          (sources."has-ansi-2.0.0" // {
-                            dependencies = [
-                              sources."ansi-regex-2.1.1"
-                            ];
-                          })
-                          (sources."strip-ansi-3.0.1" // {
-                            dependencies = [
-                              sources."ansi-regex-2.1.1"
-                            ];
-                          })
-                          sources."supports-color-2.0.0"
-                        ];
-                      })
-                      sources."esutils-2.0.2"
-                      sources."js-tokens-3.0.2"
-                    ];
-                  })
-                  sources."babylon-6.18.0"
-                  (sources."debug-2.6.9" // {
-                    dependencies = [
-                      sources."ms-2.0.0"
-                    ];
-                  })
-                  sources."globals-9.18.0"
-                  sources."lodash-4.17.5"
-                ];
-              })
-              (sources."babel-types-6.26.0" // {
-                dependencies = [
-                  sources."esutils-2.0.2"
-                  sources."lodash-4.17.5"
-                  sources."to-fast-properties-1.0.3"
-                ];
-              })
-            ];
-          })
-          (sources."babel-plugin-transform-es2015-computed-properties-6.24.1" // {
-            dependencies = [
-              (sources."babel-template-6.26.0" // {
-                dependencies = [
-                  (sources."babel-traverse-6.26.0" // {
-                    dependencies = [
-                      (sources."babel-code-frame-6.26.0" // {
-                        dependencies = [
-                          (sources."chalk-1.1.3" // {
-                            dependencies = [
-                              sources."ansi-styles-2.2.1"
-                              sources."escape-string-regexp-1.0.5"
-                              (sources."has-ansi-2.0.0" // {
-                                dependencies = [
-                                  sources."ansi-regex-2.1.1"
-                                ];
-                              })
-                              (sources."strip-ansi-3.0.1" // {
-                                dependencies = [
-                                  sources."ansi-regex-2.1.1"
-                                ];
-                              })
-                              sources."supports-color-2.0.0"
-                            ];
-                          })
-                          sources."esutils-2.0.2"
-                          sources."js-tokens-3.0.2"
-                        ];
-                      })
-                      sources."babel-messages-6.23.0"
-                      (sources."debug-2.6.9" // {
-                        dependencies = [
-                          sources."ms-2.0.0"
-                        ];
-                      })
-                      sources."globals-9.18.0"
-                    ];
-                  })
-                  (sources."babel-types-6.26.0" // {
-                    dependencies = [
-                      sources."esutils-2.0.2"
-                      sources."to-fast-properties-1.0.3"
-                    ];
-                  })
-                  sources."babylon-6.18.0"
-                  sources."lodash-4.17.5"
-                ];
-              })
-            ];
-          })
-          sources."babel-plugin-transform-es2015-destructuring-6.23.0"
-          (sources."babel-plugin-transform-es2015-duplicate-keys-6.24.1" // {
-            dependencies = [
-              (sources."babel-types-6.26.0" // {
-                dependencies = [
-                  sources."esutils-2.0.2"
-                  sources."lodash-4.17.5"
-                  sources."to-fast-properties-1.0.3"
-                ];
-              })
-            ];
-          })
-          sources."babel-plugin-transform-es2015-for-of-6.23.0"
-          (sources."babel-plugin-transform-es2015-function-name-6.24.1" // {
-            dependencies = [
-              (sources."babel-helper-function-name-6.24.1" // {
-                dependencies = [
-                  sources."babel-helper-get-function-arity-6.24.1"
-                  (sources."babel-template-6.26.0" // {
-                    dependencies = [
-                      sources."babylon-6.18.0"
-                      sources."lodash-4.17.5"
-                    ];
-                  })
-                  (sources."babel-traverse-6.26.0" // {
-                    dependencies = [
-                      (sources."babel-code-frame-6.26.0" // {
-                        dependencies = [
-                          (sources."chalk-1.1.3" // {
-                            dependencies = [
-                              sources."ansi-styles-2.2.1"
-                              sources."escape-string-regexp-1.0.5"
-                              (sources."has-ansi-2.0.0" // {
-                                dependencies = [
-                                  sources."ansi-regex-2.1.1"
-                                ];
-                              })
-                              (sources."strip-ansi-3.0.1" // {
-                                dependencies = [
-                                  sources."ansi-regex-2.1.1"
-                                ];
-                              })
-                              sources."supports-color-2.0.0"
-                            ];
-                          })
-                          sources."esutils-2.0.2"
-                          sources."js-tokens-3.0.2"
-                        ];
-                      })
-                      sources."babel-messages-6.23.0"
-                      sources."babylon-6.18.0"
-                      (sources."debug-2.6.9" // {
-                        dependencies = [
-                          sources."ms-2.0.0"
-                        ];
-                      })
-                      sources."globals-9.18.0"
-                      sources."lodash-4.17.5"
-                    ];
-                  })
-                ];
-              })
-              (sources."babel-types-6.26.0" // {
-                dependencies = [
-                  sources."esutils-2.0.2"
-                  sources."lodash-4.17.5"
-                  sources."to-fast-properties-1.0.3"
-                ];
-              })
-            ];
-          })
-          sources."babel-plugin-transform-es2015-literals-6.22.0"
-          (sources."babel-plugin-transform-es2015-modules-amd-6.24.1" // {
-            dependencies = [
-              (sources."babel-template-6.26.0" // {
-                dependencies = [
-                  (sources."babel-traverse-6.26.0" // {
-                    dependencies = [
-                      (sources."babel-code-frame-6.26.0" // {
-                        dependencies = [
-                          (sources."chalk-1.1.3" // {
-                            dependencies = [
-                              sources."ansi-styles-2.2.1"
-                              sources."escape-string-regexp-1.0.5"
-                              (sources."has-ansi-2.0.0" // {
-                                dependencies = [
-                                  sources."ansi-regex-2.1.1"
-                                ];
-                              })
-                              (sources."strip-ansi-3.0.1" // {
-                                dependencies = [
-                                  sources."ansi-regex-2.1.1"
-                                ];
-                              })
-                              sources."supports-color-2.0.0"
-                            ];
-                          })
-                          sources."esutils-2.0.2"
-                          sources."js-tokens-3.0.2"
-                        ];
-                      })
-                      sources."babel-messages-6.23.0"
-                      (sources."debug-2.6.9" // {
-                        dependencies = [
-                          sources."ms-2.0.0"
-                        ];
-                      })
-                      sources."globals-9.18.0"
-                    ];
-                  })
-                  (sources."babel-types-6.26.0" // {
-                    dependencies = [
-                      sources."esutils-2.0.2"
-                      sources."to-fast-properties-1.0.3"
-                    ];
-                  })
-                  sources."babylon-6.18.0"
-                  sources."lodash-4.17.5"
-                ];
-              })
-            ];
-          })
-          (sources."babel-plugin-transform-es2015-modules-commonjs-6.26.0" // {
-            dependencies = [
-              sources."babel-plugin-transform-strict-mode-6.24.1"
-              (sources."babel-template-6.26.0" // {
-                dependencies = [
-                  (sources."babel-traverse-6.26.0" // {
-                    dependencies = [
-                      (sources."babel-code-frame-6.26.0" // {
-                        dependencies = [
-                          (sources."chalk-1.1.3" // {
-                            dependencies = [
-                              sources."ansi-styles-2.2.1"
-                              sources."escape-string-regexp-1.0.5"
-                              (sources."has-ansi-2.0.0" // {
-                                dependencies = [
-                                  sources."ansi-regex-2.1.1"
-                                ];
-                              })
-                              (sources."strip-ansi-3.0.1" // {
-                                dependencies = [
-                                  sources."ansi-regex-2.1.1"
-                                ];
-                              })
-                              sources."supports-color-2.0.0"
-                            ];
-                          })
-                          sources."esutils-2.0.2"
-                          sources."js-tokens-3.0.2"
-                        ];
-                      })
-                      sources."babel-messages-6.23.0"
-                      (sources."debug-2.6.9" // {
-                        dependencies = [
-                          sources."ms-2.0.0"
-                        ];
-                      })
-                      sources."globals-9.18.0"
-                    ];
-                  })
-                  sources."babylon-6.18.0"
-                  sources."lodash-4.17.5"
-                ];
-              })
-              (sources."babel-types-6.26.0" // {
-                dependencies = [
-                  sources."esutils-2.0.2"
-                  sources."lodash-4.17.5"
-                  sources."to-fast-properties-1.0.3"
-                ];
-              })
-            ];
-          })
-          (sources."babel-plugin-transform-es2015-modules-systemjs-6.24.1" // {
-            dependencies = [
-              (sources."babel-helper-hoist-variables-6.24.1" // {
-                dependencies = [
-                  (sources."babel-types-6.26.0" // {
-                    dependencies = [
-                      sources."esutils-2.0.2"
-                      sources."lodash-4.17.5"
-                      sources."to-fast-properties-1.0.3"
-                    ];
-                  })
-                ];
-              })
-              (sources."babel-template-6.26.0" // {
-                dependencies = [
-                  (sources."babel-traverse-6.26.0" // {
-                    dependencies = [
-                      (sources."babel-code-frame-6.26.0" // {
-                        dependencies = [
-                          (sources."chalk-1.1.3" // {
-                            dependencies = [
-                              sources."ansi-styles-2.2.1"
-                              sources."escape-string-regexp-1.0.5"
-                              (sources."has-ansi-2.0.0" // {
-                                dependencies = [
-                                  sources."ansi-regex-2.1.1"
-                                ];
-                              })
-                              (sources."strip-ansi-3.0.1" // {
-                                dependencies = [
-                                  sources."ansi-regex-2.1.1"
-                                ];
-                              })
-                              sources."supports-color-2.0.0"
-                            ];
-                          })
-                          sources."esutils-2.0.2"
-                          sources."js-tokens-3.0.2"
-                        ];
-                      })
-                      sources."babel-messages-6.23.0"
-                      (sources."debug-2.6.9" // {
-                        dependencies = [
-                          sources."ms-2.0.0"
-                        ];
-                      })
-                      sources."globals-9.18.0"
-                    ];
-                  })
-                  (sources."babel-types-6.26.0" // {
-                    dependencies = [
-                      sources."esutils-2.0.2"
-                      sources."to-fast-properties-1.0.3"
-                    ];
-                  })
-                  sources."babylon-6.18.0"
-                  sources."lodash-4.17.5"
-                ];
-              })
-            ];
-          })
-          (sources."babel-plugin-transform-es2015-modules-umd-6.24.1" // {
-            dependencies = [
-              (sources."babel-template-6.26.0" // {
-                dependencies = [
-                  (sources."babel-traverse-6.26.0" // {
-                    dependencies = [
-                      (sources."babel-code-frame-6.26.0" // {
-                        dependencies = [
-                          (sources."chalk-1.1.3" // {
-                            dependencies = [
-                              sources."ansi-styles-2.2.1"
-                              sources."escape-string-regexp-1.0.5"
-                              (sources."has-ansi-2.0.0" // {
-                                dependencies = [
-                                  sources."ansi-regex-2.1.1"
-                                ];
-                              })
-                              (sources."strip-ansi-3.0.1" // {
-                                dependencies = [
-                                  sources."ansi-regex-2.1.1"
-                                ];
-                              })
-                              sources."supports-color-2.0.0"
-                            ];
-                          })
-                          sources."esutils-2.0.2"
-                          sources."js-tokens-3.0.2"
-                        ];
-                      })
-                      sources."babel-messages-6.23.0"
-                      (sources."debug-2.6.9" // {
-                        dependencies = [
-                          sources."ms-2.0.0"
-                        ];
-                      })
-                      sources."globals-9.18.0"
-                    ];
-                  })
-                  (sources."babel-types-6.26.0" // {
-                    dependencies = [
-                      sources."esutils-2.0.2"
-                      sources."to-fast-properties-1.0.3"
-                    ];
-                  })
-                  sources."babylon-6.18.0"
-                  sources."lodash-4.17.5"
-                ];
-              })
-            ];
-          })
-          (sources."babel-plugin-transform-es2015-object-super-6.24.1" // {
-            dependencies = [
-              (sources."babel-helper-replace-supers-6.24.1" // {
-                dependencies = [
-                  sources."babel-helper-optimise-call-expression-6.24.1"
-                  sources."babel-messages-6.23.0"
-                  (sources."babel-template-6.26.0" // {
-                    dependencies = [
-                      sources."babylon-6.18.0"
-                      sources."lodash-4.17.5"
-                    ];
-                  })
-                  (sources."babel-traverse-6.26.0" // {
-                    dependencies = [
-                      (sources."babel-code-frame-6.26.0" // {
-                        dependencies = [
-                          (sources."chalk-1.1.3" // {
-                            dependencies = [
-                              sources."ansi-styles-2.2.1"
-                              sources."escape-string-regexp-1.0.5"
-                              (sources."has-ansi-2.0.0" // {
-                                dependencies = [
-                                  sources."ansi-regex-2.1.1"
-                                ];
-                              })
-                              (sources."strip-ansi-3.0.1" // {
-                                dependencies = [
-                                  sources."ansi-regex-2.1.1"
-                                ];
-                              })
-                              sources."supports-color-2.0.0"
-                            ];
-                          })
-                          sources."esutils-2.0.2"
-                          sources."js-tokens-3.0.2"
-                        ];
-                      })
-                      sources."babylon-6.18.0"
-                      (sources."debug-2.6.9" // {
-                        dependencies = [
-                          sources."ms-2.0.0"
-                        ];
-                      })
-                      sources."globals-9.18.0"
-                      sources."lodash-4.17.5"
-                    ];
-                  })
-                  (sources."babel-types-6.26.0" // {
-                    dependencies = [
-                      sources."esutils-2.0.2"
-                      sources."lodash-4.17.5"
-                      sources."to-fast-properties-1.0.3"
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          (sources."babel-plugin-transform-es2015-parameters-6.24.1" // {
-            dependencies = [
-              (sources."babel-helper-call-delegate-6.24.1" // {
-                dependencies = [
-                  sources."babel-helper-hoist-variables-6.24.1"
-                ];
-              })
-              sources."babel-helper-get-function-arity-6.24.1"
-              (sources."babel-template-6.26.0" // {
-                dependencies = [
-                  sources."babylon-6.18.0"
-                  sources."lodash-4.17.5"
-                ];
-              })
-              (sources."babel-traverse-6.26.0" // {
-                dependencies = [
-                  (sources."babel-code-frame-6.26.0" // {
-                    dependencies = [
-                      (sources."chalk-1.1.3" // {
-                        dependencies = [
-                          sources."ansi-styles-2.2.1"
-                          sources."escape-string-regexp-1.0.5"
-                          (sources."has-ansi-2.0.0" // {
-                            dependencies = [
-                              sources."ansi-regex-2.1.1"
-                            ];
-                          })
-                          (sources."strip-ansi-3.0.1" // {
-                            dependencies = [
-                              sources."ansi-regex-2.1.1"
-                            ];
-                          })
-                          sources."supports-color-2.0.0"
-                        ];
-                      })
-                      sources."esutils-2.0.2"
-                      sources."js-tokens-3.0.2"
-                    ];
-                  })
-                  sources."babel-messages-6.23.0"
-                  sources."babylon-6.18.0"
-                  (sources."debug-2.6.9" // {
-                    dependencies = [
-                      sources."ms-2.0.0"
-                    ];
-                  })
-                  sources."globals-9.18.0"
-                  sources."lodash-4.17.5"
-                ];
-              })
-              (sources."babel-types-6.26.0" // {
-                dependencies = [
-                  sources."esutils-2.0.2"
-                  sources."lodash-4.17.5"
-                  sources."to-fast-properties-1.0.3"
-                ];
-              })
-            ];
-          })
-          (sources."babel-plugin-transform-es2015-shorthand-properties-6.24.1" // {
-            dependencies = [
-              (sources."babel-types-6.26.0" // {
-                dependencies = [
-                  sources."esutils-2.0.2"
-                  sources."lodash-4.17.5"
-                  sources."to-fast-properties-1.0.3"
-                ];
-              })
-            ];
-          })
-          sources."babel-plugin-transform-es2015-spread-6.22.0"
-          (sources."babel-plugin-transform-es2015-sticky-regex-6.24.1" // {
-            dependencies = [
-              (sources."babel-helper-regex-6.26.0" // {
-                dependencies = [
-                  sources."lodash-4.17.5"
-                ];
-              })
-              (sources."babel-types-6.26.0" // {
-                dependencies = [
-                  sources."esutils-2.0.2"
-                  sources."lodash-4.17.5"
-                  sources."to-fast-properties-1.0.3"
-                ];
-              })
-            ];
-          })
-          sources."babel-plugin-transform-es2015-template-literals-6.22.0"
-          sources."babel-plugin-transform-es2015-typeof-symbol-6.23.0"
-          (sources."babel-plugin-transform-es2015-unicode-regex-6.24.1" // {
-            dependencies = [
-              (sources."babel-helper-regex-6.26.0" // {
-                dependencies = [
-                  (sources."babel-types-6.26.0" // {
-                    dependencies = [
-                      sources."esutils-2.0.2"
-                      sources."to-fast-properties-1.0.3"
-                    ];
-                  })
-                  sources."lodash-4.17.5"
-                ];
-              })
-              (sources."regexpu-core-2.0.0" // {
-                dependencies = [
-                  sources."regenerate-1.3.3"
-                  sources."regjsgen-0.2.0"
-                  (sources."regjsparser-0.1.5" // {
-                    dependencies = [
-                      sources."jsesc-0.5.0"
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          (sources."babel-plugin-transform-exponentiation-operator-6.24.1" // {
-            dependencies = [
-              (sources."babel-helper-builder-binary-assignment-operator-visitor-6.24.1" // {
-                dependencies = [
-                  (sources."babel-helper-explode-assignable-expression-6.24.1" // {
-                    dependencies = [
-                      (sources."babel-traverse-6.26.0" // {
-                        dependencies = [
-                          (sources."babel-code-frame-6.26.0" // {
-                            dependencies = [
-                              (sources."chalk-1.1.3" // {
-                                dependencies = [
-                                  sources."ansi-styles-2.2.1"
-                                  sources."escape-string-regexp-1.0.5"
-                                  (sources."has-ansi-2.0.0" // {
-                                    dependencies = [
-                                      sources."ansi-regex-2.1.1"
-                                    ];
-                                  })
-                                  (sources."strip-ansi-3.0.1" // {
-                                    dependencies = [
-                                      sources."ansi-regex-2.1.1"
-                                    ];
-                                  })
-                                  sources."supports-color-2.0.0"
-                                ];
-                              })
-                              sources."esutils-2.0.2"
-                              sources."js-tokens-3.0.2"
-                            ];
-                          })
-                          sources."babel-messages-6.23.0"
-                          sources."babylon-6.18.0"
-                          (sources."debug-2.6.9" // {
-                            dependencies = [
-                              sources."ms-2.0.0"
-                            ];
-                          })
-                          sources."globals-9.18.0"
-                          sources."lodash-4.17.5"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."babel-types-6.26.0" // {
-                    dependencies = [
-                      sources."esutils-2.0.2"
-                      sources."lodash-4.17.5"
-                      sources."to-fast-properties-1.0.3"
-                    ];
-                  })
-                ];
-              })
-              sources."babel-plugin-syntax-exponentiation-operator-6.13.0"
-            ];
-          })
-          (sources."babel-plugin-transform-regenerator-6.26.0" // {
-            dependencies = [
-              (sources."regenerator-transform-0.10.1" // {
-                dependencies = [
-                  (sources."babel-types-6.26.0" // {
-                    dependencies = [
-                      sources."esutils-2.0.2"
-                      sources."lodash-4.17.5"
-                      sources."to-fast-properties-1.0.3"
-                    ];
-                  })
-                  sources."private-0.1.8"
-                ];
-              })
-            ];
-          })
-          (sources."browserslist-2.11.3" // {
-            dependencies = [
-              sources."caniuse-lite-1.0.30000821"
-              sources."electron-to-chromium-1.3.41"
-            ];
-          })
-          (sources."invariant-2.2.4" // {
-            dependencies = [
-              (sources."loose-envify-1.3.1" // {
-                dependencies = [
-                  sources."js-tokens-3.0.2"
-                ];
-              })
-            ];
-          })
-          sources."semver-5.5.0"
+          sources."browserslist-2.11.3"
+          sources."jsesc-0.5.0"
         ];
       })
+      sources."babel-register-6.26.0"
       (sources."babel-runtime-6.26.0" // {
         dependencies = [
-          sources."core-js-2.5.4"
           sources."regenerator-runtime-0.11.1"
         ];
       })
-      (sources."chalk-2.3.2" // {
+      sources."babel-template-6.26.0"
+      sources."babel-traverse-6.26.0"
+      sources."babel-types-6.26.0"
+      sources."babylon-6.18.0"
+      sources."balanced-match-1.0.0"
+      (sources."base-0.11.2" // {
         dependencies = [
-          (sources."ansi-styles-3.2.1" // {
+          (sources."define-property-1.0.0" // {
             dependencies = [
-              (sources."color-convert-1.9.1" // {
-                dependencies = [
-                  sources."color-name-1.1.3"
-                ];
-              })
+              sources."kind-of-6.0.2"
             ];
           })
-          sources."escape-string-regexp-1.0.5"
-          (sources."supports-color-5.3.0" // {
-            dependencies = [
-              sources."has-flag-3.0.0"
-            ];
-          })
+          sources."kind-of-3.2.2"
         ];
       })
-      (sources."clean-webpack-plugin-0.1.19" // {
+      sources."base64-js-1.3.0"
+      sources."batch-0.6.1"
+      sources."bcrypt-pbkdf-1.0.1"
+      sources."big.js-3.2.0"
+      sources."binary-extensions-1.11.0"
+      sources."binstall-1.2.0"
+      sources."bl-1.1.2"
+      sources."block-stream-0.0.9"
+      sources."bluebird-3.5.1"
+      sources."bn.js-4.11.8"
+      (sources."body-parser-1.18.2" // {
         dependencies = [
-          (sources."rimraf-2.6.2" // {
-            dependencies = [
-              (sources."glob-7.1.2" // {
-                dependencies = [
-                  sources."fs.realpath-1.0.0"
-                  (sources."inflight-1.0.6" // {
-                    dependencies = [
-                      sources."wrappy-1.0.2"
-                    ];
-                  })
-                  sources."inherits-2.0.3"
-                  (sources."minimatch-3.0.4" // {
-                    dependencies = [
-                      (sources."brace-expansion-1.1.11" // {
-                        dependencies = [
-                          sources."balanced-match-1.0.0"
-                          sources."concat-map-0.0.1"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."once-1.4.0" // {
-                    dependencies = [
-                      sources."wrappy-1.0.2"
-                    ];
-                  })
-                  sources."path-is-absolute-1.0.1"
-                ];
-              })
-            ];
-          })
+          sources."setprototypeof-1.0.3"
         ];
       })
-      (sources."cli-table-0.3.1" // {
+      sources."bonjour-3.5.0"
+      sources."boolbase-1.0.0"
+      sources."boom-2.10.1"
+      sources."boxen-1.3.0"
+      sources."brace-expansion-1.1.11"
+      (sources."braces-1.8.5" // {
         dependencies = [
-          sources."colors-1.0.3"
+          sources."kind-of-4.0.0"
         ];
       })
+      sources."brorand-1.1.0"
+      sources."browserify-aes-1.2.0"
+      sources."browserify-cipher-1.0.1"
+      sources."browserify-des-1.0.1"
+      sources."browserify-rsa-4.0.1"
+      sources."browserify-sign-4.0.4"
+      sources."browserify-zlib-0.2.0"
+      sources."browserslist-3.2.5"
+      sources."buffer-4.9.1"
+      sources."buffer-indexof-1.1.1"
+      sources."buffer-xor-1.0.3"
+      sources."builtin-modules-1.1.1"
+      sources."builtin-status-codes-3.0.0"
+      sources."bytes-3.0.0"
+      sources."cache-base-1.0.1"
+      sources."camel-case-3.0.0"
+      sources."camelcase-1.2.1"
+      sources."camelcase-keys-2.1.0"
+      sources."caniuse-api-1.6.1"
+      sources."caniuse-db-1.0.30000830"
+      sources."caniuse-lite-1.0.30000830"
+      sources."capture-stack-trace-1.0.0"
+      sources."caseless-0.11.0"
+      sources."center-align-0.1.3"
+      (sources."chalk-2.4.0" // {
+        dependencies = [
+          sources."ansi-styles-3.2.1"
+        ];
+      })
+      sources."chardet-0.4.2"
+      sources."chokidar-1.7.0"
+      sources."ci-info-1.1.3"
+      sources."cipher-base-1.0.4"
+      sources."clap-1.2.3"
+      (sources."class-utils-0.3.6" // {
+        dependencies = [
+          sources."define-property-0.2.5"
+        ];
+      })
+      sources."clean-css-4.1.11"
+      sources."clean-webpack-plugin-0.1.19"
+      sources."cli-boxes-1.0.0"
+      sources."cli-cursor-2.1.0"
+      sources."cli-table-0.3.1"
+      sources."cli-width-2.2.0"
+      sources."cliui-3.2.0"
+      sources."clone-1.0.4"
+      sources."co-4.6.0"
+      sources."coa-1.0.4"
+      sources."code-point-at-1.1.0"
+      sources."collection-visit-1.0.0"
+      sources."color-0.11.4"
+      sources."color-convert-1.9.1"
+      sources."color-name-1.1.3"
+      sources."color-string-0.3.0"
+      sources."colormin-1.1.2"
+      sources."colors-1.0.3"
+      sources."combined-stream-1.0.6"
+      sources."commander-2.15.1"
+      sources."commondir-1.0.1"
+      sources."component-emitter-1.2.1"
+      sources."compressible-2.0.13"
+      (sources."compression-1.7.2" // {
+        dependencies = [
+          sources."debug-2.6.9"
+        ];
+      })
+      sources."concat-map-0.0.1"
+      sources."configstore-3.1.2"
       sources."connect-history-api-fallback-1.5.0"
-      (sources."cross-spawn-6.0.5" // {
-        dependencies = [
-          sources."nice-try-1.0.4"
-          sources."path-key-2.0.1"
-          sources."semver-5.5.0"
-          (sources."shebang-command-1.2.0" // {
-            dependencies = [
-              sources."shebang-regex-1.0.0"
-            ];
-          })
-          (sources."which-1.3.0" // {
-            dependencies = [
-              sources."isexe-2.0.0"
-            ];
-          })
-        ];
-      })
+      sources."console-browserify-1.1.0"
+      sources."constants-browserify-1.0.0"
+      sources."content-disposition-0.5.2"
+      sources."content-type-1.0.4"
+      sources."convert-source-map-1.5.1"
+      sources."cookie-0.3.1"
+      sources."cookie-signature-1.0.6"
+      sources."copy-descriptor-0.1.1"
+      sources."core-js-2.5.5"
+      sources."core-util-is-1.0.2"
+      sources."cosmiconfig-2.2.2"
+      sources."create-ecdh-4.0.1"
+      sources."create-error-class-3.0.2"
+      sources."create-hash-1.2.0"
+      sources."create-hmac-1.1.7"
+      sources."cross-spawn-6.0.5"
+      sources."cryptiles-2.0.5"
+      sources."crypto-browserify-3.12.0"
+      sources."crypto-random-string-1.0.0"
+      sources."css-color-names-0.0.4"
       (sources."css-loader-0.28.11" // {
         dependencies = [
-          (sources."babel-code-frame-6.26.0" // {
-            dependencies = [
-              (sources."chalk-1.1.3" // {
-                dependencies = [
-                  sources."ansi-styles-2.2.1"
-                  sources."escape-string-regexp-1.0.5"
-                  (sources."has-ansi-2.0.0" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  (sources."strip-ansi-3.0.1" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  sources."supports-color-2.0.0"
-                ];
-              })
-              sources."esutils-2.0.2"
-              sources."js-tokens-3.0.2"
-            ];
-          })
-          (sources."css-selector-tokenizer-0.7.0" // {
-            dependencies = [
-              sources."cssesc-0.1.0"
-              sources."fastparse-1.1.1"
-              (sources."regexpu-core-1.0.0" // {
-                dependencies = [
-                  sources."regenerate-1.3.3"
-                  sources."regjsgen-0.2.0"
-                  (sources."regjsparser-0.1.5" // {
-                    dependencies = [
-                      sources."jsesc-0.5.0"
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          (sources."cssnano-3.10.0" // {
-            dependencies = [
-              (sources."autoprefixer-6.7.7" // {
-                dependencies = [
-                  (sources."browserslist-1.7.7" // {
-                    dependencies = [
-                      sources."electron-to-chromium-1.3.41"
-                    ];
-                  })
-                  sources."caniuse-db-1.0.30000821"
-                  sources."normalize-range-0.1.2"
-                  sources."num2fraction-1.2.2"
-                ];
-              })
-              sources."decamelize-1.2.0"
-              sources."defined-1.0.0"
-              (sources."has-1.0.1" // {
-                dependencies = [
-                  sources."function-bind-1.1.1"
-                ];
-              })
-              (sources."postcss-calc-5.3.1" // {
-                dependencies = [
-                  sources."postcss-message-helpers-2.0.0"
-                  (sources."reduce-css-calc-1.3.0" // {
-                    dependencies = [
-                      sources."balanced-match-0.4.2"
-                      sources."math-expression-evaluator-1.2.17"
-                      sources."reduce-function-call-1.0.2"
-                    ];
-                  })
-                ];
-              })
-              (sources."postcss-colormin-2.2.2" // {
-                dependencies = [
-                  (sources."colormin-1.1.2" // {
-                    dependencies = [
-                      (sources."color-0.11.4" // {
-                        dependencies = [
-                          sources."clone-1.0.4"
-                          (sources."color-convert-1.9.1" // {
-                            dependencies = [
-                              sources."color-name-1.1.3"
-                            ];
-                          })
-                          (sources."color-string-0.3.0" // {
-                            dependencies = [
-                              sources."color-name-1.1.3"
-                            ];
-                          })
-                        ];
-                      })
-                      sources."css-color-names-0.0.4"
-                    ];
-                  })
-                ];
-              })
-              sources."postcss-convert-values-2.6.1"
-              sources."postcss-discard-comments-2.0.4"
-              sources."postcss-discard-duplicates-2.1.0"
-              sources."postcss-discard-empty-2.1.0"
-              sources."postcss-discard-overridden-0.1.1"
-              (sources."postcss-discard-unused-2.2.3" // {
-                dependencies = [
-                  sources."uniqs-2.0.0"
-                ];
-              })
-              (sources."postcss-filter-plugins-2.0.2" // {
-                dependencies = [
-                  (sources."uniqid-4.1.1" // {
-                    dependencies = [
-                      sources."macaddress-0.2.8"
-                    ];
-                  })
-                ];
-              })
-              sources."postcss-merge-idents-2.1.7"
-              sources."postcss-merge-longhand-2.0.2"
-              (sources."postcss-merge-rules-2.1.2" // {
-                dependencies = [
-                  (sources."browserslist-1.7.7" // {
-                    dependencies = [
-                      sources."caniuse-db-1.0.30000821"
-                      sources."electron-to-chromium-1.3.41"
-                    ];
-                  })
-                  (sources."caniuse-api-1.6.1" // {
-                    dependencies = [
-                      sources."caniuse-db-1.0.30000821"
-                      sources."lodash.memoize-4.1.2"
-                      sources."lodash.uniq-4.5.0"
-                    ];
-                  })
-                  (sources."postcss-selector-parser-2.2.3" // {
-                    dependencies = [
-                      sources."flatten-1.0.2"
-                      sources."indexes-of-1.0.1"
-                      sources."uniq-1.0.1"
-                    ];
-                  })
-                  sources."vendors-1.0.1"
-                ];
-              })
-              sources."postcss-minify-font-values-1.0.5"
-              sources."postcss-minify-gradients-1.0.5"
-              (sources."postcss-minify-params-1.2.2" // {
-                dependencies = [
-                  sources."alphanum-sort-1.0.2"
-                  sources."uniqs-2.0.0"
-                ];
-              })
-              (sources."postcss-minify-selectors-2.1.1" // {
-                dependencies = [
-                  sources."alphanum-sort-1.0.2"
-                  (sources."postcss-selector-parser-2.2.3" // {
-                    dependencies = [
-                      sources."flatten-1.0.2"
-                      sources."indexes-of-1.0.1"
-                      sources."uniq-1.0.1"
-                    ];
-                  })
-                ];
-              })
-              sources."postcss-normalize-charset-1.1.1"
-              (sources."postcss-normalize-url-3.0.8" // {
-                dependencies = [
-                  sources."is-absolute-url-2.1.0"
-                  (sources."normalize-url-1.9.1" // {
-                    dependencies = [
-                      sources."prepend-http-1.0.4"
-                      (sources."query-string-4.3.4" // {
-                        dependencies = [
-                          sources."strict-uri-encode-1.1.0"
-                        ];
-                      })
-                      (sources."sort-keys-1.1.2" // {
-                        dependencies = [
-                          sources."is-plain-obj-1.1.0"
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              sources."postcss-ordered-values-2.2.3"
-              sources."postcss-reduce-idents-2.4.0"
-              sources."postcss-reduce-initial-1.0.1"
-              sources."postcss-reduce-transforms-1.0.4"
-              (sources."postcss-svgo-2.1.6" // {
-                dependencies = [
-                  (sources."is-svg-2.1.0" // {
-                    dependencies = [
-                      sources."html-comment-regex-1.1.1"
-                    ];
-                  })
-                  (sources."svgo-0.7.2" // {
-                    dependencies = [
-                      (sources."coa-1.0.4" // {
-                        dependencies = [
-                          sources."q-1.5.1"
-                        ];
-                      })
-                      sources."colors-1.1.2"
-                      (sources."csso-2.3.2" // {
-                        dependencies = [
-                          (sources."clap-1.2.3" // {
-                            dependencies = [
-                              (sources."chalk-1.1.3" // {
-                                dependencies = [
-                                  sources."ansi-styles-2.2.1"
-                                  sources."escape-string-regexp-1.0.5"
-                                  (sources."has-ansi-2.0.0" // {
-                                    dependencies = [
-                                      sources."ansi-regex-2.1.1"
-                                    ];
-                                  })
-                                  (sources."strip-ansi-3.0.1" // {
-                                    dependencies = [
-                                      sources."ansi-regex-2.1.1"
-                                    ];
-                                  })
-                                  sources."supports-color-2.0.0"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."source-map-0.5.7"
-                        ];
-                      })
-                      (sources."js-yaml-3.7.0" // {
-                        dependencies = [
-                          (sources."argparse-1.0.10" // {
-                            dependencies = [
-                              sources."sprintf-js-1.0.3"
-                            ];
-                          })
-                          sources."esprima-2.7.3"
-                        ];
-                      })
-                      (sources."mkdirp-0.5.1" // {
-                        dependencies = [
-                          sources."minimist-0.0.8"
-                        ];
-                      })
-                      sources."sax-1.2.4"
-                      sources."whet.extend-0.9.9"
-                    ];
-                  })
-                ];
-              })
-              (sources."postcss-unique-selectors-2.0.2" // {
-                dependencies = [
-                  sources."alphanum-sort-1.0.2"
-                  sources."uniqs-2.0.0"
-                ];
-              })
-              (sources."postcss-zindex-2.2.0" // {
-                dependencies = [
-                  sources."uniqs-2.0.0"
-                ];
-              })
-            ];
-          })
-          (sources."icss-utils-2.1.0" // {
-            dependencies = [
-              (sources."postcss-6.0.21" // {
-                dependencies = [
-                  sources."source-map-0.6.1"
-                  (sources."supports-color-5.3.0" // {
-                    dependencies = [
-                      sources."has-flag-3.0.0"
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          (sources."loader-utils-1.1.0" // {
-            dependencies = [
-              sources."big.js-3.2.0"
-              sources."emojis-list-2.1.0"
-              sources."json5-0.5.1"
-            ];
-          })
-          sources."lodash.camelcase-4.3.0"
-          sources."object-assign-4.1.1"
+          sources."ansi-styles-3.2.1"
+          sources."autoprefixer-6.7.7"
+          sources."balanced-match-0.4.2"
+          sources."browserslist-1.7.7"
+          sources."chalk-1.1.3"
+          sources."colors-1.1.2"
+          sources."has-flag-1.0.0"
           (sources."postcss-5.2.18" // {
             dependencies = [
-              (sources."chalk-1.1.3" // {
-                dependencies = [
-                  sources."ansi-styles-2.2.1"
-                  sources."escape-string-regexp-1.0.5"
-                  (sources."has-ansi-2.0.0" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  (sources."strip-ansi-3.0.1" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  sources."supports-color-2.0.0"
-                ];
-              })
-              sources."js-base64-2.4.3"
-              sources."source-map-0.5.7"
-              (sources."supports-color-3.2.3" // {
-                dependencies = [
-                  sources."has-flag-1.0.0"
-                ];
-              })
+              sources."supports-color-3.2.3"
             ];
           })
-          (sources."postcss-modules-extract-imports-1.2.0" // {
-            dependencies = [
-              (sources."postcss-6.0.21" // {
-                dependencies = [
-                  sources."source-map-0.6.1"
-                  (sources."supports-color-5.3.0" // {
-                    dependencies = [
-                      sources."has-flag-3.0.0"
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          (sources."postcss-modules-local-by-default-1.2.0" // {
-            dependencies = [
-              (sources."postcss-6.0.21" // {
-                dependencies = [
-                  sources."source-map-0.6.1"
-                  (sources."supports-color-5.3.0" // {
-                    dependencies = [
-                      sources."has-flag-3.0.0"
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          (sources."postcss-modules-scope-1.1.0" // {
-            dependencies = [
-              (sources."postcss-6.0.21" // {
-                dependencies = [
-                  sources."source-map-0.6.1"
-                  (sources."supports-color-5.3.0" // {
-                    dependencies = [
-                      sources."has-flag-3.0.0"
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          (sources."postcss-modules-values-1.3.0" // {
-            dependencies = [
-              sources."icss-replace-symbols-1.1.0"
-              (sources."postcss-6.0.21" // {
-                dependencies = [
-                  sources."source-map-0.6.1"
-                  (sources."supports-color-5.3.0" // {
-                    dependencies = [
-                      sources."has-flag-3.0.0"
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          sources."postcss-value-parser-3.3.0"
-          sources."source-list-map-2.0.0"
+          sources."regexpu-core-1.0.0"
+          sources."source-map-0.5.7"
+          sources."supports-color-2.0.0"
         ];
       })
+      sources."css-select-1.2.0"
+      sources."css-selector-tokenizer-0.7.0"
+      sources."css-what-2.1.0"
+      sources."cssesc-0.1.0"
+      sources."cssnano-3.10.0"
+      sources."csso-2.3.2"
+      sources."currently-unhandled-0.4.1"
+      sources."cycle-1.0.3"
+      sources."d-1.0.0"
+      sources."dashdash-1.14.1"
+      sources."date-now-0.1.4"
+      sources."debug-2.6.9"
+      sources."decamelize-1.2.0"
+      sources."decode-uri-component-0.2.0"
+      sources."deep-equal-0.2.2"
+      sources."deep-extend-0.4.2"
+      sources."define-properties-1.1.2"
+      sources."define-property-2.0.2"
+      sources."defined-1.0.0"
+      sources."del-3.0.0"
+      sources."delayed-stream-1.0.0"
+      sources."depd-1.1.2"
+      sources."des.js-1.0.0"
+      sources."destroy-1.0.4"
+      sources."detect-indent-4.0.0"
+      sources."detect-node-2.0.3"
+      sources."detect-port-alt-1.1.6"
+      sources."diffie-hellman-5.0.3"
+      sources."dns-equal-1.0.0"
+      sources."dns-packet-1.3.1"
+      sources."dns-txt-2.0.2"
+      sources."dom-converter-0.1.4"
+      (sources."dom-serializer-0.1.0" // {
+        dependencies = [
+          sources."domelementtype-1.1.3"
+        ];
+      })
+      sources."dom-urls-1.1.0"
+      sources."domain-browser-1.2.0"
+      sources."domelementtype-1.3.0"
+      sources."domhandler-2.1.0"
+      sources."domutils-1.5.1"
+      sources."dot-prop-4.2.0"
       sources."dotenv-5.0.1"
+      sources."duplexer-0.1.1"
+      sources."duplexer3-0.1.4"
+      sources."ecc-jsbn-0.1.1"
+      sources."ee-first-1.1.1"
+      sources."electron-to-chromium-1.3.42"
+      sources."elliptic-6.4.0"
       (sources."elm-0.18.0" // {
         dependencies = [
-          (sources."mkdirp-0.5.1" // {
-            dependencies = [
-              sources."minimist-0.0.8"
-            ];
-          })
-          (sources."promise-7.1.1" // {
-            dependencies = [
-              sources."asap-2.0.6"
-            ];
-          })
-          (sources."request-2.74.0" // {
-            dependencies = [
-              sources."aws-sign2-0.6.0"
-              sources."aws4-1.6.0"
-              (sources."bl-1.1.2" // {
-                dependencies = [
-                  (sources."readable-stream-2.0.6" // {
-                    dependencies = [
-                      sources."core-util-is-1.0.2"
-                      sources."inherits-2.0.3"
-                      sources."isarray-1.0.0"
-                      sources."process-nextick-args-1.0.7"
-                      sources."string_decoder-0.10.31"
-                      sources."util-deprecate-1.0.2"
-                    ];
-                  })
-                ];
-              })
-              sources."caseless-0.11.0"
-              (sources."combined-stream-1.0.6" // {
-                dependencies = [
-                  sources."delayed-stream-1.0.0"
-                ];
-              })
-              sources."extend-3.0.1"
-              sources."forever-agent-0.6.1"
-              (sources."form-data-1.0.1" // {
-                dependencies = [
-                  (sources."async-2.6.0" // {
-                    dependencies = [
-                      sources."lodash-4.17.5"
-                    ];
-                  })
-                ];
-              })
-              (sources."har-validator-2.0.6" // {
-                dependencies = [
-                  (sources."chalk-1.1.3" // {
-                    dependencies = [
-                      sources."ansi-styles-2.2.1"
-                      sources."escape-string-regexp-1.0.5"
-                      (sources."has-ansi-2.0.0" // {
-                        dependencies = [
-                          sources."ansi-regex-2.1.1"
-                        ];
-                      })
-                      (sources."strip-ansi-3.0.1" // {
-                        dependencies = [
-                          sources."ansi-regex-2.1.1"
-                        ];
-                      })
-                      sources."supports-color-2.0.0"
-                    ];
-                  })
-                  sources."commander-2.15.1"
-                  (sources."is-my-json-valid-2.17.2" // {
-                    dependencies = [
-                      sources."generate-function-2.0.0"
-                      (sources."generate-object-property-1.2.0" // {
-                        dependencies = [
-                          sources."is-property-1.0.2"
-                        ];
-                      })
-                      sources."is-my-ip-valid-1.0.0"
-                      sources."jsonpointer-4.0.1"
-                      sources."xtend-4.0.1"
-                    ];
-                  })
-                  (sources."pinkie-promise-2.0.1" // {
-                    dependencies = [
-                      sources."pinkie-2.0.4"
-                    ];
-                  })
-                ];
-              })
-              (sources."hawk-3.1.3" // {
-                dependencies = [
-                  sources."boom-2.10.1"
-                  sources."cryptiles-2.0.5"
-                  sources."hoek-2.16.3"
-                  sources."sntp-1.0.9"
-                ];
-              })
-              (sources."http-signature-1.1.1" // {
-                dependencies = [
-                  sources."assert-plus-0.2.0"
-                  (sources."jsprim-1.4.1" // {
-                    dependencies = [
-                      sources."assert-plus-1.0.0"
-                      sources."extsprintf-1.3.0"
-                      sources."json-schema-0.2.3"
-                      (sources."verror-1.10.0" // {
-                        dependencies = [
-                          sources."core-util-is-1.0.2"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."sshpk-1.14.1" // {
-                    dependencies = [
-                      sources."asn1-0.2.3"
-                      sources."assert-plus-1.0.0"
-                      sources."bcrypt-pbkdf-1.0.1"
-                      sources."dashdash-1.14.1"
-                      sources."ecc-jsbn-0.1.1"
-                      sources."getpass-0.1.7"
-                      sources."jsbn-0.1.1"
-                      sources."tweetnacl-0.14.5"
-                    ];
-                  })
-                ];
-              })
-              sources."is-typedarray-1.0.0"
-              sources."isstream-0.1.2"
-              sources."json-stringify-safe-5.0.1"
-              (sources."mime-types-2.1.18" // {
-                dependencies = [
-                  sources."mime-db-1.33.0"
-                ];
-              })
-              sources."node-uuid-1.4.8"
-              sources."oauth-sign-0.8.2"
-              sources."qs-6.2.3"
-              sources."stringstream-0.0.5"
-              (sources."tough-cookie-2.3.4" // {
-                dependencies = [
-                  sources."punycode-1.4.1"
-                ];
-              })
-              sources."tunnel-agent-0.4.3"
-            ];
-          })
-          (sources."tar-2.2.1" // {
-            dependencies = [
-              sources."block-stream-0.0.9"
-              (sources."fstream-1.0.11" // {
-                dependencies = [
-                  sources."graceful-fs-4.1.11"
-                  (sources."rimraf-2.6.2" // {
-                    dependencies = [
-                      (sources."glob-7.1.2" // {
-                        dependencies = [
-                          sources."fs.realpath-1.0.0"
-                          (sources."inflight-1.0.6" // {
-                            dependencies = [
-                              sources."wrappy-1.0.2"
-                            ];
-                          })
-                          (sources."minimatch-3.0.4" // {
-                            dependencies = [
-                              (sources."brace-expansion-1.1.11" // {
-                                dependencies = [
-                                  sources."balanced-match-1.0.0"
-                                  sources."concat-map-0.0.1"
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."once-1.4.0" // {
-                            dependencies = [
-                              sources."wrappy-1.0.2"
-                            ];
-                          })
-                          sources."path-is-absolute-1.0.1"
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              sources."inherits-2.0.3"
-            ];
-          })
+          sources."chalk-1.1.3"
+          sources."process-nextick-args-1.0.7"
+          sources."readable-stream-2.0.6"
+          sources."string_decoder-0.10.31"
+          sources."supports-color-2.0.0"
         ];
       })
       (sources."elm-hot-loader-0.5.4" // {
         dependencies = [
-          (sources."loader-utils-0.2.17" // {
-            dependencies = [
-              sources."big.js-3.2.0"
-              sources."emojis-list-2.1.0"
-              sources."json5-0.5.1"
-              sources."object-assign-4.1.1"
-            ];
-          })
+          sources."loader-utils-0.2.17"
         ];
       })
       (sources."elm-test-0.18.12" // {
         dependencies = [
-          (sources."binstall-1.2.0" // {
-            dependencies = [
-              (sources."request-2.79.0" // {
-                dependencies = [
-                  sources."aws-sign2-0.6.0"
-                  sources."aws4-1.6.0"
-                  sources."caseless-0.11.0"
-                  (sources."combined-stream-1.0.6" // {
-                    dependencies = [
-                      sources."delayed-stream-1.0.0"
-                    ];
-                  })
-                  sources."extend-3.0.1"
-                  sources."forever-agent-0.6.1"
-                  (sources."form-data-2.1.4" // {
-                    dependencies = [
-                      sources."asynckit-0.4.0"
-                    ];
-                  })
-                  (sources."har-validator-2.0.6" // {
-                    dependencies = [
-                      (sources."chalk-1.1.3" // {
-                        dependencies = [
-                          sources."ansi-styles-2.2.1"
-                          sources."escape-string-regexp-1.0.5"
-                          (sources."has-ansi-2.0.0" // {
-                            dependencies = [
-                              sources."ansi-regex-2.1.1"
-                            ];
-                          })
-                          (sources."strip-ansi-3.0.1" // {
-                            dependencies = [
-                              sources."ansi-regex-2.1.1"
-                            ];
-                          })
-                          sources."supports-color-2.0.0"
-                        ];
-                      })
-                      sources."commander-2.15.1"
-                      (sources."is-my-json-valid-2.17.2" // {
-                        dependencies = [
-                          sources."generate-function-2.0.0"
-                          (sources."generate-object-property-1.2.0" // {
-                            dependencies = [
-                              sources."is-property-1.0.2"
-                            ];
-                          })
-                          sources."is-my-ip-valid-1.0.0"
-                          sources."jsonpointer-4.0.1"
-                          sources."xtend-4.0.1"
-                        ];
-                      })
-                      (sources."pinkie-promise-2.0.1" // {
-                        dependencies = [
-                          sources."pinkie-2.0.4"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."hawk-3.1.3" // {
-                    dependencies = [
-                      sources."boom-2.10.1"
-                      sources."cryptiles-2.0.5"
-                      sources."hoek-2.16.3"
-                      sources."sntp-1.0.9"
-                    ];
-                  })
-                  (sources."http-signature-1.1.1" // {
-                    dependencies = [
-                      sources."assert-plus-0.2.0"
-                      (sources."jsprim-1.4.1" // {
-                        dependencies = [
-                          sources."assert-plus-1.0.0"
-                          sources."extsprintf-1.3.0"
-                          sources."json-schema-0.2.3"
-                          (sources."verror-1.10.0" // {
-                            dependencies = [
-                              sources."core-util-is-1.0.2"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."sshpk-1.14.1" // {
-                        dependencies = [
-                          sources."asn1-0.2.3"
-                          sources."assert-plus-1.0.0"
-                          sources."bcrypt-pbkdf-1.0.1"
-                          sources."dashdash-1.14.1"
-                          sources."ecc-jsbn-0.1.1"
-                          sources."getpass-0.1.7"
-                          sources."jsbn-0.1.1"
-                          sources."tweetnacl-0.14.5"
-                        ];
-                      })
-                    ];
-                  })
-                  sources."is-typedarray-1.0.0"
-                  sources."isstream-0.1.2"
-                  sources."json-stringify-safe-5.0.1"
-                  (sources."mime-types-2.1.18" // {
-                    dependencies = [
-                      sources."mime-db-1.33.0"
-                    ];
-                  })
-                  sources."oauth-sign-0.8.2"
-                  sources."qs-6.3.2"
-                  sources."stringstream-0.0.5"
-                  (sources."tough-cookie-2.3.4" // {
-                    dependencies = [
-                      sources."punycode-1.4.1"
-                    ];
-                  })
-                  sources."tunnel-agent-0.4.3"
-                  sources."uuid-3.2.1"
-                ];
-              })
-              (sources."tar-2.2.1" // {
-                dependencies = [
-                  sources."block-stream-0.0.9"
-                  (sources."fstream-1.0.11" // {
-                    dependencies = [
-                      sources."graceful-fs-4.1.11"
-                      (sources."mkdirp-0.5.1" // {
-                        dependencies = [
-                          sources."minimist-0.0.8"
-                        ];
-                      })
-                      sources."rimraf-2.6.2"
-                    ];
-                  })
-                  sources."inherits-2.0.3"
-                ];
-              })
-            ];
-          })
-          (sources."chalk-2.1.0" // {
-            dependencies = [
-              (sources."ansi-styles-3.2.1" // {
-                dependencies = [
-                  (sources."color-convert-1.9.1" // {
-                    dependencies = [
-                      sources."color-name-1.1.3"
-                    ];
-                  })
-                ];
-              })
-              sources."escape-string-regexp-1.0.5"
-            ];
-          })
-          (sources."chokidar-1.6.0" // {
-            dependencies = [
-              (sources."anymatch-1.3.2" // {
-                dependencies = [
-                  (sources."micromatch-2.3.11" // {
-                    dependencies = [
-                      (sources."arr-diff-2.0.0" // {
-                        dependencies = [
-                          sources."arr-flatten-1.1.0"
-                        ];
-                      })
-                      sources."array-unique-0.2.1"
-                      (sources."braces-1.8.5" // {
-                        dependencies = [
-                          (sources."expand-range-1.8.2" // {
-                            dependencies = [
-                              (sources."fill-range-2.2.3" // {
-                                dependencies = [
-                                  sources."is-number-2.1.0"
-                                  (sources."isobject-2.1.0" // {
-                                    dependencies = [
-                                      sources."isarray-1.0.0"
-                                    ];
-                                  })
-                                  (sources."randomatic-1.1.7" // {
-                                    dependencies = [
-                                      (sources."is-number-3.0.0" // {
-                                        dependencies = [
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      (sources."kind-of-4.0.0" // {
-                                        dependencies = [
-                                          sources."is-buffer-1.1.6"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  sources."repeat-string-1.6.1"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."preserve-0.2.0"
-                          sources."repeat-element-1.1.2"
-                        ];
-                      })
-                      (sources."expand-brackets-0.1.5" // {
-                        dependencies = [
-                          sources."is-posix-bracket-0.1.1"
-                        ];
-                      })
-                      sources."extglob-0.3.2"
-                      sources."filename-regex-2.0.1"
-                      sources."is-extglob-1.0.0"
-                      (sources."kind-of-3.2.2" // {
-                        dependencies = [
-                          sources."is-buffer-1.1.6"
-                        ];
-                      })
-                      (sources."object.omit-2.0.1" // {
-                        dependencies = [
-                          (sources."for-own-0.1.5" // {
-                            dependencies = [
-                              sources."for-in-1.0.2"
-                            ];
-                          })
-                          sources."is-extendable-0.1.1"
-                        ];
-                      })
-                      (sources."parse-glob-3.0.4" // {
-                        dependencies = [
-                          sources."glob-base-0.3.0"
-                          sources."is-dotfile-1.0.3"
-                        ];
-                      })
-                      (sources."regex-cache-0.4.4" // {
-                        dependencies = [
-                          (sources."is-equal-shallow-0.1.3" // {
-                            dependencies = [
-                              sources."is-primitive-2.0.0"
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."normalize-path-2.1.1" // {
-                    dependencies = [
-                      sources."remove-trailing-separator-1.1.0"
-                    ];
-                  })
-                ];
-              })
-              sources."async-each-1.0.1"
-              sources."glob-parent-2.0.0"
-              sources."inherits-2.0.3"
-              (sources."is-binary-path-1.0.1" // {
-                dependencies = [
-                  sources."binary-extensions-1.11.0"
-                ];
-              })
-              (sources."is-glob-2.0.1" // {
-                dependencies = [
-                  sources."is-extglob-1.0.0"
-                ];
-              })
-              sources."path-is-absolute-1.0.1"
-              (sources."readdirp-2.1.0" // {
-                dependencies = [
-                  sources."graceful-fs-4.1.11"
-                  (sources."minimatch-3.0.4" // {
-                    dependencies = [
-                      (sources."brace-expansion-1.1.11" // {
-                        dependencies = [
-                          sources."balanced-match-1.0.0"
-                          sources."concat-map-0.0.1"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."readable-stream-2.3.5" // {
-                    dependencies = [
-                      sources."core-util-is-1.0.2"
-                      sources."isarray-1.0.0"
-                      sources."process-nextick-args-2.0.0"
-                      sources."safe-buffer-5.1.1"
-                      sources."string_decoder-1.0.3"
-                      sources."util-deprecate-1.0.2"
-                    ];
-                  })
-                  sources."set-immediate-shim-1.0.1"
-                ];
-              })
-            ];
-          })
-          (sources."cross-spawn-4.0.0" // {
-            dependencies = [
-              (sources."lru-cache-4.1.2" // {
-                dependencies = [
-                  sources."pseudomap-1.0.2"
-                  sources."yallist-2.1.2"
-                ];
-              })
-              (sources."which-1.3.0" // {
-                dependencies = [
-                  sources."isexe-2.0.0"
-                ];
-              })
-            ];
-          })
-          sources."find-parent-dir-0.3.0"
-          sources."firstline-1.2.1"
-          (sources."fs-extra-0.30.0" // {
-            dependencies = [
-              sources."graceful-fs-4.1.11"
-              sources."jsonfile-2.4.0"
-              sources."klaw-1.3.1"
-              sources."path-is-absolute-1.0.1"
-              sources."rimraf-2.6.2"
-            ];
-          })
-          (sources."fsevents-1.1.2" // {
-            dependencies = [
-              sources."nan-2.10.0"
-            ];
-          })
-          (sources."glob-7.1.2" // {
-            dependencies = [
-              sources."fs.realpath-1.0.0"
-              (sources."inflight-1.0.6" // {
-                dependencies = [
-                  sources."wrappy-1.0.2"
-                ];
-              })
-              sources."inherits-2.0.3"
-              (sources."minimatch-3.0.4" // {
-                dependencies = [
-                  (sources."brace-expansion-1.1.11" // {
-                    dependencies = [
-                      sources."balanced-match-1.0.0"
-                      sources."concat-map-0.0.1"
-                    ];
-                  })
-                ];
-              })
-              (sources."once-1.4.0" // {
-                dependencies = [
-                  sources."wrappy-1.0.2"
-                ];
-              })
-              sources."path-is-absolute-1.0.1"
-            ];
-          })
+          sources."ansi-styles-3.2.1"
+          sources."chalk-2.1.0"
+          sources."chokidar-1.6.0"
+          sources."cross-spawn-4.0.0"
+          sources."form-data-2.1.4"
+          sources."fs-extra-0.30.0"
+          sources."fsevents-1.1.2"
+          sources."has-flag-2.0.0"
           sources."lodash-4.13.1"
-          sources."murmur-hash-js-1.0.0"
-          (sources."node-elm-compiler-4.3.3" // {
-            dependencies = [
-              (sources."find-elm-dependencies-1.0.2" // {
-                dependencies = [
-                  sources."firstline-1.2.0"
-                ];
-              })
-              sources."lodash-4.14.2"
-              (sources."temp-0.8.3" // {
-                dependencies = [
-                  sources."os-tmpdir-1.0.2"
-                  sources."rimraf-2.2.8"
-                ];
-              })
-            ];
-          })
-          (sources."split-1.0.1" // {
-            dependencies = [
-              sources."through-2.3.8"
-            ];
-          })
-          (sources."supports-color-4.2.0" // {
-            dependencies = [
-              sources."has-flag-2.0.0"
-            ];
-          })
-          sources."xmlbuilder-8.2.2"
+          sources."qs-6.3.2"
+          sources."request-2.79.0"
+          sources."rimraf-2.2.8"
+          sources."supports-color-4.2.0"
         ];
       })
       (sources."elm-webpack-loader-4.5.0" // {
         dependencies = [
-          (sources."glob-7.1.2" // {
-            dependencies = [
-              sources."fs.realpath-1.0.0"
-              (sources."inflight-1.0.6" // {
-                dependencies = [
-                  sources."wrappy-1.0.2"
-                ];
-              })
-              sources."inherits-2.0.3"
-              (sources."minimatch-3.0.4" // {
-                dependencies = [
-                  (sources."brace-expansion-1.1.11" // {
-                    dependencies = [
-                      sources."balanced-match-1.0.0"
-                      sources."concat-map-0.0.1"
-                    ];
-                  })
-                ];
-              })
-              (sources."once-1.4.0" // {
-                dependencies = [
-                  sources."wrappy-1.0.2"
-                ];
-              })
-              sources."path-is-absolute-1.0.1"
-            ];
-          })
-          (sources."loader-utils-1.1.0" // {
-            dependencies = [
-              sources."big.js-3.2.0"
-              sources."emojis-list-2.1.0"
-              sources."json5-0.5.1"
-            ];
-          })
-          (sources."node-elm-compiler-4.5.0" // {
-            dependencies = [
-              (sources."cross-spawn-4.0.0" // {
-                dependencies = [
-                  (sources."lru-cache-4.1.2" // {
-                    dependencies = [
-                      sources."pseudomap-1.0.2"
-                      sources."yallist-2.1.2"
-                    ];
-                  })
-                  (sources."which-1.3.0" // {
-                    dependencies = [
-                      sources."isexe-2.0.0"
-                    ];
-                  })
-                ];
-              })
-              (sources."find-elm-dependencies-1.0.2" // {
-                dependencies = [
-                  sources."firstline-1.2.0"
-                ];
-              })
-              sources."lodash-4.14.2"
-              (sources."temp-0.8.3" // {
-                dependencies = [
-                  sources."os-tmpdir-1.0.2"
-                  sources."rimraf-2.2.8"
-                ];
-              })
-            ];
-          })
-          (sources."yargs-6.6.0" // {
-            dependencies = [
-              sources."camelcase-3.0.0"
-              (sources."cliui-3.2.0" // {
-                dependencies = [
-                  (sources."strip-ansi-3.0.1" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  sources."wrap-ansi-2.1.0"
-                ];
-              })
-              sources."decamelize-1.2.0"
-              sources."get-caller-file-1.0.2"
-              (sources."os-locale-1.4.0" // {
-                dependencies = [
-                  (sources."lcid-1.0.0" // {
-                    dependencies = [
-                      sources."invert-kv-1.0.0"
-                    ];
-                  })
-                ];
-              })
-              (sources."read-pkg-up-1.0.1" // {
-                dependencies = [
-                  (sources."find-up-1.1.2" // {
-                    dependencies = [
-                      sources."path-exists-2.1.0"
-                      (sources."pinkie-promise-2.0.1" // {
-                        dependencies = [
-                          sources."pinkie-2.0.4"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."read-pkg-1.1.0" // {
-                    dependencies = [
-                      (sources."load-json-file-1.1.0" // {
-                        dependencies = [
-                          sources."graceful-fs-4.1.11"
-                          (sources."parse-json-2.2.0" // {
-                            dependencies = [
-                              (sources."error-ex-1.3.1" // {
-                                dependencies = [
-                                  sources."is-arrayish-0.2.1"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."pify-2.3.0"
-                          (sources."pinkie-promise-2.0.1" // {
-                            dependencies = [
-                              sources."pinkie-2.0.4"
-                            ];
-                          })
-                          (sources."strip-bom-2.0.0" // {
-                            dependencies = [
-                              sources."is-utf8-0.2.1"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."normalize-package-data-2.4.0" // {
-                        dependencies = [
-                          sources."hosted-git-info-2.6.0"
-                          (sources."is-builtin-module-1.0.0" // {
-                            dependencies = [
-                              sources."builtin-modules-1.1.1"
-                            ];
-                          })
-                          sources."semver-5.5.0"
-                          (sources."validate-npm-package-license-3.0.3" // {
-                            dependencies = [
-                              (sources."spdx-correct-3.0.0" // {
-                                dependencies = [
-                                  sources."spdx-license-ids-3.0.0"
-                                ];
-                              })
-                              (sources."spdx-expression-parse-3.0.0" // {
-                                dependencies = [
-                                  sources."spdx-exceptions-2.1.0"
-                                  sources."spdx-license-ids-3.0.0"
-                                ];
-                              })
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."path-type-1.1.0" // {
-                        dependencies = [
-                          sources."graceful-fs-4.1.11"
-                          sources."pify-2.3.0"
-                          (sources."pinkie-promise-2.0.1" // {
-                            dependencies = [
-                              sources."pinkie-2.0.4"
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              sources."require-directory-2.1.1"
-              sources."require-main-filename-1.0.1"
-              sources."set-blocking-2.0.0"
-              (sources."string-width-1.0.2" // {
-                dependencies = [
-                  sources."code-point-at-1.1.0"
-                  (sources."is-fullwidth-code-point-1.0.0" // {
-                    dependencies = [
-                      sources."number-is-nan-1.0.1"
-                    ];
-                  })
-                  (sources."strip-ansi-3.0.1" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                ];
-              })
-              sources."which-module-1.0.0"
-              sources."y18n-3.2.1"
-              sources."yargs-parser-4.2.1"
-            ];
-          })
+          sources."camelcase-3.0.0"
+          sources."cross-spawn-4.0.0"
+          sources."find-up-1.1.2"
+          sources."lodash-4.14.2"
+          sources."node-elm-compiler-4.5.0"
+          sources."path-exists-2.1.0"
+          sources."pify-2.3.0"
         ];
       })
-      (sources."extract-text-webpack-plugin-3.0.2" // {
+      sources."emojis-list-2.1.0"
+      sources."encodeurl-1.0.2"
+      sources."enhanced-resolve-3.4.1"
+      sources."entities-1.1.1"
+      sources."errno-0.1.7"
+      sources."error-ex-1.3.1"
+      sources."es-abstract-1.11.0"
+      sources."es-to-primitive-1.1.1"
+      sources."es5-ext-0.10.42"
+      sources."es6-iterator-2.0.3"
+      sources."es6-map-0.1.5"
+      sources."es6-promise-4.2.4"
+      sources."es6-set-0.1.5"
+      sources."es6-symbol-3.1.1"
+      sources."es6-weak-map-2.0.2"
+      sources."escape-html-1.0.3"
+      sources."escape-string-regexp-1.0.5"
+      sources."escope-3.6.0"
+      sources."esprima-2.7.3"
+      sources."esrecurse-4.2.1"
+      sources."estraverse-4.2.0"
+      sources."esutils-2.0.2"
+      sources."etag-1.8.1"
+      sources."event-emitter-0.3.5"
+      sources."eventemitter3-3.0.1"
+      sources."events-1.1.1"
+      (sources."eventsource-0.1.6" // {
         dependencies = [
-          (sources."async-2.6.0" // {
-            dependencies = [
-              sources."lodash-4.17.5"
-            ];
-          })
-          (sources."loader-utils-1.1.0" // {
-            dependencies = [
-              sources."big.js-3.2.0"
-              sources."emojis-list-2.1.0"
-              sources."json5-0.5.1"
-            ];
-          })
-          (sources."schema-utils-0.3.0" // {
-            dependencies = [
-              (sources."ajv-5.5.2" // {
-                dependencies = [
-                  sources."co-4.6.0"
-                  sources."fast-deep-equal-1.1.0"
-                  sources."fast-json-stable-stringify-2.0.0"
-                  sources."json-schema-traverse-0.3.1"
-                ];
-              })
-            ];
-          })
-          (sources."webpack-sources-1.1.0" // {
-            dependencies = [
-              sources."source-list-map-2.0.0"
-              sources."source-map-0.6.1"
-            ];
-          })
+          sources."url-parse-1.0.5"
         ];
       })
+      sources."evp_bytestokey-1.0.3"
+      sources."execa-0.7.0"
+      sources."expand-brackets-0.1.5"
+      sources."expand-range-1.8.2"
+      sources."expand-tilde-2.0.2"
+      (sources."express-4.16.3" // {
+        dependencies = [
+          sources."debug-2.6.9"
+        ];
+      })
+      sources."extend-3.0.1"
+      sources."extend-shallow-3.0.2"
+      sources."external-editor-2.2.0"
+      sources."extglob-0.3.2"
+      sources."extract-text-webpack-plugin-3.0.2"
+      sources."extsprintf-1.3.0"
+      sources."eyes-0.1.8"
+      sources."fast-deep-equal-1.1.0"
+      sources."fast-json-stable-stringify-2.0.0"
+      sources."fastparse-1.1.1"
+      sources."faye-websocket-0.11.1"
+      sources."figures-2.0.0"
       (sources."file-loader-1.1.11" // {
         dependencies = [
-          (sources."loader-utils-1.1.0" // {
-            dependencies = [
-              sources."big.js-3.2.0"
-              sources."emojis-list-2.1.0"
-              sources."json5-0.5.1"
-            ];
-          })
-          (sources."schema-utils-0.4.5" // {
-            dependencies = [
-              (sources."ajv-6.4.0" // {
-                dependencies = [
-                  sources."fast-deep-equal-1.1.0"
-                  sources."fast-json-stable-stringify-2.0.0"
-                  sources."json-schema-traverse-0.3.1"
-                  (sources."uri-js-3.0.2" // {
-                    dependencies = [
-                      sources."punycode-2.1.0"
-                    ];
-                  })
-                ];
-              })
-              sources."ajv-keywords-3.1.0"
-            ];
-          })
+          sources."ajv-6.4.0"
+          sources."punycode-2.1.0"
+          sources."schema-utils-0.4.5"
         ];
       })
+      sources."filename-regex-2.0.1"
+      sources."filesize-3.5.11"
+      sources."fill-range-2.2.3"
+      sources."finalhandler-1.1.1"
+      sources."find-cache-dir-1.0.0"
+      sources."find-elm-dependencies-1.0.2"
+      sources."find-parent-dir-0.3.0"
+      sources."find-up-2.1.0"
+      sources."firstline-1.2.1"
+      sources."flatten-1.0.2"
+      sources."follow-redirects-1.4.1"
+      sources."for-in-1.0.2"
+      sources."for-own-0.1.5"
+      sources."foreach-2.0.5"
+      sources."forever-agent-0.6.1"
+      sources."form-data-1.0.1"
+      sources."forwarded-0.1.2"
+      sources."fragment-cache-0.2.1"
+      sources."fresh-0.5.2"
       (sources."fs-extra-5.0.0" // {
         dependencies = [
-          sources."graceful-fs-4.1.11"
           sources."jsonfile-4.0.0"
-          sources."universalify-0.1.1"
+        ];
+      })
+      sources."fs-readdir-recursive-1.1.0"
+      sources."fs.realpath-1.0.0"
+      sources."fsevents-1.2.2"
+      sources."fstream-1.0.11"
+      sources."function-bind-1.1.1"
+      sources."generate-function-2.0.0"
+      sources."generate-object-property-1.2.0"
+      sources."get-caller-file-1.0.2"
+      sources."get-stdin-4.0.1"
+      sources."get-stream-3.0.0"
+      sources."get-value-2.0.6"
+      sources."getpass-0.1.7"
+      sources."glob-7.1.2"
+      sources."glob-base-0.3.0"
+      sources."glob-parent-2.0.0"
+      sources."global-dirs-0.1.1"
+      sources."global-modules-1.0.0"
+      sources."global-prefix-1.0.2"
+      sources."globals-9.18.0"
+      (sources."globby-6.1.0" // {
+        dependencies = [
+          sources."pify-2.3.0"
+        ];
+      })
+      sources."got-6.7.1"
+      sources."graceful-fs-4.1.11"
+      sources."gzip-size-3.0.0"
+      sources."handle-thing-1.2.5"
+      sources."har-validator-2.0.6"
+      sources."has-1.0.1"
+      sources."has-ansi-2.0.0"
+      sources."has-flag-3.0.0"
+      sources."has-value-1.0.0"
+      sources."has-values-1.0.0"
+      sources."hash-base-3.0.4"
+      sources."hash.js-1.1.3"
+      sources."hawk-3.1.3"
+      sources."he-1.1.1"
+      sources."hmac-drbg-1.0.1"
+      sources."hoek-2.16.3"
+      sources."home-or-tmp-2.0.0"
+      sources."homedir-polyfill-1.0.1"
+      sources."hosted-git-info-2.6.0"
+      sources."hpack.js-2.1.6"
+      sources."html-comment-regex-1.1.1"
+      sources."html-entities-1.2.1"
+      (sources."html-minifier-3.5.15" // {
+        dependencies = [
+          sources."source-map-0.6.1"
         ];
       })
       (sources."html-webpack-plugin-2.30.1" // {
         dependencies = [
-          sources."bluebird-3.5.1"
-          (sources."html-minifier-3.5.12" // {
-            dependencies = [
-              (sources."camel-case-3.0.0" // {
-                dependencies = [
-                  (sources."no-case-2.3.2" // {
-                    dependencies = [
-                      sources."lower-case-1.1.4"
-                    ];
-                  })
-                  sources."upper-case-1.1.3"
-                ];
-              })
-              (sources."clean-css-4.1.11" // {
-                dependencies = [
-                  sources."source-map-0.5.7"
-                ];
-              })
-              sources."commander-2.15.1"
-              sources."he-1.1.1"
-              (sources."ncname-1.0.0" // {
-                dependencies = [
-                  sources."xml-char-classes-1.0.0"
-                ];
-              })
-              (sources."param-case-2.1.1" // {
-                dependencies = [
-                  (sources."no-case-2.3.2" // {
-                    dependencies = [
-                      sources."lower-case-1.1.4"
-                    ];
-                  })
-                ];
-              })
-              sources."relateurl-0.2.7"
-              (sources."uglify-js-3.3.16" // {
-                dependencies = [
-                  sources."source-map-0.6.1"
-                ];
-              })
-            ];
-          })
-          (sources."loader-utils-0.2.17" // {
-            dependencies = [
-              sources."big.js-3.2.0"
-              sources."emojis-list-2.1.0"
-              sources."json5-0.5.1"
-              sources."object-assign-4.1.1"
-            ];
-          })
-          sources."lodash-4.17.5"
-          (sources."pretty-error-2.1.1" // {
-            dependencies = [
-              (sources."renderkid-2.0.1" // {
-                dependencies = [
-                  (sources."css-select-1.2.0" // {
-                    dependencies = [
-                      sources."boolbase-1.0.0"
-                      sources."css-what-2.1.0"
-                      (sources."domutils-1.5.1" // {
-                        dependencies = [
-                          (sources."dom-serializer-0.1.0" // {
-                            dependencies = [
-                              sources."domelementtype-1.1.3"
-                              sources."entities-1.1.1"
-                            ];
-                          })
-                          sources."domelementtype-1.3.0"
-                        ];
-                      })
-                      sources."nth-check-1.0.1"
-                    ];
-                  })
-                  sources."dom-converter-0.1.4"
-                  (sources."htmlparser2-3.3.0" // {
-                    dependencies = [
-                      sources."domelementtype-1.3.0"
-                      sources."domhandler-2.1.0"
-                      sources."domutils-1.1.6"
-                      (sources."readable-stream-1.0.34" // {
-                        dependencies = [
-                          sources."core-util-is-1.0.2"
-                          sources."inherits-2.0.3"
-                          sources."isarray-0.0.1"
-                          sources."string_decoder-0.10.31"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."strip-ansi-3.0.1" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  sources."utila-0.3.3"
-                ];
-              })
-              sources."utila-0.4.0"
-            ];
-          })
-          sources."toposort-1.0.6"
+          sources."domutils-1.1.6"
+          sources."isarray-0.0.1"
+          sources."loader-utils-0.2.17"
+          sources."readable-stream-1.0.34"
+          sources."source-map-0.5.7"
+          sources."string_decoder-0.10.31"
         ];
       })
+      sources."htmlparser2-3.3.0"
+      sources."http-deceiver-1.2.7"
+      sources."http-errors-1.6.3"
+      sources."http-parser-js-0.4.11"
+      sources."http-proxy-1.17.0"
       (sources."http-proxy-middleware-0.17.4" // {
         dependencies = [
-          (sources."http-proxy-1.16.2" // {
-            dependencies = [
-              sources."eventemitter3-1.2.0"
-              sources."requires-port-1.0.0"
-            ];
-          })
-          (sources."is-glob-3.1.0" // {
-            dependencies = [
-              sources."is-extglob-2.1.1"
-            ];
-          })
-          sources."lodash-4.17.5"
-          (sources."micromatch-2.3.11" // {
-            dependencies = [
-              (sources."arr-diff-2.0.0" // {
-                dependencies = [
-                  sources."arr-flatten-1.1.0"
-                ];
-              })
-              sources."array-unique-0.2.1"
-              (sources."braces-1.8.5" // {
-                dependencies = [
-                  (sources."expand-range-1.8.2" // {
-                    dependencies = [
-                      (sources."fill-range-2.2.3" // {
-                        dependencies = [
-                          sources."is-number-2.1.0"
-                          (sources."isobject-2.1.0" // {
-                            dependencies = [
-                              sources."isarray-1.0.0"
-                            ];
-                          })
-                          (sources."randomatic-1.1.7" // {
-                            dependencies = [
-                              (sources."is-number-3.0.0" // {
-                                dependencies = [
-                                  (sources."kind-of-3.2.2" // {
-                                    dependencies = [
-                                      sources."is-buffer-1.1.6"
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."kind-of-4.0.0" // {
-                                dependencies = [
-                                  sources."is-buffer-1.1.6"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."repeat-string-1.6.1"
-                        ];
-                      })
-                    ];
-                  })
-                  sources."preserve-0.2.0"
-                  sources."repeat-element-1.1.2"
-                ];
-              })
-              (sources."expand-brackets-0.1.5" // {
-                dependencies = [
-                  sources."is-posix-bracket-0.1.1"
-                ];
-              })
-              sources."extglob-0.3.2"
-              sources."filename-regex-2.0.1"
-              sources."is-extglob-1.0.0"
-              sources."is-glob-2.0.1"
-              (sources."kind-of-3.2.2" // {
-                dependencies = [
-                  sources."is-buffer-1.1.6"
-                ];
-              })
-              (sources."normalize-path-2.1.1" // {
-                dependencies = [
-                  sources."remove-trailing-separator-1.1.0"
-                ];
-              })
-              (sources."object.omit-2.0.1" // {
-                dependencies = [
-                  (sources."for-own-0.1.5" // {
-                    dependencies = [
-                      sources."for-in-1.0.2"
-                    ];
-                  })
-                  sources."is-extendable-0.1.1"
-                ];
-              })
-              (sources."parse-glob-3.0.4" // {
-                dependencies = [
-                  (sources."glob-base-0.3.0" // {
-                    dependencies = [
-                      sources."glob-parent-2.0.0"
-                    ];
-                  })
-                  sources."is-dotfile-1.0.3"
-                ];
-              })
-              (sources."regex-cache-0.4.4" // {
-                dependencies = [
-                  (sources."is-equal-shallow-0.1.3" // {
-                    dependencies = [
-                      sources."is-primitive-2.0.0"
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
+          sources."debug-3.1.0"
+          sources."is-extglob-2.1.1"
+          sources."is-glob-3.1.0"
         ];
       })
+      sources."http-signature-1.1.1"
+      sources."https-browserify-1.0.0"
+      sources."i-0.3.6"
+      sources."iconv-lite-0.4.21"
+      sources."icss-replace-symbols-1.1.0"
+      (sources."icss-utils-2.1.0" // {
+        dependencies = [
+          sources."chalk-2.4.0"
+          sources."postcss-6.0.21"
+          sources."source-map-0.6.1"
+          sources."supports-color-5.4.0"
+        ];
+      })
+      sources."ieee754-1.1.11"
+      sources."import-lazy-2.1.0"
+      sources."import-local-1.0.0"
+      sources."imurmurhash-0.1.4"
+      sources."indent-string-2.1.0"
+      sources."indexes-of-1.0.1"
+      sources."indexof-0.0.1"
+      sources."inflight-1.0.6"
+      sources."inherits-2.0.3"
+      sources."ini-1.3.5"
+      (sources."inquirer-3.3.0" // {
+        dependencies = [
+          sources."chalk-2.4.0"
+          sources."strip-ansi-4.0.0"
+          sources."supports-color-5.4.0"
+        ];
+      })
+      sources."internal-ip-1.2.0"
+      sources."interpret-1.1.0"
+      sources."invariant-2.2.4"
+      sources."invert-kv-1.0.0"
+      sources."ip-1.1.5"
+      sources."ipaddr.js-1.6.0"
+      sources."is-absolute-url-2.1.0"
+      sources."is-accessor-descriptor-1.0.0"
+      sources."is-arrayish-0.2.1"
+      sources."is-binary-path-1.0.1"
+      sources."is-buffer-1.1.6"
+      sources."is-builtin-module-1.0.0"
+      sources."is-callable-1.1.3"
+      sources."is-ci-1.1.0"
+      sources."is-data-descriptor-1.0.0"
+      sources."is-date-object-1.0.1"
+      sources."is-descriptor-1.0.2"
+      sources."is-directory-0.3.1"
+      sources."is-dotfile-1.0.3"
+      sources."is-equal-shallow-0.1.3"
+      sources."is-extendable-0.1.1"
+      sources."is-extglob-1.0.0"
+      sources."is-finite-1.0.2"
+      sources."is-fullwidth-code-point-1.0.0"
+      sources."is-glob-2.0.1"
+      sources."is-installed-globally-0.1.0"
+      sources."is-my-ip-valid-1.0.0"
+      sources."is-my-json-valid-2.17.2"
+      sources."is-npm-1.0.0"
+      sources."is-number-2.1.0"
+      sources."is-obj-1.0.1"
+      sources."is-odd-2.0.0"
+      sources."is-path-cwd-1.0.0"
+      sources."is-path-in-cwd-1.0.1"
+      sources."is-path-inside-1.0.1"
+      sources."is-plain-obj-1.1.0"
+      sources."is-plain-object-2.0.4"
+      sources."is-posix-bracket-0.1.1"
+      sources."is-primitive-2.0.0"
+      sources."is-promise-2.1.0"
+      sources."is-property-1.0.2"
+      sources."is-redirect-1.0.0"
+      sources."is-regex-1.0.4"
+      sources."is-retry-allowed-1.1.0"
+      sources."is-root-1.0.0"
+      sources."is-stream-1.1.0"
+      sources."is-svg-2.1.0"
+      sources."is-symbol-1.0.1"
+      sources."is-typedarray-1.0.0"
+      sources."is-utf8-0.2.1"
+      sources."is-windows-1.0.2"
+      sources."is-wsl-1.1.0"
+      sources."isarray-1.0.0"
+      sources."isexe-2.0.0"
+      sources."isobject-2.1.0"
+      sources."isstream-0.1.2"
+      sources."js-base64-2.4.3"
+      sources."js-tokens-3.0.2"
+      sources."js-yaml-3.7.0"
+      sources."jsbn-0.1.1"
+      sources."jsesc-1.3.0"
+      sources."json-loader-0.5.7"
+      sources."json-schema-0.2.3"
+      sources."json-schema-traverse-0.3.1"
+      sources."json-stringify-safe-5.0.1"
+      sources."json3-3.3.2"
+      sources."json5-0.5.1"
+      sources."jsonfile-2.4.0"
+      sources."jsonify-0.0.0"
+      sources."jsonpointer-4.0.1"
+      (sources."jsprim-1.4.1" // {
+        dependencies = [
+          sources."assert-plus-1.0.0"
+        ];
+      })
+      sources."killable-1.0.0"
+      sources."kind-of-3.2.2"
+      sources."klaw-1.3.1"
+      sources."latest-version-3.1.0"
+      sources."lazy-cache-1.0.4"
+      sources."lcid-1.0.0"
+      sources."load-json-file-1.1.0"
+      sources."loader-runner-2.3.0"
+      sources."loader-utils-1.1.0"
+      sources."locate-path-2.0.0"
+      sources."lodash-4.17.5"
+      sources."lodash._arraycopy-3.0.0"
+      sources."lodash._arrayeach-3.0.0"
+      sources."lodash._baseassign-3.2.0"
+      sources."lodash._basecopy-3.0.1"
+      sources."lodash._basefor-3.0.3"
+      sources."lodash._bindcallback-3.0.1"
+      sources."lodash._createassigner-3.1.1"
+      sources."lodash._getnative-3.9.1"
+      sources."lodash._isiterateecall-3.0.9"
+      sources."lodash._reinterpolate-3.0.0"
+      sources."lodash.assign-3.2.0"
+      sources."lodash.camelcase-4.3.0"
+      sources."lodash.defaults-4.2.0"
+      sources."lodash.isarguments-3.1.0"
+      sources."lodash.isarray-3.0.4"
+      sources."lodash.isplainobject-3.2.0"
+      sources."lodash.istypedarray-3.0.6"
+      sources."lodash.keys-3.1.2"
+      sources."lodash.keysin-3.0.8"
+      sources."lodash.memoize-4.1.2"
+      sources."lodash.merge-3.3.2"
+      sources."lodash.restparam-3.6.1"
+      sources."lodash.template-4.4.0"
+      sources."lodash.templatesettings-4.1.0"
+      sources."lodash.toplainobject-3.0.0"
+      sources."lodash.uniq-4.5.0"
+      sources."loglevel-1.6.1"
+      sources."longest-1.0.1"
+      sources."loose-envify-1.3.1"
+      sources."loud-rejection-1.6.0"
+      sources."lower-case-1.1.4"
+      sources."lowercase-keys-1.0.1"
+      sources."lru-cache-4.1.2"
+      sources."macaddress-0.2.8"
+      sources."make-dir-1.2.0"
+      sources."map-cache-0.2.2"
+      sources."map-obj-1.0.1"
+      sources."map-visit-1.0.0"
+      sources."math-expression-evaluator-1.2.17"
+      sources."md5.js-1.3.4"
+      sources."media-typer-0.3.0"
+      sources."mem-1.1.0"
+      sources."memory-fs-0.4.1"
+      sources."meow-3.7.0"
+      sources."merge-descriptors-1.0.1"
+      sources."methods-1.1.2"
+      sources."micromatch-2.3.11"
+      sources."miller-rabin-4.0.1"
+      sources."mime-1.6.0"
+      sources."mime-db-1.33.0"
+      sources."mime-types-2.1.18"
+      sources."mimic-fn-1.2.0"
+      sources."minimalistic-assert-1.0.1"
+      sources."minimalistic-crypto-utils-1.0.1"
+      sources."minimatch-3.0.4"
       sources."minimist-1.2.0"
+      sources."mixin-deep-1.3.1"
+      sources."mkdirp-0.5.1"
+      sources."ms-2.0.0"
+      sources."multicast-dns-6.2.3"
+      sources."multicast-dns-service-types-1.1.0"
+      sources."murmur-hash-js-1.0.0"
+      sources."mute-stream-0.0.7"
+      sources."nan-2.10.0"
+      sources."nanomatch-1.2.9"
+      sources."ncp-1.0.1"
+      sources."negotiator-0.6.1"
+      sources."neo-async-2.5.1"
+      sources."next-tick-1.0.0"
+      sources."nice-try-1.0.4"
+      sources."no-case-2.3.2"
+      (sources."node-elm-compiler-4.3.3" // {
+        dependencies = [
+          sources."firstline-1.2.0"
+          sources."lodash-4.14.2"
+        ];
+      })
+      sources."node-forge-0.7.1"
+      sources."node-libs-browser-2.1.0"
+      sources."node-uuid-1.4.8"
+      sources."normalize-package-data-2.4.0"
+      sources."normalize-path-2.1.1"
+      sources."normalize-range-0.1.2"
+      sources."normalize-url-1.9.1"
+      sources."npm-run-path-2.0.2"
+      sources."nth-check-1.0.1"
+      sources."num2fraction-1.2.2"
+      sources."number-is-nan-1.0.1"
+      sources."oauth-sign-0.8.2"
+      sources."object-assign-4.1.1"
+      sources."object-copy-0.1.0"
+      sources."object-keys-1.0.11"
+      sources."object-visit-1.0.1"
+      sources."object.omit-2.0.1"
+      sources."object.pick-1.3.0"
+      sources."obuf-1.1.2"
+      sources."on-finished-2.3.0"
+      sources."on-headers-1.0.1"
+      sources."once-1.4.0"
+      sources."onetime-2.0.1"
+      sources."opn-5.2.0"
+      sources."original-1.0.0"
+      sources."os-browserify-0.3.0"
+      sources."os-homedir-1.0.2"
+      sources."os-locale-1.4.0"
+      sources."os-tmpdir-1.0.2"
+      sources."output-file-sync-1.1.2"
+      sources."p-finally-1.0.0"
+      sources."p-limit-1.2.0"
+      sources."p-locate-2.0.0"
+      sources."p-map-1.2.0"
+      sources."p-try-1.0.0"
+      sources."package-json-4.0.1"
+      sources."pako-1.0.6"
+      sources."param-case-2.1.1"
+      sources."parse-asn1-5.1.1"
+      sources."parse-glob-3.0.4"
+      sources."parse-json-2.2.0"
+      sources."parse-passwd-1.0.0"
+      sources."parseurl-1.3.2"
+      sources."pascalcase-0.1.1"
+      sources."path-browserify-0.0.0"
+      sources."path-dirname-1.0.2"
+      sources."path-exists-3.0.0"
+      sources."path-is-absolute-1.0.1"
+      sources."path-is-inside-1.0.2"
+      sources."path-key-2.0.1"
+      sources."path-to-regexp-1.7.0"
+      sources."path-type-1.1.0"
+      sources."pbkdf2-3.0.16"
+      sources."pify-3.0.0"
+      sources."pinkie-2.0.4"
+      sources."pinkie-promise-2.0.1"
+      sources."pkg-dir-2.0.0"
+      sources."pkginfo-0.4.1"
+      (sources."portfinder-1.0.13" // {
+        dependencies = [
+          sources."debug-2.6.9"
+        ];
+      })
+      sources."posix-character-classes-0.1.1"
+      sources."postcss-6.0.21"
+      sources."postcss-calc-5.3.1"
+      sources."postcss-colormin-2.2.2"
+      sources."postcss-convert-values-2.6.1"
+      sources."postcss-discard-comments-2.0.4"
+      sources."postcss-discard-duplicates-2.1.0"
+      sources."postcss-discard-empty-2.1.0"
+      sources."postcss-discard-overridden-0.1.1"
+      sources."postcss-discard-unused-2.2.3"
+      sources."postcss-filter-plugins-2.0.2"
+      sources."postcss-load-config-1.2.0"
+      sources."postcss-load-options-1.2.0"
+      sources."postcss-load-plugins-2.3.0"
       (sources."postcss-loader-2.1.0" // {
         dependencies = [
-          (sources."loader-utils-1.1.0" // {
-            dependencies = [
-              sources."big.js-3.2.0"
-              sources."emojis-list-2.1.0"
-              sources."json5-0.5.1"
-            ];
-          })
-          (sources."postcss-6.0.21" // {
-            dependencies = [
-              sources."source-map-0.6.1"
-              (sources."supports-color-5.3.0" // {
-                dependencies = [
-                  sources."has-flag-3.0.0"
-                ];
-              })
-            ];
-          })
-          (sources."postcss-load-config-1.2.0" // {
-            dependencies = [
-              (sources."cosmiconfig-2.2.2" // {
-                dependencies = [
-                  sources."is-directory-0.3.1"
-                  (sources."js-yaml-3.11.0" // {
-                    dependencies = [
-                      (sources."argparse-1.0.10" // {
-                        dependencies = [
-                          sources."sprintf-js-1.0.3"
-                        ];
-                      })
-                      sources."esprima-4.0.0"
-                    ];
-                  })
-                  sources."os-homedir-1.0.2"
-                  (sources."parse-json-2.2.0" // {
-                    dependencies = [
-                      (sources."error-ex-1.3.1" // {
-                        dependencies = [
-                          sources."is-arrayish-0.2.1"
-                        ];
-                      })
-                    ];
-                  })
-                  sources."require-from-string-1.2.1"
-                ];
-              })
-              sources."object-assign-4.1.1"
-              sources."postcss-load-options-1.2.0"
-              sources."postcss-load-plugins-2.3.0"
-            ];
-          })
-          (sources."schema-utils-0.4.5" // {
-            dependencies = [
-              (sources."ajv-6.4.0" // {
-                dependencies = [
-                  sources."fast-deep-equal-1.1.0"
-                  sources."fast-json-stable-stringify-2.0.0"
-                  sources."json-schema-traverse-0.3.1"
-                  (sources."uri-js-3.0.2" // {
-                    dependencies = [
-                      sources."punycode-2.1.0"
-                    ];
-                  })
-                ];
-              })
-              sources."ajv-keywords-3.1.0"
-            ];
-          })
+          sources."ajv-6.4.0"
+          sources."schema-utils-0.4.5"
         ];
       })
+      sources."postcss-merge-idents-2.1.7"
+      sources."postcss-merge-longhand-2.0.2"
+      sources."postcss-merge-rules-2.1.2"
+      sources."postcss-message-helpers-2.0.0"
+      sources."postcss-minify-font-values-1.0.5"
+      sources."postcss-minify-gradients-1.0.5"
+      sources."postcss-minify-params-1.2.2"
+      sources."postcss-minify-selectors-2.1.1"
+      (sources."postcss-modules-extract-imports-1.2.0" // {
+        dependencies = [
+          sources."chalk-2.4.0"
+          sources."has-flag-3.0.0"
+          sources."postcss-6.0.21"
+          sources."source-map-0.6.1"
+          sources."supports-color-5.4.0"
+        ];
+      })
+      (sources."postcss-modules-local-by-default-1.2.0" // {
+        dependencies = [
+          sources."chalk-2.4.0"
+          sources."has-flag-3.0.0"
+          sources."postcss-6.0.21"
+          sources."source-map-0.6.1"
+          sources."supports-color-5.4.0"
+        ];
+      })
+      (sources."postcss-modules-scope-1.1.0" // {
+        dependencies = [
+          sources."chalk-2.4.0"
+          sources."has-flag-3.0.0"
+          sources."postcss-6.0.21"
+          sources."source-map-0.6.1"
+          sources."supports-color-5.4.0"
+        ];
+      })
+      (sources."postcss-modules-values-1.3.0" // {
+        dependencies = [
+          sources."chalk-2.4.0"
+          sources."has-flag-3.0.0"
+          sources."postcss-6.0.21"
+          sources."source-map-0.6.1"
+          sources."supports-color-5.4.0"
+        ];
+      })
+      sources."postcss-normalize-charset-1.1.1"
+      sources."postcss-normalize-url-3.0.8"
+      sources."postcss-ordered-values-2.2.3"
+      sources."postcss-reduce-idents-2.4.0"
+      sources."postcss-reduce-initial-1.0.1"
+      sources."postcss-reduce-transforms-1.0.4"
+      sources."postcss-selector-parser-2.2.3"
+      sources."postcss-svgo-2.1.6"
+      sources."postcss-unique-selectors-2.0.2"
+      sources."postcss-value-parser-3.3.0"
+      sources."postcss-zindex-2.2.0"
+      sources."prepend-http-1.0.4"
+      sources."preserve-0.2.0"
+      sources."pretty-bytes-4.0.2"
+      sources."pretty-error-2.1.1"
+      sources."private-0.1.8"
+      sources."process-0.11.10"
+      sources."process-nextick-args-2.0.0"
+      sources."promise-7.1.1"
       (sources."prompt-1.0.0" // {
         dependencies = [
+          sources."async-0.9.2"
           sources."colors-1.2.1"
-          sources."pkginfo-0.4.1"
-          (sources."read-1.0.7" // {
+        ];
+      })
+      sources."proxy-addr-2.0.3"
+      sources."prr-1.0.1"
+      sources."pseudomap-1.0.2"
+      sources."public-encrypt-4.0.2"
+      sources."punycode-1.4.1"
+      sources."q-1.5.1"
+      sources."qs-6.2.3"
+      sources."query-string-4.3.4"
+      sources."querystring-0.2.0"
+      sources."querystring-es3-0.2.1"
+      sources."querystringify-0.0.4"
+      (sources."randomatic-1.1.7" // {
+        dependencies = [
+          (sources."is-number-3.0.0" // {
             dependencies = [
-              sources."mute-stream-0.0.7"
-            ];
-          })
-          sources."revalidator-0.1.8"
-          (sources."utile-0.3.0" // {
-            dependencies = [
-              sources."async-0.9.2"
-              sources."deep-equal-0.2.2"
-              sources."i-0.3.6"
-              (sources."mkdirp-0.5.1" // {
-                dependencies = [
-                  sources."minimist-0.0.8"
-                ];
-              })
-              sources."ncp-1.0.1"
-              (sources."rimraf-2.6.2" // {
-                dependencies = [
-                  (sources."glob-7.1.2" // {
-                    dependencies = [
-                      sources."fs.realpath-1.0.0"
-                      (sources."inflight-1.0.6" // {
-                        dependencies = [
-                          sources."wrappy-1.0.2"
-                        ];
-                      })
-                      sources."inherits-2.0.3"
-                      (sources."minimatch-3.0.4" // {
-                        dependencies = [
-                          (sources."brace-expansion-1.1.11" // {
-                            dependencies = [
-                              sources."balanced-match-1.0.0"
-                              sources."concat-map-0.0.1"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."once-1.4.0" // {
-                        dependencies = [
-                          sources."wrappy-1.0.2"
-                        ];
-                      })
-                      sources."path-is-absolute-1.0.1"
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          (sources."winston-2.1.1" // {
-            dependencies = [
-              sources."async-1.0.0"
-              sources."colors-1.0.3"
-              sources."cycle-1.0.3"
-              sources."eyes-0.1.8"
-              sources."isstream-0.1.2"
-              sources."pkginfo-0.3.1"
-              sources."stack-trace-0.0.10"
+              sources."kind-of-3.2.2"
             ];
           })
         ];
       })
-      (sources."react-dev-utils-5.0.0" // {
+      sources."randombytes-2.0.6"
+      sources."randomfill-1.0.4"
+      sources."range-parser-1.2.0"
+      (sources."raw-body-2.3.2" // {
         dependencies = [
-          sources."address-1.0.3"
-          (sources."babel-code-frame-6.26.0" // {
-            dependencies = [
-              sources."esutils-2.0.2"
-              sources."js-tokens-3.0.2"
-            ];
-          })
-          (sources."chalk-1.1.3" // {
-            dependencies = [
-              sources."ansi-styles-2.2.1"
-              (sources."has-ansi-2.0.0" // {
-                dependencies = [
-                  sources."ansi-regex-2.1.1"
-                ];
-              })
-              sources."supports-color-2.0.0"
-            ];
-          })
-          (sources."cross-spawn-5.1.0" // {
-            dependencies = [
-              (sources."lru-cache-4.1.2" // {
-                dependencies = [
-                  sources."pseudomap-1.0.2"
-                  sources."yallist-2.1.2"
-                ];
-              })
-              (sources."shebang-command-1.2.0" // {
-                dependencies = [
-                  sources."shebang-regex-1.0.0"
-                ];
-              })
-              (sources."which-1.3.0" // {
-                dependencies = [
-                  sources."isexe-2.0.0"
-                ];
-              })
-            ];
-          })
-          (sources."detect-port-alt-1.1.5" // {
-            dependencies = [
-              (sources."debug-2.6.9" // {
-                dependencies = [
-                  sources."ms-2.0.0"
-                ];
-              })
-            ];
-          })
-          sources."escape-string-regexp-1.0.5"
-          sources."filesize-3.5.11"
-          (sources."global-modules-1.0.0" // {
-            dependencies = [
-              (sources."global-prefix-1.0.2" // {
-                dependencies = [
-                  sources."expand-tilde-2.0.2"
-                  (sources."homedir-polyfill-1.0.1" // {
-                    dependencies = [
-                      sources."parse-passwd-1.0.0"
-                    ];
-                  })
-                  sources."ini-1.3.5"
-                  (sources."which-1.3.0" // {
-                    dependencies = [
-                      sources."isexe-2.0.0"
-                    ];
-                  })
-                ];
-              })
-              sources."is-windows-1.0.2"
-              (sources."resolve-dir-1.0.1" // {
-                dependencies = [
-                  (sources."expand-tilde-2.0.2" // {
-                    dependencies = [
-                      (sources."homedir-polyfill-1.0.1" // {
-                        dependencies = [
-                          sources."parse-passwd-1.0.0"
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          (sources."gzip-size-3.0.0" // {
-            dependencies = [
-              sources."duplexer-0.1.1"
-            ];
-          })
-          (sources."inquirer-3.3.0" // {
-            dependencies = [
-              sources."ansi-escapes-3.1.0"
-              (sources."chalk-2.3.2" // {
-                dependencies = [
-                  (sources."ansi-styles-3.2.1" // {
-                    dependencies = [
-                      (sources."color-convert-1.9.1" // {
-                        dependencies = [
-                          sources."color-name-1.1.3"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."supports-color-5.3.0" // {
-                    dependencies = [
-                      sources."has-flag-3.0.0"
-                    ];
-                  })
-                ];
-              })
-              (sources."cli-cursor-2.1.0" // {
-                dependencies = [
-                  (sources."restore-cursor-2.0.0" // {
-                    dependencies = [
-                      (sources."onetime-2.0.1" // {
-                        dependencies = [
-                          sources."mimic-fn-1.2.0"
-                        ];
-                      })
-                      sources."signal-exit-3.0.2"
-                    ];
-                  })
-                ];
-              })
-              sources."cli-width-2.2.0"
-              (sources."external-editor-2.1.0" // {
-                dependencies = [
-                  sources."chardet-0.4.2"
-                  sources."iconv-lite-0.4.19"
-                  (sources."tmp-0.0.33" // {
-                    dependencies = [
-                      sources."os-tmpdir-1.0.2"
-                    ];
-                  })
-                ];
-              })
-              sources."figures-2.0.0"
-              sources."lodash-4.17.5"
-              sources."mute-stream-0.0.7"
-              (sources."run-async-2.3.0" // {
-                dependencies = [
-                  sources."is-promise-2.1.0"
-                ];
-              })
-              sources."rx-lite-4.0.8"
-              sources."rx-lite-aggregates-4.0.8"
-              (sources."string-width-2.1.1" // {
-                dependencies = [
-                  sources."is-fullwidth-code-point-2.0.0"
-                ];
-              })
-              (sources."strip-ansi-4.0.0" // {
-                dependencies = [
-                  sources."ansi-regex-3.0.0"
-                ];
-              })
-              sources."through-2.3.8"
-            ];
-          })
-          sources."is-root-1.0.0"
-          (sources."opn-5.2.0" // {
-            dependencies = [
-              sources."is-wsl-1.1.0"
-            ];
-          })
-          (sources."recursive-readdir-2.2.1" // {
-            dependencies = [
-              (sources."minimatch-3.0.3" // {
-                dependencies = [
-                  (sources."brace-expansion-1.1.11" // {
-                    dependencies = [
-                      sources."balanced-match-1.0.0"
-                      sources."concat-map-0.0.1"
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          (sources."shell-quote-1.6.1" // {
-            dependencies = [
-              sources."array-filter-0.0.1"
-              sources."array-map-0.0.0"
-              sources."array-reduce-0.0.0"
-              sources."jsonify-0.0.0"
-            ];
-          })
-          (sources."sockjs-client-1.1.4" // {
-            dependencies = [
-              (sources."debug-2.6.9" // {
-                dependencies = [
-                  sources."ms-2.0.0"
-                ];
-              })
-              (sources."eventsource-0.1.6" // {
-                dependencies = [
-                  (sources."original-1.0.0" // {
-                    dependencies = [
-                      (sources."url-parse-1.0.5" // {
-                        dependencies = [
-                          sources."querystringify-0.0.4"
-                          sources."requires-port-1.0.0"
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              (sources."faye-websocket-0.11.1" // {
-                dependencies = [
-                  (sources."websocket-driver-0.7.0" // {
-                    dependencies = [
-                      sources."http-parser-js-0.4.11"
-                      sources."websocket-extensions-0.1.3"
-                    ];
-                  })
-                ];
-              })
-              sources."inherits-2.0.3"
-              sources."json3-3.3.2"
-              (sources."url-parse-1.2.0" // {
-                dependencies = [
-                  sources."querystringify-1.0.0"
-                  sources."requires-port-1.0.0"
-                ];
-              })
-            ];
-          })
-          (sources."strip-ansi-3.0.1" // {
-            dependencies = [
-              sources."ansi-regex-2.1.1"
-            ];
-          })
-          sources."text-table-0.2.0"
+          sources."depd-1.1.1"
+          sources."http-errors-1.6.2"
+        ];
+      })
+      sources."rc-1.2.6"
+      (sources."react-dev-utils-5.0.1" // {
+        dependencies = [
+          sources."ansi-regex-3.0.0"
+          sources."ansi-styles-3.2.1"
+          sources."chalk-1.1.3"
+          sources."cross-spawn-5.1.0"
+          sources."is-fullwidth-code-point-2.0.0"
+          sources."minimatch-3.0.3"
+          sources."querystringify-2.0.0"
+          sources."string-width-2.1.1"
+          sources."supports-color-2.0.0"
         ];
       })
       sources."react-error-overlay-4.0.0"
-      (sources."string-replace-loader-1.3.0" // {
+      sources."read-1.0.7"
+      sources."read-pkg-1.1.0"
+      sources."read-pkg-up-1.0.1"
+      sources."readable-stream-2.3.6"
+      sources."readdirp-2.1.0"
+      sources."recursive-readdir-2.2.1"
+      sources."redent-1.0.0"
+      sources."reduce-css-calc-1.3.0"
+      sources."reduce-function-call-1.0.2"
+      sources."regenerate-1.3.3"
+      sources."regenerator-runtime-0.10.5"
+      sources."regenerator-transform-0.10.1"
+      sources."regex-cache-0.4.4"
+      sources."regex-not-1.0.2"
+      sources."regexpu-core-2.0.0"
+      sources."registry-auth-token-3.3.2"
+      sources."registry-url-3.1.0"
+      sources."regjsgen-0.2.0"
+      sources."regjsparser-0.1.5"
+      sources."relateurl-0.2.7"
+      sources."remove-trailing-separator-1.1.0"
+      (sources."renderkid-2.0.1" // {
         dependencies = [
-          (sources."loader-utils-1.1.0" // {
-            dependencies = [
-              sources."big.js-3.2.0"
-              sources."emojis-list-2.1.0"
-              sources."json5-0.5.1"
-            ];
-          })
-          sources."lodash-4.17.5"
+          sources."utila-0.3.3"
         ];
       })
+      sources."repeat-element-1.1.2"
+      sources."repeat-string-1.6.1"
+      sources."repeating-2.0.1"
+      sources."request-2.74.0"
+      sources."require-directory-2.1.1"
+      sources."require-from-string-1.2.1"
+      sources."require-main-filename-1.0.1"
+      sources."requires-port-1.0.0"
+      sources."resolve-cwd-2.0.0"
+      sources."resolve-dir-1.0.1"
+      sources."resolve-from-3.0.0"
+      sources."resolve-url-0.2.1"
+      sources."restore-cursor-2.0.0"
+      sources."ret-0.1.15"
+      sources."revalidator-0.1.8"
+      sources."right-align-0.1.3"
+      sources."rimraf-2.6.2"
+      sources."ripemd160-2.0.2"
+      sources."run-async-2.3.0"
+      sources."rx-lite-4.0.8"
+      sources."rx-lite-aggregates-4.0.8"
+      sources."safe-buffer-5.1.1"
+      sources."safe-regex-1.1.0"
+      sources."safer-buffer-2.1.2"
+      sources."sax-1.2.4"
+      sources."schema-utils-0.3.0"
+      sources."select-hose-2.0.0"
+      sources."selfsigned-1.10.2"
+      sources."semver-5.5.0"
+      sources."semver-diff-2.1.0"
+      sources."send-0.16.2"
+      (sources."serve-index-1.9.1" // {
+        dependencies = [
+          sources."debug-2.6.9"
+        ];
+      })
+      sources."serve-static-1.13.2"
+      sources."serviceworker-cache-polyfill-4.0.0"
+      sources."set-blocking-2.0.0"
+      sources."set-immediate-shim-1.0.1"
+      sources."set-value-2.0.0"
+      sources."setimmediate-1.0.5"
+      sources."setprototypeof-1.1.0"
+      sources."sha.js-2.4.11"
+      sources."shebang-command-1.2.0"
+      sources."shebang-regex-1.0.0"
+      sources."shell-quote-1.6.1"
+      sources."signal-exit-3.0.2"
+      sources."slash-1.0.0"
+      (sources."snapdragon-0.8.2" // {
+        dependencies = [
+          (sources."define-property-0.2.5" // {
+            dependencies = [
+              sources."kind-of-5.1.0"
+            ];
+          })
+          sources."extend-shallow-2.0.1"
+          sources."kind-of-4.0.0"
+        ];
+      })
+      sources."snapdragon-node-2.1.1"
+      sources."snapdragon-util-3.0.1"
+      sources."sntp-1.0.9"
+      sources."sockjs-0.3.19"
+      sources."sockjs-client-1.1.4"
+      sources."sort-keys-1.1.2"
+      sources."source-list-map-2.0.0"
+      sources."source-map-0.6.1"
+      sources."source-map-resolve-0.5.1"
+      sources."source-map-support-0.4.18"
+      sources."source-map-url-0.4.0"
+      sources."spdx-correct-3.0.0"
+      sources."spdx-exceptions-2.1.0"
+      sources."spdx-expression-parse-3.0.0"
+      sources."spdx-license-ids-3.0.0"
+      (sources."spdy-3.4.7" // {
+        dependencies = [
+          sources."debug-2.6.9"
+        ];
+      })
+      sources."spdy-transport-2.1.0"
+      sources."split-1.0.1"
+      (sources."split-string-3.1.0" // {
+        dependencies = [
+          sources."extend-shallow-3.0.2"
+          sources."is-extendable-1.0.1"
+        ];
+      })
+      sources."sprintf-js-1.0.3"
+      (sources."sshpk-1.14.1" // {
+        dependencies = [
+          sources."assert-plus-1.0.0"
+        ];
+      })
+      sources."stack-trace-0.0.10"
+      sources."static-extend-0.1.2"
+      sources."statuses-1.4.0"
+      sources."stream-browserify-2.0.1"
+      sources."stream-http-2.8.1"
+      sources."strict-uri-encode-1.1.0"
+      sources."string-replace-loader-1.3.0"
+      sources."string-width-1.0.2"
+      sources."string_decoder-1.1.1"
+      sources."stringstream-0.0.5"
+      sources."strip-ansi-3.0.1"
+      sources."strip-bom-2.0.0"
+      sources."strip-eof-1.0.0"
+      sources."strip-indent-1.0.1"
+      sources."strip-json-comments-2.0.1"
       (sources."style-loader-0.20.3" // {
         dependencies = [
-          (sources."loader-utils-1.1.0" // {
-            dependencies = [
-              sources."big.js-3.2.0"
-              sources."emojis-list-2.1.0"
-              sources."json5-0.5.1"
-            ];
-          })
-          (sources."schema-utils-0.4.5" // {
-            dependencies = [
-              (sources."ajv-6.4.0" // {
-                dependencies = [
-                  sources."fast-deep-equal-1.1.0"
-                  sources."fast-json-stable-stringify-2.0.0"
-                  sources."json-schema-traverse-0.3.1"
-                  (sources."uri-js-3.0.2" // {
-                    dependencies = [
-                      sources."punycode-2.1.0"
-                    ];
-                  })
-                ];
-              })
-              sources."ajv-keywords-3.1.0"
-            ];
-          })
+          sources."ajv-6.4.0"
+          sources."schema-utils-0.4.5"
+        ];
+      })
+      sources."supports-color-5.4.0"
+      sources."svgo-0.7.2"
+      (sources."sw-precache-5.2.1" // {
+        dependencies = [
+          sources."camelcase-4.1.0"
         ];
       })
       (sources."sw-precache-webpack-plugin-0.11.5" // {
         dependencies = [
-          (sources."del-3.0.0" // {
-            dependencies = [
-              (sources."globby-6.1.0" // {
-                dependencies = [
-                  (sources."array-union-1.0.2" // {
-                    dependencies = [
-                      sources."array-uniq-1.0.3"
-                    ];
-                  })
-                  (sources."glob-7.1.2" // {
-                    dependencies = [
-                      sources."fs.realpath-1.0.0"
-                      (sources."inflight-1.0.6" // {
-                        dependencies = [
-                          sources."wrappy-1.0.2"
-                        ];
-                      })
-                      sources."inherits-2.0.3"
-                      (sources."minimatch-3.0.4" // {
-                        dependencies = [
-                          (sources."brace-expansion-1.1.11" // {
-                            dependencies = [
-                              sources."balanced-match-1.0.0"
-                              sources."concat-map-0.0.1"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."once-1.4.0" // {
-                        dependencies = [
-                          sources."wrappy-1.0.2"
-                        ];
-                      })
-                      sources."path-is-absolute-1.0.1"
-                    ];
-                  })
-                  sources."object-assign-4.1.1"
-                  sources."pify-2.3.0"
-                  (sources."pinkie-promise-2.0.1" // {
-                    dependencies = [
-                      sources."pinkie-2.0.4"
-                    ];
-                  })
-                ];
-              })
-              sources."is-path-cwd-1.0.0"
-              (sources."is-path-in-cwd-1.0.1" // {
-                dependencies = [
-                  (sources."is-path-inside-1.0.1" // {
-                    dependencies = [
-                      sources."path-is-inside-1.0.2"
-                    ];
-                  })
-                ];
-              })
-              sources."p-map-1.2.0"
-              sources."pify-3.0.0"
-              (sources."rimraf-2.6.2" // {
-                dependencies = [
-                  (sources."glob-7.1.2" // {
-                    dependencies = [
-                      sources."fs.realpath-1.0.0"
-                      (sources."inflight-1.0.6" // {
-                        dependencies = [
-                          sources."wrappy-1.0.2"
-                        ];
-                      })
-                      sources."inherits-2.0.3"
-                      (sources."minimatch-3.0.4" // {
-                        dependencies = [
-                          (sources."brace-expansion-1.1.11" // {
-                            dependencies = [
-                              sources."balanced-match-1.0.0"
-                              sources."concat-map-0.0.1"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."once-1.4.0" // {
-                        dependencies = [
-                          sources."wrappy-1.0.2"
-                        ];
-                      })
-                      sources."path-is-absolute-1.0.1"
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          (sources."sw-precache-5.2.1" // {
-            dependencies = [
-              (sources."dom-urls-1.1.0" // {
-                dependencies = [
-                  sources."urijs-1.19.1"
-                ];
-              })
-              sources."es6-promise-4.2.4"
-              (sources."glob-7.1.2" // {
-                dependencies = [
-                  sources."fs.realpath-1.0.0"
-                  (sources."inflight-1.0.6" // {
-                    dependencies = [
-                      sources."wrappy-1.0.2"
-                    ];
-                  })
-                  sources."inherits-2.0.3"
-                  (sources."minimatch-3.0.4" // {
-                    dependencies = [
-                      (sources."brace-expansion-1.1.11" // {
-                        dependencies = [
-                          sources."balanced-match-1.0.0"
-                          sources."concat-map-0.0.1"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."once-1.4.0" // {
-                    dependencies = [
-                      sources."wrappy-1.0.2"
-                    ];
-                  })
-                  sources."path-is-absolute-1.0.1"
-                ];
-              })
-              sources."lodash.defaults-4.2.0"
-              (sources."lodash.template-4.4.0" // {
-                dependencies = [
-                  sources."lodash._reinterpolate-3.0.0"
-                  sources."lodash.templatesettings-4.1.0"
-                ];
-              })
-              (sources."meow-3.7.0" // {
-                dependencies = [
-                  (sources."camelcase-keys-2.1.0" // {
-                    dependencies = [
-                      sources."camelcase-2.1.1"
-                    ];
-                  })
-                  sources."decamelize-1.2.0"
-                  (sources."loud-rejection-1.6.0" // {
-                    dependencies = [
-                      (sources."currently-unhandled-0.4.1" // {
-                        dependencies = [
-                          sources."array-find-index-1.0.2"
-                        ];
-                      })
-                      sources."signal-exit-3.0.2"
-                    ];
-                  })
-                  sources."map-obj-1.0.1"
-                  (sources."normalize-package-data-2.4.0" // {
-                    dependencies = [
-                      sources."hosted-git-info-2.6.0"
-                      (sources."is-builtin-module-1.0.0" // {
-                        dependencies = [
-                          sources."builtin-modules-1.1.1"
-                        ];
-                      })
-                      sources."semver-5.5.0"
-                      (sources."validate-npm-package-license-3.0.3" // {
-                        dependencies = [
-                          (sources."spdx-correct-3.0.0" // {
-                            dependencies = [
-                              sources."spdx-license-ids-3.0.0"
-                            ];
-                          })
-                          (sources."spdx-expression-parse-3.0.0" // {
-                            dependencies = [
-                              sources."spdx-exceptions-2.1.0"
-                              sources."spdx-license-ids-3.0.0"
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                  sources."object-assign-4.1.1"
-                  (sources."read-pkg-up-1.0.1" // {
-                    dependencies = [
-                      (sources."find-up-1.1.2" // {
-                        dependencies = [
-                          sources."path-exists-2.1.0"
-                          (sources."pinkie-promise-2.0.1" // {
-                            dependencies = [
-                              sources."pinkie-2.0.4"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."read-pkg-1.1.0" // {
-                        dependencies = [
-                          (sources."load-json-file-1.1.0" // {
-                            dependencies = [
-                              sources."graceful-fs-4.1.11"
-                              (sources."parse-json-2.2.0" // {
-                                dependencies = [
-                                  (sources."error-ex-1.3.1" // {
-                                    dependencies = [
-                                      sources."is-arrayish-0.2.1"
-                                    ];
-                                  })
-                                ];
-                              })
-                              sources."pify-2.3.0"
-                              (sources."pinkie-promise-2.0.1" // {
-                                dependencies = [
-                                  sources."pinkie-2.0.4"
-                                ];
-                              })
-                              (sources."strip-bom-2.0.0" // {
-                                dependencies = [
-                                  sources."is-utf8-0.2.1"
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."path-type-1.1.0" // {
-                            dependencies = [
-                              sources."graceful-fs-4.1.11"
-                              sources."pify-2.3.0"
-                              (sources."pinkie-promise-2.0.1" // {
-                                dependencies = [
-                                  sources."pinkie-2.0.4"
-                                ];
-                              })
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."redent-1.0.0" // {
-                    dependencies = [
-                      (sources."indent-string-2.1.0" // {
-                        dependencies = [
-                          (sources."repeating-2.0.1" // {
-                            dependencies = [
-                              (sources."is-finite-1.0.2" // {
-                                dependencies = [
-                                  sources."number-is-nan-1.0.1"
-                                ];
-                              })
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."strip-indent-1.0.1" // {
-                        dependencies = [
-                          sources."get-stdin-4.0.1"
-                        ];
-                      })
-                    ];
-                  })
-                  sources."trim-newlines-1.0.0"
-                ];
-              })
-              (sources."mkdirp-0.5.1" // {
-                dependencies = [
-                  sources."minimist-0.0.8"
-                ];
-              })
-              sources."pretty-bytes-4.0.2"
-              (sources."sw-toolbox-3.6.0" // {
-                dependencies = [
-                  (sources."path-to-regexp-1.7.0" // {
-                    dependencies = [
-                      sources."isarray-0.0.1"
-                    ];
-                  })
-                  sources."serviceworker-cache-polyfill-4.0.0"
-                ];
-              })
-              (sources."update-notifier-2.4.0" // {
-                dependencies = [
-                  (sources."boxen-1.3.0" // {
-                    dependencies = [
-                      sources."ansi-align-2.0.0"
-                      sources."camelcase-4.1.0"
-                      sources."cli-boxes-1.0.0"
-                      (sources."string-width-2.1.1" // {
-                        dependencies = [
-                          sources."is-fullwidth-code-point-2.0.0"
-                          (sources."strip-ansi-4.0.0" // {
-                            dependencies = [
-                              sources."ansi-regex-3.0.0"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."term-size-1.2.0" // {
-                        dependencies = [
-                          (sources."execa-0.7.0" // {
-                            dependencies = [
-                              (sources."cross-spawn-5.1.0" // {
-                                dependencies = [
-                                  (sources."lru-cache-4.1.2" // {
-                                    dependencies = [
-                                      sources."pseudomap-1.0.2"
-                                      sources."yallist-2.1.2"
-                                    ];
-                                  })
-                                  (sources."shebang-command-1.2.0" // {
-                                    dependencies = [
-                                      sources."shebang-regex-1.0.0"
-                                    ];
-                                  })
-                                  (sources."which-1.3.0" // {
-                                    dependencies = [
-                                      sources."isexe-2.0.0"
-                                    ];
-                                  })
-                                ];
-                              })
-                              sources."get-stream-3.0.0"
-                              sources."is-stream-1.1.0"
-                              (sources."npm-run-path-2.0.2" // {
-                                dependencies = [
-                                  sources."path-key-2.0.1"
-                                ];
-                              })
-                              sources."p-finally-1.0.0"
-                              sources."signal-exit-3.0.2"
-                              sources."strip-eof-1.0.0"
-                            ];
-                          })
-                        ];
-                      })
-                      sources."widest-line-2.0.0"
-                    ];
-                  })
-                  (sources."configstore-3.1.2" // {
-                    dependencies = [
-                      (sources."dot-prop-4.2.0" // {
-                        dependencies = [
-                          sources."is-obj-1.0.1"
-                        ];
-                      })
-                      sources."graceful-fs-4.1.11"
-                      (sources."make-dir-1.2.0" // {
-                        dependencies = [
-                          sources."pify-3.0.0"
-                        ];
-                      })
-                      (sources."unique-string-1.0.0" // {
-                        dependencies = [
-                          sources."crypto-random-string-1.0.0"
-                        ];
-                      })
-                      (sources."write-file-atomic-2.3.0" // {
-                        dependencies = [
-                          sources."imurmurhash-0.1.4"
-                          sources."signal-exit-3.0.2"
-                        ];
-                      })
-                    ];
-                  })
-                  sources."import-lazy-2.1.0"
-                  (sources."is-ci-1.1.0" // {
-                    dependencies = [
-                      sources."ci-info-1.1.3"
-                    ];
-                  })
-                  (sources."is-installed-globally-0.1.0" // {
-                    dependencies = [
-                      (sources."global-dirs-0.1.1" // {
-                        dependencies = [
-                          sources."ini-1.3.5"
-                        ];
-                      })
-                      (sources."is-path-inside-1.0.1" // {
-                        dependencies = [
-                          sources."path-is-inside-1.0.2"
-                        ];
-                      })
-                    ];
-                  })
-                  sources."is-npm-1.0.0"
-                  (sources."latest-version-3.1.0" // {
-                    dependencies = [
-                      (sources."package-json-4.0.1" // {
-                        dependencies = [
-                          (sources."got-6.7.1" // {
-                            dependencies = [
-                              (sources."create-error-class-3.0.2" // {
-                                dependencies = [
-                                  sources."capture-stack-trace-1.0.0"
-                                ];
-                              })
-                              sources."duplexer3-0.1.4"
-                              sources."get-stream-3.0.0"
-                              sources."is-redirect-1.0.0"
-                              sources."is-retry-allowed-1.1.0"
-                              sources."is-stream-1.1.0"
-                              sources."lowercase-keys-1.0.1"
-                              sources."safe-buffer-5.1.1"
-                              sources."timed-out-4.0.1"
-                              sources."unzip-response-2.0.1"
-                              (sources."url-parse-lax-1.0.0" // {
-                                dependencies = [
-                                  sources."prepend-http-1.0.4"
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."registry-auth-token-3.3.2" // {
-                            dependencies = [
-                              (sources."rc-1.2.6" // {
-                                dependencies = [
-                                  sources."deep-extend-0.4.2"
-                                  sources."ini-1.3.5"
-                                  sources."strip-json-comments-2.0.1"
-                                ];
-                              })
-                              sources."safe-buffer-5.1.1"
-                            ];
-                          })
-                          (sources."registry-url-3.1.0" // {
-                            dependencies = [
-                              (sources."rc-1.2.6" // {
-                                dependencies = [
-                                  sources."deep-extend-0.4.2"
-                                  sources."ini-1.3.5"
-                                  sources."strip-json-comments-2.0.1"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."semver-5.5.0"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."semver-diff-2.1.0" // {
-                    dependencies = [
-                      sources."semver-5.5.0"
-                    ];
-                  })
-                  sources."xdg-basedir-3.0.0"
-                ];
-              })
-            ];
-          })
-          (sources."uglify-es-3.3.10" // {
-            dependencies = [
-              sources."commander-2.14.1"
-              sources."source-map-0.6.1"
-            ];
-          })
+          sources."ansi-regex-3.0.0"
+          sources."camelcase-2.1.1"
+          sources."commander-2.14.1"
+          sources."cross-spawn-5.1.0"
+          sources."is-fullwidth-code-point-2.0.0"
+          sources."isarray-0.0.1"
+          sources."string-width-2.1.1"
+          sources."strip-ansi-4.0.0"
         ];
       })
-      (sources."url-loader-0.6.2" // {
+      sources."sw-toolbox-3.6.0"
+      sources."tapable-0.2.8"
+      sources."tar-2.2.1"
+      sources."temp-0.8.3"
+      sources."term-size-1.2.0"
+      sources."text-table-0.2.0"
+      sources."through-2.3.8"
+      sources."thunky-1.0.2"
+      sources."time-stamp-2.0.0"
+      sources."timed-out-4.0.1"
+      sources."timers-browserify-2.0.10"
+      sources."tmp-0.0.33"
+      sources."to-arraybuffer-1.0.1"
+      sources."to-fast-properties-1.0.3"
+      sources."to-object-path-0.3.0"
+      sources."to-regex-3.0.2"
+      sources."to-regex-range-2.1.1"
+      sources."toposort-1.0.6"
+      sources."tough-cookie-2.3.4"
+      sources."trim-newlines-1.0.0"
+      sources."trim-right-1.0.1"
+      sources."tty-browserify-0.0.0"
+      sources."tunnel-agent-0.4.3"
+      sources."tweetnacl-0.14.5"
+      sources."type-is-1.6.16"
+      sources."uglify-es-3.3.10"
+      sources."uglify-js-3.3.22"
+      sources."uglify-to-browserify-1.0.2"
+      (sources."uglifyjs-webpack-plugin-0.4.6" // {
         dependencies = [
-          (sources."loader-utils-1.1.0" // {
+          sources."yargs-3.10.0"
+        ];
+      })
+      (sources."union-value-1.0.0" // {
+        dependencies = [
+          sources."set-value-0.4.3"
+        ];
+      })
+      sources."uniq-1.0.1"
+      sources."uniqid-4.1.1"
+      sources."uniqs-2.0.0"
+      sources."unique-string-1.0.0"
+      sources."universalify-0.1.1"
+      sources."unpipe-1.0.0"
+      (sources."unset-value-1.0.0" // {
+        dependencies = [
+          (sources."has-value-0.3.1" // {
             dependencies = [
-              sources."big.js-3.2.0"
-              sources."emojis-list-2.1.0"
-              sources."json5-0.5.1"
-            ];
-          })
-          sources."mime-1.6.0"
-          (sources."schema-utils-0.3.0" // {
-            dependencies = [
-              (sources."ajv-5.5.2" // {
-                dependencies = [
-                  sources."co-4.6.0"
-                  sources."fast-deep-equal-1.1.0"
-                  sources."fast-json-stable-stringify-2.0.0"
-                  sources."json-schema-traverse-0.3.1"
-                ];
-              })
+              sources."isobject-2.1.0"
             ];
           })
         ];
       })
+      sources."unzip-response-2.0.1"
+      sources."upath-1.0.4"
+      sources."update-notifier-2.5.0"
+      sources."upper-case-1.1.3"
+      sources."uri-js-3.0.2"
+      sources."urijs-1.19.1"
+      sources."urix-0.1.0"
+      (sources."url-0.11.0" // {
+        dependencies = [
+          sources."punycode-1.3.2"
+        ];
+      })
+      sources."url-loader-0.6.2"
+      sources."url-parse-1.4.0"
+      sources."url-parse-lax-1.0.0"
+      (sources."use-3.1.0" // {
+        dependencies = [
+          sources."kind-of-6.0.2"
+        ];
+      })
+      sources."user-home-1.1.1"
+      sources."util-0.10.3"
+      sources."util-deprecate-1.0.2"
+      sources."utila-0.4.0"
+      sources."utile-0.3.0"
+      sources."utils-merge-1.0.1"
+      sources."uuid-3.2.1"
+      sources."v8flags-2.1.1"
+      sources."validate-npm-package-license-3.0.3"
+      sources."vary-1.1.2"
+      sources."vendors-1.0.2"
+      sources."verror-1.10.0"
+      sources."vm-browserify-0.0.4"
+      (sources."watchpack-1.5.0" // {
+        dependencies = [
+          sources."is-accessor-descriptor-1.0.0"
+          sources."is-data-descriptor-1.0.0"
+          sources."is-descriptor-1.0.2"
+          sources."is-extendable-0.1.1"
+          (sources."is-number-3.0.0" // {
+            dependencies = [
+              sources."kind-of-3.2.2"
+            ];
+          })
+          sources."kind-of-3.2.2"
+        ];
+      })
+      sources."wbuf-1.7.3"
       (sources."webpack-3.11.0" // {
         dependencies = [
-          sources."acorn-5.5.3"
-          (sources."acorn-dynamic-import-2.0.2" // {
+          sources."ajv-6.4.0"
+          sources."ansi-regex-3.0.0"
+          (sources."anymatch-2.0.0" // {
             dependencies = [
-              sources."acorn-4.0.13"
+              sources."is-extendable-0.1.1"
             ];
           })
-          (sources."ajv-6.4.0" // {
+          sources."arr-diff-4.0.0"
+          sources."array-unique-0.3.2"
+          (sources."braces-2.3.2" // {
             dependencies = [
-              sources."fast-deep-equal-1.1.0"
-              sources."fast-json-stable-stringify-2.0.0"
-              sources."json-schema-traverse-0.3.1"
-              (sources."uri-js-3.0.2" // {
-                dependencies = [
-                  sources."punycode-2.1.0"
-                ];
-              })
+              sources."is-accessor-descriptor-1.0.0"
+              sources."is-data-descriptor-1.0.0"
+              sources."is-descriptor-1.0.2"
+              sources."is-extendable-0.1.1"
             ];
           })
-          sources."ajv-keywords-3.1.0"
-          (sources."async-2.6.0" // {
+          sources."camelcase-4.1.0"
+          (sources."chokidar-2.0.3" // {
             dependencies = [
-              sources."lodash-4.17.5"
+              (sources."is-accessor-descriptor-0.1.6" // {
+                dependencies = [
+                  sources."kind-of-3.2.2"
+                ];
+              })
+              (sources."is-data-descriptor-0.1.4" // {
+                dependencies = [
+                  sources."kind-of-3.2.2"
+                ];
+              })
+              sources."is-descriptor-0.1.6"
+              sources."is-extendable-1.0.1"
             ];
           })
-          (sources."enhanced-resolve-3.4.1" // {
+          sources."cliui-2.1.0"
+          sources."define-property-1.0.0"
+          (sources."expand-brackets-2.1.4" // {
             dependencies = [
-              sources."graceful-fs-4.1.11"
-              sources."object-assign-4.1.1"
+              sources."define-property-0.2.5"
             ];
           })
-          (sources."escope-3.6.0" // {
+          sources."extend-shallow-2.0.1"
+          (sources."extglob-2.0.4" // {
             dependencies = [
-              (sources."es6-map-0.1.5" // {
-                dependencies = [
-                  sources."d-1.0.0"
-                  (sources."es5-ext-0.10.42" // {
-                    dependencies = [
-                      sources."next-tick-1.0.0"
-                    ];
-                  })
-                  sources."es6-iterator-2.0.3"
-                  sources."es6-set-0.1.5"
-                  sources."es6-symbol-3.1.1"
-                  sources."event-emitter-0.3.5"
-                ];
-              })
-              (sources."es6-weak-map-2.0.2" // {
-                dependencies = [
-                  sources."d-1.0.0"
-                  (sources."es5-ext-0.10.42" // {
-                    dependencies = [
-                      sources."next-tick-1.0.0"
-                    ];
-                  })
-                  sources."es6-iterator-2.0.3"
-                  sources."es6-symbol-3.1.1"
-                ];
-              })
-              sources."esrecurse-4.2.1"
-              sources."estraverse-4.2.0"
+              sources."define-property-1.0.0"
+              sources."extend-shallow-2.0.1"
+              sources."kind-of-5.1.0"
             ];
           })
-          sources."interpret-1.1.0"
-          sources."json-loader-0.5.7"
-          sources."json5-0.5.1"
-          sources."loader-runner-2.3.0"
-          (sources."loader-utils-1.1.0" // {
+          sources."fill-range-4.0.0"
+          (sources."glob-parent-3.1.0" // {
             dependencies = [
-              sources."big.js-3.2.0"
-              sources."emojis-list-2.1.0"
+              sources."is-glob-3.1.0"
             ];
           })
-          (sources."memory-fs-0.4.1" // {
+          sources."has-flag-2.0.0"
+          sources."has-values-0.1.4"
+          sources."inherits-2.0.1"
+          (sources."is-accessor-descriptor-0.1.6" // {
             dependencies = [
-              (sources."errno-0.1.7" // {
-                dependencies = [
-                  sources."prr-1.0.1"
-                ];
-              })
-              (sources."readable-stream-2.3.5" // {
-                dependencies = [
-                  sources."core-util-is-1.0.2"
-                  sources."inherits-2.0.3"
-                  sources."isarray-1.0.0"
-                  sources."process-nextick-args-2.0.0"
-                  sources."safe-buffer-5.1.1"
-                  sources."string_decoder-1.0.3"
-                  sources."util-deprecate-1.0.2"
-                ];
-              })
+              sources."kind-of-3.2.2"
             ];
           })
-          (sources."mkdirp-0.5.1" // {
+          (sources."is-data-descriptor-0.1.4" // {
             dependencies = [
-              sources."minimist-0.0.8"
+              sources."kind-of-3.2.2"
             ];
           })
-          (sources."node-libs-browser-2.1.0" // {
-            dependencies = [
-              sources."assert-1.4.1"
-              (sources."browserify-zlib-0.2.0" // {
-                dependencies = [
-                  sources."pako-1.0.6"
-                ];
-              })
-              (sources."buffer-4.9.1" // {
-                dependencies = [
-                  sources."base64-js-1.2.3"
-                  sources."ieee754-1.1.11"
-                  sources."isarray-1.0.0"
-                ];
-              })
-              (sources."console-browserify-1.1.0" // {
-                dependencies = [
-                  sources."date-now-0.1.4"
-                ];
-              })
-              sources."constants-browserify-1.0.0"
-              (sources."crypto-browserify-3.12.0" // {
-                dependencies = [
-                  (sources."browserify-cipher-1.0.0" // {
-                    dependencies = [
-                      (sources."browserify-aes-1.1.1" // {
-                        dependencies = [
-                          sources."buffer-xor-1.0.3"
-                          sources."cipher-base-1.0.4"
-                          sources."safe-buffer-5.1.1"
-                        ];
-                      })
-                      (sources."browserify-des-1.0.0" // {
-                        dependencies = [
-                          (sources."cipher-base-1.0.4" // {
-                            dependencies = [
-                              sources."safe-buffer-5.1.1"
-                            ];
-                          })
-                          (sources."des.js-1.0.0" // {
-                            dependencies = [
-                              sources."minimalistic-assert-1.0.0"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."evp_bytestokey-1.0.3" // {
-                        dependencies = [
-                          (sources."md5.js-1.3.4" // {
-                            dependencies = [
-                              sources."hash-base-3.0.4"
-                            ];
-                          })
-                          sources."safe-buffer-5.1.1"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."browserify-sign-4.0.4" // {
-                    dependencies = [
-                      sources."bn.js-4.11.8"
-                      sources."browserify-rsa-4.0.1"
-                      (sources."elliptic-6.4.0" // {
-                        dependencies = [
-                          sources."brorand-1.1.0"
-                          sources."hash.js-1.1.3"
-                          sources."hmac-drbg-1.0.1"
-                          sources."minimalistic-assert-1.0.0"
-                          sources."minimalistic-crypto-utils-1.0.1"
-                        ];
-                      })
-                      (sources."parse-asn1-5.1.0" // {
-                        dependencies = [
-                          (sources."asn1.js-4.10.1" // {
-                            dependencies = [
-                              sources."minimalistic-assert-1.0.0"
-                            ];
-                          })
-                          (sources."browserify-aes-1.1.1" // {
-                            dependencies = [
-                              sources."buffer-xor-1.0.3"
-                              sources."cipher-base-1.0.4"
-                              sources."safe-buffer-5.1.1"
-                            ];
-                          })
-                          (sources."evp_bytestokey-1.0.3" // {
-                            dependencies = [
-                              (sources."md5.js-1.3.4" // {
-                                dependencies = [
-                                  sources."hash-base-3.0.4"
-                                ];
-                              })
-                              sources."safe-buffer-5.1.1"
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."create-ecdh-4.0.0" // {
-                    dependencies = [
-                      sources."bn.js-4.11.8"
-                      (sources."elliptic-6.4.0" // {
-                        dependencies = [
-                          sources."brorand-1.1.0"
-                          sources."hash.js-1.1.3"
-                          sources."hmac-drbg-1.0.1"
-                          sources."minimalistic-assert-1.0.0"
-                          sources."minimalistic-crypto-utils-1.0.1"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."create-hash-1.1.3" // {
-                    dependencies = [
-                      (sources."cipher-base-1.0.4" // {
-                        dependencies = [
-                          sources."safe-buffer-5.1.1"
-                        ];
-                      })
-                      (sources."ripemd160-2.0.1" // {
-                        dependencies = [
-                          sources."hash-base-2.0.2"
-                        ];
-                      })
-                      (sources."sha.js-2.4.11" // {
-                        dependencies = [
-                          sources."safe-buffer-5.1.1"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."create-hmac-1.1.6" // {
-                    dependencies = [
-                      sources."cipher-base-1.0.4"
-                      (sources."ripemd160-2.0.1" // {
-                        dependencies = [
-                          sources."hash-base-2.0.2"
-                        ];
-                      })
-                      sources."safe-buffer-5.1.1"
-                      sources."sha.js-2.4.11"
-                    ];
-                  })
-                  (sources."diffie-hellman-5.0.2" // {
-                    dependencies = [
-                      sources."bn.js-4.11.8"
-                      (sources."miller-rabin-4.0.1" // {
-                        dependencies = [
-                          sources."brorand-1.1.0"
-                        ];
-                      })
-                    ];
-                  })
-                  sources."inherits-2.0.3"
-                  (sources."pbkdf2-3.0.14" // {
-                    dependencies = [
-                      (sources."ripemd160-2.0.1" // {
-                        dependencies = [
-                          sources."hash-base-2.0.2"
-                        ];
-                      })
-                      sources."safe-buffer-5.1.1"
-                      sources."sha.js-2.4.11"
-                    ];
-                  })
-                  (sources."public-encrypt-4.0.0" // {
-                    dependencies = [
-                      sources."bn.js-4.11.8"
-                      sources."browserify-rsa-4.0.1"
-                      (sources."parse-asn1-5.1.0" // {
-                        dependencies = [
-                          (sources."asn1.js-4.10.1" // {
-                            dependencies = [
-                              sources."minimalistic-assert-1.0.0"
-                            ];
-                          })
-                          (sources."browserify-aes-1.1.1" // {
-                            dependencies = [
-                              sources."buffer-xor-1.0.3"
-                              sources."cipher-base-1.0.4"
-                              sources."safe-buffer-5.1.1"
-                            ];
-                          })
-                          (sources."evp_bytestokey-1.0.3" // {
-                            dependencies = [
-                              (sources."md5.js-1.3.4" // {
-                                dependencies = [
-                                  sources."hash-base-3.0.4"
-                                ];
-                              })
-                              sources."safe-buffer-5.1.1"
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."randombytes-2.0.6" // {
-                    dependencies = [
-                      sources."safe-buffer-5.1.1"
-                    ];
-                  })
-                  (sources."randomfill-1.0.4" // {
-                    dependencies = [
-                      sources."safe-buffer-5.1.1"
-                    ];
-                  })
-                ];
-              })
-              sources."domain-browser-1.2.0"
-              sources."events-1.1.1"
-              sources."https-browserify-1.0.0"
-              sources."os-browserify-0.3.0"
-              sources."path-browserify-0.0.0"
-              sources."process-0.11.10"
-              sources."punycode-1.4.1"
-              sources."querystring-es3-0.2.1"
-              (sources."readable-stream-2.3.5" // {
-                dependencies = [
-                  sources."core-util-is-1.0.2"
-                  sources."inherits-2.0.3"
-                  sources."isarray-1.0.0"
-                  sources."process-nextick-args-2.0.0"
-                  sources."safe-buffer-5.1.1"
-                  sources."string_decoder-1.0.3"
-                  sources."util-deprecate-1.0.2"
-                ];
-              })
-              (sources."stream-browserify-2.0.1" // {
-                dependencies = [
-                  sources."inherits-2.0.3"
-                ];
-              })
-              (sources."stream-http-2.8.1" // {
-                dependencies = [
-                  sources."builtin-status-codes-3.0.0"
-                  sources."inherits-2.0.3"
-                  sources."to-arraybuffer-1.0.1"
-                  sources."xtend-4.0.1"
-                ];
-              })
-              (sources."string_decoder-1.1.0" // {
-                dependencies = [
-                  sources."safe-buffer-5.1.1"
-                ];
-              })
-              (sources."timers-browserify-2.0.6" // {
-                dependencies = [
-                  sources."setimmediate-1.0.5"
-                ];
-              })
-              sources."tty-browserify-0.0.0"
-              (sources."url-0.11.0" // {
-                dependencies = [
-                  sources."punycode-1.3.2"
-                  sources."querystring-0.2.0"
-                ];
-              })
-              (sources."util-0.10.3" // {
-                dependencies = [
-                  sources."inherits-2.0.1"
-                ];
-              })
-              (sources."vm-browserify-0.0.4" // {
-                dependencies = [
-                  sources."indexof-0.0.1"
-                ];
-              })
-            ];
-          })
+          sources."is-descriptor-0.1.6"
+          sources."is-extendable-1.0.1"
+          sources."is-extglob-2.1.1"
+          sources."is-fullwidth-code-point-2.0.0"
+          sources."is-glob-4.0.0"
+          sources."is-number-4.0.0"
+          sources."isobject-3.0.1"
+          sources."kind-of-6.0.2"
+          sources."load-json-file-2.0.0"
+          sources."micromatch-3.1.10"
+          sources."os-locale-2.1.0"
+          sources."path-type-2.0.0"
+          sources."pify-2.3.0"
+          sources."read-pkg-2.0.0"
+          sources."read-pkg-up-2.0.0"
           sources."source-map-0.5.7"
-          (sources."supports-color-4.5.0" // {
-            dependencies = [
-              sources."has-flag-2.0.0"
-            ];
-          })
-          sources."tapable-0.2.8"
-          (sources."uglifyjs-webpack-plugin-0.4.6" // {
-            dependencies = [
-              (sources."uglify-js-2.8.29" // {
-                dependencies = [
-                  sources."uglify-to-browserify-1.0.2"
-                  (sources."yargs-3.10.0" // {
-                    dependencies = [
-                      sources."camelcase-1.2.1"
-                      (sources."cliui-2.1.0" // {
-                        dependencies = [
-                          (sources."center-align-0.1.3" // {
-                            dependencies = [
-                              (sources."align-text-0.1.4" // {
-                                dependencies = [
-                                  (sources."kind-of-3.2.2" // {
-                                    dependencies = [
-                                      sources."is-buffer-1.1.6"
-                                    ];
-                                  })
-                                  sources."longest-1.0.1"
-                                  sources."repeat-string-1.6.1"
-                                ];
-                              })
-                              sources."lazy-cache-1.0.4"
-                            ];
-                          })
-                          (sources."right-align-0.1.3" // {
-                            dependencies = [
-                              (sources."align-text-0.1.4" // {
-                                dependencies = [
-                                  (sources."kind-of-3.2.2" // {
-                                    dependencies = [
-                                      sources."is-buffer-1.1.6"
-                                    ];
-                                  })
-                                  sources."longest-1.0.1"
-                                  sources."repeat-string-1.6.1"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."wordwrap-0.0.2"
-                        ];
-                      })
-                      sources."decamelize-1.2.0"
-                      sources."window-size-0.1.0"
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          (sources."watchpack-1.5.0" // {
-            dependencies = [
-              (sources."chokidar-2.0.3" // {
-                dependencies = [
-                  (sources."anymatch-2.0.0" // {
-                    dependencies = [
-                      (sources."micromatch-3.1.10" // {
-                        dependencies = [
-                          sources."arr-diff-4.0.0"
-                          sources."array-unique-0.3.2"
-                          (sources."define-property-2.0.2" // {
-                            dependencies = [
-                              (sources."is-descriptor-1.0.2" // {
-                                dependencies = [
-                                  sources."is-accessor-descriptor-1.0.0"
-                                  sources."is-data-descriptor-1.0.0"
-                                ];
-                              })
-                              sources."isobject-3.0.1"
-                            ];
-                          })
-                          (sources."extend-shallow-3.0.2" // {
-                            dependencies = [
-                              sources."assign-symbols-1.0.0"
-                              (sources."is-extendable-1.0.1" // {
-                                dependencies = [
-                                  (sources."is-plain-object-2.0.4" // {
-                                    dependencies = [
-                                      sources."isobject-3.0.1"
-                                    ];
-                                  })
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."extglob-2.0.4" // {
-                            dependencies = [
-                              (sources."define-property-1.0.0" // {
-                                dependencies = [
-                                  (sources."is-descriptor-1.0.2" // {
-                                    dependencies = [
-                                      sources."is-accessor-descriptor-1.0.0"
-                                      sources."is-data-descriptor-1.0.0"
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."expand-brackets-2.1.4" // {
-                                dependencies = [
-                                  (sources."debug-2.6.9" // {
-                                    dependencies = [
-                                      sources."ms-2.0.0"
-                                    ];
-                                  })
-                                  (sources."define-property-0.2.5" // {
-                                    dependencies = [
-                                      (sources."is-descriptor-0.1.6" // {
-                                        dependencies = [
-                                          (sources."is-accessor-descriptor-0.1.6" // {
-                                            dependencies = [
-                                              (sources."kind-of-3.2.2" // {
-                                                dependencies = [
-                                                  sources."is-buffer-1.1.6"
-                                                ];
-                                              })
-                                            ];
-                                          })
-                                          (sources."is-data-descriptor-0.1.4" // {
-                                            dependencies = [
-                                              (sources."kind-of-3.2.2" // {
-                                                dependencies = [
-                                                  sources."is-buffer-1.1.6"
-                                                ];
-                                              })
-                                            ];
-                                          })
-                                          sources."kind-of-5.1.0"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  sources."posix-character-classes-0.1.1"
-                                ];
-                              })
-                              (sources."extend-shallow-2.0.1" // {
-                                dependencies = [
-                                  sources."is-extendable-0.1.1"
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."fragment-cache-0.2.1" // {
-                            dependencies = [
-                              sources."map-cache-0.2.2"
-                            ];
-                          })
-                          sources."kind-of-6.0.2"
-                          (sources."nanomatch-1.2.9" // {
-                            dependencies = [
-                              (sources."is-odd-2.0.0" // {
-                                dependencies = [
-                                  sources."is-number-4.0.0"
-                                ];
-                              })
-                              sources."is-windows-1.0.2"
-                            ];
-                          })
-                          (sources."object.pick-1.3.0" // {
-                            dependencies = [
-                              sources."isobject-3.0.1"
-                            ];
-                          })
-                          (sources."regex-not-1.0.2" // {
-                            dependencies = [
-                              (sources."safe-regex-1.1.0" // {
-                                dependencies = [
-                                  sources."ret-0.1.15"
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."snapdragon-0.8.2" // {
-                            dependencies = [
-                              (sources."base-0.11.2" // {
-                                dependencies = [
-                                  (sources."cache-base-1.0.1" // {
-                                    dependencies = [
-                                      (sources."collection-visit-1.0.0" // {
-                                        dependencies = [
-                                          sources."map-visit-1.0.0"
-                                          sources."object-visit-1.0.1"
-                                        ];
-                                      })
-                                      sources."get-value-2.0.6"
-                                      (sources."has-value-1.0.0" // {
-                                        dependencies = [
-                                          (sources."has-values-1.0.0" // {
-                                            dependencies = [
-                                              (sources."is-number-3.0.0" // {
-                                                dependencies = [
-                                                  (sources."kind-of-3.2.2" // {
-                                                    dependencies = [
-                                                      sources."is-buffer-1.1.6"
-                                                    ];
-                                                  })
-                                                ];
-                                              })
-                                              (sources."kind-of-4.0.0" // {
-                                                dependencies = [
-                                                  sources."is-buffer-1.1.6"
-                                                ];
-                                              })
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      (sources."set-value-2.0.0" // {
-                                        dependencies = [
-                                          sources."is-extendable-0.1.1"
-                                          sources."is-plain-object-2.0.4"
-                                          (sources."split-string-3.1.0" // {
-                                            dependencies = [
-                                              (sources."extend-shallow-3.0.2" // {
-                                                dependencies = [
-                                                  sources."assign-symbols-1.0.0"
-                                                  sources."is-extendable-1.0.1"
-                                                ];
-                                              })
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      (sources."to-object-path-0.3.0" // {
-                                        dependencies = [
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      (sources."union-value-1.0.0" // {
-                                        dependencies = [
-                                          sources."arr-union-3.1.0"
-                                          sources."is-extendable-0.1.1"
-                                          (sources."set-value-0.4.3" // {
-                                            dependencies = [
-                                              sources."is-plain-object-2.0.4"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      (sources."unset-value-1.0.0" // {
-                                        dependencies = [
-                                          (sources."has-value-0.3.1" // {
-                                            dependencies = [
-                                              sources."has-values-0.1.4"
-                                              (sources."isobject-2.1.0" // {
-                                                dependencies = [
-                                                  sources."isarray-1.0.0"
-                                                ];
-                                              })
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."class-utils-0.3.6" // {
-                                    dependencies = [
-                                      sources."arr-union-3.1.0"
-                                      (sources."define-property-0.2.5" // {
-                                        dependencies = [
-                                          (sources."is-descriptor-0.1.6" // {
-                                            dependencies = [
-                                              (sources."is-accessor-descriptor-0.1.6" // {
-                                                dependencies = [
-                                                  (sources."kind-of-3.2.2" // {
-                                                    dependencies = [
-                                                      sources."is-buffer-1.1.6"
-                                                    ];
-                                                  })
-                                                ];
-                                              })
-                                              (sources."is-data-descriptor-0.1.4" // {
-                                                dependencies = [
-                                                  (sources."kind-of-3.2.2" // {
-                                                    dependencies = [
-                                                      sources."is-buffer-1.1.6"
-                                                    ];
-                                                  })
-                                                ];
-                                              })
-                                              sources."kind-of-5.1.0"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      (sources."static-extend-0.1.2" // {
-                                        dependencies = [
-                                          (sources."object-copy-0.1.0" // {
-                                            dependencies = [
-                                              sources."copy-descriptor-0.1.1"
-                                              (sources."kind-of-3.2.2" // {
-                                                dependencies = [
-                                                  sources."is-buffer-1.1.6"
-                                                ];
-                                              })
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  sources."component-emitter-1.2.1"
-                                  (sources."define-property-1.0.0" // {
-                                    dependencies = [
-                                      (sources."is-descriptor-1.0.2" // {
-                                        dependencies = [
-                                          sources."is-accessor-descriptor-1.0.0"
-                                          sources."is-data-descriptor-1.0.0"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  sources."isobject-3.0.1"
-                                  (sources."mixin-deep-1.3.1" // {
-                                    dependencies = [
-                                      sources."for-in-1.0.2"
-                                      (sources."is-extendable-1.0.1" // {
-                                        dependencies = [
-                                          sources."is-plain-object-2.0.4"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  sources."pascalcase-0.1.1"
-                                ];
-                              })
-                              (sources."debug-2.6.9" // {
-                                dependencies = [
-                                  sources."ms-2.0.0"
-                                ];
-                              })
-                              (sources."define-property-0.2.5" // {
-                                dependencies = [
-                                  (sources."is-descriptor-0.1.6" // {
-                                    dependencies = [
-                                      (sources."is-accessor-descriptor-0.1.6" // {
-                                        dependencies = [
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      (sources."is-data-descriptor-0.1.4" // {
-                                        dependencies = [
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      sources."kind-of-5.1.0"
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."extend-shallow-2.0.1" // {
-                                dependencies = [
-                                  sources."is-extendable-0.1.1"
-                                ];
-                              })
-                              sources."map-cache-0.2.2"
-                              (sources."source-map-resolve-0.5.1" // {
-                                dependencies = [
-                                  sources."atob-2.1.0"
-                                  sources."decode-uri-component-0.2.0"
-                                  sources."resolve-url-0.2.1"
-                                  sources."source-map-url-0.4.0"
-                                  sources."urix-0.1.0"
-                                ];
-                              })
-                              sources."use-3.1.0"
-                            ];
-                          })
-                          (sources."to-regex-3.0.2" // {
-                            dependencies = [
-                              (sources."safe-regex-1.1.0" // {
-                                dependencies = [
-                                  sources."ret-0.1.15"
-                                ];
-                              })
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                  sources."async-each-1.0.1"
-                  (sources."braces-2.3.1" // {
-                    dependencies = [
-                      sources."arr-flatten-1.1.0"
-                      sources."array-unique-0.3.2"
-                      (sources."define-property-1.0.0" // {
-                        dependencies = [
-                          (sources."is-descriptor-1.0.2" // {
-                            dependencies = [
-                              sources."is-accessor-descriptor-1.0.0"
-                              sources."is-data-descriptor-1.0.0"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."extend-shallow-2.0.1" // {
-                        dependencies = [
-                          sources."is-extendable-0.1.1"
-                        ];
-                      })
-                      (sources."fill-range-4.0.0" // {
-                        dependencies = [
-                          (sources."is-number-3.0.0" // {
-                            dependencies = [
-                              (sources."kind-of-3.2.2" // {
-                                dependencies = [
-                                  sources."is-buffer-1.1.6"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."repeat-string-1.6.1"
-                          sources."to-regex-range-2.1.1"
-                        ];
-                      })
-                      sources."isobject-3.0.1"
-                      sources."kind-of-6.0.2"
-                      sources."repeat-element-1.1.2"
-                      (sources."snapdragon-0.8.2" // {
-                        dependencies = [
-                          (sources."base-0.11.2" // {
-                            dependencies = [
-                              (sources."cache-base-1.0.1" // {
-                                dependencies = [
-                                  (sources."collection-visit-1.0.0" // {
-                                    dependencies = [
-                                      sources."map-visit-1.0.0"
-                                      sources."object-visit-1.0.1"
-                                    ];
-                                  })
-                                  sources."get-value-2.0.6"
-                                  (sources."has-value-1.0.0" // {
-                                    dependencies = [
-                                      (sources."has-values-1.0.0" // {
-                                        dependencies = [
-                                          (sources."is-number-3.0.0" // {
-                                            dependencies = [
-                                              (sources."kind-of-3.2.2" // {
-                                                dependencies = [
-                                                  sources."is-buffer-1.1.6"
-                                                ];
-                                              })
-                                            ];
-                                          })
-                                          (sources."kind-of-4.0.0" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."set-value-2.0.0" // {
-                                    dependencies = [
-                                      sources."is-extendable-0.1.1"
-                                      sources."is-plain-object-2.0.4"
-                                    ];
-                                  })
-                                  (sources."to-object-path-0.3.0" // {
-                                    dependencies = [
-                                      (sources."kind-of-3.2.2" // {
-                                        dependencies = [
-                                          sources."is-buffer-1.1.6"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."union-value-1.0.0" // {
-                                    dependencies = [
-                                      sources."arr-union-3.1.0"
-                                      sources."is-extendable-0.1.1"
-                                      (sources."set-value-0.4.3" // {
-                                        dependencies = [
-                                          sources."is-plain-object-2.0.4"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."unset-value-1.0.0" // {
-                                    dependencies = [
-                                      (sources."has-value-0.3.1" // {
-                                        dependencies = [
-                                          sources."has-values-0.1.4"
-                                          (sources."isobject-2.1.0" // {
-                                            dependencies = [
-                                              sources."isarray-1.0.0"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."class-utils-0.3.6" // {
-                                dependencies = [
-                                  sources."arr-union-3.1.0"
-                                  (sources."define-property-0.2.5" // {
-                                    dependencies = [
-                                      (sources."is-descriptor-0.1.6" // {
-                                        dependencies = [
-                                          (sources."is-accessor-descriptor-0.1.6" // {
-                                            dependencies = [
-                                              (sources."kind-of-3.2.2" // {
-                                                dependencies = [
-                                                  sources."is-buffer-1.1.6"
-                                                ];
-                                              })
-                                            ];
-                                          })
-                                          (sources."is-data-descriptor-0.1.4" // {
-                                            dependencies = [
-                                              (sources."kind-of-3.2.2" // {
-                                                dependencies = [
-                                                  sources."is-buffer-1.1.6"
-                                                ];
-                                              })
-                                            ];
-                                          })
-                                          sources."kind-of-5.1.0"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."static-extend-0.1.2" // {
-                                    dependencies = [
-                                      (sources."object-copy-0.1.0" // {
-                                        dependencies = [
-                                          sources."copy-descriptor-0.1.1"
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                ];
-                              })
-                              sources."component-emitter-1.2.1"
-                              (sources."define-property-1.0.0" // {
-                                dependencies = [
-                                  (sources."is-descriptor-1.0.2" // {
-                                    dependencies = [
-                                      sources."is-accessor-descriptor-1.0.0"
-                                      sources."is-data-descriptor-1.0.0"
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."mixin-deep-1.3.1" // {
-                                dependencies = [
-                                  sources."for-in-1.0.2"
-                                  (sources."is-extendable-1.0.1" // {
-                                    dependencies = [
-                                      sources."is-plain-object-2.0.4"
-                                    ];
-                                  })
-                                ];
-                              })
-                              sources."pascalcase-0.1.1"
-                            ];
-                          })
-                          (sources."debug-2.6.9" // {
-                            dependencies = [
-                              sources."ms-2.0.0"
-                            ];
-                          })
-                          (sources."define-property-0.2.5" // {
-                            dependencies = [
-                              (sources."is-descriptor-0.1.6" // {
-                                dependencies = [
-                                  (sources."is-accessor-descriptor-0.1.6" // {
-                                    dependencies = [
-                                      (sources."kind-of-3.2.2" // {
-                                        dependencies = [
-                                          sources."is-buffer-1.1.6"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."is-data-descriptor-0.1.4" // {
-                                    dependencies = [
-                                      (sources."kind-of-3.2.2" // {
-                                        dependencies = [
-                                          sources."is-buffer-1.1.6"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  sources."kind-of-5.1.0"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."map-cache-0.2.2"
-                          (sources."source-map-resolve-0.5.1" // {
-                            dependencies = [
-                              sources."atob-2.1.0"
-                              sources."decode-uri-component-0.2.0"
-                              sources."resolve-url-0.2.1"
-                              sources."source-map-url-0.4.0"
-                              sources."urix-0.1.0"
-                            ];
-                          })
-                          sources."use-3.1.0"
-                        ];
-                      })
-                      (sources."snapdragon-node-2.1.1" // {
-                        dependencies = [
-                          (sources."snapdragon-util-3.0.1" // {
-                            dependencies = [
-                              (sources."kind-of-3.2.2" // {
-                                dependencies = [
-                                  sources."is-buffer-1.1.6"
-                                ];
-                              })
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."split-string-3.1.0" // {
-                        dependencies = [
-                          (sources."extend-shallow-3.0.2" // {
-                            dependencies = [
-                              sources."assign-symbols-1.0.0"
-                              (sources."is-extendable-1.0.1" // {
-                                dependencies = [
-                                  sources."is-plain-object-2.0.4"
-                                ];
-                              })
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."to-regex-3.0.2" // {
-                        dependencies = [
-                          (sources."define-property-2.0.2" // {
-                            dependencies = [
-                              (sources."is-descriptor-1.0.2" // {
-                                dependencies = [
-                                  sources."is-accessor-descriptor-1.0.0"
-                                  sources."is-data-descriptor-1.0.0"
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."extend-shallow-3.0.2" // {
-                            dependencies = [
-                              sources."assign-symbols-1.0.0"
-                              (sources."is-extendable-1.0.1" // {
-                                dependencies = [
-                                  sources."is-plain-object-2.0.4"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."regex-not-1.0.2"
-                          (sources."safe-regex-1.1.0" // {
-                            dependencies = [
-                              sources."ret-0.1.15"
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."fsevents-1.1.3" // {
-                    dependencies = [
-                      sources."nan-2.10.0"
-                    ];
-                  })
-                  (sources."glob-parent-3.1.0" // {
-                    dependencies = [
-                      (sources."is-glob-3.1.0" // {
-                        dependencies = [
-                          sources."is-extglob-2.1.1"
-                        ];
-                      })
-                      sources."path-dirname-1.0.2"
-                    ];
-                  })
-                  sources."inherits-2.0.3"
-                  (sources."is-binary-path-1.0.1" // {
-                    dependencies = [
-                      sources."binary-extensions-1.11.0"
-                    ];
-                  })
-                  (sources."is-glob-4.0.0" // {
-                    dependencies = [
-                      sources."is-extglob-2.1.1"
-                    ];
-                  })
-                  (sources."normalize-path-2.1.1" // {
-                    dependencies = [
-                      sources."remove-trailing-separator-1.1.0"
-                    ];
-                  })
-                  sources."path-is-absolute-1.0.1"
-                  (sources."readdirp-2.1.0" // {
-                    dependencies = [
-                      (sources."minimatch-3.0.4" // {
-                        dependencies = [
-                          (sources."brace-expansion-1.1.11" // {
-                            dependencies = [
-                              sources."balanced-match-1.0.0"
-                              sources."concat-map-0.0.1"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."readable-stream-2.3.5" // {
-                        dependencies = [
-                          sources."core-util-is-1.0.2"
-                          sources."isarray-1.0.0"
-                          sources."process-nextick-args-2.0.0"
-                          sources."safe-buffer-5.1.1"
-                          sources."string_decoder-1.0.3"
-                          sources."util-deprecate-1.0.2"
-                        ];
-                      })
-                      sources."set-immediate-shim-1.0.1"
-                    ];
-                  })
-                  sources."upath-1.0.4"
-                ];
-              })
-              sources."graceful-fs-4.1.11"
-              sources."neo-async-2.5.0"
-            ];
-          })
-          (sources."webpack-sources-1.1.0" // {
-            dependencies = [
-              sources."source-list-map-2.0.0"
-              sources."source-map-0.6.1"
-            ];
-          })
+          sources."string-width-2.1.1"
+          sources."strip-ansi-4.0.0"
+          sources."strip-bom-3.0.0"
+          sources."supports-color-4.5.0"
+          sources."uglify-js-2.8.29"
+          sources."which-module-2.0.0"
           (sources."yargs-8.0.2" // {
             dependencies = [
-              sources."camelcase-4.1.0"
               (sources."cliui-3.2.0" // {
                 dependencies = [
-                  (sources."string-width-1.0.2" // {
-                    dependencies = [
-                      sources."code-point-at-1.1.0"
-                      (sources."is-fullwidth-code-point-1.0.0" // {
-                        dependencies = [
-                          sources."number-is-nan-1.0.1"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."strip-ansi-3.0.1" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  sources."wrap-ansi-2.1.0"
+                  sources."string-width-1.0.2"
                 ];
               })
-              sources."decamelize-1.2.0"
-              sources."get-caller-file-1.0.2"
-              (sources."os-locale-2.1.0" // {
-                dependencies = [
-                  (sources."execa-0.7.0" // {
-                    dependencies = [
-                      (sources."cross-spawn-5.1.0" // {
-                        dependencies = [
-                          (sources."lru-cache-4.1.2" // {
-                            dependencies = [
-                              sources."pseudomap-1.0.2"
-                              sources."yallist-2.1.2"
-                            ];
-                          })
-                          (sources."shebang-command-1.2.0" // {
-                            dependencies = [
-                              sources."shebang-regex-1.0.0"
-                            ];
-                          })
-                          (sources."which-1.3.0" // {
-                            dependencies = [
-                              sources."isexe-2.0.0"
-                            ];
-                          })
-                        ];
-                      })
-                      sources."get-stream-3.0.0"
-                      sources."is-stream-1.1.0"
-                      (sources."npm-run-path-2.0.2" // {
-                        dependencies = [
-                          sources."path-key-2.0.1"
-                        ];
-                      })
-                      sources."p-finally-1.0.0"
-                      sources."signal-exit-3.0.2"
-                      sources."strip-eof-1.0.0"
-                    ];
-                  })
-                  (sources."lcid-1.0.0" // {
-                    dependencies = [
-                      sources."invert-kv-1.0.0"
-                    ];
-                  })
-                  (sources."mem-1.1.0" // {
-                    dependencies = [
-                      sources."mimic-fn-1.2.0"
-                    ];
-                  })
-                ];
-              })
-              (sources."read-pkg-up-2.0.0" // {
-                dependencies = [
-                  (sources."find-up-2.1.0" // {
-                    dependencies = [
-                      (sources."locate-path-2.0.0" // {
-                        dependencies = [
-                          (sources."p-locate-2.0.0" // {
-                            dependencies = [
-                              (sources."p-limit-1.2.0" // {
-                                dependencies = [
-                                  sources."p-try-1.0.0"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."path-exists-3.0.0"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."read-pkg-2.0.0" // {
-                    dependencies = [
-                      (sources."load-json-file-2.0.0" // {
-                        dependencies = [
-                          sources."graceful-fs-4.1.11"
-                          (sources."parse-json-2.2.0" // {
-                            dependencies = [
-                              (sources."error-ex-1.3.1" // {
-                                dependencies = [
-                                  sources."is-arrayish-0.2.1"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."pify-2.3.0"
-                          sources."strip-bom-3.0.0"
-                        ];
-                      })
-                      (sources."normalize-package-data-2.4.0" // {
-                        dependencies = [
-                          sources."hosted-git-info-2.6.0"
-                          (sources."is-builtin-module-1.0.0" // {
-                            dependencies = [
-                              sources."builtin-modules-1.1.1"
-                            ];
-                          })
-                          sources."semver-5.5.0"
-                          (sources."validate-npm-package-license-3.0.3" // {
-                            dependencies = [
-                              (sources."spdx-correct-3.0.0" // {
-                                dependencies = [
-                                  sources."spdx-license-ids-3.0.0"
-                                ];
-                              })
-                              (sources."spdx-expression-parse-3.0.0" // {
-                                dependencies = [
-                                  sources."spdx-exceptions-2.1.0"
-                                  sources."spdx-license-ids-3.0.0"
-                                ];
-                              })
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."path-type-2.0.0" // {
-                        dependencies = [
-                          sources."pify-2.3.0"
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              sources."require-directory-2.1.1"
-              sources."require-main-filename-1.0.1"
-              sources."set-blocking-2.0.0"
-              (sources."string-width-2.1.1" // {
-                dependencies = [
-                  sources."is-fullwidth-code-point-2.0.0"
-                  (sources."strip-ansi-4.0.0" // {
-                    dependencies = [
-                      sources."ansi-regex-3.0.0"
-                    ];
-                  })
-                ];
-              })
-              sources."which-module-2.0.0"
-              sources."y18n-3.2.1"
-              sources."yargs-parser-7.0.0"
             ];
           })
+          sources."yargs-parser-7.0.0"
+        ];
+      })
+      (sources."webpack-dev-middleware-1.12.2" // {
+        dependencies = [
+          sources."mime-1.6.0"
         ];
       })
       (sources."webpack-dev-server-2.11.2" // {
         dependencies = [
-          sources."ansi-html-0.0.7"
-          (sources."array-includes-3.0.3" // {
-            dependencies = [
-              (sources."define-properties-1.1.2" // {
-                dependencies = [
-                  sources."foreach-2.0.5"
-                  sources."object-keys-1.0.11"
-                ];
-              })
-              (sources."es-abstract-1.11.0" // {
-                dependencies = [
-                  (sources."es-to-primitive-1.1.1" // {
-                    dependencies = [
-                      sources."is-date-object-1.0.1"
-                      sources."is-symbol-1.0.1"
-                    ];
-                  })
-                  sources."function-bind-1.1.1"
-                  sources."has-1.0.1"
-                  sources."is-callable-1.1.3"
-                  sources."is-regex-1.0.4"
-                ];
-              })
-            ];
-          })
-          (sources."bonjour-3.5.0" // {
-            dependencies = [
-              sources."array-flatten-2.1.1"
-              sources."deep-equal-1.0.1"
-              sources."dns-equal-1.0.0"
-              (sources."dns-txt-2.0.2" // {
-                dependencies = [
-                  sources."buffer-indexof-1.1.1"
-                ];
-              })
-              (sources."multicast-dns-6.2.3" // {
-                dependencies = [
-                  (sources."dns-packet-1.3.1" // {
-                    dependencies = [
-                      sources."safe-buffer-5.1.1"
-                    ];
-                  })
-                  sources."thunky-1.0.2"
-                ];
-              })
-              sources."multicast-dns-service-types-1.1.0"
-            ];
-          })
+          sources."anymatch-2.0.0"
+          sources."arr-diff-4.0.0"
+          sources."array-flatten-1.1.1"
+          sources."array-unique-0.3.2"
+          sources."async-1.5.2"
+          sources."braces-2.3.2"
           (sources."chokidar-2.0.3" // {
             dependencies = [
-              (sources."anymatch-2.0.0" // {
-                dependencies = [
-                  (sources."micromatch-3.1.10" // {
-                    dependencies = [
-                      sources."arr-diff-4.0.0"
-                      sources."array-unique-0.3.2"
-                      (sources."define-property-2.0.2" // {
-                        dependencies = [
-                          (sources."is-descriptor-1.0.2" // {
-                            dependencies = [
-                              sources."is-accessor-descriptor-1.0.0"
-                              sources."is-data-descriptor-1.0.0"
-                            ];
-                          })
-                          sources."isobject-3.0.1"
-                        ];
-                      })
-                      (sources."extend-shallow-3.0.2" // {
-                        dependencies = [
-                          sources."assign-symbols-1.0.0"
-                          (sources."is-extendable-1.0.1" // {
-                            dependencies = [
-                              (sources."is-plain-object-2.0.4" // {
-                                dependencies = [
-                                  sources."isobject-3.0.1"
-                                ];
-                              })
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."extglob-2.0.4" // {
-                        dependencies = [
-                          (sources."define-property-1.0.0" // {
-                            dependencies = [
-                              (sources."is-descriptor-1.0.2" // {
-                                dependencies = [
-                                  sources."is-accessor-descriptor-1.0.0"
-                                  sources."is-data-descriptor-1.0.0"
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."expand-brackets-2.1.4" // {
-                            dependencies = [
-                              (sources."debug-2.6.9" // {
-                                dependencies = [
-                                  sources."ms-2.0.0"
-                                ];
-                              })
-                              (sources."define-property-0.2.5" // {
-                                dependencies = [
-                                  (sources."is-descriptor-0.1.6" // {
-                                    dependencies = [
-                                      (sources."is-accessor-descriptor-0.1.6" // {
-                                        dependencies = [
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      (sources."is-data-descriptor-0.1.4" // {
-                                        dependencies = [
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      sources."kind-of-5.1.0"
-                                    ];
-                                  })
-                                ];
-                              })
-                              sources."posix-character-classes-0.1.1"
-                            ];
-                          })
-                          (sources."extend-shallow-2.0.1" // {
-                            dependencies = [
-                              sources."is-extendable-0.1.1"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."fragment-cache-0.2.1" // {
-                        dependencies = [
-                          sources."map-cache-0.2.2"
-                        ];
-                      })
-                      sources."kind-of-6.0.2"
-                      (sources."nanomatch-1.2.9" // {
-                        dependencies = [
-                          (sources."is-odd-2.0.0" // {
-                            dependencies = [
-                              sources."is-number-4.0.0"
-                            ];
-                          })
-                          sources."is-windows-1.0.2"
-                        ];
-                      })
-                      (sources."object.pick-1.3.0" // {
-                        dependencies = [
-                          sources."isobject-3.0.1"
-                        ];
-                      })
-                      (sources."regex-not-1.0.2" // {
-                        dependencies = [
-                          (sources."safe-regex-1.1.0" // {
-                            dependencies = [
-                              sources."ret-0.1.15"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."snapdragon-0.8.2" // {
-                        dependencies = [
-                          (sources."base-0.11.2" // {
-                            dependencies = [
-                              (sources."cache-base-1.0.1" // {
-                                dependencies = [
-                                  (sources."collection-visit-1.0.0" // {
-                                    dependencies = [
-                                      sources."map-visit-1.0.0"
-                                      sources."object-visit-1.0.1"
-                                    ];
-                                  })
-                                  sources."get-value-2.0.6"
-                                  (sources."has-value-1.0.0" // {
-                                    dependencies = [
-                                      (sources."has-values-1.0.0" // {
-                                        dependencies = [
-                                          (sources."is-number-3.0.0" // {
-                                            dependencies = [
-                                              (sources."kind-of-3.2.2" // {
-                                                dependencies = [
-                                                  sources."is-buffer-1.1.6"
-                                                ];
-                                              })
-                                            ];
-                                          })
-                                          (sources."kind-of-4.0.0" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."set-value-2.0.0" // {
-                                    dependencies = [
-                                      sources."is-extendable-0.1.1"
-                                      sources."is-plain-object-2.0.4"
-                                      (sources."split-string-3.1.0" // {
-                                        dependencies = [
-                                          (sources."extend-shallow-3.0.2" // {
-                                            dependencies = [
-                                              sources."assign-symbols-1.0.0"
-                                              sources."is-extendable-1.0.1"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."to-object-path-0.3.0" // {
-                                    dependencies = [
-                                      (sources."kind-of-3.2.2" // {
-                                        dependencies = [
-                                          sources."is-buffer-1.1.6"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."union-value-1.0.0" // {
-                                    dependencies = [
-                                      sources."arr-union-3.1.0"
-                                      sources."is-extendable-0.1.1"
-                                      (sources."set-value-0.4.3" // {
-                                        dependencies = [
-                                          sources."is-plain-object-2.0.4"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."unset-value-1.0.0" // {
-                                    dependencies = [
-                                      (sources."has-value-0.3.1" // {
-                                        dependencies = [
-                                          sources."has-values-0.1.4"
-                                          (sources."isobject-2.1.0" // {
-                                            dependencies = [
-                                              sources."isarray-1.0.0"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."class-utils-0.3.6" // {
-                                dependencies = [
-                                  sources."arr-union-3.1.0"
-                                  (sources."define-property-0.2.5" // {
-                                    dependencies = [
-                                      (sources."is-descriptor-0.1.6" // {
-                                        dependencies = [
-                                          (sources."is-accessor-descriptor-0.1.6" // {
-                                            dependencies = [
-                                              (sources."kind-of-3.2.2" // {
-                                                dependencies = [
-                                                  sources."is-buffer-1.1.6"
-                                                ];
-                                              })
-                                            ];
-                                          })
-                                          (sources."is-data-descriptor-0.1.4" // {
-                                            dependencies = [
-                                              (sources."kind-of-3.2.2" // {
-                                                dependencies = [
-                                                  sources."is-buffer-1.1.6"
-                                                ];
-                                              })
-                                            ];
-                                          })
-                                          sources."kind-of-5.1.0"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."static-extend-0.1.2" // {
-                                    dependencies = [
-                                      (sources."object-copy-0.1.0" // {
-                                        dependencies = [
-                                          sources."copy-descriptor-0.1.1"
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                ];
-                              })
-                              sources."component-emitter-1.2.1"
-                              (sources."define-property-1.0.0" // {
-                                dependencies = [
-                                  (sources."is-descriptor-1.0.2" // {
-                                    dependencies = [
-                                      sources."is-accessor-descriptor-1.0.0"
-                                      sources."is-data-descriptor-1.0.0"
-                                    ];
-                                  })
-                                ];
-                              })
-                              sources."isobject-3.0.1"
-                              (sources."mixin-deep-1.3.1" // {
-                                dependencies = [
-                                  sources."for-in-1.0.2"
-                                  (sources."is-extendable-1.0.1" // {
-                                    dependencies = [
-                                      sources."is-plain-object-2.0.4"
-                                    ];
-                                  })
-                                ];
-                              })
-                              sources."pascalcase-0.1.1"
-                            ];
-                          })
-                          (sources."debug-2.6.9" // {
-                            dependencies = [
-                              sources."ms-2.0.0"
-                            ];
-                          })
-                          (sources."define-property-0.2.5" // {
-                            dependencies = [
-                              (sources."is-descriptor-0.1.6" // {
-                                dependencies = [
-                                  (sources."is-accessor-descriptor-0.1.6" // {
-                                    dependencies = [
-                                      (sources."kind-of-3.2.2" // {
-                                        dependencies = [
-                                          sources."is-buffer-1.1.6"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."is-data-descriptor-0.1.4" // {
-                                    dependencies = [
-                                      (sources."kind-of-3.2.2" // {
-                                        dependencies = [
-                                          sources."is-buffer-1.1.6"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  sources."kind-of-5.1.0"
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."extend-shallow-2.0.1" // {
-                            dependencies = [
-                              sources."is-extendable-0.1.1"
-                            ];
-                          })
-                          sources."map-cache-0.2.2"
-                          sources."source-map-0.5.7"
-                          (sources."source-map-resolve-0.5.1" // {
-                            dependencies = [
-                              sources."atob-2.1.0"
-                              sources."decode-uri-component-0.2.0"
-                              sources."resolve-url-0.2.1"
-                              sources."source-map-url-0.4.0"
-                              sources."urix-0.1.0"
-                            ];
-                          })
-                          sources."use-3.1.0"
-                        ];
-                      })
-                      (sources."to-regex-3.0.2" // {
-                        dependencies = [
-                          (sources."safe-regex-1.1.0" // {
-                            dependencies = [
-                              sources."ret-0.1.15"
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              sources."async-each-1.0.1"
-              (sources."braces-2.3.1" // {
-                dependencies = [
-                  sources."arr-flatten-1.1.0"
-                  sources."array-unique-0.3.2"
-                  (sources."define-property-1.0.0" // {
-                    dependencies = [
-                      (sources."is-descriptor-1.0.2" // {
-                        dependencies = [
-                          sources."is-accessor-descriptor-1.0.0"
-                          sources."is-data-descriptor-1.0.0"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."extend-shallow-2.0.1" // {
-                    dependencies = [
-                      sources."is-extendable-0.1.1"
-                    ];
-                  })
-                  (sources."fill-range-4.0.0" // {
-                    dependencies = [
-                      (sources."is-number-3.0.0" // {
-                        dependencies = [
-                          (sources."kind-of-3.2.2" // {
-                            dependencies = [
-                              sources."is-buffer-1.1.6"
-                            ];
-                          })
-                        ];
-                      })
-                      sources."repeat-string-1.6.1"
-                      sources."to-regex-range-2.1.1"
-                    ];
-                  })
-                  sources."isobject-3.0.1"
-                  sources."kind-of-6.0.2"
-                  sources."repeat-element-1.1.2"
-                  (sources."snapdragon-0.8.2" // {
-                    dependencies = [
-                      (sources."base-0.11.2" // {
-                        dependencies = [
-                          (sources."cache-base-1.0.1" // {
-                            dependencies = [
-                              (sources."collection-visit-1.0.0" // {
-                                dependencies = [
-                                  sources."map-visit-1.0.0"
-                                  sources."object-visit-1.0.1"
-                                ];
-                              })
-                              sources."get-value-2.0.6"
-                              (sources."has-value-1.0.0" // {
-                                dependencies = [
-                                  (sources."has-values-1.0.0" // {
-                                    dependencies = [
-                                      (sources."is-number-3.0.0" // {
-                                        dependencies = [
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      (sources."kind-of-4.0.0" // {
-                                        dependencies = [
-                                          sources."is-buffer-1.1.6"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."set-value-2.0.0" // {
-                                dependencies = [
-                                  sources."is-extendable-0.1.1"
-                                  sources."is-plain-object-2.0.4"
-                                ];
-                              })
-                              (sources."to-object-path-0.3.0" // {
-                                dependencies = [
-                                  (sources."kind-of-3.2.2" // {
-                                    dependencies = [
-                                      sources."is-buffer-1.1.6"
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."union-value-1.0.0" // {
-                                dependencies = [
-                                  sources."arr-union-3.1.0"
-                                  sources."is-extendable-0.1.1"
-                                  (sources."set-value-0.4.3" // {
-                                    dependencies = [
-                                      sources."is-plain-object-2.0.4"
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."unset-value-1.0.0" // {
-                                dependencies = [
-                                  (sources."has-value-0.3.1" // {
-                                    dependencies = [
-                                      sources."has-values-0.1.4"
-                                      (sources."isobject-2.1.0" // {
-                                        dependencies = [
-                                          sources."isarray-1.0.0"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."class-utils-0.3.6" // {
-                            dependencies = [
-                              sources."arr-union-3.1.0"
-                              (sources."define-property-0.2.5" // {
-                                dependencies = [
-                                  (sources."is-descriptor-0.1.6" // {
-                                    dependencies = [
-                                      (sources."is-accessor-descriptor-0.1.6" // {
-                                        dependencies = [
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      (sources."is-data-descriptor-0.1.4" // {
-                                        dependencies = [
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      sources."kind-of-5.1.0"
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."static-extend-0.1.2" // {
-                                dependencies = [
-                                  (sources."object-copy-0.1.0" // {
-                                    dependencies = [
-                                      sources."copy-descriptor-0.1.1"
-                                      (sources."kind-of-3.2.2" // {
-                                        dependencies = [
-                                          sources."is-buffer-1.1.6"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                ];
-                              })
-                            ];
-                          })
-                          sources."component-emitter-1.2.1"
-                          (sources."define-property-1.0.0" // {
-                            dependencies = [
-                              (sources."is-descriptor-1.0.2" // {
-                                dependencies = [
-                                  sources."is-accessor-descriptor-1.0.0"
-                                  sources."is-data-descriptor-1.0.0"
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."mixin-deep-1.3.1" // {
-                            dependencies = [
-                              sources."for-in-1.0.2"
-                              (sources."is-extendable-1.0.1" // {
-                                dependencies = [
-                                  sources."is-plain-object-2.0.4"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."pascalcase-0.1.1"
-                        ];
-                      })
-                      (sources."debug-2.6.9" // {
-                        dependencies = [
-                          sources."ms-2.0.0"
-                        ];
-                      })
-                      (sources."define-property-0.2.5" // {
-                        dependencies = [
-                          (sources."is-descriptor-0.1.6" // {
-                            dependencies = [
-                              (sources."is-accessor-descriptor-0.1.6" // {
-                                dependencies = [
-                                  (sources."kind-of-3.2.2" // {
-                                    dependencies = [
-                                      sources."is-buffer-1.1.6"
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."is-data-descriptor-0.1.4" // {
-                                dependencies = [
-                                  (sources."kind-of-3.2.2" // {
-                                    dependencies = [
-                                      sources."is-buffer-1.1.6"
-                                    ];
-                                  })
-                                ];
-                              })
-                              sources."kind-of-5.1.0"
-                            ];
-                          })
-                        ];
-                      })
-                      sources."map-cache-0.2.2"
-                      sources."source-map-0.5.7"
-                      (sources."source-map-resolve-0.5.1" // {
-                        dependencies = [
-                          sources."atob-2.1.0"
-                          sources."decode-uri-component-0.2.0"
-                          sources."resolve-url-0.2.1"
-                          sources."source-map-url-0.4.0"
-                          sources."urix-0.1.0"
-                        ];
-                      })
-                      sources."use-3.1.0"
-                    ];
-                  })
-                  (sources."snapdragon-node-2.1.1" // {
-                    dependencies = [
-                      (sources."snapdragon-util-3.0.1" // {
-                        dependencies = [
-                          (sources."kind-of-3.2.2" // {
-                            dependencies = [
-                              sources."is-buffer-1.1.6"
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."split-string-3.1.0" // {
-                    dependencies = [
-                      (sources."extend-shallow-3.0.2" // {
-                        dependencies = [
-                          sources."assign-symbols-1.0.0"
-                          (sources."is-extendable-1.0.1" // {
-                            dependencies = [
-                              sources."is-plain-object-2.0.4"
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."to-regex-3.0.2" // {
-                    dependencies = [
-                      (sources."define-property-2.0.2" // {
-                        dependencies = [
-                          (sources."is-descriptor-1.0.2" // {
-                            dependencies = [
-                              sources."is-accessor-descriptor-1.0.0"
-                              sources."is-data-descriptor-1.0.0"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."extend-shallow-3.0.2" // {
-                        dependencies = [
-                          sources."assign-symbols-1.0.0"
-                          (sources."is-extendable-1.0.1" // {
-                            dependencies = [
-                              sources."is-plain-object-2.0.4"
-                            ];
-                          })
-                        ];
-                      })
-                      sources."regex-not-1.0.2"
-                      (sources."safe-regex-1.1.0" // {
-                        dependencies = [
-                          sources."ret-0.1.15"
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              (sources."fsevents-1.1.3" // {
-                dependencies = [
-                  sources."nan-2.10.0"
-                ];
-              })
-              (sources."glob-parent-3.1.0" // {
-                dependencies = [
-                  (sources."is-glob-3.1.0" // {
-                    dependencies = [
-                      sources."is-extglob-2.1.1"
-                    ];
-                  })
-                  sources."path-dirname-1.0.2"
-                ];
-              })
-              sources."inherits-2.0.3"
-              (sources."is-binary-path-1.0.1" // {
-                dependencies = [
-                  sources."binary-extensions-1.11.0"
-                ];
-              })
-              (sources."is-glob-4.0.0" // {
-                dependencies = [
-                  sources."is-extglob-2.1.1"
-                ];
-              })
-              (sources."normalize-path-2.1.1" // {
-                dependencies = [
-                  sources."remove-trailing-separator-1.1.0"
-                ];
-              })
-              sources."path-is-absolute-1.0.1"
-              (sources."readdirp-2.1.0" // {
-                dependencies = [
-                  sources."graceful-fs-4.1.11"
-                  (sources."minimatch-3.0.4" // {
-                    dependencies = [
-                      (sources."brace-expansion-1.1.11" // {
-                        dependencies = [
-                          sources."balanced-match-1.0.0"
-                          sources."concat-map-0.0.1"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."readable-stream-2.3.5" // {
-                    dependencies = [
-                      sources."core-util-is-1.0.2"
-                      sources."isarray-1.0.0"
-                      sources."process-nextick-args-2.0.0"
-                      sources."safe-buffer-5.1.1"
-                      sources."string_decoder-1.0.3"
-                      sources."util-deprecate-1.0.2"
-                    ];
-                  })
-                  sources."set-immediate-shim-1.0.1"
-                ];
-              })
-              sources."upath-1.0.4"
+              sources."debug-2.6.9"
+              sources."kind-of-3.2.2"
             ];
           })
-          (sources."compression-1.7.2" // {
+          sources."debug-3.1.0"
+          sources."deep-equal-1.0.1"
+          (sources."expand-brackets-2.1.4" // {
             dependencies = [
-              (sources."accepts-1.3.5" // {
-                dependencies = [
-                  (sources."mime-types-2.1.18" // {
-                    dependencies = [
-                      sources."mime-db-1.33.0"
-                    ];
-                  })
-                  sources."negotiator-0.6.1"
-                ];
-              })
-              sources."bytes-3.0.0"
-              (sources."compressible-2.0.13" // {
-                dependencies = [
-                  sources."mime-db-1.33.0"
-                ];
-              })
-              (sources."debug-2.6.9" // {
-                dependencies = [
-                  sources."ms-2.0.0"
-                ];
-              })
-              sources."on-headers-1.0.1"
-              sources."safe-buffer-5.1.1"
-              sources."vary-1.1.2"
+              sources."define-property-0.2.5"
             ];
           })
-          (sources."debug-3.1.0" // {
+          sources."extend-shallow-2.0.1"
+          (sources."extglob-2.0.4" // {
             dependencies = [
-              sources."ms-2.0.0"
+              sources."define-property-1.0.0"
+              sources."extend-shallow-2.0.1"
+              sources."kind-of-5.1.0"
             ];
           })
-          (sources."del-3.0.0" // {
+          sources."faye-websocket-0.10.0"
+          sources."fill-range-4.0.0"
+          (sources."glob-parent-3.1.0" // {
             dependencies = [
-              (sources."globby-6.1.0" // {
-                dependencies = [
-                  (sources."array-union-1.0.2" // {
-                    dependencies = [
-                      sources."array-uniq-1.0.3"
-                    ];
-                  })
-                  (sources."glob-7.1.2" // {
-                    dependencies = [
-                      sources."fs.realpath-1.0.0"
-                      (sources."inflight-1.0.6" // {
-                        dependencies = [
-                          sources."wrappy-1.0.2"
-                        ];
-                      })
-                      sources."inherits-2.0.3"
-                      (sources."minimatch-3.0.4" // {
-                        dependencies = [
-                          (sources."brace-expansion-1.1.11" // {
-                            dependencies = [
-                              sources."balanced-match-1.0.0"
-                              sources."concat-map-0.0.1"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."once-1.4.0" // {
-                        dependencies = [
-                          sources."wrappy-1.0.2"
-                        ];
-                      })
-                      sources."path-is-absolute-1.0.1"
-                    ];
-                  })
-                  sources."object-assign-4.1.1"
-                  sources."pify-2.3.0"
-                  (sources."pinkie-promise-2.0.1" // {
-                    dependencies = [
-                      sources."pinkie-2.0.4"
-                    ];
-                  })
-                ];
-              })
-              sources."is-path-cwd-1.0.0"
-              (sources."is-path-in-cwd-1.0.1" // {
-                dependencies = [
-                  (sources."is-path-inside-1.0.1" // {
-                    dependencies = [
-                      sources."path-is-inside-1.0.2"
-                    ];
-                  })
-                ];
-              })
-              sources."p-map-1.2.0"
-              sources."pify-3.0.0"
-              (sources."rimraf-2.6.2" // {
-                dependencies = [
-                  (sources."glob-7.1.2" // {
-                    dependencies = [
-                      sources."fs.realpath-1.0.0"
-                      (sources."inflight-1.0.6" // {
-                        dependencies = [
-                          sources."wrappy-1.0.2"
-                        ];
-                      })
-                      sources."inherits-2.0.3"
-                      (sources."minimatch-3.0.4" // {
-                        dependencies = [
-                          (sources."brace-expansion-1.1.11" // {
-                            dependencies = [
-                              sources."balanced-match-1.0.0"
-                              sources."concat-map-0.0.1"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."once-1.4.0" // {
-                        dependencies = [
-                          sources."wrappy-1.0.2"
-                        ];
-                      })
-                      sources."path-is-absolute-1.0.1"
-                    ];
-                  })
-                ];
-              })
+              sources."is-glob-3.1.0"
             ];
           })
-          (sources."express-4.16.3" // {
+          sources."iconv-lite-0.4.19"
+          (sources."is-accessor-descriptor-0.1.6" // {
             dependencies = [
-              (sources."accepts-1.3.5" // {
-                dependencies = [
-                  (sources."mime-types-2.1.18" // {
-                    dependencies = [
-                      sources."mime-db-1.33.0"
-                    ];
-                  })
-                  sources."negotiator-0.6.1"
-                ];
-              })
-              sources."array-flatten-1.1.1"
-              (sources."body-parser-1.18.2" // {
-                dependencies = [
-                  sources."bytes-3.0.0"
-                  (sources."http-errors-1.6.2" // {
-                    dependencies = [
-                      sources."depd-1.1.1"
-                      sources."inherits-2.0.3"
-                      sources."setprototypeof-1.0.3"
-                    ];
-                  })
-                  sources."iconv-lite-0.4.19"
-                  (sources."raw-body-2.3.2" // {
-                    dependencies = [
-                      sources."unpipe-1.0.0"
-                    ];
-                  })
-                ];
-              })
-              sources."content-disposition-0.5.2"
-              sources."content-type-1.0.4"
-              sources."cookie-0.3.1"
-              sources."cookie-signature-1.0.6"
-              (sources."debug-2.6.9" // {
-                dependencies = [
-                  sources."ms-2.0.0"
-                ];
-              })
-              sources."depd-1.1.2"
-              sources."encodeurl-1.0.2"
-              sources."escape-html-1.0.3"
-              sources."etag-1.8.1"
-              (sources."finalhandler-1.1.1" // {
-                dependencies = [
-                  sources."unpipe-1.0.0"
-                ];
-              })
-              sources."fresh-0.5.2"
-              sources."merge-descriptors-1.0.1"
-              sources."methods-1.1.2"
-              (sources."on-finished-2.3.0" // {
-                dependencies = [
-                  sources."ee-first-1.1.1"
-                ];
-              })
-              sources."parseurl-1.3.2"
-              sources."path-to-regexp-0.1.7"
-              (sources."proxy-addr-2.0.3" // {
-                dependencies = [
-                  sources."forwarded-0.1.2"
-                  sources."ipaddr.js-1.6.0"
-                ];
-              })
-              sources."qs-6.5.1"
-              sources."range-parser-1.2.0"
-              sources."safe-buffer-5.1.1"
-              (sources."send-0.16.2" // {
-                dependencies = [
-                  sources."destroy-1.0.4"
-                  (sources."http-errors-1.6.2" // {
-                    dependencies = [
-                      sources."depd-1.1.1"
-                      sources."inherits-2.0.3"
-                      sources."setprototypeof-1.0.3"
-                    ];
-                  })
-                  sources."mime-1.4.1"
-                  sources."ms-2.0.0"
-                ];
-              })
-              sources."serve-static-1.13.2"
-              sources."setprototypeof-1.1.0"
-              sources."statuses-1.4.0"
-              (sources."type-is-1.6.16" // {
-                dependencies = [
-                  sources."media-typer-0.3.0"
-                  (sources."mime-types-2.1.18" // {
-                    dependencies = [
-                      sources."mime-db-1.33.0"
-                    ];
-                  })
-                ];
-              })
-              sources."utils-merge-1.0.1"
-              sources."vary-1.1.2"
+              sources."kind-of-3.2.2"
             ];
           })
-          sources."html-entities-1.2.1"
-          (sources."import-local-1.0.0" // {
+          (sources."is-data-descriptor-0.1.4" // {
             dependencies = [
-              (sources."pkg-dir-2.0.0" // {
-                dependencies = [
-                  (sources."find-up-2.1.0" // {
-                    dependencies = [
-                      (sources."locate-path-2.0.0" // {
-                        dependencies = [
-                          (sources."p-locate-2.0.0" // {
-                            dependencies = [
-                              (sources."p-limit-1.2.0" // {
-                                dependencies = [
-                                  sources."p-try-1.0.0"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."path-exists-3.0.0"
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              (sources."resolve-cwd-2.0.0" // {
-                dependencies = [
-                  sources."resolve-from-3.0.0"
-                ];
-              })
+              sources."kind-of-3.2.2"
             ];
           })
-          (sources."internal-ip-1.2.0" // {
-            dependencies = [
-              (sources."meow-3.7.0" // {
-                dependencies = [
-                  (sources."camelcase-keys-2.1.0" // {
-                    dependencies = [
-                      sources."camelcase-2.1.1"
-                    ];
-                  })
-                  sources."decamelize-1.2.0"
-                  (sources."loud-rejection-1.6.0" // {
-                    dependencies = [
-                      (sources."currently-unhandled-0.4.1" // {
-                        dependencies = [
-                          sources."array-find-index-1.0.2"
-                        ];
-                      })
-                      sources."signal-exit-3.0.2"
-                    ];
-                  })
-                  sources."map-obj-1.0.1"
-                  (sources."normalize-package-data-2.4.0" // {
-                    dependencies = [
-                      sources."hosted-git-info-2.6.0"
-                      (sources."is-builtin-module-1.0.0" // {
-                        dependencies = [
-                          sources."builtin-modules-1.1.1"
-                        ];
-                      })
-                      sources."semver-5.5.0"
-                      (sources."validate-npm-package-license-3.0.3" // {
-                        dependencies = [
-                          (sources."spdx-correct-3.0.0" // {
-                            dependencies = [
-                              sources."spdx-license-ids-3.0.0"
-                            ];
-                          })
-                          (sources."spdx-expression-parse-3.0.0" // {
-                            dependencies = [
-                              sources."spdx-exceptions-2.1.0"
-                              sources."spdx-license-ids-3.0.0"
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                  sources."object-assign-4.1.1"
-                  (sources."read-pkg-up-1.0.1" // {
-                    dependencies = [
-                      (sources."find-up-1.1.2" // {
-                        dependencies = [
-                          sources."path-exists-2.1.0"
-                          (sources."pinkie-promise-2.0.1" // {
-                            dependencies = [
-                              sources."pinkie-2.0.4"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."read-pkg-1.1.0" // {
-                        dependencies = [
-                          (sources."load-json-file-1.1.0" // {
-                            dependencies = [
-                              sources."graceful-fs-4.1.11"
-                              (sources."parse-json-2.2.0" // {
-                                dependencies = [
-                                  (sources."error-ex-1.3.1" // {
-                                    dependencies = [
-                                      sources."is-arrayish-0.2.1"
-                                    ];
-                                  })
-                                ];
-                              })
-                              sources."pify-2.3.0"
-                              (sources."pinkie-promise-2.0.1" // {
-                                dependencies = [
-                                  sources."pinkie-2.0.4"
-                                ];
-                              })
-                              (sources."strip-bom-2.0.0" // {
-                                dependencies = [
-                                  sources."is-utf8-0.2.1"
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."path-type-1.1.0" // {
-                            dependencies = [
-                              sources."graceful-fs-4.1.11"
-                              sources."pify-2.3.0"
-                              (sources."pinkie-promise-2.0.1" // {
-                                dependencies = [
-                                  sources."pinkie-2.0.4"
-                                ];
-                              })
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."redent-1.0.0" // {
-                    dependencies = [
-                      (sources."indent-string-2.1.0" // {
-                        dependencies = [
-                          (sources."repeating-2.0.1" // {
-                            dependencies = [
-                              (sources."is-finite-1.0.2" // {
-                                dependencies = [
-                                  sources."number-is-nan-1.0.1"
-                                ];
-                              })
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."strip-indent-1.0.1" // {
-                        dependencies = [
-                          sources."get-stdin-4.0.1"
-                        ];
-                      })
-                    ];
-                  })
-                  sources."trim-newlines-1.0.0"
-                ];
-              })
-            ];
-          })
-          sources."ip-1.1.5"
-          sources."killable-1.0.0"
-          sources."loglevel-1.6.1"
-          (sources."opn-5.3.0" // {
-            dependencies = [
-              sources."is-wsl-1.1.0"
-            ];
-          })
-          (sources."portfinder-1.0.13" // {
-            dependencies = [
-              sources."async-1.5.2"
-              (sources."debug-2.6.9" // {
-                dependencies = [
-                  sources."ms-2.0.0"
-                ];
-              })
-              (sources."mkdirp-0.5.1" // {
-                dependencies = [
-                  sources."minimist-0.0.8"
-                ];
-              })
-            ];
-          })
-          (sources."selfsigned-1.10.2" // {
-            dependencies = [
-              sources."node-forge-0.7.1"
-            ];
-          })
-          (sources."serve-index-1.9.1" // {
-            dependencies = [
-              (sources."accepts-1.3.5" // {
-                dependencies = [
-                  sources."negotiator-0.6.1"
-                ];
-              })
-              sources."batch-0.6.1"
-              (sources."debug-2.6.9" // {
-                dependencies = [
-                  sources."ms-2.0.0"
-                ];
-              })
-              sources."escape-html-1.0.3"
-              (sources."http-errors-1.6.2" // {
-                dependencies = [
-                  sources."depd-1.1.1"
-                  sources."inherits-2.0.3"
-                  sources."setprototypeof-1.0.3"
-                  sources."statuses-1.5.0"
-                ];
-              })
-              (sources."mime-types-2.1.18" // {
-                dependencies = [
-                  sources."mime-db-1.33.0"
-                ];
-              })
-              sources."parseurl-1.3.2"
-            ];
-          })
-          (sources."sockjs-0.3.19" // {
-            dependencies = [
-              (sources."faye-websocket-0.10.0" // {
-                dependencies = [
-                  (sources."websocket-driver-0.7.0" // {
-                    dependencies = [
-                      sources."http-parser-js-0.4.11"
-                      sources."websocket-extensions-0.1.3"
-                    ];
-                  })
-                ];
-              })
-              sources."uuid-3.2.1"
-            ];
-          })
-          (sources."sockjs-client-1.1.4" // {
-            dependencies = [
-              (sources."debug-2.6.9" // {
-                dependencies = [
-                  sources."ms-2.0.0"
-                ];
-              })
-              (sources."eventsource-0.1.6" // {
-                dependencies = [
-                  (sources."original-1.0.0" // {
-                    dependencies = [
-                      (sources."url-parse-1.0.5" // {
-                        dependencies = [
-                          sources."querystringify-0.0.4"
-                          sources."requires-port-1.0.0"
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              (sources."faye-websocket-0.11.1" // {
-                dependencies = [
-                  (sources."websocket-driver-0.7.0" // {
-                    dependencies = [
-                      sources."http-parser-js-0.4.11"
-                      sources."websocket-extensions-0.1.3"
-                    ];
-                  })
-                ];
-              })
-              sources."inherits-2.0.3"
-              sources."json3-3.3.2"
-              (sources."url-parse-1.2.0" // {
-                dependencies = [
-                  sources."querystringify-1.0.0"
-                  sources."requires-port-1.0.0"
-                ];
-              })
-            ];
-          })
-          (sources."spdy-3.4.7" // {
-            dependencies = [
-              (sources."debug-2.6.9" // {
-                dependencies = [
-                  sources."ms-2.0.0"
-                ];
-              })
-              sources."handle-thing-1.2.5"
-              sources."http-deceiver-1.2.7"
-              sources."safe-buffer-5.1.1"
-              sources."select-hose-2.0.0"
-              (sources."spdy-transport-2.1.0" // {
-                dependencies = [
-                  sources."detect-node-2.0.3"
-                  (sources."hpack.js-2.1.6" // {
-                    dependencies = [
-                      sources."inherits-2.0.3"
-                    ];
-                  })
-                  sources."obuf-1.1.2"
-                  (sources."readable-stream-2.3.5" // {
-                    dependencies = [
-                      sources."core-util-is-1.0.2"
-                      sources."inherits-2.0.3"
-                      sources."isarray-1.0.0"
-                      sources."process-nextick-args-2.0.0"
-                      sources."string_decoder-1.0.3"
-                      sources."util-deprecate-1.0.2"
-                    ];
-                  })
-                  (sources."wbuf-1.7.3" // {
-                    dependencies = [
-                      sources."minimalistic-assert-1.0.0"
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          (sources."strip-ansi-3.0.1" // {
-            dependencies = [
-              sources."ansi-regex-2.1.1"
-            ];
-          })
-          (sources."supports-color-5.3.0" // {
-            dependencies = [
-              sources."has-flag-3.0.0"
-            ];
-          })
-          (sources."webpack-dev-middleware-1.12.2" // {
-            dependencies = [
-              (sources."memory-fs-0.4.1" // {
-                dependencies = [
-                  (sources."errno-0.1.7" // {
-                    dependencies = [
-                      sources."prr-1.0.1"
-                    ];
-                  })
-                  (sources."readable-stream-2.3.5" // {
-                    dependencies = [
-                      sources."core-util-is-1.0.2"
-                      sources."inherits-2.0.3"
-                      sources."isarray-1.0.0"
-                      sources."process-nextick-args-2.0.0"
-                      sources."safe-buffer-5.1.1"
-                      sources."string_decoder-1.0.3"
-                      sources."util-deprecate-1.0.2"
-                    ];
-                  })
-                ];
-              })
-              sources."mime-1.6.0"
-              sources."path-is-absolute-1.0.1"
-              sources."range-parser-1.2.0"
-              sources."time-stamp-2.0.0"
-            ];
-          })
-          (sources."yargs-6.6.0" // {
-            dependencies = [
-              sources."camelcase-3.0.0"
-              (sources."cliui-3.2.0" // {
-                dependencies = [
-                  sources."wrap-ansi-2.1.0"
-                ];
-              })
-              sources."decamelize-1.2.0"
-              sources."get-caller-file-1.0.2"
-              (sources."os-locale-1.4.0" // {
-                dependencies = [
-                  (sources."lcid-1.0.0" // {
-                    dependencies = [
-                      sources."invert-kv-1.0.0"
-                    ];
-                  })
-                ];
-              })
-              (sources."read-pkg-up-1.0.1" // {
-                dependencies = [
-                  (sources."find-up-1.1.2" // {
-                    dependencies = [
-                      sources."path-exists-2.1.0"
-                      (sources."pinkie-promise-2.0.1" // {
-                        dependencies = [
-                          sources."pinkie-2.0.4"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."read-pkg-1.1.0" // {
-                    dependencies = [
-                      (sources."load-json-file-1.1.0" // {
-                        dependencies = [
-                          sources."graceful-fs-4.1.11"
-                          (sources."parse-json-2.2.0" // {
-                            dependencies = [
-                              (sources."error-ex-1.3.1" // {
-                                dependencies = [
-                                  sources."is-arrayish-0.2.1"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."pify-2.3.0"
-                          (sources."pinkie-promise-2.0.1" // {
-                            dependencies = [
-                              sources."pinkie-2.0.4"
-                            ];
-                          })
-                          (sources."strip-bom-2.0.0" // {
-                            dependencies = [
-                              sources."is-utf8-0.2.1"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."normalize-package-data-2.4.0" // {
-                        dependencies = [
-                          sources."hosted-git-info-2.6.0"
-                          (sources."is-builtin-module-1.0.0" // {
-                            dependencies = [
-                              sources."builtin-modules-1.1.1"
-                            ];
-                          })
-                          sources."semver-5.5.0"
-                          (sources."validate-npm-package-license-3.0.3" // {
-                            dependencies = [
-                              (sources."spdx-correct-3.0.0" // {
-                                dependencies = [
-                                  sources."spdx-license-ids-3.0.0"
-                                ];
-                              })
-                              (sources."spdx-expression-parse-3.0.0" // {
-                                dependencies = [
-                                  sources."spdx-exceptions-2.1.0"
-                                  sources."spdx-license-ids-3.0.0"
-                                ];
-                              })
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."path-type-1.1.0" // {
-                        dependencies = [
-                          sources."graceful-fs-4.1.11"
-                          sources."pify-2.3.0"
-                          (sources."pinkie-promise-2.0.1" // {
-                            dependencies = [
-                              sources."pinkie-2.0.4"
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              sources."require-directory-2.1.1"
-              sources."require-main-filename-1.0.1"
-              sources."set-blocking-2.0.0"
-              (sources."string-width-1.0.2" // {
-                dependencies = [
-                  sources."code-point-at-1.1.0"
-                  (sources."is-fullwidth-code-point-1.0.0" // {
-                    dependencies = [
-                      sources."number-is-nan-1.0.1"
-                    ];
-                  })
-                ];
-              })
-              sources."which-module-1.0.0"
-              sources."y18n-3.2.1"
-              sources."yargs-parser-4.2.1"
-            ];
-          })
+          sources."is-descriptor-0.1.6"
+          sources."is-extglob-2.1.1"
+          sources."is-glob-4.0.0"
+          sources."is-number-3.0.0"
+          sources."isobject-3.0.1"
+          sources."kind-of-6.0.2"
+          sources."micromatch-3.1.10"
+          sources."mime-1.4.1"
+          sources."path-to-regexp-0.1.7"
+          sources."qs-6.5.1"
         ];
       })
+      sources."webpack-sources-1.1.0"
+      sources."websocket-driver-0.7.0"
+      sources."websocket-extensions-0.1.3"
+      sources."whet.extend-0.9.9"
+      sources."which-1.3.0"
+      sources."which-module-1.0.0"
+      sources."widest-line-2.0.0"
+      sources."window-size-0.1.0"
+      (sources."winston-2.1.1" // {
+        dependencies = [
+          sources."async-1.0.0"
+          sources."colors-1.0.3"
+          sources."pkginfo-0.3.1"
+        ];
+      })
+      sources."wordwrap-0.0.2"
+      sources."wrap-ansi-2.1.0"
+      sources."wrappy-1.0.2"
+      sources."write-file-atomic-2.3.0"
+      sources."xdg-basedir-3.0.0"
+      sources."xmlbuilder-8.2.2"
+      sources."xtend-4.0.1"
+      sources."y18n-3.2.1"
+      sources."yallist-2.1.2"
+      sources."yargs-6.6.0"
+      sources."yargs-parser-4.2.1"
     ];
     buildInputs = globalBuildInputs;
     meta = {
@@ -16469,7 +12282,7 @@ in
       license = "MIT";
     };
     production = true;
-    bypassCache = false;
+    bypassCache = true;
   };
   pulp = nodeEnv.buildNodePackage {
     name = "pulp";
@@ -16480,1195 +12293,387 @@ in
       sha512 = "3n09lgnyd4p3h3jlhgcvbh6n6m9h89hwvbhli5ic32fkl5y4g7yi61m1vw483479jxkif2zyqs89l6j6hq4iy15jdknx1lcp9qbyvwy";
     };
     dependencies = [
+      sources."JSONStream-1.3.2"
+      sources."acorn-4.0.13"
+      sources."acorn-node-1.3.0"
+      (sources."anymatch-2.0.0" // {
+        dependencies = [
+          (sources."is-accessor-descriptor-0.1.6" // {
+            dependencies = [
+              sources."kind-of-3.2.2"
+            ];
+          })
+          (sources."is-data-descriptor-0.1.4" // {
+            dependencies = [
+              sources."kind-of-3.2.2"
+            ];
+          })
+          sources."is-descriptor-0.1.6"
+          sources."is-extendable-0.1.1"
+        ];
+      })
+      sources."arr-diff-4.0.0"
+      sources."arr-flatten-1.1.0"
+      sources."arr-union-3.1.0"
+      sources."array-filter-0.0.1"
+      sources."array-map-0.0.0"
+      sources."array-reduce-0.0.0"
+      sources."array-unique-0.3.2"
+      sources."asn1.js-4.10.1"
+      sources."assert-1.4.1"
+      sources."assign-symbols-1.0.0"
+      sources."astw-2.2.0"
+      sources."async-1.5.2"
+      sources."async-each-1.0.1"
+      sources."atob-2.1.0"
+      sources."balanced-match-1.0.0"
+      (sources."base-0.11.2" // {
+        dependencies = [
+          (sources."define-property-1.0.0" // {
+            dependencies = [
+              sources."kind-of-6.0.2"
+            ];
+          })
+          sources."kind-of-3.2.2"
+        ];
+      })
+      sources."base64-js-1.3.0"
+      sources."binary-extensions-1.11.0"
+      sources."bn.js-4.11.8"
+      sources."brace-expansion-1.1.11"
+      (sources."braces-2.3.2" // {
+        dependencies = [
+          sources."is-extendable-0.1.1"
+        ];
+      })
+      sources."brorand-1.1.0"
+      sources."browser-pack-6.1.0"
+      (sources."browser-resolve-1.11.2" // {
+        dependencies = [
+          sources."resolve-1.1.7"
+        ];
+      })
       (sources."browserify-13.3.0" // {
         dependencies = [
-          (sources."JSONStream-1.3.2" // {
-            dependencies = [
-              sources."jsonparse-1.3.1"
-            ];
-          })
-          sources."assert-1.4.1"
-          (sources."browser-pack-6.0.4" // {
-            dependencies = [
-              (sources."combine-source-map-0.8.0" // {
-                dependencies = [
-                  sources."convert-source-map-1.1.3"
-                  sources."inline-source-map-0.6.2"
-                  sources."lodash.memoize-3.0.4"
-                  sources."source-map-0.5.7"
-                ];
-              })
-              sources."safe-buffer-5.1.1"
-              sources."umd-3.0.3"
-            ];
-          })
-          (sources."browser-resolve-1.11.2" // {
-            dependencies = [
-              sources."resolve-1.1.7"
-            ];
-          })
-          (sources."browserify-zlib-0.1.4" // {
-            dependencies = [
-              sources."pako-0.2.9"
-            ];
-          })
-          (sources."buffer-4.9.1" // {
-            dependencies = [
-              sources."base64-js-1.2.3"
-              sources."ieee754-1.1.11"
-              sources."isarray-1.0.0"
-            ];
-          })
-          sources."cached-path-relative-1.0.1"
+          sources."acorn-5.5.3"
           (sources."concat-stream-1.5.2" // {
             dependencies = [
-              (sources."readable-stream-2.0.6" // {
-                dependencies = [
-                  sources."core-util-is-1.0.2"
-                  sources."isarray-1.0.0"
-                  sources."process-nextick-args-1.0.7"
-                  sources."util-deprecate-1.0.2"
-                ];
-              })
-              sources."typedarray-0.0.6"
+              sources."readable-stream-2.0.6"
             ];
           })
-          (sources."console-browserify-1.1.0" // {
-            dependencies = [
-              sources."date-now-0.1.4"
-            ];
-          })
-          sources."constants-browserify-1.0.0"
-          (sources."crypto-browserify-3.12.0" // {
-            dependencies = [
-              (sources."browserify-cipher-1.0.0" // {
-                dependencies = [
-                  (sources."browserify-aes-1.1.1" // {
-                    dependencies = [
-                      sources."buffer-xor-1.0.3"
-                      sources."cipher-base-1.0.4"
-                      sources."safe-buffer-5.1.1"
-                    ];
-                  })
-                  (sources."browserify-des-1.0.0" // {
-                    dependencies = [
-                      (sources."cipher-base-1.0.4" // {
-                        dependencies = [
-                          sources."safe-buffer-5.1.1"
-                        ];
-                      })
-                      (sources."des.js-1.0.0" // {
-                        dependencies = [
-                          sources."minimalistic-assert-1.0.0"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."evp_bytestokey-1.0.3" // {
-                    dependencies = [
-                      (sources."md5.js-1.3.4" // {
-                        dependencies = [
-                          sources."hash-base-3.0.4"
-                        ];
-                      })
-                      sources."safe-buffer-5.1.1"
-                    ];
-                  })
-                ];
-              })
-              (sources."browserify-sign-4.0.4" // {
-                dependencies = [
-                  sources."bn.js-4.11.8"
-                  sources."browserify-rsa-4.0.1"
-                  (sources."elliptic-6.4.0" // {
-                    dependencies = [
-                      sources."brorand-1.1.0"
-                      sources."hash.js-1.1.3"
-                      sources."hmac-drbg-1.0.1"
-                      sources."minimalistic-assert-1.0.0"
-                      sources."minimalistic-crypto-utils-1.0.1"
-                    ];
-                  })
-                  (sources."parse-asn1-5.1.0" // {
-                    dependencies = [
-                      (sources."asn1.js-4.10.1" // {
-                        dependencies = [
-                          sources."minimalistic-assert-1.0.0"
-                        ];
-                      })
-                      (sources."browserify-aes-1.1.1" // {
-                        dependencies = [
-                          sources."buffer-xor-1.0.3"
-                          sources."cipher-base-1.0.4"
-                          sources."safe-buffer-5.1.1"
-                        ];
-                      })
-                      (sources."evp_bytestokey-1.0.3" // {
-                        dependencies = [
-                          (sources."md5.js-1.3.4" // {
-                            dependencies = [
-                              sources."hash-base-3.0.4"
-                            ];
-                          })
-                          sources."safe-buffer-5.1.1"
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              (sources."create-ecdh-4.0.0" // {
-                dependencies = [
-                  sources."bn.js-4.11.8"
-                  (sources."elliptic-6.4.0" // {
-                    dependencies = [
-                      sources."brorand-1.1.0"
-                      sources."hash.js-1.1.3"
-                      sources."hmac-drbg-1.0.1"
-                      sources."minimalistic-assert-1.0.0"
-                      sources."minimalistic-crypto-utils-1.0.1"
-                    ];
-                  })
-                ];
-              })
-              (sources."create-hash-1.1.3" // {
-                dependencies = [
-                  (sources."cipher-base-1.0.4" // {
-                    dependencies = [
-                      sources."safe-buffer-5.1.1"
-                    ];
-                  })
-                  (sources."ripemd160-2.0.1" // {
-                    dependencies = [
-                      sources."hash-base-2.0.2"
-                    ];
-                  })
-                  (sources."sha.js-2.4.11" // {
-                    dependencies = [
-                      sources."safe-buffer-5.1.1"
-                    ];
-                  })
-                ];
-              })
-              (sources."create-hmac-1.1.6" // {
-                dependencies = [
-                  sources."cipher-base-1.0.4"
-                  (sources."ripemd160-2.0.1" // {
-                    dependencies = [
-                      sources."hash-base-2.0.2"
-                    ];
-                  })
-                  sources."safe-buffer-5.1.1"
-                  sources."sha.js-2.4.11"
-                ];
-              })
-              (sources."diffie-hellman-5.0.2" // {
-                dependencies = [
-                  sources."bn.js-4.11.8"
-                  (sources."miller-rabin-4.0.1" // {
-                    dependencies = [
-                      sources."brorand-1.1.0"
-                    ];
-                  })
-                ];
-              })
-              (sources."pbkdf2-3.0.14" // {
-                dependencies = [
-                  (sources."ripemd160-2.0.1" // {
-                    dependencies = [
-                      sources."hash-base-2.0.2"
-                    ];
-                  })
-                  sources."safe-buffer-5.1.1"
-                  sources."sha.js-2.4.11"
-                ];
-              })
-              (sources."public-encrypt-4.0.0" // {
-                dependencies = [
-                  sources."bn.js-4.11.8"
-                  sources."browserify-rsa-4.0.1"
-                  (sources."parse-asn1-5.1.0" // {
-                    dependencies = [
-                      (sources."asn1.js-4.10.1" // {
-                        dependencies = [
-                          sources."minimalistic-assert-1.0.0"
-                        ];
-                      })
-                      (sources."browserify-aes-1.1.1" // {
-                        dependencies = [
-                          sources."buffer-xor-1.0.3"
-                          sources."cipher-base-1.0.4"
-                          sources."safe-buffer-5.1.1"
-                        ];
-                      })
-                      (sources."evp_bytestokey-1.0.3" // {
-                        dependencies = [
-                          (sources."md5.js-1.3.4" // {
-                            dependencies = [
-                              sources."hash-base-3.0.4"
-                            ];
-                          })
-                          sources."safe-buffer-5.1.1"
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              (sources."randombytes-2.0.6" // {
-                dependencies = [
-                  sources."safe-buffer-5.1.1"
-                ];
-              })
-              (sources."randomfill-1.0.4" // {
-                dependencies = [
-                  sources."safe-buffer-5.1.1"
-                ];
-              })
-            ];
-          })
-          sources."defined-1.0.0"
-          sources."deps-sort-2.0.0"
-          sources."domain-browser-1.1.7"
-          sources."duplexer2-0.1.4"
-          sources."events-1.1.1"
-          (sources."has-1.0.1" // {
-            dependencies = [
-              sources."function-bind-1.1.1"
-            ];
-          })
-          sources."htmlescape-1.1.1"
-          sources."https-browserify-0.0.1"
-          sources."inherits-2.0.3"
-          (sources."insert-module-globals-7.0.5" // {
-            dependencies = [
-              (sources."combine-source-map-0.8.0" // {
-                dependencies = [
-                  sources."convert-source-map-1.1.3"
-                  sources."inline-source-map-0.6.2"
-                  sources."lodash.memoize-3.0.4"
-                  sources."source-map-0.5.7"
-                ];
-              })
-              (sources."concat-stream-1.6.2" // {
-                dependencies = [
-                  sources."buffer-from-1.0.0"
-                  sources."typedarray-0.0.6"
-                ];
-              })
-              sources."is-buffer-1.1.6"
-              (sources."lexical-scope-1.2.0" // {
-                dependencies = [
-                  (sources."astw-2.2.0" // {
-                    dependencies = [
-                      sources."acorn-4.0.13"
-                    ];
-                  })
-                ];
-              })
-            ];
-          })
-          (sources."labeled-stream-splicer-2.0.1" // {
-            dependencies = [
-              sources."isarray-2.0.4"
-              sources."stream-splicer-2.0.0"
-            ];
-          })
-          (sources."module-deps-4.1.1" // {
-            dependencies = [
-              (sources."detective-4.7.1" // {
-                dependencies = [
-                  sources."acorn-5.5.3"
-                ];
-              })
-              sources."stream-combiner2-1.1.1"
-            ];
-          })
-          sources."os-browserify-0.1.2"
-          (sources."parents-1.0.1" // {
-            dependencies = [
-              sources."path-platform-0.11.15"
-            ];
-          })
-          sources."path-browserify-0.0.0"
-          sources."process-0.11.10"
-          sources."punycode-1.4.1"
-          sources."querystring-es3-0.2.1"
-          sources."read-only-stream-2.0.0"
-          (sources."readable-stream-2.3.5" // {
-            dependencies = [
-              sources."core-util-is-1.0.2"
-              sources."isarray-1.0.0"
-              sources."process-nextick-args-2.0.0"
-              sources."safe-buffer-5.1.1"
-              sources."string_decoder-1.0.3"
-              sources."util-deprecate-1.0.2"
-            ];
-          })
-          (sources."resolve-1.6.0" // {
-            dependencies = [
-              sources."path-parse-1.0.5"
-            ];
-          })
-          (sources."shasum-1.0.2" // {
-            dependencies = [
-              (sources."json-stable-stringify-0.0.1" // {
-                dependencies = [
-                  sources."jsonify-0.0.0"
-                ];
-              })
-              (sources."sha.js-2.4.11" // {
-                dependencies = [
-                  sources."safe-buffer-5.1.1"
-                ];
-              })
-            ];
-          })
-          (sources."shell-quote-1.6.1" // {
-            dependencies = [
-              sources."array-filter-0.0.1"
-              sources."array-map-0.0.0"
-              sources."array-reduce-0.0.0"
-              sources."jsonify-0.0.0"
-            ];
-          })
-          sources."stream-browserify-2.0.1"
-          (sources."stream-http-2.8.1" // {
-            dependencies = [
-              sources."builtin-status-codes-3.0.0"
-              sources."to-arraybuffer-1.0.1"
-            ];
-          })
-          sources."string_decoder-0.10.31"
-          (sources."subarg-1.0.0" // {
-            dependencies = [
-              sources."minimist-1.2.0"
-            ];
-          })
-          (sources."syntax-error-1.4.0" // {
-            dependencies = [
-              (sources."acorn-node-1.3.0" // {
-                dependencies = [
-                  sources."acorn-5.5.3"
-                ];
-              })
-            ];
-          })
-          sources."through2-2.0.3"
-          sources."timers-browserify-1.4.2"
-          sources."tty-browserify-0.0.1"
-          (sources."url-0.11.0" // {
-            dependencies = [
-              sources."punycode-1.3.2"
-              sources."querystring-0.2.0"
-            ];
-          })
-          (sources."util-0.10.3" // {
-            dependencies = [
-              sources."inherits-2.0.1"
-            ];
-          })
-          (sources."vm-browserify-0.0.4" // {
-            dependencies = [
-              sources."indexof-0.0.1"
-            ];
-          })
-          sources."xtend-4.0.1"
+          sources."isarray-2.0.4"
+          sources."process-nextick-args-2.0.0"
         ];
       })
+      sources."browserify-aes-1.2.0"
+      sources."browserify-cache-api-3.0.1"
+      sources."browserify-cipher-1.0.1"
+      sources."browserify-des-1.0.1"
       (sources."browserify-incremental-3.1.1" // {
         dependencies = [
-          (sources."JSONStream-0.10.0" // {
-            dependencies = [
-              sources."jsonparse-0.0.5"
-            ];
-          })
-          (sources."browserify-cache-api-3.0.1" // {
-            dependencies = [
-              sources."async-1.5.2"
-            ];
-          })
-          (sources."through2-2.0.3" // {
-            dependencies = [
-              (sources."readable-stream-2.3.5" // {
-                dependencies = [
-                  sources."core-util-is-1.0.2"
-                  sources."inherits-2.0.3"
-                  sources."isarray-1.0.0"
-                  sources."process-nextick-args-2.0.0"
-                  sources."safe-buffer-5.1.1"
-                  sources."string_decoder-1.0.3"
-                  sources."util-deprecate-1.0.2"
-                ];
-              })
-            ];
-          })
-          sources."xtend-4.0.1"
+          sources."JSONStream-0.10.0"
+          sources."jsonparse-0.0.5"
         ];
       })
-      (sources."concat-stream-1.6.2" // {
+      sources."browserify-rsa-4.0.1"
+      sources."browserify-sign-4.0.4"
+      sources."browserify-zlib-0.1.4"
+      sources."buffer-4.9.1"
+      sources."buffer-from-1.0.0"
+      sources."buffer-xor-1.0.3"
+      sources."builtin-status-codes-3.0.0"
+      sources."cache-base-1.0.1"
+      sources."cached-path-relative-1.0.1"
+      (sources."chokidar-2.0.3" // {
         dependencies = [
-          sources."buffer-from-1.0.0"
-          sources."inherits-2.0.3"
-          (sources."readable-stream-2.3.5" // {
-            dependencies = [
-              sources."core-util-is-1.0.2"
-              sources."isarray-1.0.0"
-              sources."process-nextick-args-2.0.0"
-              sources."safe-buffer-5.1.1"
-              sources."string_decoder-1.0.3"
-              sources."util-deprecate-1.0.2"
-            ];
-          })
-          sources."typedarray-0.0.6"
+          sources."is-accessor-descriptor-1.0.0"
+          sources."is-data-descriptor-1.0.0"
+          sources."is-descriptor-1.0.2"
+          sources."is-extendable-1.0.1"
         ];
       })
-      (sources."glob-7.1.2" // {
+      sources."cipher-base-1.0.4"
+      (sources."class-utils-0.3.6" // {
         dependencies = [
-          sources."fs.realpath-1.0.0"
-          (sources."inflight-1.0.6" // {
-            dependencies = [
-              sources."wrappy-1.0.2"
-            ];
-          })
-          sources."inherits-2.0.3"
-          (sources."once-1.4.0" // {
-            dependencies = [
-              sources."wrappy-1.0.2"
-            ];
-          })
-          sources."path-is-absolute-1.0.1"
+          sources."define-property-0.2.5"
         ];
       })
-      (sources."minimatch-3.0.4" // {
+      sources."collection-visit-1.0.0"
+      sources."colors-1.2.1"
+      sources."combine-source-map-0.8.0"
+      sources."component-emitter-1.2.1"
+      sources."concat-map-0.0.1"
+      sources."concat-stream-1.6.2"
+      sources."console-browserify-1.1.0"
+      sources."constants-browserify-1.0.0"
+      sources."convert-source-map-1.1.3"
+      sources."copy-descriptor-0.1.1"
+      sources."core-util-is-1.0.2"
+      sources."create-ecdh-4.0.1"
+      sources."create-hash-1.2.0"
+      sources."create-hmac-1.1.7"
+      sources."crypto-browserify-3.12.0"
+      sources."date-now-0.1.4"
+      sources."debug-2.6.9"
+      sources."decode-uri-component-0.2.0"
+      sources."define-property-2.0.2"
+      sources."defined-1.0.0"
+      sources."deps-sort-2.0.0"
+      sources."des.js-1.0.0"
+      sources."detective-4.7.1"
+      sources."diffie-hellman-5.0.3"
+      sources."domain-browser-1.1.7"
+      sources."duplexer2-0.1.4"
+      sources."elliptic-6.4.0"
+      sources."events-1.1.1"
+      sources."evp_bytestokey-1.0.3"
+      (sources."expand-brackets-2.1.4" // {
         dependencies = [
-          (sources."brace-expansion-1.1.11" // {
-            dependencies = [
-              sources."balanced-match-1.0.0"
-              sources."concat-map-0.0.1"
-            ];
-          })
+          sources."define-property-0.2.5"
         ];
       })
+      sources."extend-shallow-3.0.2"
+      (sources."extglob-2.0.4" // {
+        dependencies = [
+          sources."define-property-1.0.0"
+          sources."extend-shallow-2.0.1"
+          sources."kind-of-5.1.0"
+        ];
+      })
+      sources."fill-range-4.0.0"
+      sources."for-in-1.0.2"
+      sources."fragment-cache-0.2.1"
+      sources."fs.realpath-1.0.0"
+      sources."fsevents-1.2.2"
+      sources."function-bind-1.1.1"
+      sources."get-value-2.0.6"
+      sources."glob-7.1.2"
+      (sources."glob-parent-3.1.0" // {
+        dependencies = [
+          sources."is-glob-3.1.0"
+        ];
+      })
+      sources."graceful-fs-4.1.11"
+      sources."has-1.0.1"
+      sources."has-value-1.0.0"
+      sources."has-values-1.0.0"
+      sources."hash-base-3.0.4"
+      sources."hash.js-1.1.3"
+      sources."hmac-drbg-1.0.1"
+      sources."htmlescape-1.1.1"
+      sources."https-browserify-0.0.1"
+      sources."ieee754-1.1.11"
+      sources."indexof-0.0.1"
+      sources."inflight-1.0.6"
+      sources."inherits-2.0.3"
+      sources."inline-source-map-0.6.2"
+      (sources."insert-module-globals-7.0.6" // {
+        dependencies = [
+          sources."concat-stream-1.6.2"
+        ];
+      })
+      sources."is-accessor-descriptor-1.0.0"
+      sources."is-binary-path-1.0.1"
+      sources."is-buffer-1.1.6"
+      sources."is-data-descriptor-1.0.0"
+      sources."is-descriptor-1.0.2"
+      sources."is-extendable-1.0.1"
+      sources."is-extglob-2.1.1"
+      sources."is-glob-4.0.0"
+      sources."is-number-4.0.0"
+      sources."is-odd-2.0.0"
+      sources."is-plain-object-2.0.4"
+      sources."is-windows-1.0.2"
+      sources."isarray-1.0.0"
+      sources."isexe-2.0.0"
+      sources."isobject-3.0.1"
+      sources."json-stable-stringify-0.0.1"
+      sources."jsonify-0.0.0"
+      sources."jsonparse-1.3.1"
+      sources."kind-of-6.0.2"
+      sources."labeled-stream-splicer-2.0.1"
+      sources."lexical-scope-1.2.0"
+      sources."lodash.memoize-3.0.4"
+      sources."map-cache-0.2.2"
+      sources."map-visit-1.0.0"
+      sources."md5.js-1.3.4"
+      sources."micromatch-3.1.10"
+      sources."miller-rabin-4.0.1"
+      sources."mime-1.6.0"
+      sources."minimalistic-assert-1.0.1"
+      sources."minimalistic-crypto-utils-1.0.1"
+      sources."minimatch-3.0.4"
+      sources."minimist-1.2.0"
+      sources."mixin-deep-1.3.1"
+      sources."module-deps-4.1.1"
+      sources."ms-2.0.0"
+      sources."mute-stream-0.0.7"
+      sources."nan-2.10.0"
+      sources."nanomatch-1.2.9"
+      sources."neo-async-2.5.1"
       (sources."node-static-0.7.10" // {
         dependencies = [
-          sources."colors-1.2.1"
-          sources."mime-1.6.0"
-          (sources."optimist-0.6.1" // {
+          sources."minimist-0.0.10"
+          sources."wordwrap-0.0.3"
+        ];
+      })
+      sources."normalize-path-2.1.1"
+      sources."object-copy-0.1.0"
+      sources."object-visit-1.0.1"
+      sources."object.pick-1.3.0"
+      sources."once-1.4.0"
+      sources."optimist-0.6.1"
+      sources."os-browserify-0.1.2"
+      sources."os-tmpdir-1.0.2"
+      sources."pako-0.2.9"
+      sources."parents-1.0.1"
+      sources."parse-asn1-5.1.1"
+      sources."pascalcase-0.1.1"
+      sources."path-browserify-0.0.0"
+      sources."path-dirname-1.0.2"
+      sources."path-is-absolute-1.0.1"
+      sources."path-parse-1.0.5"
+      sources."path-platform-0.11.15"
+      sources."pbkdf2-3.0.16"
+      sources."posix-character-classes-0.1.1"
+      sources."process-0.11.10"
+      sources."process-nextick-args-1.0.7"
+      sources."public-encrypt-4.0.2"
+      sources."punycode-1.4.1"
+      sources."querystring-0.2.0"
+      sources."querystring-es3-0.2.1"
+      sources."randombytes-2.0.6"
+      sources."randomfill-1.0.4"
+      sources."read-1.0.7"
+      sources."read-only-stream-2.0.0"
+      (sources."readable-stream-2.3.6" // {
+        dependencies = [
+          sources."isarray-1.0.0"
+          sources."string_decoder-1.1.1"
+        ];
+      })
+      sources."readdirp-2.1.0"
+      sources."regex-not-1.0.2"
+      sources."remove-trailing-separator-1.1.0"
+      sources."repeat-element-1.1.2"
+      sources."repeat-string-1.6.1"
+      sources."resolve-1.7.1"
+      sources."resolve-url-0.2.1"
+      sources."ret-0.1.15"
+      sources."rimraf-2.2.8"
+      sources."ripemd160-2.0.2"
+      sources."safe-buffer-5.1.1"
+      sources."safe-regex-1.1.0"
+      sources."set-immediate-shim-1.0.1"
+      sources."set-value-2.0.0"
+      sources."sha.js-2.4.11"
+      sources."shasum-1.0.2"
+      sources."shell-quote-1.6.1"
+      (sources."snapdragon-0.8.2" // {
+        dependencies = [
+          (sources."define-property-0.2.5" // {
             dependencies = [
-              sources."minimist-0.0.10"
-              sources."wordwrap-0.0.3"
+              sources."kind-of-5.1.0"
+            ];
+          })
+          sources."extend-shallow-2.0.1"
+          sources."kind-of-4.0.0"
+        ];
+      })
+      sources."snapdragon-node-2.1.1"
+      sources."snapdragon-util-3.0.1"
+      sources."source-map-0.5.7"
+      sources."source-map-resolve-0.5.1"
+      sources."source-map-url-0.4.0"
+      (sources."split-string-3.1.0" // {
+        dependencies = [
+          sources."extend-shallow-3.0.2"
+          sources."is-extendable-1.0.1"
+        ];
+      })
+      sources."static-extend-0.1.2"
+      sources."stream-browserify-2.0.1"
+      sources."stream-combiner2-1.1.1"
+      sources."stream-http-2.8.1"
+      sources."stream-splicer-2.0.0"
+      sources."string-stream-0.0.7"
+      sources."string_decoder-0.10.31"
+      sources."subarg-1.0.0"
+      sources."syntax-error-1.4.0"
+      sources."temp-0.8.3"
+      sources."through-2.3.8"
+      sources."through2-2.0.3"
+      sources."timers-browserify-1.4.2"
+      sources."to-arraybuffer-1.0.1"
+      sources."to-object-path-0.3.0"
+      sources."to-regex-3.0.2"
+      sources."to-regex-range-2.1.1"
+      sources."tree-kill-1.2.0"
+      sources."tty-browserify-0.0.1"
+      sources."typedarray-0.0.6"
+      sources."umd-3.0.3"
+      (sources."union-value-1.0.0" // {
+        dependencies = [
+          sources."set-value-0.4.3"
+        ];
+      })
+      (sources."unset-value-1.0.0" // {
+        dependencies = [
+          (sources."has-value-0.3.1" // {
+            dependencies = [
+              sources."isobject-2.1.0"
             ];
           })
         ];
       })
-      (sources."read-1.0.7" // {
+      sources."upath-1.0.4"
+      sources."urix-0.1.0"
+      (sources."url-0.11.0" // {
         dependencies = [
-          sources."mute-stream-0.0.7"
+          sources."punycode-1.3.2"
         ];
       })
-      sources."string-stream-0.0.7"
-      (sources."temp-0.8.3" // {
+      (sources."use-3.1.0" // {
         dependencies = [
-          sources."os-tmpdir-1.0.2"
-          sources."rimraf-2.2.8"
+          sources."kind-of-6.0.2"
         ];
       })
-      sources."through-2.3.8"
-      sources."tree-kill-1.2.0"
+      (sources."util-0.10.3" // {
+        dependencies = [
+          sources."inherits-2.0.1"
+        ];
+      })
+      sources."util-deprecate-1.0.2"
+      sources."vm-browserify-0.0.4"
       (sources."watchpack-1.5.0" // {
         dependencies = [
-          (sources."chokidar-2.0.3" // {
+          sources."define-property-1.0.0"
+          sources."extend-shallow-2.0.1"
+          sources."has-values-0.1.4"
+          (sources."is-accessor-descriptor-0.1.6" // {
             dependencies = [
-              (sources."anymatch-2.0.0" // {
-                dependencies = [
-                  (sources."micromatch-3.1.10" // {
-                    dependencies = [
-                      sources."arr-diff-4.0.0"
-                      sources."array-unique-0.3.2"
-                      (sources."define-property-2.0.2" // {
-                        dependencies = [
-                          (sources."is-descriptor-1.0.2" // {
-                            dependencies = [
-                              sources."is-accessor-descriptor-1.0.0"
-                              sources."is-data-descriptor-1.0.0"
-                            ];
-                          })
-                          sources."isobject-3.0.1"
-                        ];
-                      })
-                      (sources."extend-shallow-3.0.2" // {
-                        dependencies = [
-                          sources."assign-symbols-1.0.0"
-                          (sources."is-extendable-1.0.1" // {
-                            dependencies = [
-                              (sources."is-plain-object-2.0.4" // {
-                                dependencies = [
-                                  sources."isobject-3.0.1"
-                                ];
-                              })
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."extglob-2.0.4" // {
-                        dependencies = [
-                          (sources."define-property-1.0.0" // {
-                            dependencies = [
-                              (sources."is-descriptor-1.0.2" // {
-                                dependencies = [
-                                  sources."is-accessor-descriptor-1.0.0"
-                                  sources."is-data-descriptor-1.0.0"
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."expand-brackets-2.1.4" // {
-                            dependencies = [
-                              (sources."debug-2.6.9" // {
-                                dependencies = [
-                                  sources."ms-2.0.0"
-                                ];
-                              })
-                              (sources."define-property-0.2.5" // {
-                                dependencies = [
-                                  (sources."is-descriptor-0.1.6" // {
-                                    dependencies = [
-                                      (sources."is-accessor-descriptor-0.1.6" // {
-                                        dependencies = [
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      (sources."is-data-descriptor-0.1.4" // {
-                                        dependencies = [
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      sources."kind-of-5.1.0"
-                                    ];
-                                  })
-                                ];
-                              })
-                              sources."posix-character-classes-0.1.1"
-                            ];
-                          })
-                          (sources."extend-shallow-2.0.1" // {
-                            dependencies = [
-                              sources."is-extendable-0.1.1"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."fragment-cache-0.2.1" // {
-                        dependencies = [
-                          sources."map-cache-0.2.2"
-                        ];
-                      })
-                      sources."kind-of-6.0.2"
-                      (sources."nanomatch-1.2.9" // {
-                        dependencies = [
-                          (sources."is-odd-2.0.0" // {
-                            dependencies = [
-                              sources."is-number-4.0.0"
-                            ];
-                          })
-                          sources."is-windows-1.0.2"
-                        ];
-                      })
-                      (sources."object.pick-1.3.0" // {
-                        dependencies = [
-                          sources."isobject-3.0.1"
-                        ];
-                      })
-                      (sources."regex-not-1.0.2" // {
-                        dependencies = [
-                          (sources."safe-regex-1.1.0" // {
-                            dependencies = [
-                              sources."ret-0.1.15"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."snapdragon-0.8.2" // {
-                        dependencies = [
-                          (sources."base-0.11.2" // {
-                            dependencies = [
-                              (sources."cache-base-1.0.1" // {
-                                dependencies = [
-                                  (sources."collection-visit-1.0.0" // {
-                                    dependencies = [
-                                      sources."map-visit-1.0.0"
-                                      sources."object-visit-1.0.1"
-                                    ];
-                                  })
-                                  sources."get-value-2.0.6"
-                                  (sources."has-value-1.0.0" // {
-                                    dependencies = [
-                                      (sources."has-values-1.0.0" // {
-                                        dependencies = [
-                                          (sources."is-number-3.0.0" // {
-                                            dependencies = [
-                                              (sources."kind-of-3.2.2" // {
-                                                dependencies = [
-                                                  sources."is-buffer-1.1.6"
-                                                ];
-                                              })
-                                            ];
-                                          })
-                                          (sources."kind-of-4.0.0" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."set-value-2.0.0" // {
-                                    dependencies = [
-                                      sources."is-extendable-0.1.1"
-                                      sources."is-plain-object-2.0.4"
-                                      (sources."split-string-3.1.0" // {
-                                        dependencies = [
-                                          (sources."extend-shallow-3.0.2" // {
-                                            dependencies = [
-                                              sources."assign-symbols-1.0.0"
-                                              sources."is-extendable-1.0.1"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."to-object-path-0.3.0" // {
-                                    dependencies = [
-                                      (sources."kind-of-3.2.2" // {
-                                        dependencies = [
-                                          sources."is-buffer-1.1.6"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."union-value-1.0.0" // {
-                                    dependencies = [
-                                      sources."arr-union-3.1.0"
-                                      sources."is-extendable-0.1.1"
-                                      (sources."set-value-0.4.3" // {
-                                        dependencies = [
-                                          sources."is-plain-object-2.0.4"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."unset-value-1.0.0" // {
-                                    dependencies = [
-                                      (sources."has-value-0.3.1" // {
-                                        dependencies = [
-                                          sources."has-values-0.1.4"
-                                          (sources."isobject-2.1.0" // {
-                                            dependencies = [
-                                              sources."isarray-1.0.0"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."class-utils-0.3.6" // {
-                                dependencies = [
-                                  sources."arr-union-3.1.0"
-                                  (sources."define-property-0.2.5" // {
-                                    dependencies = [
-                                      (sources."is-descriptor-0.1.6" // {
-                                        dependencies = [
-                                          (sources."is-accessor-descriptor-0.1.6" // {
-                                            dependencies = [
-                                              (sources."kind-of-3.2.2" // {
-                                                dependencies = [
-                                                  sources."is-buffer-1.1.6"
-                                                ];
-                                              })
-                                            ];
-                                          })
-                                          (sources."is-data-descriptor-0.1.4" // {
-                                            dependencies = [
-                                              (sources."kind-of-3.2.2" // {
-                                                dependencies = [
-                                                  sources."is-buffer-1.1.6"
-                                                ];
-                                              })
-                                            ];
-                                          })
-                                          sources."kind-of-5.1.0"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."static-extend-0.1.2" // {
-                                    dependencies = [
-                                      (sources."object-copy-0.1.0" // {
-                                        dependencies = [
-                                          sources."copy-descriptor-0.1.1"
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                ];
-                              })
-                              sources."component-emitter-1.2.1"
-                              (sources."define-property-1.0.0" // {
-                                dependencies = [
-                                  (sources."is-descriptor-1.0.2" // {
-                                    dependencies = [
-                                      sources."is-accessor-descriptor-1.0.0"
-                                      sources."is-data-descriptor-1.0.0"
-                                    ];
-                                  })
-                                ];
-                              })
-                              sources."isobject-3.0.1"
-                              (sources."mixin-deep-1.3.1" // {
-                                dependencies = [
-                                  sources."for-in-1.0.2"
-                                  (sources."is-extendable-1.0.1" // {
-                                    dependencies = [
-                                      sources."is-plain-object-2.0.4"
-                                    ];
-                                  })
-                                ];
-                              })
-                              sources."pascalcase-0.1.1"
-                            ];
-                          })
-                          (sources."debug-2.6.9" // {
-                            dependencies = [
-                              sources."ms-2.0.0"
-                            ];
-                          })
-                          (sources."define-property-0.2.5" // {
-                            dependencies = [
-                              (sources."is-descriptor-0.1.6" // {
-                                dependencies = [
-                                  (sources."is-accessor-descriptor-0.1.6" // {
-                                    dependencies = [
-                                      (sources."kind-of-3.2.2" // {
-                                        dependencies = [
-                                          sources."is-buffer-1.1.6"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  (sources."is-data-descriptor-0.1.4" // {
-                                    dependencies = [
-                                      (sources."kind-of-3.2.2" // {
-                                        dependencies = [
-                                          sources."is-buffer-1.1.6"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                  sources."kind-of-5.1.0"
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."extend-shallow-2.0.1" // {
-                            dependencies = [
-                              sources."is-extendable-0.1.1"
-                            ];
-                          })
-                          sources."map-cache-0.2.2"
-                          sources."source-map-0.5.7"
-                          (sources."source-map-resolve-0.5.1" // {
-                            dependencies = [
-                              sources."atob-2.1.0"
-                              sources."decode-uri-component-0.2.0"
-                              sources."resolve-url-0.2.1"
-                              sources."source-map-url-0.4.0"
-                              sources."urix-0.1.0"
-                            ];
-                          })
-                          sources."use-3.1.0"
-                        ];
-                      })
-                      (sources."to-regex-3.0.2" // {
-                        dependencies = [
-                          (sources."safe-regex-1.1.0" // {
-                            dependencies = [
-                              sources."ret-0.1.15"
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              sources."async-each-1.0.1"
-              (sources."braces-2.3.1" // {
-                dependencies = [
-                  sources."arr-flatten-1.1.0"
-                  sources."array-unique-0.3.2"
-                  (sources."define-property-1.0.0" // {
-                    dependencies = [
-                      (sources."is-descriptor-1.0.2" // {
-                        dependencies = [
-                          sources."is-accessor-descriptor-1.0.0"
-                          sources."is-data-descriptor-1.0.0"
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."extend-shallow-2.0.1" // {
-                    dependencies = [
-                      sources."is-extendable-0.1.1"
-                    ];
-                  })
-                  (sources."fill-range-4.0.0" // {
-                    dependencies = [
-                      (sources."is-number-3.0.0" // {
-                        dependencies = [
-                          (sources."kind-of-3.2.2" // {
-                            dependencies = [
-                              sources."is-buffer-1.1.6"
-                            ];
-                          })
-                        ];
-                      })
-                      sources."repeat-string-1.6.1"
-                      sources."to-regex-range-2.1.1"
-                    ];
-                  })
-                  sources."isobject-3.0.1"
-                  sources."kind-of-6.0.2"
-                  sources."repeat-element-1.1.2"
-                  (sources."snapdragon-0.8.2" // {
-                    dependencies = [
-                      (sources."base-0.11.2" // {
-                        dependencies = [
-                          (sources."cache-base-1.0.1" // {
-                            dependencies = [
-                              (sources."collection-visit-1.0.0" // {
-                                dependencies = [
-                                  sources."map-visit-1.0.0"
-                                  sources."object-visit-1.0.1"
-                                ];
-                              })
-                              sources."get-value-2.0.6"
-                              (sources."has-value-1.0.0" // {
-                                dependencies = [
-                                  (sources."has-values-1.0.0" // {
-                                    dependencies = [
-                                      (sources."is-number-3.0.0" // {
-                                        dependencies = [
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      (sources."kind-of-4.0.0" // {
-                                        dependencies = [
-                                          sources."is-buffer-1.1.6"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."set-value-2.0.0" // {
-                                dependencies = [
-                                  sources."is-extendable-0.1.1"
-                                  sources."is-plain-object-2.0.4"
-                                ];
-                              })
-                              (sources."to-object-path-0.3.0" // {
-                                dependencies = [
-                                  (sources."kind-of-3.2.2" // {
-                                    dependencies = [
-                                      sources."is-buffer-1.1.6"
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."union-value-1.0.0" // {
-                                dependencies = [
-                                  sources."arr-union-3.1.0"
-                                  sources."is-extendable-0.1.1"
-                                  (sources."set-value-0.4.3" // {
-                                    dependencies = [
-                                      sources."is-plain-object-2.0.4"
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."unset-value-1.0.0" // {
-                                dependencies = [
-                                  (sources."has-value-0.3.1" // {
-                                    dependencies = [
-                                      sources."has-values-0.1.4"
-                                      (sources."isobject-2.1.0" // {
-                                        dependencies = [
-                                          sources."isarray-1.0.0"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."class-utils-0.3.6" // {
-                            dependencies = [
-                              sources."arr-union-3.1.0"
-                              (sources."define-property-0.2.5" // {
-                                dependencies = [
-                                  (sources."is-descriptor-0.1.6" // {
-                                    dependencies = [
-                                      (sources."is-accessor-descriptor-0.1.6" // {
-                                        dependencies = [
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      (sources."is-data-descriptor-0.1.4" // {
-                                        dependencies = [
-                                          (sources."kind-of-3.2.2" // {
-                                            dependencies = [
-                                              sources."is-buffer-1.1.6"
-                                            ];
-                                          })
-                                        ];
-                                      })
-                                      sources."kind-of-5.1.0"
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."static-extend-0.1.2" // {
-                                dependencies = [
-                                  (sources."object-copy-0.1.0" // {
-                                    dependencies = [
-                                      sources."copy-descriptor-0.1.1"
-                                      (sources."kind-of-3.2.2" // {
-                                        dependencies = [
-                                          sources."is-buffer-1.1.6"
-                                        ];
-                                      })
-                                    ];
-                                  })
-                                ];
-                              })
-                            ];
-                          })
-                          sources."component-emitter-1.2.1"
-                          (sources."define-property-1.0.0" // {
-                            dependencies = [
-                              (sources."is-descriptor-1.0.2" // {
-                                dependencies = [
-                                  sources."is-accessor-descriptor-1.0.0"
-                                  sources."is-data-descriptor-1.0.0"
-                                ];
-                              })
-                            ];
-                          })
-                          (sources."mixin-deep-1.3.1" // {
-                            dependencies = [
-                              sources."for-in-1.0.2"
-                              (sources."is-extendable-1.0.1" // {
-                                dependencies = [
-                                  sources."is-plain-object-2.0.4"
-                                ];
-                              })
-                            ];
-                          })
-                          sources."pascalcase-0.1.1"
-                        ];
-                      })
-                      (sources."debug-2.6.9" // {
-                        dependencies = [
-                          sources."ms-2.0.0"
-                        ];
-                      })
-                      (sources."define-property-0.2.5" // {
-                        dependencies = [
-                          (sources."is-descriptor-0.1.6" // {
-                            dependencies = [
-                              (sources."is-accessor-descriptor-0.1.6" // {
-                                dependencies = [
-                                  (sources."kind-of-3.2.2" // {
-                                    dependencies = [
-                                      sources."is-buffer-1.1.6"
-                                    ];
-                                  })
-                                ];
-                              })
-                              (sources."is-data-descriptor-0.1.4" // {
-                                dependencies = [
-                                  (sources."kind-of-3.2.2" // {
-                                    dependencies = [
-                                      sources."is-buffer-1.1.6"
-                                    ];
-                                  })
-                                ];
-                              })
-                              sources."kind-of-5.1.0"
-                            ];
-                          })
-                        ];
-                      })
-                      sources."map-cache-0.2.2"
-                      sources."source-map-0.5.7"
-                      (sources."source-map-resolve-0.5.1" // {
-                        dependencies = [
-                          sources."atob-2.1.0"
-                          sources."decode-uri-component-0.2.0"
-                          sources."resolve-url-0.2.1"
-                          sources."source-map-url-0.4.0"
-                          sources."urix-0.1.0"
-                        ];
-                      })
-                      sources."use-3.1.0"
-                    ];
-                  })
-                  (sources."snapdragon-node-2.1.1" // {
-                    dependencies = [
-                      (sources."snapdragon-util-3.0.1" // {
-                        dependencies = [
-                          (sources."kind-of-3.2.2" // {
-                            dependencies = [
-                              sources."is-buffer-1.1.6"
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."split-string-3.1.0" // {
-                    dependencies = [
-                      (sources."extend-shallow-3.0.2" // {
-                        dependencies = [
-                          sources."assign-symbols-1.0.0"
-                          (sources."is-extendable-1.0.1" // {
-                            dependencies = [
-                              sources."is-plain-object-2.0.4"
-                            ];
-                          })
-                        ];
-                      })
-                    ];
-                  })
-                  (sources."to-regex-3.0.2" // {
-                    dependencies = [
-                      (sources."define-property-2.0.2" // {
-                        dependencies = [
-                          (sources."is-descriptor-1.0.2" // {
-                            dependencies = [
-                              sources."is-accessor-descriptor-1.0.0"
-                              sources."is-data-descriptor-1.0.0"
-                            ];
-                          })
-                        ];
-                      })
-                      (sources."extend-shallow-3.0.2" // {
-                        dependencies = [
-                          sources."assign-symbols-1.0.0"
-                          (sources."is-extendable-1.0.1" // {
-                            dependencies = [
-                              sources."is-plain-object-2.0.4"
-                            ];
-                          })
-                        ];
-                      })
-                      sources."regex-not-1.0.2"
-                      (sources."safe-regex-1.1.0" // {
-                        dependencies = [
-                          sources."ret-0.1.15"
-                        ];
-                      })
-                    ];
-                  })
-                ];
-              })
-              (sources."fsevents-1.1.3" // {
-                dependencies = [
-                  sources."nan-2.10.0"
-                ];
-              })
-              (sources."glob-parent-3.1.0" // {
-                dependencies = [
-                  (sources."is-glob-3.1.0" // {
-                    dependencies = [
-                      sources."is-extglob-2.1.1"
-                    ];
-                  })
-                  sources."path-dirname-1.0.2"
-                ];
-              })
-              sources."inherits-2.0.3"
-              (sources."is-binary-path-1.0.1" // {
-                dependencies = [
-                  sources."binary-extensions-1.11.0"
-                ];
-              })
-              (sources."is-glob-4.0.0" // {
-                dependencies = [
-                  sources."is-extglob-2.1.1"
-                ];
-              })
-              (sources."normalize-path-2.1.1" // {
-                dependencies = [
-                  sources."remove-trailing-separator-1.1.0"
-                ];
-              })
-              sources."path-is-absolute-1.0.1"
-              (sources."readdirp-2.1.0" // {
-                dependencies = [
-                  (sources."readable-stream-2.3.5" // {
-                    dependencies = [
-                      sources."core-util-is-1.0.2"
-                      sources."isarray-1.0.0"
-                      sources."process-nextick-args-2.0.0"
-                      sources."safe-buffer-5.1.1"
-                      sources."string_decoder-1.0.3"
-                      sources."util-deprecate-1.0.2"
-                    ];
-                  })
-                  sources."set-immediate-shim-1.0.1"
-                ];
-              })
-              sources."upath-1.0.4"
+              sources."kind-of-3.2.2"
             ];
           })
-          sources."graceful-fs-4.1.11"
-          sources."neo-async-2.5.0"
+          (sources."is-data-descriptor-0.1.4" // {
+            dependencies = [
+              sources."kind-of-3.2.2"
+            ];
+          })
+          sources."is-descriptor-0.1.6"
+          sources."is-extendable-0.1.1"
+          (sources."is-number-3.0.0" // {
+            dependencies = [
+              sources."kind-of-3.2.2"
+            ];
+          })
+          sources."kind-of-3.2.2"
         ];
       })
-      (sources."which-1.3.0" // {
-        dependencies = [
-          sources."isexe-2.0.0"
-        ];
-      })
+      sources."which-1.3.0"
       sources."wordwrap-1.0.0"
+      sources."wrappy-1.0.2"
+      sources."xtend-4.0.1"
     ];
     buildInputs = globalBuildInputs;
     meta = {
@@ -17677,7 +12682,7 @@ in
       license = "LGPL-3.0+";
     };
     production = true;
-    bypassCache = false;
+    bypassCache = true;
   };
   selenium-webdriver = nodeEnv.buildNodePackage {
     name = "selenium-webdriver";
@@ -17688,70 +12693,35 @@ in
       sha512 = "3jlxnxax9lyh91s4jf4hx9wp24nid8618zbak71yxp5faa9gnrqdpib0g91rml5s8m6636wdjn3iyjf4ijlijly9pk7igy065v2pkyg";
     };
     dependencies = [
-      (sources."jszip-3.1.5" // {
-        dependencies = [
-          sources."core-js-2.3.0"
-          sources."es6-promise-3.0.2"
-          (sources."lie-3.1.1" // {
-            dependencies = [
-              sources."immediate-3.0.6"
-            ];
-          })
-          sources."pako-1.0.6"
-          (sources."readable-stream-2.0.6" // {
-            dependencies = [
-              sources."core-util-is-1.0.2"
-              sources."inherits-2.0.3"
-              sources."isarray-1.0.0"
-              sources."process-nextick-args-1.0.7"
-              sources."string_decoder-0.10.31"
-              sources."util-deprecate-1.0.2"
-            ];
-          })
-        ];
-      })
-      (sources."rimraf-2.6.2" // {
-        dependencies = [
-          (sources."glob-7.1.2" // {
-            dependencies = [
-              sources."fs.realpath-1.0.0"
-              (sources."inflight-1.0.6" // {
-                dependencies = [
-                  sources."wrappy-1.0.2"
-                ];
-              })
-              sources."inherits-2.0.3"
-              (sources."minimatch-3.0.4" // {
-                dependencies = [
-                  (sources."brace-expansion-1.1.11" // {
-                    dependencies = [
-                      sources."balanced-match-1.0.0"
-                      sources."concat-map-0.0.1"
-                    ];
-                  })
-                ];
-              })
-              (sources."once-1.4.0" // {
-                dependencies = [
-                  sources."wrappy-1.0.2"
-                ];
-              })
-              sources."path-is-absolute-1.0.1"
-            ];
-          })
-        ];
-      })
-      (sources."tmp-0.0.30" // {
-        dependencies = [
-          sources."os-tmpdir-1.0.2"
-        ];
-      })
-      (sources."xml2js-0.4.19" // {
-        dependencies = [
-          sources."sax-1.2.4"
-          sources."xmlbuilder-9.0.7"
-        ];
-      })
+      sources."balanced-match-1.0.0"
+      sources."brace-expansion-1.1.11"
+      sources."concat-map-0.0.1"
+      sources."core-js-2.3.0"
+      sources."core-util-is-1.0.2"
+      sources."es6-promise-3.0.2"
+      sources."fs.realpath-1.0.0"
+      sources."glob-7.1.2"
+      sources."immediate-3.0.6"
+      sources."inflight-1.0.6"
+      sources."inherits-2.0.3"
+      sources."isarray-1.0.0"
+      sources."jszip-3.1.5"
+      sources."lie-3.1.1"
+      sources."minimatch-3.0.4"
+      sources."once-1.4.0"
+      sources."os-tmpdir-1.0.2"
+      sources."pako-1.0.6"
+      sources."path-is-absolute-1.0.1"
+      sources."process-nextick-args-1.0.7"
+      sources."readable-stream-2.0.6"
+      sources."rimraf-2.6.2"
+      sources."sax-1.2.4"
+      sources."string_decoder-0.10.31"
+      sources."tmp-0.0.30"
+      sources."util-deprecate-1.0.2"
+      sources."wrappy-1.0.2"
+      sources."xml2js-0.4.19"
+      sources."xmlbuilder-9.0.7"
     ];
     buildInputs = globalBuildInputs;
     meta = {
@@ -17760,38 +12730,25 @@ in
       license = "Apache-2.0";
     };
     production = true;
-    bypassCache = false;
+    bypassCache = true;
   };
   ts-node = nodeEnv.buildNodePackage {
     name = "ts-node";
     packageName = "ts-node";
-    version = "5.0.1";
+    version = "6.0.0";
     src = fetchurl {
-      url = "https://registry.npmjs.org/ts-node/-/ts-node-5.0.1.tgz";
-      sha512 = "19p65f46b8f3mmnbyk6sz26h6nn7g0mln2ai330cznd2hyimp98c4sjyqmzlxchm70wjlzjfd2128as8c1qnr2vj6cmj78d6ycd1bjw";
+      url = "https://registry.npmjs.org/ts-node/-/ts-node-6.0.0.tgz";
+      sha512 = "1bsgz334slfq7c3f3qi2xxa4d7hfhgypa3kz9f3yibdbs5wjr2pdlpr71mq04ikabh2h54yjmjx49ydj6cgdmj96la11v09xsziw97q";
     };
     dependencies = [
+      sources."ansi-styles-3.2.1"
       sources."arrify-1.0.1"
-      (sources."chalk-2.3.2" // {
-        dependencies = [
-          (sources."ansi-styles-3.2.1" // {
-            dependencies = [
-              (sources."color-convert-1.9.1" // {
-                dependencies = [
-                  sources."color-name-1.1.3"
-                ];
-              })
-            ];
-          })
-          sources."escape-string-regexp-1.0.5"
-          (sources."supports-color-5.3.0" // {
-            dependencies = [
-              sources."has-flag-3.0.0"
-            ];
-          })
-        ];
-      })
+      sources."chalk-2.4.0"
+      sources."color-convert-1.9.1"
+      sources."color-name-1.1.3"
       sources."diff-3.5.0"
+      sources."escape-string-regexp-1.0.5"
+      sources."has-flag-3.0.0"
       sources."make-error-1.3.4"
       sources."minimist-1.2.0"
       (sources."mkdirp-0.5.1" // {
@@ -17799,11 +12756,9 @@ in
           sources."minimist-0.0.8"
         ];
       })
-      (sources."source-map-support-0.5.4" // {
-        dependencies = [
-          sources."source-map-0.6.1"
-        ];
-      })
+      sources."source-map-0.6.1"
+      sources."source-map-support-0.5.4"
+      sources."supports-color-5.4.0"
       sources."yn-2.0.0"
     ];
     buildInputs = globalBuildInputs;
@@ -17813,7 +12768,7 @@ in
       license = "MIT";
     };
     production = true;
-    bypassCache = false;
+    bypassCache = true;
   };
   yargs = nodeEnv.buildNodePackage {
     name = "yargs";
@@ -17824,122 +12779,63 @@ in
       sha512 = "03n9lfnyx1dfj5sm811f3d96djsr6fixd5qi6cl6wj8xf0y01sgn7w3ynv5gn2vl30dwq5mz2hw5f522v8xbwc8m9h6nf8hqsa7wfj6";
     };
     dependencies = [
-      (sources."cliui-4.0.0" // {
+      sources."ansi-regex-3.0.0"
+      sources."camelcase-4.1.0"
+      (sources."cliui-4.1.0" // {
         dependencies = [
-          (sources."strip-ansi-4.0.0" // {
-            dependencies = [
-              sources."ansi-regex-3.0.0"
-            ];
-          })
-          (sources."wrap-ansi-2.1.0" // {
-            dependencies = [
-              (sources."string-width-1.0.2" // {
-                dependencies = [
-                  sources."code-point-at-1.1.0"
-                  (sources."is-fullwidth-code-point-1.0.0" // {
-                    dependencies = [
-                      sources."number-is-nan-1.0.1"
-                    ];
-                  })
-                ];
-              })
-              (sources."strip-ansi-3.0.1" // {
-                dependencies = [
-                  sources."ansi-regex-2.1.1"
-                ];
-              })
-            ];
-          })
+          sources."ansi-regex-2.1.1"
         ];
       })
+      sources."code-point-at-1.1.0"
+      sources."cross-spawn-5.1.0"
       sources."decamelize-1.2.0"
-      (sources."find-up-2.1.0" // {
-        dependencies = [
-          (sources."locate-path-2.0.0" // {
-            dependencies = [
-              (sources."p-locate-2.0.0" // {
-                dependencies = [
-                  (sources."p-limit-1.2.0" // {
-                    dependencies = [
-                      sources."p-try-1.0.0"
-                    ];
-                  })
-                ];
-              })
-              sources."path-exists-3.0.0"
-            ];
-          })
-        ];
-      })
+      sources."execa-0.7.0"
+      sources."find-up-2.1.0"
       sources."get-caller-file-1.0.2"
-      (sources."os-locale-2.1.0" // {
-        dependencies = [
-          (sources."execa-0.7.0" // {
-            dependencies = [
-              (sources."cross-spawn-5.1.0" // {
-                dependencies = [
-                  (sources."lru-cache-4.1.2" // {
-                    dependencies = [
-                      sources."pseudomap-1.0.2"
-                      sources."yallist-2.1.2"
-                    ];
-                  })
-                  (sources."shebang-command-1.2.0" // {
-                    dependencies = [
-                      sources."shebang-regex-1.0.0"
-                    ];
-                  })
-                  (sources."which-1.3.0" // {
-                    dependencies = [
-                      sources."isexe-2.0.0"
-                    ];
-                  })
-                ];
-              })
-              sources."get-stream-3.0.0"
-              sources."is-stream-1.1.0"
-              (sources."npm-run-path-2.0.2" // {
-                dependencies = [
-                  sources."path-key-2.0.1"
-                ];
-              })
-              sources."p-finally-1.0.0"
-              sources."signal-exit-3.0.2"
-              sources."strip-eof-1.0.0"
-            ];
-          })
-          (sources."lcid-1.0.0" // {
-            dependencies = [
-              sources."invert-kv-1.0.0"
-            ];
-          })
-          (sources."mem-1.1.0" // {
-            dependencies = [
-              sources."mimic-fn-1.2.0"
-            ];
-          })
-        ];
-      })
+      sources."get-stream-3.0.0"
+      sources."invert-kv-1.0.0"
+      sources."is-fullwidth-code-point-1.0.0"
+      sources."is-stream-1.1.0"
+      sources."isexe-2.0.0"
+      sources."lcid-1.0.0"
+      sources."locate-path-2.0.0"
+      sources."lru-cache-4.1.2"
+      sources."mem-1.1.0"
+      sources."mimic-fn-1.2.0"
+      sources."npm-run-path-2.0.2"
+      sources."number-is-nan-1.0.1"
+      sources."os-locale-2.1.0"
+      sources."p-finally-1.0.0"
+      sources."p-limit-1.2.0"
+      sources."p-locate-2.0.0"
+      sources."p-try-1.0.0"
+      sources."path-exists-3.0.0"
+      sources."path-key-2.0.1"
+      sources."pseudomap-1.0.2"
       sources."require-directory-2.1.1"
       sources."require-main-filename-1.0.1"
       sources."set-blocking-2.0.0"
+      sources."shebang-command-1.2.0"
+      sources."shebang-regex-1.0.0"
+      sources."signal-exit-3.0.2"
       (sources."string-width-2.1.1" // {
         dependencies = [
           sources."is-fullwidth-code-point-2.0.0"
-          (sources."strip-ansi-4.0.0" // {
-            dependencies = [
-              sources."ansi-regex-3.0.0"
-            ];
-          })
         ];
       })
+      sources."strip-ansi-4.0.0"
+      sources."strip-eof-1.0.0"
+      sources."which-1.3.0"
       sources."which-module-2.0.0"
-      sources."y18n-3.2.1"
-      (sources."yargs-parser-9.0.2" // {
+      (sources."wrap-ansi-2.1.0" // {
         dependencies = [
-          sources."camelcase-4.1.0"
+          sources."string-width-1.0.2"
+          sources."strip-ansi-3.0.1"
         ];
       })
+      sources."y18n-3.2.1"
+      sources."yallist-2.1.2"
+      sources."yargs-parser-9.0.2"
     ];
     buildInputs = globalBuildInputs;
     meta = {
@@ -17948,6 +12844,6 @@ in
       license = "MIT";
     };
     production = true;
-    bypassCache = false;
+    bypassCache = true;
   };
 }
