@@ -56,6 +56,8 @@ with pkgs.emacs25PackagesNg;
         persistent-scratch
         melpaPackages.use-package
         multiple-cursors
+        [ glsl-mode company-glsl ]
+        helm-company
       ];
       init = readFile ./default.el;
     };

@@ -11,4 +11,5 @@ self: super: {
   
   xmonad = import ./xmonad { pkgs = self; inherit config; };
 
+  pythonExt = self.python3Packages.python.withPackages (p: [ p.notebook ]);
 }

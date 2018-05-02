@@ -9,7 +9,7 @@ let
 in
 
 with pkgs;
-  
+
 lib.flatten (builtins.attrValues {
 
   aliases = mkAliases {
@@ -35,7 +35,7 @@ lib.flatten (builtins.attrValues {
     torbrowser
     youtube-dl
   ];
-  
+
   dev = [
     emacs
     emacs-client
@@ -44,7 +44,7 @@ lib.flatten (builtins.attrValues {
     vim
     gcc
 #   racket
-    python
+    pythonExt
     zeal
     stack
     openjdk
@@ -72,15 +72,18 @@ lib.flatten (builtins.attrValues {
     #purescript
     sbt
     swiProlog
+    glslviewer
+    docker
+    python3Packages.notebook
   ];
-  
+
   gfx = [
     blender
     imagemagick
     gimp
     graphviz
   ];
-  
+
   nix = [
     nixops
     npm2nix
@@ -88,11 +91,11 @@ lib.flatten (builtins.attrValues {
     #cabal2nix
     nodePackages.node2nix
   ];
-  
+
   system = [
     acpi
   ];
-  
+
   cli = [
     rxvt
     fish
@@ -109,7 +112,7 @@ lib.flatten (builtins.attrValues {
     libnotify
     parallel
   ];
-  
+
   utils = [
     zip
     unzip
@@ -117,7 +120,7 @@ lib.flatten (builtins.attrValues {
     psmisc # e.g. killall
     alsaUtils
   ];
-  
+
   media = [
     vlc
     scrot
@@ -125,20 +128,24 @@ lib.flatten (builtins.attrValues {
     espeak
     sox
   ];
-  
+
   office = [
     #libreoffice
     aspellDicts.de
     aspellDicts.en
     aspell
   ];
-  
+
   crypto = [
     gnupg
   ];
-  
+
   vm = [
     virtualbox
+  ];
+
+  security = [
+    clamav
   ];
 
 })

@@ -59,18 +59,17 @@
   (global-set-key (kbd "C-c u") #'rename-uniquely))
 
 
-;; (progn
-;;   ;; Elisp
-;;   (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
-;;   (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
-;;   (add-hook 'emacs-lisp-mode-hook #'eldoc-mode)
-;;   (add-hook 'emacs-lisp-mode-hook #'auto-complete-mode)
-;;   (add-hook 'emacs-lisp-mode-hook #'company-mode))
+(progn
+  ;; Elisp
+  (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
+  (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
+  (add-hook 'emacs-lisp-mode-hook #'eldoc-mode)
+  (add-hook 'emacs-lisp-mode-hook #'auto-complete-mode)
+  (add-hook 'emacs-lisp-mode-hook #'company-mode))
 
-
-(use-package emacs-lisp-mode
-  :hook (emacs-lisp-mode . (aggressive-indent-mode paredit-mode))
-  )
+;; (use-package emacs-lisp-mode
+;;  :hook (emacs-lisp-mode . (aggressive-indent-mode paredit-mode))
+;;  )
 
 
 
@@ -447,7 +446,7 @@
 
 (progn
   (avy-setup-default)
-  (global-set-key (kbd "C-:") 'avy-goto-char)
+  ;;(global-set-key (kbd "C-:") 'avy-goto-char)
   (global-set-key (kbd "C-'") 'avy-goto-char-2)
   (global-set-key (kbd "C-.") 'avy-goto-char-timer))
 
