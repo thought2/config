@@ -75,6 +75,7 @@ lib.flatten (builtins.attrValues {
     glslviewer
     docker
     python3Packages.notebook
+    coq
   ];
 
   gfx = [
