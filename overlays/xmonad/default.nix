@@ -19,6 +19,7 @@ let
     --import System.IO
     import XMonad.Layout.LayoutScreens
     import XMonad.Layout.TwoPane
+    import XMonad.Hooks.FloatNext
 
     import XMonad.Layout.FixedColumn
 
@@ -28,6 +29,10 @@ let
     import qualified XMonad.Actions.DynamicWorkspaceOrder as DO
     import XMonad.Actions.CycleWS
 
+    import XMonad.Hooks.ManageHelpers
+
+    import XMonad.StackSet (RationalRect(RationalRect))
+
     modm = mod4Mask
 
     main = do
@@ -36,10 +41,12 @@ let
         , borderWidth        = 4
         , modMask            = modm
         , layoutHook         = layout
+        , manageHook         = myManageHook
         } `additionalKeysP` shortcuts
 
     shortcuts =
       [ ("M-C-f",          spawn "${pkgs.firefox}/bin/firefox")
+      , ("M-C-g",          toggleFloatNext)
       , ("M-C-b",          spawn "${pkgs.thunderbird}/bin/thunderbird")
       , ("M-C-s",          spawn "${pkgs.coreutils}/bin/sleep 0.2; ${pkgs.scrot}/bin/scrot -s -e 'mv $f ~/screenshots/'")
       , ("M-C-c",          spawn "${pkgs.chromium}/bin/chromium-browser")
@@ -62,8 +69,15 @@ let
     layout = tall ||| tall2 ||| full ||| FixedColumn 1 20 80 10
       where
         tall  = Tall 1 (3/100) (1/2)
-        tall2 = Mirror tall 
+        tall2 = Mirror tall
         full  = noBorders Full
+
+    myManageHook = composeAll
+      [ liftX willFloatNext --> doRectFloat (RationalRect 0.5 0.5 0.48 0.48)
+      , floatNextHook
+      , manageHook defaultConfig
+      ]
+
   '';
 in
 pkgs.stdenv.mkDerivation {
