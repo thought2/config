@@ -21,8 +21,6 @@ let
     import XMonad.Layout.TwoPane
     import XMonad.Hooks.FloatNext
 
---    import FloatNext
-
     import XMonad.Layout.FixedColumn
 
     --import XMonad.Layout.Gaps
