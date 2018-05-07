@@ -18,13 +18,11 @@ with lib;
 
   services.xserver = {
     enable              = true;
-    layout              = "macintosh_vndr/de";
     exportConfiguration = true;
     xkbOptions          = "eurosign:e,caps:none";
 
     displayManager = {
       sessionCommands = ''
-        ${pkgs.xorg.xrandr}/bin/xrandr --output eDP1 --mode 1440x900
         ${pkgs.xorg.xmodmap}/bin/xmodmap /etc/Xmodmap
       '';
       };

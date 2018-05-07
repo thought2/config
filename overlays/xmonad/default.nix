@@ -20,6 +20,8 @@ let
     import XMonad.Layout.LayoutScreens
     import XMonad.Layout.TwoPane
 
+--    import FloatNext
+
     import XMonad.Layout.FixedColumn
 
     --import XMonad.Layout.Gaps
@@ -50,6 +52,10 @@ let
       , ("M-C-n",          spawn "${pkgs.xterm}/bin/xterm -e ${pkgs.networkmanager}/bin/nmtui")
       , ("M-S-<Space>",    virtualScreens)
       , ("M-C-S-<Space>",  rescreen)
+
+      , ("<XF86AudioMute>", spawn "...")
+      , ("<XF86AudioRaiseVolume>", spawn "${pkgs.alsaUtils}/amixer set Master '10%+'")
+      , ("<XF86AudioLowerVolume>", spawn "...")
 
       -- cycle workspaces
       , ("M-<Left>",       DO.moveTo Prev HiddenNonEmptyWS)

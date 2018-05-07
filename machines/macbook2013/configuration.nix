@@ -15,6 +15,10 @@ in
     ./kworker-fix.nix
   ];
 
+  services.xserver = {
+    layout              = "macintosh_vndr/de";
+  };
+
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
