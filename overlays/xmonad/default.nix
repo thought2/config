@@ -58,9 +58,11 @@ let
       , ("M-S-<Space>",    virtualScreens)
       , ("M-C-S-<Space>",  rescreen)
 
-      , ("<XF86AudioMute>", spawn "...")
-      , ("<XF86AudioRaiseVolume>", spawn "${pkgs.alsaUtils}/amixer set Master '10%+'")
-      , ("<XF86AudioLowerVolume>", spawn "...")
+      --- XF86AudioMute, <XF86AudioRaiseVolume, <XF86AudioLowerVolume
+
+      , ("<XF86AudioPlay>", spawn "${pkgs.alsaUtils}/amixer set Master toggle")
+      , ("<XF86AudioPrev>", spawn "${pkgs.alsaUtils}/amixer set Master '10%+'")
+      , ("<XF86AudioNext>", spawn "${pkgs.alsaUtils}/amixer set Master '10%-'")
 
       -- cycle workspaces
       , ("M-<Left>",       DO.moveTo Prev HiddenNonEmptyWS)

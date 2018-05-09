@@ -4,7 +4,6 @@
   "screens"
   ("1" (shell-command cmd-screens-1) "1" :exit t)
   ("2" (shell-command cmd-screens-2) "2" :exit t)
-  ("3" (shell-command cmd-screens-3) "3" :exit t)
   ("m" (shell-command cmd-screens-mirror) "mirror" :exit t))
 
 (defhydra hydra-keyboard nil
