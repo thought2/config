@@ -56,12 +56,13 @@ with lib;
     defaultSearchProviderSearchURL = "https://duckduckgo.com/?q={searchTerms}";
 
     extensions = [
-    # "fmkadmapgofadopljbjfkapdkoienihi" # React Developer Tools
+      "fmkadmapgofadopljbjfkapdkoienihi" # React Developer Tools
       "lmhkpmbekcpmknklioeibfkpmmfibljd" # Redux DevTools
       "bfbameneiokkgbdmiekhjnmfkcnldhhm" # Web Developer
       "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
       "dmghijelimhndkbmpgbldicpogfkceaj" # Dark Mode
       "chklaanhfefbnpoihckbnefhakgolnmc" # JSONView
+      "ckkdlimhmcjmikdlpkmbgfkaikojcbjk" # Markdown Viewer
     ];
     homepageLocation = "https://duckduckgo.com";
     extraOpts = {

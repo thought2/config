@@ -6,8 +6,8 @@ with pkgs;
 let
 
   screens = {
-    native = "eDP1";
-    side = "DP1";
+    native = "eDP-1";
+    side = "DP-1";
   };
 
 in

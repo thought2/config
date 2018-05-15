@@ -327,7 +327,8 @@
 (progn
   ;; Web Mode
   (setq web-mode-code-indent-offset 2)
-  (add-hook 'web-mode-hook #'prettier-js-mode))
+  ;;(add-hook 'web-mode-hook #'prettier-js-mode)
+  )
 
 
 (progn

@@ -27,6 +27,10 @@
     layout              = "de";
   };
 
+  virtualisation.virtualbox.guest.enable = true;
+
+  virtualisation.virtualbox.host.enable = true;
+
   boot.initrd.luks.devices = [
     {
       name = "root";
