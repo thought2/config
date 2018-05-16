@@ -426,7 +426,8 @@
   (advice-add 'load-theme :before #'load-theme--disable-old-theme))
 
 (progn
-  (add-hook 'prog-mode-hook 'highlight-indentation-mode))
+  ;;(add-hook 'prog-mode-hook 'highlight-indentation-mode)
+  )
 
 (progn
   (setq browse-url-browser-function 'browse-url-generic
