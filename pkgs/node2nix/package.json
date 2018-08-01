@@ -2,10 +2,12 @@
     "elm-format",
     "elm-oracle",
     "elm-live",
+    "elm-test",
     "cross-env",
     "create-elm-app",
     "pulp",
     "selenium-webdriver",
     "ts-node",
-    "yargs"
+    "yargs",
+    "localtunnel"
 ]

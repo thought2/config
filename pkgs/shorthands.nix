@@ -86,4 +86,18 @@ import ./screens.nix {inherit pkgs;} //
       writeShellScriptBin "notify-play" ''
         ${pkgs.sox}/bin/play -t mp3 ${soundFile}
       '';
+
+  patch-elm-binaries = with pkgs.elmPackages; writeShellScriptBin "patch-elm-binaries" ''
+      DIR=./node_modules/elm/Elm-Platform/0.18.0/.cabal-sandbox/bin
+      rm $DIR/elm; ln -s ${elm}/bin/elm $DIR/elm
+      rm $DIR/elm-make; ln -s ${elm}/bin/elm-make $DIR/elm-make
+      rm $DIR/elm-package; ln -s ${elm}/bin/elm-package $DIR/elm-package
+      rm $DIR/elm-reactor; ln -s ${elm}/bin/elm-reactor $DIR/elm-reactor
+      rm $DIR/elm-repl; ln -s ${elm}/bin/elm-repl $DIR/elm-repl
+      rm ./node_modules/elm-format/unpacked_bin/elm-format; ln -s ${elm}/bin/elm-format ./node_modules/elm-format/unpacked_bin/elm-format
+
+      DIR=./node_modules/elm-test/bin
+      rm $DIR/elm-interface-to-json; ln -s ${elm-interface-to-json}/bin/elm-interface-to-json $DIR/elm-interface-to-json
+    '';
+
 }

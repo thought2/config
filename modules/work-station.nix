@@ -63,6 +63,7 @@ with lib;
       "dmghijelimhndkbmpgbldicpogfkceaj" # Dark Mode
       "chklaanhfefbnpoihckbnefhakgolnmc" # JSONView
       "ckkdlimhmcjmikdlpkmbgfkaikojcbjk" # Markdown Viewer
+      "gjadajkmpgdblfochjcfpkhnnkicfapl" # Just Read
     ];
     homepageLocation = "https://duckduckgo.com";
     extraOpts = {
@@ -83,7 +84,8 @@ with lib;
     ! Caps Lock -> Nabla
     keycode 66 = nabla
 
-    keycode 49 = asciicircum
+    ! only for german layout
+    ! keycode 49 = asciicircum
   '';
 
 }

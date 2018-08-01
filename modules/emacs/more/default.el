@@ -321,7 +321,8 @@
   (global-set-key (kbd "C-<left>") 'sp-forward-barf-sexp)
 
   (global-set-key (kbd "M-<left>") 'sp-backward-slurp-sexp)
-  (global-set-key (kbd "M-<right>") 'sp-backward-barf-sexp))
+  (global-set-key (kbd "M-<right>") 'sp-backward-barf-sexp)
+  (global-set-key (kbd "C-k") 'sp-kill-hybrid-sexp))
 
 
 (progn
@@ -438,6 +439,9 @@
   (global-set-key (kbd "<C-S-down>")   'buf-move-down)
   (global-set-key (kbd "<C-S-left>")   'buf-move-left)
   (global-set-key (kbd "<C-S-right>")  'buf-move-right))
+
+(progn
+  (global-set-key (kbd "M-i") 'helm-imenu-in-all-buffers))
 
 (progn
   (require 'duplicate-thing)
@@ -665,3 +669,45 @@ the last number is used again in further repeated invocations.
 
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
+
+(progn
+  (require 'dired )
+
+  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
+
+  (define-key dired-mode-map (kbd "q") (lambda () (interactive) (find-alternate-file ".."))))
+
+(progn
+  (add-hook 'dired-mode-hook
+            (lambda ()
+              (define-key dired-mode-map (kbd "^")
+                (lambda ()
+                  (interactive)
+                  (find-alternate-file ".."))))))
+
+(progn
+  (setq ibuffer-saved-filter-groups
+        '(("home"
+           ("Elm" (mode . elm-mode))
+           ("Haskell" (mode . haskell-mode))
+           ("Shell" (mode . shell-mode))
+           ("Dired" (mode . dired-mode))
+           ("Nix" (mode . nix-mode))
+           ("Magit" (name . "\*magit")) 
+           ("Help" (or (name . "\*Help\*")
+                       (name . "\*Apropos\*")
+                       (name . "\*info\*"))))))
+
+  (add-hook 'ibuffer-mode-hook
+            '(lambda ()
+               (ibuffer-switch-to-saved-filter-groups "home"))))
+
+(progn
+  (require 'psc-ide)
+
+  (add-hook 'purescript-mode-hook
+            (lambda ()
+              (psc-ide-mode)
+              (company-mode)
+              (flycheck-mode)
+              (turn-on-purescript-indentation))))

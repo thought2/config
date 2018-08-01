@@ -16,6 +16,8 @@ with pkgs.emacs25PackagesNg;
     (global-set-key (kbd "C-z") 'avy-goto-line-above)
     (global-set-key (kbd "C-`") 'avy-goto-line-below)
 
+    (global-set-key (kbd "C-c r") 'replace-string)
+
     hydra-main/heads
     (global-set-key '[8711] #'hydra-main/body)
 

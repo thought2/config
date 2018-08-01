@@ -6,6 +6,7 @@ let
 
   node2nixPkgs = import ./node2nix {};
 
+
 in
 
 with pkgs;
@@ -37,6 +38,7 @@ lib.flatten (builtins.attrValues {
   ];
 
   dev = [
+    travis
     emacs
     emacs-client
     mysql
@@ -54,13 +56,17 @@ lib.flatten (builtins.attrValues {
     ghc
     node2nixPkgs.elm-oracle
     node2nixPkgs.cross-env
+    node2nixPkgs.localtunnel
 #   node2nixPkgs.elm-live
 #   node2nixPkgs.create-elm-app
-    node2nixPkgs.pulp
+    #node2nixPkgs.pulp
+    unstable.haskellPackages.purescript
     node2nixPkgs.selenium-webdriver
     node2nixPkgs.ts-node
+    node2nixPkgs.elm-test
     nodePackages.prettier
     nodePackages.bower
+    nodePackages.pulp
     nodePackages.typescript
     #haskellPackages.idris
     haskellPackages.stylish-haskell

@@ -58,11 +58,18 @@ let
       , ("M-S-<Space>",    virtualScreens)
       , ("M-C-S-<Space>",  rescreen)
 
+      , ("M-C-l",                  spawn "${pkgs.i3lock}/bin/i3lock")
+
       --- XF86AudioMute, <XF86AudioRaiseVolume, <XF86AudioLowerVolume
 
-      , ("<XF86AudioPlay>", spawn "${pkgs.alsaUtils}/amixer set Master toggle")
-      , ("<XF86AudioPrev>", spawn "${pkgs.alsaUtils}/amixer set Master '10%+'")
-      , ("<XF86AudioNext>", spawn "${pkgs.alsaUtils}/amixer set Master '10%-'")
+      , ("M-C-m",                  spawn "${pkgs.alsaUtils}/bin/amixer -D pulse set Master toggle")
+
+--      , ("<XF86AudioMute>",        spawn "${pkgs.alsaUtils}/bin/amixer -D pulse set Master toggle")
+
+      , ("<XF86AudioMute>",        spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-mute 0 toggle")
+
+      , ("<XF86AudioRaiseVolume>", spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-volume 0 +10%")
+      , ("<XF86AudioLowerVolume>",       spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-volume 0 -10%")
 
       -- cycle workspaces
       , ("M-<Left>",       DO.moveTo Prev HiddenNonEmptyWS)

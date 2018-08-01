@@ -6,10 +6,12 @@ with pkgs.emacs25PackagesNg;
 {
   programs.emacs.stanzas.more =
     { epkgs = flatten
-      [ hydra
+      [ yaml-mode
+        hydra
         aggressive-indent
         auto-complete
         better-defaults
+        purescript-mode
         cider
         clojure-mode
         helm-dash
@@ -58,6 +60,8 @@ with pkgs.emacs25PackagesNg;
         multiple-cursors
         [ glsl-mode company-glsl ]
         helm-company
+        yafolding
+        [ psc-ide psci ]
       ];
       init = readFile ./default.el;
     };
