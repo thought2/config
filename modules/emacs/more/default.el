@@ -428,6 +428,7 @@
 
 (progn
   ;;(add-hook 'prog-mode-hook 'highlight-indentation-mode)
+  (add-hook 'prog-mode-hook 'yafolding-mode) 
   )
 
 (progn
@@ -542,7 +543,7 @@
 (progn
   (require 'advice)
 
-  (defvar acc-auto-repeat-time 100000
+  (defvar acc-auto-repeat-time 45000 ;; 100000
     "Interval in microseconds to detect keyboard auto-repeat.
 \nIf an interactive command is repeated within this time, and invoked with
 the same keyboard key, it is considered to be auto-repeated.")
@@ -638,16 +639,19 @@ the last number is used again in further repeated invocations.
 
 
   (require 'accelerate)
-  (accelerate previous-line 5)
-  (accelerate next-line 5)
-  (accelerate backward-char 4)
-  (accelerate forward-char 4)
-  (accelerate right-char 4)
-  (accelerate left-char 4)
-  (accelerate dired-previous-line 3)
-  (accelerate dired-next-line 3)
-  (accelerate screen-scroll-up 4)
-  (accelerate screen-scroll-down 4))
+  (progn
+    (accelerate previous-line 5)
+    (accelerate next-line 5)
+    (accelerate screen-scroll-up 5)
+    (accelerate screen-scroll-down 5)
+    (accelerate backward-char 7)
+    (accelerate forward-char 7)
+    (accelerate right-char 7)
+    (accelerate left-char 7)
+    (accelerate self-insert-command 4)
+    (accelerate self-insert-command 4)
+    (accelerate delete-backward-char 4) 
+    ))
 
 (progn
   (autoload 'helm-company "helm-company")
@@ -739,3 +743,5 @@ the last number is used again in further repeated invocations.
 
   (global-set-key (kbd "M-n") 'screen-scroll-down)
   (global-set-key (kbd "M-p") 'screen-scroll-up))
+
+(server-start)

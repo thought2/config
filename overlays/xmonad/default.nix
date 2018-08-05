@@ -23,6 +23,7 @@ let
 
     import XMonad.Layout.FixedColumn
 
+    import XMonad.Layout.Maximize
     --import XMonad.Layout.Gaps
     import XMonad.Layout.Spacing
 
@@ -32,6 +33,8 @@ let
     import XMonad.Hooks.ManageHelpers
 
     import XMonad.StackSet (RationalRect(RationalRect))
+
+    import XMonad.Hooks.FadeInactive
 
     modm = mod4Mask
 
@@ -51,12 +54,14 @@ let
       , ("M-C-s",          spawn "${pkgs.coreutils}/bin/sleep 0.2; ${pkgs.scrot}/bin/scrot -s -e 'mv $f ~/screenshots/'")
       , ("M-C-c",          spawn "${pkgs.chromium}/bin/chromium-browser")
       , ("M-C-a",          spawn "${pkgs.chromium}/bin/chromium-browser --app='http://ddg.gg'")
+      , ("M-C-d",          floatNext True >> spawn "${pkgs.chromium}/bin/chromium-browser --app='http://ddg.gg'")
       , ("M-C-e",          spawn "${pkgs.emacs}/bin/emacs --no-splash")
       , ("M-C-t",          spawn "${pkgs.xterm}/bin/xterm")
-      , ("M-S-<Return>",   spawn "${pkgs.emacs-client}/bin/emacs-client")
+      , ("M-C-p",          floatNext True >> spawn "${pkgs.pavucontrol}/bin/pavucontrol")
+      , ("M-S-<Return>",   floatNext True >> spawn "${pkgs.emacs-client}/bin/emacs-client")
 
       , ("M-C-f",          sendMessage $ JumpToLayout "Full")
-      , ("M-C-n",          spawn "${pkgs.xterm}/bin/xterm -e ${pkgs.networkmanager}/bin/nmtui")
+      , ("M-C-n",          floatNext True >> spawn "${pkgs.xterm}/bin/xterm -e ${pkgs.networkmanager}/bin/nmtui")
       , ("M-S-<Space>",    virtualScreens)
       , ("M-C-S-<Space>",  rescreen)
 
@@ -71,18 +76,20 @@ let
       , ("M-<Left>",       DO.moveTo Prev HiddenNonEmptyWS)
       , ("M-<Right>",      DO.moveTo Next HiddenNonEmptyWS)
 
+      , ("M-y", withFocused (sendMessage . maximizeRestore))
+
       ]
       where
         virtualScreens = layoutScreens 3 $ spacingWithEdge 10 $ TwoPane 0.55 0.45;
 
-    layout = tall ||| tall2 ||| full ||| FixedColumn 1 20 80 10
+    layout = maximize (tall ||| tall2 ||| full ||| FixedColumn 1 20 80 10)
       where
         tall  = Tall 1 (3/100) (1/2)
         tall2 = Mirror tall
         full  = noBorders Full
 
     myManageHook = composeAll
-      [ liftX willFloatNext --> doRectFloat (RationalRect 0.5 0.5 0.48 0.48)
+      [ liftX willFloatNext --> doRectFloat (RationalRect 0.5 0.02 0.48 0.48)
       , floatNextHook
       , manageHook defaultConfig
       ]
