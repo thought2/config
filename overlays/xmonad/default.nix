@@ -52,7 +52,9 @@ let
       , ("M-C-c",          spawn "${pkgs.chromium}/bin/chromium-browser")
       , ("M-C-a",          spawn "${pkgs.chromium}/bin/chromium-browser --app='http://ddg.gg'")
       , ("M-C-e",          spawn "${pkgs.emacs}/bin/emacs --no-splash")
-      , ("M-C-<Return>",   spawn "${pkgs.xterm}/bin/xterm")
+      , ("M-C-t",          spawn "${pkgs.xterm}/bin/xterm")
+      , ("M-S-<Return>",   spawn "${pkgs.emacs-client}/bin/emacs-client")
+
       , ("M-C-f",          sendMessage $ JumpToLayout "Full")
       , ("M-C-n",          spawn "${pkgs.xterm}/bin/xterm -e ${pkgs.networkmanager}/bin/nmtui")
       , ("M-S-<Space>",    virtualScreens)
@@ -60,16 +62,10 @@ let
 
       , ("M-C-l",                  spawn "${pkgs.i3lock}/bin/i3lock")
 
-      --- XF86AudioMute, <XF86AudioRaiseVolume, <XF86AudioLowerVolume
-
-      , ("M-C-m",                  spawn "${pkgs.alsaUtils}/bin/amixer -D pulse set Master toggle")
-
---      , ("<XF86AudioMute>",        spawn "${pkgs.alsaUtils}/bin/amixer -D pulse set Master toggle")
-
       , ("<XF86AudioMute>",        spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-mute 0 toggle")
 
       , ("<XF86AudioRaiseVolume>", spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-volume 0 +10%")
-      , ("<XF86AudioLowerVolume>",       spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-volume 0 -10%")
+      , ("<XF86AudioLowerVolume>", spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-volume 0 -10%")
 
       -- cycle workspaces
       , ("M-<Left>",       DO.moveTo Prev HiddenNonEmptyWS)

@@ -660,7 +660,13 @@ the last number is used again in further repeated invocations.
 (progn
   (require 'whitespace)
   (setq whitespace-style '(face empty tabs lines-tail trailing))
-  (global-whitespace-mode t))
+  ;;(global-whitespace-mode t)
+  )
+
+(defun fresh-shell-fullscreen ()
+  (interactive)
+  (shell (concat "shell-" (car (split-string (shell-command-to-string "uuidgen")))))
+  (delete-other-windows))
 
 
 (progn
@@ -714,7 +720,7 @@ the last number is used again in further repeated invocations.
               (flycheck-mode)
               (turn-on-purescript-indentation)
               (haskell-decl-scan-mode)))
-  (define-key purescript-mode-map (kbd "M-i") 'imenu))
+  )
 
 
 (progn

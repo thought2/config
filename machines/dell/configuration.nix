@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
- 
+
   unstableTarball =
     fetchTarball
       https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
@@ -60,7 +60,7 @@ in
   #  DisplaySize 423 238
   # ";
 
-  networking.firewall.allowedTCPPorts = [ 8080 3000];
+  networking.firewall.allowedTCPPorts = [ 8080 3000 ];
 
   system.stateVersion = "18.03"; # Did you read the comment?
 

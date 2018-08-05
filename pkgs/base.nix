@@ -6,7 +6,6 @@ let
 
   node2nixPkgs = import ./node2nix {};
 
-
 in
 
 with pkgs;
@@ -60,7 +59,7 @@ lib.flatten (builtins.attrValues {
 #   node2nixPkgs.elm-live
 #   node2nixPkgs.create-elm-app
     #node2nixPkgs.pulp
-    unstable.haskellPackages.purescript
+#    unstable.haskellPackages.purescript
     node2nixPkgs.selenium-webdriver
     node2nixPkgs.ts-node
     node2nixPkgs.elm-test
@@ -75,7 +74,7 @@ lib.flatten (builtins.attrValues {
     gitAndTools.gitflow
     nodejs-8_x
     elmPackages.elm
-    #purescript
+    purescript
     sbt
     swiProlog
     glslviewer
