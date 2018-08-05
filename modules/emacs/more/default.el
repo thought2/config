@@ -638,14 +638,16 @@ the last number is used again in further repeated invocations.
 
 
   (require 'accelerate)
-  (accelerate previous-line 3)
-  (accelerate next-line 3)
-  (accelerate backward-char 3)
-  (accelerate forward-char 3)
-  (accelerate right-char 3)
-  (accelerate left-char 3)
-  (accelerate dired-previous-line 2)
-  (accelerate dired-next-line 2))
+  (accelerate previous-line 5)
+  (accelerate next-line 5)
+  (accelerate backward-char 4)
+  (accelerate forward-char 4)
+  (accelerate right-char 4)
+  (accelerate left-char 4)
+  (accelerate dired-previous-line 3)
+  (accelerate dired-next-line 3)
+  (accelerate screen-scroll-up 4)
+  (accelerate screen-scroll-down 4))
 
 (progn
   (autoload 'helm-company "helm-company")
@@ -693,7 +695,7 @@ the last number is used again in further repeated invocations.
            ("Shell" (mode . shell-mode))
            ("Dired" (mode . dired-mode))
            ("Nix" (mode . nix-mode))
-           ("Magit" (name . "\*magit")) 
+           ("Magit" (name . "\*magit"))
            ("Help" (or (name . "\*Help\*")
                        (name . "\*Apropos\*")
                        (name . "\*info\*"))))))
@@ -710,4 +712,24 @@ the last number is used again in further repeated invocations.
               (psc-ide-mode)
               (company-mode)
               (flycheck-mode)
-              (turn-on-purescript-indentation))))
+              (turn-on-purescript-indentation)
+              (haskell-decl-scan-mode)))
+  (define-key purescript-mode-map (kbd "M-i") 'imenu))
+
+
+(progn
+  (setq flycheck-display-errors-function 'flycheck-display-error-messages-unless-error-list))
+
+
+(progn
+  ;; Screen Scroll
+  (defun screen-scroll-down (&optional n)
+    (interactive "p")
+    (scroll-down (or n 1)))
+
+  (defun screen-scroll-up (&optional n)
+    (interactive "p")
+    (scroll-up (or n 1)))
+
+  (global-set-key (kbd "M-n") 'screen-scroll-down)
+  (global-set-key (kbd "M-p") 'screen-scroll-up))
