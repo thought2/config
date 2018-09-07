@@ -29,7 +29,7 @@ with lib;
 
   };
 
-  # TODO: this should work with an overlay as well
+  # Todo: this should work with an overlay as well
   services.xserver.windowManager = {
     session = [{
       name = "xmonad";
@@ -64,6 +64,7 @@ with lib;
       "chklaanhfefbnpoihckbnefhakgolnmc" # JSONView
       "ckkdlimhmcjmikdlpkmbgfkaikojcbjk" # Markdown Viewer
       "gjadajkmpgdblfochjcfpkhnnkicfapl" # Just Read
+      "kdejdkdjdoabfihpcjmgjebcpfbhepmh" # Copy Link Address
     ];
     homepageLocation = "https://duckduckgo.com";
     extraOpts = {

@@ -100,4 +100,11 @@ import ./screens.nix {inherit pkgs;} //
       rm $DIR/elm-interface-to-json; ln -s ${elm-interface-to-json}/bin/elm-interface-to-json $DIR/elm-interface-to-json
     '';
 
+  byzanz-left = writeShellScriptBin "byzanz-left" ''
+      ${pkgs.byzanz}/bin/byzanz-record -x 0 -y 0 -w 1920 -h 1080 $@
+    '';
+
+  webserver = writeShellScriptBin "webserver" ''
+      ${pkgs.python}/bin/python –m http.server $1
+    '';
 }

@@ -428,7 +428,8 @@
 
 (progn
   ;;(add-hook 'prog-mode-hook 'highlight-indentation-mode)
-  (add-hook 'prog-mode-hook 'yafolding-mode) 
+  (add-hook 'prog-mode-hook 'yafolding-mode)
+  (add-hook 'prog-mode-hook 'whitespace-cleanup-mode)
   )
 
 (progn
@@ -499,7 +500,6 @@
 
    '(avy-lead-face-0
      ((t (:background "steel blue" :foreground "white"))))
-
    '(helm-ff-dotted-directory
      ((t (:background "dark gray" :foreground "black"))))
 
@@ -650,7 +650,7 @@ the last number is used again in further repeated invocations.
     (accelerate left-char 7)
     (accelerate self-insert-command 4)
     (accelerate self-insert-command 4)
-    (accelerate delete-backward-char 4) 
+    (accelerate delete-backward-char 4)
     ))
 
 (progn
@@ -717,8 +717,11 @@ the last number is used again in further repeated invocations.
 (progn
   (require 'psc-ide)
 
+
+
   (add-hook 'purescript-mode-hook
             (lambda ()
+              (define-key purescript-mode-map (kbd "C-c l") 'flycheck-mode)
               (psc-ide-mode)
               (company-mode)
               (flycheck-mode)
@@ -741,7 +744,7 @@ the last number is used again in further repeated invocations.
     (interactive "p")
     (scroll-up (or n 1)))
 
-  (global-set-key (kbd "M-n") 'screen-scroll-down)
-  (global-set-key (kbd "M-p") 'screen-scroll-up))
+  (global-set-key (kbd "M-p") 'screen-scroll-down)
+  (global-set-key (kbd "M-n") 'screen-scroll-up))
 
 (server-start)

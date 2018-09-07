@@ -36,6 +36,8 @@ let
 
     import XMonad.Hooks.FadeInactive
 
+    import XMonad.Actions.FloatKeys
+
     modm = mod4Mask
 
     main = do
@@ -60,6 +62,9 @@ let
       , ("M-C-p",          floatNext True >> spawn "${pkgs.pavucontrol}/bin/pavucontrol")
       , ("M-S-<Return>",   floatNext True >> spawn "${pkgs.emacs-client}/bin/emacs-client")
 
+      , ("M-r t o",        withFocused (\winId -> setOpacity winId 1.0))
+      , ("M-r t t",        withFocused (\winId -> setOpacity winId 0.5))
+
       , ("M-C-f",          sendMessage $ JumpToLayout "Full")
       , ("M-C-n",          floatNext True >> spawn "${pkgs.xterm}/bin/xterm -e ${pkgs.networkmanager}/bin/nmtui")
       , ("M-S-<Space>",    virtualScreens)
@@ -77,6 +82,16 @@ let
       , ("M-<Right>",      DO.moveTo Next HiddenNonEmptyWS)
 
       , ("M-y", withFocused (sendMessage . maximizeRestore))
+
+      , ("M-C-<Left>",     withFocused (keysMoveWindow  (-30,0)))
+      , ("M-C-<Right>",    withFocused (keysMoveWindow  (30,0)))
+      , ("M-C-<Up>",       withFocused (keysMoveWindow  (0,-30)))
+      , ("M-C-<Down>",     withFocused (keysMoveWindow  (0,30)))
+
+      , ("M-C-S-<Left>",     withFocused (keysResizeWindow  (-30,0) (0,0)))
+      , ("M-C-S-<Right>",    withFocused (keysResizeWindow  (30,0) (0,0)))
+      , ("M-C-S-<Up>",       withFocused (keysResizeWindow  (0,-30) (0,0)))
+      , ("M-C-S-<Down>",     withFocused (keysResizeWindow  (0,30) (0,0)))
 
       ]
       where

@@ -61,6 +61,7 @@ with pkgs.emacs25PackagesNg;
         [ glsl-mode company-glsl ]
         helm-company
         yafolding
+        whitespace-cleanup-mode
         [ psc-ide psci ]
       ];
       init = readFile ./default.el;
