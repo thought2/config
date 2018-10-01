@@ -9,5 +9,6 @@
     "selenium-webdriver",
     "ts-node",
     "yargs",
-    "localtunnel"
+    "localtunnel",
+    "pre-commit"
 ]

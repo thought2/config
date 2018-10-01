@@ -2,9 +2,16 @@
 
 let
 
+  # needed for purescript
   unstableTarball =
     fetchTarball
-      https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+      https://github.com/NixOS/nixpkgs-channels/archive/060a98e9f4ad879492e48d63e887b0b6db26299e.tar.gz;
+
+  unstableTarball2 =
+    fetchTarball
+      https://github.com/NixOS/nixpkgs-channels/archive/7df10f388dabe9af3320fe91dd715fc84f4c7e8a.tar.gz;
+
+
 
 in
 
@@ -14,11 +21,18 @@ in
       ./hardware-configuration.nix
       ../../modules/laptop.nix
       ../../../coya-config/default.nix
+      ../../modules/webserver.nix
     ];
+
+  systemd.services.polkit.serviceConfig.X-RestartIfChanged = "false";
+  systemd.services.dbus.serviceConfig.X-RestartIfChanged = "false";
 
   nixpkgs.config = {
     packageOverrides = pkgs: {
       unstable = import unstableTarball {
+        config = config.nixpkgs.config;
+      };
+      unstable2 = import unstableTarball2 {
         config = config.nixpkgs.config;
       };
     };

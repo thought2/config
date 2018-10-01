@@ -6,6 +6,7 @@
   ]
 }:
 let
+  shorthands = import ../../pkgs/shorthands.nix { inherit pkgs; };
   colors = import ../../data/colors.nix;
 
   xmonadConfig = /* haskell */ ''
@@ -64,6 +65,12 @@ let
 
       , ("M-r t o",        withFocused (\winId -> setOpacity winId 1.0))
       , ("M-r t t",        withFocused (\winId -> setOpacity winId 0.5))
+
+      , ("M-r 1",          spawn "${shorthands.screens-1}/bin/screens-1")
+      , ("M-r 2",          spawn "${shorthands.screens-2}/bin/screens-2")
+
+      , ("M-C-y",          spawn "${shorthands.screens-1}/bin/screens-1")
+      , ("M-C-<Return>",   spawn "${pkgs.rofi}/bin/rofi -matching regex -separator-style none -show run")
 
       , ("M-C-f",          sendMessage $ JumpToLayout "Full")
       , ("M-C-n",          floatNext True >> spawn "${pkgs.xterm}/bin/xterm -e ${pkgs.networkmanager}/bin/nmtui")

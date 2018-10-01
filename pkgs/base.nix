@@ -24,6 +24,8 @@ lib.flatten (builtins.attrValues {
   desktop = [
     xmonad
     xzoom
+    rofi
+    zathura
   ];
 
   web = [
@@ -37,6 +39,8 @@ lib.flatten (builtins.attrValues {
   ];
 
   dev = [
+    docker
+    cloc
     travis
     emacs
     emacs-client
@@ -53,7 +57,7 @@ lib.flatten (builtins.attrValues {
     git
     pkgs.boot
     ghc
-    node2nixPkgs.elm-oracle
+    unstable2.nodePackages_8_x.elm-oracle
     node2nixPkgs.cross-env
     node2nixPkgs.localtunnel
 #   node2nixPkgs.elm-live
@@ -65,9 +69,10 @@ lib.flatten (builtins.attrValues {
     node2nixPkgs.ts-node
     node2nixPkgs.elm-test
     nodePackages.prettier
+    node2nixPkgs.pre-commit
     nodePackages.bower
     nodePackages.pulp
-    nodePackages.typescript
+    nodePackages_6_x.typescript
     #haskellPackages.idris
     haskellPackages.stylish-haskell
     yarn
@@ -104,6 +109,7 @@ lib.flatten (builtins.attrValues {
   ];
 
   cli = [
+    jq
     rxvt
     fish
     bash

@@ -28,6 +28,12 @@ let
     index = i;
   }) dirs;
 
+  sceneries = import (fetchgit {
+    url = "http://github.com/thought2/sceneries";
+    rev = "fe46a7d324700a773fd873b9cf0c5cc9e1d621e6";
+    sha256 = "1nmlx6k5kn58zmwnbm3f3zgs47p43hy19rb5sa7sl2nbvj1gr34i";
+  }) { inherit pkgs; };
+
   dust = stdenv.mkDerivation {
     name = "dust";
     src = fetchgit {
@@ -55,8 +61,18 @@ let
       mv style.css $out
       mv main.js $out
     '';
-   };
+  };
 
+  servedDirs = [
+    {
+      urlPath = "/dust";
+      dir = dust;
+    }
+    {
+      urlPath = "/sceneries";
+      dir = sceneries;
+    }
+  ];
 
 in
 {
@@ -76,11 +92,17 @@ in
       }
     ];
 
-    servedDirs = [
-      {
-        urlPath = "/dust";
-        dir = dust;
-      }
-    ] ++ dirs;
+    documentRoot = stdenv.mkDerivation {
+      name = "docRoot";
+      index = writeText "index.html" ''
+        ${concatStringsSep "\n" (map (x: "<a href=${x.urlPath}>${x.urlPath}</a>") servedDirs)}
+      '';
+      buildCommand = ''
+        mkdir $out;
+        cp $index $out/index.html;
+      '';
+    };
+
+    inherit servedDirs;
   };
 }

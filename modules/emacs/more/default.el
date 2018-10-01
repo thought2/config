@@ -311,6 +311,8 @@
   (global-set-key (kbd "C-M-<left>") 'sp-backward-sexp)
   (global-set-key (kbd "C-M-b") 'sp-backward-sexp)
 
+  (global-set-key (kbd "M-]") 'sp-unwrap-sexp)
+  (global-set-key (kbd "C-M-<backspace>") 'sp-backward-kill-sexp)
 
   (global-set-key (kbd "C-M-w") (lambda () (interactive)
                                   (sp-mark-sexp)
@@ -417,6 +419,7 @@
         '(helm-source-buffers-list
           helm-source-bookmarks
           helm-source-recentf
+          ;;helm-source-dired-recent-dirs
           helm-source-buffer-not-found)))
 
 (progn
@@ -746,5 +749,30 @@ the last number is used again in further repeated invocations.
 
   (global-set-key (kbd "M-p") 'screen-scroll-down)
   (global-set-key (kbd "M-n") 'screen-scroll-up))
+
+(progn
+  (defun next-line-non-empty-column (arg)
+    "Find next line, on the same column, skipping those that would
+end up leaving point on a space or newline character."
+    (interactive "p")
+    (let* ((hpos (- (point) (point-at-bol)))
+           (re (format "^.\\{%s\\}[^\n ]" hpos)))
+      (cond ((> arg 0)
+             (forward-char 1) ; don't match current position (can only happen at column 0)
+             (re-search-forward re))
+            ((< arg 0)
+             (forward-char -1)           ; don't match current position.
+             (re-search-backward re)
+             (goto-char (match-end 0))))
+      ;; now point is after the match, let's go back one column.
+      (forward-char -1)))
+
+  (defun previous-line-non-empty-column (arg)
+    ""
+    (interactive "p")
+    (next-line-non-empty-column (- arg)))
+
+  (global-set-key (kbd "C-S-n") 'next-line-non-empty-column)
+  (global-set-key (kbd "C-S-p") 'previous-line-non-empty-column))
 
 (server-start)
