@@ -4,6 +4,27 @@ with pkgs;
 
 import ./screens.nix {inherit pkgs;} //
 {
+  n = writeShellScriptBin "n" ''
+    nixos-rebuild switch
+  '';
+
+  n-t = writeShellScriptBin "n-t" ''
+    nixos-rebuild test
+  '';
+
+  deploy-config = writeShellScriptBin "deploy-config" ''
+    export NIXOS_CONFIG=$1
+    TARGET_HOST=$2
+    nixos-rebuild switch --target-host "$TARGET_HOST" --build-host localhost
+  '';
+
+  deploy-data = writeShellScriptBin "deploy-data" ''
+    FROM=$1
+    TO=$2
+    ${pkgs.rsync}/bin/rsync \
+      --archive --verbose --compress --partial --progress --delete "$FROM" "$TO"
+  '';
+
   keyboard-de = writeShellScriptBin "keyboard-de" ''
     ${pkgs.xorg.setxkbmap}/bin/setxkbmap de -variant mac
     ${pkgs.xorg.xmodmap}/bin/xmodmap /etc/Xmodmap

@@ -63,14 +63,28 @@ let
     '';
   };
 
+  landing = import (fetchgit {
+    url = "https://github.com/thought2/landing.git";
+    rev = "6af966bbdd3aad17dabb5dc3822be903c0b6ebfb";
+    sha256 = "0bdvpbn898dk05k966njs1zgkd7zp1pgh02fcvxjmcc26vq5jvi7";
+  }) { inherit pkgs; };
+
   servedDirs = [
     {
       urlPath = "/dust";
       dir = dust;
     }
     {
+      urlPath = "/landing";
+      dir = landing;
+    }
+    {
       urlPath = "/sceneries";
       dir = sceneries;
+    }
+    {
+      urlPath = "/data";
+      dir = "/srv/data";
     }
   ];
 
@@ -82,6 +96,12 @@ in
     enable       = true;
     adminAddr    = "me@thought2.de";
 
+    extraConfig = ''
+      <Directory /srv/data>
+        Header set Access-Control-Allow-Origin "*"
+      </Directory>
+    '';
+
     servedFiles = [
       {
         urlPath = "/video";
@@ -92,16 +112,7 @@ in
       }
     ];
 
-    documentRoot = stdenv.mkDerivation {
-      name = "docRoot";
-      index = writeText "index.html" ''
-        ${concatStringsSep "\n" (map (x: "<a href=${x.urlPath}>${x.urlPath}</a>") servedDirs)}
-      '';
-      buildCommand = ''
-        mkdir $out;
-        cp $index $out/index.html;
-      '';
-    };
+    documentRoot = landing;
 
     inherit servedDirs;
   };
