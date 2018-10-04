@@ -51,57 +51,62 @@ let
         } `additionalKeysP` shortcuts
 
     shortcuts =
-      [ ("M-C-f",          spawn "${pkgs.firefox}/bin/firefox")
-      , ("M-C-g",          toggleFloatNext)
-      , ("M-C-b",          spawn "${pkgs.thunderbird}/bin/thunderbird")
-      , ("M-C-s",          spawn "${pkgs.coreutils}/bin/sleep 0.2; ${pkgs.scrot}/bin/scrot -s -e 'mv $f ~/screenshots/'")
-      , ("M-C-c",          spawn "${pkgs.chromium}/bin/chromium-browser")
-      , ("M-C-a",          spawn "${pkgs.chromium}/bin/chromium-browser --app='http://ddg.gg'")
-      , ("M-C-d",          floatNext True >> spawn "${pkgs.chromium}/bin/chromium-browser --app='http://ddg.gg'")
-      , ("M-C-e",          spawn "${pkgs.emacs}/bin/emacs --no-splash")
-      , ("M-C-t",          spawn "${pkgs.xterm}/bin/xterm")
-      , ("M-C-p",          floatNext True >> spawn "${pkgs.pavucontrol}/bin/pavucontrol")
-      , ("M-S-<Return>",   floatNext True >> spawn "${pkgs.emacs-client}/bin/emacs-client")
+      [ ("M-C-f",                  spawn "${pkgs.firefox}/bin/firefox")
+      , ("M-C-g",                  toggleFloatNext)
+      , ("M-C-b",                  spawn "${pkgs.thunderbird}/bin/thunderbird")
+      , ("M-C-s",                  spawn "${pkgs.coreutils}/bin/sleep 0.2; ${pkgs.scrot}/bin/scrot -s -e 'mv $f ~/screenshots/'")
+      , ("M-C-c",                  spawn "${pkgs.chromium}/bin/chromium-browser")
+      , ("M-C-a",                  spawn "${pkgs.chromium}/bin/chromium-browser --app='http://ddg.gg'")
+      , ("M-C-d",                  floatNext True >> spawn "${pkgs.chromium}/bin/chromium-browser --app='http://ddg.gg'")
+      , ("M-C-e",                  spawn "${pkgs.emacs}/bin/emacs --no-splash")
+      , ("M-C-t",                  spawn "${pkgs.xterm}/bin/xterm")
+      , ("M-C-p",                  floatNext True >> spawn "${pkgs.pavucontrol}/bin/pavucontrol")
+      , ("M-S-<Return>",           floatNext True >> spawn "${pkgs.emacs-client}/bin/emacs-client")
 
-      , ("M-r t o",        withFocused (\winId -> setOpacity winId 1.0))
-      , ("M-r t t",        withFocused (\winId -> setOpacity winId 0.5))
+      , ("M-r t o",                withFocused (\winId -> setOpacity winId 1.0))
+      , ("M-r t t",                withFocused (\winId -> setOpacity winId 0.5))
 
-      , ("M-r 1",          spawn "${shorthands.screens-1}/bin/screens-1")
-      , ("M-r 2",          spawn "${shorthands.screens-2}/bin/screens-2")
+      , ("M-r 1",                  spawn "${shorthands.screens-1}/bin/screens-1")
+      , ("M-r 2",                  spawn "${shorthands.screens-2}/bin/screens-2")
 
-      , ("M-C-y",          spawn "${shorthands.screens-1}/bin/screens-1")
-      , ("M-C-<Return>",   spawn "${pkgs.rofi}/bin/rofi -matching regex -separator-style none -show run")
+      , ("M-C-y",                  spawn "${shorthands.screens-1}/bin/screens-1")
+      , ("M-C-<Return>",           spawn "${pkgs.rofi}/bin/rofi -matching regex -separator-style none -show run")
 
-      , ("M-C-f",          sendMessage $ JumpToLayout "Full")
-      , ("M-C-n",          floatNext True >> spawn "${pkgs.xterm}/bin/xterm -e ${pkgs.networkmanager}/bin/nmtui")
-      , ("M-S-<Space>",    virtualScreens)
-      , ("M-C-S-<Space>",  rescreen)
+      , ("M-C-f",                  sendMessage $ JumpToLayout "Full")
+      , ("M-C-n",                  floatNext True >> spawn "${pkgs.xterm}/bin/xterm -e ${pkgs.networkmanager}/bin/nmtui")
+      , ("M-S-<Space>",            virtualScreens)
+      , ("M-C-S-<Space>",          rescreen)
 
       , ("M-C-l",                  spawn "${pkgs.i3lock}/bin/i3lock")
 
-      , ("<XF86AudioMute>",        spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-mute 0 toggle")
-
-      , ("<XF86AudioRaiseVolume>", spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-volume 0 +10%")
-      , ("<XF86AudioLowerVolume>", spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-volume 0 -10%")
-
       -- cycle workspaces
-      , ("M-<Left>",       DO.moveTo Prev HiddenNonEmptyWS)
-      , ("M-<Right>",      DO.moveTo Next HiddenNonEmptyWS)
+      , ("M-<Left>",               DO.moveTo Prev HiddenNonEmptyWS)
+      , ("M-<Right>",              DO.moveTo Next HiddenNonEmptyWS)
 
-      , ("M-y", withFocused (sendMessage . maximizeRestore))
+      , ("M-y",                    withFocused (sendMessage . maximizeRestore))
 
-      , ("M-C-<Left>",     withFocused (keysMoveWindow  (-30,0)))
-      , ("M-C-<Right>",    withFocused (keysMoveWindow  (30,0)))
-      , ("M-C-<Up>",       withFocused (keysMoveWindow  (0,-30)))
-      , ("M-C-<Down>",     withFocused (keysMoveWindow  (0,30)))
+      , ("M-C-<Left>",             withFocused (keysMoveWindow  (-30,0)))
+      , ("M-C-<Right>",            withFocused (keysMoveWindow  (30,0)))
+      , ("M-C-<Up>",               withFocused (keysMoveWindow  (0,-30)))
+      , ("M-C-<Down>",             withFocused (keysMoveWindow  (0,30)))
 
-      , ("M-C-S-<Left>",     withFocused (keysResizeWindow  (-30,0) (0,0)))
-      , ("M-C-S-<Right>",    withFocused (keysResizeWindow  (30,0) (0,0)))
-      , ("M-C-S-<Up>",       withFocused (keysResizeWindow  (0,-30) (0,0)))
-      , ("M-C-S-<Down>",     withFocused (keysResizeWindow  (0,30) (0,0)))
+      , ("M-C-S-<Left>",           withFocused (keysResizeWindow  (-30,0) (0,0)))
+      , ("M-C-S-<Right>",          withFocused (keysResizeWindow  (30,0) (0,0)))
+      , ("M-C-S-<Up>",             withFocused (keysResizeWindow  (0,-30) (0,0)))
+      , ("M-C-S-<Down>",           withFocused (keysResizeWindow  (0,30) (0,0)))
 
+      , ("<XF86AudioMute>",        audioMute)
+      , ("M-C-m",                  audioMute)
+      , ("<XF86AudioRaiseVolume>", audioUp)
+      , ("M-C-S-.",                audioUp)
+      , ("<XF86AudioLowerVolume>", audioDown)
+      , ("M-C-S-,",                audioDown)
       ]
       where
+        audioMute = spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-mute 0 toggle"
+        audioUp   = spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-volume 0 +10%"
+        audioDown = spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-volume 0 -10%"
+
         virtualScreens = layoutScreens 3 $ spacingWithEdge 10 $ TwoPane 0.55 0.45;
 
     layout = maximize (tall ||| tall2 ||| full ||| FixedColumn 1 20 80 10)
