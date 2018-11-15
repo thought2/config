@@ -10,7 +10,9 @@ in
     "cd1" = "cd ..";
     "cd2" = "cd ../..";
     "cd3" = "cd ../../..";
-    "cd-" = "cd -";
+    "ls1" = "ls ..";
+    "ls2" = "ls ../..";
+    "ls3" = "ls ../../..";
   };
 
   users.extraUsers.root.initialPassword = "guest";

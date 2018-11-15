@@ -101,6 +101,10 @@ let
       , ("M-C-S-.",                audioUp)
       , ("<XF86AudioLowerVolume>", audioDown)
       , ("M-C-S-,",                audioDown)
+
+      , ("M-a",                    spawn "${pkgs.xdotool}/bin/xdotool click 1")
+      , ("M-s",                    spawn "${pkgs.xdotool}/bin/xdotool click 2")
+      , ("M-d",                    spawn "${pkgs.xdotool}/bin/xdotool click 3")
       ]
       where
         audioMute = spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-mute 0 toggle"
