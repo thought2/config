@@ -34,6 +34,12 @@ let
     sha256 = "1nmlx6k5kn58zmwnbm3f3zgs47p43hy19rb5sa7sl2nbvj1gr34i";
   }) { inherit pkgs; };
 
+  slotMachine = import (fetchgit {
+    url = "https://github.com/thought2/slot-machine";
+    rev = "d06d3d427e4224e319aad6bb5f15f43e27520c79";
+    sha256 = "1899bsg3n2c1y32gp8g2s34jankjjy1fw2hqx3zqrbdapqah4nsd";
+  }) { inherit pkgs; };
+
   dust = stdenv.mkDerivation {
     name = "dust";
     src = fetchgit {
@@ -81,6 +87,10 @@ let
     {
       urlPath = "/sceneries";
       dir = sceneries;
+    }
+    {
+      urlPath = "/slot-machine";
+      dir = slotMachine;
     }
     {
       urlPath = "/data";
