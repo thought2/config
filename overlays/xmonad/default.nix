@@ -111,7 +111,7 @@ let
         audioUp   = spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-volume 0 +10%"
         audioDown = spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-volume 0 -10%"
 
-        virtualScreens = layoutScreens 3 $ spacingWithEdge 10 $ TwoPane 0.55 0.45;
+        virtualScreens = layoutScreens 3 $ spacingWithEdge 10 $ TwoPane 0.55 0.45
 
     layout = maximize (tall ||| tall2 ||| full ||| FixedColumn 1 20 80 10)
       where

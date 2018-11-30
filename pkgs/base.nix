@@ -26,19 +26,24 @@ lib.flatten (builtins.attrValues {
     xzoom
     rofi
     zathura
+#    playonlinux
   ];
 
   web = [
-    tdesktop
-    chromium
-    firefox
-    tor
-    thunderbird
-    torbrowser
-    youtube-dl
+      tdesktop
+      chromium
+#      opera
+      firefox
+      tor
+      thunderbird
+      torbrowser
+      youtube-dl
   ];
 
   dev = [
+    aws
+    awscli
+    aws-vault
     docker
     cloc
     travis
@@ -50,7 +55,7 @@ lib.flatten (builtins.attrValues {
     gcc
 #   racket
     pythonExt
-    zeal
+#   zeal
     stack
     openjdk
     leiningen
@@ -72,7 +77,7 @@ lib.flatten (builtins.attrValues {
     node2nixPkgs.pre-commit
     nodePackages.bower
     nodePackages.pulp
-    nodePackages_6_x.typescript
+#    nodePackages_6_x.typescript
     #haskellPackages.idris
     haskellPackages.stylish-haskell
     yarn
@@ -80,13 +85,17 @@ lib.flatten (builtins.attrValues {
     gitAndTools.gitflow
     nodejs-8_x
     elmPackages.elm
-#    purescript
+    purescript
     sbt
     swiProlog
     glslviewer
     docker
     python3Packages.notebook
     coq
+    latest.rustc
+    latest.cargo
+    latest.rustup
+    scala
   ];
 
   gfx = [

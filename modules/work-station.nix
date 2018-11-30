@@ -65,6 +65,8 @@ with lib;
       "ckkdlimhmcjmikdlpkmbgfkaikojcbjk" # Markdown Viewer
       "gjadajkmpgdblfochjcfpkhnnkicfapl" # Just Read
       "kdejdkdjdoabfihpcjmgjebcpfbhepmh" # Copy Link Address
+      "ljobjlafonikaiipfkggjbhkghgicgoh" # Edit with Emacs
+      "fjnbnpbmkenffdnngjfgmeleoegfcffe" # Stylish
     ];
     homepageLocation = "https://duckduckgo.com";
     extraOpts = {

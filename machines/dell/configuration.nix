@@ -11,6 +11,15 @@ let
     fetchTarball
       https://github.com/NixOS/nixpkgs-channels/archive/7df10f388dabe9af3320fe91dd715fc84f4c7e8a.tar.gz;
 
+  oldTar =
+    fetchTarball
+      https://github.com/NixOS/nixpkgs-channels/archive/fcb391324f3f6dd01e59bc54e81ebf8e74db8362.tar.gz;
+
+  latest =
+    fetchTarball
+      https://github.com/NixOS/nixpkgs-channels/archive/2be930cc4a891a166ee71bc353ce9af297471e2b.tar.gz;
+
+
 
 
 in
@@ -28,11 +37,20 @@ in
   systemd.services.dbus.serviceConfig.X-RestartIfChanged = "false";
 
   nixpkgs.config = {
+
+    # allowUnfree = true;
+
     packageOverrides = pkgs: {
       unstable = import unstableTarball {
         config = config.nixpkgs.config;
       };
       unstable2 = import unstableTarball2 {
+        config = config.nixpkgs.config;
+      };
+      old = import oldTar {
+        config = config.nixpkgs.config;
+      };
+      latest = import latest {
         config = config.nixpkgs.config;
       };
     };
@@ -74,8 +92,8 @@ in
   #  DisplaySize 423 238
   # ";
 
-  networking.firewall.allowedTCPPorts = [ 8080 3000 ];
+  networking.firewall.allowedTCPPorts = [ 8080 3000 80 ];
 
-  system.stateVersion = "18.03"; # Did you read the comment?
+  system.stateVersion = "18.09"; # Did you read the comment?
 
 }

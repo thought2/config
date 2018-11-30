@@ -122,7 +122,7 @@ in
       }
     ];
 
-    documentRoot = landing;
+    # documentRoot = landing;
 
     inherit servedDirs;
   };

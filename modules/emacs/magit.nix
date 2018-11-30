@@ -23,6 +23,9 @@ with pkgs.emacs25PackagesNg;
         (save-buffer)
         (kill-buffer))
       (magit-refresh))
+
+    (add-hook 'after-save-hook 'magit-after-save-refresh-status)
+
   '';
 
 }

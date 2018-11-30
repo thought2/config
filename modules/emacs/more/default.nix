@@ -40,7 +40,7 @@ with pkgs.emacs25PackagesNg;
         avy
         json-mode
         restclient
-        browse-kill-ring
+#        browse-kill-ring
         helm
         [ helm-swoop swiper-helm ]
         highlight-indentation
@@ -63,6 +63,13 @@ with pkgs.emacs25PackagesNg;
         yafolding
         whitespace-cleanup-mode
         [ psc-ide psci ]
+        rust-mode
+        flycheck-rust
+        toml-mode
+        undo-tree
+        magithub
+        magit-find-file
+        magit-gh-pulls
       ];
       init = readFile ./default.el;
     };

@@ -776,3 +776,50 @@ end up leaving point on a space or newline character."
   (global-set-key (kbd "C-S-p") 'previous-line-non-empty-column))
 
 (server-start)
+
+(progn
+
+  (defhydra hydra-flycheck (:color blue)
+    "
+  ^
+  ^Flycheck^          ^Errors^            ^Checker^
+  ^────────^──────────^──────^────────────^───────^─────
+  _q_ quit            _<_ previous        _?_ describe
+  _M_ manual          _>_ next            _d_ disable
+  _v_ verify setup    _f_ check           _m_ mode
+  ^^                  _l_ list            _s_ select
+  ^^                  ^^                  ^^
+  "
+    ("q" nil)
+    ("<" flycheck-previous-error :color pink)
+    (">" flycheck-next-error :color pink)
+    ("?" flycheck-describe-checker)
+    ("M" flycheck-manual)
+    ("d" flycheck-disable-checker)
+    ("f" flycheck-buffer)
+    ("l" flycheck-list-errors)
+    ("m" flycheck-mode)
+    ("s" flycheck-select-checker)
+    ("v" flycheck-verify-setup))
+
+  (global-set-key (kbd "C-C C-f") 'hydra-flycheck/body))
+
+
+(progn
+  (defun split-3-windows-horizontally-evenly ()
+    (interactive)
+    (command-execute 'split-window-horizontally)
+    (command-execute 'split-window-horizontally)
+    (command-execute 'balance-windows)
+    )
+
+  (global-set-key (kbd "C-x 4") 'split-3-windows-horizontally-evenly))
+
+(progn
+  (global-set-key (kbd "C-c p") 'scratch-palette-popup))
+
+(progn
+  (add-hook 'edit-server-start-hook 'markdown-mode))
+
+(progn
+  (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls))
