@@ -39,8 +39,33 @@
   (setq inhibit-startup-message t)
   (setq initial-scratch-message "")
   (setq inhibit-startup-echo-area-message "m")
-  (blink-cursor-mode 0)
-  (fringe-mode 4))
+  (blink-cursor-mode 0))
+
+(progn
+  (when (display-graphic-p)
+    (fringe-mode 4)
+
+    (set-fringe-mode 8)
+
+    (define-fringe-bitmap 'right-curly-arrow
+      [#b00000000
+       #b00000000
+       #b00000000
+       #b00000000
+       #b01110000
+       #b00010000
+       #b00010000
+       #b00000000])
+
+    (define-fringe-bitmap 'left-curly-arrow
+      [#b00000000
+       #b00000000
+       #b00000000
+       #b00000000
+       #b00000000
+       #b00000000
+       #b00000000
+       #b00000000])))
 
 (progn
   ;; Packages
@@ -422,6 +447,7 @@
           ;;helm-source-dired-recent-dirs
           helm-source-buffer-not-found)))
 
+
 (progn
   (defun load-theme--disable-old-theme(theme &rest args)
     "Disable current theme before loading new one."
@@ -462,29 +488,6 @@
   (global-set-key (kbd "C-.") 'avy-goto-char-timer))
 
 (progn
-
-  (set-fringe-mode 8)
-
-  (define-fringe-bitmap 'right-curly-arrow
-    [#b00000000
-     #b00000000
-     #b00000000
-     #b00000000
-     #b01110000
-     #b00010000
-     #b00010000
-     #b00000000])
-
-
-  (define-fringe-bitmap 'left-curly-arrow
-    [#b00000000
-     #b00000000
-     #b00000000
-     #b00000000
-     #b00000000
-     #b00000000
-     #b00000000
-     #b00000000])
 
   (deftheme my-light
     "Created 2018-04-17.")
@@ -643,17 +646,23 @@ the last number is used again in further repeated invocations.
 
   (require 'accelerate)
   (progn
-    (accelerate previous-line 5)
-    (accelerate next-line 5)
-    (accelerate screen-scroll-up 5)
-    (accelerate screen-scroll-down 5)
-    (accelerate backward-char 7)
-    (accelerate forward-char 7)
-    (accelerate right-char 7)
-    (accelerate left-char 7)
+    (accelerate previous-line 4)
+    (accelerate next-line 4)
+    (accelerate screen-scroll-up 4)
+    (accelerate screen-scroll-down 4)
+    (accelerate backward-char 6)
+    (accelerate forward-char 6)
+    (accelerate right-char 6)
+    (accelerate left-char 6)
     (accelerate self-insert-command 4)
     (accelerate self-insert-command 4)
     (accelerate delete-backward-char 4)
+    (accelerate paredit-backward-delete 4)
+    (accelerate paredit-forward-delete 4)
+    (accelerate magit-previous-line 4)
+    (accelerate magit-next-line 4)
+    (accelerate dired-next-line 4)
+    (accelerate dired-previous-line 4)
     ))
 
 (progn
@@ -823,3 +832,10 @@ end up leaving point on a space or newline character."
 
 (progn
   (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls))
+
+(progn
+  (when (fboundp 'electric-indent-mode) (electric-indent-mode -1)))
+
+(progn
+  (require 'expand-region)
+  (global-set-key (kbd "C-=") 'er/expand-region))

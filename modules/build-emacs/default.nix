@@ -43,16 +43,22 @@ let
   customPkg =
     mkEmacsPackage { name = "custom"; epkgs = deps; init = fullInit; };
 
-  emacs =
+  emacsWithPkgs = baseEmacs:
     # epkgs only appended to circumvent laziness
     buildEmacs baseEmacs (deps ++ [ customPkg ] ++ epkgs);
 
   emacsWrapped = pkgs.writeShellScriptBin
     "emacs"
-    "${emacs}/bin/emacs --no-splash $@";
+    "${emacsWithPkgs baseEmacs}/bin/emacs --no-splash $@";
+
+  emacsNwWrapped =
+    writeShellScriptBin "emacs-nw" ''
+      ${emacsWithPkgs (baseEmacs.override {  withX = false; withGTK3 = false; })}/bin/emacs --no-splash $@
+    '';
 
   overlay = self: super: {
     emacs = emacsWrapped;
+    emacs-nw = emacsNwWrapped;
   };
 
 in
@@ -70,6 +76,4 @@ in
   };
 
   config.nixpkgs.overlays = [ overlay ];
-
-  config.environment.systemPackages = [ emacsWrapped ];
 }

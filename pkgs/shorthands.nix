@@ -12,6 +12,20 @@ import ./screens.nix {inherit pkgs;} //
     nixos-rebuild test
   '';
 
+  emacs2 = writeShellScriptBin "emacs2" ''
+    ${pkgs.emacs}/bin/emacs $@
+  '';
+
+  chromium-org = writeShellScriptBin "chromium-org" ''
+    ${pkgs.chromium}/bin/chromium --new-window \
+    https://www.servercontrolpanel.de/SCP/Login#keep \
+    https://functionalprogramming.slack.com/#keep \
+    https://webchat.freenode.net/#keep \
+    http://taz.de/#keep \
+    https://news.ycombinator.com/#keep \
+    https://stackoverflow.com/#keep \
+  '';
+
   deploy-config = writeShellScriptBin "deploy-config" ''
     export NIXOS_CONFIG=$1
     TARGET_HOST=$2
@@ -22,6 +36,7 @@ import ./screens.nix {inherit pkgs;} //
     FROM=$1
     TO=$2
     ${pkgs.rsync}/bin/rsync \
+
       --archive --verbose --compress --partial --progress --delete "$FROM" "$TO"
   '';
 
@@ -47,9 +62,9 @@ import ./screens.nix {inherit pkgs;} //
     echo -n $1 > /sys/class/backlight/acpi_video0/brightness
   '';
 
-  nix-search = writeShellScriptBin "nix-search" ''
-    nix-env -qa --description -P '.*'$1'.*' | cat
-  '';
+  # nix-search = writeShellScriptBin "nix-search" ''
+  #   nix-env -qa --description -P '.*'$1'.*' | cat
+  # '';
 
   curl-dl = writeShellScriptBin "curl-dl" ''
     ${pkgs.curl}/bin/curl -LkO $1

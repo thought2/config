@@ -15,8 +15,6 @@ in
     "ls3" = "ls ../../..";
   };
 
-  users.extraUsers.root.initialPassword = "guest";
-
   users.extraUsers.mbock = {
     initialPassword = "guest";
     isNormalUser = true;
@@ -32,9 +30,15 @@ in
     home = "/home/mbock";
   };
 
-  users.users.root.extraGroups = [ "audio" ];
-
-  environment.systemPackages = with pkgs; [ emacs git pstree which coreutils ];
+  environment.systemPackages = with pkgs;
+    [ 
+      (emacs.override {  withX = false; withGTK3 = false; })
+      git 
+      pstree
+      which 
+      coreutils
+      ncftp
+    ];
 
   nixpkgs.overlays = [ overlay ];
 

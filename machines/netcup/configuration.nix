@@ -3,6 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/init.nix
+    ../../modules/cli.nix
     ../../modules/webserver.nix
   ];
 

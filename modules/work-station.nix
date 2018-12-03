@@ -10,11 +10,12 @@ with lib;
 {
   imports = [
     ./cli.nix
-    ./emacs
     ./git.nix
   ] ++ (let
     path = ../../private-config/default.nix;
   in if pathExists path then [ path ] else []);
+
+  users.users.root.extraGroups = [ "audio" ];
 
   services.xserver = {
     enable              = true;
@@ -67,6 +68,16 @@ with lib;
       "kdejdkdjdoabfihpcjmgjebcpfbhepmh" # Copy Link Address
       "ljobjlafonikaiipfkggjbhkghgicgoh" # Edit with Emacs
       "fjnbnpbmkenffdnngjfgmeleoegfcffe" # Stylish
+      "opphlpkpklmjbglpifmecilchaknobgn" # Tab Keeper
+      "kniehgiejgnnpgojkdhhjbgbllnfkfdk" # SimpleExtManager
+      "cmkdbmfndkfgebldhnkbfhlneefdaaip" # WhatRuns
+      "epejoicbhllgiimigokgjdoijnpaphdp" # Emmet Re:view
+      "ohcpnigalekghcmgcdcenkpelffpdolg" # ColorPick Eyedropper
+      "emliamioobfffbgcfdchabfibonehkme" # Page Ruler
+      "ggfgijbpiheegefliciemofobhmofgce" # CSSViewer
+      "ihaobgceoogckalioenpheioedgjaahk" # Fullscreenrrr
+      "jlkgkebpphmaiemciejnmgccejccnpha" # simple-debug.css
+      "epodomlablfiehjgajhlhbdhidlkokaj" # Outliner CSS
     ];
     homepageLocation = "https://duckduckgo.com";
     extraOpts = {

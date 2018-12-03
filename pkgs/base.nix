@@ -13,7 +13,7 @@ with pkgs;
 lib.flatten (builtins.attrValues {
 
   aliases = mkAliases {
-    #elm-format = "${elmPackages.elm}/bin/elm-format-0.18";
+    # elm-format = "${elmPackages.elm}/bin/elm-format-0.18";
     greyBg = "xsetroot -solid '#c5c8c9'";
     blackBg = "xsetroot -solid '#000000'";
   };
@@ -26,18 +26,18 @@ lib.flatten (builtins.attrValues {
     xzoom
     rofi
     zathura
-#    playonlinux
+    # playonlinux
   ];
 
   web = [
-      tdesktop
-      chromium
-#      opera
-      firefox
-      tor
-      thunderbird
-      torbrowser
-      youtube-dl
+    tdesktop
+    chromium
+    # opera
+    firefox
+    tor
+    thunderbird
+    torbrowser
+    youtube-dl
   ];
 
   dev = [
@@ -48,14 +48,15 @@ lib.flatten (builtins.attrValues {
     cloc
     travis
     emacs
+    # emacs-nw
     emacs-client
     mysql
     cabal-install
     vim
     gcc
-#   racket
+    # racket
     pythonExt
-#   zeal
+    # zeal
     stack
     openjdk
     leiningen
@@ -65,10 +66,10 @@ lib.flatten (builtins.attrValues {
     unstable2.nodePackages_8_x.elm-oracle
     node2nixPkgs.cross-env
     node2nixPkgs.localtunnel
-#   node2nixPkgs.elm-live
-#   node2nixPkgs.create-elm-app
-    #node2nixPkgs.pulp
-    #unstable.purescript
+    # node2nixPkgs.elm-live
+    # node2nixPkgs.create-elm-app
+    # node2nixPkgs.pulp
+    # unstable.purescript
     purescript
     node2nixPkgs.selenium-webdriver
     node2nixPkgs.ts-node
@@ -77,8 +78,8 @@ lib.flatten (builtins.attrValues {
     node2nixPkgs.pre-commit
     nodePackages.bower
     nodePackages.pulp
-#    nodePackages_6_x.typescript
-    #haskellPackages.idris
+    # nodePackages_6_x.typescript
+    # haskellPackages.idris
     haskellPackages.stylish-haskell
     yarn
     chromedriver
@@ -109,7 +110,7 @@ lib.flatten (builtins.attrValues {
     nixops
     npm2nix
     nix-prefetch-git
-    #cabal2nix
+    # cabal2nix
     nodePackages.node2nix
   ];
 
@@ -119,7 +120,6 @@ lib.flatten (builtins.attrValues {
 
   cli = [
     jq
-    rxvt
     fish
     bash
     coreutils
@@ -133,6 +133,8 @@ lib.flatten (builtins.attrValues {
     inotify-tools
     libnotify
     parallel
+    iotop
+    jnettop
   ];
 
   utils = [
@@ -141,6 +143,11 @@ lib.flatten (builtins.attrValues {
     pass
     psmisc # e.g. killall
     alsaUtils
+    ncftp
+    rxvt
+    konsole
+    lxterminal
+    sshpass
   ];
 
   media = [
@@ -152,7 +159,7 @@ lib.flatten (builtins.attrValues {
   ];
 
   office = [
-    #libreoffice
+    # libreoffice
     aspellDicts.de
     aspellDicts.en
     aspell
