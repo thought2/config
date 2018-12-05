@@ -663,6 +663,8 @@ the last number is used again in further repeated invocations.
     (accelerate magit-next-line 4)
     (accelerate dired-next-line 4)
     (accelerate dired-previous-line 4)
+    (accelerate helm-next-line 4)
+    (accelerate helm-previous-line 4)
     ))
 
 (progn
@@ -839,3 +841,15 @@ end up leaving point on a space or newline character."
 (progn
   (require 'expand-region)
   (global-set-key (kbd "C-=") 'er/expand-region))
+
+(defun text-scale-increase-everywhere ()
+  (interactive)
+  (set-face-attribute 'default nil :height
+                      (+ (face-attribute 'default :height)
+                         10)))
+
+(defun text-scale-decrease-everywhere ()
+  (interactive)
+  (set-face-attribute 'default nil :height
+                      (- (face-attribute 'default :height)
+                         10)))

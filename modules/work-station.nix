@@ -78,6 +78,7 @@ with lib;
       "ihaobgceoogckalioenpheioedgjaahk" # Fullscreenrrr
       "jlkgkebpphmaiemciejnmgccejccnpha" # simple-debug.css
       "epodomlablfiehjgajhlhbdhidlkokaj" # Outliner CSS
+      "kokeihndgocdlgibnibeabeljjgehadj" # CSS debug alignment
     ];
     homepageLocation = "https://duckduckgo.com";
     extraOpts = {

@@ -13,8 +13,8 @@
 
 (defhydra hydra-zoom nil
   "zoom"
-  ("+" text-scale-increase "in")
-  ("-" text-scale-decrease "out"))
+  ("+" text-scale-increase-everywhere "in")
+  ("-" text-scale-decrease-everywhere "out"))
 
 (defhydra hydra-find nil
   "find"

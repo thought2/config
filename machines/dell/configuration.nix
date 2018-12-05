@@ -73,6 +73,7 @@ in
 
   services.xserver = {
     layout = "us";
+    # dpi = 130;
   };
 
   virtualisation.virtualbox.guest.enable = true;
