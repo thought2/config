@@ -4,12 +4,19 @@ with pkgs;
 
 import ./screens.nix {inherit pkgs;} //
 {
+  toggle-touchpad = writeShellScriptBin "toggle-touchpad" ''
+    ID=$(${pkgs.xorg.xinput}/bin/xinput --list | grep Touchpad | sed 's/^.*id=\([0-9]\+\).*$/\1/' | head -n 1);
+    N=$(${pkgs.xorg.xinput}/bin/xinput --list-props $ID | grep "Device Enabled" | sed 's/.*\([01]\).*$/\1/' | head -n 1);
+    NEW_N=$(if [ $N == "1" ]; then echo 0; else echo 1; fi);
+    ${pkgs.xorg.xinput}/bin/xinput set-int-prop $ID "Device Enabled" 8 $NEW_N
+  '';
+
   n = writeShellScriptBin "n" ''
-    nixos-rebuild switch
+    nixos-rebuild switch $@
   '';
 
   n-t = writeShellScriptBin "n-t" ''
-    nixos-rebuild test
+    nixos-rebuild test $@
   '';
 
   emacs2 = writeShellScriptBin "emacs2" ''
