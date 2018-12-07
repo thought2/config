@@ -853,3 +853,12 @@ end up leaving point on a space or newline character."
   (set-face-attribute 'default nil :height
                       (- (face-attribute 'default :height)
                          10)))
+(defun kill-all-tmp-shells ()
+  (interactive)
+  (dolist (buf (seq-filter (lambda (buffer)
+                             (string-match-p "^shell-[0-9a-z]+-" (buffer-name buffer)))
+                           (buffer-list)))
+    (let ((proc (get-buffer-process buf)))
+      (when proc
+        (delete-process proc)))
+    (kill-buffer buf)))
