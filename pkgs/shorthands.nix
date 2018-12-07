@@ -4,6 +4,20 @@ with pkgs;
 
 import ./screens.nix {inherit pkgs;} //
 {
+  show-keyboard =
+    let
+      image = fetchurl {
+        url = "https://n1.sdlcdn.com/imgs/c/n/k/KB216_1-7fd1d.jpg";
+        sha256 = "1x3yabdicjj2474nd8kxvgdjsvy5rbq0fswn9nxaan5g2js7wj9p";
+      };
+      image-cropped = runCommand "crop-it" {} ''
+        ${pkgs.imagemagick}/bin/convert ${image} -shave 100x450 $out
+      '';
+    in
+      writeShellScriptBin "show-keyboard" ''
+        ${pkgs.feh}/bin/feh -. -B white ${image-cropped}
+      '';
+
   toggle-touchpad = writeShellScriptBin "toggle-touchpad" ''
     ID=$(${pkgs.xorg.xinput}/bin/xinput --list | grep Touchpad | sed 's/^.*id=\([0-9]\+\).*$/\1/' | head -n 1);
     N=$(${pkgs.xorg.xinput}/bin/xinput --list-props $ID | grep "Device Enabled" | sed 's/.*\([01]\).*$/\1/' | head -n 1);
