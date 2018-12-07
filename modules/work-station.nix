@@ -11,6 +11,7 @@ with lib;
   imports = [
     ./cli.nix
     ./git.nix
+    ./emacs
   ] ++ (let
     path = ../../private-config/default.nix;
   in if pathExists path then [ path ] else []);

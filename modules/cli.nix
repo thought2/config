@@ -32,7 +32,7 @@ in
 
   environment.systemPackages = with pkgs;
     [ 
-      (emacs.override {  withX = false; withGTK3 = false; })
+      # (emacs.override {  withX = false; withGTK3 = false; })
       git 
       pstree
       which 
