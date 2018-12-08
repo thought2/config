@@ -71,6 +71,7 @@ with pkgs.emacs25PackagesNg;
         magit-find-file
         magit-gh-pulls
         expand-region
+        shell-here
       ];
       init = readFile ./default.el;
     };
