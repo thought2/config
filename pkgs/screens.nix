@@ -27,7 +27,13 @@ in
   screens-mirror = with screens; writeShellScriptBin "screens-mirror" ''
     ${pkgs.xorg.xrandr}/bin/xrandr \
     --output ${native} --primary --auto \
-    --output ${side} --same-as ${native} --auto\
+    --output ${side} --same-as ${native} --auto \
+  '';
+
+  screens-only-side = with screens; writeShellScriptBin "screens-only-side" ''
+    ${pkgs.xorg.xrandr}/bin/xrandr \
+    --output ${side} --primary --auto \
+    --output ${native} --off \
   '';
 
 }
