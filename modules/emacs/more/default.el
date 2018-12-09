@@ -862,3 +862,6 @@ end up leaving point on a space or newline character."
       (when proc
         (delete-process proc)))
     (kill-buffer buf)))
+
+(set-face-attribute 'comint-highlight-prompt nil
+                    :inherit nil)

@@ -9,7 +9,7 @@ with pkgs;
 with lib;
 {
   imports = [
-    ./cli.nix
+    ./cli
     ./git.nix
     ./emacs
   ] ++ (let

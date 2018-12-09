@@ -1,8 +1,12 @@
 { pkgs, config, ... }:
 let
-  overlay = import ../overlays {inherit config; };
+  overlay = import ../../overlays;
 in
 {
+  imports = [
+    ./prompt-init.nix
+  ];
+
   time.timeZone = "Europe/Berlin";
   
   environment.shellAliases = {
