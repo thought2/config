@@ -19,17 +19,13 @@ let
     fetchTarball
       https://github.com/NixOS/nixpkgs-channels/archive/2be930cc4a891a166ee71bc353ce9af297471e2b.tar.gz;
 
-
-
-
 in
-
+with pkgs;
 {
   imports =
     [
       ./hardware-configuration.nix
       ../../modules/laptop.nix
-      ../../../coya-config/default.nix
       ../../modules/webserver.nix
     ];
 
