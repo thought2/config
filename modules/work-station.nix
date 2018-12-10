@@ -12,9 +12,8 @@ with lib;
     ./cli
     ./git.nix
     ./emacs
-  ] ++ (let
-    path = ../private-config/default.nix;
-  in if builtins.pathExists path then [ path ] else []);
+    ../../private-config/default.nix
+  ];
 
   users.users.root.extraGroups = [ "audio" ];
 

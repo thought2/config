@@ -1,5 +1,4 @@
 {
-  config,
   pkgs ? import <nixpkgs> {},
   extraPackages ? self: with self; [
     xmonad-contrib

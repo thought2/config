@@ -73,11 +73,12 @@ lib.flatten (builtins.attrValues {
     purescript
     node2nixPkgs.selenium-webdriver
     node2nixPkgs.ts-node
-    node2nixPkgs.elm-test
+    # node2nixPkgs.elm-test
     nodePackages.prettier
     node2nixPkgs.pre-commit
     nodePackages.bower
     nodePackages.pulp
+    node2nixPkgs.chalk-cli
     # nodePackages_6_x.typescript
     # haskellPackages.idris
     haskellPackages.stylish-haskell
