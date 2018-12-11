@@ -15,8 +15,9 @@ with pkgs.emacs25PackagesNg;
 
     (global-set-key (kbd "C-z") 'avy-goto-line-above)
     (global-set-key (kbd "C-`") 'avy-goto-line-below)
-
-    (global-set-key (kbd "C-c r") 'replace-regexp)
+    (global-set-key (kbd "C-c g") 'helm-grep-do-git-grep)
+    (global-set-key (kbd "<backtab>") 'company-complete)
+    (global-set-key (kbd "C-c C-p") 'scratch-palette-popup)
 
     hydra-main/heads
     (global-set-key '[8711] #'hydra-main/body)
