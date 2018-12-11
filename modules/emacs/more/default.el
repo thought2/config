@@ -96,9 +96,6 @@
 ;;  :hook (emacs-lisp-mode . (aggressive-indent-mode paredit-mode))
 ;;  )
 
-
-
-
 (progn
   ;; Cider
   (add-hook 'cider-mode-hook #'aggressive-indent-mode)
@@ -645,7 +642,7 @@ the last number is used again in further repeated invocations.
   (provide 'accelerate)
 
 
-  (require 'accelerate)
+  (require 'helm)
   (progn
     (accelerate previous-line 4)
     (accelerate next-line 4)
@@ -847,13 +844,24 @@ end up leaving point on a space or newline character."
   (interactive)
   (set-face-attribute 'default nil :height
                       (+ (face-attribute 'default :height)
-                         10)))
+                         5)))
 
 (defun text-scale-decrease-everywhere ()
   (interactive)
   (set-face-attribute 'default nil :height
                       (- (face-attribute 'default :height)
-                         10)))
+                         5)))
+
+(require 'helm-company)
+
+(progn
+  (require 'dired-recent)
+  (dired-recent-mode 1))
+
+(progn
+  (require 'list-packages-ext)
+  (add-hook 'package-menu-mode-hook (lambda () (list-packages-ext-mode 1)))  )
+
 (defun kill-all-tmp-shells ()
   (interactive)
   (dolist (buf (seq-filter (lambda (buffer)
