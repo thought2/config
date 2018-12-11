@@ -29,8 +29,8 @@ with pkgs;
       ../../modules/webserver.nix
     ];
 
-  systemd.services.polkit.serviceConfig.X-RestartIfChanged = "false";
-  systemd.services.dbus.serviceConfig.X-RestartIfChanged = "false";
+  systemd.services.polkit.serviceConfig.X-RestartIfChanged = false;
+  systemd.services.dbus.serviceConfig.X-RestartIfChanged = false;
 
   nixpkgs.config = {
 
