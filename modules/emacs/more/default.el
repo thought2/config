@@ -148,9 +148,10 @@
   (defun set-buffer-width-per10 (step-w_)
     (interactive "PX of 10? ")
     (let* ((step-w (or step-w_ 7))
-           (max-steps 10))
+           (max-steps 10)
+           (display-width (nth 3 (assq 'geometry (car (display-monitor-attributes-list))))))
       (window-resize nil
-                     (- (* step-w (round (/ (x-display-pixel-width) max-steps)))
+                     (- (* step-w (round (/ display-width max-steps)))
                         (window-width nil 'pixelwise))
                      t
                      nil
