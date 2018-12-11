@@ -149,6 +149,7 @@ lib.flatten (builtins.attrValues {
     konsole
     lxterminal
     sshpass
+    usbutils
   ];
 
   media = [
