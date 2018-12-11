@@ -17,6 +17,9 @@ let
     --import XMonad.Hooks.ManageDocks
     --import XMonad.Util.Run(spawnPipe)
     --import System.IO
+    import XMonad.Actions.DynamicWorkspaces
+    import XMonad.Prompt as Prompt
+    import XMonad.Actions.CopyWindow(copy)
     import XMonad.Layout.LayoutScreens
     import XMonad.Layout.TwoPane
     import XMonad.Hooks.FloatNext
@@ -105,6 +108,9 @@ let
       , ("M-s",                    spawn "${pkgs.xdotool}/bin/xdotool click 2")
       , ("M-d",                    spawn "${pkgs.xdotool}/bin/xdotool click 3")
       , ("M-C-z",                  floatNext True >> spawn "${shorthands.show-keyboard}/bin/show-keyboard")
+
+      , ("M-S-v",                  selectWorkspace Prompt.def)
+      , ("M-S-r",                  renameWorkspace Prompt.def)
       ]
       where
         audioMute = spawn "${pkgs.pulseaudioLight}/bin/pactl set-sink-mute 0 toggle"
