@@ -20,7 +20,7 @@ with lib;
   services.xserver = {
     enable              = true;
     exportConfiguration = true;
-    xkbOptions          = "eurosign:e,caps:none";
+    xkbOptions          = "eurosign:e,caps:none, keypad:pointerkeys";
 
     displayManager = {
       sessionCommands = ''
