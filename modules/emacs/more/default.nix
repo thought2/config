@@ -73,8 +73,6 @@ with pkgs.emacs25PackagesNg;
         expand-region
         shell-here
         dired-narrow
-        dired-recent
-        list-packages-ext
       ];
       init = readFile ./default.el;
     };

@@ -854,14 +854,6 @@ end up leaving point on a space or newline character."
 
 (require 'helm-company)
 
-(progn
-  (require 'dired-recent)
-  (dired-recent-mode 1))
-
-(progn
-  (require 'list-packages-ext)
-  (add-hook 'package-menu-mode-hook (lambda () (list-packages-ext-mode 1)))  )
-
 (defun kill-all-tmp-shells ()
   (interactive)
   (dolist (buf (seq-filter (lambda (buffer)
