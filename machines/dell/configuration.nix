@@ -27,10 +27,12 @@ with pkgs;
       ./hardware-configuration.nix
       ../../modules/laptop.nix
       ../../modules/webserver.nix
+      ../../../coya-config/default.nix
     ];
 
   systemd.services.polkit.serviceConfig.X-RestartIfChanged = false;
   systemd.services.dbus.serviceConfig.X-RestartIfChanged = false;
+
 
   nixpkgs.config = {
 
