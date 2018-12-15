@@ -12,12 +12,17 @@ with lib;
     ./cli
     ./git.nix
     ./emacs
-    ../../private-config/default.nix
+    ./extra-pkgs.nix
   ];
+
+  virtualisation.virtualbox.guest.enable = true;
+
+  virtualisation.virtualbox.host.enable = true;
 
   users.users.root.extraGroups = [ "audio" ];
 
   services.xserver = {
+    layout = "us";
     enable              = true;
     exportConfiguration = true;
     xkbOptions          = "eurosign:e,caps:none, keypad:pointerkeys";

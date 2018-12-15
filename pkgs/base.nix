@@ -63,7 +63,6 @@ lib.flatten (builtins.attrValues {
     git
     pkgs.boot
     ghc
-    unstable2.nodePackages_8_x.elm-oracle
     node2nixPkgs.cross-env
     node2nixPkgs.localtunnel
     # node2nixPkgs.elm-live

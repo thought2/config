@@ -2,7 +2,7 @@
 
 with pkgs;
 
-import ./screens.nix {inherit pkgs;} //
+import ./screens.nix {inherit pkgs;} // import ./build.nix {inherit pkgs;}  //
 {
   show-keyboard =
     let
