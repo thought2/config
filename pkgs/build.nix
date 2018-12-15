@@ -2,6 +2,7 @@
 
 with pkgs;
 with lib;
+with import ../util;
 
 let
   nixosRoot = "etc/nixos";
@@ -15,17 +16,17 @@ let
         {
           url = repoUrl;
           name = "nix-config";
-          defaultBranch = "develop";
+          branch = "develop";
         }
         {
           url = repoUrl;
           name = "coya-config";
-          defaultBranch = "master";
+          branch = "master";
         }
         {
           url = repoUrl;
           name = "private-config";
-          defaultBranch = "master";
+          branch = "master";
         }
       ];
     };
@@ -36,7 +37,12 @@ let
 
   shellExpand = str: "$" + "{" + str + "}";
 
-  indentLines = map (line: "  " + line);
+  indentLines =
+    flow [
+      (concatStringsSep "\n")
+      (map indent)
+      (split "\n")
+      ];
 
   mapIndent = f: map (x: "  " + f x);
 
@@ -46,8 +52,9 @@ let
 in
 
 rec {
-  mkdir-force = writeShellScriptBin "mkdir-force" ''
-    DIR=$1
+  machine-clean = writeShellScriptBin "machine-clean" ''
+    ROOT=${shellExpand "1:-''"}
+    DIR=$ROOT/${nixosRoot}
     rm -rf $DIR
     mkdir -p $DIR
   '';
@@ -65,7 +72,7 @@ rec {
     ${
       forEach
         (host: ''
-          echo ${host.name} ${if host.name == config.networking.hostName then " *" else ""}
+          echo ${if host.name == config.networking.hostName then "* " else "  "} ${host.name}
         '')
         (attrValues(hosts))
     }
@@ -74,19 +81,11 @@ rec {
   machine-checkout = writeShellScriptBin "machine-checkout" ''
     HOST=${shellExpand "1:-'${config.networking.hostName}'"}
 
-    BRANCHES=${shellExpand "BRANCHES:-''"}
     ROOT=${shellExpand "ROOT:-''"}
-
-    declare -A BRANCHES_LOOKUP
-
-    while read -d, -r pair; do
-      IFS='=' read -r key val <<<"$pair"
-      BANCHES_LOOKUP["$key"]="$val"
-    done <<<"$BRANCHES,"
 
     DIR="$ROOT/${nixosRoot}"
 
-    ${mkdir-force}/bin/mkdir-force $DIR
+    ${machine-clean}/bin/machine-clean $ROOT
 
     cd $DIR
 
@@ -98,8 +97,8 @@ rec {
           ["${host.name})"]
           (mapIndent
              (repo: ''
-               BRANCH=${shellExpand "BRANCHES_LOOKUP[${repo.name}]:-'${repo.defaultBranch}'"}
-               ${clone-and-checkout}/bin/clone-and-checkout ${repo.url} ${repo.name} $BRANCH
+               ${clone-and-checkout}/bin/clone-and-checkout ${repo.url} ${repo.name} ${repo.branch}
+               echo
              ''
              )
              host.repos)
@@ -113,7 +112,12 @@ rec {
         ;;
     esac
 
-    ln -s nix-config/hosts/$HOST.nix configuration.nix
+    ${machine-link}/bin/machine-link nix-config/hosts/$HOST.nix
+  '';
+
+  machine-link = writeShellScriptBin "machine-link" ''
+    TARGET_PATH=$1
+    ln -s $TARGET_PATH configuration.nix
   '';
 
   machine-checkout-workdir = writeShellScriptBin "machine-checkout-workdir" ''
@@ -121,7 +125,7 @@ rec {
 
     DIR="/${nixosRoot}"
 
-    ${mkdir-force}/bin/mkdir-force $DIR
+    ${machine-clean}/bin/machine-clean $ROOT
 
     cd $DIR
 
@@ -129,6 +133,6 @@ rec {
     cp -r ${devDir}/private-config .
     cp -r ${devDir}/coya-config .
 
-    ln -s nix-config/hosts/$HOST.nix configuration.nix
+    ${machine-link}/bin/machine-link nix-config/hosts/$HOST.nix
   '';
 }
