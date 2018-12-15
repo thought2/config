@@ -4,8 +4,8 @@
     xmonad-contrib
   ]
 }:
+with pkgs;
 let
-  shorthands = import ../../pkgs/shorthands.nix { inherit pkgs; };
   colors = import ../../data/colors.nix;
 
   xmonadConfig = /* haskell */ ''

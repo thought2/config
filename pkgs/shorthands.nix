@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 with pkgs;
 
-import ./screens.nix {inherit pkgs;} // import ./build.nix {inherit pkgs;}  //
+import ./screens.nix {inherit pkgs;} // import ./build.nix {inherit pkgs; inherit config; }  //
 {
   show-keyboard =
     let

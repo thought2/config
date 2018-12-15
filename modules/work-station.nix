@@ -2,7 +2,7 @@
 
 let
   systemPkgs = import ../pkgs/base.nix { inherit pkgs; };
-  shorthands = import ../pkgs/shorthands.nix { inherit pkgs; };
+  shorthands = import ../pkgs/shorthands.nix { inherit pkgs; inherit config; };
 in
 
 with pkgs;
@@ -14,6 +14,8 @@ with lib;
     ./emacs
     ./extra-pkgs.nix
   ];
+
+  networking.networkmanager.enable = true;
 
   virtualisation.virtualbox.guest.enable = true;
 

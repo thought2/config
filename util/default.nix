@@ -1,6 +1,9 @@
 with import <nixpkgs> {};
 with lib;
 rec {
+  forEach = f: xs:
+    sepByNl (map f xs);
+
   mkAlias = name: command: writeScriptBin name ''
     #!${bash}/bin/bash
     ${command}

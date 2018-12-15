@@ -1,6 +1,6 @@
 { pkgs, config, ... }:
 let
-  overlay = import ../../overlays;
+  overlay = import ../../overlays {inherit config;};
 in
 {
   imports = [
@@ -18,6 +18,12 @@ in
     "ls2" = "ls ../..";
     "ls3" = "ls ../../..";
   };
+
+  environment.variables = {
+    NIXOS_ROOT = "/etc/nixos";
+  };
+
+  environment.etc."set-environment".source = config.system.build.setEnvironment;
 
   users.extraUsers.mbock = {
     initialPassword = "guest";

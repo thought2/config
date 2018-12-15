@@ -1,6 +1,8 @@
+{config, ...}:
 self: super:
 let
   node2nixPkgs = import ../pkgs/node2nix {};
+  shorthands = import ../pkgs/shorthands.nix { pkgs = self; inherit config; };
 in
 {
   chalk = node2nixPkgs.chalk-cli;
@@ -19,4 +21,6 @@ in
   xmonad = import ./xmonad { pkgs = self; };
 
   pythonExt = self.python3Packages.python.withPackages (p: [ p.notebook p.grip ]);
+
+  inherit shorthands;
 }

@@ -6,7 +6,7 @@
       ../../coya-config/default.nix
     ];
 
-  networking.hostName = "lapw";
+  networking.hostName = "laptop-work";
 
   boot.initrd.luks.devices = [
     {
