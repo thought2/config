@@ -15,14 +15,17 @@ let
         {
           url = repoUrl;
           name = "nix-config";
+          defaultBranch = "develop";
         }
         {
           url = repoUrl;
           name = "coya-config";
+          defaultBranch = "master";
         }
         {
           url = repoUrl;
           name = "private-config";
+          defaultBranch = "master";
         }
       ];
     };
@@ -70,13 +73,18 @@ rec {
 
   machine-checkout = writeShellScriptBin "machine-checkout" ''
     HOST=${shellExpand "1:-'${config.networking.hostName}'"}
-    BRANCH=${shellExpand "2:-'master'"}
 
+    BRANCHES=${shellExpand "BRANCHES:-''"}
     ROOT=${shellExpand "ROOT:-''"}
 
-    DIR="$ROOT/${nixosRoot}"
+    declare -A BRANCHES_LOOKUP
 
-    alias clone-and-checkout=${clone-and-checkout}/bin/clone-and-checkout
+    while read -d, -r pair; do
+      IFS='=' read -r key val <<<"$pair"
+      BANCHES_LOOKUP["$key"]="$val"
+    done <<<"$BRANCHES,"
+
+    DIR="$ROOT/${nixosRoot}"
 
     ${mkdir-force}/bin/mkdir-force $DIR
 
@@ -88,7 +96,13 @@ rec {
       (concatMapIndent
         (host: concatLists [
           ["${host.name})"]
-          (mapIndent (repo: "clone-and-checkout ${repo.url} ${repo.name} $BRANCH") host.repos)
+          (mapIndent
+             (repo: ''
+               BRANCH=${shellExpand "BRANCHES_LOOKUP[${repo.name}]:-'${repo.defaultBranch}'"}
+               ${clone-and-checkout}/bin/clone-and-checkout ${repo.url} ${repo.name} $BRANCH
+             ''
+             )
+             host.repos)
           [(indent ";;")]
         ])
         (attrValues(hosts))
@@ -115,6 +129,6 @@ rec {
     cp -r ${devDir}/private-config .
     cp -r ${devDir}/coya-config .
 
-    # ln -s nix-config/hosts/$HOST.nix configuration.nix
+    ln -s nix-config/hosts/$HOST.nix configuration.nix
   '';
 }
