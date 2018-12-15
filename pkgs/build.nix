@@ -72,7 +72,7 @@ rec {
     ${
       forEach
         (host: ''
-          echo ${if host.name == config.networking.hostName then "* " else "  "} ${host.name}
+          echo '${if host.name == config.networking.hostName then "*" else " "} ${host.name}'
         '')
         (attrValues(hosts))
     }
