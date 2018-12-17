@@ -30,7 +30,7 @@ let
         }
       ];
     };
-   desktop = {
+    desktop = {
       name = "desktop";
       repos = [
         {
@@ -82,6 +82,16 @@ let
     };
     minimal-uefi = {
       name = "minimal-uefi";
+      repos = [
+        {
+          url = "http://github.com/thought2";
+          name = "nix-config";
+          branch = "develop";
+        }
+      ];
+    };
+    minimal-legacy = {
+      name = "minimal-legacy";
       repos = [
         {
           url = "http://github.com/thought2";
