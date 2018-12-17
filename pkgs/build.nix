@@ -80,6 +80,16 @@ let
         }
       ];
     };
+    minimal-uefi = {
+      name = "minimal-uefi";
+      repos = [
+        {
+          url = repoUrl;
+          name = "nix-config";
+          branch = "develop";
+        }
+      ];
+    };
   };
 
   forEach = f: xs:
@@ -158,6 +168,7 @@ rec {
       )
     }
       *)
+        echo "Unknown host."
         exit
         ;;
     esac
