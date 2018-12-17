@@ -30,6 +30,56 @@ let
         }
       ];
     };
+   desktop = {
+      name = "desktop";
+      repos = [
+        {
+          url = repoUrl;
+          name = "nix-config";
+          branch = "develop";
+        }
+        {
+          url = repoUrl;
+          name = "private-config";
+          branch = "master";
+        }
+      ];
+    };
+    laptop = {
+      name = "laptop";
+      repos = [
+        {
+          url = repoUrl;
+          name = "nix-config";
+          branch = "develop";
+        }
+        {
+          url = repoUrl;
+          name = "private-config";
+          branch = "master";
+        }
+      ];
+    };
+    prod = {
+      name = "prod";
+      repos = [
+        {
+          url = repoUrl;
+          name = "nix-config";
+          branch = "master";
+        }
+      ];
+    };
+    stage = {
+      name = "stage";
+      repos = [
+        {
+          url = repoUrl;
+          name = "nix-config";
+          branch = "develop";
+        }
+      ];
+    };
   };
 
   forEach = f: xs:
@@ -134,5 +184,183 @@ rec {
     cp -r ${devDir}/coya-config .
 
     ${machine-link}/bin/machine-link nix-config/hosts/$HOST.nix
+  '';
+
+  partition-machine = writeShellScriptBin "partition-machine" ''
+
+    FORCE=false
+
+
+    # PARSE ARGS
+
+    OPTS=`getopt -o f --long force -- "$@"`
+
+    [ $? -eq 0 ] || exit 1
+
+    eval set -- "$OPTS"
+
+    while true ; do
+      case "$1" in
+        -f|--force)
+          FORCE=true
+          shift
+          ;;
+        --)
+          shift
+          break
+          ;;
+        *)
+          exit 1
+          ;;
+      esac
+    done
+
+
+    # CONFIRM
+
+    if [ "$FORCE" = false ]
+    then
+      read -p "Are you sure? (yes/no)"
+      if [ "$REPLY" != "yes" ]
+      then
+        exit 1
+      fi
+    fi
+
+
+    # MAIN
+
+    echo good
+
+  '';
+
+  write-iso-to-device =
+  let
+    isoMinimal32 = fetchurl {
+        url = "https://d3g5gsiof5omrk.cloudfront.net/nixos/18.09/nixos-18.09.1676.7e88992a8c7/nixos-minimal-18.09.1676.7e88992a8c7-i686-linux.iso";
+        sha256 = "0p9vz87xg72f7agq51mwy6x8fi2x03xm5psv61vf5pf1sspaidn4";
+      };
+  in
+  writeShellScriptBin "write-iso-to-device" ''
+    DEVICE="/dev/disk/by-id/usb-SanDisk_Ultra_4C530001190720103262-0:0"
+    dd status=progress if="${isoMinimal32}" of="$DEVICE"
+  '';
+
+  partition-uefi = writeShellScriptBin "partition-uefi" ''
+    DEVICE=/dev/sda
+    FORCE=false
+
+
+    # PARSE ARGS
+
+    OPTS=`getopt -o f --long force -- "$@"`
+
+    [ $? -eq 0 ] || exit 1
+
+    eval set -- "$OPTS"
+
+    while true ; do
+      case "$1" in
+        -f|--force)
+          FORCE=true
+          shift
+          ;;
+        --)
+          shift
+          break
+          ;;
+        *)
+          exit 1
+          ;;
+      esac
+    done
+
+
+    # CONFIRM
+
+    if [ "$FORCE" = false ]
+    then
+      read -p "Are you sure to destroy \"$DEVICE\"? (yes/no)"
+      if [ "$REPLY" != "yes" ]
+      then
+        exit 1
+      fi
+    fi
+
+
+    # MAIN
+
+    alias parted="${pkgs.parted}/bin/parted --script $DEVICE"
+
+    parted -- mklabel gpt
+    parted -- mkpart primary 512MiB -0GiB
+    parted -- mkpart ESP fat32 1MiB 512MiB
+    parted -- set 3 boot on
+
+    ${e2fsprogs}/bin/mkfs.ext4 -L nixos "$DEVICE"1
+    ${e2fsprogs}/bin/mkfs.fat -F 32 -n boot "$DEVICE"2
+
+    mount /dev/disk/by-label/nixos /mnt
+
+    mkdir -p /mnt/boot
+    mount /dev/disk/by-label/boot /mnt/boot
+
+    nixos-generate-config --root /mnt
+  '';
+
+  partition-legacy = writeShellScriptBin "partition-legacy" ''
+    DEVICE=/dev/sda
+    FORCE=false
+
+
+    # PARSE ARGS
+
+    OPTS=`getopt -o f --long force -- "$@"`
+
+    [ $? -eq 0 ] || exit 1
+
+    eval set -- "$OPTS"
+
+    while true ; do
+      case "$1" in
+        -f|--force)
+          FORCE=true
+          shift
+          ;;
+        --)
+          shift
+          break
+          ;;
+        *)
+          exit 1
+          ;;
+      esac
+    done
+
+
+    # CONFIRM
+
+    if [ "$FORCE" = false ]
+    then
+      read -p "Are you sure to destroy \"$DEVICE\"? (yes/no)"
+      if [ "$REPLY" != "yes" ]
+      then
+        exit 1
+      fi
+    fi
+
+
+    # MAIN
+
+    alias parted="${pkgs.parted}/bin/parted --script $DEVICE"
+
+    parted -- mklabel msdos
+    parted -- mkpart primary 1MiB -0GiB
+
+    ${e2fsprogs}/bin/mkfs.ext4 -L nixos /dev/sda1
+
+    mount /dev/disk/by-label/nixos /mnt
+
+    nixos-generate-config --root /mnt
   '';
 }
