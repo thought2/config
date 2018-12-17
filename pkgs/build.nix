@@ -123,6 +123,8 @@ rec {
     URL=$1
     REPO=$2
     BRANCH=$3
+
+    export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
     git clone $URL/$REPO
     cd $REPO
     git checkout $BRANCH
@@ -178,6 +180,7 @@ rec {
 
   machine-link = writeShellScriptBin "machine-link" ''
     TARGET_PATH=$1
+    rm configuration.nix
     ln -s $TARGET_PATH configuration.nix
   '';
 
@@ -193,6 +196,8 @@ rec {
     cp -r ${devDir}/nix-config .
     cp -r ${devDir}/private-config .
     cp -r ${devDir}/coya-config .
+
+    nixos-generate-config --force --root /mnt
 
     ${machine-link}/bin/machine-link nix-config/hosts/$HOST.nix
   '';
@@ -313,8 +318,6 @@ rec {
 
     mkdir -p /mnt/boot
     mount /dev/disk/by-label/boot /mnt/boot
-
-    nixos-generate-config --force --root /mnt
   '';
 
   partition-legacy = writeShellScriptBin "partition-legacy" ''
@@ -367,7 +370,5 @@ rec {
     ${e2fsprogs}/bin/mkfs.ext4 -FL nixos /dev/sda1
 
     mount /dev/disk/by-label/nixos /mnt
-
-    nixos-generate-config --force --root /mnt
   '';
 }
