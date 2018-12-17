@@ -295,7 +295,7 @@ rec {
     ${pkgs.parted}/bin/parted --script $DEVICE -- mkpart ESP fat32 1MiB 512MiB
     ${pkgs.parted}/bin/parted --script $DEVICE -- set 3 boot on
 
-    ${e2fsprogs}/bin/mkfs.ext4 -L nixos "$DEVICE"1
+    ${e2fsprogs}/bin/mkfs.ext4 -FL nixos "$DEVICE"1
     ${dosfstools}/bin/mkfs.fat -F 32 -n boot "$DEVICE"2
 
     mount /dev/disk/by-label/nixos /mnt
@@ -303,7 +303,7 @@ rec {
     mkdir -p /mnt/boot
     mount /dev/disk/by-label/boot /mnt/boot
 
-    nixos-generate-config --root /mnt
+    nixos-generate-config --force --root /mnt
   '';
 
   partition-legacy = writeShellScriptBin "partition-legacy" ''
@@ -353,10 +353,10 @@ rec {
     ${pkgs.parted}/bin/parted --script $DEVICE -- mklabel msdos
     ${pkgs.parted}/bin/parted --script $DEVICE -- mkpart primary 1MiB -0
 
-    ${e2fsprogs}/bin/mkfs.ext4 -L nixos /dev/sda1
+    ${e2fsprogs}/bin/mkfs.ext4 -FL nixos /dev/sda1
 
     mount /dev/disk/by-label/nixos /mnt
 
-    nixos-generate-config --root /mnt
+    nixos-generate-config --force --root /mnt
   '';
 }
