@@ -296,7 +296,7 @@ rec {
     ${pkgs.parted}/bin/parted --script $DEVICE -- set 3 boot on
 
     ${e2fsprogs}/bin/mkfs.ext4 -L nixos "$DEVICE"1
-    ${e2fsprogs}/bin/mkfs.fat -F 32 -n boot "$DEVICE"2
+    ${dosfstools}/bin/mkfs.fat -F 32 -n boot "$DEVICE"2
 
     mount /dev/disk/by-label/nixos /mnt
 
@@ -351,7 +351,7 @@ rec {
     # MAIN
 
     ${pkgs.parted}/bin/parted --script $DEVICE -- mklabel msdos
-    ${pkgs.parted}/bin/parted --script $DEVICE -- mkpart primary 1MiB -0GiB
+    ${pkgs.parted}/bin/parted --script $DEVICE -- mkpart primary 1MiB -0
 
     ${e2fsprogs}/bin/mkfs.ext4 -L nixos /dev/sda1
 
