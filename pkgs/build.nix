@@ -84,7 +84,7 @@ let
       name = "minimal-uefi";
       repos = [
         {
-          url = repoUrl;
+          url = "http://github.com/thought2";
           name = "nix-config";
           branch = "develop";
         }
