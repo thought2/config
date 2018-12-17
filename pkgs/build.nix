@@ -175,6 +175,8 @@ rec {
         ;;
     esac
 
+    nixos-generate-config --force --root /mnt
+
     ${machine-link}/bin/machine-link nix-config/hosts/$HOST.nix
   '';
 
