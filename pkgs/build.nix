@@ -280,7 +280,7 @@ rec {
 
     if [ "$FORCE" = false ]
     then
-      read -p "Are you sure to destroy \"$DEVICE\"? (yes/no)"
+      read -p "Are you sure to destroy \"$DEVICE\"? (yes/no) "
       if [ "$REPLY" != "yes" ]
       then
         exit 1
@@ -290,12 +290,10 @@ rec {
 
     # MAIN
 
-    alias parted="${pkgs.parted}/bin/parted --script $DEVICE"
-
-    parted -- mklabel gpt
-    parted -- mkpart primary 512MiB -0GiB
-    parted -- mkpart ESP fat32 1MiB 512MiB
-    parted -- set 3 boot on
+    ${pkgs.parted}/bin/parted --script $DEVICE -- mklabel gpt
+    ${pkgs.parted}/bin/parted --script $DEVICE -- mkpart primary 512MiB -0
+    ${pkgs.parted}/bin/parted --script $DEVICE -- mkpart ESP fat32 1MiB 512MiB
+    ${pkgs.parted}/bin/parted --script $DEVICE -- set 3 boot on
 
     ${e2fsprogs}/bin/mkfs.ext4 -L nixos "$DEVICE"1
     ${e2fsprogs}/bin/mkfs.fat -F 32 -n boot "$DEVICE"2
@@ -342,7 +340,7 @@ rec {
 
     if [ "$FORCE" = false ]
     then
-      read -p "Are you sure to destroy \"$DEVICE\"? (yes/no)"
+      read -p "Are you sure to destroy \"$DEVICE\"? (yes/no) "
       if [ "$REPLY" != "yes" ]
       then
         exit 1
@@ -352,10 +350,8 @@ rec {
 
     # MAIN
 
-    alias parted="${pkgs.parted}/bin/parted --script $DEVICE"
-
-    parted -- mklabel msdos
-    parted -- mkpart primary 1MiB -0GiB
+    ${pkgs.parted}/bin/parted --script $DEVICE -- mklabel msdos
+    ${pkgs.parted}/bin/parted --script $DEVICE -- mkpart primary 1MiB -0GiB
 
     ${e2fsprogs}/bin/mkfs.ext4 -L nixos /dev/sda1
 
