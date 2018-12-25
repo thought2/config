@@ -4,6 +4,23 @@ with pkgs;
 
 import ./screens.nix {inherit pkgs;} // import ./build.nix {inherit pkgs; inherit config; }  //
 {
+  bower-install = writeShellScriptBin "bower-install" ''
+    PKG=$1
+    shift
+    ARGS=$@
+
+    [ -d bower_components ] || exit 1;
+
+    ${nodePackages.bower}/bin/bower info $PKG |
+    grep -e '  - [0-9]\+\.[0-9]\+\.[0-9]\+' |
+    sed 's/^  - //' |
+    while read -r VERSION
+    do
+      echo $'\cc' | ${nodePackages.bower}/bin/bower install $ARGS $PKG'#^'$VERSION
+      [ -d "bower_components/$PKG" ] && break
+    done
+  '';
+
   show-keyboard =
     let
       image = fetchurl {
