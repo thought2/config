@@ -86,12 +86,15 @@ lib.flatten (builtins.attrValues {
     gitAndTools.gitflow
     nodejs-8_x
     elmPackages.elm
+    # elmPackages.elm-format
+    node2nixPkgs.elm-oracle
     purescript
     sbt
     swiProlog
     glslviewer
     docker
     python3Packages.notebook
+    python3Packages.elm-doc
     coq
     latest.rustc
     latest.cargo

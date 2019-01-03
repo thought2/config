@@ -1,4 +1,5 @@
 [
+    "mustache-cli",
     "chalk-cli",
     "elm-format",
     "elm-oracle",

@@ -747,17 +747,8 @@ the last number is used again in further repeated invocations.
 
 
 (progn
-  ;; Screen Scroll
-  (defun screen-scroll-down (&optional n)
-    (interactive "p")
-    (scroll-down (or n 1)))
-
-  (defun screen-scroll-up (&optional n)
-    (interactive "p")
-    (scroll-up (or n 1)))
-
-  (global-set-key (kbd "M-p") 'screen-scroll-down)
-  (global-set-key (kbd "M-n") 'screen-scroll-up))
+  (global-set-key (kbd "M-p") (lambda () (interactive) (scroll-down 5)))
+  (global-set-key (kbd "M-n") (lambda () (interactive) (scroll-up 5))))
 
 (progn
   (defun next-line-non-empty-column (arg)

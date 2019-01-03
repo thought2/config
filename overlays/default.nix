@@ -23,4 +23,5 @@ in
   pythonExt = self.python3Packages.python.withPackages (p: [ p.notebook p.grip ]);
 
   inherit shorthands;
+  inherit node2nixPkgs;
 }

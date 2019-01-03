@@ -152,9 +152,7 @@ rec {
 
   machine-checkout = writeShellScriptBin "machine-checkout" ''
     HOST=${shellExpand "1:-'${config.networking.hostName}'"}
-
     ROOT=${shellExpand "ROOT:-''"}
-
     DIR="$ROOT/${nixosRoot}"
 
     ${machine-clean}/bin/machine-clean $ROOT
@@ -198,7 +196,7 @@ rec {
 
   machine-checkout-workdir = writeShellScriptBin "machine-checkout-workdir" ''
     HOST=${shellExpand "1:-'${config.networking.hostName}'"}
-
+    ROOT=${shellExpand "ROOT:-''"}
     DIR="/${nixosRoot}"
 
     ${machine-clean}/bin/machine-clean $ROOT
@@ -209,15 +207,13 @@ rec {
     cp -r ${devDir}/private-config .
     cp -r ${devDir}/coya-config .
 
-    nixos-generate-config --force --root /mnt
+    nixos-generate-config --force --root $ROOT
 
     ${machine-link}/bin/machine-link nix-config/hosts/$HOST.nix
   '';
 
   partition-machine = writeShellScriptBin "partition-machine" ''
-
     FORCE=false
-
 
     # PARSE ARGS
 
