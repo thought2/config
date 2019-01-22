@@ -207,7 +207,8 @@ rec {
     cp -r ${devDir}/private-config .
     cp -r ${devDir}/coya-config .
 
-    nixos-generate-config --force --root $ROOT
+    # @TODO: check root here
+    nixos-generate-config --force # --root $ROOT
 
     ${machine-link}/bin/machine-link nix-config/hosts/$HOST.nix
   '';

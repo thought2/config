@@ -860,6 +860,95 @@ end up leaving point on a space or newline character."
 (progn
   (move-text-default-bindings))
 
+(defun er-sudo-edit (&optional arg)
+  "Edit currently visited file as root.
+
+With a prefix ARG prompt for a file to visit.
+Will also prompt for a file to visit if current
+buffer is not visiting a file."
+  (interactive "P")
+  (if (or arg (not buffer-file-name))
+      (find-file (concat "/sudo:root@localhost:"
+                         (ido-read-file-name "Find file(as root): ")))
+    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+
+(progn
+
+
+  (defun gen-value-sig (val-name start-n n-args multiline)
+    (format "${%d:%s} :%s%s"
+            start-n
+            val-name
+            (if multiline "\n    " "")
+            (string-join (mapcar (lambda (i)
+                                   (format "${%d:a}"
+                                           i))
+                                 (number-sequence (+ start-n 1) (+ start-n n-args 1)))
+                         (format "%s-> "
+                                 (if multiline "\n    " " ")))))
+
+  (defun gen-value-def (val-name start-n n-args)
+    (format "%s %s= ${%d:x}"
+            val-name
+            (string-join (mapcar (lambda (i)
+                                   (format "${%d:%s} "
+                                           i
+                                           (if (= (+ start-n 1) i) "x" "_")
+                                           ))
+                                 (number-sequence (+ start-n 1) (+ start-n n-args))))
+            (+ start-n n-args 1)))
+
+  (defun gen-value-sig-def (val-name n-args multiline)
+    (format "%s\n%s"
+            (gen-value-sig val-name 1 n-args multiline)
+            (gen-value-def "$1" (+ n-args 2) n-args)))
+
+
+  (defun gen-case (n-branches)
+    (format "case ${1} of\n%s"
+            (string-join
+             (mapcar (lambda (i)
+                       (format "    ${%d} -> ${%d}"
+                               (* i 2) (+ (* i 2) 1)))
+                     (number-sequence 1 n-branches))
+             "\n")))
+
+  (defun join-nl (xs)
+    (string-join xs "\n"))
+
+  (yas-define-snippets
+   'elm-mode
+   `(("test"
+      ,(join-nl '("test \"${1:}\" <| "
+                  "  \_ -> "
+                  "      ${2:x} "
+                  "          |> Expect.equal ${3:} ")))
+     ("doc"
+      ,(join-nl '("{-| ${1}"
+                  "-}"
+                  "")))
+     ("expa"
+      ,(join-nl '("exposing (..)")))
+     ("exp"
+      ,(join-nl '("exposing (${1})")))
+     ,@(mapcar
+        (lambda (i)
+          `(,(format "case%d" i)
+            ,(gen-case i)
+            nil nil nil ((yas/indent-line nil))))
+        (number-sequence 0 9))
+     ,@(mapcar
+        (lambda (i)
+          `(,(format "f%d" i)
+            ,(gen-value-sig-def "f" i nil)
+            nil nil nil ((yas/indent-line nil))))
+        (number-sequence 0 9))
+     ,@(mapcar
+        (lambda (i)
+          `(,(format "f%dm" i)
+            ,(gen-value-sig-def "f" i t)
+            nil nil nil ((yas/indent-line nil))))
+        (number-sequence 0 9)))))
 
 (progn
   ;;;  camelCase-mode.el --- minor mode for editing with camelCase words
@@ -994,7 +1083,7 @@ end up leaving point on a space or newline character."
              ("\M-c"              camelCase-capitalize-word)
              ("\M-u"              camelCase-upcase-word)
              ("\M-l"              camelCase-downcase-word)
-                                        ;((meta right)        camelCase-forward-word)
+                                        ;((meta right)        camelCase-forward-word) ;
                                         ;((meta left)         camelCase-backward-word)
                                         ;((meta delete)       camelCase-forward-kill-word)
              ((meta backspace)    camelCase-backward-kill-word)

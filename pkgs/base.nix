@@ -94,7 +94,6 @@ lib.flatten (builtins.attrValues {
     glslviewer
     docker
     python3Packages.notebook
-    python3Packages.elm-doc
     coq
     latest.rustc
     latest.cargo
