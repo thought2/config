@@ -18,6 +18,7 @@ with pkgs.emacs25PackagesNg;
         (add-to-list 'company-backends 'company-elm))
       (add-hook 'elm-mode-hook #'company-mode)
       (add-hook 'elm-mode-hook #'smartparens-mode)
+      (add-hook 'elm-mode-hook #'camelCase-mode)
 
       (setq elm-format-on-save t))
 

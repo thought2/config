@@ -73,6 +73,7 @@ with pkgs.emacs25PackagesNg;
         expand-region
         shell-here
         dired-narrow
+        move-text
       ];
       init = readFile ./default.el;
     };
