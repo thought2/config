@@ -952,7 +952,8 @@ buffer is not visiting a file."
 
      ("mod"
       "module ${1: } exposing (${2:..})"
-      nil nil nil ((yas/indent-line nil)))
+      "module"
+      nil nil ((yas/indent-line nil)))
 
      ("imp"
       "import ${1: }${2: as ${3:$1$(last-frag-module-name yas-text)}}${4: exposing (${5:..})}"
@@ -962,12 +963,16 @@ buffer is not visiting a file."
      ("doc"
       ,(join-nl '("{-| ${1}"
                   "-}"
-                  "")))
+                  ""))
+      "doc string")
+
      ("exa"
-      "exposing (..)")
+      "exposing (..)"
+      "exposing all")
 
      ("ex"
-      "exposing (${1})")
+      "exposing (${1})"
+      "exposing")
 
      ;; Primitive Types
 
@@ -1004,13 +1009,15 @@ buffer is not visiting a file."
      ;; Language constructs
 
      ("if"
-      "if ${1} then\n${2}\nelse\n${3}")
+      "if ${1} then\n${2}\nelse\n${3}"
+      "if")
 
      ,@(mapcar
         (lambda (i)
           `(,(format "case%d" i)
             ,(gen-case i)
-            nil nil nil ((yas/indent-line nil))))
+            "case"
+            nil nil ((yas/indent-line nil))))
         (number-sequence 0 9))
 
      ;; Value Definitions
@@ -1019,14 +1026,16 @@ buffer is not visiting a file."
         (lambda (i)
           `(,(format "f%d" i)
             ,(gen-value-sig-def "f" i nil)
-            nil nil nil ((yas/indent-line nil))))
+            ,(format "function %d" i)
+            nil nil ((yas/indent-line nil))))
         (number-sequence 0 9))
 
      ,@(mapcar
         (lambda (i)
           `(,(format "f%dm" i)
             ,(gen-value-sig-def "f" i t)
-            nil nil nil ((yas/indent-line nil))))
+            ,(format "function %d multiline" i)
+            nil nil ((yas/indent-line nil))))
         (number-sequence 0 9))
 
      ;; Composed
@@ -1035,13 +1044,15 @@ buffer is not visiting a file."
         (lambda (i)
           `(,(format "ls%d" i)
             ,(gen-list i nil)
-            nil nil nil ((yas/indent-line nil))))
+            ,(format "list %d" i)
+            nil nil ((yas/indent-line nil))))
         (number-sequence 0 9))
 
      ,@(mapcar
         (lambda (i)
           `(,(format "ls%dm" i)
             ,(gen-list i t)
+            ,(format "list %d multiline" i)
             ))
         (number-sequence 0 9))
 
@@ -1085,7 +1096,8 @@ buffer is not visiting a file."
       ,(join-nl '("test \"${1:}\" <| "
                   "  \_ -> "
                   "      ${2:x} "
-                  "          |> Expect.equal ${3:} ")))
+                  "          |> Expect.equal ${3:} "))
+      "test")
 
      )))
 
