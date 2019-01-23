@@ -874,12 +874,11 @@ buffer is not visiting a file."
 
 (progn
 
-
   (defun gen-value-sig (val-name start-n n-args multiline)
     (format "${%d:%s} :%s%s"
             start-n
             val-name
-            (if multiline "\n    " "")
+            (if multiline "\n    " " ")
             (string-join (mapcar (lambda (i)
                                    (format "${%d:a}"
                                            i))
@@ -913,42 +912,182 @@ buffer is not visiting a file."
                      (number-sequence 1 n-branches))
              "\n")))
 
-  (defun join-nl (xs)
-    (string-join xs "\n"))
+  (defun gen-list-like (open close length multiline)
+    (if (= length 0)
+        (format "%s%s" open close)
+      (format "%s %s%s%s"
+              open
+              (string-join
+               (mapcar (lambda (i)
+                         (format "${%d}" i))
+                       (number-sequence 0 (- length 1)))
+               (format "%s, "
+                       (if multiline "\n" "")))
+              (if multiline "\n" " ")
+              close)))
+
+  (defun gen-list (length multiline)
+    (gen-list-like "[" "]" length multiline))
+
+  (defun gen-tuple (length multiline)
+    (gen-list-like "(" ")" length multiline))
+
+  (defun last-frag-module-name (text)
+    (car
+     (reverse (split-string text "\\."))))
+
+
+  (defun gen-pipe (n-steps multiline)
+    (string-join
+     (mapcar (lambda (i)
+               (format "|> ${%d}" i))
+             (number-sequence 1 n-steps))
+     (if multiline "\n" " ")))
+
+  (setq yas/triggers-in-field t)
 
   (yas-define-snippets
    'elm-mode
-   `(("test"
-      ,(join-nl '("test \"${1:}\" <| "
-                  "  \_ -> "
-                  "      ${2:x} "
-                  "          |> Expect.equal ${3:} ")))
+   `(;; Statements
+
+     ("mod"
+      "module ${1: } exposing (${2:..})"
+      nil nil nil ((yas/indent-line nil)))
+
+     ("imp"
+      "import ${1: }${2: as ${3:$1$(last-frag-module-name yas-text)}}${4: exposing (${5:..})}"
+      "import"
+      nil nil ((yas/indent-line nil)))
+
      ("doc"
       ,(join-nl '("{-| ${1}"
                   "-}"
                   "")))
-     ("expa"
-      ,(join-nl '("exposing (..)")))
-     ("exp"
-      ,(join-nl '("exposing (${1})")))
+     ("exa"
+      "exposing (..)")
+
+     ("ex"
+      "exposing (${1})")
+
+     ;; Primitive Types
+
+     ("st"
+      "String"
+      "String"
+      nil nil ((yas/indent-line nil)))
+
+     ("bl"
+      "Bool"
+      "Bool"
+      nil nil ((yas/indent-line nil)))
+
+     ("i"
+      "Int"
+      "Int"
+      nil nil ((yas/indent-line nil)))
+
+     ("ch"
+      "Char"
+      "Char"
+      nil nil ((yas/indent-line nil)))
+
+     ("fl"
+      "Float"
+      "float"
+      nil nil ((yas/indent-line nil)))
+
+     ("u"
+      "()"
+      "Unit"
+      nil nil ((yas/indent-line nil)))
+
+     ;; Language constructs
+
+     ("if"
+      "if ${1} then\n${2}\nelse\n${3}")
+
      ,@(mapcar
         (lambda (i)
           `(,(format "case%d" i)
             ,(gen-case i)
             nil nil nil ((yas/indent-line nil))))
         (number-sequence 0 9))
+
+     ;; Value Definitions
+
      ,@(mapcar
         (lambda (i)
           `(,(format "f%d" i)
             ,(gen-value-sig-def "f" i nil)
             nil nil nil ((yas/indent-line nil))))
         (number-sequence 0 9))
+
      ,@(mapcar
         (lambda (i)
           `(,(format "f%dm" i)
             ,(gen-value-sig-def "f" i t)
             nil nil nil ((yas/indent-line nil))))
-        (number-sequence 0 9)))))
+        (number-sequence 0 9))
+
+     ;; Composed
+
+     ,@(mapcar
+        (lambda (i)
+          `(,(format "ls%d" i)
+            ,(gen-list i nil)
+            nil nil nil ((yas/indent-line nil))))
+        (number-sequence 0 9))
+
+     ,@(mapcar
+        (lambda (i)
+          `(,(format "ls%dm" i)
+            ,(gen-list i t)
+            ))
+        (number-sequence 0 9))
+
+     ,@(mapcar
+        (lambda (i)
+          `(,(format "tp%d" i)
+            ,(gen-tuple i nil)
+            ,(format "tuple %d" i)
+            nil nil ((yas/indent-line nil))))
+        (number-sequence 0 9))
+
+     ,@(mapcar
+        (lambda (i)
+          `(,(format "tp%dm" i)
+            ,(gen-tuple i t)
+            ,(format "tuple %d multiline" i)
+            ))
+        (number-sequence 0 9))
+
+     ;; Control Flow
+
+     ,@(mapcar
+        (lambda (i)
+          `(,(format "p%d" i)
+            ,(gen-pipe i nil)
+            ,(format "pipe %d multiline" i)
+            ))
+        (number-sequence 0 9))
+
+     ,@(mapcar
+        (lambda (i)
+          `(,(format "p%dm" i)
+            ,(gen-pipe i t)
+            ,(format "pipe %d" i)
+            ))
+        (number-sequence 0 9))
+
+     ;; Convenience
+
+     ("test"
+      ,(join-nl '("test \"${1:}\" <| "
+                  "  \_ -> "
+                  "      ${2:x} "
+                  "          |> Expect.equal ${3:} ")))
+
+     )))
 
 (progn
   ;;;  camelCase-mode.el --- minor mode for editing with camelCase words
