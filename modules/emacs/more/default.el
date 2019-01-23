@@ -1082,7 +1082,7 @@ buffer is not visiting a file."
         "\n")
       "test"))
 
-   ))
+   )
 
 (progn
 
