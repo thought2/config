@@ -961,9 +961,7 @@ buffer is not visiting a file."
       nil nil ((yas/indent-line nil)))
 
      ("doc"
-      ,(join-nl '("{-| ${1}"
-                  "-}"
-                  ""))
+      "{-| ${1}\n-}"
       "doc string")
 
      ("exa"
@@ -1093,10 +1091,12 @@ buffer is not visiting a file."
      ;; Convenience
 
      ("test"
-      ,(join-nl '("test \"${1:}\" <| "
-                  "  \_ -> "
-                  "      ${2:x} "
-                  "          |> Expect.equal ${3:} "))
+      ,(string-join
+        '("test \"${1:}\" <| "
+          "  \_ -> "
+          "      ${2:x} "
+          "          |> Expect.equal ${3:} ")
+        "\n")
       "test")
 
      )))
