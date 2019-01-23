@@ -902,13 +902,12 @@ buffer is not visiting a file."
             (gen-value-sig val-name 1 n-args multiline)
             (gen-value-def "$1" (+ n-args 2) n-args)))
 
-
   (defun gen-case (n-branches)
-    (format "case ${1} of\n%s"
+    (format "case ${1:n} of\n%s"
             (string-join
              (mapcar (lambda (i)
-                       (format "    ${%d} ->\n        ${%d}"
-                               (* i 2) (+ (* i 2) 1)))
+                       (format "    ${%d:%d} ->\n        ${%d:()}"
+                               (* i 2) i (+ (* i 2) 1)))
                      (number-sequence 1 n-branches))
              "\n\n")))
 
@@ -1022,55 +1021,36 @@ buffer is not visiting a file."
 
      ;; Value Definitions
 
-     ,@(mapcar
-        (lambda (i)
-          `(,(format "f%d" i)
-            ,(gen-value-sig-def "f" i nil)
-            ,(format "function %d" i)
-            nil nil ((yas/indent-line nil))))
-        (number-sequence 0 9))
-
-     ,@(mapcar
-        (lambda (i)
-          `(,(format "f%dm" i)
-            ,(gen-value-sig-def "f" i t)
-            ,(format "function %d multiline" i)
-            nil nil ((yas/indent-line nil))))
-        (number-sequence 0 9))
+     ,@(cl-loop
+        for name in '(x y z f g h j k)
+        nconc (cl-loop
+               for i from 0 to 9
+               nconc (cl-loop
+                      for multiline in `(,nil ,@(if (> i 0) (list t)))
+                      collect `(,(format "%s%d%s" name i (if multiline "m" ""))
+                                ,(gen-value-sig-def name i multiline)
+                                ,(format "value %s %d%s" name i (if multiline " multiline" ""))
+                                nil nil ((yas/indent-line nil))))))
 
      ;; Composed
 
-     ,@(mapcar
-        (lambda (i)
-          `(,(format "ls%d" i)
-            ,(gen-list i nil)
-            ,(format "list %d" i)
-            nil nil ((yas/indent-line nil))))
-        (number-sequence 0 9))
+     ,@(cl-loop
+        for i from 0 to 9
+        nconc (cl-loop
+               for multiline in '(t nil)
+               collect `(,(format "ls%d%s" i (if multiline "m" ""))
+                         ,(gen-list i multiline)
+                         ,(format "list %d%s" i (if multiline "multiline" ""))
+                         nil nil ((yas/indent-line 'fixed)))))
 
-     ,@(mapcar
-        (lambda (i)
-          `(,(format "ls%dm" i)
-            ,(gen-list i t)
-            ,(format "list %d multiline" i)
-            ))
-        (number-sequence 0 9))
-
-     ,@(mapcar
-        (lambda (i)
-          `(,(format "tp%d" i)
-            ,(gen-tuple i nil)
-            ,(format "tuple %d" i)
-            nil nil ((yas/indent-line nil))))
-        (number-sequence 0 9))
-
-     ,@(mapcar
-        (lambda (i)
-          `(,(format "tp%dm" i)
-            ,(gen-tuple i t)
-            ,(format "tuple %d multiline" i)
-            ))
-        (number-sequence 0 9))
+     ,@(cl-loop
+        for i from 0 to 9
+        nconc (cl-loop
+               for multiline in '(t nil)
+               collect `(,(format "tp%d%s" i (if multiline "m" ""))
+                         ,(gen-list i multiline)
+                         ,(format "tuple %d%s" i (if multiline "multiline" ""))
+                         nil nil ((yas/indent-line 'fixed)))))
 
      ;; Control Flow
 
@@ -1092,6 +1072,7 @@ buffer is not visiting a file."
 
      ;; Convenience
 
+
      ("test"
       ,(string-join
         '("test \"${1:}\" <| "
@@ -1099,9 +1080,32 @@ buffer is not visiting a file."
           "      ${2:x} "
           "          |> Expect.equal ${3:} ")
         "\n")
-      "test")
+      "test"))
 
-     )))
+   ))
+
+(progn
+
+  (defun elm-make-single-line ()
+    (interactive)
+    (if (region-active-p)
+        (replace-regexp "\n *\\(,\\| ->\\|]\\)" "\\1"
+                        nil (region-beginning) (region-end))))
+
+  (defun keys-elm-mode-hook ()
+    (local-set-key (kbd "C-c l") 'elm-make-single-line))
+
+  (add-hook 'elm-mode-hook 'keys-elm-mode-hook)
+
+
+  (defun adjust-type-signatures ()
+    (let ((regex-name "[a-z][a-zA-Z0-9_]*"))
+      (when (eq major-mode 'elm-mode)
+        (goto-char 1)
+        (while (search-forward-regexp (format "\n%s\\( :.*\n\\(%s\\) =\\)" regex-name regex-name) nil t)
+          (replace-match (format "\n%s%s" (match-string 2) (match-string 1)) t nil)))))
+
+  (add-hook 'before-save-hook #'adjust-type-signatures))
 
 (progn
   ;;;  camelCase-mode.el --- minor mode for editing with camelCase words
@@ -1402,4 +1406,4 @@ with word around mark."
       (downcase-region start (point))))
 
 
-  (provide 'camelCase))
+  (provide 'camelCase)))
