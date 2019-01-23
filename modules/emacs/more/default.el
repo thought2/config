@@ -907,10 +907,10 @@ buffer is not visiting a file."
     (format "case ${1} of\n%s"
             (string-join
              (mapcar (lambda (i)
-                       (format "    ${%d} -> ${%d}"
+                       (format "    ${%d} ->\n        ${%d}"
                                (* i 2) (+ (* i 2) 1)))
                      (number-sequence 1 n-branches))
-             "\n")))
+             "\n\n")))
 
   (defun gen-list-like (open close length multiline)
     (if (= length 0)
@@ -1007,15 +1007,17 @@ buffer is not visiting a file."
      ;; Language constructs
 
      ("if"
-      "if ${1} then\n${2}\nelse\n${3}"
-      "if")
+      "if ${1} then\n    ${2}\nelse\n    ${3}"
+      "if"
+      nil nil ((yas/indent-line 'fixed)))
 
      ,@(mapcar
         (lambda (i)
           `(,(format "case%d" i)
             ,(gen-case i)
-            "case"
-            nil nil ((yas/indent-line nil))))
+            ,(format "case %d" i)
+            nil nil ((yas/indent-line 'fixed))
+            ))
         (number-sequence 0 9))
 
      ;; Value Definitions
