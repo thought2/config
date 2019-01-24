@@ -973,35 +973,81 @@ buffer is not visiting a file."
 
      ;; Primitive Types
 
-     ("st"
+     ("S"
       "String"
       "String"
       nil nil ((yas/indent-line nil)))
 
-     ("bl"
+     ("B"
       "Bool"
       "Bool"
       nil nil ((yas/indent-line nil)))
 
-     ("i"
+     ("I"
       "Int"
       "Int"
       nil nil ((yas/indent-line nil)))
 
-     ("ch"
+     ("C"
       "Char"
       "Char"
       nil nil ((yas/indent-line nil)))
 
-     ("fl"
+     ("F"
       "Float"
-      "float"
+      "Float"
       nil nil ((yas/indent-line nil)))
 
-     ("u"
+     ("U"
       "()"
       "Unit"
       nil nil ((yas/indent-line nil)))
+
+     ;; Composed Types
+
+     ("L"
+      "List (${1:a})"
+      "List"
+      nil nil ((yas/indent-line nil)))
+
+     ("D"
+      "Dict (${1:a}) (${2:b})"
+      "Dict"
+      nil nil ((yas/indent-line nil)))
+
+     ("Cm"
+      "Cmd ({1:a})"
+      "Cmd"
+      nil nil ((yas/indent-line nil)))
+
+     ("De"
+      "Debug"
+      "Debug"
+      nil nil ((yas/indent-line nil)))
+
+
+     ("Se"
+      "Set (${1:a})"
+      "Set"
+      nil nil ((yas/indent-line nil)))
+
+     ("M"
+      "Maybe (${1:a})"
+      "Maybe"
+      nil nil ((yas/indent-line nil)))
+
+     ("R"
+      "Result (${1:err}) (${2:a})"
+      "Result"
+      nil nil ((yas/indent-line nil)))
+
+     ;;
+
+     (".->"
+      "${1:a} -> ${2:b}"
+      "arrow"
+      nil nil ((yas/indent-line nil)))
+
 
      ;; Language constructs
 
@@ -1107,6 +1153,36 @@ buffer is not visiting a file."
               (replace-match (format "\n%s%s" (match-string 2) (match-string 1) ) t nil))))))
 
     (add-hook 'before-save-hook #'adjust-type-signatures))
+
+  (progn
+
+    (setq elm-regex-def "\n[a-z][a-zA-Z0-9_]* :\\|\ntype")
+
+    (defun elm-next-def ()
+      (interactive)
+      (end-of-line)
+      (search-forward-regexp elm-regex-def nil t)
+      (beginning-of-line))
+
+    (defun elm-prev-def ()
+      (interactive)
+      (search-backward-regexp elm-regex-def nil t)
+      (next-line)
+      (beginning-of-line))
+
+    (defun elm-highlight-def ()
+      (interactive)
+      (end-of-line)
+      (elm-prev-def)
+      (set-mark (point))
+      (search-forward-regexp "\n\n\n" nil t)
+      (previous-line)
+      (activate-mark))
+
+    (global-set-key (kbd "C-{") 'elm-prev-def)
+    (global-set-key (kbd "C-}") 'elm-next-def)
+    (global-set-key (kbd "C-M-h") 'elm-highlight-def))
+
 
   (progn
   ;;;  camelCase-mode.el --- minor mode for editing with camelCase words
