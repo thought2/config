@@ -59,4 +59,6 @@ rec {
   first = head;
 
   second = xs: head (tail xs);
-}
+
+  shellExpand = str: "$" + "{" + str + "}";
+} // (import ./trivial-builders.nix { })
