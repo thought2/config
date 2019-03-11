@@ -446,6 +446,32 @@
           ;;helm-source-dired-recent-dirs
           helm-source-buffer-not-found)))
 
+(defun setup-elm ()
+  (interactive)
+  (require 'flycheck)
+  (require 'elm-mode)
+  (require 'smartparens-config)
+
+
+  (add-hook 'after-init-hook 'global-flycheck-mode)
+  (add-hook 'flycheck-mode-hook 'flycheck-elm-setup)
+  (with-eval-after-load 'company
+    (add-to-list 'company-backends 'company-elm))
+  (add-hook 'elm-mode-hook 'company-mode)
+  (add-hook 'elm-mode-hook 'smartparens-mode)
+  (add-hook 'elm-mode-hook 'camelCase-mode)
+  (add-hook 'elm-mode-hook 'flycheck-mode)
+
+  (setq elm-format-on-save t))
+
+
+(defun setup-elm18 ()
+  (interactive)
+  (setq elm-compile-command '("elm-make"))
+  (setq elm-compile-arguments '("--yes" "--warn" "--output=elm.js"))
+  (setq elm-format-command "elm-format")
+  (setq elm-format-version "0.18"))
+
 
 (progn
   (defun load-theme--disable-old-theme(theme &rest args)
@@ -711,7 +737,7 @@ the last number is used again in further repeated invocations.
 (progn
   (setq ibuffer-saved-filter-groups
         '(("home"
-           ("Elm" (mode . elm-mode))
+;;           ("Elm" (mode . elm-mode))
            ("Haskell" (mode . haskell-mode))
            ("Shell" (mode . shell-mode))
            ("Dired" (mode . dired-mode))
@@ -872,412 +898,413 @@ buffer is not visiting a file."
                          (ido-read-file-name "Find file(as root): ")))
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
+;; (progn
+
+;; (defun gen-value-sig (val-name start-n n-args multiline)
+;;   (format "${%d:%s} :%s%s"
+;;           start-n
+;;           val-name
+;;           (if multiline "\n    " " ")
+;;           (string-join (mapcar (lambda (i)
+;;                                  (format "${%d:a}"
+;;                                          i))
+;;                                (number-sequence (+ start-n 1) (+ start-n n-args 1)))
+;;                        (format "%s-> "
+;;                                (if multiline "\n    " " ")))))
+
+;; (defun gen-value-def (val-name start-n n-args)
+;;   (format "${%d:%s} %s= ${%d:x}"
+;;           start-n
+;;           val-name
+;;           (string-join (mapcar (lambda (i)
+;;                                  (format "${%d:%s} "
+;;                                          i
+;;                                          (if (= (+ start-n 2) i) "x" "_")
+;;                                          ))
+;;                                (number-sequence (+ start-n 2) (+ start-n n-args 1))))
+;;           (+ start-n n-args 2)))
+
+;; (defun gen-value-sig-def (val-name n-args multiline)
+;;   (format "${1:%s}\n%s"
+;;           (gen-value-sig val-name 2 n-args multiline)
+;;           (gen-value-def "$2$(yas-text)" (+ n-args 4) n-args)))
+
+;; (defun gen-case (n-branches)
+;;   (format "case ${1:n} of\n%s"
+;;           (string-join
+;;            (mapcar (lambda (i)
+;;                      (format "    ${%d:%d} ->\n        ${%d:()}"
+;;                              (* i 2) i (+ (* i 2) 1)))
+;;                    (number-sequence 1 n-branches))
+;;            "\n\n")))
+
+;; (defun gen-list-like (open close length multiline)
+;;   (if (= length 0)
+;;       (format "%s%s" open close)
+;;     (format "%s %s%s%s"
+;;             open
+;;             (string-join
+;;              (mapcar (lambda (i)
+;;                        (format "${%d}" i))
+;;                      (number-sequence 0 (- length 1)))
+;;              (format "%s, "
+;;                      (if multiline "\n" "")))
+;;             (if multiline "\n" " ")
+;;             close)))
+
+;; (defun gen-list (length multiline)
+;;   (gen-list-like "[" "]" length multiline))
+
+;; (defun gen-tuple (length multiline)
+;;   (gen-list-like "(" ")" length multiline))
+
+;; (defun last-frag-module-name (text)
+;;   (car
+;;    (reverse (split-string text "\\."))))
+
+
+;; (defun gen-pipe (n-steps multiline)
+;;   (string-join
+;;    (mapcar (lambda (i)
+;;              (format "|> ${%d}" i))
+;;            (number-sequence 1 n-steps))
+;;    (if multiline "\n" " ")))
+
+;; (setq yas/triggers-in-field t)
+
+;; (yas-define-snippets
+;;  'elm-mode
+;;  `(;; Statements
+
+;;    ("mod"
+;;     "module ${1: } exposing (${2:..})"
+;;     "module"
+;;     nil nil ((yas/indent-line nil)))
+
+;;    ("imp"
+;;     "import ${1: }${2: as ${3:$1$(last-frag-module-name yas-text)}}${4: exposing (${5:..})}"
+;;     "import"
+;;     nil nil ((yas/indent-line nil)))
+
+;;    ("doc"
+;;     "{-| ${1}\n-}"
+;;     "doc string")
+
+;;    ("exa"
+;;     "exposing (..)"
+;;     "exposing all")
+
+;;    ("ex"
+;;     "exposing (${1})"
+;;     "exposing")
+
+;;    ;; Primitive Types
+
+;;    ("S"
+;;     "String"
+;;     "String"
+;;     nil nil ((yas/indent-line nil)))
+
+;;    ("B"
+;;     "Bool"
+;;     "Bool"
+;;     nil nil ((yas/indent-line nil)))
+
+;;    ("I"
+;;     "Int"
+;;     "Int"
+;;     nil nil ((yas/indent-line nil)))
+
+;;    ("C"
+;;     "Char"
+;;     "Char"
+;;     nil nil ((yas/indent-line nil)))
+
+;;    ("F"
+;;     "Float"
+;;     "Float"
+;;     nil nil ((yas/indent-line nil)))
+
+;;    ("U"
+;;     "()"
+;;     "Unit"
+;;     nil nil ((yas/indent-line nil)))
+
+;;    ;; Composed Types
+
+;;    ("L"
+;;     "List (${1:a})"
+;;     "List"
+;;     nil nil ((yas/indent-line nil)))
+
+;;    ("D"
+;;     "Dict (${1:a}) (${2:b})"
+;;     "Dict"
+;;     nil nil ((yas/indent-line nil)))
+
+;;    ("Cm"
+;;     "Cmd ({1:a})"
+;;     "Cmd"
+;;     nil nil ((yas/indent-line nil)))
+
+;;    ("De"
+;;     "Debug"
+;;     "Debug"
+;;     nil nil ((yas/indent-line nil)))
+
+
+;;    ("Se"
+;;     "Set (${1:a})"
+;;     "Set"
+;;     nil nil ((yas/indent-line nil)))
+
+;;    ("M"
+;;     "Maybe (${1:a})"
+;;     "Maybe"
+;;     nil nil ((yas/indent-line nil)))
+
+;;    ("R"
+;;     "Result (${1:err}) (${2:a})"
+;;     "Result"
+;;     nil nil ((yas/indent-line nil)))
+
+;;    ;;
+
+;;    (".->"
+;;     "${1:a} -> ${2:b}"
+;;     "arrow"
+;;     nil nil ((yas/indent-line nil)))
+
+
+;;    ;; Language constructs
+
+;;    ("if"
+;;     "if ${1} then\n    ${2}\nelse\n    ${3}"
+;;     "if"
+;;     nil nil ((yas/indent-line 'fixed)))
+
+;;    ,@(mapcar
+;;       (lambda (i)
+;;         `(,(format "case%d" i)
+;;           ,(gen-case i)
+;;           ,(format "case %d" i)
+;;           nil nil ((yas/indent-line 'fixed))
+;;           ))
+;;       (number-sequence 0 9))
+
+;;    ;; Value Definitions
+
+;;    ,@(cl-loop
+;;       for name in '(x y z f g h j k)
+;;       nconc (cl-loop
+;;              for i from 0 to 9
+;;              nconc (cl-loop
+;;                     for multiline in `(,nil ,@(if (> i 0) (list t)))
+;;                     collect `(,(format "%s%s%s" name (if (= i 0) "" (format "%d" i)) (if multiline "m" ""))
+;;                               ,(gen-value-sig-def name i multiline)
+;;                               ,(format "value %s %d%s" name i (if multiline " multiline" ""))
+;;                               nil nil ((yas/indent-line nil))))))
+
+;;    ;; Composed
+
+;;    ,@(cl-loop
+;;       for i from 0 to 9
+;;       nconc (cl-loop
+;;              for multiline in '(t nil)
+;;              collect `(,(format "ls%d%s" i (if multiline "m" ""))
+;;                        ,(gen-list i multiline)
+;;                        ,(format "list %d%s" i (if multiline "multiline" ""))
+;;                        nil nil ((yas/indent-line 'fixed)))))
+
+;;    ,@(cl-loop
+;;       for i from 0 to 9
+;;       nconc (cl-loop
+;;              for multiline in '(t nil)
+;;              collect `(,(format "tp%d%s" i (if multiline "m" ""))
+;;                        ,(gen-list i multiline)
+;;                        ,(format "tuple %d%s" i (if multiline "multiline" ""))
+;;                        nil nil ((yas/indent-line 'fixed)))))
+
+;;    ;; Control Flow
+
+;;    ,@(mapcar
+;;       (lambda (i)
+;;         `(,(format "p%d" i)
+;;           ,(gen-pipe i nil)
+;;           ,(format "pipe %d multiline" i)
+;;           ))
+;;       (number-sequence 0 9))
+
+;;    ,@(mapcar
+;;       (lambda (i)
+;;         `(,(format "p%dm" i)
+;;           ,(gen-pipe i t)
+;;           ,(format "pipe %d" i)
+;;           ))
+;;       (number-sequence 0 9))
+
+;;    ;; Convenience
+
+
+;;    ("test"
+;;     ,(string-join
+;;       '("test \"${1:}\" <| "
+;;         "  \_ -> "
+;;         "      ${2:x} "
+;;         "          |> Expect.equal ${3:} ")
+;;       "\n")
+;;     "test"))
+
+;;  )
+
+;; (progn
+
+;;   (defun elm-make-single-line ()
+;;     (interactive)
+;;     (if (region-active-p)
+;;         (replace-regexp "\n *\\(,\\| ->\\|]\\)" "\\1"
+;;                         nil (region-beginning) (region-end))))
+
+;;   (defun keys-elm-mode-hook ()
+;;     (local-set-key (kbd "C-c l") 'elm-make-single-line))
+
+;;   (add-hook 'elm-mode-hook 'keys-elm-mode-hook)
+
+
+;;   ;; (defun adjust-type-signatures ()
+;;   ;;   (let ((regex-name "[a-z][a-zA-Z0-9_]*"))
+;;   ;;     (when (eq major-mode 'elm-mode)
+;;   ;;       (save-excursion
+;;   ;;         (goto-char 1)
+;;   ;;         (while (search-forward-regexp (format "\n%s\\( :.*\n\\(%s\\) \\)" regex-name regex-name) nil t)
+;;   ;;           (replace-match (format "\n%s%s" (match-string 2) (match-string 1) ) t nil))))))
+
+;;   ;; (add-hook 'before-save-hook #'adjust-type-signatures)
+;;   )
+
+;; (progn
+
+;;   (setq elm-regex-def "\n[a-z][a-zA-Z0-9_]* :\\|\ntype")
+
+;;   (defun elm-next-def ()
+;;     (interactive)
+;;     (end-of-line)
+;;     (search-forward-regexp elm-regex-def nil t)
+;;     (beginning-of-line))
+
+;;   (defun elm-prev-def ()
+;;     (interactive)
+;;     (search-backward-regexp elm-regex-def nil t)
+;;     (next-line)
+;;     (beginning-of-line))
+
+;;   (defun elm-highlight-def ()
+;;     (interactive)
+;;     (search-forward-regexp "\n\n\n" nil t)
+;;     (previous-line)
+;;     (set-mark (point))
+;;     (elm-prev-def)
+;;     (activate-mark))
+
+;;   (global-set-key (kbd "C-{") 'elm-prev-def)
+;;   (global-set-key (kbd "C-}") 'elm-next-def)
+;;   (global-set-key (kbd "C-M-h") 'elm-highlight-def)))
+
+
 (progn
-
-  (defun gen-value-sig (val-name start-n n-args multiline)
-    (format "${%d:%s} :%s%s"
-            start-n
-            val-name
-            (if multiline "\n    " " ")
-            (string-join (mapcar (lambda (i)
-                                   (format "${%d:a}"
-                                           i))
-                                 (number-sequence (+ start-n 1) (+ start-n n-args 1)))
-                         (format "%s-> "
-                                 (if multiline "\n    " " ")))))
-
-  (defun gen-value-def (val-name start-n n-args)
-    (format "%s %s= ${%d:x}"
-            val-name
-            (string-join (mapcar (lambda (i)
-                                   (format "${%d:%s} "
-                                           i
-                                           (if (= (+ start-n 1) i) "x" "_")
-                                           ))
-                                 (number-sequence (+ start-n 1) (+ start-n n-args))))
-            (+ start-n n-args 1)))
-
-  (defun gen-value-sig-def (val-name n-args multiline)
-    (format "%s\n%s"
-            (gen-value-sig val-name 1 n-args multiline)
-            (gen-value-def "$1" (+ n-args 2) n-args)))
-
-  (defun gen-case (n-branches)
-    (format "case ${1:n} of\n%s"
-            (string-join
-             (mapcar (lambda (i)
-                       (format "    ${%d:%d} ->\n        ${%d:()}"
-                               (* i 2) i (+ (* i 2) 1)))
-                     (number-sequence 1 n-branches))
-             "\n\n")))
-
-  (defun gen-list-like (open close length multiline)
-    (if (= length 0)
-        (format "%s%s" open close)
-      (format "%s %s%s%s"
-              open
-              (string-join
-               (mapcar (lambda (i)
-                         (format "${%d}" i))
-                       (number-sequence 0 (- length 1)))
-               (format "%s, "
-                       (if multiline "\n" "")))
-              (if multiline "\n" " ")
-              close)))
-
-  (defun gen-list (length multiline)
-    (gen-list-like "[" "]" length multiline))
-
-  (defun gen-tuple (length multiline)
-    (gen-list-like "(" ")" length multiline))
-
-  (defun last-frag-module-name (text)
-    (car
-     (reverse (split-string text "\\."))))
-
-
-  (defun gen-pipe (n-steps multiline)
-    (string-join
-     (mapcar (lambda (i)
-               (format "|> ${%d}" i))
-             (number-sequence 1 n-steps))
-     (if multiline "\n" " ")))
-
-  (setq yas/triggers-in-field t)
-
-  (yas-define-snippets
-   'elm-mode
-   `(;; Statements
-
-     ("mod"
-      "module ${1: } exposing (${2:..})"
-      "module"
-      nil nil ((yas/indent-line nil)))
-
-     ("imp"
-      "import ${1: }${2: as ${3:$1$(last-frag-module-name yas-text)}}${4: exposing (${5:..})}"
-      "import"
-      nil nil ((yas/indent-line nil)))
-
-     ("doc"
-      "{-| ${1}\n-}"
-      "doc string")
-
-     ("exa"
-      "exposing (..)"
-      "exposing all")
-
-     ("ex"
-      "exposing (${1})"
-      "exposing")
-
-     ;; Primitive Types
-
-     ("S"
-      "String"
-      "String"
-      nil nil ((yas/indent-line nil)))
-
-     ("B"
-      "Bool"
-      "Bool"
-      nil nil ((yas/indent-line nil)))
-
-     ("I"
-      "Int"
-      "Int"
-      nil nil ((yas/indent-line nil)))
-
-     ("C"
-      "Char"
-      "Char"
-      nil nil ((yas/indent-line nil)))
-
-     ("F"
-      "Float"
-      "Float"
-      nil nil ((yas/indent-line nil)))
-
-     ("U"
-      "()"
-      "Unit"
-      nil nil ((yas/indent-line nil)))
-
-     ;; Composed Types
-
-     ("L"
-      "List (${1:a})"
-      "List"
-      nil nil ((yas/indent-line nil)))
-
-     ("D"
-      "Dict (${1:a}) (${2:b})"
-      "Dict"
-      nil nil ((yas/indent-line nil)))
-
-     ("Cm"
-      "Cmd ({1:a})"
-      "Cmd"
-      nil nil ((yas/indent-line nil)))
-
-     ("De"
-      "Debug"
-      "Debug"
-      nil nil ((yas/indent-line nil)))
-
-
-     ("Se"
-      "Set (${1:a})"
-      "Set"
-      nil nil ((yas/indent-line nil)))
-
-     ("M"
-      "Maybe (${1:a})"
-      "Maybe"
-      nil nil ((yas/indent-line nil)))
-
-     ("R"
-      "Result (${1:err}) (${2:a})"
-      "Result"
-      nil nil ((yas/indent-line nil)))
-
-     ;;
-
-     (".->"
-      "${1:a} -> ${2:b}"
-      "arrow"
-      nil nil ((yas/indent-line nil)))
-
-
-     ;; Language constructs
-
-     ("if"
-      "if ${1} then\n    ${2}\nelse\n    ${3}"
-      "if"
-      nil nil ((yas/indent-line 'fixed)))
-
-     ,@(mapcar
-        (lambda (i)
-          `(,(format "case%d" i)
-            ,(gen-case i)
-            ,(format "case %d" i)
-            nil nil ((yas/indent-line 'fixed))
-            ))
-        (number-sequence 0 9))
-
-     ;; Value Definitions
-
-     ,@(cl-loop
-        for name in '(x y z f g h j k)
-        nconc (cl-loop
-               for i from 0 to 9
-               nconc (cl-loop
-                      for multiline in `(,nil ,@(if (> i 0) (list t)))
-                      collect `(,(format "%s%d%s" name i (if multiline "m" ""))
-                                ,(gen-value-sig-def name i multiline)
-                                ,(format "value %s %d%s" name i (if multiline " multiline" ""))
-                                nil nil ((yas/indent-line nil))))))
-
-     ;; Composed
-
-     ,@(cl-loop
-        for i from 0 to 9
-        nconc (cl-loop
-               for multiline in '(t nil)
-               collect `(,(format "ls%d%s" i (if multiline "m" ""))
-                         ,(gen-list i multiline)
-                         ,(format "list %d%s" i (if multiline "multiline" ""))
-                         nil nil ((yas/indent-line 'fixed)))))
-
-     ,@(cl-loop
-        for i from 0 to 9
-        nconc (cl-loop
-               for multiline in '(t nil)
-               collect `(,(format "tp%d%s" i (if multiline "m" ""))
-                         ,(gen-list i multiline)
-                         ,(format "tuple %d%s" i (if multiline "multiline" ""))
-                         nil nil ((yas/indent-line 'fixed)))))
-
-     ;; Control Flow
-
-     ,@(mapcar
-        (lambda (i)
-          `(,(format "p%d" i)
-            ,(gen-pipe i nil)
-            ,(format "pipe %d multiline" i)
-            ))
-        (number-sequence 0 9))
-
-     ,@(mapcar
-        (lambda (i)
-          `(,(format "p%dm" i)
-            ,(gen-pipe i t)
-            ,(format "pipe %d" i)
-            ))
-        (number-sequence 0 9))
-
-     ;; Convenience
-
-
-     ("test"
-      ,(string-join
-        '("test \"${1:}\" <| "
-          "  \_ -> "
-          "      ${2:x} "
-          "          |> Expect.equal ${3:} ")
-        "\n")
-      "test"))
-
-   )
-
-  (progn
-
-    (defun elm-make-single-line ()
-      (interactive)
-      (if (region-active-p)
-          (replace-regexp "\n *\\(,\\| ->\\|]\\)" "\\1"
-                          nil (region-beginning) (region-end))))
-
-    (defun keys-elm-mode-hook ()
-      (local-set-key (kbd "C-c l") 'elm-make-single-line))
-
-    (add-hook 'elm-mode-hook 'keys-elm-mode-hook)
-
-
-    (defun adjust-type-signatures ()
-      (let ((regex-name "[a-z][a-zA-Z0-9_]*"))
-        (when (eq major-mode 'elm-mode)
-          (save-excursion
-            (goto-char 1)
-            (while (search-forward-regexp (format "\n%s\\( :.*\n\\(%s\\) \\)" regex-name regex-name) nil t)
-              (replace-match (format "\n%s%s" (match-string 2) (match-string 1) ) t nil))))))
-
-    (add-hook 'before-save-hook #'adjust-type-signatures))
-
-  (progn
-
-    (setq elm-regex-def "\n[a-z][a-zA-Z0-9_]* :\\|\ntype")
-
-    (defun elm-next-def ()
-      (interactive)
-      (end-of-line)
-      (search-forward-regexp elm-regex-def nil t)
-      (beginning-of-line))
-
-    (defun elm-prev-def ()
-      (interactive)
-      (search-backward-regexp elm-regex-def nil t)
-      (next-line)
-      (beginning-of-line))
-
-    (defun elm-highlight-def ()
-      (interactive)
-      (end-of-line)
-      (elm-prev-def)
-      (set-mark (point))
-      (search-forward-regexp "\n\n\n" nil t)
-      (previous-line)
-      (activate-mark))
-
-    (global-set-key (kbd "C-{") 'elm-prev-def)
-    (global-set-key (kbd "C-}") 'elm-next-def)
-    (global-set-key (kbd "C-M-h") 'elm-highlight-def))
-
-
-  (progn
   ;;;  camelCase-mode.el --- minor mode for editing with camelCase words
-    ;;   Copyright (C) 2001  C.R.Manning
-    ;;
-    ;; This program is free software; you can redistribute it and/or modify
-    ;; it under the terms of the GNU General Public License as published by
-    ;; the Free Software Foundation; either version 2 of the License, or
-    ;; (at your option) any later version.
-    ;;
-    ;; This program is distributed in the hope that it will be useful,
-    ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-    ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    ;; GNU General Public License for more details.
-    ;;
-    ;; You should have received a copy of the GNU General Public License
-    ;; along with this program; if not, write to the Free Software
-    ;; Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  ;;   Copyright (C) 2001  C.R.Manning
+  ;;
+  ;; This program is free software; you can redistribute it and/or modify
+  ;; it under the terms of the GNU General Public License as published by
+  ;; the Free Software Foundation; either version 2 of the License, or
+  ;; (at your option) any later version.
+  ;;
+  ;; This program is distributed in the hope that it will be useful,
+  ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ;; GNU General Public License for more details.
+  ;;
+  ;; You should have received a copy of the GNU General Public License
+  ;; along with this program; if not, write to the Free Software
+  ;; Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 ;;; History:
 
-    ;; Author: C.R.Manning caroma@ai.mit.edu
-    ;;         at http://www.ai.mit.edu/people/caroma/tools/
-    ;; Created: 19 May 2001
-    ;; last update: 20 May 2001
-    ;; Keywords: camelCase camel case word mode
-    ;; Tested on: Gnu Emacs 20.7, XEmacs 21.4
+  ;; Author: C.R.Manning caroma@ai.mit.edu
+  ;;         at http://www.ai.mit.edu/people/caroma/tools/
+  ;; Created: 19 May 2001
+  ;; last update: 20 May 2001
+  ;; Keywords: camelCase camel case word mode
+  ;; Tested on: Gnu Emacs 20.7, XEmacs 21.4
 
 ;;; Installation
 
-    ;; Suggested GNU Emacs .emacs (or XEmacs .xemacs/init.el) initialization:
-    ;;   (autoload 'camelCase-mode "camelCase-mode" nil t)
-    ;;   (add-hook 'java-mode-hook '(lambda () (camelCase-mode 1)))
-    ;; more global hooks:  find-file-hooks, post-command-hook
+  ;; Suggested GNU Emacs .emacs (or XEmacs .xemacs/init.el) initialization:
+  ;;   (autoload 'camelCase-mode "camelCase-mode" nil t)
+  ;;   (add-hook 'java-mode-hook '(lambda () (camelCase-mode 1)))
+  ;; more global hooks:  find-file-hooks, post-command-hook
 
 ;;; Description:
 
-    ;; camelCase-mode is a Gnu Emacs minor mode which modifies the Emacs
-    ;; forward-word, backward-word, delete-word, etc. keystroke-commands
-    ;; so they also work on words within a <i>camelCase</i> identifier.
-    ;; As a minor mode, camelCase-mode can be used within any other
-    ;; editing mode --- Java-mode, text mode, etc.  No functionality is
-    ;; lost, since the forward s-expression, backward s-expression,
-    ;; delete s-expression, etc. commands are still available to navigate
-    ;; over entire camelCase names.
-    ;;
-    ;; Word boundaries in a camelCase name are marked only by letter case.
-    ;; For example lowerCapitalUPPERCase has four words.  A word may be
-    ;; lowercase, Capitalized, UPPERCASE, or a sequence of digits.  Besides
-    ;; non-letter to letter and letter to non-letter word boundaries,
-    ;; word boundaries in the middle of a sequence of letters are located at
-    ;; lowercaseCapital, CapitalCapital, lowercaseUPPERCASE,
-    ;; CapitalUPPERCASE, and UPPERCASECapital boundaries.
-    ;;
-    ;; Rebound keys:
-    ;;   M-f, M-right, C-right   camelCase-forward-word
-    ;;   M-b, M-left,  C-left    camelCase-backward-word
-    ;;   M-d,                    camelCase-forward-kill-word
-    ;;   M-backspace,  C-delete  camelCase-backward-kill-word
-    ;;   M-t                     camelCase-transpose-words
-    ;;   M-c                     camelCase-capitalize-word
-    ;;   M-u                     camelCase-upcase-word
-    ;;   M-l                     camelCase-downcase-word
-    ;;
-    ;; camelCase-mode prefix arg: 0 turns off, 1 turns on, nil toggles mode.
+  ;; camelCase-mode is a Gnu Emacs minor mode which modifies the Emacs
+  ;; forward-word, backward-word, delete-word, etc. keystroke-commands
+  ;; so they also work on words within a <i>camelCase</i> identifier.
+  ;; As a minor mode, camelCase-mode can be used within any other
+  ;; editing mode --- Java-mode, text mode, etc.  No functionality is
+  ;; lost, since the forward s-expression, backward s-expression,
+  ;; delete s-expression, etc. commands are still available to navigate
+  ;; over entire camelCase names.
+  ;;
+  ;; Word boundaries in a camelCase name are marked only by letter case.
+  ;; For example lowerCapitalUPPERCase has four words.  A word may be
+  ;; lowercase, Capitalized, UPPERCASE, or a sequence of digits.  Besides
+  ;; non-letter to letter and letter to non-letter word boundaries,
+  ;; word boundaries in the middle of a sequence of letters are located at
+  ;; lowercaseCapital, CapitalCapital, lowercaseUPPERCASE,
+  ;; CapitalUPPERCASE, and UPPERCASECapital boundaries.
+  ;;
+  ;; Rebound keys:
+  ;;   M-f, M-right, C-right   camelCase-forward-word
+  ;;   M-b, M-left,  C-left    camelCase-backward-word
+  ;;   M-d,                    camelCase-forward-kill-word
+  ;;   M-backspace,  C-delete  camelCase-backward-kill-word
+  ;;   M-t                     camelCase-transpose-words
+  ;;   M-c                     camelCase-capitalize-word
+  ;;   M-u                     camelCase-upcase-word
+  ;;   M-l                     camelCase-downcase-word
+  ;;
+  ;; camelCase-mode prefix arg: 0 turns off, 1 turns on, nil toggles mode.
 
 ;;; Subtleties
 
-    ;; Handles uppercase acronyms within camelCase words.  For example
-    ;;   "URLConnection" is like "URL-Connection", not "URLC-onnection"
+  ;; Handles uppercase acronyms within camelCase words.  For example
+  ;;   "URLConnection" is like "URL-Connection", not "URLC-onnection"
 
 ;;; Limitations
 
-    ;; Does not affect other Emacs functions which operate on words,
-    ;;   such as dabbrev-mode
-    ;; M-t transpose-words does not change case of words.  For example:
-    ;;   - transposing "fooBar" produces "Barfoo", not "barFoo".
-    ;;   - transposing "fooBAR" produces "BARfoo", not "BARFoo".
-    ;;   - transposing "fooBar baz" at space produces "foobaz Bar" not "fooBaz bar"
-    ;;   When this is an issue, capitalize words before transposing them,
-    ;;   e.g., M-b M-c M-t for the first two examples, or M-c M-b M-t for
-    ;;   the last one.
+  ;; Does not affect other Emacs functions which operate on words,
+  ;;   such as dabbrev-mode
+  ;; M-t transpose-words does not change case of words.  For example:
+  ;;   - transposing "fooBar" produces "Barfoo", not "barFoo".
+  ;;   - transposing "fooBAR" produces "BARfoo", not "BARFoo".
+  ;;   - transposing "fooBar baz" at space produces "foobaz Bar" not "fooBaz bar"
+  ;;   When this is an issue, capitalize words before transposing them,
+  ;;   e.g., M-b M-c M-t for the first two examples, or M-c M-b M-t for
+  ;;   the last one.
 
 ;;; Code:
 
 ;;; MODE:
 
-    (defvar camelCase-modeline-indicator " camelCase"
-      "call (camelCase-install-mode) again if this is changed")
-    (defvar camelCase-mode nil)
-    (make-variable-buffer-local 'camelCase-mode)
-    (put 'camelCase-mode 'permanent-local t)
+  (defvar camelCase-modeline-indicator " camelCase"
+    "call (camelCase-install-mode) again if this is changed")
+  (defvar camelCase-mode nil)
+  (make-variable-buffer-local 'camelCase-mode)
+  (put 'camelCase-mode 'permanent-local t)
 
-    (defun camelCase-mode (&optional arg)
-      "Minor mode which overrides word command keys for editing camelCase words.
+  (defun camelCase-mode (&optional arg)
+    "Minor mode which overrides word command keys for editing camelCase words.
 
  Word boundaries in a camelCase name are marked only by letter case.
  For example lowerCapitalUPPERCase has four words.  A word may be
@@ -1300,187 +1327,187 @@ buffer is not visiting a file."
   to the word command in XEmacs, so it is not overridden)
 
  camelCase-mode prefix ARG:  0 turns off, 1 turns on, nil toggles mode."
-      (interactive "P")
-      (setq camelCase-mode
-            (if (null arg) (not camelCase-mode)
-              (> (prefix-numeric-value arg) 0)))
-      (force-mode-line-update))
+    (interactive "P")
+    (setq camelCase-mode
+          (if (null arg) (not camelCase-mode)
+            (> (prefix-numeric-value arg) 0)))
+    (force-mode-line-update))
 
-    (defconst camelCase-keybindings-list
-      (cond ((memq 'xemacs features) ;; xemacs uses different key syntax
-             '(
-               ("\M-f"              camelCase-forward-word)
-               ("\M-b"              camelCase-backward-word)
-               ("\M-d"              camelCase-forward-kill-word)
-               ("\M-DEL"            camelCase-backward-kill-word)
-               ("\M-t"              camelCase-transpose-words)
-               ("\M-c"              camelCase-capitalize-word)
-               ("\M-u"              camelCase-upcase-word)
-               ("\M-l"              camelCase-downcase-word)
+  (defconst camelCase-keybindings-list
+    (cond ((memq 'xemacs features) ;; xemacs uses different key syntax
+           '(
+             ("\M-f"              camelCase-forward-word)
+             ("\M-b"              camelCase-backward-word)
+             ("\M-d"              camelCase-forward-kill-word)
+             ("\M-DEL"            camelCase-backward-kill-word)
+             ("\M-t"              camelCase-transpose-words)
+             ("\M-c"              camelCase-capitalize-word)
+             ("\M-u"              camelCase-upcase-word)
+             ("\M-l"              camelCase-downcase-word)
                                         ;((meta right)        camelCase-forward-word) ;
                                         ;((meta left)         camelCase-backward-word)
                                         ;((meta delete)       camelCase-forward-kill-word)
-               ((meta backspace)    camelCase-backward-kill-word)
-               ((control right)     camelCase-forward-word)
-               ((control left)      camelCase-backward-word)
+             ((meta backspace)    camelCase-backward-kill-word)
+             ((control right)     camelCase-forward-word)
+             ((control left)      camelCase-backward-word)
                                         ;((control delete)    camelCase-forward-kill-word)
                                         ;((control backspace) camelCase-backward-kill-word)
-               ))
-            (t ;; assume recent gnu emacs (e.g., 20.7)
-             '(
-               ("\M-f"         camelCase-forward-word)
-               ("\M-b"         camelCase-backward-word)
-               ("\M-d"         camelCase-forward-kill-word)
-               ("\M-DEL"       camelCase-backward-kill-word)
-               ("\M-t"         camelCase-transpose-words)
-               ("\M-c"         camelCase-capitalize-word)
-               ("\M-u"         camelCase-upcase-word)
-               ("\M-l"         camelCase-downcase-word)
-               ([\M-right]     camelCase-forward-word)
-               ([\M-left]      camelCase-backward-word)
-               ([\M-backspace] camelCase-backward-kill-word)
-               ([\M-delete]    camelCase-forward-kill-word)
-               ([\C-right]     camelCase-forward-word)
-               ([\C-left]      camelCase-backward-word)
-               ([\C-delete]    camelCase-forward-kill-word)
-               ([\C-backspace] camelCase-backward-kill-word)
-               ))
-            ))
+             ))
+          (t ;; assume recent gnu emacs (e.g., 20.7)
+           '(
+             ("\M-f"         camelCase-forward-word)
+             ("\M-b"         camelCase-backward-word)
+             ("\M-d"         camelCase-forward-kill-word)
+             ("\M-DEL"       camelCase-backward-kill-word)
+             ("\M-t"         camelCase-transpose-words)
+             ("\M-c"         camelCase-capitalize-word)
+             ("\M-u"         camelCase-upcase-word)
+             ("\M-l"         camelCase-downcase-word)
+             ([\M-right]     camelCase-forward-word)
+             ([\M-left]      camelCase-backward-word)
+             ([\M-backspace] camelCase-backward-kill-word)
+             ([\M-delete]    camelCase-forward-kill-word)
+             ([\C-right]     camelCase-forward-word)
+             ([\C-left]      camelCase-backward-word)
+             ([\C-delete]    camelCase-forward-kill-word)
+             ([\C-backspace] camelCase-backward-kill-word)
+             ))
+          ))
 
-    (defconst camelCase-mode-map
-      (let ((map (make-sparse-keymap)))
-        (mapcar (lambda (binding)
-                  (define-key map (first binding) (second binding)))
-                camelCase-keybindings-list)
-        (fset 'camelCase-mode-map map)
-        map)
-      "keymap for camelCase minor mode.")
+  (defconst camelCase-mode-map
+    (let ((map (make-sparse-keymap)))
+      (mapcar (lambda (binding)
+                (define-key map (first binding) (second binding)))
+              camelCase-keybindings-list)
+      (fset 'camelCase-mode-map map)
+      map)
+    "keymap for camelCase minor mode.")
 
-    ;; install the minor mode
-    (defun camelCase-add-minor-mode (mode-toggle-variable-name
-                                     modeline-indicator-string mode-map)
-      (let ((old-mode-entry (assq mode-toggle-variable-name minor-mode-alist)))
-        (setq minor-mode-alist
-              (cons (list mode-toggle-variable-name modeline-indicator-string)
-                    (delq old-mode-entry minor-mode-alist))))
-      (let ((old-map-entry (assq mode-toggle-variable-name
-                                 minor-mode-map-alist)))
-        (setq minor-mode-map-alist
-              (cons (cons mode-toggle-variable-name mode-map)
-                    (delq old-map-entry minor-mode-map-alist)))))
+  ;; install the minor mode
+  (defun camelCase-add-minor-mode (mode-toggle-variable-name
+                                   modeline-indicator-string mode-map)
+    (let ((old-mode-entry (assq mode-toggle-variable-name minor-mode-alist)))
+      (setq minor-mode-alist
+            (cons (list mode-toggle-variable-name modeline-indicator-string)
+                  (delq old-mode-entry minor-mode-alist))))
+    (let ((old-map-entry (assq mode-toggle-variable-name
+                               minor-mode-map-alist)))
+      (setq minor-mode-map-alist
+            (cons (cons mode-toggle-variable-name mode-map)
+                  (delq old-map-entry minor-mode-map-alist)))))
 
 
-    (defun camelCase-install-mode ()
-      ;; call function without causing byte-compiler warning if other not defined
-      (let ((add-minor-mode-fn (if (and (memq 'xemacs features)
-                                        (fboundp 'add-minor-mode))
-                                   'add-minor-mode
-                                 'camelCase-add-minor-mode)))
-        (funcall add-minor-mode-fn
-                 'camelCase-mode
-                 camelCase-modeline-indicator
-                 camelCase-mode-map)))
+  (defun camelCase-install-mode ()
+    ;; call function without causing byte-compiler warning if other not defined
+    (let ((add-minor-mode-fn (if (and (memq 'xemacs features)
+                                      (fboundp 'add-minor-mode))
+                                 'add-minor-mode
+                               'camelCase-add-minor-mode)))
+      (funcall add-minor-mode-fn
+               'camelCase-mode
+               camelCase-modeline-indicator
+               camelCase-mode-map)))
 
-    (camelCase-install-mode)
+  (camelCase-install-mode)
 
 ;;; COMMANDS:
 
-    (defconst camelCase-regexp "\\([A-Z]?[a-z]+\\|[A-Z]+\\|[0-9]+\\)"
-      ;; capital must be before uppercase
-      "regular expression that matches a camelCase word, defined as
+  (defconst camelCase-regexp "\\([A-Z]?[a-z]+\\|[A-Z]+\\|[0-9]+\\)"
+    ;; capital must be before uppercase
+    "regular expression that matches a camelCase word, defined as
 Capitalized, lowercase, or UPPERCASE sequence of letters,
 or sequence of digits.")
 
-    (defun camelCase-forward-word (count)
-      "move point foward COUNT camelCase words"
-      (interactive "p")
-      ;; search forward increments point until some match occurs;
-      ;; extent of match is as large as possible at that point.
-      ;; point is left at END of match.
-      (if (< count 0)
-          (camelCase-backward-word (- count))
-        (let ((old-case-fold-search case-fold-search)
-              (case-fold-search nil)) ;; search case sensitively
-          (unwind-protect
-              (when (re-search-forward camelCase-regexp nil t count)
-                ;; something matched, just check for special case.
-                ;; If uppercase acronym is in camelCase word as in "URLNext",
-                ;; search will leave point after N rather than after L.
-                ;; So if match starting back one char doesn't end same place,
-                ;; then back-up one char.
-                (when (save-excursion
-                        (let ((search-end (point)))
-                          (forward-char -1)
-                          (and (looking-at camelCase-regexp)
-                               (not (= search-end (match-end 0))))))
-                  (forward-char -1))
-                (point))
-            (setq case-fold-search old-case-fold-search)))))
+  (defun camelCase-forward-word (count)
+    "move point foward COUNT camelCase words"
+    (interactive "p")
+    ;; search forward increments point until some match occurs;
+    ;; extent of match is as large as possible at that point.
+    ;; point is left at END of match.
+    (if (< count 0)
+        (camelCase-backward-word (- count))
+      (let ((old-case-fold-search case-fold-search)
+            (case-fold-search nil)) ;; search case sensitively
+        (unwind-protect
+            (when (re-search-forward camelCase-regexp nil t count)
+              ;; something matched, just check for special case.
+              ;; If uppercase acronym is in camelCase word as in "URLNext",
+              ;; search will leave point after N rather than after L.
+              ;; So if match starting back one char doesn't end same place,
+              ;; then back-up one char.
+              (when (save-excursion
+                      (let ((search-end (point)))
+                        (forward-char -1)
+                        (and (looking-at camelCase-regexp)
+                             (not (= search-end (match-end 0))))))
+                (forward-char -1))
+              (point))
+          (setq case-fold-search old-case-fold-search)))))
 
-    (defun camelCase-backward-word (count)
-      "move point backward COUNT camelCase words"
-      (interactive "p")
-      ;; search backward decrements point until some match occurs;
-      ;; extent of match is as large as possible at that point.
-      ;; So once point is found, have to keep decrementing point until we cross
-      ;; into another word, which changes the match end.
-      ;; for multiple words, have to do whole thing COUNT times.
-      (if (< count 0)
-          (camelCase-forward-word (- count))
-        (let ((start-position (point))
-              (old-case-fold-search case-fold-search)
-              (case-fold-search nil)) ;; search case-sensitively
-          (unwind-protect
-              (while (< 0 count)
-                (setq count (1- count))
-                (let ((start (point)))
-                  (when (re-search-backward camelCase-regexp nil t)
-                    (let ((end-word (match-end 0)))
-                      (forward-char -1)
-                      (while (save-excursion
-                               ;;like looking-at, but stop match at start
-                               (let ((position (point)))
-                                 (re-search-forward camelCase-regexp start t)
-                                 (and (= position (match-beginning 0))
-                                      (= end-word (match-end 0)))))
-                        (forward-char -1))
-                      (forward-char 1)))))
-            (setq case-fold-search old-case-fold-search))
-          (if (= start-position (point)) nil (point)))))
+  (defun camelCase-backward-word (count)
+    "move point backward COUNT camelCase words"
+    (interactive "p")
+    ;; search backward decrements point until some match occurs;
+    ;; extent of match is as large as possible at that point.
+    ;; So once point is found, have to keep decrementing point until we cross
+    ;; into another word, which changes the match end.
+    ;; for multiple words, have to do whole thing COUNT times.
+    (if (< count 0)
+        (camelCase-forward-word (- count))
+      (let ((start-position (point))
+            (old-case-fold-search case-fold-search)
+            (case-fold-search nil)) ;; search case-sensitively
+        (unwind-protect
+            (while (< 0 count)
+              (setq count (1- count))
+              (let ((start (point)))
+                (when (re-search-backward camelCase-regexp nil t)
+                  (let ((end-word (match-end 0)))
+                    (forward-char -1)
+                    (while (save-excursion
+                             ;;like looking-at, but stop match at start
+                             (let ((position (point)))
+                               (re-search-forward camelCase-regexp start t)
+                               (and (= position (match-beginning 0))
+                                    (= end-word (match-end 0)))))
+                      (forward-char -1))
+                    (forward-char 1)))))
+          (setq case-fold-search old-case-fold-search))
+        (if (= start-position (point)) nil (point)))))
 
-    (defun camelCase-forward-kill-word (count)
-      "kill text between current point and end of next camelCase word"
-      (interactive "*p")
-      (kill-region (point) (progn (camelCase-forward-word count) (point))))
-    (defun camelCase-backward-kill-word (count)
-      "kill text between current point and end of previous camelCase word"
-      (interactive "*p")
-      (kill-region (point) (progn (camelCase-backward-word count) (point))))
-    (defun camelCase-transpose-words (count)
-      "transpose camelCase words around point, leaving point afterward.
+  (defun camelCase-forward-kill-word (count)
+    "kill text between current point and end of next camelCase word"
+    (interactive "*p")
+    (kill-region (point) (progn (camelCase-forward-word count) (point))))
+  (defun camelCase-backward-kill-word (count)
+    "kill text between current point and end of previous camelCase word"
+    (interactive "*p")
+    (kill-region (point) (progn (camelCase-backward-word count) (point))))
+  (defun camelCase-transpose-words (count)
+    "transpose camelCase words around point, leaving point afterward.
 With prefix arg COUNT, moves word before point past COUNT words
 forward or backward.  If COUNT is 0, exchanges word around pont
 with word around mark."
-      (interactive "*p")
-      (transpose-subr 'camelCase-forward-word count))
-    (defun camelCase-capitalize-word (count)
-      "Capitalize word starting at point, leaving point after word."
-      (interactive "*p")
-      (let ((start (point)))
-        (camelCase-forward-word count)
-        (capitalize-region start (point))))
-    (defun camelCase-upcase-word (count)
-      "Make word starting at point UPPERCASE, leaving point after word."
-      (interactive "*p")
-      (let ((start (point)))
-        (camelCase-forward-word count)
-        (upcase-region start (point))))
-    (defun camelCase-downcase-word (count)
-      "Make word starting at point lowercase, leaving point after word."
-      (interactive "*p")
-      (let ((start (point)))
-        (camelCase-forward-word count)
-        (downcase-region start (point))))
+    (interactive "*p")
+    (transpose-subr 'camelCase-forward-word count))
+  (defun camelCase-capitalize-word (count)
+    "Capitalize word starting at point, leaving point after word."
+    (interactive "*p")
+    (let ((start (point)))
+      (camelCase-forward-word count)
+      (capitalize-region start (point))))
+  (defun camelCase-upcase-word (count)
+    "Make word starting at point UPPERCASE, leaving point after word."
+    (interactive "*p")
+    (let ((start (point)))
+      (camelCase-forward-word count)
+      (upcase-region start (point))))
+  (defun camelCase-downcase-word (count)
+    "Make word starting at point lowercase, leaving point after word."
+    (interactive "*p")
+    (let ((start (point)))
+      (camelCase-forward-word count)
+      (downcase-region start (point))))
 
 
-    (provide 'camelCase)))
+  (provide 'camelCase))
