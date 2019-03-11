@@ -1,9 +1,65 @@
-{ pkgs, config, ... }:
+{ pkgs ? import <nixpkgs> {}, config, ... }:
 
 with pkgs;
+with import ../util;
 
-import ./screens.nix {inherit pkgs;} // import ./build.nix {inherit pkgs; inherit config; }  //
+import ./screens.nix {inherit pkgs;} // import ./build.nix {inherit pkgs config; }  //
 {
+  chrome-set-search-engines =
+    let
+      executable = writeTypeScript "chrome-set-search-engines" {
+        dependencies = {
+          "@types/node" = "^11.11.0";
+          "@types/yargs" = "^12.0.9";
+          "yargs" = "^13.2.2";
+        };
+      }
+      (pkgs.lib.readFile ./shorthands/chrome-set-search-engines.ts);
+    in
+      writeShellScriptBin "chrome-set-search-engines-wrapper" ''
+        ${executable}/bin/chrome-set-search-engines \
+          --dataFile ${builtins.readFile ./shorthands/search-engines.json} \
+          --sqliteCmd ${pkgs.sqlite}/bin/sqlite3
+      '';
+
+  hotreload = writeShellScriptBin "hotreload" ''
+    DIR=$1
+    CMD=$2
+    while ${inotify-tools}/bin/inotifywait -e modify $DIR; do eval $CMD; done
+  '';
+
+  news = writeShellScriptBin "news" ''
+    ${pkgs.chromium}/bin/chromium --new-window \
+      'https://elm-news.com/' \
+      'https://news.ycombinator.com' \
+  '';
+
+  nix-shell-elm19 = writeShellScriptBin "nix-shell-elm19" ''
+    nix-shell -E 'with import (fetchTarball "https://github.com/NixOS/nixpkgs-channels/archive/0396345b79436f54920f7eb651ab42acf2eb7973.tar.gz") { }; runCommand "elm-env" { buildInputs = [ elmPackages.elm ]; } ""'
+  '';
+
+  # elm-make = writeShellScriptBin "elm-make" ''
+  #   ${elmPackages.elm}/bin/elm-make $@
+  # '';
+
+  # elm-reactor = writeShellScriptBin "elm-reactor" ''
+  #   ${elmPackages.elm}/bin/elm-reactor $@
+  # '';
+
+  github-repos = writeShellScriptBin "github-repos" ''
+    USER=$1
+    USER=${shellExpand "USER:-'thought2'"}
+    curl -s https://api.github.com/users/$USER/repos | ${pkgs.jq}/bin/jq '.[]|.name'
+  '';
+
+  github-clone = writeShellScriptBin "github-clone" ''
+    USER=$1
+    REPO=$2
+    shift 2
+    USER=${shellExpand "USER:-'thought2'"}
+    ${pkgs.git}/bin/git clone git@github.com:$USER/$REPO.git $@
+  '';
+
   bower-install = writeShellScriptBin "bower-install" ''
     PKG=$1
     shift

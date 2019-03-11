@@ -1,0 +1,82 @@
+[
+    {
+        "short_name": "Dict.cc",
+        "keyword": "di",
+        "url": "https://www.dict.cc/?s={searchTerms}"
+    },
+    {
+        "short_name": "DuckDuckGo",
+        "keyword": "dd",
+        "url": "https://duckduckgo.com/?q={searchTerms}"
+    },
+    {
+        "short_name": "DuckDuckGo Images",
+        "keyword": "ddi",
+        "url": "https://duckduckgo.com/?q={searchTerms}&t=h_&iax=images&ia=images"
+    },
+    {
+        "short_name": "Elm 0.18 Packages",
+        "keyword": "ep8",
+        "url": "https://dmy.github.io/elm-0.18-packages"
+    },
+    {
+        "short_name": "Elm Packages",
+        "keyword": "ep",
+        "url": "https://package.elm-lang.org/"
+    },
+    {
+        "short_name": "Linguee",
+        "keyword": "lin",
+        "url": "https://www.linguee.com/english-german/search?source=auto&query={searchTerms}"
+    },
+    {
+        "short_name": "MDN",
+        "keyword": "mdn",
+        "url": "https://developer.mozilla.org/en-US/search?q={searchTerms}"
+    },
+    {
+        "short_name": "Pursuit",
+        "keyword": "ps",
+        "url": "https://pursuit.purescript.org/search?q={searchTerms}"
+    },
+    {
+        "short_name": "Elm Search",
+        "keyword": "es",
+        "url": "https://klaftertief.github.io/elm-search/?q={searchTerms}"
+    },
+    {
+        "short_name": "YouTube",
+        "keyword": "yt",
+        "url": "https://www.youtube.com/results?search_query={searchTerms}"
+    },
+    {
+        "short_name": "Wikipedia EN",
+        "keyword": "wi",
+        "url": "https://en.wikipedia.org/w/index.php?search={searchTerms}"
+    },
+    {
+        "short_name": "Wikipedia DE",
+        "keyword": "wid",
+        "url": "https://de.wikipedia.org/w/index.php?search={searchTerms}"
+    },
+    {
+        "short_name": "GitHub",
+        "keyword": "gh",
+        "url": "https://github.com/search?q={searchTerms}"
+    },
+    {
+        "short_name": "Stack Overflow",
+        "keyword": "so",
+        "url": "https://stackoverflow.com/search?q={searchTerms}"
+    },
+    {
+        "short_name": "NixOS Packages",
+        "keyword": "np",
+        "url": "https://nixos.org/nixos/packages.html#{searchTerms}"
+    },
+    {
+        "short_name": "NixOS Options",
+        "keyword": "no",
+        "url": "https://nixos.org/nixos/options.html#{searchTerms}"
+    }
+]
