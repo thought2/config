@@ -19,7 +19,7 @@ import ./screens.nix {inherit pkgs;} // import ./build.nix {inherit pkgs config;
     in
       writeShellScriptBin "chrome-set-search-engines" ''
         ${executable}/bin/executable \
-          --dataFile ${./shorthands/search-engines.json} \
+          --data-file ${./shorthands/search-engines.json} \
           --sqliteCmd ${pkgs.sqlite}/bin/sqlite3
       '';
 
