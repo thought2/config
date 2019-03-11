@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {}, config ? { networking.hostName = "minimal"; }, ... }:
+{ pkgs ? import <nixpkgs> {}, config, ... }:
 
 with pkgs;
 with lib;
