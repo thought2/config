@@ -11,7 +11,7 @@ rec {
             "strictNullChecks": true,
             "sourceMap": true,
             "typeRoots": [
-              ./node_modules/@types
+              "./node_modules/@types"
             ]
           }
         }
@@ -23,12 +23,15 @@ rec {
         cd $out
         cp -r ${deps}/lib/node_modules .
         cp ${tsConfig} tsconfig.json
+        cp ${pkgs.writeText "pa" (builtins.toJSON { inherit dependencies; }) } package.json
         cp ${indexTs} index.ts
-        ${pkgs.latest.nodePackages.typescript}/bin/tsc --outdir $out ${indexTs}
+        mkdir $out/dist
+        ${pkgs.latest.nodePackages.typescript}/bin/tsc -p $out --outdir $out/dist
+        ls dist
       '';
     in
       pkgs.writeShellScriptBin name ''
-        ${pkgs.nodejs}/bin/node ${tmp}/${"*"}index.js
+        ${pkgs.nodejs}/bin/node ${tmp}/dist/index.js
       '';
 
   writeJavaScript = name: { dependencies ? {}}: text:

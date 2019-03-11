@@ -38,13 +38,21 @@ const data = JSON.parse(fs.readFileSync(args.dataFile).toString()) as Data;
 
 const buildDelete = `delete from keywords`;
 
-const buildInsert = ({ short_name, keyword, url }) => `
-  insert into keywords (
-    short_name,
-    keyword,
-    favicon_url,
-    url
-  )
+const buildInsert = ({
+  short_name,
+  keyword,
+  url,
+}: {
+  short_name: string;
+  keyword: string;
+  url: string;
+}) => `
+insert into keywords (
+  short_name,
+  keyword,
+  favicon_url,
+  url
+)
   values ("${short_name}", "${keyword}", "", "${url}")
 `;
 

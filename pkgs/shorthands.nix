@@ -2,12 +2,13 @@
 
 with pkgs;
 with import ../util;
+with import ../util/trivial-builders.nix { inherit pkgs; };
 
 import ./screens.nix {inherit pkgs;} // import ./build.nix {inherit pkgs config; }  //
 {
   chrome-set-search-engines =
     let
-      executable = writeTypeScript "chrome-set-search-engines" {
+      executable = writeTypeScript "executable" {
         dependencies = {
           "@types/node" = "^11.11.0";
           "@types/yargs" = "^12.0.9";
@@ -16,9 +17,9 @@ import ./screens.nix {inherit pkgs;} // import ./build.nix {inherit pkgs config;
       }
       (pkgs.lib.readFile ./shorthands/chrome-set-search-engines.ts);
     in
-      writeShellScriptBin "chrome-set-search-engines-wrapper" ''
-        ${executable}/bin/chrome-set-search-engines \
-          --dataFile ${builtins.readFile ./shorthands/search-engines.json} \
+      writeShellScriptBin "chrome-set-search-engines" ''
+        ${executable}/bin/executable \
+          --dataFile ${./shorthands/search-engines.json} \
           --sqliteCmd ${pkgs.sqlite}/bin/sqlite3
       '';
 
