@@ -74,6 +74,8 @@ with pkgs.emacs25PackagesNg;
         shell-here
         dired-narrow
         move-text
+        dhall-mode
+        tuareg # ocaml
       ];
       init = readFile ./default.el;
     };

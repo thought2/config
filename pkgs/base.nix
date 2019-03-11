@@ -41,6 +41,7 @@ lib.flatten (builtins.attrValues {
   ];
 
   dev = [
+    dhall
     aws
     awscli
     aws-vault
@@ -71,21 +72,23 @@ lib.flatten (builtins.attrValues {
     # unstable.purescript
     purescript
     node2nixPkgs.selenium-webdriver
-    node2nixPkgs.ts-node
+    # node2nixPkgs.ts-node
     # node2nixPkgs.elm-test
     nodePackages.prettier
     node2nixPkgs.pre-commit
     nodePackages.bower
     nodePackages.pulp
     node2nixPkgs.chalk-cli
-    # nodePackages_6_x.typescript
+    latest.nodePackages.typescript
     # haskellPackages.idris
     haskellPackages.stylish-haskell
     yarn
     chromedriver
     gitAndTools.gitflow
-    nodejs-8_x
-    elmPackages.elm
+    latest.nodejs-10_x
+    latest.elmPackages.elm
+    latest.elmPackages.elm-format
+    # elmPackages.elm
     # elmPackages.elm-format
     node2nixPkgs.elm-oracle
     purescript
@@ -99,6 +102,8 @@ lib.flatten (builtins.attrValues {
     latest.cargo
     latest.rustup
     scala
+    ocamlPackages.merlin
+    ocaml
   ];
 
   gfx = [
