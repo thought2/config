@@ -459,7 +459,6 @@
     (add-to-list 'company-backends 'company-elm))
   (add-hook 'elm-mode-hook 'company-mode)
   (add-hook 'elm-mode-hook 'smartparens-mode)
-  (add-hook 'elm-mode-hook 'camelCase-mode)
   (add-hook 'elm-mode-hook 'flycheck-mode)
 
   (setq elm-format-on-save t))
@@ -484,7 +483,14 @@
   ;;(add-hook 'prog-mode-hook 'highlight-indentation-mode)
   (add-hook 'prog-mode-hook 'yafolding-mode)
   (add-hook 'prog-mode-hook 'whitespace-cleanup-mode)
-  )
+  (add-hook 'prog-mode-hook 'camelCase-mode)
+  (add-hook 'prog-mode-hook 'column-number-mode))
+
+(progn
+  (add-hook 'comint-mode-hook 'camelCase-mode))
+
+(progn
+  (add-hook 'shell-mode-hook 'camelCase-mode))
 
 (progn
   (setq browse-url-browser-function 'browse-url-generic
@@ -1511,3 +1517,22 @@ with word around mark."
 
 
   (provide 'camelCase))
+
+(setq timer
+      (progn
+        (setq clean-buffer-list-delay-general (/ 30 60.0 24.0)) ;; min
+        (setq timer
+              (run-with-timer 0 (* 10 60) (lambda () ;; min
+                                            (clean-buffer-list))))))
+
+(progn
+  (defalias 'yes-or-no-p 'y-or-n-p))
+
+
+(progn
+  (require 'projectile)
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-mode +1)
+  (require 'helm-projectile)
+  (helm-projectile-on))

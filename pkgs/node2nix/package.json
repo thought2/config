@@ -12,5 +12,6 @@
     "ts-node",
     "yargs",
     "localtunnel",
-    "pre-commit"
+    "pre-commit",
+    "elm-doc-preview"
 ]

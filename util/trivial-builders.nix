@@ -1,5 +1,35 @@
 { pkgs ? import <nixpkgs> {}, ... }:
 rec {
+  compilePureScript = { name , src, main }: pkgs.stdenv.mkDerivation {
+    inherit name;
+    inherit src;
+
+    buildInputs = [
+      pkgs.latest.purescript
+      pkgs.latest.nodePackages.pulp
+      pkgs.nodePackages.bower
+      pkgs.git
+      pkgs.nodejs
+    ];
+
+    buildCommand = ''
+      export SSL_CERT_FILE=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt
+      export HOME=$(mktemp -d);
+      BUILD_DIR=$(mktemp -d);
+      mkdir -p $out;
+      cd $src
+      cp -r bower.json src -t $BUILD_DIR
+      cd $BUILD_DIR
+      bower install
+      pulp build --to $out/index.js --main ${main}
+    '';
+  };
+
+  compilePureScriptBin = options:
+    pkgs.writeShellScriptBin options.name ''
+      ${pkgs.nodejs}/bin/node ${compilePureScript options}/index.js $@
+    '';
+
   writeTypeScript = name: { dependencies ? {}}: text:
     let
       tsConfig = pkgs.writeText "tsconfig.json" ''
@@ -31,7 +61,7 @@ rec {
       '';
     in
       pkgs.writeShellScriptBin name ''
-        ${pkgs.nodejs}/bin/node ${tmp}/dist/index.js
+        ${pkgs.nodejs}/bin/node ${tmp}/dist/index.js $@
       '';
 
   writeJavaScript = name: { dependencies ? {}}: text:

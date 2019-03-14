@@ -76,6 +76,7 @@ with pkgs.emacs25PackagesNg;
         move-text
         dhall-mode
         tuareg # ocaml
+        helm-projectile
       ];
       init = readFile ./default.el;
     };

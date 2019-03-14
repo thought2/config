@@ -4,3 +4,4 @@ target/
 result
 elm-stuff
 ~*
+node_modules

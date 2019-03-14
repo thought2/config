@@ -5,7 +5,42 @@ with import ../util;
 with import ../util/trivial-builders.nix { inherit pkgs; };
 
 import ./screens.nix {inherit pkgs;} // import ./build.nix {inherit pkgs config; }  //
-{
+rec {
+  # elm-find-doc-modules = compilePureScriptBin {
+  #     name = "elm-find-doc-modules";
+  #     src = ./shorthands/ps;
+  #     main = "ElmTooling.FindDocumentedModules";
+  #   };
+
+  elm-json-as-package = writeTypeScript "elm-json-as-package" {
+      dependencies = {
+        "@types/node" = "^11.11.0";
+        "@types/yargs" = "^12.0.9";
+        "yargs" = "^13.2.2";
+      };
+    }
+    (pkgs.lib.readFile ./shorthands/ts/elm-json-as-package.ts);
+
+  elm-doc-preview-local = writeShellScriptBin "elm-doc-preview-local" ''
+    EXPOSED_MODULES=$1
+    shift
+    SRC_DIR=`pwd`/$1
+    shift
+    SEP=$1
+    shift
+
+    TMP=`mktemp -d`
+
+    ${elm-json-as-package}/bin/elm-json-as-package \
+      --output $TMP/elm.json \
+      --exposedModules $EXPOSED_MODULES
+
+    cd $TMP
+    ln -s $SRC_DIR src
+
+    ${pkgs.node2nixPkgs.elm-doc-preview}/bin/elm-doc-preview $@
+  '';
+
   chrome-set-search-engines =
     let
       executable = writeTypeScript "executable" {
@@ -15,7 +50,7 @@ import ./screens.nix {inherit pkgs;} // import ./build.nix {inherit pkgs config;
           "yargs" = "^13.2.2";
         };
       }
-      (pkgs.lib.readFile ./shorthands/chrome-set-search-engines.ts);
+      (pkgs.lib.readFile ./shorthands/ts/chrome-set-search-engines.ts);
     in
       writeShellScriptBin "chrome-set-search-engines" ''
         ${executable}/bin/executable \

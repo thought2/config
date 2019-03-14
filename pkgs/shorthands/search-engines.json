@@ -1,5 +1,10 @@
 [
     {
+        "short_name": "Settings: Search Engines",
+        "keyword": "#",
+        "url": "chrome://settings/searchEngines"
+    },
+    {
         "short_name": "Dict.cc",
         "keyword": "di",
         "url": "https://www.dict.cc/?s={searchTerms}"
@@ -11,18 +16,23 @@
     },
     {
         "short_name": "DuckDuckGo Images",
-        "keyword": "ddi",
+        "keyword": "dd/i",
         "url": "https://duckduckgo.com/?q={searchTerms}&t=h_&iax=images&ia=images"
     },
     {
         "short_name": "Elm 0.18 Packages",
-        "keyword": "ep8",
+        "keyword": "el/p18",
         "url": "https://dmy.github.io/elm-0.18-packages"
     },
     {
         "short_name": "Elm Packages",
-        "keyword": "ep",
+        "keyword": "el/p",
         "url": "https://package.elm-lang.org/"
+    },
+    {
+        "short_name": "Elm Search",
+        "keyword": "el/s",
+        "url": "https://klaftertief.github.io/elm-search/?q={searchTerms}"
     },
     {
         "short_name": "Linguee",
@@ -40,11 +50,6 @@
         "url": "https://pursuit.purescript.org/search?q={searchTerms}"
     },
     {
-        "short_name": "Elm Search",
-        "keyword": "es",
-        "url": "https://klaftertief.github.io/elm-search/?q={searchTerms}"
-    },
-    {
         "short_name": "YouTube",
         "keyword": "yt",
         "url": "https://www.youtube.com/results?search_query={searchTerms}"
@@ -56,7 +61,7 @@
     },
     {
         "short_name": "Wikipedia DE",
-        "keyword": "wid",
+        "keyword": "wi/de",
         "url": "https://de.wikipedia.org/w/index.php?search={searchTerms}"
     },
     {
@@ -65,18 +70,108 @@
         "url": "https://github.com/search?q={searchTerms}"
     },
     {
+        "short_name": "GitHub / thought2",
+        "keyword": "gh/t2",
+        "url": "https://github.com/search?q=user%3Athought2%20{searchTerms}"
+    },
+    {
+        "short_name": "GitHub / thought2",
+        "keyword": "gh/t2-",
+        "url": "https://github.com/thought2"
+    },
+    {
+        "short_name": "GitHub / coyainsurance",
+        "keyword": "gh/cy",
+        "url": "https://github.com/search?q=user%3Acoyainsurance%20{searchTerms}"
+    },
+    {
+        "short_name": "GitHub / coyainsurance",
+        "keyword": "gh/cy-",
+        "url": "https://github.com/coyainsurance"
+    },
+    {
+        "short_name": "GitHub / coyainsurance / glass-clock",
+        "keyword": "gc",
+        "url": "https://github.com/coyainsurance/glass-clock/search?q={searchTerms}&unscoped_q={searchTerms}"
+    },
+    {
+        "short_name": "GitHub / coyainsurance / glass-clock",
+        "keyword": "gc-",
+        "url": "https://github.com/coyainsurance/glass-clock"
+    },
+    {
         "short_name": "Stack Overflow",
         "keyword": "so",
         "url": "https://stackoverflow.com/search?q={searchTerms}"
     },
     {
+        "short_name": "NixOS",
+        "keyword": "ni-",
+        "url": "https://nixos.org"
+    },
+    {
         "short_name": "NixOS Packages",
-        "keyword": "np",
+        "keyword": "ni/p",
         "url": "https://nixos.org/nixos/packages.html#{searchTerms}"
     },
     {
         "short_name": "NixOS Options",
-        "keyword": "no",
+        "keyword": "ni/o",
         "url": "https://nixos.org/nixos/options.html#{searchTerms}"
+    },
+    {
+        "short_name": "Hacker News",
+        "keyword": "hn-",
+        "url": "https://news.ycombinator.com/"
+    },
+    {
+        "short_name": "Hacker News",
+        "keyword": "hn",
+        "url": "https://hn.algolia.com/?query={searchTerms}&sort=byPopularity&prefix=false&page=0&dateRange=all&type=story"
+    },
+    {
+        "short_name": "Synonym.com",
+        "keyword": "syn",
+        "url": "https://www.synonym.com/synonyms/{searchTerms}"
+    },
+    {
+        "short_name": "WordNet",
+        "keyword": "wn",
+        "url": "http://wordnetweb.princeton.edu/perl/webwn?s={searchTerms}&sub=Search+WordNet"
+    },
+    {
+        "short_name": "taz",
+        "keyword": "tz-",
+        "url": "http://taz.de/"
+    },
+    {
+        "short_name": "taz",
+        "keyword": "tz",
+        "url": "https://www.taz.de/!s={searchTerms}/"
+    },
+    {
+        "short_name": "Zdf",
+        "keyword": "zdf",
+        "url": "https://www.zdf.de/suche?q={searchTerms}"
+    },
+    {
+        "short_name": "Amazon",
+        "keyword": "am",
+        "url": "https://www.amazon.com/s?k={searchTerms}"
+    },
+    {
+        "short_name": "Spiegel / Gutenberg",
+        "keyword": "sp/g",
+        "url": "http://gutenberg.spiegel.de/suche?q={searchTerms}"
+    },
+    {
+        "short_name": "Meetup Search",
+        "keyword": "mu",
+        "url": "https://www.meetup.com/de-DE/find/events/?allMeetups=false&keywords={searchTerms}&radius=3&userFreeform=Berlin%2C+Deutschland&mcId=z1007698&mcName=Berlin%2C+DE&eventFilter=all"
+    },
+    {
+        "short_name": "Meetup",
+        "keyword": "mu-",
+        "url": "https://www.meetup.com/de-DE/find/events/?allMeetups=true&radius=5&userFreeform=Berlin%2C+Deutschland&mcId=z1007698&mcName=Berlin%2C+DE&eventFilter=all"
     }
 ]

@@ -66,11 +66,11 @@ lib.flatten (builtins.attrValues {
     ghc
     node2nixPkgs.cross-env
     node2nixPkgs.localtunnel
+    node2nixPkgs.elm-doc-preview
     # node2nixPkgs.elm-live
     # node2nixPkgs.create-elm-app
     # node2nixPkgs.pulp
     # unstable.purescript
-    purescript
     node2nixPkgs.selenium-webdriver
     # node2nixPkgs.ts-node
     # node2nixPkgs.elm-test
