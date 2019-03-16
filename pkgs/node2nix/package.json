@@ -13,5 +13,6 @@
     "yargs",
     "localtunnel",
     "pre-commit",
-    "elm-doc-preview"
+    "elm-doc-preview",
+    "http-server"
 ]

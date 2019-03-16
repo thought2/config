@@ -76,6 +76,7 @@ lib.flatten (builtins.attrValues {
     # node2nixPkgs.elm-test
     nodePackages.prettier
     node2nixPkgs.pre-commit
+    node2nixPkgs.http-server
     nodePackages.bower
     nodePackages.pulp
     node2nixPkgs.chalk-cli

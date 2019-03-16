@@ -4,7 +4,8 @@ let
   latest =
     fetchTarball
 #      https://github.com/NixOS/nixpkgs-channels/archive/0396345b79436f54920f7eb651ab42acf2eb7973.tar.gz;
-      https://github.com/NixOS/nixpkgs-channels/archive/60e2056e47616676f5883140890464fc00dfb0b5.tar.gz;
+      https://github.com/NixOS/nixpkgs-channels/archive/ccd53a9cb1ca4c1a2c98765010affd20ef631b86.tar.gz;
+
 
   unstableTarball =
     fetchTarball

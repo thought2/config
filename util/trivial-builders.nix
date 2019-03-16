@@ -1,6 +1,6 @@
 { pkgs ? import <nixpkgs> {}, ... }:
 rec {
-  compilePureScript = { name , src, main }: pkgs.stdenv.mkDerivation {
+  buildPureScript = { name , src, main }: pkgs.stdenv.mkDerivation {
     inherit name;
     inherit src;
 
@@ -25,10 +25,27 @@ rec {
     '';
   };
 
-  compilePureScriptBin = options:
-    pkgs.writeShellScriptBin options.name ''
-      ${pkgs.nodejs}/bin/node ${compilePureScript options}/index.js $@
+  buildPureScriptBin = options:
+    wrapNode options.name (buildPureScript options);
+
+  wrapNode = name: src:
+   pkgs.writeShellScriptBin name ''
+      ${pkgs.nodejs}/bin/node ${src}/index.js $@
     '';
+
+  # buildTypeScript = { name , src, main }: pkgs.stdenv.mkDerivation {
+  #   inherit name;
+  #   inherit src;
+
+  #   buildInputs = [
+  #     pkgs.latest.nodePackages.typescript
+  #   ];
+
+  #   buildCommand = ''
+  #     mkdir $out
+  #     tsc -p $src --outdir $out
+  #   '';
+  # };
 
   writeTypeScript = name: { dependencies ? {}}: text:
     let

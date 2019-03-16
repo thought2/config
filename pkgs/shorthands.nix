@@ -6,7 +6,7 @@ with import ../util/trivial-builders.nix { inherit pkgs; };
 
 import ./screens.nix {inherit pkgs;} // import ./build.nix {inherit pkgs config; }  //
 rec {
-  # elm-find-doc-modules = compilePureScriptBin {
+  # elm-find-doc-modules = buildPureScriptBin {
   #     name = "elm-find-doc-modules";
   #     src = ./shorthands/ps;
   #     main = "ElmTooling.FindDocumentedModules";
@@ -19,7 +19,7 @@ rec {
         "yargs" = "^13.2.2";
       };
     }
-    (pkgs.lib.readFile ./shorthands/ts/elm-json-as-package.ts);
+    (pkgs.lib.readFile ./shorthands/ts/src/elm-json-as-package.ts);
 
   elm-doc-preview-local = writeShellScriptBin "elm-doc-preview-local" ''
     EXPOSED_MODULES=$1
@@ -50,7 +50,7 @@ rec {
           "yargs" = "^13.2.2";
         };
       }
-      (pkgs.lib.readFile ./shorthands/ts/chrome-set-search-engines.ts);
+      (pkgs.lib.readFile ./shorthands/ts/src/chrome-set-search-engines.ts);
     in
       writeShellScriptBin "chrome-set-search-engines" ''
         ${executable}/bin/executable \
