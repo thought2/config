@@ -30,6 +30,8 @@
 
 ;;; Code:
 
+(load-file "./magit-config.el")
+(load-file "./generated.el")
 
 (progn
   ;; make Emacs look less noisy.
@@ -1539,6 +1541,7 @@ with word around mark."
 
 
 (defun dired-dotfiles-toggle ()
+
   "Show/hide dot-files"
   (interactive)
   (when (equal major-mode 'dired-mode)
@@ -1556,3 +1559,41 @@ with word around mark."
   (require 'dired-x)
   (setq-default dired-omit-files-p t) ; Buffer-local variable
   (setq dired-omit-files (concat dired-omit-files "\\|^\\..+$")))
+
+
+(progn
+  (require 'hydra)
+
+  (defhydra hydra-screens nil
+    "screens"
+    ("1" (shell-command cmd-screens-1) "1" :exit t)
+    ("2" (shell-command cmd-screens-2) "2" :exit t)
+    ("m" (shell-command cmd-screens-mirror) "mirror" :exit t))
+
+  (defhydra hydra-keyboard nil
+    "keyboard"
+    ("d" (shell-command cmd-keyboard-de) "de" :exit t)
+    ("u" (shell-command cmd-keyboard-us) "us" :exit t))
+
+  (defhydra hydra-zoom nil
+    "zoom"
+    ("+" text-scale-increase-everywhere "in")
+    ("-" text-scale-decrease-everywhere "out"))
+
+  (defhydra hydra-find nil
+    "find"
+    ("f" find-file-at-point "find-file-at-point" :exit t))
+
+  (defhydra hydra-git nil
+    "git"
+    ("b" magit-blame "magit-blame" :exit t))
+
+  (defhydra hydra-main nil
+    "main"
+    ("s" hydra-screens/body "screens" :exit t)
+    ("f" hydra-find/body "find" :exit t)
+    ("k" hydra-keyboard/body "keyboard" :exit t)
+    ("g" hydra-git/body "git" :exit t)
+    ("z" hydra-zoom/body "zoom" :exit t)
+    ("l" hydra-fontlock/body "fontlock" :exit t))
+  )
