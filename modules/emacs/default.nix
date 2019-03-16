@@ -90,6 +90,7 @@ let
         hydra
         [ flycheck elm-mode flycheck-elm smartparens ]
         async
+        dash
       ]
   );
 
