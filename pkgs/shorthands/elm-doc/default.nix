@@ -46,7 +46,7 @@ let
       os.system(f'cp -r ${repo}/vendor/package.elm-lang.org/assets {out}')
       os.system(f'mkdir {out}/artifacts;')
       os.system(f'cp ${elmJs} {out}/artifacts/elm.js;')
-'';
+  '';
 
   patched-repo = pkgs.runCommand "patched-repo" { } ''
     mkdir -p $out
@@ -61,9 +61,28 @@ let
 
     cat ${new-assets-file} > src/elm_doc/asset_tasks.py
   '';
+
+  remove-indirect-dependencies =
+    let
+      dist = pkgs.runCommand "build" {} ''
+        mkdir $out
+        cd $out
+        cp -r ${./.}/* .
+        chmod -R 700 $out
+        export HOME=`mktemp -d`
+        ${pkgs.nodejs}/bin/npm install
+        mkdir $out/dist
+        ${pkgs.latest.nodePackages.typescript}/bin/tsc -p $out --outdir $out/dist
+      '';
+    in
+      pkgs.writeShellScriptBin "remove-indirect-dependencies" ''
+        ${pkgs.nodejs}/bin/node ${dist}/dist/remove-indirect-dependencies.js $@
+      '';
+
+
 in
-{
-  elm-doc = pkgs.writeShellScriptBin "elm-doc" ''
+rec {
+  elm-doc-original = pkgs.writeShellScriptBin "elm-doc-original" ''
     DIR=`pwd`
 
     TMP_DIR=`mktemp -d`
@@ -79,5 +98,16 @@ in
     nix-shell requirements.nix --run "$CMD"
 
     cd $DIR
+  '';
+
+  elm-doc = pkgs.writeShellScriptBin "elm-doc" ''
+    ${elm-doc-original}/bin/elm-doc-original \
+      --fake-license 'BSD-3-Clause' \
+      --output docs  \
+      $@
+
+    ${remove-indirect-dependencies}/bin/remove-indirect-dependencies \
+      --searchJson docs/search.json \
+      --output docs/search.json
   '';
 }
