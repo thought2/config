@@ -1154,7 +1154,8 @@ end up leaving point on a space or newline character."
   (global-set-key (kbd "C-x 4") 'split-3-windows-horizontally-evenly))
 
 (progn
-  (global-set-key (kbd "C-c p") 'scratch-palette-popup))
+  (global-set-key (kbd "C-c w") 'scratch-palette-popup)
+  )
 
 (progn
   (add-hook 'edit-server-start-hook 'markdown-mode))
@@ -1538,9 +1539,10 @@ buffer is not visiting a file."
 
 (progn
   (require 'projectile)
-  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (setq projectile-project-search-path '("~/dev/"))
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1)
+  (projectile-global-mode)
   (require 'helm-projectile)
   (helm-projectile-on))
 
@@ -1602,3 +1604,17 @@ buffer is not visiting a file."
     ("z" hydra-zoom/body "zoom" :exit t)
     ("l" hydra-fontlock/body "fontlock" :exit t))
   )
+
+
+(progn
+  (require 'shell-switcher)
+
+  (setq shell-switcher-mode t)
+
+  (defun make-shell ()
+    "Create a new 'shell'."
+    (shell (generate-new-buffer-name "*shell*")))
+
+  (setq-default shell-switcher-new-shell-function 'make-shell)
+
+  (add-hook 'shell-mode-hook 'shell-switcher-manually-register-shell))

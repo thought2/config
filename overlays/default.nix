@@ -20,7 +20,7 @@ in
 
   xmonad = import ./xmonad { pkgs = self; };
 
-  pythonExt = self.python3Packages.python.withPackages (p: [ p.notebook p.grip ]);
+  pythonExt = self.python3Packages.python.withPackages (p: [ p.notebook p.grip p.virtualenvwrapper ]);
 
   inherit shorthands;
   inherit node2nixPkgs;

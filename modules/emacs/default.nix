@@ -88,13 +88,21 @@ let
         helm-projectile
         [ magit magit-gitflow ]
         hydra
-        [ flycheck elm-mode flycheck-elm smartparens ]
+        [
+          flycheck
+          # elm-mode
+          # flycheck-elm
+          smartparens
+        ]
         async
         dash
+        shell-switcher
       ]
   );
 
   generatedEl = ''
+
+(setq bookmark-default-file "${./bookmarks}")
 
 (progn
   (setq cmd-screens-1 "${shorthands.screens-1}/bin/screens-1")
