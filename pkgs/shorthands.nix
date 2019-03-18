@@ -6,6 +6,13 @@ with import ../util/trivial-builders.nix { inherit pkgs; };
 
 import ./screens.nix {inherit pkgs;} // import ./build.nix {inherit pkgs config; }  //
 rec {
+
+  tmp = writeShellScriptBin "tmp" ''
+    COUNT_DAYS_AGO=${shellExpand "1:-'0'"}
+    DATE_STR=`date +%Y-%m-%d_%V-%a -d "$COUNT_DAYS_AGO days ago"`
+    echo ~/tmp/$DATE_STR
+  '';
+
   # elm-find-doc-modules = buildPureScriptBin {
   #     name = "elm-find-doc-modules";
   #     src = ./shorthands/ps;

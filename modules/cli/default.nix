@@ -10,7 +10,7 @@ in
   time.timeZone = "Europe/Berlin";
   
   environment.shellAliases = {
-    "cd-tmp" = "cd $(${pkgs.coreutils}/bin/mktemp -d)";
+    "cd-tmp" = "TMP_DIR=`${pkgs.shorthands.tmp}/bin/tmp`; mkdir -p $TMP_DIR 2> /dev/null; cd $TMP_DIR";
     "cd1" = "cd ..";
     "cd2" = "cd ../..";
     "cd3" = "cd ../../..";
