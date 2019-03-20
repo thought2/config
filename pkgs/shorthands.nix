@@ -8,19 +8,6 @@ import ./screens.nix {inherit pkgs;} //
 import ./build.nix {inherit pkgs config; }  //
 import ./shorthands/elm-doc { inherit pkgs; } //
 rec {
-
-  tmp = writeShellScriptBin "tmp" ''
-    COUNT_DAYS_AGO=${shellExpand "1:-'0'"}
-    DATE_STR=`date +%Y-%m-%d_%V-%a -d "$COUNT_DAYS_AGO days ago"`
-    echo ~/tmp/$DATE_STR
-  '';
-
-  mk-tmp = writeShellScriptBin "mk-tmp" ''
-    COUNT_DAYS_AGO=${shellExpand "1:-'0'"}
-    DIR=`tmp $COUNT_DAYS_AGO`
-    mkdir -p $DIR 2> /dev/null
-  '';
-
   # elm-find-doc-modules = buildPureScriptBin {
   #     name = "elm-find-doc-modules";
   #     src = ./shorthands/ps;

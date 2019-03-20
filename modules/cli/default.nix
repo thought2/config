@@ -5,12 +5,12 @@ in
 {
   imports = [
     ./prompt-init.nix
+    ../tmp-files.nix
   ];
 
   time.timeZone = "Europe/Berlin";
   
   environment.shellAliases = {
-    "cd-tmp" = "TMP_DIR=`${pkgs.shorthands.tmp}/bin/tmp`; mkdir -p $TMP_DIR 2> /dev/null; cd $TMP_DIR";
     "cd1" = "cd ..";
     "cd2" = "cd ../..";
     "cd3" = "cd ../../..";
