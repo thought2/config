@@ -6,6 +6,8 @@ let
 
   node2nixPkgs = import ./node2nix {};
 
+  easy-purescript = import ./easy-purescript.nix;
+
 in
 
 with pkgs;
@@ -41,6 +43,7 @@ lib.flatten (builtins.attrValues {
   ];
 
   dev = [
+    easy-purescript.purs
     dhall
     aws
     awscli
