@@ -658,7 +658,7 @@ with word around mark."
 (progn
   ;; Web Mode
   (setq web-mode-code-indent-offset 2)
-  ;;(add-hook 'web-mode-hook #'prettier-js-mode)
+  (add-hook 'web-mode-hook #'prettier-js-mode)
   )
 
 
@@ -789,7 +789,8 @@ with word around mark."
   (add-hook 'prog-mode-hook 'yafolding-mode)
   (add-hook 'prog-mode-hook 'whitespace-cleanup-mode)
   (add-hook 'prog-mode-hook 'camelCase-mode)
-  (add-hook 'prog-mode-hook 'column-number-mode))
+  (add-hook 'prog-mode-hook 'column-number-mode)
+  (add-hook 'prog-mode-hook 'fci-mode))
 
 (progn
   (add-hook 'comint-mode-hook 'camelCase-mode)
@@ -1618,3 +1619,17 @@ buffer is not visiting a file."
   (setq-default shell-switcher-new-shell-function 'make-shell)
 
   (add-hook 'shell-mode-hook 'shell-switcher-manually-register-shell))
+
+(progn
+  (setq browse-url-browser-function 'browse-url-chromium))
+
+
+(progn
+  (defun bookmark-reload ()
+    (interactive)
+    (bookmark-load "~/dev/nix-config/modules/emacs/bookmarks" t)))
+
+(progn
+  (require 'fill-column-indicator)
+  (setq fci-rule-color "gainsboro")
+  (setq fci-rule-width 1))

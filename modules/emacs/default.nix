@@ -15,12 +15,13 @@ let
     [
       init
     ] ++ lib.flatten [
+        fill-column-indicator
         yaml-mode
         hydra
         aggressive-indent
         auto-complete
         better-defaults
-        purescript-mode
+        # purescript-mode
         cider
         clojure-mode
         helm-dash

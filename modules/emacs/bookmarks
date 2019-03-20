@@ -1,4 +1,10 @@
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 (("shorthands.nix"
  (filename . "~/dev/nix-config/pkgs/shorthands.nix"))
+ ("emacs cfg"
+ (filename . "~/dev/nix-config/modules/emacs/el/default.el"))
+ ("emacs pkgs"
+ (filename . "~/dev/nix-config/modules/emacs/default.nix"))
+ ("bookmarks" 
+ (filename . "~/dev/nix-config/modules/emacs/bookmarks"))
 )

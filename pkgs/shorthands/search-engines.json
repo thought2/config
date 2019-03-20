@@ -120,6 +120,16 @@
         "url": "https://nixos.org/nixos/options.html#{searchTerms}"
     },
     {
+        "short_name": "NixOS lib",
+        "keyword": "ni/l",
+        "url": "https://github.com/NixOS/nixpkgs/tree/master/lib"
+    },
+    {
+        "short_name": "NixOS builtins",
+        "keyword": "ni/b",
+        "url": "https://nixos.org/nix/manual/#ssec-builtins"
+    },
+    {
         "short_name": "Hacker News",
         "keyword": "hn-",
         "url": "https://news.ycombinator.com/"
