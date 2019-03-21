@@ -5,13 +5,13 @@ import * as child_process from 'child_process';
 
 // TYPES
 
-type Data = Array<{ short_name: string; keyword: string; url: string }>;
-
 type Args = yargs.Arguments<{
   dbFile: string;
   dataFile: string;
   sqliteCmd: string;
 }>;
+
+type Data = Array<{ short_name: string; keyword: string; url: string }>;
 
 // PARSE ARGS
 
