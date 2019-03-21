@@ -1,4 +1,5 @@
 { config, pkgs, lib, ... }:
+with lib;
 let
   utils = import ../util;
 
@@ -9,7 +10,7 @@ let
 
   tmp = pkgs.writeShellScriptBin "tmp" ''
     COUNT_DAYS_AGO=${utils.shellExpand "1:-'0'"}
-    DATE_STR=`{date-str}/bin/date-str $COUNT_DAYS_AGO`
+    DATE_STR=`${date-str}/bin/date-str $COUNT_DAYS_AGO`
     echo ~/tmp/$DATE_STR
   '';
 
@@ -22,11 +23,18 @@ let
   ln-tmp = pkgs.writeShellScriptBin "ln-tmp" ''
     USERNAME=$1
 
-    TARGET=/home/$USERNAME/tmp/`${date-str}/bin/date-str`
-    NAME=/home/$USERNAME/tmp/today
-    sleep 5
-    rm -f $NAME
-    ln -s $TARGET $NAME
+    sleep 1
+
+    for i in {0..9}; do
+      TARGET=/home/$USERNAME/tmp/`${date-str}/bin/date-str $i`
+      NAME=/home/$USERNAME/tmp/latest$i
+
+      rm -f $NAME
+      ln -s $TARGET $NAME
+    done
+
+    rm -f /home/$USERNAME/tmp/latest
+    ln -s /home/$USERNAME/tmp/latest0 /home/$USERNAME/tmp/latest
   '';
 
   users = builtins.filter
@@ -36,17 +44,19 @@ in
 {
   services.cron = {
     enable = true;
-    systemCronJobs = map
-      (user: "00 00 * * * ${user.name} ${ln-tmp}/bin/ln-tmp ${user.name}")
-      users;
+    systemCronJobs =
+      map
+        ({ name, ... }: "00 00 * * * ${name} ${ln-tmp}/bin/ln-tmp ${name}")
+        users;
   };
 
+  powerManagement.powerUpCommands =
+      concatMapStrings
+        ({ name, ... }: ''${ln-tmp}/bin/ln-tmp ${name}'')
+        users;
+
   environment.shellAliases = {
-    "cd-tmp" = ''
-      TMP_DIR=`${tmp}/bin/tmp`; \
-      mkdir -p $TMP_DIR 2> /dev/null; \
-      cd $TMP_DIR
-    '';
+    "cd-tmp" = "cd ~/tmp/latest";
   };
 
   environment.systemPackages = [
