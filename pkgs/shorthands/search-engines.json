@@ -183,5 +183,10 @@
         "short_name": "Meetup",
         "keyword": "mu-",
         "url": "https://www.meetup.com/de-DE/find/events/?allMeetups=true&radius=5&userFreeform=Berlin%2C+Deutschland&mcId=z1007698&mcName=Berlin%2C+DE&eventFilter=all"
+    },
+    {
+        "short_name": "Bookmarks",
+        "keyword": "bm",
+        "url": "chrome://bookmarks/"
     }
 ]

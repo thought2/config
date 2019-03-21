@@ -7,4 +7,6 @@
  (filename . "~/dev/nix-config/modules/emacs/default.nix"))
  ("bookmarks" 
  (filename . "~/dev/nix-config/modules/emacs/bookmarks"))
+ ("search engines"
+ (filename . "~/dev/nix-config/pkgs/shorthands/search-engines.json"))
 )
