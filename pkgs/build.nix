@@ -1,4 +1,7 @@
-{ pkgs ? import <nixpkgs> {}, config ? {}, ... }:
+{ pkgs ? import <nixpkgs> {}
+, config ? { networking.hostName = "minimal-uefi" }
+, ...
+}:
 
 with pkgs;
 with lib;
