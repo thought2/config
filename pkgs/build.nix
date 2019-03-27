@@ -263,17 +263,17 @@ rec {
 
   '';
 
-  write-iso-to-device =
-  let
-    isoMinimal32 = fetchurl {
-        url = "https://d3g5gsiof5omrk.cloudfront.net/nixos/18.09/nixos-18.09.1676.7e88992a8c7/nixos-minimal-18.09.1676.7e88992a8c7-i686-linux.iso";
-        sha256 = "0p9vz87xg72f7agq51mwy6x8fi2x03xm5psv61vf5pf1sspaidn4";
-      };
-  in
-  writeShellScriptBin "write-iso-to-device" ''
-    DEVICE="/dev/disk/by-id/usb-SanDisk_Ultra_4C530001190720103262-0:0"
-    dd status=progress if="${isoMinimal32}" of="$DEVICE"
-  '';
+  # write-iso-to-device =
+  # let
+  #   isoMinimal32 = fetchurl {
+  #       url = "https://d3g5gsiof5omrk.cloudfront.net/nixos/18.09/nixos-18.09.1676.7e88992a8c7/nixos-minimal-18.09.1676.7e88992a8c7-i686-linux.iso";
+  #       sha256 = "0p9vz87xg72f7agq51mwy6x8fi2x03xm5psv61vf5pf1sspaidn4";
+  #     };
+  # in
+  # writeShellScriptBin "write-iso-to-device" ''
+  #   DEVICE="/dev/disk/by-id/usb-SanDisk_Ultra_4C530001190720103262-0:0"
+  #   dd status=progress if="${isoMinimal32}" of="$DEVICE"
+  # '';
 
   partition-uefi =
     writeShellScriptBin "partition-uefi"
