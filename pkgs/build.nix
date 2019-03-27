@@ -153,6 +153,7 @@ rec {
     }
   '';
 
+  # @TODO: make accept cmd args
   machine-checkout = writeShellScriptBin "machine-checkout" ''
     HOST=${shellExpand "1:-'${config.networking.hostName}'"}
     ROOT=${shellExpand "ROOT:-''"}
