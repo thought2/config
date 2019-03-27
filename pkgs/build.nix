@@ -1,5 +1,5 @@
 { pkgs ? import <nixpkgs> {}
-, config ? { networking.hostName = "minimal-uefi" }
+, config ? { networking.hostName = "minimal-uefi"; }
 , ...
 }:
 
