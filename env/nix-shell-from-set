@@ -1,0 +1,21 @@
+#! /usr/bin/env bash
+
+FILE=${1:-'./default.nix'}
+echo $FILE
+shift;
+
+NIX_EXPRESSION=$(cat <<EOF
+
+with import <nixpkgs> { };
+with lib;
+runCommand
+  "dummy"
+  {
+    buildInputs = attrValues(import $FILE {}) ;
+  }
+  ""
+
+EOF
+)
+
+nix-shell -E "$NIX_EXPRESSION"

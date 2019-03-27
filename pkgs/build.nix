@@ -124,8 +124,8 @@ in
 rec {
   machine-clean = writeShellScriptBin "machine-clean" ''
     ROOT=${shellExpand "1:-''"}
-    DIR=$ROOT/${nixosRoot}
-    rm -rf $DIR
+  #   DIR=$ROOT/${nixosRoot}
+  #   rm -rf $DIR
     mkdir -p $DIR
   '';
 
@@ -168,7 +168,7 @@ rec {
           (mapIndent
              (repo: ''
                ${clone-and-checkout}/bin/clone-and-checkout ${repo.url} ${repo.name} ${repo.branch}
-               echo
+  #              echo
              ''
              )
              host.repos)
@@ -272,64 +272,55 @@ rec {
     dd status=progress if="${isoMinimal32}" of="$DEVICE"
   '';
 
-  partition-uefi = writeShellScriptBin "partition-uefi" ''
-    DEVICE=/dev/sda
-    FORCE=false
+  partition-uefi =
+    writeShellScriptBin "partition-uefi"
+      ''
+        DEVICE=""
+        FORCE=false
+
+        TEMP=`getopt -o "" -l force:,device: -- "$@"`
+        eval set -- "$TEMP"
+
+        while true ; do
+            case "$1" in
+                --force) FORCE=$2 ; shift 2 ;;
+                --device) DEVICE=$2 ; shift 2 ;;
+                --) shift ; break ;;
+                *) echo "Internal error!" ; exit 1 ;;
+            esac
+        done
+
+        [ "$DEVICE" = "" ] && echo "no device given." && exit 1;
+
+        # CONFIRM
+
+        if [ "$FORCE" = false ]
+        then
+          read -p "Are you sure to destroy \"$DEVICE\"? (yes/no) "
+          if [ "$REPLY" != "yes" ]
+          then
+            exit 1
+          fi
+        fi
 
 
-    # PARSE ARGS
+        # MAIN
 
-    OPTS=`getopt -o f --long force -- "$@"`
+        ${pkgs.parted}/bin/parted --script $DEVICE -- mklabel gpt
+        ${pkgs.parted}/bin/parted --script $DEVICE -- mkpart primary 512MiB -0
+        ${pkgs.parted}/bin/parted --script $DEVICE -- mkpart ESP fat32 1MiB 512MiB
+        ${pkgs.parted}/bin/parted --script $DEVICE -- set 3 boot on
 
-    [ $? -eq 0 ] || exit 1
+        ${e2fsprogs}/bin/mkfs.ext4 -FL nixos "$DEVICE"1
+        ${dosfstools}/bin/mkfs.fat -F 32 -n boot "$DEVICE"2
 
-    eval set -- "$OPTS"
+        mount /dev/disk/by-label/nixos /mnt
 
-    while true ; do
-      case "$1" in
-        -f|--force)
-          FORCE=true
-          shift
-          ;;
-        --)
-          shift
-          break
-          ;;
-        *)
-          exit 1
-          ;;
-      esac
-    done
+        mkdir -p /mnt/boot
+        mount /dev/disk/by-label/boot /mnt/boot
+      '';
 
-
-    # CONFIRM
-
-    if [ "$FORCE" = false ]
-    then
-      read -p "Are you sure to destroy \"$DEVICE\"? (yes/no) "
-      if [ "$REPLY" != "yes" ]
-      then
-        exit 1
-      fi
-    fi
-
-
-    # MAIN
-
-    ${pkgs.parted}/bin/parted --script $DEVICE -- mklabel gpt
-    ${pkgs.parted}/bin/parted --script $DEVICE -- mkpart primary 512MiB -0
-    ${pkgs.parted}/bin/parted --script $DEVICE -- mkpart ESP fat32 1MiB 512MiB
-    ${pkgs.parted}/bin/parted --script $DEVICE -- set 3 boot on
-
-    ${e2fsprogs}/bin/mkfs.ext4 -FL nixos "$DEVICE"1
-    ${dosfstools}/bin/mkfs.fat -F 32 -n boot "$DEVICE"2
-
-    mount /dev/disk/by-label/nixos /mnt
-
-    mkdir -p /mnt/boot
-    mount /dev/disk/by-label/boot /mnt/boot
-  '';
-
+  # @TODO refactor as the uefi one!
   partition-legacy = writeShellScriptBin "partition-legacy" ''
     DEVICE=/dev/sda
     FORCE=false
@@ -381,4 +372,5 @@ rec {
 
     mount /dev/disk/by-label/nixos /mnt
   '';
+
 }
