@@ -33,9 +33,9 @@ lib.flatten (builtins.attrValues {
 
   web = [
     tdesktop
-    chromium
+    latest.chromium
     # opera
-    firefox
+    latest.firefox
     tor
     thunderbird
     torbrowser
@@ -61,12 +61,12 @@ lib.flatten (builtins.attrValues {
     # racket
     pythonExt
     # zeal
-    stack
+    latest.stack
     openjdk
     leiningen
     git
     pkgs.boot
-    ghc
+    latest.ghc
     node2nixPkgs.cross-env
     node2nixPkgs.localtunnel
     node2nixPkgs.elm-doc-preview
@@ -146,6 +146,7 @@ lib.flatten (builtins.attrValues {
     parallel
     iotop
     jnettop
+    ag
   ];
 
   utils = [

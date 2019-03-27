@@ -51,6 +51,7 @@ with lib;
   services.illum.enable = true;
 
   services.emacs.enable = true;
+
   services.emacs.package = pkgs.emacs;
 
   services.unclutter.enable = true;
@@ -86,6 +87,8 @@ with lib;
       "jlkgkebpphmaiemciejnmgccejccnpha" # simple-debug.css
       "epodomlablfiehjgajhlhbdhidlkokaj" # Outliner CSS
       "kokeihndgocdlgibnibeabeljjgehadj" # CSS debug alignment
+      "hdokiejnpimakedhajhdlcegeplioahd" # LastPass
+      "cfhdojbkjhnklbpkdaibdccddilifddb" # Adblock Plus
     ];
     homepageLocation = "https://duckduckgo.com";
     extraOpts = {
@@ -110,4 +113,17 @@ with lib;
     ! keycode 49 = asciicircum
   '';
 
+  powerManagement.resumeCommands =
+    ''
+      ${pkgs.i3lock}/bin/i3lokclinux notify
+    '';
+
+  systemd.user.services."dunst" = {
+    enable = true;
+    description = "";
+    wantedBy = [ "default.target" ];
+    serviceConfig.Restart = "always";
+    serviceConfig.RestartSec = 2;
+    serviceConfig.ExecStart = "${pkgs.dunst}/bin/dunst";
+  };
 }

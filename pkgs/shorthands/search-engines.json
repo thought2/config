@@ -188,5 +188,15 @@
         "short_name": "Bookmarks",
         "keyword": "bm",
         "url": "chrome://bookmarks/"
+    },
+    {
+        "short_name": "Hackage",
+        "keyword": "ha",
+        "url": "https://hackage.haskell.org/packages/search?terms={searchTerms}"
+    },
+    {
+        "short_name": "Hoogle",
+        "keyword": "ho",
+        "url": "https://hoogle.haskell.org/?hoogle={searchTerms}"
     }
 ]

@@ -98,6 +98,7 @@ let
         async
         dash
         shell-switcher
+        helm-ag
       ]
   );
 

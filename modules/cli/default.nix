@@ -8,6 +8,8 @@ in
     ../tmp-files.nix
   ];
 
+  services.tmp-files.enable = true;
+
   time.timeZone = "Europe/Berlin";
   
   environment.shellAliases = {
