@@ -147,6 +147,7 @@ lib.flatten (builtins.attrValues {
     iotop
     jnettop
     ag
+    pastebinit
   ];
 
   utils = [
