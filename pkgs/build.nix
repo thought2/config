@@ -186,8 +186,9 @@ rec {
         ;;
     esac
 
-    # @TODO: check root
-    nixos-generate-config --force # --root /mnt
+    nixos-generate-config \
+      --force \
+      `[ "$ROOT" ] && echo "--root $ROOT"`
 
     ${machine-link}/bin/machine-link nix-config/hosts/$HOST.nix
   '';
