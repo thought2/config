@@ -127,8 +127,8 @@ in
 rec {
   machine-clean = writeShellScriptBin "machine-clean" ''
     ROOT=${shellExpand "1:-''"}
-  #   DIR=$ROOT/${nixosRoot}
-  #   rm -rf $DIR
+    DIR=$ROOT/${nixosRoot}
+    rm -rf $DIR
     mkdir -p $DIR
   '';
 
