@@ -309,10 +309,10 @@ rec {
 
         # MAIN
 
-        ${pkgs.parted}/bin/parted --script $DEVICE -- mklabel gpt
-        ${pkgs.parted}/bin/parted --script $DEVICE -- mkpart primary 512MiB -0
-        ${pkgs.parted}/bin/parted --script $DEVICE -- mkpart ESP fat32 1MiB 512MiB
-        ${pkgs.parted}/bin/parted --script $DEVICE -- set 3 boot on
+        ${pkgs.parted}/bin/parted --script $DEVICE mklabel gpt
+        ${pkgs.parted}/bin/parted --script $DEVICE mkpart primary 512MiB -0
+        ${pkgs.parted}/bin/parted --script $DEVICE mkpart ESP fat32 1MiB 512MiB
+        ${pkgs.parted}/bin/parted --script $DEVICE set 3 boot on
 
         ${e2fsprogs}/bin/mkfs.ext4 -FL nixos "$DEVICE"1
         ${dosfstools}/bin/mkfs.fat -F 32 -n boot "$DEVICE"2
