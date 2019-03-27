@@ -310,7 +310,7 @@ rec {
         # MAIN
 
         ${pkgs.parted}/bin/parted --script $DEVICE mklabel gpt
-        ${pkgs.parted}/bin/parted --script $DEVICE mkpart primary 512MiB -0
+        ${pkgs.parted}/bin/parted --script $DEVICE mkpart primary 512MiB 100%
         ${pkgs.parted}/bin/parted --script $DEVICE mkpart ESP fat32 1MiB 512MiB
         ${pkgs.parted}/bin/parted --script $DEVICE set 3 boot on
 
