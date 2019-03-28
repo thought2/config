@@ -11,4 +11,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   system.stateVersion = "18.09";
+
+  networking.networkmanager.enable = true;
 }

@@ -7,7 +7,9 @@
       ../../../private-config/default.nix
     ];
 
-  networking.hostName = "lap";
+  networking.hostName = "laptop";
 
   system.stateVersion = "18.09";
+
+  hardware.cpu.intel.updateMicrocode = true;
 }

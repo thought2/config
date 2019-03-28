@@ -154,6 +154,7 @@ rec {
   '';
 
   # @TODO: make accept cmd args
+  # maybe make recognize if install-cd or not (ROOT=/mnt or none)
   machine-checkout = writeShellScriptBin "machine-checkout" ''
     HOST=${shellExpand "1:-'${config.networking.hostName}'"}
     ROOT=${shellExpand "ROOT:-''"}
