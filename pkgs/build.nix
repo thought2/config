@@ -10,7 +10,7 @@ with import ../util;
 let
   nixosRoot = "etc/nixos";
   repoUrl = "ssh://git@github.com/thought2";
-  devDir = "/home/mbock/dev";
+  devDir = "~/dev";
 
   hosts = {
     laptop-work = {
@@ -203,6 +203,7 @@ rec {
 
   machine-checkout-workdir = writeShellScriptBin "machine-checkout-workdir" ''
     HOST=${shellExpand "1:-'${config.networking.hostName}'"}
+    DEV_DIR=$2
     ROOT=${shellExpand "ROOT:-''"}
     DIR="/${nixosRoot}"
 
@@ -210,9 +211,9 @@ rec {
 
     cd $DIR
 
-    cp -r ${devDir}/nix-config .
-    cp -r ${devDir}/private-config .
-    cp -r ${devDir}/coya-config .
+    cp -r $DEV_DIR/nix-config .
+    cp -r $DEV_DIR/private-config .
+    cp -r $DEV_DIR/coya-config .
 
     # @TODO: check root here
     nixos-generate-config --force # --root $ROOT

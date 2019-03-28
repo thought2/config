@@ -6,7 +6,7 @@ with import ../util/trivial-builders.nix { inherit pkgs; };
 
 import ./screens.nix {inherit pkgs;} //
 import ./build.nix {inherit pkgs config; }  //
-import ./shorthands/elm-doc { inherit pkgs; } //
+# import ./shorthands/elm-doc { inherit pkgs; } //
 rec {
   # elm-find-doc-modules = buildPureScriptBin {
   #     name = "elm-find-doc-modules";
@@ -14,51 +14,51 @@ rec {
   #     main = "ElmTooling.FindDocumentedModules";
   #   };
 
-  elm-json-as-package = writeTypeScript "elm-json-as-package" {
-      dependencies = {
-        "@types/node" = "^11.11.0";
-        "@types/yargs" = "^12.0.9";
-        "yargs" = "^13.2.2";
-      };
-    }
-    (pkgs.lib.readFile ./shorthands/ts/src/elm-json-as-package.ts);
+  # elm-json-as-package = writeTypeScript "elm-json-as-package" {
+  #     dependencies = {
+  #       "@types/node" = "^11.11.0";
+  #       "@types/yargs" = "^12.0.9";
+  #       "yargs" = "^13.2.2";
+  #     };
+  #   }
+  #   (pkgs.lib.readFile ./shorthands/ts/src/elm-json-as-package.ts);
 
-  elm-doc-preview-local = writeShellScriptBin "elm-doc-preview-local" ''
-    EXPOSED_MODULES=$1
-    shift
-    SRC_DIR=`pwd`/$1
-    shift
-    SEP=$1
-    shift
+  # elm-doc-preview-local = writeShellScriptBin "elm-doc-preview-local" ''
+  #   EXPOSED_MODULES=$1
+  #   shift
+  #   SRC_DIR=`pwd`/$1
+  #   shift
+  #   SEP=$1
+  #   shift
 
-    TMP=`mktemp -d`
+  #   TMP=`mktemp -d`
 
-    ${elm-json-as-package}/bin/elm-json-as-package \
-      --output $TMP/elm.json \
-      --exposedModules $EXPOSED_MODULES
+  #   ${elm-json-as-package}/bin/elm-json-as-package \
+  #     --output $TMP/elm.json \
+  #     --exposedModules $EXPOSED_MODULES
 
-    cd $TMP
-    ln -s $SRC_DIR src
+  #   cd $TMP
+  #   ln -s $SRC_DIR src
 
-    ${pkgs.node2nixPkgs.elm-doc-preview}/bin/elm-doc-preview $@
-  '';
+  #   ${pkgs.node2nixPkgs.elm-doc-preview}/bin/elm-doc-preview $@
+  # '';
 
-  chrome-set-search-engines =
-    let
-      executable = writeTypeScript "executable" {
-        dependencies = {
-          "@types/node" = "^11.11.0";
-          "@types/yargs" = "^12.0.9";
-          "yargs" = "^13.2.2";
-        };
-      }
-      (pkgs.lib.readFile ./shorthands/ts/src/chrome-set-search-engines.ts);
-    in
-      writeShellScriptBin "chrome-set-search-engines" ''
-        ${executable}/bin/executable \
-          --data-file ${./shorthands/search-engines.json} \
-          --sqliteCmd ${pkgs.sqlite}/bin/sqlite3
-      '';
+  # chrome-set-search-engines =
+  #   let
+  #     executable = writeTypeScript "executable" {
+  #       dependencies = {
+  #         "@types/node" = "^11.11.0";
+  #         "@types/yargs" = "^12.0.9";
+  #         "yargs" = "^13.2.2";
+  #       };
+  #     }
+  #     (pkgs.lib.readFile ./shorthands/ts/src/chrome-set-search-engines.ts);
+  #   in
+  #     writeShellScriptBin "chrome-set-search-engines" ''
+  #       ${executable}/bin/executable \
+  #         --data-file ${./shorthands/search-engines.json} \
+  #         --sqliteCmd ${pkgs.sqlite}/bin/sqlite3
+  #     '';
 
   hotreload = writeShellScriptBin "hotreload" ''
     DIR=$1
@@ -255,18 +255,18 @@ rec {
         ${pkgs.sox}/bin/play -t mp3 ${soundFile}
       '';
 
-  patch-elm-binaries = with pkgs.elmPackages; writeShellScriptBin "patch-elm-binaries" ''
-      DIR=./node_modules/elm/Elm-Platform/0.18.0/.cabal-sandbox/bin
-      rm $DIR/elm; ln -s ${elm}/bin/elm $DIR/elm
-      rm $DIR/elm-make; ln -s ${elm}/bin/elm-make $DIR/elm-make
-      rm $DIR/elm-package; ln -s ${elm}/bin/elm-package $DIR/elm-package
-      rm $DIR/elm-reactor; ln -s ${elm}/bin/elm-reactor $DIR/elm-reactor
-      rm $DIR/elm-repl; ln -s ${elm}/bin/elm-repl $DIR/elm-repl
-      rm ./node_modules/elm-format/unpacked_bin/elm-format; ln -s ${elm}/bin/elm-format ./node_modules/elm-format/unpacked_bin/elm-format
+  # patch-elm-binaries = with pkgs.elmPackages; writeShellScriptBin "patch-elm-binaries" ''
+  #     DIR=./node_modules/elm/Elm-Platform/0.18.0/.cabal-sandbox/bin
+  #     rm $DIR/elm; ln -s ${elm}/bin/elm $DIR/elm
+  #     rm $DIR/elm-make; ln -s ${elm}/bin/elm-make $DIR/elm-make
+  #     rm $DIR/elm-package; ln -s ${elm}/bin/elm-package $DIR/elm-package
+  #     rm $DIR/elm-reactor; ln -s ${elm}/bin/elm-reactor $DIR/elm-reactor
+  #     rm $DIR/elm-repl; ln -s ${elm}/bin/elm-repl $DIR/elm-repl
+  #     rm ./node_modules/elm-format/unpacked_bin/elm-format; ln -s ${elm}/bin/elm-format ./node_modules/elm-format/unpacked_bin/elm-format
 
-      DIR=./node_modules/elm-test/bin
-      rm $DIR/elm-interface-to-json; ln -s ${elm-interface-to-json}/bin/elm-interface-to-json $DIR/elm-interface-to-json
-    '';
+  #     DIR=./node_modules/elm-test/bin
+  #     rm $DIR/elm-interface-to-json; ln -s ${elm-interface-to-json}/bin/elm-interface-to-json $DIR/elm-interface-to-json
+  #   '';
 
   byzanz-left = writeShellScriptBin "byzanz-left" ''
       ${pkgs.byzanz}/bin/byzanz-record -x 0 -y 0 -w 1920 -h 1080 $@

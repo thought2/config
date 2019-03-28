@@ -8,7 +8,7 @@ let
     fetchSubmodules = true;
   };
 
-  elmJs = pkgs.runCommand "compile" { buildInputs = [ pkgs.latest.elmPackages.elm ]; } ''
+  elmJs = pkgs.runCommand "compile" { buildInputs = [ pkgs.elmPackages.elm ]; } ''
     TMP_DIR=`mktemp -d`
     cp -r ${repo}/vendor/package.elm-lang.org/* $TMP_DIR
     cd $TMP_DIR
@@ -72,7 +72,7 @@ let
         export HOME=`mktemp -d`
         ${pkgs.nodejs}/bin/npm install
         mkdir $out/dist
-        ${pkgs.latest.nodePackages.typescript}/bin/tsc -p $out --outdir $out/dist
+        ${pkgs.nodePackages.typescript}/bin/tsc -p $out --outdir $out/dist
       '';
     in
       pkgs.writeShellScriptBin "remove-indirect-dependencies" ''

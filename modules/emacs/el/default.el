@@ -572,7 +572,8 @@ with word around mark."
   (add-hook 'text-mode-hook #'flyspell-mode)
 
   ;; FIXME: get impure path from nix configuration.
-  (setq ispell-personal-dictionary "/home/mbock/dev/config/aspell-words.pws"))
+  ;;(setq ispell-personal-dictionary "/home/mbock/dev/config/aspell-words.pws")
+  )
 
 
 (progn
@@ -1162,7 +1163,8 @@ end up leaving point on a space or newline character."
   (add-hook 'edit-server-start-hook 'markdown-mode))
 
 (progn
-  (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls))
+  ;; (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls)
+  )
 
 (progn
   (when (fboundp 'electric-indent-mode) (electric-indent-mode -1)))
@@ -1540,7 +1542,7 @@ buffer is not visiting a file."
 
 (progn
   (require 'projectile)
-  (setq projectile-project-search-path '("~/dev/"))
+  ;; (setq projectile-project-search-path '("~/dev/"))
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1)
   (projectile-global-mode)
@@ -1627,7 +1629,8 @@ buffer is not visiting a file."
 (progn
   (defun bookmark-reload ()
     (interactive)
-    (bookmark-load "~/dev/nix-config/modules/emacs/bookmarks" t)))
+    ;; (bookmark-load "~/dev/nix-config/modules/emacs/bookmarks" t)
+    ))
 
 (progn
   (require 'fill-column-indicator)

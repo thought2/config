@@ -5,8 +5,8 @@ rec {
     inherit src;
 
     buildInputs = [
-      pkgs.latest.purescript
-      pkgs.latest.nodePackages.pulp
+      pkgs.purescript
+      pkgs.nodePackages.pulp
       pkgs.nodePackages.bower
       pkgs.git
       pkgs.nodejs
@@ -38,7 +38,7 @@ rec {
   #   inherit src;
 
   #   buildInputs = [
-  #     pkgs.latest.nodePackages.typescript
+  #     pkgs.nodePackages.typescript
   #   ];
 
   #   buildCommand = ''
@@ -73,7 +73,7 @@ rec {
         cp ${pkgs.writeText "pa" (builtins.toJSON { inherit dependencies; }) } package.json
         cp ${indexTs} index.ts
         mkdir $out/dist
-        ${pkgs.latest.nodePackages.typescript}/bin/tsc -p $out --outdir $out/dist
+        ${pkgs.nodePackages.typescript}/bin/tsc -p $out --outdir $out/dist
         ls dist
       '';
     in
@@ -104,6 +104,6 @@ rec {
 
       cd $out/lib
 
-      ${pkgs.nodejs}/bin/npm install
+      ${pkgs.latest.nodejs}/bin/npm install
     '';
 }
