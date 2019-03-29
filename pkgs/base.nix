@@ -130,6 +130,7 @@ lib.flatten (builtins.attrValues {
   ];
 
   cli = [
+    xclip
     jq
     fish
     bash

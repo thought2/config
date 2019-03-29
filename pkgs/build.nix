@@ -10,7 +10,7 @@ with import ../util;
 let
   nixosRoot = "etc/nixos";
   repoUrl = "ssh://git@github.com/thought2";
-  devDir = "/home/mbock/dev";
+  devDir = "~/dev";
 
   hosts = {
     laptop-work = {
