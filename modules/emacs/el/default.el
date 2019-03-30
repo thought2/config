@@ -1686,3 +1686,19 @@ Version 2017-09-01"
 
 (progn
   (global-set-key (kbd "<M-tab>") 'helm-mini))
+
+(progn
+  (defun my-current-directory (text)
+    (let ((cur-dir (if (string-match "\\([/~].*/\\)" text)
+		       (substring text
+				  (match-beginning 1)
+				  (match-end 1))
+		     "/")))
+      (cd cur-dir)
+      (message "dir tracking %s" cur-dir)))
+
+  (defun my-shell-setup ()
+    "Track current directory"
+    (add-hook 'comint-output-filter-functions  'my-current-directory nil t))
+
+  (setq shell-mode-hook 'my-shell-setup))
