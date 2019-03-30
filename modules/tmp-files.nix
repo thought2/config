@@ -82,12 +82,17 @@ in
     powerManagement.powerUpCommands =
       concatMapStrings
         ({ name, ... }:
-          ''sudo -H -u ${name} ${mk-tmp}/bin/mk-tmp ${name}''
+          ''
+            ${pkgs.sudo}/bin/sudo \
+              --set-home \
+              --user ${name} \
+              ${mk-tmp}/bin/mk-tmp ${name}
+          ''
         )
         users;
 
     environment.shellAliases = {
-      "cd-tmp" = "cd ~/tmp/latest";
+      "cd-tmp" = "cd ~/${cfg.tmpDir}/latest";
     };
 
     environment.systemPackages = [
