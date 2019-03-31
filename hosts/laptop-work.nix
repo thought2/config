@@ -17,4 +17,8 @@
   ];
 
   system.stateVersion = "18.03";
+
+  boot.kernelParams = [ "intel_pstate=no_hwp" ];
+
+  fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 }

@@ -115,7 +115,8 @@ with lib;
 
   powerManagement.resumeCommands =
     ''
-      ${pkgs.i3lock}/bin/i3lokclinux notify
+      # i3lock: Could not connect to X11, maybe you need to set DISPLAY?
+      # ${pkgs.i3lock}/bin/i3lock
     '';
 
   systemd.user.services."dunst" = {

@@ -21,10 +21,6 @@ with pkgs;
 
   hardware.pulseaudio.enable = true;
 
-  boot.kernelParams = [ "intel_pstate=no_hwp" ];
-
-  fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 }

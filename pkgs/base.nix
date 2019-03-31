@@ -33,9 +33,9 @@ lib.flatten (builtins.attrValues {
 
   web = [
     tdesktop
-    latest.chromium
+    chromium
     # opera
-    latest.firefox
+    firefox
     tor
     thunderbird
     torbrowser
@@ -61,15 +61,15 @@ lib.flatten (builtins.attrValues {
     # racket
     pythonExt
     # zeal
-    latest.stack
+    stack
     openjdk
     leiningen
     git
     pkgs.boot
-    latest.ghc
+    ghc
     node2nixPkgs.cross-env
     node2nixPkgs.localtunnel
-    node2nixPkgs.elm-doc-preview
+    # node2nixPkgs.elm-doc-preview
     # node2nixPkgs.elm-live
     # node2nixPkgs.create-elm-app
     # node2nixPkgs.pulp
@@ -83,28 +83,28 @@ lib.flatten (builtins.attrValues {
     nodePackages.bower
     nodePackages.pulp
     node2nixPkgs.chalk-cli
-    latest.nodePackages.typescript
+    nodePackages.typescript
     # haskellPackages.idris
     haskellPackages.stylish-haskell
     yarn
     chromedriver
     gitAndTools.gitflow
-    latest.nodejs-10_x
-    latest.elmPackages.elm
-    latest.elmPackages.elm-format
+    nodejs-10_x
+    elmPackages.elm
+    elmPackages.elm-format
     # elmPackages.elm
     # elmPackages.elm-format
-    node2nixPkgs.elm-oracle
-    purescript
+    # node2nixPkgs.elm-oracle
+    # purescript
     sbt
     swiProlog
     glslviewer
     docker
     python3Packages.notebook
     coq
-    latest.rustc
-    latest.cargo
-    latest.rustup
+    rustc
+    cargo
+    rustup
     scala
     ocamlPackages.merlin
     ocaml

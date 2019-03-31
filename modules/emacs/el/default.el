@@ -50,7 +50,10 @@
   (setq inhibit-startup-message t)
   (setq initial-scratch-message "")
   (setq inhibit-startup-echo-area-message "m")
-  (blink-cursor-mode 0))
+  (blink-cursor-mode 0)
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1))
 
 (progn
   (when (display-graphic-p)
@@ -572,7 +575,8 @@ with word around mark."
   (add-hook 'text-mode-hook #'flyspell-mode)
 
   ;; FIXME: get impure path from nix configuration.
-  (setq ispell-personal-dictionary "/home/mbock/dev/config/aspell-words.pws"))
+  ;;(setq ispell-personal-dictionary "/home/mbock/dev/config/aspell-words.pws")
+  )
 
 
 (progn
@@ -1162,7 +1166,8 @@ end up leaving point on a space or newline character."
   (add-hook 'edit-server-start-hook 'markdown-mode))
 
 (progn
-  (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls))
+  ;; (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls)
+  )
 
 (progn
   (when (fboundp 'electric-indent-mode) (electric-indent-mode -1)))
@@ -1540,7 +1545,7 @@ buffer is not visiting a file."
 
 (progn
   (require 'projectile)
-  (setq projectile-project-search-path '("~/dev/"))
+  ;; (setq projectile-project-search-path '("~/dev/"))
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1)
   (projectile-global-mode)
@@ -1627,7 +1632,8 @@ buffer is not visiting a file."
 (progn
   (defun bookmark-reload ()
     (interactive)
-    (bookmark-load "~/dev/nix-config/modules/emacs/bookmarks" t)))
+    ;; (bookmark-load "~/dev/nix-config/modules/emacs/bookmarks" t)
+    ))
 
 (progn
   (require 'fill-column-indicator)
@@ -1683,3 +1689,19 @@ Version 2017-09-01"
 
 (progn
   (global-set-key (kbd "<M-tab>") 'helm-mini))
+
+(progn
+  (defun my-current-directory (text)
+    (let ((cur-dir (if (string-match "\\([/~].*/\\)" text)
+		       (substring text
+				  (match-beginning 1)
+				  (match-end 1))
+		     "/")))
+      (cd cur-dir)
+      (message "dir tracking %s" cur-dir)))
+
+  (defun my-shell-setup ()
+    "Track current directory"
+    (add-hook 'comint-output-filter-functions  'my-current-directory nil t))
+
+  (setq shell-mode-hook 'my-shell-setup))

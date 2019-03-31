@@ -3,6 +3,7 @@
   imports =
     [ 
       ../../hardware-configuration.nix
+      ../../extra.nix
     ];
 
   networking.hostName = "minimal-uefi";
@@ -13,4 +14,6 @@
   system.stateVersion = "18.09";
 
   networking.networkmanager.enable = true;
+
+  
 }

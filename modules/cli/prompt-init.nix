@@ -1,4 +1,7 @@
 { pkgs, ... }:
+
+with import ../../util;
+
 let
   gitRepo = fetchGit {
     url = "https://github.com/git/git";
@@ -17,6 +20,16 @@ let
     OPEN_FACE="\033[$STYLE;$COLOR"
     CLOSE_FACE="\033[0m"
     echo -e $OPEN_FACE$CONTENT$CLOSE_FACE
+  '';
+
+  pwd-trailing-slash = pkgs.writeShellScriptBin "pwd-trailing-slash" ''
+    WORKDIR=`pwd`
+    if [ "$WORKDIR" = "/" ]
+    then
+      echo "/"
+    else
+      echo ${shellExpand "WORKDIR/#$HOME/'~'"}"/"
+    fi
   '';
 in
 {
@@ -45,7 +58,8 @@ in
     fi
 
     NL='\n'
-    INFO=`${withFace}/bin/with-face $BOLD $COLOR "[\u:\h:\w]"`
+    WORKDIR='$(${pwd-trailing-slash}/bin/pwd-trailing-slash)'
+    INFO=`${withFace}/bin/with-face $BOLD $COLOR "[\u@\h "$WORKDIR" ]"`
     GIT_INFO='$(${getGitInfo}/bin/get-git-info "(%s)")'
     GIT_INFO=`${withFace}/bin/with-face $NORMAL $COLOR "$GIT_INFO"`
     SIGN=`${withFace}/bin/with-face $BOLD $COLOR $SIGN`

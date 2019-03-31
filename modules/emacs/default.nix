@@ -77,9 +77,9 @@ let
         flycheck-rust
         toml-mode
         undo-tree
-        magithub
-        magit-find-file
-        magit-gh-pulls
+        # magithub
+        # magit-find-file
+        # magit-gh-pulls
         expand-region
         shell-here
         dired-narrow

@@ -5,8 +5,8 @@ rec {
     inherit src;
 
     buildInputs = [
-      pkgs.latest.purescript
-      pkgs.latest.nodePackages.pulp
+      pkgs.purescript
+      pkgs.nodePackages.pulp
       pkgs.nodePackages.bower
       pkgs.git
       pkgs.nodejs
@@ -33,19 +33,19 @@ rec {
       ${pkgs.nodejs}/bin/node ${src}/index.js $@
     '';
 
-  # buildTypeScript = { name , src, main }: pkgs.stdenv.mkDerivation {
-  #   inherit name;
-  #   inherit src;
+  buildTypeScript = { name , src }: pkgs.stdenv.mkDerivation {
+    inherit name;
+    inherit src;
 
-  #   buildInputs = [
-  #     pkgs.latest.nodePackages.typescript
-  #   ];
+    buildInputs = [
+      pkgs.nodePackages.typescript
+    ];
 
-  #   buildCommand = ''
-  #     mkdir $out
-  #     tsc -p $src --outdir $out
-  #   '';
-  # };
+    buildCommand = ''
+      mkdir $out
+      tsc -p $src --outdir $out
+    '';
+  };
 
   writeTypeScript = name: { dependencies ? {}}: text:
     let
@@ -73,7 +73,7 @@ rec {
         cp ${pkgs.writeText "pa" (builtins.toJSON { inherit dependencies; }) } package.json
         cp ${indexTs} index.ts
         mkdir $out/dist
-        ${pkgs.latest.nodePackages.typescript}/bin/tsc -p $out --outdir $out/dist
+        ${pkgs.nodePackages.typescript}/bin/tsc -p $out --outdir $out/dist
         ls dist
       '';
     in
@@ -104,6 +104,6 @@ rec {
 
       cd $out/lib
 
-      ${pkgs.nodejs}/bin/npm install
+      ${pkgs.nodejs-10_x}/bin/npm install
     '';
 }

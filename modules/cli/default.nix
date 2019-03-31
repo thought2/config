@@ -25,7 +25,7 @@ in
     NIXOS_ROOT = "/etc/nixos";
   };
 
-  environment.etc."set-environment".source = config.system.build.setEnvironment;
+  # environment.etc."set-environment".source = config.system.build.setEnvironment;
 
   users.extraUsers.mbock = {
     initialPassword = "guest";

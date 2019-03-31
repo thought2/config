@@ -2,9 +2,9 @@
 {
   imports =
     [ ../machines/dell/configuration.nix
-      ../../modules/webserver.nix
-      ../../modules/laptop.nix
-      ../../../private-config/default.nix
+      # ../modules/webserver.nix
+      ../modules/laptop.nix
+      # ../../../private-config/default.nix
     ];
 
   networking.hostName = "laptop";
