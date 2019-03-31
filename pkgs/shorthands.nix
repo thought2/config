@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {}, config, ... }:
+{ pkgs ? import <nixpkgs> {}, config ? {}, ... }:
 
 with pkgs;
 with import ../util;
@@ -43,22 +43,15 @@ rec {
   #   ${pkgs.node2nixPkgs.elm-doc-preview}/bin/elm-doc-preview $@
   # '';
 
-  # chrome-set-search-engines =
-  #   let
-  #     executable = writeTypeScript "executable" {
-  #       dependencies = {
-  #         "@types/node" = "^11.11.0";
-  #         "@types/yargs" = "^12.0.9";
-  #         "yargs" = "^13.2.2";
-  #       };
-  #     }
-  #     (pkgs.lib.readFile ./shorthands/ts/src/chrome-set-search-engines.ts);
-  #   in
-  #     writeShellScriptBin "chrome-set-search-engines" ''
-  #       ${executable}/bin/executable \
-  #         --data-file ${./shorthands/search-engines.json} \
-  #         --sqliteCmd ${pkgs.sqlite}/bin/sqlite3
-  #     '';
+  chrome-set-search-engines =
+    let
+      pkg = (import ./shorthands/ts {}).package;
+      main = pkg + "/lib/node_modules/shorthands/dist/chrome-set-search-engines.js";
+    in
+    writeShellScriptBin "chrome-set-search-engines" ''
+      ${pkgs.nodejs}/bin/node \
+        ${main} --sqliteCmd ${pkgs.sqlite}/bin/sqlite3 $@
+      '';
 
   hotreload = writeShellScriptBin "hotreload" ''
     DIR=$1

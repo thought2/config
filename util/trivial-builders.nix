@@ -33,19 +33,19 @@ rec {
       ${pkgs.nodejs}/bin/node ${src}/index.js $@
     '';
 
-  # buildTypeScript = { name , src, main }: pkgs.stdenv.mkDerivation {
-  #   inherit name;
-  #   inherit src;
+  buildTypeScript = { name , src }: pkgs.stdenv.mkDerivation {
+    inherit name;
+    inherit src;
 
-  #   buildInputs = [
-  #     pkgs.nodePackages.typescript
-  #   ];
+    buildInputs = [
+      pkgs.nodePackages.typescript
+    ];
 
-  #   buildCommand = ''
-  #     mkdir $out
-  #     tsc -p $src --outdir $out
-  #   '';
-  # };
+    buildCommand = ''
+      mkdir $out
+      tsc -p $src --outdir $out
+    '';
+  };
 
   writeTypeScript = name: { dependencies ? {}}: text:
     let
@@ -104,6 +104,6 @@ rec {
 
       cd $out/lib
 
-      ${pkgs.latest.nodejs}/bin/npm install
+      ${pkgs.nodejs-10_x}/bin/npm install
     '';
 }
