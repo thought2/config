@@ -43,6 +43,7 @@ lib.flatten (builtins.attrValues {
   ];
 
   dev = [
+    stack2nix
     easy-purescript.purs
     dhall
     aws
