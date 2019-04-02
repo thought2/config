@@ -25,6 +25,10 @@ in
     NIXOS_ROOT = "/etc/nixos";
   };
 
+  environment.shellInit = ''
+    source ${./acd_func.sh}
+  '';
+
   # environment.etc."set-environment".source = config.system.build.setEnvironment;
 
   users.extraUsers.mbock = {
