@@ -1,3 +1,5 @@
 [
-    "node-gyp"
+    "node-pre-gyp",
+    "node-gyp",
+    "typescript"
 ]
