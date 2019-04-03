@@ -1689,3 +1689,45 @@ Version 2017-09-01"
 
 (progn
   (global-set-key (kbd "<M-tab>") 'helm-mini))
+
+(progn
+  (require 'dim)
+  (dim-minor-names
+   '((mmm-mode   nil)
+     (camelCase-mode nil)
+     (disable-mouse-global-mode nil)
+     (yas-minor-mode nil)
+     (whitespace-cleanup-mode nil)
+     (flyspell-mode nil)
+     (projectile-mode nil)
+     (my-keys-minor-mode nil)
+     (auto-complete-mode nil)
+     (eldoc-mode nil)
+     (paredit-mode nil)
+     )))
+
+(progn
+  (defun my-get-project-name ()
+    (when-let
+	((proj (my-get-project-dir))) ;; "/user/home/proj/"
+      (->> proj
+	   (directory-file-name) ;; "/user/home/proj"
+	   (file-name-nondirectory) ;; "proj"
+	   )))
+
+  (defun my-get-project-dir ()
+    (when-let
+	((proj (cdr-safe (project-current)))) ;; "~/proj/"
+      (expand-file-name proj) ;; "/user/home/proj/"
+      ))
+
+  (with-eval-after-load 'subr-x
+    (setq-default mode-line-buffer-identification
+		  '(:eval (format-mode-line
+			   (propertized-buffer-identification
+			    (or (concat (my-get-project-name)
+					" "
+					(file-relative-name
+					 (buffer-file-name)
+					 (my-get-project-dir)))
+				"%b")))))))
