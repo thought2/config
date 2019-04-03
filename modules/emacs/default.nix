@@ -15,6 +15,7 @@ let
     [
       init
     ] ++ lib.flatten [
+        dim
         fill-column-indicator
         yaml-mode
         hydra
