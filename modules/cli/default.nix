@@ -25,7 +25,11 @@ in
     NIXOS_ROOT = "/etc/nixos";
   };
 
-  environment.shellInit = ''
+  environment.interactiveShellInit = ''
+    cdl() {
+      cd $1; ls;
+    }
+
     source ${./acd_func.sh}
   '';
 
