@@ -1,1 +1,3 @@
 C-x C-i indent-rigidly
+
+nix-env -qaPA 'nixos.nodePackages'

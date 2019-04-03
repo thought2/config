@@ -59,7 +59,7 @@ rec {
 
     buildCommand = ''
       mkdir $out
-      tsc -p $src --outdir $out
+      ${pkgs.nodePackages.typescript}/bin/tsc -p $src --outdir $out
     '';
   };
 

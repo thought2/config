@@ -7,10 +7,14 @@ with pkgs;
 
   environment.systemPackages = [
     (writeShellScriptBin "dpi-high" ''
+      ${pkgs.psmisc}/bin/killall chromium
       ${pkgs.xorg.xrandr}/bin/xrandr --dpi 150
+      ${pkgs.chromium}/bin/chromium
     '')
     (writeShellScriptBin "dpi-low" ''
+      ${pkgs.psmisc}/bin/killall chromium
       ${pkgs.xorg.xrandr}/bin/xrandr --dpi 90
+      ${pkgs.chromium}/bin/chromium
     '')
   ];
 
