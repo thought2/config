@@ -1,5 +1,21 @@
 { pkgs ? import <nixpkgs> {}, ... }:
+with pkgs;
 rec {
+  writeStackScriptBin =
+    name: text:
+      writeTextFile
+        { inherit name;
+          executable = true;
+          destination = "/bin/${name}";
+          text = ''
+            #!${pkgs.stack}/bin/stack
+            ${text}
+          '';
+          checkPhase = ''
+            # @TODO: add check
+          '';
+        };
+
   buildPureScript = { name , src, main }: pkgs.stdenv.mkDerivation {
     inherit name;
     inherit src;
