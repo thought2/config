@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 {
   imports =
-    [ ../machines/reteq/configuration.nix
-      ../../modules/webserver.nix
-      ../../modules/work-station.nix
+    [ ../machines/reteq.nix
+      ../modules/webserver.nix
+      ../modules/work-station.nix
     # ../../../private-config/default.nix
     ];
 
