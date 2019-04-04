@@ -12,7 +12,7 @@ rec {
             ${text}
           '';
           checkPhase = ''
-            # @TODO: add check
+
           '';
         };
 
