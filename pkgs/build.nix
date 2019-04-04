@@ -37,7 +37,7 @@ let
       name = "desktop";
       repos = [
         {
-          url = repoUrl;
+          url = "http://github.com/thought2";
           name = "nix-config";
           branch = "develop";
         }
