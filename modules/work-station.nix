@@ -17,7 +17,7 @@ with lib;
 
   networking.networkmanager.enable = true;
 
-  virtualisation.virtualbox.guest.enable = true;
+  # virtualisation.virtualbox.guest.enable = true;
 
   virtualisation.virtualbox.host.enable = true;
 
