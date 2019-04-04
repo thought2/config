@@ -2,7 +2,7 @@
 {
   imports =
     [ ../machines/reteq.nix
-      ../modules/webserver.nix
+    # ../modules/webserver.nix
       ../modules/work-station.nix
     # ../../../private-config/default.nix
     ];
