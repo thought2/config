@@ -245,7 +245,7 @@ rec {
         };
     in
       writeShellScriptBin "notify-play" ''
-        ${pkgs.sox}/bin/play -t mp3 ${soundFile}
+        ${pkgs.sox}/bin/play -t mp3 ${soundFile} &> /dev/null
       '';
 
   # patch-elm-binaries = with pkgs.elmPackages; writeShellScriptBin "patch-elm-binaries" ''
