@@ -13,6 +13,7 @@ with lib;
     ./git.nix
     ./emacs
     ./extra-pkgs.nix
+    ./dunst
   ];
 
   networking.networkmanager.enable = true;
@@ -118,13 +119,4 @@ with lib;
       # i3lock: Could not connect to X11, maybe you need to set DISPLAY?
       # ${pkgs.i3lock}/bin/i3lock
     '';
-
-  systemd.user.services."dunst" = {
-    enable = true;
-    description = "";
-    wantedBy = [ "default.target" ];
-    serviceConfig.Restart = "always";
-    serviceConfig.RestartSec = 2;
-    serviceConfig.ExecStart = "${pkgs.dunst}/bin/dunst";
-  };
 }
