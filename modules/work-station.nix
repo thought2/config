@@ -24,6 +24,8 @@ with lib;
 
   users.users.root.extraGroups = [ "audio" ];
 
+  hardware.pulseaudio.enable = true;
+
   services.xserver = {
     layout = "us";
     enable              = true;

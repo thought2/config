@@ -23,7 +23,11 @@ with pkgs;
 
   sound.mediaKeys.enable = true;
 
-  hardware.pulseaudio.enable = true;
+  boot.kernelParams = [ "intel_pstate=no_hwp" ];
+
+  networking.networkmanager.enable = true;
+
+  fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
