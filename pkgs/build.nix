@@ -173,7 +173,6 @@ rec {
           (mapIndent
              (repo: ''
                ${clone-and-checkout}/bin/clone-and-checkout ${repo.url} ${repo.name} ${repo.branch}
-  #              echo
              ''
              )
              host.repos)
