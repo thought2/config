@@ -35,21 +35,6 @@ in
 
   # environment.etc."set-environment".source = config.system.build.setEnvironment;
 
-  users.extraUsers.mbock = {
-    initialPassword = "guest";
-    isNormalUser = true;
-    uid = 1001;
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-      "scanner"
-      "audio"
-      "vboxusers"
-    ];
-    openssh.authorizedKeys.keys = with import ../keys.nix; [ one ];
-    home = "/home/mbock";
-  };
-
   environment.systemPackages = with pkgs;
     [ 
       # (emacs.override {  withX = false; withGTK3 = false; })
@@ -65,3 +50,36 @@ in
   #system.autoUpgrade.channel = https://nixos.org/channels/nixos-17.09;
   #system.autoUpgrade.enable = true;
 }
+//
+(let
+  extraGroups = [
+    "wheel"
+    "networkmanager"
+    "scanner"
+    "audio"
+    "vboxusers"
+  ];
+in
+{
+  users.extraUsers.mbock = {
+    initialPassword = "guest";
+    isNormalUser = true;
+    uid = 1001;
+    openssh.authorizedKeys.keys = with import ../keys.nix; [ one ];
+    inherit extraGroups;
+  };
+
+  users.extraUsers.tmp = {
+    initialPassword = "guest";
+    isNormalUser = true;
+    inherit extraGroups;
+  };
+
+  environment.loginShellInit = ''
+    if [ "$USER" = "tmp" ]
+    then
+      rm -rf ~/*
+      rm -rf ~/.*
+    fi
+  '';
+})
