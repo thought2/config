@@ -22,6 +22,13 @@ in
 
   pythonExt = self.python3Packages.python.withPackages (p: [ p.notebook p.grip p.virtualenvwrapper ]);
 
+  chromium = super.writeShellScriptBin "chromium" ''
+    ${super.chromium}/bin/chromium \
+      --no-first-run \
+      --no-default-browser-check \
+      $@
+  '';
+
   inherit shorthands;
   inherit node2nixPkgs;
 }

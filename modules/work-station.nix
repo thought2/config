@@ -14,6 +14,7 @@ with lib;
     ./emacs
     ./extra-pkgs.nix
     ./dunst
+    ./chromium
   ];
 
   networking.networkmanager.enable = true;
@@ -62,45 +63,6 @@ with lib;
   sound.mediaKeys.enable = true;
 
   environment.systemPackages = systemPkgs ++ builtins.attrValues(shorthands);
-
-  programs.chromium = {
-    enable = true;
-    defaultSearchProviderSearchURL = "https://duckduckgo.com/?q={searchTerms}";
-
-    extensions = [
-      "fmkadmapgofadopljbjfkapdkoienihi" # React Developer Tools
-      "lmhkpmbekcpmknklioeibfkpmmfibljd" # Redux DevTools
-      "bfbameneiokkgbdmiekhjnmfkcnldhhm" # Web Developer
-      "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
-      "dmghijelimhndkbmpgbldicpogfkceaj" # Dark Mode
-      "chklaanhfefbnpoihckbnefhakgolnmc" # JSONView
-      "ckkdlimhmcjmikdlpkmbgfkaikojcbjk" # Markdown Viewer
-      "gjadajkmpgdblfochjcfpkhnnkicfapl" # Just Read
-      "kdejdkdjdoabfihpcjmgjebcpfbhepmh" # Copy Link Address
-      "ljobjlafonikaiipfkggjbhkghgicgoh" # Edit with Emacs
-      "fjnbnpbmkenffdnngjfgmeleoegfcffe" # Stylish
-      "opphlpkpklmjbglpifmecilchaknobgn" # Tab Keeper
-      "kniehgiejgnnpgojkdhhjbgbllnfkfdk" # SimpleExtManager
-      "cmkdbmfndkfgebldhnkbfhlneefdaaip" # WhatRuns
-      "epejoicbhllgiimigokgjdoijnpaphdp" # Emmet Re:view
-      "ohcpnigalekghcmgcdcenkpelffpdolg" # ColorPick Eyedropper
-      "emliamioobfffbgcfdchabfibonehkme" # Page Ruler
-      "ggfgijbpiheegefliciemofobhmofgce" # CSSViewer
-      "ihaobgceoogckalioenpheioedgjaahk" # Fullscreenrrr
-      "jlkgkebpphmaiemciejnmgccejccnpha" # simple-debug.css
-      "epodomlablfiehjgajhlhbdhidlkokaj" # Outliner CSS
-      "kokeihndgocdlgibnibeabeljjgehadj" # CSS debug alignment
-      "hdokiejnpimakedhajhdlcegeplioahd" # LastPass
-      "cfhdojbkjhnklbpkdaibdccddilifddb" # Adblock Plus
-    ];
-    homepageLocation = "https://duckduckgo.com";
-    extraOpts = {
-      TranslateEnabled = false;
-      restoreOnStartup = 4;
-      NewTabPageLocation = "about:blank";
-      BookmarkBarEnabled = false;
-    };
-  };
 
   environment.etc.Xmodmap.text = ''
     keysym a = a A a A adiaeresis Adiaeresis
