@@ -45,6 +45,7 @@ lib.flatten (builtins.attrValues {
   ];
 
   dev = [
+    chamber
     stack2nix
     easy-purescript.purs
     dhall
