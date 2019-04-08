@@ -43,13 +43,14 @@ lib.flatten (builtins.attrValues {
   ];
 
   dev = [
+    nailgun
+    gitAndTools.pre-commit
     stack2nix
     easy-purescript.purs
     dhall
-    aws
     awscli
     aws-vault
-    docker
+    docker_compose
     cloc
     travis
     emacs
@@ -79,7 +80,7 @@ lib.flatten (builtins.attrValues {
     # node2nixPkgs.ts-node
     # node2nixPkgs.elm-test
     nodePackages.prettier
-    node2nixPkgs.pre-commit
+    # node2nixPkgs.pre-commit
     node2nixPkgs.http-server
     nodePackages.bower
     nodePackages.pulp
