@@ -21,4 +21,6 @@
   boot.kernelParams = [ "intel_pstate=no_hwp" ];
 
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
+
+  virtualisation.docker.enable = true;
 }

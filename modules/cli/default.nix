@@ -6,6 +6,7 @@ in
   imports = [
     ./prompt-init.nix
     ../tmp-files.nix
+    ./users.nix
   ];
 
   services.tmp-files.enable = true;
@@ -50,36 +51,3 @@ in
   #system.autoUpgrade.channel = https://nixos.org/channels/nixos-17.09;
   #system.autoUpgrade.enable = true;
 }
-//
-(let
-  extraGroups = [
-    "wheel"
-    "networkmanager"
-    "scanner"
-    "audio"
-    "vboxusers"
-  ];
-in
-{
-  users.extraUsers.mbock = {
-    initialPassword = "guest";
-    isNormalUser = true;
-    uid = 1001;
-    openssh.authorizedKeys.keys = with import ../keys.nix; [ one ];
-    inherit extraGroups;
-  };
-
-  users.extraUsers.tmp = {
-    initialPassword = "guest";
-    isNormalUser = true;
-    inherit extraGroups;
-  };
-
-  environment.loginShellInit = ''
-    if [ "$USER" = "tmp" ]
-    then
-      rm -rf ~/*
-      rm -rf ~/.*
-    fi
-  '';
-})
