@@ -1,15 +1,11 @@
 { config, pkgs, ... }:
 
 let
-  latest =
-    fetchTarball
-#      https://github.com/NixOS/nixpkgs-channels/archive/0396345b79436f54920f7eb651ab42acf2eb7973.tar.gz;
-      https://github.com/NixOS/nixpkgs-channels/archive/ccd53a9cb1ca4c1a2c98765010affd20ef631b86.tar.gz;
+  latestMasterRef = "b09c98b4aa2724c0f9a6ef18d5757c999918f387";
 
-
-  unstableTarball =
+  latestMaster =
     fetchTarball
-      https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+      "https://github.com/NixOS/nixpkgs-channels/archive/${latestMasterRef}.tar.gz";
 
 in
 with pkgs;
@@ -17,10 +13,7 @@ with pkgs;
   nixpkgs.config = {
 
     packageOverrides = pkgs: {
-      latest = import latest {
-        config = config.nixpkgs.config;
-      };
-      unstable = import unstableTarball {
+      latestMaster = import latestMaster {
         config = config.nixpkgs.config;
       };
       node2nixPkgs = import ../pkgs/node2nix {};
