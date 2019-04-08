@@ -45,6 +45,7 @@ in
       "scanner"
       "audio"
       "vboxusers"
+      "docker"
     ];
     openssh.authorizedKeys.keys = with import ../keys.nix; [ one ];
     home = "/home/mbock";
