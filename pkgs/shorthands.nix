@@ -43,16 +43,6 @@ rec {
   #   ${pkgs.node2nixPkgs.elm-doc-preview}/bin/elm-doc-preview $@
   # '';
 
-  chrome-set-search-engines =
-    let
-      pkg = (import ./shorthands/ts {}).package;
-      main = pkg + "/lib/node_modules/shorthands/dist/chrome-set-search-engines.js";
-    in
-    writeShellScriptBin "chrome-set-search-engines" ''
-      ${pkgs.nodejs}/bin/node \
-        ${main} --sqliteCmd ${pkgs.sqlite}/bin/sqlite3 $@
-      '';
-
   hotreload = writeShellScriptBin "hotreload" ''
     DIR=$1
     CMD=$2
@@ -245,7 +235,7 @@ rec {
         };
     in
       writeShellScriptBin "notify-play" ''
-        ${pkgs.sox}/bin/play -t mp3 ${soundFile}
+        ${pkgs.sox}/bin/play -t mp3 ${soundFile} &> /dev/null
       '';
 
   # patch-elm-binaries = with pkgs.elmPackages; writeShellScriptBin "patch-elm-binaries" ''

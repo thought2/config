@@ -37,7 +37,7 @@ let
       name = "desktop";
       repos = [
         {
-          url = repoUrl;
+          url = "http://github.com/thought2";
           name = "nix-config";
           branch = "develop";
         }
@@ -173,7 +173,6 @@ rec {
           (mapIndent
              (repo: ''
                ${clone-and-checkout}/bin/clone-and-checkout ${repo.url} ${repo.name} ${repo.branch}
-  #              echo
              ''
              )
              host.repos)
