@@ -3,7 +3,8 @@
   imports =
     [ 
       ../../hardware-configuration.nix
-      ../../extra.nix
+      # @TODO make optional
+      # ../../extra.nix
     ];
 
   networking.hostName = "minimal-uefi";

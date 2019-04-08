@@ -13,15 +13,19 @@ with lib;
     ./git.nix
     ./emacs
     ./extra-pkgs.nix
+    ./dunst
+    ./chromium
   ];
 
   networking.networkmanager.enable = true;
 
-  virtualisation.virtualbox.guest.enable = true;
+  # virtualisation.virtualbox.guest.enable = true;
 
   virtualisation.virtualbox.host.enable = true;
 
   users.users.root.extraGroups = [ "audio" ];
+
+  hardware.pulseaudio.enable = true;
 
   services.xserver = {
     layout = "us";
@@ -60,45 +64,6 @@ with lib;
 
   environment.systemPackages = systemPkgs ++ builtins.attrValues(shorthands);
 
-  programs.chromium = {
-    enable = true;
-    defaultSearchProviderSearchURL = "https://duckduckgo.com/?q={searchTerms}";
-
-    extensions = [
-      "fmkadmapgofadopljbjfkapdkoienihi" # React Developer Tools
-      "lmhkpmbekcpmknklioeibfkpmmfibljd" # Redux DevTools
-      "bfbameneiokkgbdmiekhjnmfkcnldhhm" # Web Developer
-      "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
-      "dmghijelimhndkbmpgbldicpogfkceaj" # Dark Mode
-      "chklaanhfefbnpoihckbnefhakgolnmc" # JSONView
-      "ckkdlimhmcjmikdlpkmbgfkaikojcbjk" # Markdown Viewer
-      "gjadajkmpgdblfochjcfpkhnnkicfapl" # Just Read
-      "kdejdkdjdoabfihpcjmgjebcpfbhepmh" # Copy Link Address
-      "ljobjlafonikaiipfkggjbhkghgicgoh" # Edit with Emacs
-      "fjnbnpbmkenffdnngjfgmeleoegfcffe" # Stylish
-      "opphlpkpklmjbglpifmecilchaknobgn" # Tab Keeper
-      "kniehgiejgnnpgojkdhhjbgbllnfkfdk" # SimpleExtManager
-      "cmkdbmfndkfgebldhnkbfhlneefdaaip" # WhatRuns
-      "epejoicbhllgiimigokgjdoijnpaphdp" # Emmet Re:view
-      "ohcpnigalekghcmgcdcenkpelffpdolg" # ColorPick Eyedropper
-      "emliamioobfffbgcfdchabfibonehkme" # Page Ruler
-      "ggfgijbpiheegefliciemofobhmofgce" # CSSViewer
-      "ihaobgceoogckalioenpheioedgjaahk" # Fullscreenrrr
-      "jlkgkebpphmaiemciejnmgccejccnpha" # simple-debug.css
-      "epodomlablfiehjgajhlhbdhidlkokaj" # Outliner CSS
-      "kokeihndgocdlgibnibeabeljjgehadj" # CSS debug alignment
-      "hdokiejnpimakedhajhdlcegeplioahd" # LastPass
-      "cfhdojbkjhnklbpkdaibdccddilifddb" # Adblock Plus
-    ];
-    homepageLocation = "https://duckduckgo.com";
-    extraOpts = {
-      TranslateEnabled = false;
-      restoreOnStartup = 4;
-      NewTabPageLocation = "about:blank";
-      BookmarkBarEnabled = false;
-    };
-  };
-
   environment.etc.Xmodmap.text = ''
     keysym a = a A a A adiaeresis Adiaeresis
     keysym o = o O o O odiaeresis Odiaeresis
@@ -118,13 +83,4 @@ with lib;
       # i3lock: Could not connect to X11, maybe you need to set DISPLAY?
       # ${pkgs.i3lock}/bin/i3lock
     '';
-
-  systemd.user.services."dunst" = {
-    enable = true;
-    description = "";
-    wantedBy = [ "default.target" ];
-    serviceConfig.Restart = "always";
-    serviceConfig.RestartSec = 2;
-    serviceConfig.ExecStart = "${pkgs.dunst}/bin/dunst";
-  };
 }

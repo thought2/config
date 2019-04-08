@@ -24,11 +24,13 @@ lib.flatten (builtins.attrValues {
   ];
 
   desktop = [
+    xorg.xinit
     xmonad
     xzoom
     rofi
     zathura
     # playonlinux
+    xfce4-13.thunar
   ];
 
   web = [
