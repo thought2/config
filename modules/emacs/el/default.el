@@ -1731,3 +1731,11 @@ Version 2017-09-01"
 					 (buffer-file-name)
 					 (my-get-project-dir)))
 				"%b")))))))
+
+(progn
+  (require 'projectile-speedbar)
+  (custom-set-variables
+   '(speedbar-show-unknown-files t)
+   )
+  (setq speedbar-use-images nil)
+  (setq sr-speedbar-max-width 30))
