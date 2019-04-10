@@ -100,6 +100,7 @@ let
         dash
         shell-switcher
         helm-ag
+        projectile-speedbar
       ]
   );
 
