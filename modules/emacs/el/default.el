@@ -1733,9 +1733,10 @@ Version 2017-09-01"
 				"%b")))))))
 
 (progn
-  (require 'projectile-speedbar)
-  (custom-set-variables
-   '(speedbar-show-unknown-files t)
-   )
-  (setq speedbar-use-images nil)
-  (setq sr-speedbar-max-width 30))
+  (require 'neotree)
+  (global-set-key [f8] 'neotree-toggle)
+
+  (setq neo-smart-open t)
+  (setq projectile-switch-project-action 'neotree-projectile-action)
+  (setq neo-window-position 'right)
+  (setq neo-theme 'arrow))
