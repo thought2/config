@@ -38,6 +38,9 @@ let
 
     import XMonad.Actions.FloatKeys
 
+    import XMonad.Hooks.SetWMName
+
+
     modm = mod4Mask
 
     main = do
@@ -47,6 +50,7 @@ let
         , modMask            = modm
         , layoutHook         = layout
         , manageHook         = myManageHook
+        , startupHook = setWMName "LG3D"
         } `additionalKeysP` shortcuts
 
     shortcuts =
