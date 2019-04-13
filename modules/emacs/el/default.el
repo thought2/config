@@ -1740,3 +1740,9 @@ Version 2017-09-01"
   (setq projectile-switch-project-action 'neotree-projectile-action)
   (setq neo-window-position 'right)
   (setq neo-theme 'arrow))
+
+(progn
+  (add-to-list
+   'comint-preoutput-filter-functions
+   (lambda (output)
+     (replace-regexp-in-string "\033\[[0-9]+[GKJ]" "" output))))
