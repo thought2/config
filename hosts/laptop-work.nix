@@ -3,6 +3,7 @@
   imports =
     [ ../machines/dell/configuration.nix
       ../modules/laptop.nix
+      ../modules/work.nix
       ../../coya-config/default.nix
     ];
 
