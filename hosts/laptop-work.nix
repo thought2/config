@@ -22,5 +22,5 @@
 
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
 }
