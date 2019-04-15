@@ -8,6 +8,13 @@ import ./screens.nix {inherit pkgs;} //
 import ./build.nix {inherit pkgs config; }  //
 # import ./shorthands/elm-doc { inherit pkgs; } //
 rec {
+  namey = writeShellScriptBin "namey" ''
+    URL='https://namey.muffinlabs.com/name.json?count=5&with_surname=false&frequency=all'
+    NAME=`${curl}/bin/curl --silent --show-error $URL \
+      | ${jq}/bin/jq --raw-output '.[0]'`
+    echo "${shellExpand "NAME,,"}"
+  '';
+
   # elm-find-doc-modules = buildPureScriptBin {
   #     name = "elm-find-doc-modules";
   #     src = ./shorthands/ps;
