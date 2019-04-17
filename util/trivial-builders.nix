@@ -1,20 +1,21 @@
 { pkgs ? import <nixpkgs> {}, ... }:
 with pkgs;
 rec {
-  writeStackScriptBin =
-    name: text:
-      writeTextFile
-        { inherit name;
-          executable = true;
-          destination = "/bin/${name}";
-          text = ''
-            #!${pkgs.stack}/bin/stack
-            ${text}
-          '';
-          checkPhase = ''
-
-          '';
-        };
+  writeHaskellBin =
+    name: getPkgs: text:
+      let
+        ghc = haskellPackages.ghcWithPackages getPkgs;
+        srcFile = writeText "${name}.hs" text;
+        result = runCommand "build-hs-script" {} ''
+          mkdir -p $out
+          cd $out
+          cp ${srcFile} ${name}.hs
+          ${ghc}/bin/ghc ${name}.hs
+        '';
+      in
+      writeShellScriptBin name ''
+        ${result}/${name} $@
+      '';
 
   buildPureScript = { name , src, main }: pkgs.stdenv.mkDerivation {
     inherit name;
