@@ -1,19 +1,12 @@
 { pkgs, config, ... }:
 let
-  extraGroups = [
-    "wheel"
-    "networkmanager"
-    "scanner"
-    "audio"
-    "vboxusers"
-    "docker"
-  ];
+  common = import ../../common.nix;
+  extraGroups = common.extraGroups;
 in
 {
   users.extraUsers.mbock = {
     initialPassword = "guest";
     isNormalUser = true;
-    uid = 1001;
     openssh.authorizedKeys.keys = with import ../keys.nix; [ one ];
     inherit extraGroups;
   };

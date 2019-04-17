@@ -29,9 +29,11 @@ with lib;
 
   services.xserver = {
     layout = "us";
-    enable              = true;
+    enable = true;
     exportConfiguration = true;
-    xkbOptions          = "eurosign:e,caps:none, keypad:pointerkeys";
+    xkbVariant = "altgr-intl";
+    xkbOptions = "ctrl:nocaps, eurosign:e, compose:ralt";
+#    xkbOptions = "eurosign:e,caps:none, keypad:pointerkeys";
 
     displayManager = {
       sessionCommands = ''
@@ -52,6 +54,15 @@ with lib;
       }];
   };
 
+  services.xserver.desktopManager.gnome3.enable = true;
+
+  # services.xserver.displayManager.lightdm = {
+  #   enable = true;
+  #   extraConfig = ''
+  #     seats=Seat:0, Seat:1
+  #   '';
+  # };
+
   services.illum.enable = true;
 
   services.emacs.enable = true;
@@ -65,17 +76,13 @@ with lib;
   environment.systemPackages = systemPkgs ++ builtins.attrValues(shorthands);
 
   environment.etc.Xmodmap.text = ''
-    keysym a = a A a A adiaeresis Adiaeresis
-    keysym o = o O o O odiaeresis Odiaeresis
-    keysym u = u U u U udiaeresis Udiaeresis
-    keysym s = s S s S ssharp ssharp
+    ! a key
+    keycode  38 = a A a A adiaeresis Adiaeresis adiaeresis
+    ! o key
+    keycode  32 = o O o O odiaeresis Odiaeresis odiaeresis
+    ! u key
+    keycode  30 = u U u U udiaeresis Udiaeresis udiaeresis
 
-    clear lock
-    ! Caps Lock -> Nabla
-    keycode 66 = nabla
-
-    ! only for german layout
-    ! keycode 49 = asciicircum
   '';
 
   powerManagement.resumeCommands =

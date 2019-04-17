@@ -45,6 +45,7 @@ lib.flatten (builtins.attrValues {
   ];
 
   dev = [
+    terraform
     chamber
     nailgun
     gitAndTools.pre-commit

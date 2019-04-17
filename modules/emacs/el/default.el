@@ -1725,12 +1725,13 @@ Version 2017-09-01"
     (setq-default mode-line-buffer-identification
 		  '(:eval (format-mode-line
 			   (propertized-buffer-identification
-			    (or (concat (my-get-project-name)
+			    (if-let ((file-name (buffer-file-name)))
+				(concat (my-get-project-name)
 					" "
 					(file-relative-name
-					 (buffer-file-name)
+					 file-name
 					 (my-get-project-dir)))
-				"%b")))))))
+			      "%b")))))))
 
 (progn
   (require 'neotree)
