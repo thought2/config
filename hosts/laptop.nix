@@ -4,6 +4,7 @@
     [ ../machines/dell/configuration.nix
       # ../modules/webserver.nix
       ../modules/laptop.nix
+      ../modules/ssh.nix
       # ../../../private-config/default.nix
     ];
 
