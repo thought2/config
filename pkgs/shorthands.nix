@@ -1,6 +1,7 @@
 { pkgs ? import <nixpkgs> {}, config ? {}, ... }:
 
 with pkgs;
+with builtins;
 with import ../util;
 with import ../util/trivial-builders.nix { inherit pkgs; };
 
@@ -8,6 +9,11 @@ import ./screens.nix {inherit pkgs;} //
 import ./build.nix {inherit pkgs config; }  //
 # import ./shorthands/elm-doc { inherit pkgs; } //
 rec {
+  system-info = writeHaskellBin
+    "system-info"
+    (hpkgs: with hpkgs; [turtle aeson])
+    (readFile ./system-info.hs);
+
   # elm-find-doc-modules = buildPureScriptBin {
   #     name = "elm-find-doc-modules";
   #     src = ./shorthands/ps;
