@@ -14,7 +14,7 @@ in
     initialPassword = "guest";
     isNormalUser = true;
     uid = 1001;
-    openssh.authorizedKeys.keys = with import ../keys.nix; [ one ];
+    openssh.authorizedKeys.keys = with import ../../keys.nix; [ one ];
     inherit extraGroups;
   };
 
