@@ -35,6 +35,9 @@ let
     };
     desktop = {
       name = "desktop";
+      ip = {
+        local = "192.168.178.28";
+      };
       repos = [
         {
           url = "http://github.com/thought2";
@@ -50,6 +53,9 @@ let
     };
     laptop = {
       name = "laptop";
+      ip = {
+        local = "192.168.178.33";
+      };
       repos = [
         {
           url = repoUrl;
