@@ -139,7 +139,8 @@
 
 (progn
   ;; Startup
-  (shell))
+  ;;(shell)
+  )
 
 
 (progn
@@ -1750,3 +1751,20 @@ Version 2017-09-01"
 
 (progn
   (advice-add 'ediff-window-display-p :override #'ignore))
+
+(progn
+  (require 'dashboard)
+  (dashboard-setup-startup-hook)
+  (setq dashboard-items '((recents  . 5)
+			  (bookmarks . 5)
+			  (projects . 5)
+			  (agenda . 5)
+			  (registers . 5)))
+  (setq dashboard-startup-banner nil)
+  (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
+  (dashboard-insert-startupify-lists))
+
+(progn
+  (require 'paren)
+  (setq show-paren-style 'parenthesis)
+  (show-paren-mode +1))

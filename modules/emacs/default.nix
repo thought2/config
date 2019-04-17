@@ -101,6 +101,7 @@ let
         shell-switcher
         helm-ag
         neotree
+        dashboard
       ]
   );
 
