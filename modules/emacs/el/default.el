@@ -1747,3 +1747,6 @@ Version 2017-09-01"
    'comint-preoutput-filter-functions
    (lambda (output)
      (replace-regexp-in-string "\033\[[0-9]+[GKJ]" "" output))))
+
+(progn
+  (advice-add 'ediff-window-display-p :override #'ignore))
