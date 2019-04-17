@@ -124,10 +124,14 @@ runIoErr x = do
       pure ok
 
 cmdCreateLinks :: (Env, Config) -> IO ()
-cmdCreateLinks (env, cfg) =
-  traverse_
-    (mkLink dir)
-    (cfgBookmarks cfg)
+cmdCreateLinks (env, cfg) = do
+  isExists <-
+    fmap isDirectory (lstat dir)
+  if isExists
+    then rmtree dir
+    else pure ()
+  mkdir dir
+  traverse_ (mkLink dir) (cfgBookmarks cfg)
   where
      dir =
        fromText (envHome env) </> fromText (cfgLnDir cfg)
