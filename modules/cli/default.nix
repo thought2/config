@@ -6,6 +6,7 @@ in
   imports = [
     ./prompt-init.nix
     ../tmp-files.nix
+    ../repos.nix
     ./users.nix
   ];
 
