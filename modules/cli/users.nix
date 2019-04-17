@@ -7,7 +7,7 @@ in
   users.extraUsers.mbock = {
     initialPassword = "guest";
     isNormalUser = true;
-    openssh.authorizedKeys.keys = with import ../keys.nix; [ one ];
+    openssh.authorizedKeys.keys = with import ../../keys.nix; [ one ];
     inherit extraGroups;
   };
 
