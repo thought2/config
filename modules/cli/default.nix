@@ -48,6 +48,8 @@ in
 
   nixpkgs.overlays = [ overlay ];
 
+  nixpkgs.config.allowUnfree = true;
+
   #system.autoUpgrade.channel = https://nixos.org/channels/nixos-17.09;
   #system.autoUpgrade.enable = true;
 }

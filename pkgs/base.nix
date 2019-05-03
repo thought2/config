@@ -31,6 +31,7 @@ lib.flatten (builtins.attrValues {
     zathura
     # playonlinux
     xfce4-13.thunar
+    libreoffice
   ];
 
   web = [
@@ -45,6 +46,10 @@ lib.flatten (builtins.attrValues {
   ];
 
   dev = [
+    vscode
+    atom
+    franz
+    jetbrains.idea-community
     terraform
     chamber
     nailgun
