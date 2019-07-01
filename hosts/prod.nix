@@ -1,10 +1,13 @@
 { config, pkgs, ... }:
 {
   imports =
-    [
+    [ ../machines/netcup/configuration.nix
+      ../modules/ssh.nix
     ];
 
-  networking.hostname = "prod";
+  networking.hostName = "prod";
 
-  system.stateVersion = "18.03";
+  system.stateVersion = "18.09";
+
+  hardware.cpu.intel.updateMicrocode = true;
 }

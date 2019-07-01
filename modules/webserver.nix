@@ -97,8 +97,8 @@ let
 
   landing-purs = import (fetchgit {
     url = "https://github.com/thought2/landing-purs.git";
-    rev =  "c2c3530bc2a156d63c72e1e679c7ef0083d3a3cd";
-    sha256 = "0cjz719swb6jl50vvdv19f0k6w6xwc66al3apyhiqfxwyzn3xfi3";
+    rev =  "5e9947ca121c571c11d87dc085177650abb89265";
+    sha256 = "1crsk540yv9qap17n95zfbl0b1i2gl9g2lk3bgpcjvpcq38mmr7i";
   }) { inherit pkgs; };
 
 
@@ -120,12 +120,12 @@ let
     #   dir = slotMachine;
     # }
     {
-      urlPath = "/";
-      dir = landing-purs;
-    }
-    {
       urlPath = "/lorem-picsum/";
       dir = loremPicsum;
+    }
+    {
+      urlPath = "/";
+      dir = landing-purs;
     }
     {
       urlPath = "/data";
