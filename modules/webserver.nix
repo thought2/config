@@ -40,6 +40,25 @@ let
     sha256 = "1899bsg3n2c1y32gp8g2s34jankjjy1fw2hqx3zqrbdapqah4nsd";
   }) { inherit pkgs; };
 
+  tuesday-coding = fetchgit {
+    url = "https://github.com/thought2/tuesday-coding";
+    rev = "af124df1313119cad827cf2c1ddcb5f5357138a1";
+    sha256 = "0jcc6ycphfk5x7lbznala768g8mppw3rhcyr7rry7l42gmy9gxp7";
+  };
+
+  loremPicsum = stdenv.mkDerivation {
+    name = "lorem-picsum";
+    buildCommand = ''
+      mkdir $out
+      ls ${tuesday-coding}/2019-04-29/lorem-picsum/
+      cp -r ${tuesday-coding}/2019-04-29/lorem-picsum/* -t $out
+    '';
+  };
+
+
+  elm18 = (import (fetchTarball "https://github.com/NixOS/nixpkgs-channels/archive/94b7925b30e4b3162401791e2118dd8e45821fb4.tar.gz")
+     {}).elmPackages.elm;
+
   dust = stdenv.mkDerivation {
     name = "dust";
     src = fetchgit {
@@ -58,8 +77,8 @@ let
 
       export HOME=$(mktemp -d);
 
-      ${elmPackages.elm}/bin/elm-package install --yes
-      ${elmPackages.elm}/bin/elm-make Main.elm --yes --output main.js
+      ${elm18}/bin/elm-package install --yes
+      ${elm18}/bin/elm-make Main.elm --yes --output main.js
 
       mkdir -p $out;
 
@@ -75,22 +94,38 @@ let
   #   sha256 = "0bdvpbn898dk05k966njs1zgkd7zp1pgh02fcvxjmcc26vq5jvi7";
   # }) { inherit pkgs; };
 
+
+  landing-purs = import (fetchgit {
+    url = "https://github.com/thought2/landing-purs.git";
+    rev =  "c2c3530bc2a156d63c72e1e679c7ef0083d3a3cd";
+    sha256 = "0cjz719swb6jl50vvdv19f0k6w6xwc66al3apyhiqfxwyzn3xfi3";
+  }) { inherit pkgs; };
+
+
   servedDirs = [
-    {
-      urlPath = "/dust";
-      dir = dust;
-    }
+    # {
+    #  urlPath = "/dust";
+    #  dir = dust;
+    # }
     # {
     #   urlPath = "/landing";
     #   dir = landing;
     # }
+    # {
+    #   urlPath = "/sceneries";
+    #   dir = sceneries;
+    # }
+    # {
+    #   urlPath = "/slot-machine";
+    #   dir = slotMachine;
+    # }
     {
-      urlPath = "/sceneries";
-      dir = sceneries;
+      urlPath = "/";
+      dir = landing-purs;
     }
     {
-      urlPath = "/slot-machine";
-      dir = slotMachine;
+      urlPath = "/lorem-picsum/";
+      dir = loremPicsum;
     }
     {
       urlPath = "/data";

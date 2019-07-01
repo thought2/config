@@ -4,13 +4,14 @@ let
   easyPS = import (pkgs.fetchFromGitHub {
     owner = "justinwoo";
     repo = "easy-purescript-nix";
-    rev = "d383972c82620a712ead4033db14110497bc2c9c";
-    sha256 = "0hj85y3k0awd21j5s82hkskzp4nlzhi0qs4npnv172kaac03x8ms";
+    rev = "6d0f4ae1d75d4b03fee2cc75af746e1ed556556e";
+    sha256 = "0l7z03z00alyfa1pb1aaj9dcc9liqjbby9647bgxyclwiknpnqy7";
   });
 in {
   inherit(easyPS.inputs)
    purs
    psc-package-simple
    purp
+   spago
    ;
 }

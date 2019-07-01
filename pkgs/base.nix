@@ -56,6 +56,7 @@ lib.flatten (builtins.attrValues {
     gitAndTools.pre-commit
     stack2nix
     easy-purescript.purs
+    easy-purescript.spago
     dhall
     awscli
     aws-vault
@@ -86,7 +87,7 @@ lib.flatten (builtins.attrValues {
     # node2nixPkgs.pulp
     # unstable.purescript
     node2nixPkgs.selenium-webdriver
-    # node2nixPkgs.ts-node
+    node2nixPkgs.ts-node
     # node2nixPkgs.elm-test
     nodePackages.prettier
     # node2nixPkgs.pre-commit
