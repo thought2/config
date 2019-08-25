@@ -198,5 +198,10 @@
         "short_name": "Hoogle",
         "keyword": "ho",
         "url": "https://hoogle.haskell.org/?hoogle={searchTerms}"
+    },
+    {
+        "short_name": "P5 JS",
+        "keyword": "p5",
+        "url": "https://p5js.org/reference/#/p5/{searchTerms}"
     }
 ]

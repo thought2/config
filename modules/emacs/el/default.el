@@ -140,6 +140,7 @@
 (progn
   ;; Startup
   ;;(shell)
+  (cd "~")
   )
 
 

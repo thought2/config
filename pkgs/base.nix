@@ -8,6 +8,13 @@ let
 
   easy-purescript = import ./easy-purescript.nix;
 
+  elmTools = import (pkgs.fetchFromGitHub {
+    owner = "turboMaCk";
+    repo = "nix-elm-tools";
+    rev = "41b5045587f84d993a7ee55972cfd61152cafc48";
+    sha256 = "1ns02xxj3zijf6myaxk8azgs8v69gpc2b0v080m2xjf1pvv6hd75";
+  }) { inherit pkgs; };
+
 in
 
 with pkgs;
@@ -120,6 +127,10 @@ lib.flatten (builtins.attrValues {
     scala
     ocamlPackages.merlin
     ocaml
+    elmTools.elm-test
+    elmTools.elm-verify-examples
+    elmTools.elm-analyse
+    elmTools.elm-doc-preview
   ];
 
   gfx = [
