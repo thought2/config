@@ -201,7 +201,7 @@ rec {
   '';
 
   machine-checkout-workdir = writeShellScriptBin "machine-checkout-workdir" ''
-    DEV_DIR=$1
+    DEV_DIR=${shellExpand "1:-$NIXOS_WORKDIR"}
     HOST=${shellExpand "2:-'${config.networking.hostName}'"}
     ROOT=${shellExpand "ROOT:-''"}
     DIR="/${nixosRoot}"
