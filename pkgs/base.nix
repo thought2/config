@@ -6,7 +6,7 @@ let
 
   node2nixPkgs = import ./node2nix {};
 
-  easy-purescript = import ./easy-purescript.nix;
+  easy-purescript = import ./easy-purescript;
 
   elmTools = import (pkgs.fetchFromGitHub {
     owner = "turboMaCk";
