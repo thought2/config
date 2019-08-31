@@ -3,7 +3,7 @@
   imports =
     [ 
       ../../hardware-configuration.nix
-      ../modules/ssh.nix
+      ../modules/init.nix
       # @TODO make optional
       # ../../extra.nix
     ];

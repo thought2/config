@@ -3,7 +3,7 @@
   imports =
     [ 
       ../../hardware-configuration.nix
-      ../modules/ssh.nix
+      ../modules/init.nix
     ];
 
   networking.hostName = "minimal-legacy";
