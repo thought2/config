@@ -19,7 +19,7 @@ let
         {
           url = repoUrl;
           name = "nix-config";
-          branch = "develop";
+          branch = "master";
         }
         {
           url = repoUrl;
@@ -39,7 +39,7 @@ let
         {
           url = "http://github.com/thought2";
           name = "nix-config";
-          branch = "develop";
+          branch = "master";
         }
         {
           url = repoUrl;
@@ -54,7 +54,7 @@ let
         {
           url = repoUrl;
           name = "nix-config";
-          branch = "develop";
+          branch = "master";
         }
         {
           url = repoUrl;
@@ -201,8 +201,8 @@ rec {
   '';
 
   machine-checkout-workdir = writeShellScriptBin "machine-checkout-workdir" ''
-    HOST=${shellExpand "1:-'${config.networking.hostName}'"}
-    DEV_DIR=$2
+    DEV_DIR=$1
+    HOST=${shellExpand "2:-'${config.networking.hostName}'"}
     ROOT=${shellExpand "ROOT:-''"}
     DIR="/${nixosRoot}"
 

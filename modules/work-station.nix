@@ -90,4 +90,11 @@ with lib;
       # i3lock: Could not connect to X11, maybe you need to set DISPLAY?
       # ${pkgs.i3lock}/bin/i3lock
     '';
+
+  services.redshift = {
+    enable = true;
+    latitude = "0";
+    longitude = "0";
+    extraOptions = ["-x" "-o" "-P" "-O 3000" "-b 0.8"];
+  };
 }
