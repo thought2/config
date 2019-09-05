@@ -102,6 +102,7 @@ let
         helm-ag
         neotree
         dashboard
+        # reformatter
       ]
   );
 

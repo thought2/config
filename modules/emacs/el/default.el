@@ -1070,11 +1070,21 @@ the last number is used again in further repeated invocations.
   (add-hook 'ibuffer-mode-hook
             '(lambda ()
                (ibuffer-switch-to-saved-filter-groups "home"))))
-
 (progn
   (require 'psc-ide)
 
 
+  (setq package-list '(reformatter))
+
+  (dolist (package package-list)
+    (unless (package-installed-p package)
+      (package-install package)))
+
+  (require 'reformatter)
+
+  (reformatter-define purs-format
+    :program "purty"
+    :args '("-"))
 
   (add-hook 'purescript-mode-hook
             (lambda ()
@@ -1083,9 +1093,9 @@ the last number is used again in further repeated invocations.
               (company-mode)
               (flycheck-mode)
               (turn-on-purescript-indentation)
-              (haskell-decl-scan-mode)))
+              (haskell-decl-scan-mode)
+	      (purs-format-on-save-mode)))
   )
-
 
 (progn
   (setq flycheck-display-errors-function 'flycheck-display-error-messages-unless-error-list))
