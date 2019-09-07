@@ -1093,6 +1093,11 @@ the last number is used again in further repeated invocations.
               (company-mode)
               (flycheck-mode)
               (turn-on-purescript-indentation)
+	      (customize-set-variable 'psc-ide-rebuild-on-save t)
+
+	      (advice-add 'psc-ide-rebuild-handler :after
+			  (lambda ()
+			    (quit-windows-on "*psc-ide-rebuild*")))
               (haskell-decl-scan-mode)
 	      (purs-format-on-save-mode)))
   )
