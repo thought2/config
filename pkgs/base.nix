@@ -6,7 +6,7 @@ let
 
   node2nixPkgs = import ./node2nix {};
 
-  easy-purescript = import ./easy-purescript;
+  easy-purescript = import ./easy-purescript {};
 
   elmTools = import (pkgs.fetchFromGitHub {
     owner = "turboMaCk";
@@ -53,6 +53,9 @@ lib.flatten (builtins.attrValues {
   ];
 
   dev = [
+    jekyll
+    bundler
+    bundix
     vscode
     atom
     franz
@@ -62,8 +65,6 @@ lib.flatten (builtins.attrValues {
     nailgun
     gitAndTools.pre-commit
     stack2nix
-    easy-purescript.purs
-    easy-purescript.spago
     dhall
     awscli
     aws-vault
@@ -131,7 +132,7 @@ lib.flatten (builtins.attrValues {
     elmTools.elm-verify-examples
     elmTools.elm-analyse
     elmTools.elm-doc-preview
-  ];
+  ] ++ builtins.attrValues(easy-purescript);
 
   gfx = [
     blender

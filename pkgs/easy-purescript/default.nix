@@ -1,14 +1,13 @@
+{pkgs ? import <nixpkgs> {} }:
 let
-  pkgs = import <nixpkgs> {};
-
   easyPS =
-    let x = (builtins.fromJSON (builtins.readFile ./rev.json));
-    in import (pkgs.fetchgit {inherit (x) url rev sha256;}) {};
-in {
-  inherit(easyPS.inputs)
-   purs
-   psc-package-simple
-   purp
-   spago
-   ;
+    let rev = (builtins.fromJSON (builtins.readFile ./rev.json));
+    in import (pkgs.fetchgit {inherit (rev) url rev sha256;}) {};
+in
+  {
+  inherit (easyPS)
+    purs
+    spago
+    spago2nix
+    purty;
 }

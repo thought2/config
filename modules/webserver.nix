@@ -50,7 +50,6 @@ let
     name = "lorem-picsum";
     buildCommand = ''
       mkdir $out
-      ls ${tuesday-coding}/2019-04-29/lorem-picsum/
       cp -r ${tuesday-coding}/2019-04-29/lorem-picsum/* -t $out
     '';
   };
@@ -101,7 +100,6 @@ let
     sha256 = "1crsk540yv9qap17n95zfbl0b1i2gl9g2lk3bgpcjvpcq38mmr7i";
   }) { inherit pkgs; };
 
-
   servedDirs = [
     # {
     #  urlPath = "/dust";
@@ -124,12 +122,20 @@ let
       dir = loremPicsum;
     }
     {
-      urlPath = "/";
-      dir = landing-purs;
+      urlPath = "/blog";
+      dir =  import (fetchgit {
+        url = "https://github.com/thought2/blog.git";
+        rev =  "2b11071cd8497dddd3f6da93fddce8de94db3e39";
+        sha256 = "0lsi31imwpzhbcspghfh89l7yh74fz3dplzmh2p3j6lp5qkd8h8r";
+      });
     }
     {
       urlPath = "/data";
       dir = "/srv/data";
+    }
+    {
+      urlPath = "/";
+      dir = landing-purs;
     }
   ];
 
@@ -153,6 +159,16 @@ in
         file = writeText "index.html" ''
           <h1>Revision Index</h1>
           ${concatStringsSep "\n" (map (x: "<a href=${x.urlPath}>Revision ${toString x.index}</a>") overview)}
+        '';
+      }
+      {
+        urlPath = "nix.sh";
+        file = writeText "nix.sh" ''
+          cd $mktemp -d)
+          nix-env -i git
+          git clone http://github.com/thought2/nix-config
+          cd nix-config
+          nix-shell env/build-shell.nix
         '';
       }
     ];

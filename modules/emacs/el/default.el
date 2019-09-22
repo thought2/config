@@ -1055,9 +1055,12 @@ the last number is used again in further repeated invocations.
                   (find-alternate-file ".."))))))
 
 (progn
+  (setq dhall-use-header-line nil))
+
+(progn
   (setq ibuffer-saved-filter-groups
         '(("home"
-;;           ("Elm" (mode . elm-mode))
+	   ;;           ("Elm" (mode . elm-mode))
            ("Haskell" (mode . haskell-mode))
            ("Shell" (mode . shell-mode))
            ("Dired" (mode . dired-mode))
@@ -1086,6 +1089,8 @@ the last number is used again in further repeated invocations.
     :program "purty"
     :args '("-"))
 
+
+
   (add-hook 'purescript-mode-hook
             (lambda ()
               (define-key purescript-mode-map (kbd "C-c l") 'flycheck-mode)
@@ -1096,7 +1101,7 @@ the last number is used again in further repeated invocations.
 	      (customize-set-variable 'psc-ide-rebuild-on-save t)
 
 	      (advice-add 'psc-ide-rebuild-handler :after
-			  (lambda ()
+			  (lambda (x)
 			    (quit-windows-on "*psc-ide-rebuild*")))
               (haskell-decl-scan-mode)
 	      (purs-format-on-save-mode)))

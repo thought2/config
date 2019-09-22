@@ -32,6 +32,7 @@ let
           branch = "master";
         }
       ];
+      url = "";
     };
     desktop = {
       name = "desktop";
@@ -47,6 +48,7 @@ let
           branch = "master";
         }
       ];
+      url = "";
     };
     laptop = {
       name = "laptop";
@@ -62,6 +64,7 @@ let
           branch = "master";
         }
       ];
+      url = "";
     };
     prod = {
       name = "prod";
@@ -72,6 +75,7 @@ let
           branch = "master";
         }
       ];
+      url = "46.38.233.235";
     };
     stage = {
       name = "stage";
@@ -79,9 +83,10 @@ let
         {
           url = repoUrl;
           name = "nix-config";
-          branch = "develop";
+          branch = "master";
         }
       ];
+      url = "185.162.251.105";
     };
     minimal-uefi = {
       name = "minimal-uefi";
@@ -89,9 +94,10 @@ let
         {
           url = "http://github.com/thought2";
           name = "nix-config";
-          branch = "develop";
+          branch = "master";
         }
       ];
+      url = "";
     };
     minimal-legacy = {
       name = "minimal-legacy";
@@ -99,9 +105,10 @@ let
         {
           url = "http://github.com/thought2";
           name = "nix-config";
-          branch = "develop";
+          branch = "master";
         }
       ];
+      url = "";
     };
   };
 
@@ -192,6 +199,24 @@ rec {
       `[ "$ROOT" ] && echo "--root $ROOT"`
 
     ${machine-link}/bin/machine-link nix-config/hosts/$HOST.nix
+  '';
+
+  machine-deploy-workdir = writeShellScriptBin "machine-deploy-workdir" ''
+    TARGET_HOST_NAME=$1
+    DEV_DIR=${shellExpand "2:-$NIXOS_WORKDIR"}
+
+    ${
+      forEach
+        (host: ''
+          if [ "$TARGET_HOST_NAME" = "${host.name}"  ]
+          then
+            export NIXOS_CONFIG=$DEV_DIR/nix-config/hosts/${host.name}.nix
+            TARGET_HOST=${host.url}
+            nixos-rebuild switch --target-host "root@$TARGET_HOST" --build-host localhost
+          fi
+        '')
+        (attrValues(hosts))
+    }
   '';
 
   machine-link = writeShellScriptBin "machine-link" ''
@@ -378,5 +403,7 @@ rec {
 
     mount /dev/disk/by-label/nixos /mnt
   '';
+
+
 
 }
