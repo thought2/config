@@ -70,7 +70,7 @@ let
       name = "prod";
       repos = [
         {
-          url = repoUrl;
+          url = "http://github.com/thought2";
           name = "nix-config";
           branch = "master";
         }
@@ -81,7 +81,7 @@ let
       name = "stage";
       repos = [
         {
-          url = repoUrl;
+          url = "http://github.com/thought2";
           name = "nix-config";
           branch = "master";
         }
@@ -164,7 +164,7 @@ rec {
   # maybe make recognize if install-cd or not (ROOT=/mnt or none)
   machine-checkout = writeShellScriptBin "machine-checkout" ''
     HOST=${shellExpand "1:-'${config.networking.hostName}'"}
-    ROOT=${shellExpand "ROOT:-''"}
+    ROOT=${slshellExpand "ROOT:-''"}
     DIR="$ROOT/${nixosRoot}"
 
     ${machine-clean}/bin/machine-clean $ROOT
