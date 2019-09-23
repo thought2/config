@@ -164,6 +164,12 @@ let
       ln -s ${projects} $out/projects
     '';
 
+  allRoots = pkgs.runCommand "root" {} ''
+      mkdir $out
+      cp -r ${rootDir}/* -t $out
+      cp -r ${adminRootDir}/* -t $out
+    '';
+
 in
 {
   networking.firewall.allowedTCPPorts = [ 80 9418 443 ];
@@ -174,29 +180,22 @@ in
     server_names_hash_bucket_size 64;
   '';
 
-  services.nginx.virtualHosts."admin.localhost" = {
-    addSSL = true;
-    enableACME = true;
-    basicAuth = { mbock = "abc"; };
-
-    root = adminRootDir;
-  };
-
-  services.nginx.virtualHosts."localhost" = {
+  services.nginx.virtualHosts."thought2.de" = {
     addSSL = true;
     enableACME = true;
     root = rootDir;
   };
 
+  services.nginx.virtualHosts."localhost" = {
+    addSSL = true;
+    enableACME = true;
+    root = allRoots;
+  };
 
   services.nginx.virtualHosts."stage.thought2.de" = {
     addSSL = true;
     enableACME = true;
-    root = pkgs.runCommand "root" {} ''
-      mkdir $out
-      cp -r ${rootDir}/* -t $out
-      cp -r ${adminRootDir}/* -t $out
-    '';
+    root = allRoots;
     basicAuth = { mbock = "abc"; };
   };
 
