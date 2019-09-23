@@ -199,6 +199,13 @@ in
     basicAuth = { mbock = "abc"; };
   };
 
+  services.nginx.virtualHosts."admin.thought2.de" = {
+    addSSL = true;
+    enableACME = true;
+    root = adminRootDir;
+    basicAuth = { mbock = "abc"; };
+  };
+
 
   services.httpd = {
     enable       = false;
