@@ -153,7 +153,7 @@ let
 
 in
 {
-  networking.firewall.allowedTCPPorts = [ 80 9418 ];
+  networking.firewall.allowedTCPPorts = [ 80 9418 443 ];
 
   services.nginx.enable = true;
 
@@ -182,8 +182,8 @@ in
 
 
   services.nginx.virtualHosts."stage.thought2.de" = {
-#    addSSL = true;
-#    enableACME = true;
+    addSSL = true;
+    enableACME = true;
     root = pkgs.runCommand "root" {} ''
       mkdir $out
       cp -r ${landing-purs}/* -t $out
