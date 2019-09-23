@@ -158,8 +158,8 @@ in
   services.nginx.enable = true;
 
   services.nginx.virtualHosts."admin.localhost" = {
-    # addSSL = true;
-    # enableACME = true;
+    addSSL = true;
+    enableACME = true;
     basicAuth = { mbock = "abc"; };
 
     root = pkgs.runCommand "root" {} ''
@@ -169,8 +169,8 @@ in
   };
 
   services.nginx.virtualHosts."localhost" = {
-    # addSSL = true;
-    # enableACME = true;
+    addSSL = true;
+    enableACME = true;
     root = pkgs.runCommand "root" {} ''
       mkdir $out
       cp -r ${landing-purs}/* -t $out
