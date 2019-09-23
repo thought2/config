@@ -151,6 +151,19 @@ let
     }
   ];
 
+  rootDir = pkgs.runCommand "root" {} ''
+      mkdir $out
+      cp -r ${landing-purs}/* -t $out
+
+      ln -s ${blog} $out/blog
+      ln -s ${loremPicsum} $out/lorem-picsum
+    '';
+
+  adminRootDir = pkgs.runCommand "root" {} ''
+      mkdir $out
+      ln -s ${projects} $out/projects
+    '';
+
 in
 {
   networking.firewall.allowedTCPPorts = [ 80 9418 443 ];
@@ -166,35 +179,27 @@ in
     enableACME = true;
     basicAuth = { mbock = "abc"; };
 
-    root = pkgs.runCommand "root" {} ''
-      mkdir $out
-      ln -s ${projects} $out/projects
-    '';
+    root = adminRootDir;
+  };
+
+  services.nginx.virtualHosts."admin.stage.thought2.de" = {
+    addSSL = true;
+    enableACME = true;
+    basicAuth = { mbock = "abc"; };
+    root = adminRootDir;
   };
 
   services.nginx.virtualHosts."localhost" = {
     addSSL = true;
     enableACME = true;
-    root = pkgs.runCommand "root" {} ''
-      mkdir $out
-      cp -r ${landing-purs}/* -t $out
-
-      ln -s ${blog} $out/blog
-      ln -s ${loremPicsum} $out/lorem-picsum
-    '';
+    root = rootDir;
   };
 
 
   services.nginx.virtualHosts."stage.thought2.de" = {
     addSSL = true;
     enableACME = true;
-    root = pkgs.runCommand "root" {} ''
-      mkdir $out
-      cp -r ${landing-purs}/* -t $out
-
-      ln -s ${blog} $out/blog
-      ln -s ${loremPicsum} $out/lorem-picsum
-    '';
+    root = rootDir;
   };
 
 
