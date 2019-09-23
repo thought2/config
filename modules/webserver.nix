@@ -162,8 +162,8 @@ in
   '';
 
   services.nginx.virtualHosts."admin.localhost" = {
-#    addSSL = true;
-#    enableACME = true;
+    addSSL = true;
+    enableACME = true;
     basicAuth = { mbock = "abc"; };
 
     root = pkgs.runCommand "root" {} ''
@@ -173,8 +173,8 @@ in
   };
 
   services.nginx.virtualHosts."localhost" = {
-#    addSSL = true;
-#    enableACME = true;
+    addSSL = true;
+    enableACME = true;
     root = pkgs.runCommand "root" {} ''
       mkdir $out
       cp -r ${landing-purs}/* -t $out
@@ -186,8 +186,8 @@ in
 
 
   services.nginx.virtualHosts."stage.thought2.de" = {
-#    addSSL = true;
-#    enableACME = true;
+    addSSL = true;
+    enableACME = true;
     root = pkgs.runCommand "root" {} ''
       mkdir $out
       cp -r ${landing-purs}/* -t $out
