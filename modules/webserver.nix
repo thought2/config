@@ -181,7 +181,7 @@ in
   };
 
 
-  services.nginx.virtualHosts."thought2.de" = {
+  services.nginx.virtualHosts."stage.thought2.de" = {
     addSSL = true;
     enableACME = true;
     root = pkgs.runCommand "root" {} ''

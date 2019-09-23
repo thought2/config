@@ -237,6 +237,8 @@ rec {
              )
              host.repos}
 
+            ssh root@${host.url} 'nixos-generate-config --show-hardware-config' > $TMP_DIR/hardware-configuration.nix
+
             export NIXOS_CONFIG=$TMP_DIR/nix-config/hosts/${host.name}.nix
             TARGET_HOST=${host.url}
             nixos-rebuild switch --target-host "root@$TARGET_HOST" --build-host localhost
