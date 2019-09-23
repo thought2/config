@@ -164,7 +164,7 @@ rec {
   # maybe make recognize if install-cd or not (ROOT=/mnt or none)
   machine-checkout = writeShellScriptBin "machine-checkout" ''
     HOST=${shellExpand "1:-'${config.networking.hostName}'"}
-    ROOT=${slshellExpand "ROOT:-''"}
+    ROOT=${shellExpand "ROOT:-''"}
     DIR="$ROOT/${nixosRoot}"
 
     ${machine-clean}/bin/machine-clean $ROOT
