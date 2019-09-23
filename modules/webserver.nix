@@ -182,13 +182,6 @@ in
     root = adminRootDir;
   };
 
-  services.nginx.virtualHosts."admin.stage.thought2.de" = {
-    addSSL = true;
-    enableACME = true;
-    basicAuth = { mbock = "abc"; };
-    root = adminRootDir;
-  };
-
   services.nginx.virtualHosts."localhost" = {
     addSSL = true;
     enableACME = true;
@@ -199,7 +192,12 @@ in
   services.nginx.virtualHosts."stage.thought2.de" = {
     addSSL = true;
     enableACME = true;
-    root = rootDir;
+    root = pkgs.runCommand "root" {} ''
+      mkdir $out
+      cp -r ${rootDir}/* -t $out
+      cp -r ${adminRootDir}/* -t $out
+    '';
+    basicAuth = { mbock = "abc"; };
   };
 
 
