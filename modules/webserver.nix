@@ -157,6 +157,10 @@ in
 
   services.nginx.enable = true;
 
+  services.nginx.appendHttpConfig = ''
+    server_names_hash_bucket_size 64;
+  '';
+
   services.nginx.virtualHosts."admin.localhost" = {
 #    addSSL = true;
 #    enableACME = true;
