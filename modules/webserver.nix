@@ -87,6 +87,19 @@ let
     '';
   };
 
+  blog = import (fetchgit {
+        url = "https://github.com/thought2/blog.git";
+        rev =  "2b11071cd8497dddd3f6da93fddce8de94db3e39";
+        sha256 = "0lsi31imwpzhbcspghfh89l7yh74fz3dplzmh2p3j6lp5qkd8h8r";
+      });
+
+  projects = import (fetchGit {
+    url = "git@github.com:thought2/projects";
+    rev = "79e2d72f72b1591ca80bc41427518c10402c1307";
+
+  }) { inherit pkgs; scope = "/projects"; };
+
+
   # landing = import (fetchgit {
   #   url = "https://github.com/thought2/landing.git";
   #   rev = "6af966bbdd3aad17dabb5dc3822be903c0b6ebfb";
@@ -123,11 +136,10 @@ let
     }
     {
       urlPath = "/blog";
-      dir =  import (fetchgit {
-        url = "https://github.com/thought2/blog.git";
-        rev =  "2b11071cd8497dddd3f6da93fddce8de94db3e39";
-        sha256 = "0lsi31imwpzhbcspghfh89l7yh74fz3dplzmh2p3j6lp5qkd8h8r";
-      });
+      dir =  blog;
+    }
+    { urlPath = "/projects";
+      dir = projects;
     }
     {
       urlPath = "/data";
@@ -143,14 +155,60 @@ in
 {
   networking.firewall.allowedTCPPorts = [ 80 9418 ];
 
+  services.nginx.enable = true;
+
+  services.nginx.virtualHosts."admin.localhost" = {
+    addSSL = true;
+    enableACME = true;
+    basicAuth = { mbock = "abc"; };
+
+    root = pkgs.runCommand "root" {} ''
+      mkdir $out
+      ln -s ${projects} $out/projects
+    '';
+  };
+
+  services.nginx.virtualHosts."localhost" = {
+    addSSL = true;
+    enableACME = true;
+    root = pkgs.runCommand "root" {} ''
+      mkdir $out
+      cp -r ${landing-purs}/* -t $out
+
+      ln -s ${blog} $out/blog
+      ln -s ${loremPicsum} $out/lorem-picsum
+    '';
+  };
+
+
+  services.nginx.virtualHosts."thought2.de" = {
+    addSSL = true;
+    enableACME = true;
+    root = pkgs.runCommand "root" {} ''
+      mkdir $out
+      cp -r ${landing-purs}/* -t $out
+
+      ln -s ${blog} $out/blog
+      ln -s ${loremPicsum} $out/lorem-picsum
+    '';
+  };
+
+
   services.httpd = {
-    enable       = true;
+    enable       = false;
     adminAddr    = "me@thought2.de";
 
     extraConfig = ''
       <Directory /srv/data>
         Header set Access-Control-Allow-Origin "*"
       </Directory>
+
+      <Location /projects>
+        AuthName "Members Area"
+        AuthType Basic
+        AuthUserFile /home/mbock/.htpasswd
+        require valid-user
+      </Location>
     '';
 
     servedFiles = [

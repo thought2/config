@@ -219,6 +219,34 @@ rec {
     }
   '';
 
+  machine-deploy = writeShellScriptBin "machine-deploy" ''
+    TARGET_HOST_NAME=$1
+
+    ${
+      forEach
+        (host: ''
+          if [ "$TARGET_HOST_NAME" = "${host.name}"  ]
+          then
+            TMP_DIR=$(mktemp -d)
+            cd $TMP_DIR
+
+            ${forEach
+             (repo: ''
+               ${clone-and-checkout}/bin/clone-and-checkout ${repo.url} ${repo.name} ${repo.branch}
+             ''
+             )
+             host.repos}
+
+            export NIXOS_CONFIG=$TMP_DIR/nix-config/hosts/${host.name}.nix
+            TARGET_HOST=${host.url}
+            nixos-rebuild switch --target-host "root@$TARGET_HOST" --build-host localhost
+          fi
+        '')
+        (attrValues(hosts))
+    }
+  '';
+
+
   machine-link = writeShellScriptBin "machine-link" ''
     TARGET_PATH=$1
     rm configuration.nix
@@ -373,10 +401,11 @@ rec {
           ;;
         --)
           shift
+ls
           break
           ;;
         *)
-          exit 1
+machi          exit 1
           ;;
       esac
     done
@@ -404,6 +433,11 @@ rec {
     mount /dev/disk/by-label/nixos /mnt
   '';
 
+  ftp-upload-netcup = writeShellScriptBin "ftp-upload-netcup" ''
+    HOST=46.38.225.190
+    USER=55661
 
+    ${pkgs.curl}/bin/curl -T $FILE ftp://$USER:$PASS@$HOST/cdrom/
+  '';
 
 }
