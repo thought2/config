@@ -182,8 +182,8 @@ in
 
 
   services.nginx.virtualHosts."stage.thought2.de" = {
-    addSSL = true;
-    enableACME = true;
+#    addSSL = true;
+#    enableACME = true;
     root = pkgs.runCommand "root" {} ''
       mkdir $out
       cp -r ${landing-purs}/* -t $out
