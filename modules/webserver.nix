@@ -192,18 +192,25 @@ in
     root = allRoots;
   };
 
+  services.nginx.virtualHosts."admin.localhost" = {
+    addSSL = true;
+    enableACME = true;
+    basicAuthFile = "/etc/.htpasswd";
+    root = allRoots;
+  };
+
   services.nginx.virtualHosts."stage.thought2.de" = {
     addSSL = true;
     enableACME = true;
     root = allRoots;
-    basicAuth = { mbock = "abc"; };
+    basicAuthFile = "/etc/.htpasswd";
   };
 
   services.nginx.virtualHosts."admin.thought2.de" = {
     addSSL = true;
     enableACME = true;
     root = adminRootDir;
-    basicAuth = { mbock = "abc"; };
+    basicAuthFile = "/etc/.htpasswd";
   };
 
 
