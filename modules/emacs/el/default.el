@@ -41,6 +41,9 @@
 (load-file "./magit-config.el")
 (load-file "./generated.el")
 
+(progn
+  (eyebrowse-mode t)
+  (eyebrowse-setup-opinionated-keys))
 
 (progn
   ;; make Emacs look less noisy.
@@ -821,9 +824,9 @@ with word around mark."
 
 (progn
   (require 'duplicate-thing)
-  (global-set-key (kbd "M-c") 'duplicate-thing))
+  (global-set-key (kbd "M-q") 'duplicate-thing))
 
-;; (progn
+;;
 ;;   (dynamic-spaces-global-mode 1))
 
 (progn

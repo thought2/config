@@ -103,6 +103,7 @@ let
         neotree
         dashboard
         # reformatter
+        eyebrowse
       ]
   );
 

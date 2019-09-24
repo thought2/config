@@ -8,7 +8,15 @@ import ./screens.nix {inherit pkgs;} //
 import ./build.nix {inherit pkgs config; }  //
 # import ./shorthands/elm-doc { inherit pkgs; } //
 rec {
-  namey = writeShellScriptBin "namey" ''
+  org = writeShellScriptBin "org" ''
+    ${pkgs.chromium}/bin/chromium --new-window \
+    'http://localhost/projects/' \
+    'http://github.com/thought2' \
+    'https://functionalprogramming.slack.com' \
+    'https://webchat.freenode.net/' \
+  '';
+
+  Namey = writeShellScriptBin "namey" ''
     URL='https://namey.muffinlabs.com/name.json?count=5&with_surname=false&frequency=all'
     NAME=`${curl}/bin/curl --silent --show-error $URL \
       | ${jq}/bin/jq --raw-output '.[0]'`
