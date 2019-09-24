@@ -46,6 +46,14 @@
   (eyebrowse-setup-opinionated-keys))
 
 (progn
+  (add-hook 'prog-mode-hook '(lambda ()
+			       (local-set-key (kbd "RET") 'newline-and-indent)))  )
+
+(progn
+  (setq backup-directory-alist `(("." . "~/.saves")))
+  (setq backup-by-copying t))
+
+(progn
   ;; make Emacs look less noisy.
 
   (setq inhibit-splash-screen t)
