@@ -10,10 +10,12 @@ import ./build.nix {inherit pkgs config; }  //
 rec {
   org = writeShellScriptBin "org" ''
     ${pkgs.chromium}/bin/chromium --new-window \
-    'http://localhost/projects/' \
-    'http://github.com/thought2' \
-    'https://functionalprogramming.slack.com' \
-    'https://webchat.freenode.net/' \
+    'http://thought2.de?keeptab' \
+    'http://localhost/projects/?keeptab' \
+    'http://github.com/thought2?keeptab' \
+    'https://app.slack.com/client/T0432GV8P/C717K38CE?keeptab' \
+    'https://discordapp.com/channels/@me?keeptab' \
+    'https://webchat.freenode.net/?keeptab' \
   '';
 
   Namey = writeShellScriptBin "namey" ''
@@ -23,12 +25,6 @@ rec {
     echo "${shellExpand "NAME,,"}"
   '';
 
-  # elm-find-doc-modules = buildPureScriptBin {
-  #     name = "elm-find-doc-modules";
-  #     src = ./shorthands/ps;
-  #     main = "ElmTooling.FindDocumentedModules";
-  #   };
-
   # elm-json-as-package = writeTypeScript "elm-json-as-package" {
   #     dependencies = {
   #       "@types/node" = "^11.11.0";
@@ -37,26 +33,6 @@ rec {
   #     };
   #   }
   #   (pkgs.lib.readFile ./shorthands/ts/src/elm-json-as-package.ts);
-
-  # elm-doc-preview-local = writeShellScriptBin "elm-doc-preview-local" ''
-  #   EXPOSED_MODULES=$1
-  #   shift
-  #   SRC_DIR=`pwd`/$1
-  #   shift
-  #   SEP=$1
-  #   shift
-
-  #   TMP=`mktemp -d`
-
-  #   ${elm-json-as-package}/bin/elm-json-as-package \
-  #     --output $TMP/elm.json \
-  #     --exposedModules $EXPOSED_MODULES
-
-  #   cd $TMP
-  #   ln -s $SRC_DIR src
-
-  #   ${pkgs.node2nixPkgs.elm-doc-preview}/bin/elm-doc-preview $@
-  # '';
 
   hotreload = writeShellScriptBin "hotreload" ''
     DIR=$1
