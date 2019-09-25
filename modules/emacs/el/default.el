@@ -1800,3 +1800,11 @@ Version 2017-09-01"
   (require 'paren)
   (setq show-paren-style 'parenthesis)
   (show-paren-mode +1))
+
+(progn
+  (setq dirtrack-list '("\\[\\w+:\\w+:\\(.*\\)\\]" 1 nil))
+
+  (add-hook 'shell-mode-hook
+	    #'(lambda ()
+		(dirtrack-mode 1)
+		)))
