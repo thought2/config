@@ -53,6 +53,7 @@ lib.flatten (builtins.attrValues {
   ];
 
   dev = [
+    (import ./unison.nix {})
     jekyll
     bundler
     bundix
