@@ -1100,7 +1100,19 @@ the last number is used again in further repeated invocations.
     :program "purty"
     :args '("-"))
 
+  (defun my-find-back-file (dir filename)
+    (let ((dirname (directory-file-name dir)))
+      (if (file-exists-p (concat dirname "/" filename))
+	  dir
+	(if (string= dirname "/" )
+	    nil
+	  (my-find-back-file (file-name-directory dirname) filename)))))
 
+  (defun my-psc-ide-server-start ()
+    (interactive)
+    (if-let ((dir (my-find-back-file default-directory "spago.dhall")))
+	(psc-ide-server-start dir)
+      (psc-ide-server-start)))
 
   (add-hook 'purescript-mode-hook
             (lambda ()
@@ -1115,7 +1127,9 @@ the last number is used again in further repeated invocations.
 			  (lambda (x)
 			    (quit-windows-on "*psc-ide-rebuild*")))
               (haskell-decl-scan-mode)
-	      (purs-format-on-save-mode)))
+	      (purs-format-on-save-mode)
+
+	      (my-psc-ide-server-start)))
   )
 
 (progn
