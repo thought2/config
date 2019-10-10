@@ -1117,6 +1117,7 @@ the last number is used again in further repeated invocations.
   (add-hook 'purescript-mode-hook
             (lambda ()
               (define-key purescript-mode-map (kbd "C-c l") 'flycheck-mode)
+	      (define-key purescript-mode-map (kbd "<f7>") 'flycheck-list-errors)
               (psc-ide-mode)
               (company-mode)
               (flycheck-mode)
