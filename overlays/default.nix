@@ -3,7 +3,7 @@ self: super:
 let
   node2nixPkgs = import ../pkgs/node2nix {};
   shorthands = import ../pkgs/shorthands.nix { pkgs = self; inherit config; };
-in
+in rec
 {
   chamber =
     super.latestMaster.buildGoModule rec {
@@ -43,7 +43,7 @@ in
       ${super.emacs}/bin/emacsclient --create-frame -e '${lispExpr}'
     '';
 
-  xmonad = import ./xmonad { pkgs = self; };
+  xmonad = import ./xmonad.nix {pkgs = super; inherit shorthands; };
 
   pythonExt = self.python3Packages.python.withPackages (p: [ p.notebook p.grip p.virtualenvwrapper ]);
 
@@ -56,4 +56,5 @@ in
 
   inherit shorthands;
   inherit node2nixPkgs;
+
 }
