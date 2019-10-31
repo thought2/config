@@ -50,6 +50,10 @@ in
 
   nixpkgs.config.allowUnfree = true;
 
+  networking.hosts =
+    { "92.51.175.170" = ["hotsplots.de"];
+    };
+
   #system.autoUpgrade.channel = https://nixos.org/channels/nixos-17.09;
   #system.autoUpgrade.enable = true;
 }
