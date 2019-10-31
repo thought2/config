@@ -275,6 +275,10 @@
   (add-hook 'typescript-mode-hook #'setup-tide-mode))
 
 (progn
+  (add-hook 'js-mode-hook (lambda ()
+			    (prettier-js-mode))))
+
+(progn
   ;;;  camelCase-mode.el --- minor mode for editing with camelCase words
   ;;   Copyright (C) 2001  C.R.Manning
   ;;
@@ -1118,19 +1122,24 @@ the last number is used again in further repeated invocations.
             (lambda ()
               (define-key purescript-mode-map (kbd "C-c l") 'flycheck-mode)
 	      (define-key purescript-mode-map (kbd "<f7>") 'flycheck-list-errors)
+	      (define-key purescript-mode-map (kbd "M-]") 'flycheck-next-error)
+	      (define-key purescript-mode-map (kbd "M-[") 'flycheck-previous-error)
+
               (psc-ide-mode)
               (company-mode)
               (flycheck-mode)
               (turn-on-purescript-indentation)
-	      (customize-set-variable 'psc-ide-rebuild-on-save t)
+	      ;;(customize-set-variable 'psc-ide-rebuild-on-save t)
 
-	      (advice-add 'psc-ide-rebuild-handler :after
-			  (lambda (x)
-			    (quit-windows-on "*psc-ide-rebuild*")))
+
+	      ;; (advice-add 'psc-ide-rebuild-handler :after
+	      ;; 		  (lambda (x)
+	      ;; 		    (quit-windows-on "*psc-ide-rebuild*")))
               (haskell-decl-scan-mode)
 	      (purs-format-on-save-mode)
 
-	      (my-psc-ide-server-start)))
+	      ;;(my-psc-ide-server-start)
+	      ))
   )
 
 (progn
