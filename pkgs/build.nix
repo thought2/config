@@ -13,7 +13,7 @@ let
   devDir = "~/dev";
 
   hosts = {
-    laptop-work = {
+    laptop-work = rec {
       name = "laptop-work";
       repos = [
         {
@@ -33,8 +33,9 @@ let
         }
       ];
       url = "";
+      entry = "nix-config/hosts/${name}.nix";
     };
-    desktop = {
+    desktop = rec {
       name = "desktop";
       repos = [
         {
@@ -49,8 +50,9 @@ let
         }
       ];
       url = "";
+      entry = "nix-config/hosts/${name}.nix";
     };
-    laptop = {
+    laptop = rec {
       name = "laptop";
       repos = [
         {
@@ -65,8 +67,9 @@ let
         }
       ];
       url = "";
+      entry = "nix-config/hosts/${name}.nix";
     };
-    prod = {
+    prod = rec {
       name = "prod";
       repos = [
         {
@@ -76,8 +79,9 @@ let
         }
       ];
       url = "46.38.233.235";
+      entry = "nix-config/hosts/${name}.nix";
     };
-    stage = {
+    stage = rec {
       name = "stage";
       repos = [
         {
@@ -87,8 +91,9 @@ let
         }
       ];
       url = "185.162.251.105";
+      entry = "nix-config/hosts/${name}.nix";
     };
-    minimal-uefi = {
+    minimal-uefi = rec {
       name = "minimal-uefi";
       repos = [
         {
@@ -98,8 +103,9 @@ let
         }
       ];
       url = "";
+      entry = "nix-config/hosts/${name}.nix";
     };
-    minimal-legacy = {
+    minimal-legacy = rec {
       name = "minimal-legacy";
       repos = [
         {
@@ -109,6 +115,7 @@ let
         }
       ];
       url = "";
+      entry = "nix-config/hosts/${name}.nix";
     };
   };
 
@@ -183,7 +190,9 @@ rec {
              ''
              )
              host.repos)
-          [(indent ";;")]
+          [ (indent "${machine-link}/bin/machine-link ${host.entry}")
+            (indent ";;")
+          ]
         ])
         (attrValues(hosts))
       )
@@ -197,8 +206,6 @@ rec {
     nixos-generate-config \
       --force \
       `[ "$ROOT" ] && echo "--root $ROOT"`
-
-    ${machine-link}/bin/machine-link nix-config/hosts/$HOST.nix
   '';
 
   machine-deploy-workdir = writeShellScriptBin "machine-deploy-workdir" ''
@@ -272,7 +279,16 @@ rec {
     # @TODO: check root here
     nixos-generate-config --force # --root $ROOT
 
-    ${machine-link}/bin/machine-link nix-config/hosts/$HOST.nix
+    ${
+      forEach
+        (host: ''
+          if [ "$HOST" = "${host.name}"  ]
+          then
+            ${machine-link}/bin/machine-link ${host.entry}
+          fi
+        '')
+        (attrValues(hosts))
+    }
   '';
 
   partition-machine = writeShellScriptBin "partition-machine" ''
